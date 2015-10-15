@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Jūsų įrenginys neprijungtas prie „Wi-Fi“ tinklo. Prisijungus prie mobiliojo tinklo gali būti taikomi papildomi mokesčiai – tai priklauso nuo mokėjimo plano."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobilieji duomenys išjungti. Vietoj to prisijunkite prie „Wi-Fi“ tinklo arba įjunkite mobiliuosius duomenis ir bandykite dar kartą."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Kai fotoaparatu įrašysite vaizdo įrašų, jie bus rodomi čia."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Failo pavadinimas jau naudojamas"
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "Ištrinti %d elementus?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Privatumas"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Rug."
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Spa."
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Lap."
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "Geg."
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Kov."
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Bir."
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Lie."
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Sau."
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Vas."
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Gru."
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Rgp."
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Bal."
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Albumas"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Daugiau"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Netinkami įvestų duomenų nustatymai."
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "Įrašas tuščias."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "Toks pavadinimas jau yra."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "Neįmanoma pervardinti."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "Nėra pasirinktų albumų."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Pasirinkti elementą"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "Albumų nėra"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "Ar kurti aplanką?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "Bandyti dar kartą?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "Ar šalinti?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "Bus ištrinta albumų: %d."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "1 albumas bus ištrintas."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Fotoapar."
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Paleisti"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Nustatymai"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Taip"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "Ne"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "Gerai"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Išsaugoti"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "Ar trinti?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Perkelti į albumą"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Kopijuoti į albumą"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Peržiūrėti pagal"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Įvesti pavadinimą"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "Bus ištrinti visi su šia paskyra susiję duomenys. Tęsti?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Atšaukti"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Naujas albumas"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Ar norite kopijuoti arba pašalinti nuotraukas iš pradinio albumo?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Dalytis"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Skaidrių rodymas"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Pradėti skaidrių rodymą"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Skaidrių rodymo nustatymai"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Nėra vardo"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Visi albumai"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Pasirinkti albumą"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "1 elementas bus ištrintas."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Visi elementai"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d element."
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Yra tik vienas albumas."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Galite pasirinkti iki %d elementų."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Atsisiųsti elem."
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "Ar trinti?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Perkelti"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Trinama..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Veiksmas nepavyko."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Atšaukta"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Pasirinkta"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Perkelta."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Nukopijuota."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "Nepasirinktas joks failas."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Uždaryti"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Rūšiuoti pagal"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Paskutinis"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Seniausios"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Kurti"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Elementų nėra"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Redaguoti atvaizdą"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Pasirinkti paveikslėlį"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "Trinti šį elementą?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Peizažas"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Pašalinti iš privataus"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Augintiniai"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Perkelti į asmeninį"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Maistas"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Gėlės"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Dokumentai"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Transporto priemonės"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Pasiektas didžiausias simbolių skaičius (%d)."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "Neįmanoma įkelti nuotraukos."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Bendrinti per"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "Daugiau neklausti"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Pasiektas didžiausias simbolių skaičius."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Laikas"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Nepavyko"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Ištrinta."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "Ar trinti?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Šalinama..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Rodoma elementų: %d"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Kurti albumą"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Galerija"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Daug."
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Paskyros"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Veiksmas nepavyko."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Atsisiųsti"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Ieškoti"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Atgal"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Fotoaparatas"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Visos"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Atnaujinti"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Šalinti"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Įkėlus nuotraukas į „Dropbox“, bus rodomi elementai."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Adresatai"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Kurti"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Išsami informacija"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Spausdinti"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Pervardyti"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Atsisiųsta."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Atsisiunčiama..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Įvesti vardą."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Mano failai"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Pridėta."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Apdorojama..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "Nepalaikomas failo tipas."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "Padarytos nuotraukos bus rodomos."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Kraštovaizdžio režimas"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Bakstelėkite dukart, kad uždarytumėte stalčiaus meniu."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Bakstelėkite dukart, kad atidarytumėte stalčiaus meniu."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Vilkti"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Stalčius"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobiliojo telefono duomenys išjungti. Vietoj to prisijunkite prie „Wi-Fi“ tinklo arba įjunkite mobiliojo telefono duomenis ir pabandykite dar kartą"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Reikia „Wi-Fi“ ryšio. Prisijunkite prie „ Wi-Fi“ ryšio ir pabandykite dar kartą"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Pridėti nuotraukų iš"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Prijungti įrenginiai"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Asmeninis turinys"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Pašalinti iš %s"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Pašalinti vardo žymą"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "Nėra rodytinų įvykių. Sukurkite naują įvykį."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Jei norite greitai pereiti prie kitų datų, ekrano viršutinėje dešiniojoje pusėje bakstelėkite ir palaikykite datos indikatorių."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "Šalinti %d elementus (-ų)?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "Pašalinti šį elementą?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Galerija"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Sumaišytos nuotraukos"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Pridėti paveikslėlių"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "Pažymėjus jums patinkančias nuotraukas, bus rodomos nuotraukos."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "Pašalinti veidų tapatybės nustatymą?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Priskirti vardą"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "Patvirtinti kaip %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Išdėstymas"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "Pridėta nuotraukų: %d"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Albumas bus atšauktas."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Ištrinti elementą"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Trinti elementus"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 elementas"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekundžių"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekundės"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "Nepriskirti"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Skaidrių rodymo intervalas"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Nepažymėta"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekundės"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Visas turinys"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Rodytinas turinys"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Ištrinti žymę"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Įrenginio turinys"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "„Dropbox“ turinys"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "„Facebook“ turinys"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Sukti į kairę"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Sukti į dešinę"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Importuoti"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Importuotieji."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Importuojama..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Įkeliama..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Aptikti netoliese esantys įrenginiai."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "Įrenginių nerasta. Netoliese esančių įrenginių paieška bus tęsiama fone."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Atnaujinta."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Sukama..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Paieška pradėta. Įrenginių sąrašas bus atnaujintas automatiškai."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Pradeda siųsti..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Kopijuoti į"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Perkelti į"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Nepavyko pridėti trumpinio."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Nepakanka atminties. Ištrinkite kai kuriuos elementus"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Pašalinta."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Pridedama..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "Trinti %d albumus (-ų)?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Privati saugykla"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Vilkti čia."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Nauja"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Išgrupuota"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Ekrano nuotraukos"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Nuotraukos"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Atsisiųsti nepavyko."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Nepalaikomas failas."
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 rezultatas"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d rezultatai (-ų)"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Parankiniai"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Atsisiuntimas atšauktas."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "Trinti šį albumą?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Įspėjimas"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Rūšiuoti pagal"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Šiandien"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Data"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "Nėra rodytinų elementų."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Bakstelėkite čia ir fotografuokite arba įrašykite vaizdus."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Viršytas didžiausias bendrintinų elementų skaičius (%d)."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Bakstelėkite ir pridėkite vaizdų."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Kopijuoti arba perkelti pasirinktus elementus iš pradinio albumo?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Pasirinkti"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "Failas jau yra."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "Šis elementas bus ištrintas."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Kai įkelsite nuotraukų į „Facebook“, bus rodomi elementai."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Pasirinkti viską"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "Pasirinkta: %d"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Peržiūrėti kaip"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Data (naujausi)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Data (seniausi)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Užfiksavus nuotraukas jos bus rodomos čia."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Atšaukiama..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "Iš įrenginio"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "Iš „Dropbox“"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "Iš „Facebook“"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Atsisiųsta."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Bus ištrinti visi elementai."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "Bus atsiųstas 1 elementas."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Bus atsiųsta elementų: %d."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Bus atsiųsti visi elementai."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "Pasirinktas albumas toks pat kaip šaltinio albumas. Pasirinkite kitą albumą."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Bakstelėkite čia ir pridėkite vaizdų"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "Negalima išsaug. duomenų"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Įrenginio atmintyje nepakanka vietos. Eikite į skirtuką Nustatymai > Maitinimas ir saugykla > Saugykla, tada ištrinkite kelis failus ir bandykite dar kartą."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Jūsų SD kortelėje nepakanka vietos. Eikite į skirtuką Nustatymai > Maitinimas ir saugykla > Saugykla, tada ištrinkite kelis failus ir bandykite dar kartą."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Atšaukti"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "Neberodyti"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Naudojant mobiliuosius duomenis tarptinkliniu ryšiu gali būti taikomi papildomi mokesčiai – tai priklauso nuo mokėjimo plano."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "Bus ištrinta elementų: %d."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Trinti"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Vakar"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Atsisiuntimai"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Kopijuoti"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Trinti"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Albumai"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Viršytas didžiausias elementų skaičius (%d)."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Atšaukti"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ATLIKTA"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ATŠAUKTI"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "IŠTRINTI"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Kopijuojama..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Perkeliama..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Jei sukursite turinį, kuriame naudojami elementai iš asmeninės saugyklos, turinys gali būti neslepiamas automatiškai. Pasirinktą asmeninį turinį galima pamatyti, kai peržiūrimas naujas turinys."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "REDAGUOTI"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Nustatymai"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "REDAG."
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Pertvarkyti"
+

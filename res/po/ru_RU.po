@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Ваше устройство не подключено к сети Wi-Fi. За подключение к мобильной сети может взиматься дополнительная плата (в зависимости от вашего тарифного плана)"
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Мобильные данные включены. Подключитесь к сети Wi-Fi или включите мобильные данные и повторите попытку."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Здесь будут отображаться видеозаписи, сделанные с помощью камеры."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Имя файла уже используется"
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "Удалить %d элем.?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Конфиденциальность"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Сен"
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Окт"
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Ноя"
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "Май"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Мар"
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Июн"
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Июл"
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Янв"
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Фев"
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Дек"
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Авг"
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Апр"
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Альбом"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Опции"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Неверные параметры ввода"
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "Пустая запись."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "Имя уже используется."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "Невозможно переименовать."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "Альбомы не выбраны."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Выберите элемент"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "Нет альбомов"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "Создать папку?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "Повторить?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "Удалить?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "Альбомы (%d) будут удалены."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "Будет удален 1 альбом."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Камера"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Запуск"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Настройки"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Да"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "Нет"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "ОК"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Сохранить"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "Удалить?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Переместить в альбом"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Копировать в альбом"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Вид"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Введите имя"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "Все данные, относящиеся к этой учетной записи, будут удалены. Продолжить?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Отмена"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Новый альбом"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Скопировать или переместить фотографии из исходного альбома?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Поделиться"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Слайд-шоу"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Запустить"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Параметры"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Нет имени"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Все альбомы"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Выберите альбом"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "Будет удален 1 элемент."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Все элементы"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "Эл-ов: %d"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Существует только один альбом."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Можно выбрать до %d элементов."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Загрузки"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "Удалить?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Переместить"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Удаление..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Сбой операции."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Отменено"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Выбранное"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Перемещено."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Скопировано."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "Нет выбранных файлов."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Закрыть"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Сортировать по"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Последние"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Старые"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Создать"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Нет элементов"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Изменить изображение"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Выберите рисунок"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "Удалить этот элемент?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Пейзаж"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Удалить из приватного режима"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Домашние животные"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Добавить в приватный режим"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Еда"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Цветы"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Документы"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Транспортные средства"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Достигнуто максимальное число символов (%d)."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "Невозможно загрузить фотографию."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Отправить через"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "Больше не спрашивать"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Достигнуто максимальное число символов."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Время"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Сбой"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Удалено."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "Удалить?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Удаление..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Отображается элементов: %d"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Создать альбом"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Галерея"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Еще"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Учетные записи"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Сбой операции."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Загрузка"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Поиск"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Назад"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Камера"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Все"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Обновить"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Удалить"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Здесь будут показаны фотографии, отправленные в Dropbox."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Контакты"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Создать"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Свойства"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Печать"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Переименовать"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Загружено."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Загрузка..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Введите название."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Мои файлы"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Добавлено."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Обработка..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "Неподдерживаемый тип файла"
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "После съемки снимки будут показаны."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Альбомная ориентация"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Дважды нажмите, чтобы закрыть меню."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Дважды нажмите, чтобы открыть меню."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Перетаскивание"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Меню"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Мобильные данные отключены. Подключитесь к сети Wi-Fi или снова включите мобильные данные и повторите попытку"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Требуется подключение к Wi-Fi. Подключитесь к сети Wi-Fi и повторите попытку"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Добавить изображения из"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Подключенные устройства"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Частное содержимое"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Удалить из %s"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Удалить тег имени"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "Нет событий. Создайте новое событие."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Для быстрого перехода к другим датам нажмите и удерживайте индикатор даты в правом верхнем углу экрана."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "Удалить элементы (%d)?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "Удалить этот элемент?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Галерея"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Перемешанные изображения"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Добавить рисунки"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "Здесь выводятся фотографии, добавленные в избранное."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "Удалить идентификацию лица?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Назначить имя"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "Подтвердить как %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Макет"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "Добавлено фотографий: %d"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Альбом будет отменен."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Удалить элемент"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Удалить элементы"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 элемент"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 секунд"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 секунд"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "Не назначено"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Интервал для слайд-шоу"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Неотмеченные"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 секунды"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Все содержимое"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Параметры отображения"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Удалить метку"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Содержимое на устройстве"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Содержимое Dropbox"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Содержимое Facebook"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Повернуть влево"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Повернуть вправо"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Импорт"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Импортировано."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Импорт..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Загрузка..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Обнаружены устройства поблизости."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "Ни одного устройства не найдено. Поиск устройств поблизости будет продолжен в фоновом режиме"
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Обновлено."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Поворот..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Запущено сканирование. Список устройств будет обновлен автоматически"
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Начало загрузки..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Копировать"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Переместить"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Не удалось добавить ярлык."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Недостаточно памяти. Удалите некоторые элементы"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Удалено."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Добавление..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "Удалить альбомы (%d)?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Приватное хранилище"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Перетащите сюда."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Новые"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Без группы"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Снимки экрана"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Фотографии"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Загрузка невозможна."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Неподдерживаемый файл"
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "Результатов: 1"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "Результатов: %d"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Избранное"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Загрузка отменена."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "Удалить этот альбом?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Предупреждение"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Сортировка"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Сегодня"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Дата"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "Элементов для отображения нет."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Нажмите здесь, чтобы снять фотографии или видео."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Превышено максимальное количество отправляемых элементов (%d)."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Нажмите, чтобы добавить изображения."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Копировать или переместить выбранные элементы из исходного альбома?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Выбрать"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "Файл уже существует."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "Этот элемент будет удален."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Здесь будут показаны фотографии, отправленные в Facebook."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Выбрать все"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "Выбрано: %d"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Вид"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Дата (последние)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Дата (старые)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Здесь выводятся снятые фотографии."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Отмена..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "С устройства"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "С Dropbox"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "С Facebook"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Загрузка завершена."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Все элементы будут удалены."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "Будет загружен 1 элемент."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Будет загружено элементов: %d."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Будут загружены все элементы."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "Выбранный альбом совпадает с исходным. Выберите другой альбом."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Нажмите здесь, чтобы добавить изображения"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "Сбой сохранения данных"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Недостаточно места в памяти устройства. Откройте “Параметры” > “Питание и хранилище” > “Хранилище”, удалите часть файлов и повторите попытку."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Недостаточно места на карте памяти SD. Откройте “Параметры” > “Питание и хранилище” > “Хранилище”, удалите часть файлов и повторите попытку."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Отмена"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "Больше не показывать"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "За использование мобильных данных в роуминге может взиматься дополнительная плата (в зависимости от вашего тарифного плана)."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "Элементы (%d) будут удалены."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Удалить"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Вчера"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Загрузки"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Копировать"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Удалить"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Альбомы"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Превышено максимальное число элементов (%d)."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Отмена"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ГОТОВО"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ОТМЕНА"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "УДАЛИТЬ"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Копирование..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Перемещение..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Если создается содержимое, включающее данные из личного хранилища, оно может не скрываться автоматически. Личное содержимое может быть видно при просмотре нового содержимого."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "ИЗМЕНИТЬ"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Настройки"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "Изменить"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Изменить порядок"
+

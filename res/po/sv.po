@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Enheten är inte ansluten till ett Wi-Fi-nätverk. Att ansluta till ett mobilt nätverk kan medföra ytterligare avgifter beroende på din betalningsplan."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobildata har slagits av. Anslut till ett Wi-Fi-nätverk istället eller slå på Mobildata och försök igen."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "När du har spelat in videor med kameran visas de här."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Filnamnet används redan."
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "Radera %d objekt?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Privat"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Sep"
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Okt"
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Nov"
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "maj"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Mar"
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Jun"
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Jul"
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Jan"
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Feb"
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Dec"
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Aug"
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Apr"
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Album"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Mer"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Felaktig indataparameter."
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "Posten är tom."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "Detta namn används redan."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "Kan inte byta namn."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "Inga valda album."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Välj objekt"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "Inga album"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "Skapa mapp?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "Försök igen?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "Ta bort?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "%d album kommer att tas bort."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "1 album kommer att tas bort."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Kamera"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Starta"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Inställningar"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Ja"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "Nej"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "OK"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Spara"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "Radera?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Flytta till album"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Kopiera till album"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Visa efter"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Ange namn"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "Alla data som hänför sig till det här kontot raderas. Fortsätta?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Avbryt"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Nytt album"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Vill du kopiera eller flytta bilderna från det ursprungliga albumet?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Dela"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Bildspel"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Starta bildspel"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Bildspelsinställningar"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Inget namn"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Alla album"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Välj album"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "1 objekt kommer att tas bort."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Alla objekt"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d objekt"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Det finns endast ett album."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Du kan välja upp till %d objekt."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Nedladdningar"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "Radera?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Flytta"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Raderar..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Åtgärden misslyckades."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Avbruten"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Markerade"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Flyttad."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Kopierad."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "Inga filer valda."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Stäng"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Sortera efter"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Senaste"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Äldst"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Skapa"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Inga objekt"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Redigera bild"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Välj bild"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "Ta bort det här objektet?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Landskap"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Ta bort från Privat"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Husdjur"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Flytta till Privat"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Mat"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Blommor"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Dokument"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Fordon"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Högsta antal tecken (%d) har uppnåtts."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "Det går inte att läsa in fotot."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Dela via"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "Fråga inte igen"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Maximalt antal tecken har använts."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Tid"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Misslyckad"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Raderad."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "Radera?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Tar bort..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Visar %d objekt"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Skapa album"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Galleri"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Mer"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Konton"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Åtgärden misslyckades."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Hämta"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Sök"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Åter"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Kamera"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Alla"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Uppdatera"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Ta bort"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "När du har överfört bilder till Dropbox kommer objekten att visas."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Kontakter"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Skapa"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Detaljer"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Skriv ut"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Byt namn"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Nedladdade."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Laddar ned..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Ange namn."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Mina filer"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Tillagd."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Bearbetar..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "Filtypen stöds inte."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "När du har tagit bilder visas bilderna."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Landskap läge"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Dubbeltryck för att stänga lådmenyn."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Dubbeltryck för att öppna lådmenyn."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Dra och släpp"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Låda"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobildata har inaktiverats. Anslut till ett Wi-Fi-nätverk istället eller aktivera mobildata och gör ett nytt försök."
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Wi-Fi-anslutning krävs. Anslut till Wi-Fi-nätverk och försök igen."
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Lägg till bilder från"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Anslutna enheter"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Privat innehåll"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Ta bort från %s"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Ta bort namntagg"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "Det finns inga händelser att visa. Skapa en ny händelse."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Bläddra snabbt till andra datum, tryck på datumindikatorn högst upp till höger på skärmen och håll den nedtryckt."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "Ta bort %d objekt?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "Vill du ta bort artikeln?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Galleri"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Blandade bilder"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Lägg till bilder"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "När du har taggat bilder som favoriter visas bilderna."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "Ta bort ansiktsidentifiering?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Tilldela namn"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "Bekräfta som %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Layout"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "%d bilder tillagda"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Albumet avbryts."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Ta bort objekt"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Ta bort objekt"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 objekt"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekunder"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekunder"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "Inte tilldelad"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Bildspelsintervall"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Ej taggad"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekunder"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Allt innehåll"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Innehåll som ska visas"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Radera tagg"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Innehåll på enheten"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Innehåll i Dropbox"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Innehåll på Facebook"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Rotera moturs"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Rotera medurs"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Importera"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Importerat."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Importerar..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Laddar..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Hittade enheter i närheten."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "Inga enheter hittades. Sökningen efter enheter i närheten fortsätter i bakgrunden."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Uppdaterad."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Roterar..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Sökningen startades. Enhetslistan uppdateras automatiskt."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Startar hämtning..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Kopiera till"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Flytta till"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Det gick inte att lägga till genväg."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Minnet räcker inte. Radera några objekt."
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Borttagen."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Lägger till..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "Ta bort %d album?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Privat lagring"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Dra hit."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Ny"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Ej grupperad"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Skärmbilder"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Foton"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Hämtning misslyckades."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Filen stöds inte."
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 resultat"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d resultat"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Favoriter"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Nedladdning avbruten."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "Ta bort detta album?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Varning"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Sortera efter"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Idag"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Datum"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "Inga objekt att visa."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Tryck här för att ta bilder och spela in video."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Max. antal objekt som kan delas (%d) har överskridits."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Tryck för att lägga till bilder."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Vill du kopiera eller flytta de valda objekten från det ursprungliga albumet?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Välj"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "Filen finns redan."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "Det här objektet kommer att raderas."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "När du överfört bilder till Facebook kommer objekten att visas."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Markera alla"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "%d valda"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Visa som"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Datum (senaste)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Datum (äldsta)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "När du har tagit bilder visas de här."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Avbryter ..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "Från enhet"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "Från Dropbox"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "Från Facebook"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Nedladdning klar."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Alla objekt tas bort."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "1 objekt hämtas."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "%d objekt hämtas."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Alla objekt hämtas."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "Det valda albumet är samma som källalbumet. Välj ett annat album."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Tryck här för att lägga till bilder"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "Går inte att spara data"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Det finns inte tillräckligt med utrymme på enhetens lagringsutrymme. Gå till Inställningar > Ström och lagring > Lagring och ta bort några filer. Försök sedan igen."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Det finns inte tillräckligt med utrymme på SD-kortet. Gå till Inställningar > Ström och lagring > Lagring och ta bort några filer. Försök sedan igen."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Avbryt"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "Visa inte igen"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Användning av Mobila data under roaming kan medföra extra avgifter beroende på din betalningsplan."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "%d objekt kommer att tas bort."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Ta bort"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Igår"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Nedladdningar"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Kopiera"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Ta bort"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Album"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Max antal objekt (%d) har överskridits."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Avbryt"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "KLAR"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "AVBRYT"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "TA BORT"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Kopierar..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Flyttar..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Om du skapar innehåll som innehåller objekt från privat lagring, kan det kanske inte döljs automatiskt. Det valda privata innehållet kanske visas när du visar det nya innehållet."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "REDIGERA"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Inställningar"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "REDIGERA"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Ordna om"
+

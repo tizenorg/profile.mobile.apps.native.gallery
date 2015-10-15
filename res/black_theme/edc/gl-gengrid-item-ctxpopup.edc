@@ -1,0 +1,225 @@
+/*
+* Copyright (c) 2000-2015 Samsung Electronics Co., Ltd All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+#define PLACE_GIRD_ITEM_WIDTH 246
+#define PLACE_GIRD_ITEM_HEIGHT 180
+#define PLACE_GIRD_ITEM_VIDEO_X (PLACE_GIRD_ITEM_WIDTH-30)/(2*PLACE_GIRD_ITEM_WIDTH)
+#define PLACE_GIRD_ITEM_VIDEO_Y (PLACE_GIRD_ITEM_HEIGHT-30)/(2*PLACE_GIRD_ITEM_HEIGHT)
+
+//griditem style used in gridview of ctxpopup if marker clicked
+group {
+	name: "elm/gengrid/item/gallery_map/default";
+	data.item: "contents" "elm.swallow.icon";
+	parts {
+		part {
+			name: "bg";
+			type: RECT;
+			description {
+				state: "default" 0.0;
+				color: 0 0 0 0;
+				visible: 0;
+				rel1 { relative: 0.0 0.0;}
+				rel2 { relative: 1.0 1.0;}
+			}
+		}
+		part {
+			name: "elm.swallow.icon";
+			type: SWALLOW;
+			mouse_events: 1;
+			description {
+				state: "default" 0.0;
+				align: 0.5 0.5;
+				visible: 1;
+				rel1 { relative: 2/PLACE_GIRD_ITEM_WIDTH 0.0; to: "bg";}
+				rel2 { relative: (PLACE_GIRD_ITEM_WIDTH-2)/PLACE_GIRD_ITEM_WIDTH 1.0; to: "bg";}
+			}
+		}
+		GL_GENGRID_OVER("elm.swallow.icon");
+	}
+	programs {
+		GL_GENGRID_OVER_SOUND("elm.swallow.icon")
+		GL_GENGRID_PLARY_SOUND
+	}
+}
+
+group
+{
+	name: "elm/gengrid/photoframe/map_default_layout";
+	images {
+		image: GALLERY_EDC_IMAGE_PLACES_THUMB_BG COMP;
+	}
+	parts {
+		part {
+			name: "bg";
+			type: RECT;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0.0 0.0;}
+				rel2 { relative: 1.0 1.0;}
+				color: 0 0 0 0;
+			}
+		}
+		part {
+			name: "elm.swallow.icon";
+			type: SWALLOW;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0.0 0.0;}
+				rel2 { relative: 1.0 1.0;}
+			}
+			description {
+				state: "shrink" 0.0;
+				rel1 { relative: 0.0 0.0;}
+				rel2 { relative: 1.0 1.0;}
+			}
+		}
+	}
+
+	programs {
+		program {
+			name: "mouse_down_shrink";
+			signal: "mouse,down,shrink";
+			source: "bg";
+			action: STATE_SET "shrink" 0.0;
+			target: "elm.swallow.icon";
+			transition: LINEAR 0.1;
+		}
+		program {
+			name: "mouse_up_expand";
+			signal: "mouse,up,expand";
+			source: "bg";
+			action: STATE_SET "default" 0.0;
+			target: "elm.swallow.icon";
+			transition: LINEAR 0.05;
+			after: "shrink,expand,done,icon";
+		}
+
+		program {
+			name: "shrink";
+			signal: "shrink";
+			source: "bg";
+			action: STATE_SET "shrink" 0.0;
+			target: "elm.swallow.icon";
+			after: "expand";
+			transition: LINEAR 0.1;
+		}
+		program {
+			name: "expand";
+			action: STATE_SET "default" 0.0;
+			target: "elm.swallow.icon";
+			transition: LINEAR 0.05;
+			after: "shrink,expand,done,icon";
+		}
+		program {
+			name: "shrink,expand,done,icon";
+			action: SIGNAL_EMIT "shrink,expand,done" "bg";
+		}
+	}
+}
+
+group
+{
+	name: "elm/gengrid/photoframe/map_default_layout_video";
+
+	images {
+		image: GALLERY_EDC_IMAGE_BUTTON_PLAY COMP;
+		image: GALLERY_EDC_IMAGE_PLACES_THUMB_BG COMP;
+	}
+
+	parts {
+		part {
+			name: "bg";
+			type: RECT;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0.0 0.0;}
+				rel2 { relative: 1.0 1.0;}
+				color: 0 255 0 0;
+			}
+		}
+		part {
+			name: "elm.swallow.icon";
+			type: SWALLOW;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0.0 0.0;}
+				rel2 { relative: 1.0 1.0;}
+			}
+			description {
+				state: "shrink" 0.0;
+				rel1 { relative: 0.0 0.0;}
+				rel2 { relative: 1.0 1.0;}
+			}
+		}
+		part {
+			name: "elm.swallow.videoicon";
+			type: IMAGE;
+			mouse_events: 0;
+			repeat_events: 0;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				visible: 1;
+				align: 0.5 0.5;
+				aspect: 1.0 1.0;
+				rel1 { relative: PLACE_GIRD_ITEM_VIDEO_X PLACE_GIRD_ITEM_VIDEO_Y;}
+				rel2 { relative: PLACE_GIRD_ITEM_VIDEO_X+30/PLACE_GIRD_ITEM_WIDTH PLACE_GIRD_ITEM_VIDEO_X+30/PLACE_GIRD_ITEM_HEIGHT;}
+				image.normal: GALLERY_EDC_IMAGE_BUTTON_PLAY;
+			}
+		}
+	}
+	programs {
+		program {
+			name: "mouse_down_shrink";
+			signal: "mouse,down,shrink";
+			source: "bg";
+			action: STATE_SET "shrink" 0.0;
+			target: "elm.swallow.icon";
+			transition: LINEAR 0.1;
+		}
+		program {
+			name: "mouse_up_expand";
+			signal: "mouse,up,expand";
+			source: "bg";
+			action: STATE_SET "default" 0.0;
+			target: "elm.swallow.icon";
+			transition: LINEAR 0.05;
+			after: "shrink,expand,done,icon";
+		}
+
+		program {
+			name: "shrink";
+			signal: "shrink";
+			source: "bg";
+			action: STATE_SET "shrink" 0.0;
+			target: "elm.swallow.icon";
+			after: "expand";
+			transition: LINEAR 0.1;
+		}
+		program {
+			name: "expand";
+			action: STATE_SET "default" 0.0;
+			target: "elm.swallow.icon";
+			transition: LINEAR 0.05;
+			after: "shrink,expand,done,icon";
+		}
+		program {
+			name: "shrink,expand,done,icon";
+			action: SIGNAL_EMIT "shrink,expand,done" "bg";
+		}
+	}
+}
+

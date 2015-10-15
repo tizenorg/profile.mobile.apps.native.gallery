@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Zařízení není připojeno k síti Wi-Fi. Připojení k mobilní síti může mít za následek další poplatky v závislosti na vašem tarifu."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobilní data jsou vypnutá. Připojte se k síti Wi-Fi nebo zapněte Mobilní data a opakujte akci."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Až nahrajete videa pomocí fotoaparátu, zobrazí se zde."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Název souboru je již použit."
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "Chcete odstranit %d položek?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Soukromí"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Zář."
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Říj."
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Lis."
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "Kvě"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Bře."
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Čer."
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Čvc."
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Led."
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Úno."
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Pro."
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Srp."
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Dub."
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Album"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Další"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Chybný vstupní parametr."
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "Prázdná položka."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "Stejný název je již použit."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "Nelze přejmenovat."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "Nejsou vybrána žádná alba."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Vybrat položku"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "Žádná alba"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "Chcete vytvořit složku?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "Opakovat?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "Odstranit?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "Bude odstraněno %d alb."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "1 album bude odstraněno."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Fotoaparát"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Start"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Nastavení"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Ano"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "Ne"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "OK"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Uložit"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "Odstranit?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Přesunout do alba"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Kopírovat do alba"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Zobrazit podle"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Zadat jméno"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "Všechna data související s tímto účtem budou odstraněna. Chcete pokračovat?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Storno"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Nové album"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Chcete zkopírovat nebo přesunout obrázky z původního alba?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Sdílet"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Prezentace"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Spustit prezentaci"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Nastavení prezentace"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Žádný název"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Všechna alba"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Vybrat album"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "1 položka bude odstraněna."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Všechny položky"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "Počet položek: %d"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Existuje pouze jedno album."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Můžete vybrat až %d položek."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Stažené položky"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "Odstranit?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Přesun"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Odstraňování..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Otevření se nezdařilo."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Zrušeno"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Vybráno"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Přesunuto."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Zkopírováno."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "Není vybrán žádný soubor."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Zavřít"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Seřadit podle"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Nejnovější"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Nejstarší"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Vytvořit"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Žádné položky"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Upravit obrázek"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Vyberte obrázek"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "Odstranit tuto položku?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Scenérie"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Odebrat ze složky Soukromé"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Domácí mazlíčci"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Přesunout do složky Soukromé"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Potraviny"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Květiny"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Dokumenty"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Vozidla"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Bylo dosaženo maximálního počtu znaků (%d)."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "Fotografii se nepodařilo načíst."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Sdílet pomocí"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "Příště se neptat"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Bylo dosaženo maximálního počtu znaků."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Čas"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Chyba"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Odstraněno."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "Odstranit?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Odebírání..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Zobrazení %d položek"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Vytvořit album"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Galerie"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Další"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Účty"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Otevření se nezdařilo."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Stáhnout"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Hledat"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Zpět"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Fotoaparát"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Vše"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Aktualizovat"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Odebrat"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Až uložíte obrázky do Dropbox, položky se zobrazí."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Kontakty"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Vytvořit"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Podrobnosti"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Tisk"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Přejmenovat"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Staženo."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Stahování..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Zadat jméno."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Moje soubory"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Přidáno."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Probíhá zpracování..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "Nepodporovaný typ souboru."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "Po vyfotografování se obrázky zobrazí."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Na šířku"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Poklepáním zavřete vysouvací menu."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Poklepáním otevřete vysouvací menu."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Přetažení"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Zásuvka"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobilní data jsou vypnutá. Připojte se pomocí sítě Wi-Fi nebo zapněte mobilní data a opakujte akci"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Je vyžadováno připojení k síti Wi-Fi. Připojte se k síti Wi-Fi a opakujte akci."
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Přidat obrázky z"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Připojená zařízení"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Soukromý obsah"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Odebrat z %s"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Odebrat jmenovku"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "Žádné události nejsou k dispozici pro zobrazení. Vytvořte novou událost."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Chcete-li se rychle posouvat na jiná data, klepněte na indikátor data v pravém horním rohu obrazovky a přidržte ho."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "Odstranit %d položek?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "Odebrat tuto položku?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Galerie"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Náhodné obrázky"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Přidat obrázky"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "Když označíte obrázky jako oblíbené, obrázky se zobrazí."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "Odebrat identifikaci obličeje?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Přiřadit jméno"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "Potvrdit jako %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Rozložení"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "Bylo přidáno %d obrázků"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Album bude zrušeno."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Odstranit položku"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Odstranit položky"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 položka"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekund"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekund"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "Nepřiřazeno"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Interval prezentace"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Neoznačeno"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekundy"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Celý obsah"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Obsah k zobrazení"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Odstranit značku"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Obsah v zařízení"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Obsah v Dropboxu"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Obsah na Facebooku"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Otočit doleva"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Otočit doprava"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Import"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Importováno."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Probíhá import.."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Nahrávám..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Nalezená nedaleká zařízení."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "Nebyla nalezena žádná zařízení. Hledání blízkých zařízení bude pokračovat na pozadí."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Aktualizováno."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Otáčení..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Vyhledávání bylo zahájeno. Seznam zařízení bude automaticky aktualizován."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Spouští se stahování..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Kopírovat do"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Přesunout do"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Zástupce se nepodařilo přidat."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Nedostatek paměti. Odstraňte některé položky"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Odstraněno."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Přidávání..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "Odstranit %d alb?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Soukromé úložiště"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Přetáhnout sem."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Nová"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Nezahrnuté do skupiny"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Kopie obrazovky"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Fotografie"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Stažení se nezdařilo."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Nepodporovaný soubor."
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 výsledek"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d výsledků"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Oblíbené"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Stahování zrušeno."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "Odstranit toto album?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Upozornění"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Seřadit podle"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Dnes"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Datum"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "Žádné položky k zobrazení."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Klepněte sem, chcete-li fotografovat nebo nahrávat video."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Byl překročen maximální počet položek, které lze sdílet (%d)."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Klepnutím přidejte obrázky."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Chcete zkopírovat nebo přesunout vybrané položky z původního alba?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Vybrat"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "Soubor již existuje."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "Položka bude odstraněna."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Až uložíte obrázky na Facebook, položky se zobrazí."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Vybrat vše"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "Vybráno %d"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Zobrazit jako"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Datum (nejnovější)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Datum (nejstarší)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Až vyfotografujete obrázky, zobrazí se zde."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Probíhá zrušení..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "Ze zařízení"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "Z Dropbox"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "Z Facebooku"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Stahování dokončeno."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Všechny položky budou odstraněny."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "Bude stažena 1 položka."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Bude staženo %d položek."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Budou staženy všechny položky."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "Vybrané album je stejné jako zdrojové album. Vyberte jiné album."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Klepnutím sem přidejte obrázky"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "Uložení dat se nezdařilo"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "V paměti zařízení není dostatek volného místa. Přejděte na Nastavení > Úspora energie a úložiště > Úložiště, odstraňte některé soubory a opakujte akci."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Na SD kartě není dostatek volného místa. Přejděte na Nastavení > Úspora energie a úložiště > Úložiště, odstraňte některé soubory a opakujte akci."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Zrušit"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "Již nezobrazovat"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Používání Mobilních dat při roamingu může mít za následek další poplatky v závislosti na vašem tarifu."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "Bude odstraněno %d položek."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Odstranit"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Včera"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Stažené"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Kopírovat"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Odstranit"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Alba"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Byl překročen maximální počet položek (%d)."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Storno"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "HOTOVO"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ZRUŠIT"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "ODSTRANIT"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Kopírování..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Probíhá přesouvání"
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Pokud vytvoříte obsah, který zahrnuje položky z osobního úložiště, pravděpodobně nebudou automaticky skryty. Vybraný osobní obsah se může zobrazit při zobrazení nového obsahu."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "UPRAVIT"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Nastavení"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "UPRAVIT"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Změnit uspořádání"
+

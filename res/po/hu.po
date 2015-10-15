@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Az eszköz nem kapcsolódik Wi-Fi hálózathoz. Mobilhálózati kapcsolat létesítése az előfizetési csomagtól függően további költséggel járhat."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "A mobil internetkapcsolat ki van kapcsolva. Kapcsolódjon Wi-Fi-hálózathoz, vagy kapcsolja be a mobil internetkapcsolatot, és próbálja újra."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Itt jelennek majd meg a fényképezővel rögzített videók."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Ilyen fájlnév már van."
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "Töröl %d elemet?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Védett adataim"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Sze."
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Okt."
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Nov."
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "máj."
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Már."
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Jún."
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Júl."
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Jan."
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Feb."
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Dec."
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Aug."
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Ápr."
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Album"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Egyebek"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Érvénytelen bemeneti paraméter"
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "A bejegyzés üres."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "Már van ilyen név."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "Nem lehet átnevezni."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "Nincs kijelölt album."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Elem kiválasztása"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "Nincs album"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "Mappát hoz létre?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "Újra próbálkozik?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "Törli?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "%d albumot törölni fog."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "Törölni fog 1 albumot."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Fényképező"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Indítás"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Beállítások"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Igen"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "Nem"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "OK"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Mentés"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "Törli?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Áthelyezés albumba"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Másolás albumba"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Nézet"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Írja be a nevet"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "A fiókhoz kapcsolódó minden adatot törölni fog. Folytatja?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Mégse"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Új album"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Szeretné átmásolni vagy áthelyezni a képeket az eredeti albumból?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Megosztás"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Diabemutató"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Diabemutató indítása"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Diabemutató beállításai"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Nincs név"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Összes album"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Album kiválasztása"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "Törölni fog 1 tételt."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Összes tétel"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d tétel"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Csak egy album van."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Legfeljebb %d tételt jelölhet ki."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Letöltések"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "Törli?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Áthelyez"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Törlés..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Sikertelen művelet"
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Megszakítva"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Kiválasztott"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Áthelyezve."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Átmásolva."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "Nincs kiválasztva fájl."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Bezár"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Rendezés szempontja"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Legfrissebb"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Legrégebbi"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Létrehoz"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Nincs tétel"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Kép szerkesztése"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Válasszon képet"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "Törli a tételt?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Táj"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Eltávolítás a Privátból"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Háziállatok"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Áthelyezés a Privátba"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Étel"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Virág"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Dokumentumok"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Járművek"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Elérte a karakterek maximális számát (%d)."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "Nem lehet betölteni a fényképet."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Megosztás"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "Máskor ne legyen kérdés"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Nincs hely több karakternek."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Idő"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Hiba"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Törölve."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "Törli?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Eltávolítás..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d tétel jelent meg"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Album létrehozása"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Galéria"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Egyebek"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Fiókok"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Sikertelen művelet"
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Letöltés"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Keresés"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Vissza"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Kamera"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Mind"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Frissítés"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Eltávolítás"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Ha majd feltölt képeket a Dropboxra, megjelennek a tételek."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Névjegyek"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Létrehoz"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Részletek"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Nyomtatás"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Átnevez"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Letöltve."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Letöltés..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Írja be a nevet."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Saját fájlok"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Hozzáadva."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Feldolgozás folyamatban"
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "A fájltípus\nnem támogatott."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "Ha majd készít képeket, akkor azok megjelennek itt."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Fekvő helyzet"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Kétszeri érintéssel bezárhatja a tálcamenüt."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Kétszeri érintéssel megnyithatja a tálcamenüt."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Húzás"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Fiók"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "A mobil internetkapcsolat le van tiltva. Kapcsolódjon Wi-Fi hálózathoz, vagy engedélyezze a mobil internetkapcsolatot, és próbálja újra"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Wi-Fi kapcsolat szükséges. Kapcsolódjon a Wi-Fi hálózathoz, és próbálja újra"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Képek hozzáadásának forrása"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Csatlakoztatott eszközök"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Privát tartalom"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Eltávolítás a(z) %s kategóriából"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Névcímke eltávolítása"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "Nincs megjeleníthető esemény. Hozzon létre új eseményt."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Ujját a képernyő jobb felső sarkában található dátumjelzőn tartva gyorsan más dátumra görgethet."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "Eltávolít %d tételt?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "Eltávolítja a tételt?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Galéria"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Képek véletlenszerűen"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Képek hozzáadása"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "Ha majd felcímkéz képeket kedvencként, azok megjelennek itt."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "Eltávolítja az arcazonosítást?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Név hozzárendelése"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "%s megerősítése"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Elrendezés"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "%d kép hozzáadva"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Elveti az albumot."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Tétel törlése"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Tételek törlése"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 tétel"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 másodperc"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 másodperc"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "Nincs hozzárendelve"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Diabemutató intervalluma"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Címkézetlen"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 másodperc"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Minden tartalom"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Megjelenítendő tartalom"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Címke törlése"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Eszközön lévő tartalom"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Dropbox tartalom"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Facebook tartalom"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Forgatás balra"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Forgatás jobbra"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Importálás"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Importálva."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Importálás..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Betöltés..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Eszközök találhatók a közelben."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "Nem található eszköz. A háttérben folytatódik a közeli eszközök keresése."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Frissítve."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Forgatás..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Keresés elindítva. Az eszközlista automatikusan frissül."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Letöltés indítása..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Másolás ide"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Áthelyezés ide"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Nem sikerült hozzáadni a parancsikont."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Kevés a memória. Töröljön néhány tételt"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Törölve."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Hozzáadás..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "Töröl %d albumot?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Privát tárhely"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Húzza ide."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Új"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Csoport nélküli"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Képernyőfotók"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Fényképek"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Sikertelen letöltés"
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Nem támogatott fájl"
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 találat"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d találat"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Kedvencek"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Letöltés megszakítva."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "Törli az albumot?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Figyelmeztetés"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Rendezés"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Ma"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Dátum"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "Nincs megjeleníthető tétel."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Érintse meg fénykép- vagy videofelvétel készítéséhez."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Túllépte a megosztható tételek maximális számát (%d)."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Érintse meg képek hozzáadásához."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Átmásolja vagy áthelyezi a kiválasztott elemeket az eredeti albumból?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Kiválasztás"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "A fájl már létezik."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "Törli ezt a tételt?"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Ha majd feltölt képeket a Facebookra, megjelennek a tételek."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Összes kijelölése"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "%d kijelölve"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Megjelenítés módja"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Dátum (legújabb)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Dátum (legrégebbi)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Ha majd képeket készít, azok itt jelennek meg."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Megszakítás..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "Az eszközről"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "A Dropboxból"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "A Facebookról"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Letöltés befejezve."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Minden tételt törölni fog."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "Letölt 1 elemet."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Letölt %d elemet."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Az összes elemet letölti."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "A kiválasztott album azonos a forrásalbummal. Válasszon másik albumot."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Érintse meg képek hozzáadásához"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "Az adatok nem menthetők"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Nincs elég hely az eszköz tárhelyén. Válassza a Beállítások > Energia és tárhely > Tárhely pontot, töröljön fájlokat, majd próbálja újra."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Nincs elég hely az SD-kártyán. Válassza a Beállítások > Energia és tárhely > Tárhely pontot, töröljön fájlokat, majd próbálja újra."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Mégse"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "Ne jelenjen meg újra"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Előfizetési csomagjától függően lehetséges, hogy a mobil internetkapcsolat roamingos használatáért további díjat kell fizetni."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "Törölni fog %d elemet."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Törlés"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Tegnap"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Letöltések"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Másolás"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Törlés"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Albumok"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Túllépte az elemek maximális számát (%d)."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Mégse"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "KÉSZ"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "MÉGSE"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "TÖRLÉS"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Másolás..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Áthelyezés..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Ha a létrehozott tartalomban a személyes tárhelyről származó tartalom található, az nem rejthető el automatikusan. A kiválasztott személyes tartalom az új tartalom megjelenítésével tekinthető meg."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "SZERKESZTÉS"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Beállítások"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "SZERK."
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Átrendezés"
+

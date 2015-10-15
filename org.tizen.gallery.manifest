@@ -1,0 +1,23 @@
+<manifest>
+	<define>
+		<domain name="org.tizen.gallery" />
+		<request>
+			<smack request="_" type="rwx" />
+		</request>
+	</define>
+	<assign>
+		<filesystem path="/usr/share/icons/default/small/org.tizen.gallery.png" label="_" />
+		<filesystem path="/usr/share/icons/default/small/preview_gallery_4x4.png" label="_" />
+		<filesystem path="/usr/share/applications/org.tizen.gallery.desktop" label="_" />
+		<filesystem path="/usr/apps/org.tizen.gallery/res/script/image/*" label="_" />
+		<filesystem path="/opt/usr/apps/org.tizen.gallery/data/.web_media.db*" label="org.tizen.gallery::web-media.db"/>
+		<filesystem path="/opt/usr/apps/org.tizen.gallery/data/.gallery_media.db*" label="org.tizen.gallery::gallery-media.db"/>
+		<filesystem path="/opt/usr/apps/org.tizen.gallery/data/.face.db*" label="org.tizen.gallery::face-svc.db"/>
+		<filesystem path="/usr/apps/org.tizen.gallery/bin/gallery-widget" label="org.tizen.gallery::widget" 
+		exec_label="org.tizen.gallery::widget" />
+		<filesystem path="/usr/apps/org.tizen.gallery/res/locale/*" label="_" />
+	</assign>
+	<request>
+		<domain name="org.tizen.gallery" />
+	</request>
+</manifest>

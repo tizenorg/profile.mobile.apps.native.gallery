@@ -1,0 +1,1551 @@
+/*
+* Copyright (c) 2000-2015 Samsung Electronics Co., Ltd All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+
+#define GL_TL_TITLE_H 46
+
+#define TIME_VIEW_GENLIST_STYLE(NAME, Y) \
+		group{ \
+			name: "elm/genlist/item/"#NAME"/default"; \
+			data.item: "contents" "elm.swallow"; \
+			data.item: "selectraise" "on"; \
+			data.item: "stacking" "above"; \
+			parts{ \
+				part{ \
+					name: "bg"; \
+					type: RECT; \
+					description{ \
+						state: "default" 0.0; \
+						color: 255 255 255 255; \
+						rel1.relative: 0.0 0.0; \
+						rel2.relative: 1.0 1.0; \
+						min: 0 Y; \
+						max: -1 Y; \
+						visible: 1; \
+					} \
+				} \
+				part{ \
+					name: "elm.swallow"; \
+					type: SWALLOW; \
+					description{ \
+						state: "default" 0.0; \
+						rel1 { relative: 0.0 0.0; to: "bg"; } \
+						rel2 { relative: 1.0 1.0; to: "bg"; } \
+						align: 0.5 0.5; \
+					} \
+				} \
+			} \
+		}
+
+#define PART_PADDING_LEFT( param_padding_size ) \
+         part { name: "elm.padding.left"; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: param_padding_size 0; \
+               fixed: 1 0; \
+               visible: 0; \
+               rel2.relative: 0.0 1.0; \
+               align: 0.0 0.0; \
+            } \
+         }
+
+#define PART_PADDING_RIGHT( param_padding_size ) \
+       part { name: "elm.padding.right"; \
+            type: RECT; \
+            scale: 1; \
+            description { state: "default" 0.0; \
+               min: param_padding_size 0; \
+               fixed: 1 0; \
+               visible: 0; \
+               rel1.relative: 1.0  0.0; \
+               align: 1.0 0.0; \
+            } \
+         }
+
+#define TL_BG \
+	part { \
+		name: "bg"; \
+		type: RECT; \
+		mouse_events: 1; \
+		scale: 1; \
+		description { \
+			state: "default" 0.0; \
+			rel1 { relative: 0.0 0.0; } \
+			rel2 { relative: 1.0 1.0; } \
+			color: GALLERY_EDC_COLOR_BG; \
+		} \
+	}
+
+#define TL_BG_C \
+	part { \
+		name: "bg_c"; \
+		type: SWALLOW; \
+		scale: 1; \
+		mouse_events: 1; \
+		description { \
+			state: "default" 0.0; \
+			rel1 { relative: 0.0 0.0; to: "bg"; } \
+			rel2 { relative: 1.0 1.0; to: "bg"; } \
+			visible: 0; \
+		} \
+	}
+
+#define TL_TITLE_BG_TOP \
+	part { name: "title_bg"; \
+		type: RECT; \
+		scale: 1; \
+		description { \
+			state: "default" 0.0; \
+			min: 1 GL_TL_TITLE_H; \
+			fixed: 0 1; \
+			visible: 1; \
+			rel2.relative: 1.0 0.0; \
+			align: 0.0 0.0; \
+			color: GALLERY_EDC_COLOR_BG; \
+		} \
+		description { \
+			state: "hide" 0.0; \
+			min: 0 0; \
+			fixed: 0 1; \
+			visible: 0; \
+			rel2.relative: 1.0 0.0; \
+			align: 0.0 0.0; \
+		} \
+	}
+
+#define TL_TITLE_TOP \
+	part { name: "title2"; \
+		type: SWALLOW; \
+		scale: 1; \
+		clip_to: "title_clip2"; \
+		description { \
+			state: "default" 0.0; \
+			min: 0 GL_TL_TITLE_H; \
+			min: 999999 GL_TL_TITLE_H; \
+			fixed: 1 1; \
+			visible: 1; \
+			rel1.relative: 0.0 0.0; \
+			rel1.to: "title_bg"; \
+			rel2.relative: 1.0 0.0; \
+			rel2.to: "title_bg"; \
+			align: 0.0 0.0; \
+		} \
+		description { \
+			state: "hide" 0.0; \
+			min: 0 0; \
+			fixed: 0 1; \
+			visible: 0; \
+			rel2.relative: 1.0 0.0; \
+			align: 0.0 0.0; \
+		} \
+		description { \
+			state: "top" 0.0; \
+			inherit: "default" 0.0; \
+			rel1.relative: 0.0 -1.0; \
+			rel1.to: "title_bg"; \
+			rel2.relative: 1.0 0.0; \
+			rel2.to: "title_bg"; \
+		} \
+		description { \
+			state: "bottom" 0.0; \
+			inherit: "default" 0.0; \
+			rel1.relative: 0.0 0.4; \
+			rel1.to: "title_bg"; \
+			rel2.relative: 1.0 1.4; \
+			rel2.to: "title_bg"; \
+		} \
+	} \
+	part { name: "title_clip2"; \
+		type: RECT; \
+		mouse_events: 0; \
+		description { state: "default" 0.0; \
+			rel1 { to: "title_bg"; } \
+			rel2 { to: "title_bg"; } \
+			color: 255 255 255 0; \
+		} \
+		description { state: "fade_in" 0.0; \
+			rel1 { to: "title_bg"; } \
+			rel2 { to: "title_bg"; } \
+			color: 255 255 255 255; \
+		} \
+	} \
+	part { name: "title"; \
+		type: SWALLOW; \
+		scale: 1; \
+		clip_to: "title_clip"; \
+		description { \
+			state: "default" 0.0; \
+			min: 0 GL_TL_TITLE_H; \
+			min: 999999 GL_TL_TITLE_H; \
+			fixed: 1 1; \
+			visible: 1; \
+			rel1.relative: 0.0 0.0; \
+			rel1.to: "title_bg"; \
+			rel2.relative: 1.0 0.0; \
+			rel2.to: "title_bg"; \
+			align: 0.0 0.0; \
+		} \
+		description { \
+			state: "hide" 0.0; \
+			min: 0 0; \
+			fixed: 0 1; \
+			visible: 0; \
+			rel2.relative: 1.0 0.0; \
+			align: 0.0 0.0; \
+		} \
+		description { \
+			state: "top" 0.0; \
+			inherit: "default" 0.0; \
+			rel1.relative: 0.0 -0.6; \
+			rel1.to: "title_bg"; \
+			rel2.relative: 1.0 0.4; \
+			rel2.to: "title_bg"; \
+		} \
+		description { \
+			state: "bottom" 0.0; \
+			inherit: "default" 0.0; \
+			rel1.relative: 0.0 1.0; \
+			rel1.to: "title_bg"; \
+			rel2.relative: 1.0 2.0; \
+			rel2.to: "title_bg"; \
+		} \
+	} part { name: "title_clip"; \
+		type: RECT; \
+		mouse_events: 0; \
+		description { \
+			state: "default" 0.0; \
+			rel1 { to: "title_bg"; } \
+			rel2 { to: "title_bg"; } \
+			color: 255 255 255 255; \
+		} \
+		description { \
+			state: "fade_out" 0.0; \
+			rel1 { to: "title_bg"; } \
+			rel2 { to: "title_bg"; } \
+			color: 255 255 255 0; \
+		} \
+	}
+
+#define TL_SLIDER_PAD_BOT \
+	part { name: "slider_padding_b"; \
+		type: RECT; \
+		scale: 1; \
+		description { \
+			state: "default" 0.0; \
+			min: 0 8; \
+			fixed: 0 1; \
+			visible: 0; \
+			rel1.relative: 0.0 1.0; \
+			align: 0.0 1.0; \
+		} \
+		description { \
+			state: "hide" 0.0; \
+			inherit: "default" 0.0; \
+			min: 0 0; \
+		} \
+	}
+
+#define TL_TITLE_BOTTOM \
+	part { name: "title"; \
+		type: SWALLOW; \
+		scale: 1; \
+		description { \
+			state: "default" 0.0; \
+			min: 0 GL_TL_TITLE_H; \
+			fixed: 0 1; \
+			rel1.relative: 0.0 1.0; \
+			align: 0.0 1.0; \
+		} \
+	}
+
+#define TL_TITLE_PAD_BOTTOM \
+	part { name: "title_padding"; \
+		type: RECT; \
+		scale: 1; \
+		description { \
+			state: "default" 0.0; \
+			min: 0 8; \
+			fixed: 0 1; \
+			visible: 0; \
+			rel1 { relative: 0.0 0.0; to: "title"; } \
+			rel2 { relative: 1.0 0.0; to: "title"; } \
+			align: 0.0 1.0; \
+		} \
+	}
+
+#define TL_OVER_SOUND(src)
+#define TL_VARIABLE
+#define GL_TL_PLAY_SOUND
+#define GL_TL_OVER(to_obj)
+
+#define TL_FOCUS_BG(N) \
+	part {  \
+		name: N"_focus_bg"; \
+		type: IMAGE; \
+		repeat_events: 1; \
+		description {  \
+			state: "default" 0.0; \
+			visible: 0; \
+			rel1 { relative: 0.0 0.0; to: N; } \
+			rel2 { relative: 1.0 1.0; to: N; } \
+			image.normal: GALLERY_EDC_IMAGE_THUMBS_BG_FOCUS; \
+			image.border: 13 13 13 13; \
+		} \
+		description {  \
+			state: "enabled" 0.0; \
+			inherit: "default" 0.0; \
+			visible: 1; \
+		} \
+	}
+
+#define TL_PG_FOCUS_BG(N) \
+	program { \
+		name: N"_go_mouse_down"; \
+		signal: "mouse,down,1"; \
+		source: N; \
+		action: STATE_SET "enabled" 0.0; \
+		target: N"_focus_bg"; \
+		transition: ACCELERATE 0.2; \
+	} \
+	program { \
+		name: N"_go_mouse_up"; \
+		signal: "mouse,up,1"; \
+		source: N; \
+		action: STATE_SET "default" 0.0; \
+		target: N"_focus_bg"; \
+		transition: DECELERATE 0.2; \
+	}
+
+#define TL_PADDING_LEFT(param_padding_name, param_padding_size, to_part) \
+         part { name: to_part"_"param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: param_padding_size 0; \
+               fixed: 1 0; \
+               visible: 0; \
+		rel1.to: to_part; \
+		rel2.to: to_part; \
+               rel2.relative: 1.0 0.0; \
+               rel2.offset: -30 0; \
+               align: 0.0 0.0; \
+            } \
+         }
+
+#define TL_PADDING_TOP(param_padding_name, param_padding_size, to_part) \
+       part { name: to_part"_"param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: 0 param_padding_size; \
+               fixed: 0 1; \
+               visible: 0; \
+		rel1.to: to_part; \
+		rel2.to: to_part; \
+               rel2.relative: 1.0 0.0; \
+               align: 0.0 0.0; \
+            } \
+         }
+
+#define TL_PADDING_BOT(param_padding_name, param_padding_size, to_part) \
+       part { name: to_part"_"param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: 0 param_padding_size; \
+               fixed: 0 1; \
+               visible: 0; \
+		rel1.to: to_part; \
+		rel2.to: to_part; \
+               rel1.relative: 0.0 1.0; \
+               align: 0.0 1.0; \
+            } \
+         }
+
+#define TL_PADDINGS(to_part) \
+	TL_PADDING_LEFT("padding.left", 2, to_part); \
+	TL_PADDING_LEFT("padding.right", 2+THUMB_CHECK_W, to_part); \
+	TL_PADDING_TOP("padding.top", 10, to_part); \
+	TL_PADDING_TOP("padding.bottom", 10+THUMB_CHECK_H, to_part); \
+	TL_PADDING_LEFT("padding.left2", 2, to_part); \
+	TL_PADDING_LEFT("padding.right2", 2+MODE_W, to_part); \
+	TL_PADDING_BOT("padding.top2", 2+MODE_H, to_part); \
+	TL_PADDING_BOT("padding.bottom2", 2, to_part); \
+
+#define TL_PART(part_name, rel1_x, rel1_y, rel1_to_x, rel1_to_y, rel2_x, rel2_y, rel2_to_x, rel2_to_y) \
+	part { \
+		name: part_name; \
+		type: SWALLOW; \
+		scale: 1; \
+		description { \
+			state: "default" 0.0; \
+			rel1 { relative: rel1_x rel1_y; to_x: rel1_to_x; to_y: rel1_to_y; } \
+			rel2 { relative: rel2_x rel2_y; to_x: rel2_to_x; to_y: rel2_to_y; } \
+		} \
+	} \
+	TL_PADDINGS(part_name) \
+	part { \
+		name: part_name"_checkbox"; \
+		type: SWALLOW; \
+		description { \
+			state: "default" 0.0; \
+			rel1 {relative: 1.0 1.0; to_x: part_name"_padding.left"; to_y: part_name"_padding.top"; } \
+			rel2 {relative: 1.0 1.0; to_x: part_name"_padding.right"; to_y: part_name"_padding.bottom"; } \
+		} \
+	} \
+	TL_FOCUS_BG(part_name) \
+	GL_TL_OVER(part_name)
+
+
+images {
+   image : GALLERY_EDC_IMAGE_THUMBS_BG_FOCUS COMP;
+}
+
+group {
+	name: "gallery/timeline_1";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_1_1", 1.0, 0.0, "elm.padding.left", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_1_1");
+		TL_OVER_SOUND("contents_1_1")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_1l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_1_1", 1.0, 0.0, "elm.padding.left", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_1_1");
+		TL_OVER_SOUND("contents_1_1")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_2";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_2_1", 1.0, 0.0, "elm.padding.left", "bg", 0.0, 450/956, "elm.padding.right", "bg");
+		TL_PART("contents_2_2", 1.0, (450+11)/956, "elm.padding.left", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_2_1");
+		TL_PG_FOCUS_BG("contents_2_2");
+		TL_OVER_SOUND("contents_2_1")
+		TL_OVER_SOUND("contents_2_2")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_2l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_2_1", 1.0, 0.0, "elm.padding.left", "bg", (11+830)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_2_2", (11+830+11)/1280, 0.0, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_2_1");
+		TL_PG_FOCUS_BG("contents_2_2");
+		TL_OVER_SOUND("contents_2_1")
+		TL_OVER_SOUND("contents_2_2")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_3";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_3_1", 1.0, 0.0, "elm.padding.left", "bg", 0.0, 450/956, "elm.padding.right", "bg");
+		TL_PART("contents_3_2", 1.0, (450+11)/956, "elm.padding.left", "bg", 450/720, 1.0, "bg", "bg");
+		TL_PART("contents_3_3", (450+12)/720, (450+11)/956, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_3_1");
+		TL_PG_FOCUS_BG("contents_3_2");
+		TL_PG_FOCUS_BG("contents_3_3");
+		TL_OVER_SOUND("contents_3_1")
+		TL_OVER_SOUND("contents_3_2")
+		TL_OVER_SOUND("contents_3_3")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_3l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_3_1", 1.0, 0.0, "elm.padding.left", "bg", (11+830)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_3_2", (11+830+11)/1280, 0.0, "bg", "bg", 0.0, (GL_TL_TITLE_H+8+181)/451, "elm.padding.right", "bg");
+		TL_PART("contents_3_3", (11+830+11)/1280, (GL_TL_TITLE_H+8+181+11)/451, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_3_1");
+		TL_PG_FOCUS_BG("contents_3_2");
+		TL_PG_FOCUS_BG("contents_3_3");
+		TL_OVER_SOUND("contents_3_1")
+		TL_OVER_SOUND("contents_3_2")
+		TL_OVER_SOUND("contents_3_3")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_4";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_4_1", 1.0, 0.0, "elm.padding.left", "bg", 450/720, 450/956, "bg", "bg");
+		TL_PART("contents_4_2", (450+12)/720, 0.0, "bg", "contents_4_1", 0.0, 542/956, "elm.padding.right", "bg");
+		TL_PART("contents_4_3", 1.0, (450+11)/956, "elm.padding.left", "bg", 450/720, 1.0, "bg", "bg");
+		TL_PART("contents_4_4", (450+12)/720, (542+11)/956, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_4_1");
+		TL_PG_FOCUS_BG("contents_4_2");
+		TL_PG_FOCUS_BG("contents_4_3");
+		TL_PG_FOCUS_BG("contents_4_4");
+		TL_OVER_SOUND("contents_4_1")
+		TL_OVER_SOUND("contents_4_2")
+		TL_OVER_SOUND("contents_4_3")
+		TL_OVER_SOUND("contents_4_4")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_4l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_4_1", 1.0, 0.0, "elm.padding.left", "bg", (11+415)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_4_2", (11+415+11)/1280, 0.0, "bg", "bg", (11+415*2+11)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_4_3", (11+415*2+11*2)/1280, 0.0, "bg", "bg", 0.0, (GL_TL_TITLE_H+8+181)/451, "elm.padding.right", "bg");
+		TL_PART("contents_4_4", (11+415*2+11*2)/1280, (GL_TL_TITLE_H+8+181+11)/451, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_4_1");
+		TL_PG_FOCUS_BG("contents_4_2");
+		TL_PG_FOCUS_BG("contents_4_3");
+		TL_PG_FOCUS_BG("contents_4_4");
+		TL_OVER_SOUND("contents_4_1")
+		TL_OVER_SOUND("contents_4_2")
+		TL_OVER_SOUND("contents_4_3")
+		TL_OVER_SOUND("contents_4_4")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_5";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_5_1", 1.0, 0.0, "elm.padding.left", "bg", 450/720, 450/956, "bg", "bg");
+		TL_PART("contents_5_2", (450+12)/720, 0.0, "bg", "contents_5_1", 0.0, 1.0, "elm.padding.right", "contents_5_1");
+		TL_PART("contents_5_3", 1.0, (450+11)/956, "elm.padding.left", "bg", 236/720, 1.0, "bg", "bg");
+		TL_PART("contents_5_4", (236+12)/720, 0.0, "bg", "contents_5_3", 0.0, 240/495, "elm.padding.right", "contents_5_3");
+		TL_PART("contents_5_5", (236+12)/720, (240+11)/495, "bg", "contents_5_3", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_5_1");
+		TL_PG_FOCUS_BG("contents_5_2");
+		TL_PG_FOCUS_BG("contents_5_3");
+		TL_PG_FOCUS_BG("contents_5_4");
+		TL_PG_FOCUS_BG("contents_5_5");
+		TL_OVER_SOUND("contents_5_1")
+		TL_OVER_SOUND("contents_5_2")
+		TL_OVER_SOUND("contents_5_3")
+		TL_OVER_SOUND("contents_5_4")
+		TL_OVER_SOUND("contents_5_5")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_5l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_5_1", 1.0, 0.0, "elm.padding.left", "bg", (11+415)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_5_2", (11+415+11)/1280, 0.0, "bg", "bg", (11+415*2+11)/1280, (GL_TL_TITLE_H+8+181)/451, "bg", "bg");
+		TL_PART("contents_5_3", (11+415+11)/1280, (GL_TL_TITLE_H+8+181+11)/451, "bg", "bg", (11+415*2+11)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_5_4", (11+415*2+11*2)/1280, 0.0, "bg", "bg", 0.0, (GL_TL_TITLE_H+8+203)/451, "elm.padding.right", "bg");
+		TL_PART("contents_5_5", (11+415*2+11*2)/1280, (GL_TL_TITLE_H+8+203+11)/451, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_5_1");
+		TL_PG_FOCUS_BG("contents_5_2");
+		TL_PG_FOCUS_BG("contents_5_3");
+		TL_PG_FOCUS_BG("contents_5_4");
+		TL_PG_FOCUS_BG("contents_5_5");
+		TL_OVER_SOUND("contents_5_1")
+		TL_OVER_SOUND("contents_5_2")
+		TL_OVER_SOUND("contents_5_3")
+		TL_OVER_SOUND("contents_5_4")
+		TL_OVER_SOUND("contents_5_5")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+        name: "gallery/timeline_6";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_6_1", 1.0, 0.0, "elm.padding.left", "bg", 450/720, 380/956, "bg", "bg");
+		TL_PART("contents_6_2", (450+12)/720, 0.0, "bg", "contents_6_1", 0.0, 450/956, "elm.padding.right", "bg");
+		TL_PART("contents_6_3", 1.0, (380+11)/956, "elm.padding.left", "bg", 236/720, 1.0, "bg", "bg");
+		TL_PART("contents_6_4", (236+12)/720, (380+11)/956, "bg", "bg", 450/720, (380+11+380)/956, "bg", "bg");
+		TL_PART("contents_6_5", (450+12)/720, (450+11)/956, "bg", "bg", 0.0, 1.0, "elm.padding.right", "contents_6_4");
+		TL_PART("contents_6_6", (236+12)/720, (380+11+380+11)/956, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_6_1");
+		TL_PG_FOCUS_BG("contents_6_2");
+		TL_PG_FOCUS_BG("contents_6_3");
+		TL_PG_FOCUS_BG("contents_6_4");
+		TL_PG_FOCUS_BG("contents_6_5");
+		TL_PG_FOCUS_BG("contents_6_6");
+		TL_OVER_SOUND("contents_6_1")
+		TL_OVER_SOUND("contents_6_2")
+		TL_OVER_SOUND("contents_6_3")
+		TL_OVER_SOUND("contents_6_4")
+		TL_OVER_SOUND("contents_6_5")
+		TL_OVER_SOUND("contents_6_6")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+        name: "gallery/timeline_6l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_6_1", 1.0, 0.0, "elm.padding.left", "bg", (11+415)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_6_2", (11+415+11)/1280, 0.0, "bg", "bg", (11+415*2+11)/1280, (GL_TL_TITLE_H+8+181)/451, "bg", "bg");
+		TL_PART("contents_6_3", (11+415+11)/1280, (GL_TL_TITLE_H+8+181+11)/451, "bg", "bg", (11+415*2+11)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_6_4", (11+415*2+11*2)/1280, 0.0, "bg", "bg", 0.0, (GL_TL_TITLE_H+8+203)/451, "elm.padding.right", "bg");
+		TL_PART("contents_6_5", (11+415*2+11*2)/1280, (GL_TL_TITLE_H+8+203+11)/451, "bg", "bg", (11+415*2+11*2+202)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_6_6", (11+415*2+11*3+202)/1280, (GL_TL_TITLE_H+8+203+11)/451, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_6_1");
+		TL_PG_FOCUS_BG("contents_6_2");
+		TL_PG_FOCUS_BG("contents_6_3");
+		TL_PG_FOCUS_BG("contents_6_4");
+		TL_PG_FOCUS_BG("contents_6_5");
+		TL_PG_FOCUS_BG("contents_6_6");
+		TL_OVER_SOUND("contents_6_1")
+		TL_OVER_SOUND("contents_6_2")
+		TL_OVER_SOUND("contents_6_3")
+		TL_OVER_SOUND("contents_6_4")
+		TL_OVER_SOUND("contents_6_5")
+		TL_OVER_SOUND("contents_6_6")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+        name: "gallery/timeline_7";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_7_1", 1.0, 0.0, "elm.padding.left", "bg", 450/720, 380/956, "bg", "bg");
+		TL_PART("contents_7_2", (450+12)/720, 0.0, "bg", "contents_7_1", 0.0, 450/956, "elm.padding.right", "bg");
+		TL_PART("contents_7_3", 1.0, (380+11)/956, "elm.padding.left", "bg", 236/720, (380+11+280)/956, "bg", "bg");
+		TL_PART("contents_7_4", (236+12)/720, (380+11)/956, "bg", "bg", 450/720, (380+11+380)/956, "bg", "bg");
+		TL_PART("contents_7_5", (450+12)/720, (450+11)/956, "bg", "bg", 0.0, 1.0, "elm.padding.right", "contents_7_4");
+		TL_PART("contents_7_6", 1.0, (380+11+280+11)/956, "elm.padding.left", "bg", 236/720, 1.0, "bg", "bg");
+		TL_PART("contents_7_7", (236+12)/720, (380+11+380+11)/956, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_7_1");
+		TL_PG_FOCUS_BG("contents_7_2");
+		TL_PG_FOCUS_BG("contents_7_3");
+		TL_PG_FOCUS_BG("contents_7_4");
+		TL_PG_FOCUS_BG("contents_7_5");
+		TL_PG_FOCUS_BG("contents_7_6");
+		TL_PG_FOCUS_BG("contents_7_7");
+		TL_OVER_SOUND("contents_7_1")
+		TL_OVER_SOUND("contents_7_2")
+		TL_OVER_SOUND("contents_7_3")
+		TL_OVER_SOUND("contents_7_4")
+		TL_OVER_SOUND("contents_7_5")
+		TL_OVER_SOUND("contents_7_6")
+		TL_OVER_SOUND("contents_7_7")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+        name: "gallery/timeline_7l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_7_1", 1.0, 0.0, "elm.padding.left", "bg", (11+415)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_7_2", (11+415+11)/1280, 0.0, "bg", "bg", (11+415*2+11)/1280, (GL_TL_TITLE_H+8+181)/451, "bg", "bg");
+		TL_PART("contents_7_3", (11+415+11)/1280, (GL_TL_TITLE_H+8+181+11)/451, "bg", "bg", (11+415*2+11)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_7_4", (11+415*2+11*2)/1280, 0.0, "bg", "bg", (11+415*2+11*2+202)/1280, (GL_TL_TITLE_H+8+203)/451, "bg", "bg");
+		TL_PART("contents_7_5", (11+415*2+11*3+202)/1280, 0.0, "bg", "bg", 0.0, (GL_TL_TITLE_H+8+203)/451, "elm.padding.right", "bg");
+		TL_PART("contents_7_6", (11+415*2+11*2)/1280, (GL_TL_TITLE_H+8+203+11)/451, "bg", "bg", (11+415*2+11*2+202)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_7_7", (11+415*2+11*3+202)/1280, (GL_TL_TITLE_H+8+203+11)/451, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_7_1");
+		TL_PG_FOCUS_BG("contents_7_2");
+		TL_PG_FOCUS_BG("contents_7_3");
+		TL_PG_FOCUS_BG("contents_7_4");
+		TL_PG_FOCUS_BG("contents_7_5");
+		TL_PG_FOCUS_BG("contents_7_6");
+		TL_PG_FOCUS_BG("contents_7_7");
+		TL_OVER_SOUND("contents_7_1")
+		TL_OVER_SOUND("contents_7_2")
+		TL_OVER_SOUND("contents_7_3")
+		TL_OVER_SOUND("contents_7_4")
+		TL_OVER_SOUND("contents_7_5")
+		TL_OVER_SOUND("contents_7_6")
+		TL_OVER_SOUND("contents_7_7")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+	name: "gallery/timeline_8";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_8_1", 1.0, 0.0, "elm.padding.left", "bg", 450/720, 380/956, "bg", "bg");
+		TL_PART("contents_8_2", (450+12)/720, 0.0, "bg", "contents_8_1", 0.0, 450/956, "elm.padding.right", "bg");
+		TL_PART("contents_8_3", 1.0, (380+11)/956, "elm.padding.left", "bg", 236/720, (380+11+280)/956, "bg", "bg");
+		TL_PART("contents_8_4", (236+12)/720, (380+11)/956, "bg", "bg", 450/720, (380+11+380)/956, "bg", "bg");
+		TL_PART("contents_8_5", (450+12)/720, (450+11)/956, "bg", "bg", 0.0, 1.0, "elm.padding.right", "contents_8_4");
+		TL_PART("contents_8_6", 1.0, (380+11+280+11)/956, "elm.padding.left", "bg", 236/720, 1.0, "bg", "bg");
+		TL_PART("contents_8_7", (236+12)/720, (380+11+380+11)/956, "bg", "bg", (236+12+150)/720, 1.0, "bg", "bg");
+		TL_PART("contents_8_8", (236+12+150+12)/720, 0.0, "bg", "contents_8_7", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_8_1");
+		TL_PG_FOCUS_BG("contents_8_2");
+		TL_PG_FOCUS_BG("contents_8_3");
+		TL_PG_FOCUS_BG("contents_8_4");
+		TL_PG_FOCUS_BG("contents_8_5");
+		TL_PG_FOCUS_BG("contents_8_6");
+		TL_PG_FOCUS_BG("contents_8_7");
+		TL_PG_FOCUS_BG("contents_8_8");
+		TL_OVER_SOUND("contents_8_1")
+		TL_OVER_SOUND("contents_8_2")
+		TL_OVER_SOUND("contents_8_3")
+		TL_OVER_SOUND("contents_8_4")
+		TL_OVER_SOUND("contents_8_5")
+		TL_OVER_SOUND("contents_8_6")
+		TL_OVER_SOUND("contents_8_7")
+		TL_OVER_SOUND("contents_8_8")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+group {
+        name: "gallery/timeline_8l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+		TL_PART("contents_8_1", 1.0, 0.0, "elm.padding.left", "bg", (11+415)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_8_2", (11+415+11)/1280, 0.0, "bg", "bg", (11+415*2+11)/1280, (GL_TL_TITLE_H+8+181)/451, "bg", "bg");
+		TL_PART("contents_8_3", (11+415+11)/1280, (GL_TL_TITLE_H+8+181+11)/451, "bg", "bg", (11+415+11+202)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_8_4", (11+415+11+202+11)/1280, (GL_TL_TITLE_H+8+181+11)/451, "bg", "bg", (11+415*2+11)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_8_5", (11+415*2+11*2)/1280, 0.0, "bg", "bg", (11+415*2+11*2+202)/1280, (GL_TL_TITLE_H+8+203)/451, "bg", "bg");
+		TL_PART("contents_8_6", (11+415*2+11*3+202)/1280, 0.0, "bg", "bg", 0.0, (GL_TL_TITLE_H+8+203)/451, "elm.padding.right", "bg");
+		TL_PART("contents_8_7", (11+415*2+11*2)/1280, (GL_TL_TITLE_H+8+203+11)/451, "bg", "bg", (11+415*2+11*2+202)/1280, 1.0, "bg", "bg");
+		TL_PART("contents_8_8", (11+415*2+11*3+202)/1280, (GL_TL_TITLE_H+8+203+11)/451, "bg", "bg", 0.0, 1.0, "elm.padding.right", "bg");
+	}
+	programs {
+		TL_PG_FOCUS_BG("contents_8_1");
+		TL_PG_FOCUS_BG("contents_8_2");
+		TL_PG_FOCUS_BG("contents_8_3");
+		TL_PG_FOCUS_BG("contents_8_4");
+		TL_PG_FOCUS_BG("contents_8_5");
+		TL_PG_FOCUS_BG("contents_8_6");
+		TL_PG_FOCUS_BG("contents_8_7");
+		TL_PG_FOCUS_BG("contents_8_8");
+		TL_OVER_SOUND("contents_8_1")
+		TL_OVER_SOUND("contents_8_2")
+		TL_OVER_SOUND("contents_8_3")
+		TL_OVER_SOUND("contents_8_4")
+		TL_OVER_SOUND("contents_8_5")
+		TL_OVER_SOUND("contents_8_6")
+		TL_OVER_SOUND("contents_8_7")
+		TL_OVER_SOUND("contents_8_8")
+		GL_TL_PLAY_SOUND
+	}
+}
+
+#define TL_15_ITEM(N, X, Y) \
+	TL_PART("contents_15_"N, (224.6*(X-1)+(X-1)*12)/698, (181.6*(Y-1)+(Y-1)*12)/956, "contents_bg", "contents_bg", (224.6*X+(X-1)*12)/698, (181.6*Y+(Y-1)*12)/956, "contents_bg", "contents_bg");
+
+
+#define TL_15_PGS \
+	TL_PG_FOCUS_BG("contents_15_1") \
+	TL_PG_FOCUS_BG("contents_15_2") \
+	TL_PG_FOCUS_BG("contents_15_3") \
+	TL_PG_FOCUS_BG("contents_15_4") \
+	TL_PG_FOCUS_BG("contents_15_5") \
+	TL_PG_FOCUS_BG("contents_15_6") \
+	TL_PG_FOCUS_BG("contents_15_7") \
+	TL_PG_FOCUS_BG("contents_15_8") \
+	TL_PG_FOCUS_BG("contents_15_9") \
+	TL_PG_FOCUS_BG("contents_15_10") \
+	TL_PG_FOCUS_BG("contents_15_11") \
+	TL_PG_FOCUS_BG("contents_15_12") \
+	TL_PG_FOCUS_BG("contents_15_13") \
+	TL_PG_FOCUS_BG("contents_15_14") \
+	TL_PG_FOCUS_BG("contents_15_15") \
+	TL_OVER_SOUND("contents_15_1") \
+	TL_OVER_SOUND("contents_15_2") \
+	TL_OVER_SOUND("contents_15_3") \
+	TL_OVER_SOUND("contents_15_4") \
+	TL_OVER_SOUND("contents_15_5") \
+	TL_OVER_SOUND("contents_15_6") \
+	TL_OVER_SOUND("contents_15_7") \
+	TL_OVER_SOUND("contents_15_8") \
+	TL_OVER_SOUND("contents_15_9") \
+	TL_OVER_SOUND("contents_15_10") \
+	TL_OVER_SOUND("contents_15_11") \
+	TL_OVER_SOUND("contents_15_12") \
+	TL_OVER_SOUND("contents_15_13") \
+	TL_OVER_SOUND("contents_15_14") \
+	TL_OVER_SOUND("contents_15_15") \
+	GL_TL_PLAY_SOUND
+
+
+group {
+	name: "gallery/timeline_15";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+
+		part {
+			name: "contents_bg";
+			type: SWALLOW;
+			mouse_events: 1;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 1.0 0.0; to_x: "elm.padding.left"; to_y: "bg"; }
+				rel2 { relative: 0.0 1.0; to_x: "elm.padding.right"; to_y: "bg"; }
+			}
+		}
+
+		TL_15_ITEM(1, 1, 1)
+		TL_15_ITEM(2, 2, 1)
+		TL_15_ITEM(3, 3, 1)
+		TL_15_ITEM(4, 1, 2)
+		TL_15_ITEM(5, 2, 2)
+		TL_15_ITEM(6, 3, 2)
+		TL_15_ITEM(7, 1, 3)
+		TL_15_ITEM(8, 2, 3)
+		TL_15_ITEM(9, 3, 3)
+		TL_15_ITEM(10, 1, 4)
+		TL_15_ITEM(11, 2, 4)
+		TL_15_ITEM(12, 3, 4)
+		TL_15_ITEM(13, 1, 5)
+		TL_15_ITEM(14, 2, 5)
+		TL_15_ITEM(15, 3, 5)
+	}
+	programs {
+		TL_15_PGS
+	}
+}
+
+
+#define TL_15_ITEM_L(N, X, Y) \
+	TL_PART("contents_15_"N, (242*(X-1)+(X-1)*12)/1258, (142.3*(Y-1)+(Y-1)*12)/451, "contents_bg", "contents_bg", (242*X+(X-1)*12)/1258, (142.3*Y+(Y-1)*12)/451, "contents_bg", "contents_bg");
+
+group {
+        name: "gallery/timeline_15l";
+
+	TL_VARIABLE
+
+	parts {
+		TL_BG
+		TL_BG_C
+		PART_PADDING_LEFT(11)
+		PART_PADDING_RIGHT(11)
+
+		part {
+			name: "contents_bg";
+			type: SWALLOW;
+			mouse_events: 1;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 1.0 0.0; to_x: "elm.padding.left"; to_y: "bg"; }
+				rel2 { relative: 0.0 1.0; to_x: "elm.padding.right"; to_y: "bg"; }
+				color: 255 0 0 100;
+			}
+		}
+
+		TL_15_ITEM_L(1, 1, 1)
+		TL_15_ITEM_L(2, 2, 1)
+		TL_15_ITEM_L(3, 3, 1)
+		TL_15_ITEM_L(4, 4, 1)
+		TL_15_ITEM_L(5, 5, 1)
+		TL_15_ITEM_L(6, 1, 2)
+		TL_15_ITEM_L(7, 2, 2)
+		TL_15_ITEM_L(8, 3, 2)
+		TL_15_ITEM_L(9, 4, 2)
+		TL_15_ITEM_L(10, 5, 2)
+		TL_15_ITEM_L(11, 1, 3)
+		TL_15_ITEM_L(12, 2, 3)
+		TL_15_ITEM_L(13, 3, 3)
+		TL_15_ITEM_L(14, 4, 3)
+		TL_15_ITEM_L(15, 5, 3)
+	}
+	programs {
+		TL_15_PGS
+	}
+}
+
+group {
+	name: "elm/gengrid/item/gallery/timeline_page/default";
+
+	data.item: "contents" "elm.swallow.icon";
+
+	parts {
+		part {
+			name: "bg";
+			type: RECT;
+			description {
+				state: "default" 0.0;
+				color: 0 0 0 0;
+				rel1 { relative: 0.0 0.0; offset: 0 0;}
+				rel2 { relative: 1.0 1.0; offset: 0 0;}
+			}
+		}
+		part {
+			name: "icon_bg";
+			type: RECT;
+			scale : 1;
+			description {
+				state: "default" 0.0;
+				align: 0.5 0.5;
+				visible: 0;
+				color: 0 0 0 0;
+				rel1 { relative: 0.0 0.0;to:"bg"; }
+				rel2 { relative: 1.0 1.0;to:"bg"; }
+
+			}
+		}
+		part {
+			name: "elm.swallow.icon";
+			type: SWALLOW;
+			mouse_events: 1;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0.0 0.0; to: "icon_bg"; }
+				rel2 { relative: 1.0 1.0; to: "icon_bg"; }
+			}
+		}
+	}
+}
+
+group {
+	name: "naviframe_title";
+	parts {
+		part { name: "title_bg";
+			type: RECT;
+			mouse_events: 1;
+			scale: 0;
+			description {
+				state: "default" 0.0;
+				min: 0 111;
+				align: 0.0 0.0;
+				visible: 0;
+			}
+			description { state: "hide" 0.0;
+				inherit: "default" 0.0;
+				min: 0 0;
+				max: 0 0;
+				fixed: 1 1;
+			}
+		}
+		part { name: "top_left_padding";
+			type: RECT;
+			mouse_events: 0;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				min: 16 32;
+				fixed: 1 1;
+				align: 0.0 0.0;
+				rel1 { relative: 0.0 0.0; to: "title_bg"; }
+				rel2 { relative: 0.0 0.0; to: "title_bg"; }
+				visible: 0;
+			}
+			description { state: "hide" 0.0;
+				inherit: "default" 0.0;
+				min: 0 0;
+				max: 0 0;
+				fixed: 1 1;
+			}
+		}
+		part { name: "bottom_right_padding";
+			type: RECT;
+			mouse_events: 0;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				min: 16 11;
+				fixed: 1 1;
+				align: 1.0 1.0;
+				rel1 { relative: 1.0 1.0; to: "title_bg"; }
+				rel2 { relative: 1.0 1.0; to: "title_bg"; }
+				visible: 0;
+			}
+			description { state: "hide" 0.0;
+				inherit: "default" 0.0;
+				min: 0 0;
+				max: 0 0;
+				fixed: 1 1;
+			}
+		}
+		part { name: "title";
+			type: SWALLOW;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				align: 0.0 0.0;
+				rel1 { relative: 1.0 1.0; to: "top_left_padding"; }
+				rel2 { relative: 0.0 0.0; to: "bottom_right_padding"; }
+			}
+			description { state: "hide" 0.0;
+				inherit: "default" 0.0;
+				min: 0 0;
+				max: 0 0;
+				fixed: 1 1;
+			}
+		}
+	}
+	programs {
+		program { name: "title_show";
+			signal: "elm,state,title,show";
+			source: "elm";
+			script {
+				set_state(PART:"title_bg", "default", 0.0);
+				set_state(PART:"top_left_padding", "default", 0.0);
+				set_state(PART:"bottom_right_padding", "default", 0.0);
+				set_state(PART:"title", "default", 0.0);
+			}
+		}
+		program { name: "title_hide";
+			signal: "elm,state,title,hide";
+			source: "elm";
+			script {
+				set_state(PART:"title_bg", "hide", 0.0);
+				set_state(PART:"top_left_padding", "hide", 0.0);
+				set_state(PART:"bottom_right_padding", "hide", 0.0);
+				set_state(PART:"title", "hide", 0.0);
+			}
+		}
+	}
+}
+
+group {
+	name: "naviframe_title_text";
+	parts {
+		part { name: "title_bg";
+			type: RECT;
+			mouse_events: 1;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				min: 126 68;
+				fixed: 0 1;
+				visible: 1;
+				color: 255 0 255 155;
+			}
+		}
+		part {
+			name: "text";
+			type: TEXT;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				visible: 1;
+				align: 0.0 0.5;
+				rel1 { relative: 0.0 0.0; to: "title_bg"; }
+				rel2 { relative: 1.0 1.0; to: "title_bg"; }
+				color: 0 0 0 255;
+				text {
+					font: "Tizen:style=Medium";
+					text_class: "tizen";
+					size: 56;
+					text: "";
+					align: 0.0 0.5;
+				}
+			}
+		}
+	}
+}
+
+/* View layout to hold slider */
+group {
+	name: "gallery/timeline";
+
+	parts {
+		TL_BG
+		TL_BG_C
+		TL_TITLE_BG_TOP
+		TL_TITLE_TOP
+		TL_SLIDER_PAD_BOT
+
+		part {
+			name: "elm.swallow.slider";
+			type: SWALLOW;
+			mouse_events: 1;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0.0 1.0; to_x: "bg"; to_y: "title_bg"; }
+				rel2 { relative: 1.0 0.0; to_x: "bg"; to_y: "slider_padding_b"; }
+			}
+		}
+	}
+	programs {
+		program {
+			name: "swallow_title_show";
+			signal: "elm,swallow_title,state,show";
+			source: "elm";
+			script {
+				set_state(PART:"title_bg", "default", 0.0);
+				set_state(PART:"slider_padding_b", "default", 0.0);
+			}
+		}
+		program {
+			name: "swallow_slider_hide";
+			signal: "elm,swallow_title,state,hide";
+			source: "elm";
+			script {
+				set_state(PART:"title_bg", "hide", 0.0);
+				set_state(PART:"slider_padding_b", "hide", 0.0);
+			}
+		}
+		program {
+			name: "title_fade_out";
+			signal: "elm,action,title,fade_out";
+			source: "elm";
+			action: STATE_SET "fade_out" 0.0;
+			transition: DECELERATE 0.5;
+			target: "title_clip";
+		}
+		program {
+			name: "title2_fade_in";
+			signal: "elm,action,title2,fade_in";
+			source: "elm";
+			action: STATE_SET "fade_in" 0.0;
+			transition: DECELERATE 0.5;
+			target: "title_clip2";
+		}
+		program {
+			name: "title2_show";
+			signal: "elm,state,title2,show,deferred";
+			source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "title2";
+			transition: DECELERATE 0.5;
+			after: "show_finished";
+		}
+		program {
+			name: "title_hide";
+			signal: "elm,state,title,hide,deferred";
+			source: "elm";
+			action: STATE_SET "top" 0.0;
+			target: "title";
+			transition: DECELERATE 0.5;
+			after: "hide_finished";
+		}
+		program {
+			name: "title_show";
+			signal: "elm,state,title,show";
+			source: "elm";
+			script {
+				set_state(PART:"title_clip2", "default", 0.0);
+				set_state(PART:"title_clip", "default", 0.0);
+				set_state(PART:"title", "default", 0.0);
+			}
+		}
+		program {
+			name: "title2_created";
+			signal: "elm,state,title2,created";
+			source: "elm";
+			script {
+				set_state(PART:"title_clip2", "bottom", 0.0);
+				set_state(PART:"title_clip", "top", 0.0);
+				set_state(PART:"title2", "bottom", 0.0);
+			}
+		}
+		program { name: "show_finished";
+			action: SIGNAL_EMIT "elm,action,title2,show,finished" "";
+		}
+		program { name: "hide_finished";
+			action: SIGNAL_EMIT "elm,action,title,hide,finished" "";
+		}
+	}
+}
+
+group{ name: "timeline_gridview";
+	parts {
+		part { name: "group_date_bg";
+			   type: RECT;
+			   description {
+			  	  rel1.relative : 0 0;
+			  	  rel2.relative : 1 1;
+			  	  min : 0 60;
+			  	  max: -1 60;
+			  	  align : 0 0;
+			  	  color: 255 255 255 255;
+			}
+		}
+		part { name: "group_date";
+			   type: TEXT;
+			   scale: 1;
+			   description {
+			  	  rel1.relative : 0 0;
+			  	  rel1.to: "group_date_bg";
+			  	  rel2.relative : 1 1;
+			  	  rel2.to: "group_date_bg";
+			  	  text {
+					text: "Select All";
+					size: 16;
+					align: 0.05 0.8;
+			  	  }
+			  	  color: 0 0 0 255;
+			}
+		}
+		part { name: "grid";
+			   type: SWALLOW;
+			   description {
+			  	  rel1.relative : 0 1;
+			  	  rel1.to : "group_date_bg";
+			  	  rel2.relative : 1 1;
+			  	  align : 0 0;
+			}
+		}
+	}
+	script {
+	  public message(Msg_Type:type,id, ...)
+	  {
+	    if((type == MSG_INT) && (id == 2))
+	    {
+	      new a;
+	      new x, y;
+	      a = getarg(2);
+	      custom_state(PART:"grid","default",0.0);
+	      get_state_val(PART:"grid",STATE_MIN,x,y);
+	      set_state_val(PART:"grid",STATE_MIN,x,a);
+	      get_state_val(PART:"grid",STATE_MAX,x,y);
+	      set_state_val(PART:"grid",STATE_MAX,x,a);
+	      set_state(PART:"grid","custom",0.0);
+	    }
+	  }
+	}
+}
+
+group{ name: "timeline_gridview_date_toast";
+	parts {
+		part{
+			name: "bg";
+			type: RECT;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				rel1.relative: 0 0;
+				rel2.relative: 1 1;
+				color: 255 255 255 255;
+			}
+		}
+		part{
+			name: "bg_left_vertical_line";
+			type: RECT;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				rel1.relative: 0 0;
+				rel2.relative: 0 1;
+				rel1.to: "bg";
+				rel2.to: "bg";
+				min: 2 0;
+				color: 0 0 255 255;
+			}
+		}
+		part{
+			name: "bg_right_vertical_line";
+			type: RECT;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				rel1.relative: 1 0;
+				rel2.relative: 1 1;
+				rel1.to: "bg";
+				rel2.to: "bg";
+				min: 2 0;
+				align: 0.5 0.5;
+				color: 0 0 255 255;
+			}
+		}
+		part{
+			name: "bg_up_horizontal_line";
+			type: RECT;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				rel1.relative: 0 0;
+				rel2.relative: 1 0;
+				rel1.to: "bg";
+				rel2.to: "bg";
+				min: 0 2;
+				color: 0 0 255 255;
+			}
+		}
+		part{
+			name: "bg_down_horizontal_line";
+			type: RECT;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				rel1.relative: 0 1;
+				rel2.relative: 1 1;
+				rel1.to: "bg";
+				rel2.to: "bg";
+				min: 0 2;
+				color: 0 0 255 255;
+			}
+		}
+		part{
+			name: "text";
+			type: TEXT;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				rel1.relative: 0 0;
+				rel1.to: "bg";
+				rel2.relative: 1 1;
+				rel2.to: "bg";
+				text {
+					text: "Day";
+					size: 32;
+					align: 0.5 0.5;
+				}
+				color: 0 0 255 255;
+			}
+		}
+	}
+}
+
+group{
+	name: "elm/genlist/item/genlist_group_date/default";
+	data.item: "texts" "elm.text";
+	data.item: "contents" "elm.swallow";
+	data.item: "selectraise" "on";
+	data.item: "stacking" "above";
+	parts{
+		part{
+			name: "bg";
+			type: RECT;
+			description{
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				rel1.relative: 0.0 0.0;
+				rel2.relative: 1.0 1.0;
+				min: 0 60;
+				max: -1 200;
+				visible: 1;
+			}
+		}
+		part{
+			name: "elm.text";
+			type: TEXT;
+			scale: 1;
+			description{
+				state: "default" 0.0;
+				rel1 { relative: 0.05 0.0; to: "bg"; }
+				rel2 { relative: 1.0 1.0; to: "bg"; }
+				color: 0 0 0 255;
+				text{
+					size: 16;
+					align: 0.0 0.5;
+				}
+			}
+		}
+		part{
+			name: "elm.swallow";
+			type: SWALLOW;
+			description{
+				state: "default" 0.0;
+				rel1 { relative: 0.6 0.0; to: "bg"; }
+				rel2 { relative: 1.0 1.0; to: "bg"; }
+				align: 0.5 0.5;
+			}
+		}
+	}
+}
+
+TIME_VIEW_GENLIST_STYLE(content_180, 180)
+TIME_VIEW_GENLIST_STYLE(content_240, 240)
+TIME_VIEW_GENLIST_STYLE(content_90, 90)
+TIME_VIEW_GENLIST_STYLE(content_214, 214)
+TIME_VIEW_GENLIST_STYLE(content_183,183)
+TIME_VIEW_GENLIST_STYLE(content_128, 128)
+TIME_VIEW_GENLIST_STYLE(content_135, 135)
+TIME_VIEW_GENLIST_STYLE(content_68, 68)
+TIME_VIEW_GENLIST_STYLE(content_160, 160)
+TIME_VIEW_GENLIST_STYLE(content_138, 138)
+TIME_VIEW_GENLIST_STYLE(content_96, 96)
+TIME_VIEW_GENLIST_STYLE(content_120, 120)
+TIME_VIEW_GENLIST_STYLE(content_60, 60)
+TIME_VIEW_GENLIST_STYLE(content_134, 134)
+TIME_VIEW_GENLIST_STYLE(content_115, 115)
+TIME_VIEW_GENLIST_STYLE(content_80, 80)
+
+group {
+	name: "timeline";
+	parts {
+		part {
+				name : "elm.rect";
+				type: RECT;
+				description {
+					state : "default" 0.0;
+					rel1.relative: 0 0;
+					rel2.relative: 1 1;
+					align : 0 0;
+					color : 255 255 255 255;
+				}
+			}
+		part {
+			name : "elm.swallow";
+			type: SWALLOW;
+			description {
+				state : "default" 0.0;
+				rel1.relative: 0 0;
+				rel2.relative: 1 1;
+				align : 0 0;
+			}
+		}
+	}
+}

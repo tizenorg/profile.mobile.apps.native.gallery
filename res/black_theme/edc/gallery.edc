@@ -1,0 +1,1080 @@
+/*
+* Copyright (c) 2000-2015 Samsung Electronics Co., Ltd All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+
+/* Use genlist style for pinch out */
+
+#define INDICATOR_H	27
+#define NAVI_H		67
+#define GALLERY_EDC_COLOR_THEME_GRAY  91 91 91 255
+#define GALLERY_EDC_COLOR_BG  0 0 0 255
+#define ENTRY_H		112
+#define ENTRY_MAX_W		1280
+#define TABBAR_DEFAULT_HEIGHT_INC 111
+#define TABBAR_HORIZONTAL_HEIGHT_INC 91
+/* Set select all bg color same as genlist */
+#define SELECT_ALL_BG_HEIGHT_INC 112
+#define NAVIFRAME_TITLE_BG_COLOR_INC 248 246 239 255
+
+#define POPUP_CONTENT_DEFAULT_PADDING_LEFT_MIN_INC 15
+#define POPUP_EDITFIELD_LAYOUT_MINMAX_HEIGHT_INC 56
+
+#include "gallery-edc-res.h"
+#define LAYOUT_WIDTH 500
+#define LAYOUT_HEIGHT 300
+#define CENTER_PADDING_WIDTH 5
+#define YOUR_THEME_BASE_SCALE 1 // 2.6 is default base scale for Tizen 2.4 HD.
+externals {
+	external: "elm";
+	external: "feedback";
+}
+
+collections {
+	plugins {
+		plugin {
+			name: "touch_sound_plugin";
+			source: "feedback";
+			param: "FEEDBACK_TYPE_SOUND FEEDBACK_PATTERN_TAP"; // FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TOUCH_TAP
+			/* 2014.06.11 updated from libsvi(feedback)
+			Above plugin will run below external function:
+			int feedback_play_type(feedback_type_e type, feedback_pattern_e pattern);
+			param1: feedback_type_e
+			FEEDBACK_TYPE_NONE = 0,
+			FEEDBACK_TYPE_SOUND = 1,
+			FEEDBACK_TYPE_VIBRATION,
+			FEEDBACK_TYPE_LED,
+			FEEDBACK_TYPE_END
+
+			* param2 enumeration:
+			FEEDBACK_PATTERN_TAP = 0,
+			FEEDBACK_PATTERN_SIP,
+			FEEDBACK_PATTERN_SIP_BACKSPACE,
+			FEEDBACK_PATTERN_SIP_FUNCTION,
+			FEEDBACK_PATTERN_SIP_FJKEY,
+			...
+
+			* For more information please refer libsvi.
+			*/
+		}
+	}
+
+	#include "gl-macro.edc"
+	#include "gl-expanded-title.edc"
+	#include "gl-ctxpopup.edc"
+	#include "gl-gengrid.edc"
+	#include "gl-gengrid-item-ctxpopup.edc"
+	#include "gl-gengrid-item-thumbview.edc"
+	#include "gl-gengrid-item-albums.edc"
+	#include "gl-selection-notification.edc"
+	#include "gl-naviframe.edc"
+	#include "gl-button.edc"
+	#include "gl-check.edc"
+	#include "gl-label.edc"
+	#include "gl-nocontents.edc"
+	#include "gl-entry.edc"
+	#include "gl-timeline.edc"
+	#include "gl-progressbar.edc"
+	#include "gl-popup-entry.edc"
+	base_scale: YOUR_THEME_BASE_SCALE;
+
+	group{ name: "list_popup_swallow_ly";
+		parts {
+			part { name: "bg";
+				type: RECT;
+				description {
+					rel1.relative : 0 0;
+					rel2.relative : 1 1;
+					color: 255 255 255 255;
+				}
+			}
+			part { name: "list";
+				type: SWALLOW;
+				description {
+					rel1.relative : 0 0;
+					rel1.to : "bg";
+					rel2.relative : 1 1;
+					rel2.to : "bg";
+				}
+			}
+		}
+		script {
+			public message(Msg_Type:type,id, ...)
+			{
+				if((type == MSG_INT) && (id == 2))
+				{
+					new a;
+					new x, y;
+					a = getarg(2);
+					custom_state(PART:"bg","default",0.0);
+					get_state_val(PART:"bg",STATE_MIN,x,y);
+					set_state_val(PART:"bg",STATE_MIN,x,a);
+					get_state_val(PART:"bg",STATE_MAX,x,y);
+					set_state_val(PART:"bg",STATE_MAX,x,a);
+					set_state(PART:"bg","custom",0.0);
+				}
+			}
+		}
+	}
+
+	group { name: "list_popup_content_ly";
+		parts {
+			part { name : "bg";
+					type: RECT;
+					description {
+						state: "default" 0.0;
+						rel1.relative: 0.0 0.0;
+						rel2.relative: 1.0 1.0;
+						color: 255 255 255 255;
+					}
+			}
+			part {  name : "bg1";
+					type: RECT;
+					description {
+						state: "default" 0.0;
+						rel1.relative: 0.0 0.0;
+						rel1.to: "bg";
+						rel2.relative: 1.0 0.5;
+						rel2.to: "bg";
+						color: 255 255 255 255;
+					}
+					description {
+						state: "pressed" 0.0;
+						inherit: "default" 0.0;
+						color: 165 197 210 255;
+					}
+			}
+			part {  name : "bg2";
+					type: RECT;
+					description {
+						state: "default" 0.0;
+						rel1.relative: 0.0 0.5;
+						rel1.to: "bg";
+						rel1.offset: 0 2;
+						rel2.relative: 1.0 1.0;
+						rel2.to: "bg";
+						color: 255 255 255 255;
+					}
+					description {
+						state: "pressed" 0.0;
+						inherit: "default" 0.0;
+						color: 165 197 210 255;
+					}
+			}
+			part {  name : "septator";
+					type: RECT;
+					description {
+						state: "default" 0.0;
+						rel1.relative: 0.0 0.5;
+						rel1.to: "bg";
+						//rel1.offset: 0 2;
+						rel2.relative: 1.0 0.5;
+						rel2.to: "bg";
+						min: 0 2;
+						max: -1 2;
+						align: 0 0.5;
+						color: 165 197 210 255;
+					}
+			}
+			part {
+				name: "elm.text";
+				type: TEXT;
+				mouse_events: 1;
+				repeat_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.0 0.0;
+					rel1.to: "bg1";
+					rel2.relative: 0.0 1.0;
+					rel2.to: "bg1";
+					min: 200 55;
+					max: 200 55;
+					align: 0 0;
+					text {
+						text: "Time";
+						size: 16;
+						align: 0.1 0.5;
+					}
+					color: 23 23 23 255;
+				}
+			}
+			part {
+				name: "elm.swallow";
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.8 0.3;
+					rel1.to: "bg1";
+					rel2.relative: 1.0 0.7;
+					rel2.to: "bg1";
+					align: 1.0 0.5;
+				}
+			}
+			part {
+				name: "elm.text.second";
+				type: TEXT;
+				mouse_events: 1;
+				repeat_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.0 0.0;
+					rel1.to: "bg2";
+					rel2.relative: 0.0 1.0;
+					rel2.to: "bg2";
+					min: 200 55;
+					max: 200 55;
+					align: 0 0;
+					text {
+						text: "Album";
+						size: 16;
+						align: 0.1 0.5;
+					}
+					color: 23 23 23 255;
+				}
+			}
+			part {
+				name: "elm.swallow.second";
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.8 0.3;
+					rel1.to: "bg2";
+					rel2.relative: 1.0 0.7;
+					rel2.to: "bg2";
+					align: 1.0 0.5;
+				}
+			}
+			part {  name : "button1";
+					type: SWALLOW;
+					mouse_events: 1;
+					repeat_events: 1;
+					description {
+						state: "default" 0.0;
+						rel1.relative: 0.0 0.0;
+						rel1.to: "bg";
+						rel2.relative: 1.0 0.5;
+						rel2.to: "bg";
+					}
+			}
+			part {  name : "button2";
+					type: SWALLOW;
+					mouse_events: 1;
+					repeat_events: 1;
+					description {
+						state: "default" 0.0;
+						rel1.relative: 0.0 0.5;
+						rel1.to: "bg";
+						rel1.offset: 0 2;
+						rel2.relative: 1.0 1.0;
+						rel2.to: "bg";
+					}
+			}
+		}
+		programs {
+			program{ name: "item_1_clicked";
+				source: "bg1";
+				signal: "mouse,down,1";
+				action: STATE_SET "pressed" 0.0;
+				target: "bg1";
+			}
+			program{ name: "item_2_clicked";
+				source: "bg2";
+				signal: "mouse,down,1";
+				action: STATE_SET "pressed" 0.0;
+				target: "bg2";
+			}
+			program{ name: "item_1_released";
+				source: "bg1";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg1";
+			}
+			program{ name: "item_2_released";
+				source: "bg2";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg2";
+			}
+		}
+
+	}
+
+	group { name: "popup_input_text";
+		parts {
+			part { name: "pad_l";
+				type: SPACER;
+				scale: 1;
+				description { state: "default" 0.0;
+					min: POPUP_CONTENT_DEFAULT_PADDING_LEFT_MIN_INC 0;
+					fixed: 1 0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 0.0 1.0;
+					align: 0.0 0.0;
+				}
+			}
+			part { name: "pad_r";
+				type: SPACER;
+				scale: 1;
+				description { state: "default" 0.0;
+					min: POPUP_CONTENT_DEFAULT_PADDING_LEFT_MIN_INC 0;
+					fixed: 1 0;
+					rel1.relative: 1.0 0.0;
+					rel2.relative: 1.0 1.0;
+					align: 1.0 0.0;
+				}
+			}
+			part { name: "elm.swallow.content";
+				type: SWALLOW;
+				scale: 1;
+				description { state: "default" 0.0;
+					min: 0 POPUP_EDITFIELD_LAYOUT_MINMAX_HEIGHT_INC;
+					max: -1 POPUP_EDITFIELD_LAYOUT_MINMAX_HEIGHT_INC;
+					align: 0.5 0.5;
+					rel1{
+						relative: 1.0 0.0 ;
+						to_x: "pad_l";
+					}
+					rel2{
+						relative: 0.0 1.0;
+						to_x: "pad_r";
+					}
+				}
+			}
+		}
+	}
+
+	group
+		{
+			name: "gallery/gridview";
+			images {
+				image: GALLERY_EDC_IMAGE_CONTROL_TABBAR_BG COMP;
+			}
+			parts {
+				part {
+					name: "background";
+					type, RECT;
+					//mouse_events: 1;
+					//scale: 1;
+					description {
+						state: "default" 0.0;
+						rel1 { relative: 0.0 0.0; }
+						rel2 { relative: 1.0 1.0; }
+					}
+				}
+				part {
+					name: "contents";
+					type: SWALLOW;
+					mouse_events: 1;
+					scale: 1;
+					description {
+						state: "default" 0.0;
+						rel1 { relative: 0.0 0.0; to: "background"; }
+						rel2 { relative: 1.0 1.0; to: "background";}
+					}
+				}
+				part {
+					name: "gesture";
+					type: SWALLOW;
+					mouse_events: 1;
+					repeat_events: 1;
+					description {
+						state: "default" 0.0;
+						rel1 { relative: 0.0 0.0; to: "contents";}
+						rel2 { relative: 1.0 1.0; to: "contents";}
+					}
+
+				}
+			}
+		}
+
+	group {
+		name: "gallery/layout";
+		parts {
+			part {
+				name: "background";
+				type: RECT;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					color: 255 255 255 0;
+				}
+			}
+			part {
+				name: "split.view.bg.color";
+				type: RECT;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to: split.view; }
+					rel2 { relative: 1.0 1.0; to: split.view; }
+					color: 230 230 230 255;
+				}
+			}
+			part {
+				name: "split.view";
+				type: SWALLOW;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					fixed: 1 1;
+					min: 0 0;
+					max: 0 0;
+					align: 0 0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+				}
+				description {
+					state: "visible" 0.0;
+					fixed: 1 1;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 179/540 1.0; }
+					fixed: 1 0;
+					min: 0 0;
+					max: -1 -1;
+				}
+			}
+			part {
+				name: "select.all.area.bg";
+				type: RECT;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					min: 0 0;
+					max: 0 0;
+					align: 0 0;
+					rel1 { relative: 1.0 0.0; to: "split.view"; }
+					rel2 { relative: 1.0 1.0; }
+					color: 255 255 255 255;
+				}
+				description {
+					state: "visible" 0.0;
+					inherit: "default" 0.0;
+					min: 0 0;
+					max: -1 60;
+				}
+			}
+			part {
+				name: "select.all.area.label";
+				type: TEXT;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 24/540 0.0; to: "select.all.area.bg";}
+					rel2 { relative: 0.6 1.0; to: "select.all.area.bg";}
+					text {
+						text: "Select All";
+						size: 16;
+						align: 0.0 0.5;
+					}
+					color: 0 0 255 255;
+					visible: 0;
+				}
+				description {
+					state: "visible" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: "select.all.area.check";
+				type: SWALLOW;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					fixed: 1 1;
+					rel1 { relative: 1.0 0.1; to: "select.all.area.bg"; offset: -60 0;}
+					rel2 { relative: 1.0 0.9; to: "select.all.area.bg";}
+					visible: 0;
+				}
+				description {
+					state: "visible" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: "select.all.area.check.fg";
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 0;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0 0; to: "select.all.area.check";}
+					rel2 { relative: 1 1; to: "select.all.area.check";}
+					align: 1 0.5;
+					visible: 0;
+				}
+				description {
+					state: "visible" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+
+			}
+			part {
+					name: "contents";
+					type: SWALLOW;
+					mouse_events: 1;
+					scale: 1;
+					description {
+							state: "default" 0.0;
+							rel1 { relative: 0.0 0.0; to: "background"; }
+							rel2 { relative: 1.0 1.0; }
+					}
+			}
+			part {
+				name: "elm.swallow.view";
+				type: SWALLOW;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 1.0; to: "select.all.area.bg";}
+					rel2 { relative: 1.0 1.0; }
+				}
+			}
+			part {
+				name: "elm.swallow.date.layout";
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.3 0.4; to: "elm.swallow.view";}
+					rel2 { relative: 0.7 0.5; to: "elm.swallow.view";}
+				}
+				description {
+					state: "landscape" 0.0;
+					rel1 { relative: 0.38 0.41; to: "elm.swallow.view";}
+					rel2 { relative: 0.61 0.58; to: "elm.swallow.view";}
+				}
+			}
+			part {
+				name: "gesture";
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to: "elm.swallow.view";}
+					rel2 { relative: 1.0 1.0; to: "elm.swallow.view";}
+				}
+				description {
+					state: "disabled" 0.0;
+							inherit: "default" 0.0;
+					visible: 0;
+						}
+			}
+		}
+		script {
+			public message(Msg_Type:type,id, ...)
+			{
+				if((type == MSG_INT) && (id == 1))
+				{
+					new a;
+					a = getarg(2);
+					custom_state(PART:"split.view","default",0.0);
+					set_state_val(PART:"split.view",STATE_MAX,a,-1);
+					set_state(PART:"split.view","custom",0.0);
+				}
+				if((type == MSG_INT) && (id == 2))
+				{
+					new a;
+					new x, y;
+					a = getarg(2);
+					custom_state(PART:"select.all.area.bg","default",0.0);
+					get_state_val(PART:"select.all.area.bg",STATE_MAX,x,y);
+					set_state_val(PART:"select.all.area.bg",STATE_MIN,0,60);
+					set_state_val(PART:"select.all.area.bg",STATE_MAX,a,60);
+					set_state(PART:"select.all.area.bg","custom",0.0);
+				}
+			}
+		}
+
+		programs
+		{
+			program {
+				name: "rotate_timeline_view_info_landscape";
+				signal: "timelineview,landscape";
+				source: "*";
+				action: STATE_SET "landscape" 0.0;
+				target: "elm.swallow.date.layout";
+			}
+			program {
+				name: "rotate_timeline_view_info_portrait";
+				signal: "timelineview,portrait";
+				source: "*";
+				action: STATE_SET "default" 0.0;
+				target: "elm.swallow.date.layout";
+			}
+			program {
+				name: "swallow_view_default";
+				signal: "elm,swallow_view,state,default";
+				source: "elm";
+				script {
+					set_state(PART:"elm.swallow.view", "default", 0.0);
+				}
+			}
+			program {
+				name: "gesture_default";
+				signal: "elm,gesture,state,default";
+				source: "elm";
+				script {
+					set_state(PART:"gesture", "default", 0.0);
+				}
+			}
+			program {
+				name: "gesture_disabled";
+				signal: "elm,gesture,state,disabled";
+				source: "elm";
+				script {
+					set_state(PART:"gesture", "disabled", 0.0);
+				}
+			}
+			program {
+				name: "selectall_visible";
+				signal: "elm,selectall,state,visible";
+				source: "elm";
+				script {
+					set_state(PART:"select.all.area.label", "visible", 0.0);
+					set_state(PART:"select.all.area.check", "visible", 0.0);
+					set_state(PART:"select.all.area.check.fg", "visible", 0.0);
+				}
+			}
+			program {
+				name: "selectall_visible_bg";
+				signal: "elm,selectall,state,visible,bg";
+				source: "elm";
+				script {
+					set_state(PART:"select.all.area.bg", "visible", 0.0);
+				}
+			}
+			program {
+				name: "selectall_default";
+				signal: "elm,selectall,state,default";
+				source: "elm";
+				script {
+					set_state(PART:"select.all.area.label", "default", 0.0);
+					set_state(PART:"select.all.area.check", "default", 0.0);
+					set_state(PART:"select.all.area.bg", "default", 0.0);
+					set_state(PART:"select.all.area.check", "default", 0.0);
+				}
+			}
+			program {
+				name: "split_view_default";
+				signal: "elm,splitview,state,default";
+				source: "elm";
+				action: STATE_SET "default" 0.0;
+				target: "split.view";
+				transition : LINEAR 0.5;
+			}
+			program {
+				name: "split_view_visible";
+				signal: "elm,splitview,state,visible";
+				source: "elm";
+				action: STATE_SET "custom" 0.0;
+				target: "split.view";
+				transition : LINEAR 0.5;
+			}
+			program {
+				name: "touch_snd";
+				signal : "mouse,clicked,1";
+				source : "select.all.area.check.fg";
+				action: RUN_PLUGIN "touch_sound_plugin";
+			}
+		}
+	}
+
+	#define GL_ALBUMS_PBAR_BG_COLOR_INC 0 0 0 0
+
+	group
+	{
+	  name: "gallery/progressbar";
+	  parts {
+			part {
+				name: "bg";
+				mouse_events: 0;
+				type: RECT;
+				description {
+					state: "default" 0.0;
+					color: 0 0 0 0;
+					visible: 1;
+					rel1 { relative: 0.0 0.0;}
+					rel2 { relative: 1.0 1.0;}
+				}
+			}
+			part { name: "elm.pad.top";
+				type: RECT;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					fixed: 1 0;
+					rel1 { relative: 0.0  0.0; to: "bg";}
+					rel2 { relative: 1.0  0.0; to: "bg"; offset: -2 1;}
+					align: 0.0 0.0;
+					color: GL_ALBUMS_PBAR_BG_COLOR_INC;
+				}
+			}
+			part { name: "elm.pad.bottom";
+				type: RECT;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					fixed: 1 0;
+					rel1 { relative: 0.0  1.0; to: "bg"; offset: 0 -1;}
+					rel2 { relative: 1.0  1.0; to: "bg"; offset: -2 0;}
+					align: 0.0 0.0;
+					color: GL_ALBUMS_PBAR_BG_COLOR_INC;
+				}
+			}
+			part { name: "base";
+				type: RECT;
+				scale: 1;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					visible: 1;
+					rel1 { relative: 0.0  0.0; to: "elm.pad.top";}
+					rel2 { relative: 1.0  1.0; to: "elm.pad.bottom";}
+					color: GL_ALBUMS_PBAR_BG_COLOR_INC;
+				}
+			}
+			part { name: "elm.swallow.progressbar";
+				type: SWALLOW;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					fixed: 1 0;
+					rel1 { relative: 0.0  0.0; to: "base"; offset: 12 0;}
+					rel2 { relative: 1.0  0.5; to: "base"; offset: -14 0;}
+					align: 0.0 0.0;
+				}
+			}
+			part { name: "elm.swallow.label";
+				type: SWALLOW;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					fixed: 1 0;
+					rel1 { relative: 0.0  0.5; to: "base"; offset: 12 0;}
+					rel2 { relative: 1.0  1.0; to: "base"; offset: -14 0;}
+					align: 0.0 0.0;
+				}
+			 }
+		}
+	}
+
+	group { name: "gl_bg_layout";
+		parts {
+			part { name: "bg";
+				type: RECT;
+				mouse_events:  0;
+				description { state: "default" 0.0;
+					color: 255 255 255 45;
+				}
+			}
+			part { name: "elm.swallow.image";
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+				}
+			}
+		}
+	}
+
+	group { name: "ceter_algined_text_layout";
+		styles {
+			style { name: "my_textblock_name_style";
+			base: "font=Sans:style=Regular font_size=20 color=#000000 ellipsis=1.0";
+			}
+			style { name: "my_textblock_count_style";
+			base: "font=Sans:style=Regular font_size=20 color=#000000";
+			}
+		}
+		script {
+			public scale_value;
+			public pw;
+			public tw;
+			public calc_text_size() {
+				new x, y, w, h;
+				new bx, by, bw, bh;
+				new cx, cy, cw, ch;
+				get_geometry(PART:"elm.sub.text", x, y, w, h);
+				get_geometry(PART:"base", bx, by, bw, bh);
+				get_geometry(PART:"center_padding", cx, cy, cw, ch);
+				if (get_float(scale_value) != 0) {
+					// Reverting scale multiplied width.
+					set_float(pw, (w + cw) * (YOUR_THEME_BASE_SCALE / get_float(scale_value)));
+					set_float(tw, (bw - cw - w) * (YOUR_THEME_BASE_SCALE / get_float(scale_value)));
+				} else {
+					set_float(pw, w + cw);
+					set_float(tw, bw - cw - w);
+				}
+				custom_state(PART:"right_dynamic_padding", "default", 0.0);
+				set_state_val(PART:"right_dynamic_padding", STATE_MIN, get_int(pw), 0);
+				set_state(PART:"right_dynamic_padding", "custom", 0.0);
+				custom_state(PART:"elm.text", "default", 0.0);
+				set_state_val(PART:"elm.text", STATE_MAX, get_int(tw), -1);
+				set_state(PART:"elm.text", "custom", 0.0);
+			}
+			public message(Msg_Type:type, id, ...) {
+				if (type == MSG_FLOAT) {
+				new Float:scale_v;
+				scale_v = getfarg(2);
+				set_float(scale_value, scale_v);
+				calc_text_size();
+				}
+			}
+		}
+		parts {
+			part { name: "base";
+				type: RECT;
+				scale: 1;
+				description { state: "default" 0.0;
+					rel1.relative: 0 0;
+					rel2.relative: 1 1;
+					color: 0 0 0 0;
+				}
+			}
+			part { name: "right_dynamic_padding";
+				type: SPACER;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					align: 1.0 0.5;
+					min: 0 0;
+					rel1.relative: 1.0 0.0;
+				}
+			}
+			part { name: "elm.text.bg";
+				type: SPACER;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					rel2 {
+						to_x: "right_dynamic_padding";
+						relative: 0.0 1.0;
+					}
+				}
+			}
+			part { name: "elm.text";
+				type: TEXTBLOCK;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					min: 0 0;
+					rel1 {
+						to_x: "elm.text.bg";
+						relative: 0.5 0.0;
+					}
+					rel2 {
+						to_x: "elm.text.bg";
+						relative: 0.5 1.0;
+					}
+					text {
+						style: "my_textblock_name_style";
+						min: 1 1;
+						max: 0 1;
+					}
+				}
+			}
+			part { name: "center_padding";
+				type: SPACER;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					align: 0.0 0.5;
+					min: CENTER_PADDING_WIDTH 0;
+					rel1 {
+						to_x: "elm.text";
+						relative: 1.0 0.0;
+					}
+					rel2 {
+						to_x: "elm.text";
+						relative: 1.0 1.0;
+					}
+				}
+			}
+			part { name: "elm.sub.text";
+				type: TEXTBLOCK;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					min: 0 0;
+					align: 0.0 0.5;
+					rel1 {
+						to_x: "center_padding";
+						relative: 1.0 0.0;
+					}
+					rel2 {
+						to_x: "center_padding";
+						relative: 1.0 1.0;
+					}
+					text {
+						style: "my_textblock_count_style";
+						min: 1 1;
+						max: 0 1;
+					}
+				}
+			}
+		}
+	}
+	group { name: "ceter_algined_text_layout_split_view";
+		styles {
+			style { name: "my_textblock_name_style_split_view";
+			base: "font=Sans:style=Regular font_size=12 color=#000000 ellipsis=1.0";
+			}
+			style { name: "my_textblock_count_style_split_view";
+			base: "font=Sans:style=Regular font_size=12 color=#000000";
+			}
+		}
+		script {
+			public scale_value;
+			public pw;
+			public tw;
+			public calc_text_size() {
+				new x, y, w, h;
+				new bx, by, bw, bh;
+				new cx, cy, cw, ch;
+				get_geometry(PART:"elm.sub.text", x, y, w, h);
+				get_geometry(PART:"base", bx, by, bw, bh);
+				get_geometry(PART:"center_padding", cx, cy, cw, ch);
+				if (get_float(scale_value) != 0) {
+					// Reverting scale multiplied width.
+					set_float(pw, (w + cw) * (YOUR_THEME_BASE_SCALE / get_float(scale_value)));
+					set_float(tw, (bw - cw - w) * (YOUR_THEME_BASE_SCALE / get_float(scale_value)));
+				} else {
+					set_float(pw, w + cw);
+					set_float(tw, bw - cw - w);
+				}
+				custom_state(PART:"right_dynamic_padding", "default", 0.0);
+				set_state_val(PART:"right_dynamic_padding", STATE_MIN, get_int(pw), 0);
+				set_state(PART:"right_dynamic_padding", "custom", 0.0);
+				custom_state(PART:"elm.text", "default", 0.0);
+				set_state_val(PART:"elm.text", STATE_MAX, get_int(tw), -1);
+				set_state(PART:"elm.text", "custom", 0.0);
+			}
+			public message(Msg_Type:type, id, ...) {
+				if (type == MSG_FLOAT) {
+				new Float:scale_v;
+				scale_v = getfarg(2);
+				set_float(scale_value, scale_v);
+				calc_text_size();
+				}
+			}
+		}
+		parts {
+			part { name: "base";
+				type: RECT;
+				scale: 1;
+				description { state: "default" 0.0;
+					rel1.relative: 0 0;
+					rel2.relative: 1 1;
+					color: 0 0 0 0;
+				}
+			}
+			part { name: "right_dynamic_padding";
+				type: SPACER;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					align: 1.0 0.5;
+					min: 0 0;
+					rel1.relative: 1.0 0.0;
+				}
+			}
+			part { name: "elm.text.bg";
+				type: SPACER;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					rel2 {
+						to_x: "right_dynamic_padding";
+						relative: 0.0 1.0;
+					}
+				}
+			}
+			part { name: "elm.text";
+				type: TEXTBLOCK;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					min: 0 0;
+					rel1 {
+						to_x: "elm.text.bg";
+						relative: 0.5 0.0;
+					}
+					rel2 {
+						to_x: "elm.text.bg";
+						relative: 0.5 1.0;
+					}
+					text {
+						style: "my_textblock_name_style_split_view";
+						min: 1 1;
+						max: 0 1;
+					}
+				}
+			}
+			part { name: "center_padding";
+				type: SPACER;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					align: 0.0 0.5;
+					min: CENTER_PADDING_WIDTH 0;
+					rel1 {
+						to_x: "elm.text";
+						relative: 1.0 0.0;
+					}
+					rel2 {
+						to_x: "elm.text";
+						relative: 1.0 1.0;
+					}
+				}
+			}
+			part { name: "elm.sub.text";
+				type: TEXTBLOCK;
+				scale: 1;
+				description { state: "default" 0.0;
+					fixed: 1 1;
+					min: 0 0;
+					align: 0.0 0.5;
+					rel1 {
+						to_x: "center_padding";
+						relative: 1.0 0.0;
+					}
+					rel2 {
+						to_x: "center_padding";
+						relative: 1.0 1.0;
+					}
+					text {
+						style: "my_textblock_count_style_split_view";
+						min: 1 1;
+						max: 0 1;
+					}
+				}
+			}
+		}
+	}
+}
+

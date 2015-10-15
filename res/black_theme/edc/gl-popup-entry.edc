@@ -1,0 +1,121 @@
+/*
+* Copyright (c) 2000-2015 Samsung Electronics Co., Ltd All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+
+group { name: "gl_popup_entry";
+   parts {
+      part { name: "base";
+	 type: SPACER;
+	 scale: 1;
+	 description { state: "default" 0.0;
+	    min: 0 160;
+	    fixed: 1 0;
+	 }
+      }
+      part { name: "t_pad";
+	 type: SPACER;
+	 scale: 1;
+	 description { state: "default" 0.0;
+	    rel1.to: "base";
+	    rel2.to: "base";
+	    align: 0.0 0.0;
+	    min: 0 10;
+	    max: 0 10;
+	    fixed: 1 1;
+	 }
+      }
+      part { name: "top_content_padding";
+	 type: SPACER;
+	 scale: 1;
+	 description { state: "default" 0.0;
+	    min: 0 30;
+	    max: 0 40;
+	    rel1 {
+	       to_x: "base";
+	       to_y: "t_pad";
+	       relative: 0.0 1.0;
+	    }
+	    rel2 {
+	       to_x: "base";
+	       to_y: "t_pad";
+	       relative: 1.0 1.0;
+	    }
+	    align: 0.0 0.0;
+	    fixed: 1 1;
+	 }
+      }
+      part { name: "left_swallow_padding";
+	 type: SPACER;
+	 scale: 1;
+	 description { state: "default" 0.0;
+	    min: 30 40;
+	    max: 30 40;
+	    rel1 {
+	       to_x: "base";
+	       to_y: "top_content_padding";
+	       relative: 0.0 1.0;
+	    }
+	    rel2 {
+	       to_x: "base";
+	       to_y: "top_content_padding";
+	       relative: 0.0 1.0;
+	    }
+	    align: 0.0 0.0;
+	    fixed: 1 1;
+	 }
+      }
+      part { name: "right_swallow_padding";
+	 type: SPACER;
+	 scale: 1;
+	 description {
+	    min: 30 40;
+	    max: 30 40;
+	    rel1 {
+	       to_x: "base";
+	       to_y: "top_content_padding";
+	       relative: 1.0 1.0;
+	    }
+	    rel2 {
+	       to_x: "base";
+	       to_y: "top_content_padding";
+	       relative: 1.0 1.0;
+	    }
+	    align: 1.0 0.0;
+	    fixed: 1 1;
+	 }
+      }
+      part {
+	 name: "elm.swallow.content";
+	 type: SWALLOW;
+	 scale: 1;
+	 ignore_flags: ON_HOLD;
+	 description { state: "default" 0.0;
+		 min: 0 80;
+		 fixed: 0 1;
+	    rel1 {
+	       to: "left_swallow_padding";
+	       relative : 1.0 1.0;
+	    }
+	    rel2 {
+	       to: "right_swallow_padding";
+	       relative: 0.0 1.0;
+	    }
+	    align: 0.0 0.5;
+	 }
+      }
+   }
+}
+

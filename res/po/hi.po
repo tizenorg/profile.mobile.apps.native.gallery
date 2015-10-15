@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "आपका डिवाइस Wi-Fi नेटवर्क से कनेक्ट नहीं हुआ है। आपके भुगतान योजना के आधार पर मोबाइल नेटवर्क से कनेक्ट करने पर अतिरिक्त शुल्क लग सकता है।"
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "मोबाइल डाटा बंद किया गया। इसके बजाय किसी Wi-Fi नेटवर्क से कनेक्ट करें या मोबाइल डाटा चालू करें और फिर से प्रयास करें।"
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "आपके द्वारा कैमरे का उपयोग करके वीडियोज रिकॉर्ड करने के बाद, वे यहाँ दिखाई जाएँगे।"
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "फाइल नाम पहले से ही उपयोग में है।"
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "%d मदें हटाएँ?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "गोपनीयता"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "सितं"
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "अक"
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "नवं"
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "मई"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "मा"
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "जून"
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "जुल"
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "जन"
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "फर"
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "दिसं"
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "अग"
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "अप्रै"
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "एल्बम"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "अधिक"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "अमान्य इनपुट पैरामीटर।"
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "प्रविष्टि खाली है"
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "ऐसा ही नाम पहले से उपयोग में है।"
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "नाम बदलने में अक्षम।"
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "कोई एल्बम चुना नहीं गया।"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "मद चुनें"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "कोई एल्बम नहीं"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "फोल्डर बनाएं?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "पुनः प्रयास करें?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "हटायें?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "%d एल्बम्स हटाए जाएँगे।"
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "1 एल्बम हटाया जाएगा।"
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "कैमरा"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "प्रारंभ करें"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "सेटिंग्स"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "हाँ"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "नहीं"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "ओके"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "सुरक्षित"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "हटाएँ?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "एल्बम में ले जाएँ"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "एल्बम में कॉपी करें"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "इसके अनुसार देखें"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "नाम प्रविष्ट करें"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "इस खाते से संबंधित सभी डाटा हटाया जाएगा। जारी रखें?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "रद्द करें"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "नयी एल्बम"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "क्या आप मूल एल्बम से तस्वीरों की कॉपी करना या उन्हें ले जाना चाहते हैं?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "साझा करें"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "स्लाइड शो"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "स्लाइडशो प्रारंभ करें"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "स्लाइडशो सेटिंग्स"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "नाम नहीं"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "सभी एलबम्‍स"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "एल्बम चुनें"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "1 मद हटाया जाएगा।"
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "सभी मदें"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d मदें"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "यहाँ केवल एक एल्बम है"
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "आप %d मद तक चुन सकते हैं"
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "डाउनलोड्स"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "हटाएँ?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "ले जाएँ"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "हटाया जा रहा है..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "संचालन विफल।"
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "रद्द किया गया"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "चयनित"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "ले जाया गया।"
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "कॉपी हुआ।"
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "फाइलें नहीं चुनी गई।"
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "बंद"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "इससे क्रमबद्ध करें"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "नवीनतम"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "सबसे पुराने"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "बनाएँ"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "कोई मदें नहीं"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "छवि संपादित करें"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "तस्वीर चुनें"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "यह मद हटाएँ?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "दृश्य"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "निजी से निकालें"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "पालतू पशु"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "निजी पर ले जाएँ"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "खाना"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "फूल"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "दस्तावेज"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "वाहन"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "वर्णों की अधिकतम संख्या (%d) तक पहुँच गया।"
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "फोटो लोड करने में अक्षम।"
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "इसके द्वारा साझा करें"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "दोबारा न पूछें"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "वर्णो की संख्‍या अधिकतम पहुँची।"
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "समय"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "विफल"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "हटाया।"
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "हटाएँ?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "हटा रहा है..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d मदें दिखाना"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "एल्बम बनाएँ"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "गैलरी"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "अधिक"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "खातें"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "संचालन विफल।"
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "डाउनलोड करें"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "खोजें"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "पीछे"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "कैमरा"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "सभी"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "रीफ्रेश करें"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "निकालें"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "आपके द्वारा ड्रॉपबॉक्स पर तस्वीरें अपलोड करने के बाद, मदें दिखाई जाएगी।"
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "ग्रुप प्ले"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "संपर्क"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "बनाएँ"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "विवरण"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "प्रिंट करें"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "नाम बदलें"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "डाउनलोड हुआ।"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "डाउनलोड हो रहा है..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "नाम प्रविष्ट करें"
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "मेरी फाइलें"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "जोड़ा गया।"
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "प्रक्रिया हो रही है..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "असमर्थित फाइल प्रकार।"
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "आपके द्वारा तस्वीरें लेने के बाद, तस्वीरें दिखाई जाएगी।"
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "भू-दृश्य मोड"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "ड्रॉअर मेन्यू बंद करने के लिए दो बार टैप करें।"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "ड्रॉअर मेन्यू खोलने के लिए दो बार टैप करें।"
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "ड्रैग और ड्रॉप करें"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "ड्रॉअर"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "मोबाइल डाटा अक्षम है। इसके बजाय Wi-Fi नेटवर्क से कनेक्ट करें, या मोबाइल डाटा सक्षम करें और फिर से प्रयास करें।"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Wi-Fi कनेक्‍शन आवश्‍यक है। Wi-Fi नेटवर्क से कनेक्ट करें और फिर से प्रयास करें।"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "इससे तस्वीरें जोड़ें"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "जोड़े गए डिवाइस"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "व्यक्तिगत सामग्री"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "%s से निकालें"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "नाम टैग हटाएँ"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "प्रदर्शित करने के लिए कोई प्रसंग नहीं हैं। कोई नया प्रसंग बनाएँ।"
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "अन्य तिथियों पर तेजी से स्क्रॉल करने के लिए, स्क्रीन की शीर्ष दाईं ओर तिथि संकेतक पर टैप करे रखें।"
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "%d मद निकालें?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "यह मद निकालें?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "गैलरी"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "शफल की गई तस्वीरें"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "तस्वीरें जोड़ें"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "आपके द्वारा तस्वीरें आपके पसंदीदा के रूप में टैग करने के बाद, तस्वीरें दिखाई जाएँगी।"
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "चेहरा पहचान निकालें?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "नाम असाइन करें"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "%s के रूप में पुष्टि करें"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "लेआउट"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "%d तस्वीरें जोड़ी गई"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "एल्‍बम रद्द किया जाएगा।"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "मद हटाएँ"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "मदें हटाएँ"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 मद"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 सेकंड"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 सेकंड"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "सौंपा नहीं गया"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "स्लाइड शो अंतराल"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "टैग नहीं किया गया"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 सेकंड"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "सभी सामग्री"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "प्रदर्शन के लिए सामग्री"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "टैग हटाएँ"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "डिवाइस सामग्री"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "ड्रॉपबॉक्स सामग्री"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "फ़ेसबुक सामग्री"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "बाएँ घुमाएँ"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "दाएँ घुमाएँ"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "आयात करें"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "आयात किया हुआ।"
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "आयात कर रहा है..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "लोड हो रहा है..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "निकटवर्ती डिवाइस मिलें।"
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "कोई डिवाइस नहीं मिला। बैकग्राउंड में निकटवर्ती डिवाइसेस की स्कैन जारी रहेगी।"
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "रिफ्रेश किया गया।"
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "घुमाया जा रहा है..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "स्कैन प्रारंभ की गई। डिवाइस सूची स्वचालित रूप से अपडेट की जाएगी।"
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "डाउनलोड प्रारंभ कर रहा है..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "इसमें कॉपी करें"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "इसमें ले जाएँ"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "शॉर्टकट जोड़ने में विफल।"
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "पर्याप्त मेमोरी नहीं। कुछ मदें हटाएँ।"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "निकाला।"
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "जोड़ रहा है..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "%d एल्बम हटाएँ?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "निजी स्टोरेज"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "यहाँ खींचें।"
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "नया"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "असमूहीकृत"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "स्क्रीनशॉट्स"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "फोटों"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "डाउनलोड विफल।"
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "असमर्थित फाइल।"
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 परिणाम"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d परिणाम"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "पसंदीदा"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "डाउनलोड रद्द।"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "यह एल्बम हटाएँ?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "चेतावनी"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "इसके द्वारा क्रमबद्ध करें"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "आज"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "तिथि"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "दर्शानें के लिए मदें नहीं।"
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "तस्वीरें और वीडियों लेने के लिए टैप करें।"
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "साझा की जा सकने वाली मदों की अधिकतम संख्या (%d) सीमा पार हो गई है।"
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "छवियाँ जोड़ने के लिए टैप करें।"
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "मूल एल्बम से चयनित मदों को कॉपी करें या उन्हें ले जाएँ?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "चयन करें"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "फाइल पहले से मौजूद है।"
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "यह मद हटाया जाएगा।"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "आपके द्वारा फ़ेसबुक पर तस्वीरें अपलोड करने के बाद, मदें दिखाई जाएगी।"
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "सभी चुनें"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "%d चयनित"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "इस रूप में देखें"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "तिथि (सबसे नवीनतम)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "तिथि (सबसे पुरानी)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "आपके द्वारा तस्वीरें लेने के बाद वे यहाँ दिखाई जाएँगी।"
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "रद्द किया जा रहा है..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "डिवाइस से"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "ड्रॉपबॉक्स से"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "फेसबुक से"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "डाउनलोड पूर्ण।"
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "सभी मदें हटाई जाएँगी।"
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "1 मद डाउनलोड की जाएँगी।"
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "%d मदें डाउनलोड की जाएँगी।"
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "सभी मदें डाउनलोड की जाएँगी।"
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "चयनित एल्बम, स्रोत एल्बम के समान ही है। कोई अन्य एल्बम चुनें।"
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "छवियाँ जोड़ने के लिए यहाँ टैप करें"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "डाटा सुरक्षित करने में असमर्थ"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "आपके डिवाइस स्टोरेज में पर्याप्त स्थान नहीं है। सेटिंग्स > पॉवर और संग्रहण > संग्रहण पर जाएँ, फिर कुछ फाइलें हटाएँ और फिर से प्रयास करें।"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "आपके SD कार्ड में पर्याप्त स्थान नहीं है। सेटिंग्स > पॉवर और संग्रहण > संग्रहण पर जाएँ, फिर कुछ फाइलें हटाएँ और फिर से प्रयास करें।"
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "रद्द करें"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "दोबारा न दिखाएँ"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "आपकी भुगतान योजना के आधार पर रोमिंग के दौरान मोबाइल डाटा का उपयोग करने के परिणाम स्वरूप अतिरिक्त शुल्क लग सकते हैं।"
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "%d मदें हटाई जाएँगी।"
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "हटाएँ"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "बीता हुआ कल"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "डाउनलोड्स"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "कॉपी करें"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "हटाएँ"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "एल्बम"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "मदों (%d) की अधिकतम संख्या पार हो गई है।"
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "रद्द"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "पूर्ण"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "रद्द करें"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "हटाएँ"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "कॉपी कर रहा है..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "ले जा रहा है..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "यदि आप कोर्इ ऐसी सामग्री बनाते हैं जिसमें व्यक्तिगत स्टोरेज की मदें शामिल हैं, तो हो सकता है यह स्वचालित रूप से छुपाई न जाएँ। नई सामग्री देखते समय चयनित व्यक्तिगत सामग्री देखी जा सकती है।"
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "संपादन"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "सेटिंग्स"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "संपादन"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "क्रम बदलें"
+

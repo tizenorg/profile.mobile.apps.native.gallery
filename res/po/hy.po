@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Ձեր սարքը միացված չէ Wi-Fi ցանցի: Շարժական կապի ցանցին միանալը կարող է լրացուցիչ վճարների հանգեցնել՝ Ձեր վճարային պլանից կախված"
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Շարժական տվյալներն անջատված են: Փոխարենը միացեք Wi-Fi ցանցի կամ միացրեք Շարժական տվյալներն ու նորից փորձեք:"
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Խցիկով տեսանյութեր տեսագրելուց հետո դրանք կցուցադրվեն այստեղ:"
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Ֆայլի անունն արդեն գործածվում է"
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "Ջնջե՞լ %d տարր"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Գաղտնիություն"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Սպտ."
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Հկտ."
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Նվբ."
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "Մայ"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Մրտ."
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Հնս."
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Հլս."
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Հնվ."
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Փտր."
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Դկտ."
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Օգս."
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Ապր."
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Ալբոմ"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Ավելին"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Անվավեր ներածված պարամետր:"
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "Գրառումը դատարկ է:"
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "Նույն անունն արդեն օգտագործվում է:"
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "Հնարավոր չէ վերանվանել:"
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "Ոչ մի ալբոմ չի ընտրվել:"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Ընտրել տարրը"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "Ալբոմներ չկան"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "Ստեղծե՞լ թղթապանակ"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "Կրկին փորձե՞լ"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "Հեռացնե՞լ"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "%d ալբոմ կվերացվի:"
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "1 ալբոմ կվերացվի:"
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Խցիկ"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Մեկնարկել"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Պարամետրեր"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Այո"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "Ոչ"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "OK"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Պահպանել"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "Ջնջե՞լ"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Տեղափոխել ալբոմի մեջ"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Պատճենել ալբոմի մեջ"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Դիտել ըստ"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Մուտքագրեք անունը"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "Այս հաշվին առնչվող բոլոր տվյալները կվերացվեն. շարունակե՞լ:"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Դադարեցնել"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Նոր ալբոմ"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Ուզու՞մ եք պատճենել կամ տեղափոխել սկզբնական ալբոմի նկարները:"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Համատեղ օգտագործում"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Սահկահանդես"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Սկսել սլայդերի ցուցադրում"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Սահկահանդեսի ընտրանքները"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Անուն չկա"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Բոլոր ալբոմները"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Ընտրել ալբոմ"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "1 տարր կվերացվի:"
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Բոլոր տարրերը"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d տարր"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Միայն մեկ ալբոմ կա:"
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Կարող եք ընտրել մինչև %d տարր:"
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Բեռնումներ"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "Ջնջե՞լ"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Տեղափոխել"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Ջնջվում է..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Գործողությունը ձախողվեց:"
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Դադարեցված"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Ընտրված"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Տեղափոխված է"
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Պատճենված է:"
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "Չի ընտրված որևէ ֆայլ:"
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Փակել"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Տեսակավորել ըստ"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Ավենավերջին"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Ամենահին"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Ստեղծել"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Տարրեր չկան"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Խմբագրել պատկերը"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Ընտրեք նկար"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "Վերացնե՞լ այս տարրը:"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Տեսարան"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Հեռացնել Գաղտնիից"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Ընտանի կենդանիներ"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Տեղափոխել դեպի Գաղտնի"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Ուտելիք"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Ծաղիկներ"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Փաստաթղթեր"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Տրանսպորտային միջոցներ"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Հասել է նիշերի առավելագույն քանակին (%d):"
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "Անհնար է բեռնել լուսանկարը:"
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Համօգտագործել հետևյալի միջոցով՝"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "Այլևս չհարցնել"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Հասել եք նիշերի առավելագույն քանակին:"
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Ժամանակ"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Չհաջողվեց"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Ջնջված է:"
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "Ջնջե՞լ"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Հեռացնում է..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Ցույց է տրվում %d տարր"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Ստեղծել ալբոմ"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Պատկերասրահ"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Ավելին"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Հաշիվներ"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Գործողությունը ձախողվեց:"
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Ներբեռնել"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Որոնել"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Ետ"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Խցիկ"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Բոլոր"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Նորացնել"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Հեռացնել"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Նկարները Dropbox-ում վերբեռնելուց հետո տարրերը կցուցադրվեն:"
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Կոնտակտներ"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Ստեղծել"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Մանրամասներ"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Տպել"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Վերանվանել"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Բեռնված է:"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Բեռնում..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Մուտքագրեք անունը:"
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Իմ Ֆայլերը"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Ավելացված է:"
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Ընթացքում է"
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "Ֆայլի չսատարվող տեսակ:"
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "Նկարահանելուց հետո նկարները կցուցադրվեն:"
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Ալբոմի ռեժիմ"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Կրկնակի թակեք՝ գզրոց-ընտրացանկը փակելու համար:"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Կրկնակի թակեք՝ գզրոց-ընտրացանկը բացելու համար:"
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Քարշեք և թողեք"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Իջնող ընտրացանկ"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Շարժական տվյալները կասեցված են: Փոխարենը միացեք Wi-Fi ցանցին կամ ընձեռեք շարժական տվյալներն ու նորից փորձեք"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Wi-Fi միացում է պահանջվում: Միացեք Wi-Fi ցանցին և նորից փորձեք:"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Նկարներ ավելացնել այստեղից՝"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Կապակցված սարքեր"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Գաղտնի բովանդակություն"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Հեռացնել %s-ից"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Հեռացնել անվանապիտակը"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "Ցուցադրելու իրադարձություններ չկան: Ստեղծեք նոր իրադարձություն:"
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Արագորեն դեպի այլ թվականներ ոլորելու համար էկրանի վերին աջ մասում թակեք և պահեք թվականի ցուցիչը:"
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "Հեռացնե՞լ %d տարր:"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "Հեռացնե՞լ այս տարրը:"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Պատկերասրահ"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Խառնված նկարներ"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Ավելացնել նկարներ"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "Նկարները որպես սիրվածներ հատկորոշելուց հետո նկարները կցուցադրվեն:"
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "Հեռացնե՞լ դեմքի նույնականացումը:"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Վերագրել անուն"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "Հաստատեք որպես %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Դասավորություն"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "%d նկար է ավելացվել"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Ալբոմը չեղյալ կհամարվի:"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Վերացրեք տարր"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Վերացնել տարրեր"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 տարր"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 վայրկյան"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 վայրկյան"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "Նշանակված չէ"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Սահկահանդեսի միջակայքը"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Չհատկորոշված"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3  վայրկյան"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Ամբողջ բովանդակությունը"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Ցուցադրման ենթակա բովանդակություն"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Ջնջել տեգը"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Սարքի բովանդակություն"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Dropbox-ի բովանդակություն"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Facebook-ի բովանդակություն"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Պտտել ձախ"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Պտտել աջ"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Ներարկում"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Ներմուծված:"
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Ներմուծում..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Բեռնում է..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Մոտակա սարքեր են գտնվել:"
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "Սարքեր չեն գտնվել: Մերձակա սարքերի տեսածրումը կշարունակվի հետին պլանում"
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Նորացվեց:"
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Պտտվում է..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Տեսածրումը սկսվեց: Սարքերի ցուցակը կթարմացվի ինքնաբերաբար"
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Ներբեռնումը սկսվում է..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Պատճենել ...ում"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Տեղափոխել դեպի"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Չհաջողվեց դյուրանցում ավելացնել:"
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Հիշողությունը չի բավարարում: Ջնջեք որոշ տարրեր"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Հեռացված է"
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Ավելացնում է..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "Վերացնե՞լ %d ալբոմներ:"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Անձնական պահոց"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Քաշեք այստեղ:"
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Նոր"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Ապախմբավորված"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Էկրանի պատկերներ"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Լուսանկարներ"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Բեռնումն անհասանելի է:"
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Չսատարվող ֆայլ:"
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 արդյունք"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d արդյունքներ"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Ընտրյալներ"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Ներբեռնումը չեղարկված է:"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "Վերացնե՞լ այս ալբոմը:"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Նախազգուշացում"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Տեսակավորել ըստ"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Այսօր"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Ամսաթիվ"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "Ցուցադրելու տարրեր չկան:"
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Նկարներ կամ տեսանյութեր նկարահանելու համար թակեք այստեղ:"
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Տարրերի առավելագույն քանակը, որոնք կարող են համօգտագործվել (%d), գերազանցվել է:"
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Թակել՝ պատկերներ ավելացնելու համար:"
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Ընտրված տարրերը պատճենե՞լ կամ տեղափոխե՞լ սկզբնական ալբոմից:"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Ընտրել"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "Ֆայլն արդեն գոյություն ունի:"
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "Այս տարրը կվերացվի:"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Նկարները Facebook-ում վերբեռնելուց հետո տարրերը կցուցադրվեն:"
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Ընտրել բոլորը"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "%d ընտրված"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Դիտել որպես"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Թվական (առավել վերջին)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Թվական (ամենահին)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Նկարահանելուց հետո նկարները կցուցադրվեն այստեղ:"
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Դադարեցվում է..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "Սարքից"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "Dropbox-ից"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "Facebook-ից"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Բեռնումը ավարտված է:"
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Բոլոր տարրերը կվերացվեն:"
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "1 տարր կներբեռնվի:"
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "%d տարր կներբեռնվի:"
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Բոլոր տարրերը կներբեռնվեն:"
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "Ընտրված ալբոմը և աղբյուր-ալբոմը նույնն են: Ընտրեք ուրիշ ալբոմ:"
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Հպեք այստեղ` պատկերներ հավելելու համար"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "Անհն. է պահպանել տվյալներ"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Ձեր սարքի պահոցում բավարար տեղ չկա: Գնացեք Դրվածքներ > Էներգիա և պահոց > Պահոց, հետո վերացրեք որոշ ֆայլեր և նորից փորձեք:"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Ձեր SD քարտում բավարար տեղ չկա: Գնացեք Դրվածքներ > Էներգիա և պահոց > Պահոց, հետո վերացրեք որոշ ֆայլեր և նորից փորձեք:"
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Չեղարկել"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "Այլևս ցույց չտալ"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Ռոումինգի ընթացքում Շարժական տվյալներ օգտագործելը կարող է լրացուցիչ վճարների հանգեցնել՝ Ձեր վճարային պլանից կախված:"
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "%d տարրեր կջնջվեն:"
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Վերացնել"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Երեկ"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Ներբեռնումներ"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Պատճենել"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Վերացնել"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Ալբոմներ"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Տարրերի առավելագույն քանակը (%d) գերազանցվեց:"
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Չեղարկել"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ԱՐՎԱԾ"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ԴԱԴԱՐԵՑՆԵԼ"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "ՎԵՐԱՑՆԵԼ"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Պատճենում է..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Տեղափոխում..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Եթե ստեղծեք անհատական պահոցի տարրեր ներառող բովանդակություն, հնարավոր է, որ այն ինքնաբերաբար չթաքցվի: Ընտրված անձնական բովանդակությունը հնարավոր կլինի տեսնել նոր բովանդակությունը դիտելու ժամանակ:"
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "ԽՄԲԱԳՐԵԼ"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Դրվածքներ"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "ԽՄԲԳՐԼ"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Վերադասավորել"
+
