@@ -1,0 +1,85 @@
+/*
+* Copyright (c) 2000-2015 Samsung Electronics Co., Ltd All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+
+
+ #define RESOURCE_IMAGE( FILE_NAME ) \
+   group { \
+      name: FILE_NAME; \
+      images.image: FILE_NAME COMP; \
+      parts { \
+         part { name: "image"; \
+            description { \
+               state: "default" 0.0; \
+               image.normal: FILE_NAME; \
+               aspect: 1 1; \
+               aspect_preference: BOTH; \
+            } \
+         } \
+      } \
+   }
+
+#define RESOURCE_IMAGE_LOSSY( FILE_NAME ) \
+   group { \
+      name: FILE_NAME; \
+      images.image: FILE_NAME LOSSY 85; \
+      parts { \
+         part { name: "image"; \
+            description { \
+               state: "default" 0.0; \
+               image.normal: FILE_NAME; \
+               aspect: 1 1; \
+               aspect_preference: BOTH; \
+            } \
+         } \
+      } \
+   }
+
+collections {
+	RESOURCE_IMAGE("T01_icon_lock.png");
+	RESOURCE_IMAGE("T01_album_icon_camera.png");
+	RESOURCE_IMAGE("T01_album_icon_download.png");
+	RESOURCE_IMAGE("T01_album_icon_folder.png");
+	RESOURCE_IMAGE("T01_album_icon_sd_card.png");
+	RESOURCE_IMAGE("T01_icon_camera_all.png");
+	RESOURCE_IMAGE("T01_icon_add_folder.png");
+	RESOURCE_IMAGE("T01_title_icon_select_all.png");
+	RESOURCE_IMAGE("T01_btn_thumbnail_play.png");
+	RESOURCE_IMAGE("T01_icon_thumbnail_bookmark.png");
+
+	RESOURCE_IMAGE("T01_icon_sound_shot.png");
+	RESOURCE_IMAGE("T01_icon_panorama.png");
+	RESOURCE_IMAGE("T01_icon_bustshot_45x45.PNG");
+
+	RESOURCE_IMAGE("T01_popup_icon_new_album.png");
+	RESOURCE_IMAGE("T01_popup_icon_slideshow.png");
+	RESOURCE_IMAGE("T01_icon_share.png");
+	RESOURCE_IMAGE("T01_popup_copy.png");
+	RESOURCE_IMAGE("T01_popup_move.png");
+	RESOURCE_IMAGE("T02_popup_icon_edit_image.png");
+	RESOURCE_IMAGE("T02_popup_icon_settings.png");
+	RESOURCE_IMAGE("T01_popup_icon_rotate_right.png");
+	RESOURCE_IMAGE("T01_popup_icon_rotate_left.png");
+	RESOURCE_IMAGE("T01_popup_icon_edit.png");
+	RESOURCE_IMAGE("T01_popup_icon_delete.png");
+	RESOURCE_IMAGE("T01_popup_icon_done.png");
+	RESOURCE_IMAGE("T01_popup_icon_rename.png");
+	RESOURCE_IMAGE("T01_nocontents_videos.png");
+	RESOURCE_IMAGE("T01_icon_back.png");
+	RESOURCE_IMAGE("gallery_list_icon_folder.png");
+	RESOURCE_IMAGE("gallery_list_icon_my_files_sd_card.png");
+}
+

@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "디바이스가 Wi-Fi 네트워크에 연결되지 않았습니다. 모바일 네트워크에 연결하면 요금제에 따라 추가요금이 부과될 수 있습니다."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "[모바일 데이터]가 해제된 상태입니다. Wi-Fi 네트워크에 연결하거나, [모바일 데이터]를 실행한 후 다시 시도하세요."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "카메라를 사용하여 동영상을 촬영하면 동영상이 여기에 표시됩니다."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "사용 중인 파일 이름입니다."
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "%d개를 삭제할까요?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "개인정보 보호"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "9월"
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "10월"
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "11월"
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "5월"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "3월"
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "6월"
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "7월"
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "1월"
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "2월"
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "12월"
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "8월"
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "4월"
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "앨범"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "더보기"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "입력값이 바르지 않습니다."
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "입력된 내용이 없습니다."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "사용 중인 이름입니다."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "이름을 변경할 수 없습니다."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "선택한 앨범이 없습니다."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "항목 선택"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "앨범이 없습니다"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "새 폴더를 추가할까요?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "다시 시도할까요?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "제거할까요?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "앨범 %d개를 삭제합니다."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "앨범 1개를 삭제합니다."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "카메라"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "시작"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "설정"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "예"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "아니요"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "확인"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "저장"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "삭제할까요?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "앨범으로 이동"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "앨범에 복사"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "보기 방식"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "이름 입력"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "이 계정과 관련된 모든 데이터를 삭제합니다. 계속할까요?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "취소"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "새 앨범"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "원래 앨범에서 사진을 복사하거나 이동할까요?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "공유"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "슬라이드쇼"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "슬라이드쇼 시작"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "슬라이드쇼 설정"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "이름이 없습니다"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "모든 앨범"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "앨범 선택"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "항목 1개를 삭제합니다."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "모든 항목"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d개"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "앨범 1개가 있습니다."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "%d개까지 선택할 수 있습니다."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "다운로드"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "삭제할까요?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "이동"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "삭제 중..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "작업을 수행하지 못하였습니다."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "취소됨"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "이 항목만"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "이동하였습니다."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "복사하였습니다."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "선택한 파일이 없습니다."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "닫기"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "정렬 방식"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "최신 위젯"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "오래된 순"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "추가"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "항목이 없습니다"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "이미지 편집"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "사진 선택"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "이 항목을 삭제할까요?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "풍경"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "프라이빗에서 제거"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "애완동물"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "프라이빗으로 이동"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "음식"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "꽃"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "문서"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "이동수단"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "최대 글자 수(%d)에 도달하였습니다."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "사진을 불러올 수 없습니다."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "공유"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "다시 묻지 않기"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "최대 글자 수에 도달하였습니다."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "시간"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "완료 안 됨"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "삭제하였습니다."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "삭제할까요?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "제거 중..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "항목 %d개 표시"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "앨범 추가"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "갤러리"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "더보기"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "계정"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "작업을 수행하지 못하였습니다."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "다운로드"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "검색"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "뒤로가기"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "카메라"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "전체"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "새로고침"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "제거"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "사진을 Dropbox에 업로드하면 사진이 표시됩니다."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "연락처"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "추가"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "상세정보"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "인쇄"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "이름 변경"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "다운로드하였습니다."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "다운로드 중..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "이름을 입력하세요."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "내 파일"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "추가하였습니다."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "진행 중..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "지원되지 않는 파일 형식입니다."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "사진을 촬영하면 사진이 표시됩니다."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "가로 모드"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "서랍 메뉴를 닫으려면 두 번 누르세요."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "서랍 메뉴를 열려면 두 번 누르세요."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "끌어다 놓기"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "서랍 메뉴"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "[모바일 데이터]를 해제하였습니다. Wi-Fi 네트워크에 연결하거나 [모바일 데이터]를 실행한 후 다시 시도하세요."
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Wi-Fi 연결이 필요합니다. Wi-Fi 네트워크에 연결한 후 다시 시도하세요."
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "사진 추가"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "연결된 디바이스"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "프라이빗 컨텐츠"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "%s에서 제거"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "이름 태그 제거"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "표시할 이벤트가 없습니다. 새 이벤트를 추가하세요."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "다른 날짜로 빠르게 이동하려면 화면 상단 오른쪽에 있는 날짜 표시막대를 길게 누르세요."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "항목 %d개를 제거할까요?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "이 항목을 제거할까요?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "갤러리"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "사진 자동 구성"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "사진 추가"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "즐겨찾는 사진으로 태그하면 여기에 표시됩니다."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "얼굴 인식을 제거할까요?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "이름 지정"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "%s 님으로 확인"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "사진 배치"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "추가된 사진 %d장"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "앨범 추가를 취소합니다."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "항목 삭제"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "항목 삭제"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1개"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10초"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5초"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "지정 안 함"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "슬라이드쇼 간격"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "태그 없음"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3초"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "모든 컨텐츠"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "표시할 컨텐츠"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "태그 삭제"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "디바이스 컨텐츠"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Dropbox 컨텐츠"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Facebook 컨텐츠"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "왼쪽으로 회전"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "오른쪽으로 회전"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "가져오기"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "가져오기를 완료하였습니다."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "가져오는 중..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "불러오는 중..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "주변 디바이스를 찾았습니다."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "디바이스를 찾을 수 없습니다. 백그라운드에서 계속해서 주변 디바이스를 찾습니다."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "새로고침하였습니다."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "회전 중..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "찾는 중입니다. 디바이스 목록은 자동 업데이트합니다."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "다운로드를 시작하는 중..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "복사 위치"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "이동 위치"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "바로가기를 추가하지 못하였습니다."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "저장공간이 부족합니다. 일부 항목을 삭제하세요."
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "제거하였습니다."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "추가 중..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "앨범 %d개를 삭제할까요?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "개인 저장공간"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "여기로 이동하세요."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "New"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "분류 안 됨"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "스크린샷"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "사진"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "다운로드하지 못하였습니다."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "지원되지 않는 파일입니다."
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "검색 결과 1개"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "검색 결과 %d개"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "즐겨찾기"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "다운로드를 취소하였습니다."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "이 앨범을 삭제할까요?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "경고"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "정렬 방식"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "오늘"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "날짜"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "표시할 항목이 없습니다."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "사진 또는 동영상을 촬영하려면 여기를 누르세요."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "공유 가능한 최대 항목 수(%d)를 초과하였습니다."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "이미지를 추가하려면 누르세요."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "원래 앨범에서 선택한 항목을 복사하거나 이동할까요?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "선택"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "동일한 파일이 있습니다."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "항목을 삭제합니다."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "사진을 Facebook에 업로드하면 사진이 표시됩니다."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "모두 선택"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "%d개 선택"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "보기 방식"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "날짜(최근 순)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "날짜(오래된 순)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "사진을 촬영하면 사진이 여기에 표시됩니다."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "취소 중..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "디바이스"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "Dropbox"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "Facebook"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "다운로드를 완료하였습니다."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "항목을 모두 삭제합니다."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "항목 1개를 다운로드합니다."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "항목 %d개를 다운로드합니다."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "모든 항목을 다운로드합니다."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "출처가 동일한 앨범을 선택하였습니다. 다른 앨범을 선택하세요."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "이미지를 추가하려면 여기를 누르세요"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "데이터를 저장할 수 없음"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "디바이스에 저장공간이 부족합니다. [설정] > [전원 및 저장공간] > [저장공간]에서 일부 파일을 삭제한 후 다시 시도하세요."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "SD 카드에 저장공간이 부족합니다. [설정] > [전원 및 저장공간] > [저장공간]에서 일부 파일을 삭제한 후 다시 시도하세요."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "취소"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "다시 보지 않기"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "로밍 중에 모바일 데이터를 사용하면 데이터 요금제에 따라 추가요금이 부과될 수 있습니다."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "항목 %d개를 삭제합니다."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "삭제"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "어제"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "다운로드"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "복사"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "삭제"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "앨범"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "최대 항목 수(%d)를 초과하였습니다."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "취소"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "완료"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "취소"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "삭제"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "복사 중..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "이동 중..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "퍼스널 저장공간의 항목이 포함된 컨텐츠를 추가하면, 추가한 컨텐츠는 자동으로 숨겨지지 않습니다. 새로 만든 컨텐츠를 볼 때 그 속에 포함된 개인 컨텐츠가 함께 표시될 수 있습니다."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "편집"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "설정"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "편집"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "순서 변경"
+

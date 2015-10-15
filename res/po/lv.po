@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Ierīce nav savienota ar Wi-Fi tīklu. Savienojuma izveide ar mobilo sakaru tīklu var radīt papildu izmaksas atkarībā no jūsu tarifu plāna."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobilie dati ir izslēgti. Izveidojiet savienojumu ar Wi-Fi tīklu vai ieslēdziet mobilos datus un mēģiniet vēlreiz."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Kad būsit ierakstījis videoklipus, izmantojot kameru, tie būs redzami šeit."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Faila nosaukums jau tiek lietots"
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "Vai izdzēst %d objektus?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Konfidencialitāte"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Sep"
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Okt"
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Nov"
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "Mai."
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Mar"
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Jūn"
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Jūl"
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Jan"
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Feb"
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Dec"
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Aug"
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Apr"
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Albums"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Citi"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Nederīgs ievades parametrs."
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "Ieraksts nav norādīts."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "Šāds nosaukums jau tiek lietots."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "Nevar pārdēvēt."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "Nav izvēlēts neviens albums."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Izvēlieties vienumu"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "Nav albumu"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "Vai izveidot mapi?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "Vai mēģināt vēlreiz?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "Vai noņemt?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "Tiks izdzēsti %d albumi."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "Tiks izdzēsts 1 albums."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Kamera"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Sākt"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Iestatījumi"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Jā"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "Nē"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "Labi"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Saglabāt"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "Vai dzēst?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Pārvietot uz albumu"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Kopēt albumā"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Skatīt pēc"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Ievadiet nosaukumu"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "Visi ar šo kontu saistītie dati tiks izdzēsti. Vai turpināt?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Atcelt"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Jauns albums"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Vai vēlaties kopēt vai pārvietot attēlus no oriģinālā albuma?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Koplietot"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Slaidrāde"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Sākt slaidrādi"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Slaidrādes iestatījumi"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Nav vārda"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Visi albumi"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Izvēlēties albumu"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "Tiks izdzēsts 1 objekts."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Visi objekti"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d objekti"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Izveidots tikai viens albums."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Varat izvēlēties līdz pat %d objektiem."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Lejupielādes"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "Vai dzēst?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Pārvietot"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Dzēš..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Darbība neizdevās."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Atcelti"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Izvēlēts"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Pārvietots."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Nokopēts."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "Nav izvēlētu failu."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Aizvērt"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Kārtot pēc"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Jaunākie"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Vecākie"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Izveidot"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Nav vienumu"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Rediģēt attēlu"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Atlasīt attēlu"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "Vai izdzēst šo objektu?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Ainava"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Noņemt no mapes Privāti"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Mājdzīvnieki"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Pārvietot uz privāto krātuvi"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Ēdiens"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Ziedi"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Dokumenti"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Transportlīdzekļi"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Sasniegts maksimālais rakstzīmju skaits (%d)."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "Nevar ielādēt fotoattēlu."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Koplietot, izmantojot"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "Vairs nejautāt"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Sasniegts maksimālais rakstzīmju skaits."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Laiks"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Neizdevās"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Izdzēsts."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "Vai dzēst?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Noņem..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Rāda %d objektus"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Izveidot albumu"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Galerija"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Vēl"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Konti"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Darbība neizdevās."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Lejupielāde"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Meklēt"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Atpakaļ"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Kamera"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Visas"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Atsvaidzināt"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Noņemt"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Pēc attēlu augšupielādes pakalpojumā Dropbox, tiks parādīti objekti."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Kontakti"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Izveidot"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Dati"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Drukāt"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Pārdēvēt"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Lejupielādēts."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Ielādē..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Ievadiet vārdu."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Mani Faili"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Pievienots."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Notiek apstrāde..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "Neatbalstīts faila veids."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "Pēc attēlu uzņemšanas tie tiks parādīti."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Ainavas režīms"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Lai aizvērtu nolaižamo izvēlni, veiciet dubultskārienu."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Lai atvērtu nolaižamo izvēlni, veiciet dubultskārienu."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Vilkt un nomest"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Izvēlne"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobilie dati ir deaktivizēti. Tā vietā izveidojiet savienojumu ar Wi-Fi tīklu vai aktivizējiet mobilos datus un mēģiniet vēlreiz"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Nepieciešams Wi-Fi savienojums. Izveidojiet savienojumu ar Wi-Fi tīklu un mēģiniet vēlreiz"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Pievienot attēlus no"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Pievienotās ierīces"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Privāts saturs"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Noņemt no %s"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Noņemt vārda atzīmi"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "Nav notikumu, ko parādīt. Izveidojiet jaunu notikumu."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Lai ātri ritinātu datumus, pieskarieties pie datuma rādītāja ekrāna augšējā labajā pusē un turiet."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "Vai noņemt %d objektus?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "Vai noņemt šo objektu?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Galerija"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Attēli jauktā secībā"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Pievienot attēlus"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "Pēc tam, kad atzīmēsit attēlus kā izlases attēlus, tie tiks parādīti."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "Vai noņemt sejas identifikāciju?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Piešķirt vārdu"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "Apstiprināt kā %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Izkārtojums"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "Pievienoti %d attēli"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Albums tiks atcelts."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Dzēst objektu"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Dzēst objektus"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 objekts"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekundes"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekundes"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "Nav piešķirta"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Slaidrādes intervāls"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Neatzīmēts"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekundes"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Viss saturs"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Rādāmais saturs"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Dzēst atzīmi"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Ierīces saturs"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Dropbox saturs"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Facebook saturs"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Pagriezt pa kreisi"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Pagriezt pa labi"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Importēt"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Importētas."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Importē..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Ielādē..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Tuvumā atrastās ierīces."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "Nav atrasta neviena ierīce. Tuvumā esošo ierīču meklēšana tiks turpināta fonā."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Atjaunots."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Notiek pagriešana..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Ir sākta meklēšana. Ierīču saraksts tiks atjaunināts automātiski."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Sāk lejupielādi..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Kopēt uz"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Pārvietot uz"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Neizdevās pievienot īsceļu."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Nepietiek atmiņas. Izdzēsiet dažus vienumus"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Noņemts."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Pievieno..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "Vai izdzēst %d albumus?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Privātā krātuve"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Velciet šeit."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Jauna"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Negrupētie"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Ekrānuzņēmumi"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Fotoattēli"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Lejupielāde neizdevās."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Neatbalstīts fails."
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 rezultāts"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d rezultāti"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Izlases"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Lejupielāde atcelta."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "Vai izdzēst šo albumu?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Brīdinājums"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Kārtot pēc"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Šodien"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Datums"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "Nav objektu, ko parādīt."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Pieskarieties šeit, lai uzņemtu attēlus vai videoklipus."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Pārsniegts maksimālais kopīgojamo objektu skaits (%d)."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Pieskarieties, lai pievienotu attēlus."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Vai vēlaties kopēt vai pārvietot objektus no sākotnējā albuma?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Izvēlēties"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "Fails jau pastāv."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "Šis objekts tiks izdzēsts."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Pēc attēlu augšupielādes pakalpojumā Facebook, tiks parādīti objekti."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Izvēlēties visu"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "Izvēlēts: %d"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Skatīt kā"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Datums (jaunākais)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Datums (vecākais)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Pēc attēlu uzņemšanas tie tiks parādīti šeit."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Atceļ..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "No ierīces"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "No Dropbox"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "No Facebook"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Lejupielāde pabeigta."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Visi objekti tiks izdzēsti."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "Tiks lejupielādēts 1 objekts."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Tiks lejupielādēti %d objekti."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Tiks lejupielādēti visi objekti."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "Izvēlētais albums ir avota albums. Izvēlieties citu albumu."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Pieskarieties šeit, lai pievienotu attēlus"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "Nevar saglabāt datus"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Ierīces krātuvē nepietiek vietas. Atveriet Iestatījumi > Enerģija un krātuve > Krātuve, izdzēsiet dažus failus un mēģiniet vēlreiz."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "SD kartē nepietiek vietas. Atveriet Iestatījumi > Enerģija un krātuve > Krātuve, izdzēsiet dažus failus un mēģiniet vēlreiz."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Atcelt"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "Vairs nerādīt"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Mobilo datu lietošana viesabonēšanas laikā var radīt papildu izmaksas atkarībā no jūsu tarifu plāna."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "Tiks izdzēsti %d objekti."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Dzēst"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Vakar"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Lejupielādes"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Kopēt"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Dzēst"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Albumi"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Pārsniegts maksimālais objektu skaits (%d)."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Atcelt"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "GATAVS"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ATCELT"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "DZĒST"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Kopē..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Pārvieto..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Ja izveidosit saturu, kas ietver objektus no privātās krātuves, tas iespējams, netiks automātiski paslēpts. Skatot jauno saturu, var būt redzams izvēlētais personiskais saturs."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "REDIĢĒT"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Iestatījumi"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "REDIĢĒT"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Pārkārtot"
+

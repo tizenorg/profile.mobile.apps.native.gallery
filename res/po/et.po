@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Seade on ühendatud Wi-Fi võrku. Sõltuvalt teie paketist võivad mobiilsidevõrguga ühenduse loomisel rakenduda lisatasud."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobiilne andmeside on välja lülitatud. Looge selle asemel ühendus Wi-Fi võrguga või lülitage mobiilne andmeside sisse ja proovige uuesti."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Videod kuvatakse pärast nende salvestamist kaameraga."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Failinimi on juba kasutusel"
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "Kustutada %d üksust?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Privaatsus"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Sep"
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Okt."
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Nov"
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "Mai"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Mär."
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Juun"
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Juul"
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Jaa."
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Vee."
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Det."
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Aug"
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Apr"
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Album"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Veel"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Vigane sisestusparameeter."
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "Kirje on tuhi."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "See nimi on juba kasutusel."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "Ei saa ümber nimetada."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "Ühtegi albumit pole valitud."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Vali üksus"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "Albumid puuduvad"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "Kas luua kaust?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "Proovi uuesti?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "Eemaldada?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "%d albumit kustutatakse."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "1 album kustutatakse."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Kaamera"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Käivita"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Seaded"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Jah"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "Ei"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "OK"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Salvesta"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "Kustutada?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Teisalda albumisse"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Kopeeri albumisse"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Kuvamise kriteerium"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Sisestage nimi"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "Kõik selle kontoga seotud andmed kustutatakse. Kas jätkata?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Tühista"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Uus album"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Kas soovite kopeerida või teisaldada originaalalbumis olevad pildid?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Jaga"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Slaidiseanss"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Käivita slaidiseanss"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Slaidiseansi seaded"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Nimi puudub"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Kõik albumid"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Valige album"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "1 üksus kustutatakse."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Kõik üksused"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d üksust"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Ainult uks album."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Te voite valida kuni %d uksust."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Allalaet. failid"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "Kustutada?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Teisalda"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Kustutamine..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Toiming nurjus."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Tühistatud"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Valitud"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Teisaldatud."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Kopeeritud."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "Faile pole valitud."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Sulge"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Sortimisalus"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Viimased"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Vanim"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Loo"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Üksusi ei ole"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Muuda pilti"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Vali pilt"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "Kas kustutada see üksus?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Maastik"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Eemalda kaustast Privaatne"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Lemmikloomad"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Teisalda kausta Privaatne"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Toit"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Lilled"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Dokumendid"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Sõidukid"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Maksimaalne tähemärkide arv (%d) on saavutatud."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "Fotot ei saa laadida."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Jagamine"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "Ära küsi enam"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Lubatud arv märke on täis."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Kellaaeg"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Nurjus"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Kustutatud."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "Kustutada?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Eemaldamine..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Näidatakse %d üksust"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Loo album"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Galerii"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Veel"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Kontod"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Toiming nurjus."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Lae alla"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Otsi"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Tagasi"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Kaamera"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Kõik"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Värskenda"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Eemalda"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Uksused kuvatakse parast piltide uleslaadimist Dropboxi."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Kontaktid"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Loo"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Üksikasjad"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Prindi"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Nimeta ümber"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Alla laetud."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Allalaadimine..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Sisestage nimi."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Minu Failid"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Lisatud."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Töötlemine..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "Toetuseta failitüüp."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "Parast pildistamist kuvatakse pildid."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Rõhtpaigutusrežiim"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Toksake kaks korda, et sulgeda sahtli menüüd."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Toksake kaks korda, et avada sahtli menüüd."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Lohistage"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Sahtel"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Mobiilne andmeside on desaktiveeritud. Looge selle asemel ühendus Wi-Fi võrguga või aktiveerige mobiilne andmeside ja proovige uuesti"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Wi-Fi ühendus on nõutud. Looge ühendus Wi-Fi võrguga ja proovige uuesti"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Lisa pilte asukohast"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Ühendatud seadmed"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Privaatne sisu"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Eemalda kategooriast %s"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Eemalda nimesilt"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "Pole sündmusi, mida kuvada. Looge uus sündmus."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Kiiresti teistele kuupäevadele kerimiseks toksake ja hoidke sõrme ekraani paremas ülanurgas oleval kuupäeva indikaatoril."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "Kas eemaldada %d üksust?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "Kas eemaldada see üksus?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Galerii"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Segatud pildid"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Lisage pilte"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "Pildid kuvatakse parast nende markimist lemmikutena."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "Kas eemaldada näotuvastus?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Määrake nimi"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "Kinnita isikuna %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Paigutus"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "Lisati %d pilti"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Album tuhistatakse."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Kustuta üksus"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Kustuta üksused"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 üksus"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekundit"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekundit"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "Pole määratud"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Slaidiseansi intervall"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Sildistamata"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekundit"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Kogu sisu"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Sisu, mida kuvada"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Kustuta silt"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Seadme sisu"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Dropboxi sisu"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Facebooki sisu"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Pööra vasakule"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Pööra paremale"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Import"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Imporditud."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Importimine..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Laadimine..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Lähedalolevaid seadmeid ei leitud."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "Seadmeid ei leitud. Läheduses olevate seadmete otsimine jätkub taustal."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Värskendatud."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Pööramine..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Otsimist alustati. Seadmete loendit värskendatakse automaatselt."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Allalaadimise alustamine..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Kopeeri asukohta"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Teisalduskoht:"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Otsetee lisamine nurjus."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Mälu pole piisavalt. Kustutage mõned üksused"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Eemaldatud."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Lisamine..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "Kas kustutada %d albumit?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Privaatne mälu"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Lohistage siia."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Uus"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Rühmitamata"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Ekraanipildid"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Fotod"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Allalaadimine nurjus."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Toetuseta fail."
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 tulemus"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d tulemust"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Lemmikud"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Allalaadimine tühistatud."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "Kas kustutada see album?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Hoiatus"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Sortimisalus"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Täna"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Kuupäev"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "Pole üksusi, mida kuvada."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Toksake siia, et jäädvustada pilte või videoid."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Maksimaalne jagatavate üksuste arv (%d) on ületatud."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Toksake piltide lisamiseks."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "Kas kopeerida või teisaldada valitud üksused originaalalbumist?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Vali"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "Fail on juba olemas."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "See uksus kustutatakse."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Uksused kuvatakse parast piltide uleslaadimist Facebooki."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Vali kõik"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "%d on valitud"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Kuva:"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Kuupäev (kõige hilisem)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Kuupäev (vanim)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Pildid kuvatakse siin pärast nende tegemist."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Tühistamine..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "Seadmest"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "Dropboxist"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "Facebookist"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Allalaadimine lõpetatud."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Kõik üksused kustutatakse."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "1 üksus laaditakse alla."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "%d üksust laaditakse alla."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Kõik üksused laaditakse alla."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "Valitud album ja allikaalbum on samad. Valige teine album."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Toksake siia, et lisada pilte"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "Andmeid ei saa salvestada"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Seadme mälus pole piisavalt ruumi. Avage menüü Seaded > Toide ja mälu > Mälu, seejärel kustutage mõned failid ja proovige uuesti."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "Teie SD-kaardil pole piisavalt ruumi. Avage menüü Seaded > Toide ja mälu > Mälu, seejärel kustutage mõned failid ja proovige uuesti."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Tühista"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "Ära näita enam"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Sõltuvalt teie paketist võivad rändluse ajal mobiilse andmeside kasutamisel rakenduda lisatasud."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "%d üksust kustutatakse."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Kustuta"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Eile"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Allalaetud üksused"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Kopeerimine"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Kustuta"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Albumid"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Üksuste maksimaalne arv (%d) on ületatud."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Tühista"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "VALMIS"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "TÜHISTA"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "KUSTUTA"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Kopeerimine..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Teisaldamine..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Kui loote sisu, mis sisaldab üksusi isiklikust mälust, ei pruugita teie uut sisu peita automaatselt. Valitud isiklikku sisu võidakse näha uue sisu vaatamisel."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "REDIGEERI"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Seaded"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "REDIG."
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Järjesta ümber"
+

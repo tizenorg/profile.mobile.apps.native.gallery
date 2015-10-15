@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "جهازك غير متصل بشبكة Wi-Fi. قد يترتب على الاتصال بشبكة هاتف محمول فرض تكاليف إضافية وفقا لخطة الدفع."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "تم إيقاف تشغيل بيانات الهاتف المحمول. بدلاً من ذلك، اتصل بشبكة Wi-Fi، أو شغّل بيانات الهاتف المحمول وحاول مرة أخرى."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "سيتم عرض مقاطع فيديو التي تم تسجيلها باستخدام الكاميرا هنا."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "اسم الملف مستخدم بالفعل"
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "هل تريد حذف %d عنصر (عناصر)؟"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "الخصوصية"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "سبت"
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "أكت"
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "نوف"
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "مايو"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "مار"
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "يون"
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "يول"
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "ينا"
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "٠‎٢‎"
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "ديس"
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "أغس"
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "إبر"
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "الألبوم"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "المزيد"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "متغير إدخال غير صحيح."
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "المدخل خالي."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "تم استخدام نفس الاسم مسبقا."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "يتعذر تغيير الاسم. جاري استخدام الملف."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "لا توجد ألبومات محددة."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "اختيار عنصر"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "لا توجد ألبومات"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "إنشاء مجلد؟"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "هل تريد إعادة المحاولة؟"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "حذف؟"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "سيتم حذف %d ألبومات"
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "سيتم حذف ألبوم واحد"
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "الكاميرا"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "بدء"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "الضبط"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "نعم"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "لا"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "موافق"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "حفظ"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "مسح؟"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "انتقال إلى الألبوم"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "نسخ إلى ألبوم"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "عرض حسب"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "أدخل الاسم"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "سيتم حذف جميع البيانات المتعلقة بهذا الحساب. متابعة؟"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "إلغاء"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "ألبوم جديد"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "هل تريد نسخ الصور أو نقلها من الألبوم الأصلي؟"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "مشاركة"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "عرض الشرائح"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "بدء عرض الشرائح"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "إعدادات عرض الشرائح"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "لا يوجد اسم"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "كافة الألبومات"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "تحديد ألبوم‬"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "سيتم حذف عنصر واحد."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "جميع العناصر"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d عناصر"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "يوجد ألبوم واحد فقط."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "يمكنك تحديد ما يصل إلى %d عناصر."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "ملفات محملة"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "مسح؟"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "نقل"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "جاري المسح..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "فشلت العملية."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "تم الإلغاء"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "محدد"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "تم النقل."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "تم النسخ."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "لم يتم تحديد ملفات."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "إغلاق"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "فرز حسب"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "الأحدث"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "الأقدم"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "إنشاء"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "لا توجد عناصر"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "تعديل صورة"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "تحديد صورة"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "هل تريد حذف هذا العنصر؟"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "مشهد"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "إزالة من الخاص"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "حيوانات أليفة"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "نقل إلى الخاص"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "أطعمة"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "زهور"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "المستندات"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "مركبات"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "تم بلوغ أقصى عدد من الأحرف (%d)."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "يتعذر تحميل الصورة."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "مشاركة عبر"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "عدم السؤال مرة أخرى"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "تم الوصول إلى أقصى عدد من الحروف."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "التوقيت"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "فشل"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "تم المسح."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "مسح؟"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "جاري الحذف..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "إظهار %d عناصر"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "إنشاء ألبوم"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "الاستوديو‬"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "المزيد"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "حسابات"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "فشلت العملية."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "تنزيل"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "بحث"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "رجوع"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "الكاميرا"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "الكل"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "تحديث"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "حذف"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "بعد تحميل الصور إلى Dropbox، يتم عرض العناصر."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "التشغيل الجماعي"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "جهات الاتصال"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "إنشاء"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "التفاصيل"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "طباعة"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "تغيير الاسم"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "تم التنزيل."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "جاري التنزيل..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "أدخل الاسم."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "ملفاتي"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "تمت الإضافة."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "جاري المعالجة..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "نوع ملف غير مدعوم."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "بعد التقاط الصور، يتم عرضها."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "الوضع الأفقي"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "انقر نقرا مزدوجا لإغلاق قائمة الدرج."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "انقر نقرا مزدوجا لفتح قائمة الدرج."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "سحب وإسقاط"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "الدرج"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "تم إلغاء تفعيل بيانات الهاتف المحمول. اتصل بشبكة Wi-Fi بدلا من ذلك أو قم بتفعيل بيانات الهاتف المحمول، ثم أعد المحاولة."
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "‏‫يلزم توفر اتصال Wi-Fi‬. اتصل بشبكة Wi-Fi وحاول مرة أخرى."
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "إضافة صور من"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "الأجهزة المتصلة"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "محتوى خاص"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "إزالة من %s"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "إزالة علامة الاسم"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "لا توجد أحداث يمكن عرضها. إنشاء حدث جديد."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "للتمرير بسرعة وصولاً إلى التواريخ الأخرى، انقر مع الاستمرار فوق مؤشر التاريخ في الجانب العلوي الأيمن من الشاشة."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "هل تريد إزالة %d عنصر (عناصر)؟"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "هل تريد إزالة هذا العنصر؟"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "استوديو"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "الصور العشوائية"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "إضافة صور"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "بعد تحديد الصور كمفضلة، يتم عرضها."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "هل تريد إزالة التعرف على الوجوه؟"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "تعيين‬ اسم"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "تأكيد على أنه %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "التخطيط"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "تمت إضافة %d صور"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "سيتم إلغاء الألبوم."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "حذف العنصر"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "حذف عناصر"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "عنصر واحد"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "١٠ ثوان"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "٥ ثوان"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "غير محددة"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "فاصل عرض الشرائح"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "بدون علامة"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "٣ ثوان"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "المحتوى بأكمله"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "المحتوى المطلوب عرضه"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "حذف العلامة"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "محتوى الجهاز"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "محتوى Dropbox"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "محتوى Facebook"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "تدوير لليسار"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "تدوير لليمين"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "استيراد"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "تم الاستيراد."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "جاري الاستيراد..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "جاري التحميل ..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "تم العثور على أجهزة مجاورة."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "لم يتم العثور على أي أجهزة. سيستمر البحث عن الأجهزة القريبة في الخلفية."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "تم التحديث."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "جار التدوير..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "بدأ البحث. سيتم تحديث قائمة الأجهزة بشكل تلقائي."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "جار بدء التنزيل..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "نسخ إلى"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "نقل إلى"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "فشلت إضافة اختصار."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "لا يوجد ذاكرة كافية. امسح بعض العناصر."
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "تم الحذف."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "جاري الإضافة..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "هل تريد حذف %d من الألبومات؟"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "وحدة التخزين الخاصة"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "اسحب هنا."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "جديد"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "غير المصنفين"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "لقطات"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "صور فوتوغرافية"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "التنزيل غير متوفر."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "ملف غير مدعوم."
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "نتيجة واحدة"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d نتيجة (نتائج)"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "تفضيلات"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "تم إلغاء التنزيل."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "هل تريد حذف هذا الألبوم؟"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "تحذير"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "فرز بواسطة"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "اليوم"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "التاريخ"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "لا توجد أي عناصر لعرضها."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "انقر هنا لالتقاط صور أو مقاطع فيديو‬."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "تم تجاوز الحد الأقصى لعدد العناصر التي يمكن مشاركتها (%d)."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "انقر لإضافة صور."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "هل تريد نسخ العناصر المحددة أو نقلها من الألبوم الأصلي؟"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "تحديد"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "الملف موجود بالفعل."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "سيتم حذف هذا العنصر."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "بعد تحميل الصور إلى Facebook، يتم عرض العناصر."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "تحديد الكل"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "تم تحديد %d"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "عرض كـ"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "التاريخ (الأحدث)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "التاريخ (الأقدم)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "ستظهر الصور هنا بعد التقاطها."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "جاري الإلغاء..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "من الجهاز"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "من Dropbox"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "من Facebook"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "تم التنزيل."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "سيتم حذف كل العناصر."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "سيتم تنزيل عنصر واحد."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "سيتم تنزيل %d من العناصر."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "سيتم تنزيل كل العناصر."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "إن الألبوم المحدد هو نفسه الألبوم المصدر. حدد ألبوماً آخر."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "النقر هنا لإضافة الصور"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "يتعذر حفظ البيانات"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "ما من مساحة كافية على وحدة تخزين الجهاز. انتقل إلى الضبط > الطاقة ووحدة التخزين > وحدة التخزين، ثم احذف بعض الملفات وحاول مرة أخرى."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "ما من مساحة كافية على بطاقة SD. انتقل إلى الضبط > الطاقة ووحدة التخزين > وحدة التخزين، ثم احذف بعض الملفات وحاول مرة أخرى."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "إلغاء"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "عدم الإظهار مرة أخرى"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "قد يترتب على استخدام بيانات الهاتف المحمول أثناء التجوال فرض رسوم إضافية وفقًا لخطة الدفع."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "سيتم حذف %d من العناصر."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "حذف"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "أمس"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "التنزيلات"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "نسخ"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "حذف"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "الألبومات"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "تم تجاوز الحد الأقصى لعدد العناصر (%d)."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "إلغاء"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "تم"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "إلغاء"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "حذف"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "جاري النسخ..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "جاري النقل..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "في حالة إنشاء محتوى يتضمن عناصر من مساحة التخزين الشخصية، قد لا يتم إخفاؤه تلقائيًا. يمكن رؤية المحتوى الشخصي المحدد عند عرض المحتوى الجديد."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "تعديل"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "الضبط"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "تعديل"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "إعادة ترتيب"
+

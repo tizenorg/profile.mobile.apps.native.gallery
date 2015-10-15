@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "端末がWi-Fiネットワークに接続されていません。モバイルネットワークに接続すると、料金プランによっては追加料金が発生する可能性があります。"
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "モバイルデータがOFFになっています。Wi-Fiネットワークに接続するか、モバイルデータをONにしてから再度お試しください。"
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "カメラで動画を撮影した後に、動画が表示されます。"
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "ファイル名は既に使用されています。"
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "%dアイテム​を​削除​しますか？"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "プライバシー"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "9月"
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "10月"
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "11月"
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "5月"
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "3月"
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "6月"
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "7月"
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "1月"
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "2月"
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "12月"
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "8月"
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "4月"
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "アルバム"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "その他"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "入力パラメータが無効です。"
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "入力されていません。"
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "同じ名前が既に使用されています。"
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "名前を変更できません。"
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "アルバムが選択されていません。"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "アイテムを選択"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "アルバムはありません。"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "フォルダを作成しますか？"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "やり直し​ます​か？"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "削除しますか？"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "%d件のアルバムを削除します。"
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "1件のアルバムを削除します。"
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "カメラ"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "開始"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "設定"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "はい"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "いいえ"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "OK"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "保存"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "削除しますか？"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "アルバムに移動"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "アルバムにコピー"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "表示設定"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "名前を入力"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "このアカウントに関する全てのデータが削除されます。続行しますか？"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "ｷｬﾝｾﾙ"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "新規アルバム"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "元のアルバムからアイテムをコピーまたは移動しますか？"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "共有"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "スライドショー"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "スライドショーを開始"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "スライドショーの設定"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "名前なし"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "全てのアルバム"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "アルバムを選択"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "1件のアイテムを削除します。"
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "全てのアイテム"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%dアイテム"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "1つのアルバムしかありません。"
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "%dアイテムまで選択できます。"
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "ダウンロード"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "削除しますか？"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "移動"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "削除中..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "操作に失敗しました。"
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "取り消し"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "選択"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "移動しました。"
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "コピーしました。"
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "ファイルが選択されていません"
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "閉じる"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "並べ替え"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "最新"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "最も古い"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "作成"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "アイテムがありません。"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "画像を編集"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "画像を選択"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "このアイテムを削除しますか？"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "風景"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "プライベートから削除"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "ペット"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "プライベートに移動"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "食べ物"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "花"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "ドキュメント"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "乗り物"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "最大文字数(%d文字)に達しました。"
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "画像を読み込めません。"
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "共有"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "次回から確認しない"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "最大文字数に達しました。"
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "時刻"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "失敗"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "削除しました。"
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "削除しますか？"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "削除中..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d件のアイテムを表示"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "アルバムを作成"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "ギャラリー"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "もっと見る"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "アカウント"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "操作に失敗しました。"
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "ダウンロード"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "検索"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "戻る"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "カメラ"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "全て"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "更新"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "削除"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Dropboxに画像をアップロードした後、アイテムが表示されます。"
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "電話帳"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "作成"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "詳細"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "印刷"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "名前を変更"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "ダウンロードしました。"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "ダウンロード中..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "名前を入力してください。"
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "マイファイル"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "追加しました。"
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "処理中..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "未対応のファイルです。"
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "撮影した写真が表示されます。"
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "横画面モード"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "ドロワーを閉じるには、ダブルタップしてください。"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "ドロワーを表示するには、ダブルタップしてください。"
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "ドラッグ＆ドロップ"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "ドロワー"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "モバイルデータが無効です。Wi-Fiネットワークに接続するか、モバイルデータを有効にして、再度実行してください。"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Wi-Fi接続が必要です。Wi-Fiに接続し、再度お試しください。"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "画像を追加"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "接続デバイス"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "プライベートコンテンツ"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "%sから削除"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "名前タグを削除"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "表示するイベントがありません。新しいイベントを作成してください。"
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "別の日付に素速くスクロールするには、画面の右上の日付インジケーターを長押ししてください。"
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "%d ​の​項目​を​削除​しますか​？"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "このアイテムを削除しますか？"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "ギャラリー"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "画像をシャッフル"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "画像を追加"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "お気に入りとして写真をタグ付けした後に、写真が表示されます。"
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "顔認証を削除しますか？"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "名前を割り当て"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "%sとして確認"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "レイアウト"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "%d件の画像を追加済み"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "アルバム作成をキャンセルします。"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "アイテムを削除"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "アイテムを削除"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1アイテム"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10秒"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5秒"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "指定なし"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "スライドショーの間隔"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "タグなし"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3秒"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "全てのコンテンツ"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "表示するコンテンツ"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "タグを削除"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "端末のコンテンツ"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Dropboxのコンテンツ"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Facebookのコンテンツ"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "左に回転"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "右に回転"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "インポート"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "インポートしました。"
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "インポート中..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "読み込み中..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "近くにデバイスが見つかりました。"
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "デバイスが見つかりませんでした。バックグラウンドで、近くのデバイスのスキャンを継続します。"
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "更新しました。"
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "回転中..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "スキャンを開始しました。デバイスリストが自動的に更新されます。"
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "ダウンロードを開始中..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "コピー"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "移動先"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "ショートカットの追加に失敗しました。"
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "メモリが不足しています。不要なアイテムを削除してください。"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "削除しました。"
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "追加中..."
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "%d件のアルバムを削除しますか？"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "プライベートストレージ"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "ここにドラッグ"
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "新規"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "未分類"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "画面キャプチャ"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "画像"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "ダウンロードに失敗しました。"
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "未対応のファイルです。"
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 件の結果"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d 件の結果"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "お気に入り"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "ダウンロードを中止しました。"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "このアルバムを削除しますか？"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "警告"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "並べ替え"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "今日"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "日付"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "表示するメールはありません。"
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "写真や動画を撮影するには、ここをタップしてください。"
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "共有可能なアイテムの最大数(%d件)に達しました。"
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "画像を追加してください。"
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "元のアルバムから選択したアイテムをコピーまたは移動しますか？"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "選択"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "ファイルが既にあります。"
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "このアイテムを削除します。"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Facebookに画像をアップロードした後、アイテムが表示されます。"
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "全て選択"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "%d件選択"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "表示形式"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "日付(新しい順)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "日付(古い順)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "写真を撮影すると、写真がここに表示されます。"
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "キャンセル中..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "端末"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "Dropbox"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "Facebook"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "ダウンロードが完了しました。"
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "全てのアイテムを削除します。"
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "1件のアイテムをダウンロードします。"
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "%d件のアイテムをダウンロードします。"
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "全てのアイテムをダウンロードします。"
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "元のアルバムと同じアルバムを選択しています。別のアルバムを選択してください。"
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "画像を追加するには、ここをタップしてください"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "データの保存不可"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "システムメモリ(本体)の空き容量が低下しています。[設定] > [電源とストレージ] > [ストレージ]に移動して不要なファイルを削除した後、再度実行してください。"
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "外部SDカードの空き容量が低下しています。[設定] > [電源とストレージ] > [ストレージ]に移動して不要なファイルを削除した後、再度実行してください。"
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "キャンセル"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "今後表示しない"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "ローミング中にモバイルデータを使用すると、データプランによっては追加料金が発生する可能性があります。"
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "%d件のアイテムを削除します。"
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "削除"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "昨日"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "ダウンロード"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "コピー"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "削除"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "アルバム"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "アイテムの最大数(%d件)に達しました。"
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "キャンセル"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "完了"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "キャンセル"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "削除"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "コピー中..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "移動中..."
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "パーソナルストレージのアイテムを含めてコンテンツを作成すると、新しいコンテンツは自動的に非表示にならない場合があります。選択したパーソナルコンテンツは、新しく作成したコンテンツを表示するときに表示できます。"
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "編集"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "設定"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "編集"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "並べ替え"
+

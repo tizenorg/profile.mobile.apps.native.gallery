@@ -1,0 +1,759 @@
+msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "Su dispositivo no está conectado a una red Wi-Fi. La conexión mediante una red móvil puede generar costos adicionales según su plan de pago."
+
+msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Los datos móviles están desactivados. Conéctese a una red Wi-Fi o active Datos móviles e inténtelo de nuevo."
+
+msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Después de  grabar videos con la cámara, los videos se mostrarán aquí."
+
+msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
+msgstr "Nombre de archivo ya existe."
+
+msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
+msgstr "¿Eliminar %d elementos?"
+
+msgid "IDS_ST_HEADER_PRIVACY"
+msgstr "Privacidad"
+
+msgid "IDS_COM_BODY_SEP_ABB"
+msgstr "Sep."
+
+msgid "IDS_COM_BODY_OCT_ABB"
+msgstr "Oct."
+
+msgid "IDS_COM_BODY_NOV_ABB"
+msgstr "Nov."
+
+msgid "IDS_COM_BODY_MAY_ABB"
+msgstr "May."
+
+msgid "IDS_COM_BODY_MAR_ABB"
+msgstr "Mar."
+
+msgid "IDS_COM_BODY_JUN_ABB"
+msgstr "Jun."
+
+msgid "IDS_COM_BODY_JUL_ABB"
+msgstr "Jul."
+
+msgid "IDS_COM_BODY_JAN_ABB"
+msgstr "Ene."
+
+msgid "IDS_COM_BODY_FEB_ABB"
+msgstr "Feb."
+
+msgid "IDS_COM_BODY_DEC_ABB"
+msgstr "Dic."
+
+msgid "IDS_COM_BODY_AUG_ABB"
+msgstr "Ago."
+
+msgid "IDS_COM_BODY_APR_ABB"
+msgstr "Abr."
+
+msgid "IDS_GALLERY_HEADER_ALBUM"
+msgstr "Álbum"
+
+msgid "IDS_MEDIABR_OPT_MORE"
+msgstr "Más"
+
+msgid "IDS_MEDIABR_POP_INVALID_INPUT_PARAMETER"
+msgstr "Parámetro de entrada no válido."
+
+msgid "IDS_MEDIABR_POP_ENTRY_IS_EMPTY"
+msgstr "Entrada vacía."
+
+msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
+msgstr "Ya existe ese nombre."
+
+msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
+msgstr "No es posible renombrar."
+
+msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
+msgstr "No hay álbumes seleccionados."
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
+msgstr "Seleccionar elemento"
+
+msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
+msgstr "No hay álbumes"
+
+msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
+msgstr "¿Crear carpeta?"
+
+msgid "IDS_MEDIABR_POP_RETRY_Q"
+msgstr "¿Volver a intentar?"
+
+msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
+msgstr "¿Eliminar?"
+
+msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
+msgstr "Se eliminarán %d álbumes."
+
+msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
+msgstr "Se eliminará 1 álbum."
+
+msgid "IDS_MEDIABR_BODY_CAMERA"
+msgstr "Cámara"
+
+msgid "IDS_MEDIABR_BUTTON_START"
+msgstr "Iniciar"
+
+msgid "IDS_MEDIABR_OPT_SETTINGS"
+msgstr "Ajustes"
+
+msgid "IDS_MEDIABR_OPT_YES"
+msgstr "Sí"
+
+msgid "IDS_MEDIABR_OPT_NO"
+msgstr "No"
+
+msgid "IDS_MEDIABR_BUTTON_OK"
+msgstr "Aceptar"
+
+msgid "IDS_MEDIABR_BUTTON_SAVE"
+msgstr "Guardar"
+
+msgid "IDS_MEDIABR_POP_DELETE_Q"
+msgstr "¿Eliminar?"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_ALBUM"
+msgstr "Mover a álbum"
+
+msgid "IDS_GALLERY_OPT_COPY_TO_ALBUM"
+msgstr "Copiar a álbum"
+
+msgid "IDS_GALLERY_HEADER_VIEW_BY_ABB"
+msgstr "Ver por"
+
+msgid "IDS_GALLERY_HEADER_ENTER_NAME"
+msgstr "Introducir nombre"
+
+msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE_Q"
+msgstr "Se eliminarán todos los datos relacionados con esta cuenta. ¿Continuar?"
+
+msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
+msgstr "Cancelar"
+
+msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
+msgstr "Nuevo álbum"
+
+msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "¿Desea copiar o mover las fotos del álbum original?"
+
+msgid "IDS_MEDIABR_OPT_SHARE"
+msgstr "Compartir"
+
+msgid "IDS_MEDIABR_OPT_SLIDESHOW"
+msgstr "Presentación de diapositivas"
+
+msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
+msgstr "Iniciar presentación de diapositivas"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
+msgstr "Ajustes de presentación"
+
+msgid "IDS_MEDIABR_POP_NO_NAME"
+msgstr "Sin nombre"
+
+msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
+msgstr "Todos los álbumes"
+
+msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
+msgstr "Seleccionar álbum"
+
+msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
+msgstr "Se eliminará este elemento."
+
+msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
+msgstr "Todos los elementos"
+
+msgid "IDS_MEDIABR_BODY_PD_ITEMS"
+msgstr "%d elementos"
+
+msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
+msgstr "Sólo hay un álbum."
+
+msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
+msgstr "Puede seleccionar hasta %d elementos."
+
+msgid "IDS_MF_BODY_DOWNLOADS"
+msgstr "Descargas"
+
+msgid "IDS_MF_POP_DELETE_Q"
+msgstr "¿Eliminar?"
+
+msgid "IDS_MF_SK_MOVE"
+msgstr "Mover"
+
+msgid "IDS_MF_POP_DELETING_ING"
+msgstr "Eliminando..."
+
+msgid "IDS_CAM_BODY_OPERATION_FAILED"
+msgstr "Error de funcionamiento."
+
+msgid "IDS_MSG_BODY_CANCELLED_M_CONTENT"
+msgstr "Cancelado"
+
+msgid "IDS_MF_OPT_DELETE_SELECTED"
+msgstr "Seleccionado"
+
+msgid "IDS_MF_POP_MOVED"
+msgstr "Movido."
+
+msgid "IDS_MF_POP_COPIED"
+msgstr "Copiado."
+
+msgid "IDS_VPL_POP_NO_FILES_SELECTED"
+msgstr "No se ha seleccionado nada."
+
+msgid "IDS_CAM_SK_CLOSE"
+msgstr "Cerrar"
+
+msgid "IDS_MF_OPT_SORT_BY_ABB"
+msgstr "Ordenar por"
+
+msgid "IDS_CAM_POP_LATEST"
+msgstr "Más recientes"
+
+msgid "IDS_MEDIABR_POP_OLDEST_M_DATE"
+msgstr "Más antiguo"
+
+msgid "IDS_MSG_BUTTON2_CREATE"
+msgstr "Crear"
+
+msgid "IDS_MEDIABR_POP_NO_ITEMS"
+msgstr "Ningún elemento"
+
+msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
+msgstr "Editar imagen"
+
+msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
+msgstr "Seleccionar imagen"
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ITEM_Q"
+msgstr "¿Desea eliminar este elemento?"
+
+msgid "IDS_GALLERY_OPT_SCENERY"
+msgstr "Escenario"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
+msgstr "Eliminar de Privado"
+
+msgid "IDS_GALLERY_OPT_PETS"
+msgstr "Mascotas"
+
+msgid "IDS_GALLERY_OPT_MOVE_TO_PRIVATE"
+msgstr "Mover a Privado"
+
+msgid "IDS_GALLERY_OPT_FOOD"
+msgstr "Comida"
+
+msgid "IDS_GALLERY_OPT_FLOWERS"
+msgstr "Flores"
+
+msgid "IDS_GALLERY_OPT_DOCUMENTS"
+msgstr "Documentos"
+
+msgid "IDS_GALLERY_MBODY_VEHICLES"
+msgstr "Vehículos"
+
+msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
+msgstr "Número máximo de caracteres (%d) alcanzado."
+
+msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
+msgstr "No es posible cargar la imagen."
+
+msgid "IDS_IV_BODY_SHARE_VIA"
+msgstr "Compartir vía"
+
+msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
+msgstr "No preguntar de nuevo"
+
+msgid "IDS_MF_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Se ha alcanzado el número máximo de caracteres."
+
+msgid "IDS_GALLERY_HEADER_TIME"
+msgstr "Fecha"
+
+msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
+msgstr "Error"
+
+msgid "IDS_EMAIL_BODY_DELETED"
+msgstr "Eliminado."
+
+msgid "IDS_EMAIL_POP_DELETE_Q"
+msgstr "¿Eliminar?"
+
+msgid "IDS_MUSIC_POP_REMOVING"
+msgstr "Eliminando..."
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Mostrando %d elementos"
+
+msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
+msgstr "Crear álbum"
+
+msgid "IDS_GALLERY_OPT_GALLERY_ABB"
+msgstr "Galería"
+
+msgid "IDS_EMAIL_BUTTON_MORE"
+msgstr "Más"
+
+msgid "IDS_EMAIL_OPT_ACCOUNTS"
+msgstr "Cuentas"
+
+msgid "IDS_EMAIL_POP_OPERATION_FAILED"
+msgstr "Error de funcionamiento."
+
+msgid "IDS_GALLERY_BODY_DOWNLOAD"
+msgstr "Descargar"
+
+msgid "IDS_GALLERY_BODY_SEARCH"
+msgstr "Buscar"
+
+msgid "IDS_GALLERY_BUTTON_BACK"
+msgstr "Atrás"
+
+msgid "IDS_GALLERY_BUTTON_CAMERA"
+msgstr "Cámara"
+
+msgid "IDS_GALLERY_HEADER_ALL"
+msgstr "Todo"
+
+msgid "IDS_GALLERY_OPT_REFRESH"
+msgstr "Actualizar"
+
+msgid "IDS_GALLERY_OPT_REMOVE"
+msgstr "Eliminar"
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
+msgstr "Después de cargar imágenes en Dropbox, se mostrarán los elementos."
+
+msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
+msgstr "Group Play"
+
+msgid "IDS_MEDIABR_HEADER_CONTACTS"
+msgstr "Contactos"
+
+msgid "IDS_MEDIABR_OPT_CREATE"
+msgstr "Crear"
+
+msgid "IDS_MEDIABR_OPT_DETAILS"
+msgstr "Detalles"
+
+msgid "IDS_MEDIABR_OPT_PRINT"
+msgstr "Imprimir"
+
+msgid "IDS_MEDIABR_OPT_RENAME"
+msgstr "Renombrar"
+
+msgid "IDS_MEDIABR_POP_DOWNLOADED"
+msgstr "Descargado."
+
+msgid "IDS_MEDIABR_POP_DOWNLOADING_ING"
+msgstr "Descargando..."
+
+msgid "IDS_MF_HEADER_ENTER_NAME"
+msgstr "Introducir nombre."
+
+msgid "IDS_MF_HEADER_MYFILES"
+msgstr "Mis archivos"
+
+msgid "IDS_MF_POP_ADDED"
+msgstr "Añadido."
+
+msgid "IDS_MF_POP_PROCESSING_ING"
+msgstr "Procesando..."
+
+msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
+msgstr "Tipo de archivo no admitido."
+
+msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
+msgstr "Después de capturar imágenes, éstas se mostrarán."
+
+msgid "IDS_IME_BODY_LANDSCAPE_MODE"
+msgstr "Modo horizontal"
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_CLOSE_DRAWER_MENU_TTS"
+msgstr "Pulse dos veces para cerrar el menú de bandeja."
+
+msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
+msgstr "Pulse dos veces para abrir el menú de bandeja."
+
+msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
+msgstr "Arrastrar y soltar"
+
+msgid "IDS_EMAIL_OPT_DRAWER_ABB"
+msgstr "Cajón"
+
+msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
+msgstr "Datos móviles desactivados. Conéctese a una red Wi-Fi o active los datos móviles e inténtelo de nuevo"
+
+msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
+msgstr "Se requiere una conexión Wi-Fi. Conéctese a una red Wi-Fi e inténtelo de nuevo"
+
+msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
+msgstr "Añadir imágenes desde"
+
+msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
+msgstr "Dispositivos conectados"
+
+msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
+msgstr "Contenido privado"
+
+msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
+msgstr "Eliminar de %s"
+
+msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
+msgstr "Eliminar etiqueta de nombre"
+
+msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
+msgstr "No hay eventos para mostrar. Cree un nuevo evento."
+
+msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
+msgstr "Para desplazarse rápidamente a otras fechas, mantenga pulsado el indicador de fecha en la parte superior derecha de la pantalla."
+
+msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
+msgstr "¿Eliminar %d elementos?"
+
+msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
+msgstr "¿Desea eliminar este elemento?"
+
+msgid "IDS_HELP_BODY_GALLERY"
+msgstr "Galería"
+
+msgid "IDS_HELP_OPT_SHUFFLED_PICTURES"
+msgstr "Imágenes aleatorias"
+
+msgid "IDS_IV_BODY_ADD_PICTURES"
+msgstr "Añadir imágenes"
+
+msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SHOWN"
+msgstr "Se mostrarán las imágenes después de etiquetarlas como favoritas."
+
+msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
+msgstr "¿Eliminar la identificación de rostros?"
+
+msgid "IDS_IV_OPT_ASSIGN_NAME"
+msgstr "Asignar nombre"
+
+msgid "IDS_IV_OPT_CONFIRM_AS_PS"
+msgstr "Confirmar como %s"
+
+msgid "IDS_IV_OPT_LAYOUT_M_PICTUERS"
+msgstr "Diseño"
+
+msgid "IDS_IV_OPT_PD_PICTURES_ADDED"
+msgstr "%d imágenes añadidas"
+
+msgid "IDS_IV_POP_THE_ALBUM_WILL_BE_CANCELLED"
+msgstr "Se descartará el álbum."
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEM_ABB"
+msgstr "Eliminar elemento"
+
+msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
+msgstr "Eliminar elementos"
+
+msgid "IDS_MEDIABR_BODY_1_ITEM"
+msgstr "1 elemento"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 segundos"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 segundos"
+
+msgid "IDS_MEDIABR_BODY_NOT_ASSIGNED"
+msgstr "No asignado"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Intervalo de presentación de diapositivas"
+
+msgid "IDS_MEDIABR_BODY_UNTAGGED"
+msgstr "Sin etiquetar"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 segundos"
+
+msgid "IDS_MEDIABR_OPT_ALL_CONTENT"
+msgstr "Todo el contenido"
+
+msgid "IDS_MEDIABR_OPT_CONTENT_TO_DISPLAY"
+msgstr "Contenido para mostrar"
+
+msgid "IDS_MEDIABR_OPT_DELETE_TAG"
+msgstr "Eliminar etiqueta"
+
+msgid "IDS_MEDIABR_OPT_DEVICE_CONTENT"
+msgstr "Contenido del dispositivo"
+
+msgid "IDS_MEDIABR_OPT_DROPBOX_CONTENT"
+msgstr "Contenido de Dropbox"
+
+msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
+msgstr "Contenido de Facebook"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
+msgstr "Girar a la izquierda"
+
+msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
+msgstr "Girar a la derecha"
+
+msgid "IDS_MEDIABR_POP_IMPORT"
+msgstr "Importar"
+
+msgid "IDS_MEDIABR_POP_IMPORTED"
+msgstr "Importada(s)."
+
+msgid "IDS_MEDIABR_POP_IMPORTING_ING"
+msgstr "Importando..."
+
+msgid "IDS_MEDIABR_POP_LOADING_ING"
+msgstr "Cargando..."
+
+msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
+msgstr "Dispositivos cercanos encontrados."
+
+msgid "IDS_MEDIABR_POP_NO_DEVICES_FOUND_SCANNING_FOR_NEARBY_DEVICES_WILL_CONTINUE_IN_BACKGROUND"
+msgstr "No se encontraron dispositivos. Se seguirán buscando dispositivos cercanos en segundo plano."
+
+msgid "IDS_MEDIABR_POP_REFRESHED"
+msgstr "Actualizado."
+
+msgid "IDS_MEDIABR_POP_ROTATING_ING"
+msgstr "Rotación..."
+
+msgid "IDS_MEDIABR_POP_SCAN_STARTED_DEVICE_LIST_WILL_BE_UPDATED_AUTOMATICALLY"
+msgstr "Se inició la búsqueda. La lista de dispositivos se actualizará automáticamente."
+
+msgid "IDS_MEDIABR_POP_STARTING_DOWNLOAD_ABB"
+msgstr "Iniciando descarga..."
+
+msgid "IDS_MF_OPT_COPY_TO"
+msgstr "Copiar en"
+
+msgid "IDS_MF_OPT_MOVE_TO"
+msgstr "Mover a"
+
+msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
+msgstr "Error al añadir atajo."
+
+msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
+msgstr "Memoria insuficiente. Elimine algunos elementos"
+
+msgid "IDS_MF_POP_REMOVED"
+msgstr "Eliminado."
+
+msgid "IDS_MUSIC_POP_ADDING"
+msgstr "Añadiendo…"
+
+msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
+msgstr "¿Desea eliminar los álbumes de %d?"
+
+msgid "IDS_ST_BODY_PRIVATE_STORAGE"
+msgstr "Almacenamiento privado"
+
+msgid "IDS_IV_BODY_DRAG_HERE"
+msgstr "Arrastre aqui."
+
+msgid "IDS_GALLERY_BODY_NEW_M_ALBUM_ABB"
+msgstr "Nuevo"
+
+msgid "IDS_GALLERY_HEADER_UNGROUPEDM_PEOPLE_ABB"
+msgstr "Sin agrupar"
+
+msgid "IDS_KEEPIT_OPT_SCREENSHOTS_ABB"
+msgstr "Captura de pantalla"
+
+msgid "IDS_MEDIABR_OPT_PHOTOS"
+msgstr "Imágenes"
+
+msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
+msgstr "Error de descarga."
+
+msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
+msgstr "Archivo no admitido."
+
+msgid "IDS_SEARCH_BODY_1_RESULT"
+msgstr "1 resultado"
+
+msgid "IDS_SEARCH_BODY_PD_RESULTS"
+msgstr "%d resultado(s)"
+
+msgid "IDS_TW_BODY_FAVORITES"
+msgstr "Favoritos"
+
+msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
+msgstr "Descarga cancelada."
+
+msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
+msgstr "¿Desea eliminar este álbum?"
+
+msgid "IDS_CAM_HEADER_WARNING_ABB"
+msgstr "Aviso"
+
+msgid "IDS_ALM_OPT_SORT_BY"
+msgstr "Ordenar por"
+
+msgid "IDS_CLD_OPT_TODAY"
+msgstr "Hoy"
+
+msgid "IDS_GALLERY_BODY_DATE"
+msgstr "Fecha"
+
+msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
+msgstr "No hay elementos para mostrar."
+
+msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
+msgstr "Pulse aquí para capturar imágenes o videos."
+
+msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
+msgstr "Se excedió el número máximo de elementos que se pueden compartir (%d)."
+
+msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
+msgstr "Pulse para añadir imágenes."
+
+msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
+msgstr "¿Desea copiar o mover los elementos seleccionados del álbum original?"
+
+msgid "IDS_GALLERY_HEADER_SELECT"
+msgstr "Seleccionar"
+
+msgid "IDS_VIDEO_POP_FILE_ALREADY_EXISTS"
+msgstr "Archivo ya existe."
+
+msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
+msgstr "Se eliminará este elemento."
+
+msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
+msgstr "Después de cargar imágenes en Facebook, se mostrarán los elementos."
+
+msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
+msgstr "Seleccionar todo"
+
+msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
+msgstr "%d seleccionado(s)"
+
+msgid "IDS_GALLERY_OPT_VIEW_AS"
+msgstr "Ver como"
+
+msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
+msgstr "Fecha (más reciente)"
+
+msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
+msgstr "Fecha (más antigua)"
+
+msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
+msgstr "Luego de capturar imágenes, estas se mostrarán aquí."
+
+msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
+msgstr "Cancelando..."
+
+msgid "IDS_GALLERY_OPT_FROM_DEVICE_ABB"
+msgstr "Desde el dispositivo"
+
+msgid "IDS_GALLERY_OPT_FROM_DROPBOX_ABB"
+msgstr "Desde Dropbox"
+
+msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
+msgstr "Desde Facebook"
+
+msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
+msgstr "Descarga completa."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
+msgstr "Se eliminarán todos los elementos."
+
+msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
+msgstr "Se descargará 1 elemento."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Se descargarán %d elementos."
+
+msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DOWNLOADED"
+msgstr "Se descargarán todos los elementos."
+
+msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM"
+msgstr "El álbum seleccionado es el mismo que el de origen. Seleccione otro álbum."
+
+msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
+msgstr "Pulse aquí para añadir imágenes"
+
+msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
+msgstr "No es pos. guardar dat."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "No hay espacio suficiente en el almacenamiento del dispositivo. Vaya a Ajustes > Batería y almacenamiento > Almacenamiento, elimine algunos archivos e inténtelo de nuevo."
+
+msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
+msgstr "No hay espacio suficiente en la tarjeta de memoria. Vaya a Ajustes > Batería y almacenamiento > Almacenamiento, elimine algunos archivos e inténtelo de nuevo."
+
+msgid "IDS_MF_BUTTON_CANCEL_ABB3"
+msgstr "Cancelar"
+
+msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
+msgstr "No volver a mostrar"
+
+msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
+msgstr "El uso de datos móviles en roaming puede generar costos adicionales según su plan de pago."
+
+msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
+msgstr "Se eliminarán %d elementos."
+
+msgid "IDS_GALLERY_OPT_DELETE"
+msgstr "Eliminar"
+
+msgid "IDS_GALLERY_BODY_YESTERDAY"
+msgstr "Ayer"
+
+msgid "IDS_BR_MBODY_DOWNLOADS"
+msgstr "Descargas"
+
+msgid "IDS_GALLERY_HEADER_COPY"
+msgstr "Copiar"
+
+msgid "IDS_MUSIC_OPT_DELETE"
+msgstr "Eliminar"
+
+msgid "IDS_GALLERY_BUTTON_ALBUMS"
+msgstr "Álbumes"
+
+msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
+msgstr "Se superó el número máximo de elementos (%d)."
+
+msgid "IDS_GALLERY_BUTTON_CANCEL"
+msgstr "Cancelar"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "REALIZADO"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "CANCELAR"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DELETE_ABB"
+msgstr "ELIMINAR"
+
+msgid "IDS_GALLERY_POP_COPYING_ING"
+msgstr "Copiando..."
+
+msgid "IDS_GALLERY_POP_MOVING_ING"
+msgstr "Moviendo…"
+
+msgid "IDS_STORYALBUM_POP_IF_YOU_CREATE_CONTENT_THAT_INCLUDES_ITEMS_FROM_PERSONAL_STORAGE_IT_MAY_NOT_BE_HIDDEN_AUTOMATICALLY_MSG"
+msgstr "Si crea contenido que incluye elementos de almacenamiento personal, es posible que no se oculte automáticamente. El contenido personal seleccionado se podría ver cuando se vea el contenido nuevo."
+
+msgid "IDS_HS_ACBUTTON_EDIT"
+msgstr "EDITAR"
+
+msgid "IDS_MF_BUTTON_SETTINGS"
+msgstr "Ajustes"
+
+msgid "IDS_QP_ACBUTTON_EDIT_ABB"
+msgstr "EDITAR"
+
+msgid "IDS_CLOCK_HEADER_REORDER_ABB"
+msgstr "Reordenar"
+

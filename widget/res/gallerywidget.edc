@@ -1,0 +1,525 @@
+/*
+* Copyright (c) 2000-2015 Samsung Electronics Co., Ltd All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+#define STYLE_TAGS \
+   tag:  "br" "\n";\
+   tag:  "ps" "ps";\
+   tag:  "tab" "\t";\
+   tag:  "b" "+ font_weight=Bold";
+
+#define STYLE_TAG_MATCH \
+   tag:  "match" "+ color=#3db8cc";
+
+externals {
+	external: "elm";
+	external: "feedback";
+}
+
+collections {
+	plugins {
+		plugin {
+			name: "touch_sound_plugin";
+			source: "feedback";
+			param: "FEEDBACK_TYPE_SOUND FEEDBACK_PATTERN_TAP"; // FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TOUCH_TAP
+			/* 2014.06.11 updated from libsvi(feedback)
+			Above plugin will run below external function:
+			int feedback_play_type(feedback_type_e type, feedback_pattern_e pattern);
+			param1: feedback_type_e
+			FEEDBACK_TYPE_NONE = 0,
+			FEEDBACK_TYPE_SOUND = 1,
+			FEEDBACK_TYPE_VIBRATION,
+			FEEDBACK_TYPE_LED,
+			FEEDBACK_TYPE_END
+
+			* param2 enumeration:
+			FEEDBACK_PATTERN_TAP = 0,
+			FEEDBACK_PATTERN_SIP,
+			FEEDBACK_PATTERN_SIP_BACKSPACE,
+			FEEDBACK_PATTERN_SIP_FUNCTION,
+			FEEDBACK_PATTERN_SIP_FJKEY,
+			...
+
+			* For more information please refer libsvi.
+			*/
+		}
+	}
+	base_scale:1.7;
+	group {
+		name:"widget_custom_main";
+		parts {
+			part {
+				name:"bg";
+				type:RECT;
+				description {
+					state:"default" 0.0;
+					rel1.relative:0.0 0.0;
+					rel2.relative:1.0 1.0;
+					color:0 0 0 20;
+				}
+			}//end bg
+			part {
+				name:"TitleText";
+				type:TEXT;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					fixed: 1 1;
+					rel1 {
+						relative:0.0 172/820;
+					}
+					rel2 {
+						relative:1.0 (172+107)/820;
+					}
+					text {
+						size:50;
+						align:0.5 0.5;
+						fit: 0 1;
+						ellipsis: -1.0;
+					}
+				}
+			}//end TitleText
+			part {
+				name:"HelpText";
+				type:TEXT;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					fixed: 1 1;
+					rel1 {
+						relative:0 (172+107+15)/820;
+					}
+					rel2 {
+						relative:1.0 (172+107+15+52)/820;
+					}
+					text {
+						size:30;
+						align:0.5 0.5;
+						fit: 0 1;
+						ellipsis: -1.0;
+					}
+				}
+			}//end HelpText
+			part {
+				name:"image0";
+				type:SWALLOW;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					rel1{
+						relative:0.0 0.0;
+						to:"bg";
+					}
+					rel2{
+						relative:0.5 0.5;
+						to:"bg";
+					}
+					align:0.0 0.0;
+					visible:0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			}//end image0
+			part {
+				name:"image1";
+				type:SWALLOW;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					rel1{
+						relative:0.5 0.0;
+						to:"bg";
+					}
+					rel2{
+						relative:1.0 0.5;
+						to:"bg";
+					}
+					align:0.0 0.0;
+					visible:0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			}//end image1
+			part {
+				name:"image2";
+				type:SWALLOW;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					rel1{
+						relative:0.0 0.5;
+						to:"bg";
+					}
+					rel2{
+						relative:0.5 1.0;
+						to:"bg";
+					}
+					align:0.0 0.0;
+					visible:0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			}//end image2
+			part {
+				name:"image3";
+				type:SWALLOW;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					rel1{
+						relative:0.5 0.5;
+						to:"bg";
+					}
+					rel2{
+						relative:1.0 1.0;
+						to:"bg";
+					}
+					align:0.0 0.0;
+					visible:0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			}//end image3
+			part {
+				name:"image4";
+				type:SWALLOW;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					rel1{
+						relative:0.0 0.0;
+						to:"bg";
+					}
+					rel2{
+						relative:1.0 0.5;
+						to:"bg";
+					}
+					align:0.0 0.0;
+					visible:0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			}//end image4
+			part {
+				name:"image5";
+				type:SWALLOW;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					rel1{
+						relative:0.0 0.5;
+						to:"bg";
+					}
+					rel2{
+						relative:1.0 1.0;
+						to:"bg";
+					}
+					align:0.0 0.0;
+					visible:0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			}//end image5
+			part {
+				name:"image6";
+				type:SWALLOW;
+				mouse_events:1;
+				repeat_events:1;
+				description {
+					state:"default" 0.0;
+					rel1{
+						relative:0.0 0.0;
+						to:"bg";
+					}
+					rel2{
+						relative:1.0 1.0;
+						to:"bg";
+					}
+					align:0.0 0.0;
+					visible:0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			}//end image6
+			part {
+				name: "Edit_button";
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					fixed: 0 1;
+					align: 1.0 0.0;
+					rel1 { relative: 1.0 0.0; to: "bg"; offset: -15 0;}
+					rel2 { relative: 1.0 0.0; to: "bg"; offset: 0 15;}
+				}
+			} // end Edit_button
+			part {
+				name: "Edit_button_fg";
+				mouse_events: 1;
+				repeat_events: 1;
+				type: RECT;
+				description {
+					state: "default" 0.0;
+					visible: 1;
+					align: 1.0 0.0;
+					rel1 { relative: 0.0 0.0; to: "Edit_button"; }
+					rel2 { relative: 1.0 1.0; to: "Edit_button"; }
+					color: 0 0 0 0;
+				}
+			} // edn Edit_button
+
+			part {
+				name: "DateInfo";
+				type: TEXT;
+				description {
+					state: "default" 0.0;
+					fixed: 1 1;
+					rel1 {
+						relative: 29/712 708/820;
+					}
+					rel2 {
+						relative: 1.0 751/820;
+					}
+					color : 255 255 255 255;
+					text {text:""; font:"Tizen"; align : 0.0 0.5; size : 20;}
+					visible : 0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			} // end DateInfo
+
+			part {
+				name: "AlbumInfo";
+				type: TEXT;
+				description {
+					fixed: 1 1;
+					state: "default" 0.0;
+					rel1 {
+						relative: 29/712 751/820;
+					}
+					rel2 {
+						relative: 1.0 794/820;
+					}
+					color : 255 255 255 255;
+					text {text:""; font:"Tizen"; align : 0.0 0.5; size : 20;}
+					visible : 0;
+				}
+				description {
+					state:"show" 0.0;
+					inherit:"default";
+					visible:1;
+				}
+			} // end AlbumInfo
+		}//end parts
+		programs {
+			program { name: "touch_snd1";
+				source: "Edit_button_fg";
+				signal: "mouse,clicked,1";
+				action: RUN_PLUGIN "touch_sound_plugin";
+			}
+			program {
+				name:"changeToSecond";
+				signal:"change0";
+				source:"elm";
+				action:STATE_SET "animated" 0.0;
+				target:"image0";
+				transition: LINEAR 0.5;
+			}//end changeToSecond
+			program {
+				name:"hideAll";
+				signal:"hideall";
+				source:"elm";
+				action:STATE_SET "default" 0.0;
+				target:"image0";
+				target:"image1";
+				target:"image2";
+				target:"image3";
+				target:"image4";
+				target:"image5";
+				target:"image6";
+				transition: LINEAR 0.5;
+			}//end hideAll
+			program {
+				name:"hidealbum_date_info";
+				signal:"hide_album_date_info";
+				source:"elm";
+				action:STATE_SET "default" 0.0;
+				target:"AlbumInfo";
+				target:"DateInfo";
+			}//end hideAll
+			program {
+				name:"show0";
+				signal:"show0";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"image0";
+				transition: LINEAR 0.5;
+			}//end show0
+			program {
+				name:"show1";
+				signal:"show1";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"image1";
+				transition: LINEAR 0.5;
+			}//end show1
+			program {
+				name:"show2";
+				signal:"show2";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"image2";
+				transition: LINEAR 0.5;
+			}//end show2
+			program {
+				name:"show3";
+				signal:"show3";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"image3";
+				transition: LINEAR 0.5;
+			}//end show3
+			program {
+				name:"show4";
+				signal:"show4";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"image4";
+				transition: LINEAR 0.5;
+			}//end show4
+			program {
+				name:"show5";
+				signal:"show5";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"image5";
+				transition: LINEAR 0.5;
+			}//end show5
+			program {
+				name:"show6";
+				signal:"show6";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"image6";
+				transition: LINEAR 0.5;
+			}//end show6
+			program {
+				name:"showAlbumInfo";
+				signal:"showAlbumInfo";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"AlbumInfo";
+			}//end showAlbumInfo
+			program {
+				name:"showDateInfo";
+				signal:"showDateInfo";
+				source:"elm";
+				action:STATE_SET "show" 0.0;
+				target:"DateInfo";
+			}//end showDateInfo
+			program {
+				name:"hideAlbumInfo";
+				signal:"hideAlbumInfo";
+				source:"elm";
+				action:STATE_SET "default" 0.0;
+				target:"AlbumInfo";
+			}//end hideAlbumInfo
+			program {
+				name:"hideDateInfo";
+				signal:"hideDateInfo";
+				source:"elm";
+				action:STATE_SET "default" 0.0;
+				target:"DateInfo";
+			}//end hideDateInfo
+		}//end programs
+	}//end group
+	group {
+	name: "today_button";
+	styles {
+		style { name: "empty_state_3";
+			base: "font=Tizen:style=Regular font_size=18 align=center color=#FFFFFF wrap=mixed ellipsis=1.0";
+			STYLE_TAGS
+			STYLE_TAG_MATCH
+		}
+	}
+	images {
+		image: "today_button.png" COMP;
+	}
+	parts {
+		part { name: "bg";
+			type: IMAGE;
+			description { state: "default" 0.0;
+			min: 54 27;
+			color: 255 255 255 254;
+			image {
+				normal: "today_button.png";
+			}
+		}
+		part { name: "elm.text";
+			type: TEXTBLOCK;
+			scale: 1;
+			effect: PLAIN;
+			description { state: "default" 0.0;
+				visible: 1;
+				text {
+					style: "empty_state_3";
+					min: 1 1;
+					max: 1 1;
+					//ellipsis: -1.0;
+				}
+				rel1 {
+					relative: 0.0 0.0; to: "bg";
+					offset: 15 2;
+				}
+				rel2 {
+					relative: 1.0 1.0; to: "bg";
+					offset: -15 -2;
+				}
+			}
+		}
+	}
+}
+}//end collections
