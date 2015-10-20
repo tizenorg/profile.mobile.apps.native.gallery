@@ -94,6 +94,15 @@ int widget_Destroy(widget_context_h context, widget_app_destroy_type_e reason, b
 	if (widget_data->timer) {
 		ecore_timer_del(widget_data->timer);
 	}
+	if (widget_data->selected_images) {
+		int i = 0;
+		for (i = 0; i < widget_data->selected_count; i++) {
+			if (widget_data->selected_images[i]) {
+				free(widget_data->selected_images[i]);
+			}
+		}
+		free(widget_data->selected_images);
+	}
 	free(widget_data);
 
 	remove("/opt/usr/media/selectedimages.eet");

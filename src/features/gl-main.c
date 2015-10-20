@@ -396,9 +396,7 @@ int _gl_main_create_view(gl_appdata *ad)
 	GL_CHECK_VAL(ad->maininfo.bg, -1);
 	/*gallery should appear on phone side when target works on desktop mode*/
 	const char *str = "mobile";
-#if 0
-	elm_win_profiles_set(ad->maininfo.win, &str, 1);
-#endif
+
 	/*
 	 * Set Opacity before Conformant window create
 	 * When create Conformant Window, it will read currect Opacity and auto send it.
