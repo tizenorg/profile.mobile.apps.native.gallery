@@ -201,11 +201,6 @@ static bool _gallery_create(void *data)
 		signal(SIGTERM, SIG_IGN);
 	}
 	bindtextdomain(PACKAGE, "/usr/apps/org.tizen.gallery/res/locale");
-#ifdef _USE_OPENGL_BACKEND
-	elm_config_preferred_engine_set("opengl_x11");
-#else
-	elm_config_preferred_engine_set("software_x11");
-#endif
 	/* initialize gallery main view(layout) */
 	if (_gl_main_create_view(data) != 0) {
 		gl_dbgE("_gl_main_create_view failed");

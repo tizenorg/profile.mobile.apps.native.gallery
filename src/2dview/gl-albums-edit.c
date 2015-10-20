@@ -133,6 +133,7 @@ static void __gl_albums_edit_check_grid_changed(void *data, Evas_Object *obj,
 	__gl_albums_edit_update_check_state(ad, album_item, obj, false);
 }
 
+#if 0
 static void __gl_albums_edit_rename(gl_cluster *album)
 {
 	GL_CHECK(album);
@@ -155,6 +156,7 @@ static void __gl_albums_edit_rename_btn_cb(void *data, Evas_Object *obj,
 	_gl_ui_save_scroller_pos(ad->albuminfo.view);
 	__gl_albums_edit_rename(album_item);
 }
+#endif
 
 static void __gl_albums_edit_del_cb(void *data, Evas_Object *obj,
 				    void *ei)
@@ -338,6 +340,7 @@ static void __gl_albums_edit_selall_cb(void *data, Evas_Object *obj, void *ei)
 	_gl_ui_update_navi_title_text(ad->ctrlinfo.nf_it, sel_all_cnt, false);
 }
 
+#if 0
 static int __gl_albums_edit_ctxpopup_append(void *data, Evas_Object *parent)
 {
 	gl_dbg("");
@@ -373,6 +376,7 @@ static void __gl_albums_edit_more_btn_cb(void *data, Evas_Object *obj, void *ei)
 		return;
 	_gl_ctxpopup_create(data, obj, __gl_albums_edit_ctxpopup_append);
 }
+#endif
 
 Evas_Object *_gl_albums_edit_add_content(void *data, Evas_Object *obj,
 					 const char *part)

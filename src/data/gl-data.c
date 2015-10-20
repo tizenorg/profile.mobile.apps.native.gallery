@@ -612,16 +612,6 @@ bool _gl_data_get_cluster_list_edit_mode(void *data)
 	_gl_data_copy_cluster_list(ad, true, &list);
 	if (!list ) {
 		gl_dbg("list is null");
-	} else {
-		int count = eina_list_count(list);
-		gl_cluster *current = NULL;
-		int i;
-		for (i = 0; i < count; i++) {
-			current = eina_list_nth(list, i);
-			if (current) {
-				int count1 = eina_list_count(current->elist);
-			}
-		}
 	}
 	ad->albuminfo.elist = _gl_data_util_calloc_cluster_list();
 	GL_CHECK_FALSE(ad->albuminfo.elist);
@@ -630,15 +620,6 @@ bool _gl_data_get_cluster_list_edit_mode(void *data)
 		return false;
 
 	_gl_update_album_selected_data(data, &list);
-	gl_cluster *current = NULL;
-	int i;
-	int count = eina_list_count(ad->albuminfo.elist->clist);
-	for (i = 0; i < count; i++) {
-		current = eina_list_nth(ad->albuminfo.elist->clist, i);
-		if (current) {
-			int count1 = eina_list_count(current->elist);
-		}
-	}
 	GL_PROFILE_OUT;
 	return true;
 }

@@ -397,6 +397,7 @@ int _gl_thumb_set_size(void *data, Evas_Object *view, int *size_w, int *size_h)
 	int win_h = 0;
 	double scale = _gl_get_win_factor(ad->maininfo.win, &win_w, &win_h);
 
+	gl_dbg("Scale is : %lf", scale);
 	if (gl_get_view_mode(ad) == GL_VIEW_THUMBS_EDIT) {
 		ad->pinchinfo.zoom_level = GL_ZOOM_IN_ONE;
 	}

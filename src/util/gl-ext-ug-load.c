@@ -173,7 +173,6 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 
 	data = eina_list_nth(ad->gridinfo.medias_elist, 0);
 	if (data && data->album && data->album->item) {
-		char buf[GL_ALBUM_NAME_LEN_MAX] = { 0, };
 		if (sel_count > 0) {
 			elm_object_item_signal_emit(data->album->item,
 					"elm,state,elm.text.badge,visible",
@@ -576,11 +575,11 @@ static int _gl_ext_load_iv_selected_list(app_control_h service, void *data)
 	}
 	if (count > 0) {
 		app_control_add_extra_data_array(service, "Selected index",
-				value, count);
+				(const char **)value, count);
 	}
 	if (count_fav > 0) {
 		app_control_add_extra_data_array(service, "Selected index fav",
-				value_fav, count_fav);
+				(const char **)value_fav, count_fav);
 	}
 
 

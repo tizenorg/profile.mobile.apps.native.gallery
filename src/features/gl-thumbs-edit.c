@@ -565,6 +565,7 @@ int _gl_thumbs_edit_create_view(void *data)
 	Evas_Object *gv = NULL;
 	bool b_view = false;
 	b_view = _gl_thumbs_get_view(ad, &gv);
+	gl_dbg("no content view is : %d.", b_view);
 	GL_CHECK_FALSE(gv);
 	_gl_thumbs_set_size(ad, gv);
 

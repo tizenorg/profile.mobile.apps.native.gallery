@@ -394,8 +394,6 @@ int _gl_main_create_view(gl_appdata *ad)
 	/* Background. */
 	ad->maininfo.bg = __gl_main_create_bg(ad->maininfo.win);
 	GL_CHECK_VAL(ad->maininfo.bg, -1);
-	/*gallery should appear on phone side when target works on desktop mode*/
-	const char *str = "mobile";
 
 	/*
 	 * Set Opacity before Conformant window create
