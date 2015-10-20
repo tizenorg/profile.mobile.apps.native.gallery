@@ -235,14 +235,10 @@ static unsigned long long __gl_fs_sort_folders_by_mtime(char *path,
 unsigned long long gl_fs_get_free_space(int state)
 {
 	struct statvfs info;
-	char *path = NULL;
 
-	if (state == GL_STORE_T_PHONE)
-		path = GL_ROOT_PATH_PHONE;
-	else if (state == GL_STORE_T_MMC)
-		path = GL_ROOT_PATH_MMC;
-	else
+	if (state != GL_STORE_T_PHONE && state != GL_STORE_T_MMC) {
 		return 0;
+	}
 
 	if (storage_get_internal_memory_size(&info) < 0) {
 		return 0;

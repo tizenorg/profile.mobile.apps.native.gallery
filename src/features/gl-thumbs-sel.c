@@ -300,7 +300,6 @@ int _gl_thumbs_sel_create_view(void *data, gl_cluster *album_item)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 	ad->gridinfo.is_append = false;
-	Eina_List *sel_id_list = NULL;
 	gl_item *gitem = NULL;
 	EINA_LIST_FREE(album_item->elist, gitem) {
 	}
@@ -468,8 +467,6 @@ int _gl_thumbs_sel_update_view(void *data)
 		/* Get selected medias count */
 		int sel_cnt = _gl_data_selected_list_count(ad);
 
-		int count = eina_list_count(ad->gridinfo.medias_elist);
-		int i;
 		gl_item *gitem = NULL;
 		gitem = eina_list_nth(ad->gridinfo.medias_elist, 0);
 		int album_sel_count = eina_list_count(gitem->album->elist);

@@ -3774,6 +3774,7 @@ static void __gl_timeline_copy_cb(void *data, Evas_Object *obj, void *ei)
 #endif
 
 #ifdef _USE_ROTATE_BG
+#if 0
 static int __gl_timeline_rotate_op(void *data)
 {
 #define GL_ROTATE_DELAY 0.25
@@ -3892,6 +3893,7 @@ static void __gl_timeline_edit_rotate_right_cb(void *data, Evas_Object *obj,
 	}
 	__gl_timeline_rotate_images(data, false);
 }
+#endif
 #endif
 
 /* Easy mode: New album/Edit/Slideshow */
@@ -4753,7 +4755,7 @@ int _gl_ext_load_time_iv_selected_list(app_control_h service, void *data)
 
 	if (count > 0) {
 		app_control_add_extra_data_array(service, "Selected index",
-				value, count);
+				(const char **)value, count);
 	}
 
 	if (value) {

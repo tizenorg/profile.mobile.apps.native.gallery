@@ -25,6 +25,7 @@
 #include "gl_widget_debug.h"
 #include "gl-data-type.h"
 #include "gl_widget.h"
+#include <glib.h>
 
 #define NUMBER_OF_ITERATION 4
 #define IMAGES_THRESHOLD 5
@@ -58,6 +59,7 @@ int loop_count = 0; //counter to the iteration number;
 static void gl_widget_on_no_image_cb(void *data,Evas_Object *obj,
 	const char *emission, const char *source);
 static Eina_Bool gl_widget_timer_cb(void *data);
+void _gl_widget_create_edit_btn(_widget_data* widget_data);
 
 void gl_widget_win_del_cb(void *data, Evas *evas, Evas_Object *obj,
 	void *event_info)
@@ -90,8 +92,8 @@ void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 	}
 
 	_widget_data *widget_data = (_widget_data *)data;
-	char *file_name = NULL;
-	char *group_name = NULL;
+	const char *file_name = NULL;
+	const char *group_name = NULL;
 	elm_image_file_get (obj, &file_name, &group_name);
 	if (file_name) {
 		int ret;
@@ -347,7 +349,7 @@ char *_gl_widget_get_file_date(const char *filename)
 	char *month[12] = { GL_STR_ID_JAN, GL_STR_ID_FEB, GL_STR_ID_MAR, GL_STR_ID_APR, GL_STR_ID_MAY, GL_STR_ID_JUN,
 			GL_STR_ID_JUL, GL_STR_ID_AUG, GL_STR_ID_SEP, GL_STR_ID_OCT, GL_STR_ID_NOV, GL_STR_ID_DEC};
 
-	char * str = g_strdup_printf("%s%02d, %s %d", "",
+	char * str = (char *)g_strdup_printf("%s%02d, %s %d", "",
 			tmtime.tm_mday, month[tmtime.tm_mon], 1900 + tmtime.tm_year);
 	return str;
 }
@@ -394,11 +396,8 @@ static char *gl_widget_extract_album_path(char* pathInfo)
 		return NULL;
 	}
 
-	char* albumname = NULL;
 	char *albumpath = NULL;
-	char *rootpath = NULL;
 	char *refptr = NULL;
-	Eina_Bool useralbum = EINA_FALSE;
 
 	refptr = strrchr(pathInfo, '/');
 	if (!refptr) {
@@ -458,9 +457,7 @@ static char *gl_widget_extract_album_info(char* pathInfo)
 
 	char* albumname = NULL;
 	char *albumpath = NULL;
-	char *rootpath = NULL;
 	char *refptr = NULL;
-	Eina_Bool useralbum = EINA_FALSE;
 
 	refptr = strrchr(pathInfo, '/');
 	if (!refptr) {
@@ -499,7 +496,6 @@ static char *gl_widget_extract_album_info(char* pathInfo)
 
 static char *gl_widget_extract_date_info(char** patharray, int count)
 {
-	int refcount = 0;
 	if (!patharray || count <= 0) {
 		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid data!!");
 		return NULL;
@@ -818,7 +814,6 @@ int gl_widget_create(_widget_data *widget_data, int w, int h)
 		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid userdata!!");
 		return -1;
 	}
-	char edj_path[PATH_MAX] = {0,};
 	Evas_Object *layout = NULL;
 	dlog_print(DLOG_ERROR, LOG_TAG, "here0 - %x", widget_data->win);
 	layout = elm_layout_add(widget_data->win);
