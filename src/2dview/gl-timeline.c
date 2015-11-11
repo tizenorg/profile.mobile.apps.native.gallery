@@ -170,7 +170,7 @@ struct _gl_sel_data_t {
 typedef enum _gl_time_view_display_order {
 	TIME_ORDER_ASC = 0,
 	TIME_ORDER_DESC
-}_gl_time_view_order;
+} _gl_time_view_order;
 
 struct _gl_timeline_t {
 	gl_appdata *ad;
@@ -236,7 +236,7 @@ struct _gl_tile_t {
 int _get_count_of_items_on_same_date(gl_media_s *item, Eina_List *list, char **text, int start_index);
 int _gl_time_get_number_of_items_per_row(void *data);
 static void __gl_timeline_page_deleted_cb(void *data, Evas_Object *obj,
-					  void *ei);
+        void *ei);
 static int __gl_timeline_change_mode(void *data, int mode);
 static Evas_Object *__gl_timeline_create_list_view(gl_timeline_s *timeline_d, bool update);
 
@@ -253,8 +253,9 @@ static bool __gl_timeline_is_checked(gl_timeline_s *timeline_d, char *uuid)
 	Eina_List *l = NULL;
 	char *item = NULL;
 	EINA_LIST_FOREACH(timeline_d->sel_d->sel_list, l, item) {
-		if (item && !g_strcmp0(item, uuid))
+		if (item && !g_strcmp0(item, uuid)) {
 			return true;
+		}
 	}
 	return false;
 }
@@ -263,8 +264,9 @@ static bool __gl_timeline_is_checked(gl_timeline_s *timeline_d, char *uuid)
 static bool __gl_timeline_clear_sel_cnt(gl_timeline_s *timeline_d)
 {
 	GL_CHECK_FALSE(timeline_d);
-	if (timeline_d->sel_d == NULL)
+	if (timeline_d->sel_d == NULL) {
 		return false;
+	}
 
 	timeline_d->sel_d->sel_list = NULL;
 	timeline_d->sel_d->jpge_cnt = 0;
@@ -276,8 +278,9 @@ static bool __gl_timeline_clear_sel_cnt(gl_timeline_s *timeline_d)
 static bool __gl_timeline_clear_sel_list(gl_timeline_s *timeline_d)
 {
 	GL_CHECK_FALSE(timeline_d);
-	if (timeline_d->sel_d == NULL)
+	if (timeline_d->sel_d == NULL) {
 		return false;
+	}
 
 	char *item = NULL;
 	EINA_LIST_FREE(timeline_d->sel_d->sel_list, item) {
@@ -311,12 +314,12 @@ static bool __gl_timeline_sel_append_item(gl_timeline_s *timeline_d, char *uuid)
 	char *tmp = g_strdup(uuid);
 	GL_CHECK_FALSE(tmp);
 	timeline_d->sel_d->sel_list = eina_list_append(timeline_d->sel_d->sel_list,
-						       (void *)tmp);
+	                              (void *)tmp);
 	return true;
 }
 
 static bool __gl_timeline_check_special_file(gl_timeline_s *timeline_d,
-					     gl_media_s *item, bool b_append)
+        gl_media_s *item, bool b_append)
 {
 	GL_CHECK_FALSE(item);
 	GL_CHECK_FALSE(timeline_d);
@@ -326,23 +329,26 @@ static bool __gl_timeline_check_special_file(gl_timeline_s *timeline_d,
 		if (item->type == MEDIA_CONTENT_TYPE_IMAGE) {
 			timeline_d->sel_d->image_cnt++;
 			if (item->ext != NULL &&
-				!strcasecmp(item->ext, GL_JPEG_FILE_EXT) &&
-			    _gl_exif_check_img_type(item->file_url))
+			        !strcasecmp(item->ext, GL_JPEG_FILE_EXT) &&
+			        _gl_exif_check_img_type(item->file_url)) {
 				timeline_d->sel_d->jpge_cnt++;
+			}
 		}
 	} else {
 		if (item->type == MEDIA_CONTENT_TYPE_IMAGE) {
-			if (timeline_d->sel_d->image_cnt > 0)
+			if (timeline_d->sel_d->image_cnt > 0) {
 				timeline_d->sel_d->image_cnt--;
-			else
+			} else {
 				gl_dbgW("Image count is 0!");
+			}
 			if (item->ext != NULL &&
-					!strcasecmp(item->ext, GL_JPEG_FILE_EXT) &&
-					_gl_exif_check_img_type(item->file_url)) {
-				if (timeline_d->sel_d->jpge_cnt > 0)
+			        !strcasecmp(item->ext, GL_JPEG_FILE_EXT) &&
+			        _gl_exif_check_img_type(item->file_url)) {
+				if (timeline_d->sel_d->jpge_cnt > 0) {
 					timeline_d->sel_d->jpge_cnt--;
-				else
+				} else {
 					gl_dbgW("JPG count is 0!");
+				}
 			}
 		}
 	}
@@ -350,7 +356,7 @@ static bool __gl_timeline_check_special_file(gl_timeline_s *timeline_d,
 }
 
 int __gl_timeline_check_btns_state(gl_timeline_s *timeline_d, int all_cnt,
-				   int sel_cnt)
+                                   int sel_cnt)
 {
 	GL_CHECK_VAL(timeline_d, -1);
 	GL_CHECK_VAL(timeline_d->ad, -1);
@@ -381,7 +387,7 @@ int __gl_timeline_check_btns_state(gl_timeline_s *timeline_d, int all_cnt,
 			_gl_ui_disable_menu(timeline_d->nf_it, false);
 			_gl_ctrl_disable_items(timeline_d->nf_it, false);
 		} else { /* Share mode */
-				_gl_ctrl_disable_items(timeline_d->nf_it, false);
+			_gl_ctrl_disable_items(timeline_d->nf_it, false);
 		}
 	} else {
 		/* Disable control bar buttons */
@@ -403,7 +409,7 @@ static bool __gl_timeline_sel_remove_item(gl_timeline_s *timeline_d, char *uuid)
 	EINA_LIST_FOREACH(timeline_d->sel_d->sel_list, l, item) {
 		if (item && !g_strcmp0(item, uuid)) {
 			timeline_d->sel_d->sel_list = eina_list_remove(timeline_d->sel_d->sel_list,
-								       (void *)item);
+			                              (void *)item);
 			GL_GFREE(item);
 			return true;
 		}
@@ -421,8 +427,9 @@ static int __gl_timeline_update_sel_list(gl_timeline_s *timeline_d)
 	Eina_List *list = NULL;
 
 	ret = _gl_data_get_items(GL_GET_ALL_RECORDS, GL_GET_ALL_RECORDS, &list);
-	if (ret != 0 || !list)
+	if (ret != 0 || !list) {
 		gl_dbgW("Empty!");
+	}
 
 	/* Clear old selected count of sepecial files type */
 	__gl_timeline_clear_sel_cnt(timeline_d);
@@ -430,8 +437,9 @@ static int __gl_timeline_update_sel_list(gl_timeline_s *timeline_d)
 	gl_media_s *item = NULL;
 	char *tmp = NULL;
 	EINA_LIST_FREE(list, item) {
-		if (!item || !item->uuid)
+		if (!item || !item->uuid) {
 			continue;
+		}
 		if (__gl_timeline_sel_remove_item(timeline_d, item->uuid)) {
 			tmp = g_strdup(item->uuid);
 			new_l = eina_list_append(new_l, (void *)tmp);
@@ -487,7 +495,7 @@ static int __gl_timeline_check_op(gl_tlp_s *it_d, Evas_Object *obj, int index)
 	_gl_ui_update_navi_title_text(it_d->timeline_d->nf_it, sel_cnt, false);
 
 	__gl_timeline_check_btns_state(it_d->timeline_d, it_d->timeline_d->count,
-				       sel_cnt);
+	                               sel_cnt);
 
 	_gl_data_type_free_media_list(&list);
 	return 0;
@@ -521,7 +529,7 @@ static int __gl_timeline_thumb_check_op(gl_timeline_s *it_d, Evas_Object *obj, g
 	_gl_ui_update_navi_title_text(it_d->nf_it, sel_cnt, false);
 
 	__gl_timeline_check_btns_state(it_d, it_d->count,
-				       sel_cnt);
+	                               sel_cnt);
 
 	return 0;
 }
@@ -562,15 +570,16 @@ static int __gl_timeline_open_file(gl_tlp_s *it_d, int index)
 
 	if (item && item->file_url)
 		_gl_ext_load_iv_timeline(it_d->timeline_d->ad, item->file_url,
-					 (it_d->start_pos + index + 1));
-	else
+		                         (it_d->start_pos + index + 1));
+	else {
 		gl_dbgW("Image wasn't found!");
+	}
 	_gl_data_type_free_media_list(&list);
 	return 0;
 }
 
 static void __gl_timeline_mouse_down(void *data, Evas *e, Evas_Object *obj,
-				     void *ei)
+                                     void *ei)
 {
 	GL_CHECK(ei);
 	GL_CHECK(data);
@@ -583,7 +592,7 @@ static void __gl_timeline_mouse_down(void *data, Evas *e, Evas_Object *obj,
 }
 
 static void __gl_timeline_mouse_up(void *data, Evas *e, Evas_Object *obj,
-				   void *ei)
+                                   void *ei)
 {
 	GL_CHECK(ei);
 	GL_CHECK(data);
@@ -591,17 +600,20 @@ static void __gl_timeline_mouse_up(void *data, Evas *e, Evas_Object *obj,
 	GL_CHECK(it_d->timeline_d);
 	GL_CHECK(it_d->timeline_d->ad);
 
-	if (!ei || !obj)
+	if (!ei || !obj) {
 		return;
+	}
 
 	Evas_Event_Mouse_Up *ev = (Evas_Event_Mouse_Up *)ei;
 	if (ev->event_flags & EVAS_EVENT_FLAG_ON_HOLD ||
-	    ev->event_flags & EVAS_EVENT_FLAG_ON_SCROLL)
+	        ev->event_flags & EVAS_EVENT_FLAG_ON_SCROLL) {
 		return;
+	}
 
 	if ((abs(it_d->timeline_d->mouse.x - ev->output.x) > GL_MOUSE_RANGE) ||
-	    (abs(it_d->timeline_d->mouse.y - ev->output.y) > GL_MOUSE_RANGE))
+	        (abs(it_d->timeline_d->mouse.y - ev->output.y) > GL_MOUSE_RANGE)) {
 		return;
+	}
 
 	int saved_i = 0;
 #ifdef _USE_ROTATE_BG
@@ -610,7 +622,7 @@ static void __gl_timeline_mouse_up(void *data, Evas *e, Evas_Object *obj,
 	if (it_d->timeline_d->view_m != GL_TL_VIEW_NORMAL) {
 		char *part = NULL;
 		part = g_strdup_printf(GL_TL_CHECKBOX_FORMAT, it_d->count,
-				       saved_i + 1);
+		                       saved_i + 1);
 		Evas_Object *ck = NULL;
 		ck = elm_object_part_content_get(it_d->layout, part);
 		GL_FREEIF(part);
@@ -638,28 +650,28 @@ static int __gl_timeline_clear_bg_data(Evas_Object *bg)
 	if (timeline_d && timeline_d->thumbs) {
 		gl_dbg("Remove object!");
 		timeline_d->thumbs = eina_list_remove(timeline_d->thumbs,
-						      (void *)bg);
+		                                      (void *)bg);
 	}
 	return 0;
 }
 
 static void __gl_timeline_del_bg_cb(void *data, Evas *e, Evas_Object *obj,
-				    void *ei)
+                                    void *ei)
 {
 	gl_dbgW("Delete bg ---");
 	__gl_timeline_clear_bg_data(obj);
 	/* Remove mouse event if bg deleted */
 	evas_object_event_callback_del(obj, EVAS_CALLBACK_MOUSE_DOWN,
-				       __gl_timeline_mouse_down);
+	                               __gl_timeline_mouse_down);
 	evas_object_event_callback_del(obj, EVAS_CALLBACK_MOUSE_UP,
-				       __gl_timeline_mouse_up);
+	                               __gl_timeline_mouse_up);
 	gl_dbgW("Delete bg +++");
 }
 
 static Evas_Object *__gl_timeline_add_page_bg(Evas_Object *layout,
-					      const char *part,
-					      unsigned int orient, char *path,
-				    	      int w, int h)
+        const char *part,
+        unsigned int orient, char *path,
+        int w, int h)
 {
 	GL_CHECK_NULL(layout);
 #ifdef _USE_ROTATE_BG
@@ -687,30 +699,31 @@ static void __gl_timeline_check_changed(void *data, Evas_Object *obj, void *ei)
 }
 
 static Evas_Object *__gl_timeline_add_ck(Evas_Object *layout,
-					const char *part, bool b_checked,
-					gl_tlp_s *it_d)
+        const char *part, bool b_checked,
+        gl_tlp_s *it_d)
 {
 	GL_CHECK_NULL(layout);
 	Evas_Object *ck = NULL;
 	ck = _gl_thumb_show_checkbox(layout, b_checked,
-				     __gl_timeline_check_changed, it_d);
+	                             __gl_timeline_check_changed, it_d);
 	gl_dbg("part-%s", part);
 	elm_object_part_content_set(layout, part, ck);
 	return ck;
 }
 
 static Evas_Object *__gl_timeline_add_page_ly(Evas_Object *parent,
-					      gl_tlp_s *it_d)
+        gl_tlp_s *it_d)
 {
 	GL_CHECK_NULL(it_d);
 	GL_CHECK_NULL(parent);
 	Evas_Object *ly = NULL;
 
 	char *group = NULL;
-	if (it_d->h > it_d->w)
+	if (it_d->h > it_d->w) {
 		group = g_strdup_printf("gallery/timeline_%d", it_d->count);
-	else
+	} else {
 		group = g_strdup_printf("gallery/timeline_%dl", it_d->count);
+	}
 
 	ly = gl_ui_load_edj(parent, GL_EDJ_FILE, group);
 	GL_GFREE(group);
@@ -734,31 +747,34 @@ static bool __gl_timeline_is_yesterday(struct tm *req_tm, struct tm *now_tm)
 {
 	if (now_tm->tm_yday == 0) { /* It is the first day of this year */
 		if (req_tm->tm_year == now_tm->tm_year - 1 &&
-		    req_tm->tm_mon == 11 && req_tm->tm_mday == 31)
+		        req_tm->tm_mon == 11 && req_tm->tm_mday == 31) {
 			return true;
-		else
+		} else {
 			return false;
+		}
 	} else {
 		if (req_tm->tm_year == now_tm->tm_year &&
-		    req_tm->tm_yday == now_tm->tm_yday - 1)
+		        req_tm->tm_yday == now_tm->tm_yday - 1) {
 			return true;
-		else
+		} else {
 			return false;
+		}
 	}
 }
 
 static bool __gl_timeline_is_today(struct tm *req_tm, struct tm *now_tm)
 {
 	if (req_tm->tm_year == now_tm->tm_year &&
-	    req_tm->tm_yday == now_tm->tm_yday)
+	        req_tm->tm_yday == now_tm->tm_yday) {
 		return true;
-	else
+	} else {
 		return false;
+	}
 }
 
 /* change 'time_t' to 'struct tm' */
 static int __gl_timeline_get_tm(time_t mtime1, time_t mtime2, struct tm *t1,
-				struct tm *t2)
+                                struct tm *t2)
 {
 	GL_CHECK_VAL(t1, -1);
 	GL_CHECK_VAL(t2, -1);
@@ -773,20 +789,21 @@ static int __gl_timeline_get_tm(time_t mtime1, time_t mtime2, struct tm *t1,
 #if 0
 /* check mtime is changed or not */
 static bool __gl_timeline_is_tm_changed(struct tm t1, struct tm t2,
-					gl_tm_s *tms, gl_tm_s *tme)
+                                        gl_tm_s *tms, gl_tm_s *tme)
 {
 	GL_CHECK_FALSE(tms);
 	GL_CHECK_FALSE(tme);
 
 	gl_dbgW("%d/%d/%d-%d/%d/%d =? %d/%d/%d-%d/%d/%d!", t1.tm_year, t1.tm_mon,
-		t1.tm_mday, t2.tm_year, t2.tm_mon, t2.tm_mday, tms->tm_year,
-		tms->tm_mon, tms->tm_mday, tme->tm_year, tme->tm_mon,
-		tme->tm_mday);
+	        t1.tm_mday, t2.tm_year, t2.tm_mon, t2.tm_mday, tms->tm_year,
+	        tms->tm_mon, tms->tm_mday, tme->tm_year, tme->tm_mon,
+	        tme->tm_mday);
 
 	if (tms->tm_year == t1.tm_year && tms->tm_mon == t1.tm_mon &&
-	    tms->tm_mday == t1.tm_mday && tme->tm_year == t2.tm_year &&
-	    tme->tm_mon == t2.tm_mon &&	tme->tm_mday == t2.tm_mday)
+	        tms->tm_mday == t1.tm_mday && tme->tm_year == t2.tm_year &&
+	        tme->tm_mon == t2.tm_mon &&	tme->tm_mday == t2.tm_mday) {
 		return false;
+	}
 
 	tms->tm_year = t1.tm_year;
 	tms->tm_mon = t1.tm_mon;
@@ -801,7 +818,7 @@ static bool __gl_timeline_is_tm_changed(struct tm t1, struct tm t2,
 
 /* Caller need to free strings returned */
 static int __gl_timeline_get_mtime_str(struct tm t1, struct tm t2, char **str1,
-				       char **str2)
+                                       char **str2)
 {
 	GL_CHECK_VAL(str1, -1);
 	GL_CHECK_VAL(str2, -1);
@@ -812,7 +829,8 @@ static int __gl_timeline_get_mtime_str(struct tm t1, struct tm t2, char **str1,
 	/*char *week_day[7] = { GL_STR_SUN, GL_STR_MON, GL_STR_TUE, GL_STR_WED,
 			      GL_STR_THU, GL_STR_FRI, GL_STR_SAT};*/
 	char *month[12] = { GL_STR_ID_JAN, GL_STR_ID_FEB, GL_STR_ID_MAR, GL_STR_ID_APR, GL_STR_ID_MAY, GL_STR_ID_JUN,
-			GL_STR_ID_JUL, GL_STR_ID_AUG, GL_STR_ID_SEP, GL_STR_ID_OCT, GL_STR_ID_NOV, GL_STR_ID_DEC};
+	                    GL_STR_ID_JUL, GL_STR_ID_AUG, GL_STR_ID_SEP, GL_STR_ID_OCT, GL_STR_ID_NOV, GL_STR_ID_DEC
+	                  };
 
 	/* Current time */
 	memset(&ct, 0x00, sizeof(struct tm));
@@ -820,14 +838,14 @@ static int __gl_timeline_get_mtime_str(struct tm t1, struct tm t2, char **str1,
 	localtime_r(&ctime, &ct);
 
 	if (t1.tm_year == t2.tm_year && t1.tm_mon == t2.tm_mon &&
-	    t1.tm_mday == t2.tm_mday) {
+	        t1.tm_mday == t2.tm_mday) {
 		/* Same day */
 		if (__gl_timeline_is_today(&t1, &ct)) {
 			/* Today */
 			*str1 = g_strdup_printf("%s%s", prefix1,
-						GL_STR_TODAY);
+			                        GL_STR_TODAY);
 			*str2 = g_strdup_printf("%s%s", prefix2,
-								  "");
+			                        "");
 			return 0;
 		}
 	} else if (t1.tm_year == t2.tm_year && t1.tm_mon == t2.tm_mon) {
@@ -835,30 +853,30 @@ static int __gl_timeline_get_mtime_str(struct tm t1, struct tm t2, char **str1,
 		if (__gl_timeline_is_yesterday(&t1, &ct)) {
 			/* Yesterday */
 			*str1 = g_strdup_printf("%s%s", prefix1,
-					GL_STR_YESTERDAY);
+			                        GL_STR_YESTERDAY);
 			*str2 = g_strdup_printf("%s%s", prefix2,
-					"");
+			                        "");
 			return 0;
 		}
 		*str2 = g_strdup_printf("%s%d.%02d.%02d ~ %02d.%02d", prefix2,
-				GL_DEFAULT_YEAR + t2.tm_year,
-				t2.tm_mon + 1, t2.tm_mday,
-				t1.tm_mon + 1, t1.tm_mday);
+		                        GL_DEFAULT_YEAR + t2.tm_year,
+		                        t2.tm_mon + 1, t2.tm_mday,
+		                        t1.tm_mon + 1, t1.tm_mday);
 		*str1 = g_strdup_printf("%s%02d %s", prefix2,
-				t1.tm_mday, month[t1.tm_mon]);
+		                        t1.tm_mday, month[t1.tm_mon]);
 	} else if (t1.tm_year == t2.tm_year) {
 		/* Same year */
 		*str2 = g_strdup_printf("%s%d.%02d.%02d ~ %02d.%02d", prefix2,
-					GL_DEFAULT_YEAR + t2.tm_year,
-					t2.tm_mon + 1, t2.tm_mday,
-					t1.tm_mon + 1, t1.tm_mday);
+		                        GL_DEFAULT_YEAR + t2.tm_year,
+		                        t2.tm_mon + 1, t2.tm_mday,
+		                        t1.tm_mon + 1, t1.tm_mday);
 		*str1 = g_strdup_printf("%s %s", prefix2, month[t1.tm_mon]);
 	} else {
 		*str2 = g_strdup_printf("%s%d.%02d.%02d ~ %d.%02d.%02d",
-					prefix2, GL_DEFAULT_YEAR + t2.tm_year,
-					t2.tm_mon + 1, t2.tm_mday,
-					GL_DEFAULT_YEAR + t1.tm_year,
-					t1.tm_mon + 1, t1.tm_mday);
+		                        prefix2, GL_DEFAULT_YEAR + t2.tm_year,
+		                        t2.tm_mon + 1, t2.tm_mday,
+		                        GL_DEFAULT_YEAR + t1.tm_year,
+		                        t1.tm_mon + 1, t1.tm_mday);
 		*str1 = g_strdup_printf("%s%d ", prefix2, GL_DEFAULT_YEAR + t1.tm_year);
 	}
 	return 0;
@@ -866,7 +884,7 @@ static int __gl_timeline_get_mtime_str(struct tm t1, struct tm t2, char **str1,
 
 #if 0
 static Evas_Object *__gl_timeline_add_title(Evas_Object *parent, char *text1,
-					    char *text2)
+        char *text2)
 {
 	gl_dbg("");
 	GL_CHECK_NULL(parent);
@@ -875,8 +893,9 @@ static Evas_Object *__gl_timeline_add_title(Evas_Object *parent, char *text1,
 	Evas_Object *data2 = NULL;
 	double scale = elm_config_scale_get();
 
-	if (text2 == NULL)
+	if (text2 == NULL) {
 		goto GL_UI_FAILED;
+	}
 
 	bx = elm_box_add(parent);
 	GL_CHECK_NULL(bx);
@@ -887,12 +906,14 @@ static Evas_Object *__gl_timeline_add_title(Evas_Object *parent, char *text1,
 	elm_box_align_set(bx, 0.0, 0.5);
 
 	Evas *evas = evas_object_evas_get(parent);
-	if (evas == NULL)
+	if (evas == NULL) {
 		goto GL_UI_FAILED;
+	}
 	/* Pad - 11 */
 	Evas_Object *rect1 = evas_object_rectangle_add(evas);
-	if (rect1 == NULL)
+	if (rect1 == NULL) {
 		goto GL_UI_FAILED;
+	}
 	Evas_Coord pad_w = (Evas_Coord)(11 * scale);
 	Evas_Coord pad_h = (Evas_Coord)(GL_TIMELINE_TITLE_H * scale);
 	evas_object_resize(rect1, pad_w, pad_h);
@@ -903,8 +924,9 @@ static Evas_Object *__gl_timeline_add_title(Evas_Object *parent, char *text1,
 	/* data 1 */
 	if (text1) {
 		data1 = elm_label_add(parent);
-		if (data1 == NULL)
+		if (data1 == NULL) {
 			goto GL_UI_FAILED;
+		}
 		evas_object_size_hint_weight_set(data1, 0.0, EVAS_HINT_EXPAND);
 		evas_object_size_hint_align_set(data1, 0.0, 0.5);
 		elm_box_pack_end(bx, data1);
@@ -916,8 +938,9 @@ static Evas_Object *__gl_timeline_add_title(Evas_Object *parent, char *text1,
 
 		/* Pad - 10 */
 		Evas_Object *rect2 = evas_object_rectangle_add(evas);
-		if (rect2 == NULL)
+		if (rect2 == NULL) {
 			goto GL_UI_FAILED;
+		}
 		Evas_Coord pad2_w = (Evas_Coord)(10 * scale);
 		evas_object_resize(rect2, pad2_w, pad_h);
 		evas_object_size_hint_min_set(rect2, pad2_w, pad_h);
@@ -927,8 +950,9 @@ static Evas_Object *__gl_timeline_add_title(Evas_Object *parent, char *text1,
 
 	/* data 2 */
 	data2 = elm_label_add(parent);
-	if (data2 == NULL)
+	if (data2 == NULL) {
 		goto GL_UI_FAILED;
+	}
 	evas_object_size_hint_weight_set(data2, 0.0, EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(data2, 0.0, 0.5);
 	elm_box_pack_end(bx, data2);
@@ -940,8 +964,9 @@ static Evas_Object *__gl_timeline_add_title(Evas_Object *parent, char *text1,
 
 	/* Pad - 11 */
 	Evas_Object *rect3 = evas_object_rectangle_add(evas);
-	if (rect3 == NULL)
+	if (rect3 == NULL) {
 		goto GL_UI_FAILED;
+	}
 	evas_object_resize(rect3, pad_w, pad_h);
 	evas_object_size_hint_min_set(rect3, pad_w, pad_h);
 	evas_object_size_hint_max_set(rect3, pad_w, pad_h);
@@ -950,7 +975,7 @@ static Evas_Object *__gl_timeline_add_title(Evas_Object *parent, char *text1,
 	evas_object_show(bx);
 	return bx;
 
- GL_UI_FAILED:
+GL_UI_FAILED:
 
 	gl_dbgE("Failed to add title!");
 	GL_IF_DEL_OBJ(bx);
@@ -964,13 +989,13 @@ static int __gl_timeline_reset_title(gl_timeline_s *timeline_d)
 	GL_CHECK_VAL(timeline_d, -1);
 
 	Evas_Object *title = elm_object_part_content_unset(timeline_d->layout,
-							   "title2");
+	                     "title2");
 	GL_CHECK_VAL(title, -1);
 	gl_dbg("Set new title: %p", title);
 	elm_object_part_content_set(timeline_d->layout, "title", title);
 
 	edje_object_signal_emit(_EDJ(timeline_d->layout), GL_TL_TITLE_SHOW,
-				"elm");
+	                        "elm");
 	edje_object_message_signal_process(_EDJ(timeline_d->layout));
 	return 0;
 }
@@ -978,8 +1003,8 @@ static int __gl_timeline_reset_title(gl_timeline_s *timeline_d)
 /* "elm,state,title,hide"
  */
 static void __gl_timeline_on_title_hide_finished(void *data, Evas_Object *obj,
-						 const char *emission,
-						 const char *source)
+        const char *emission,
+        const char *source)
 {
 	GL_CHECK(data);
 	gl_timeline_s *timeline_d = (gl_timeline_s *)data;
@@ -990,7 +1015,7 @@ static void __gl_timeline_on_title_hide_finished(void *data, Evas_Object *obj,
 	}
 
 	Evas_Object *title = elm_object_part_content_unset(timeline_d->layout,
-							   "title");
+	                     "title");
 	gl_dbg("Delete old title: %p", title);
 	GL_IF_DEL_OBJ(title);
 }
@@ -998,8 +1023,8 @@ static void __gl_timeline_on_title_hide_finished(void *data, Evas_Object *obj,
 /* "elm,state,title2,show"
  */
 static void __gl_timeline_on_title2_show_finished(void *data, Evas_Object *obj,
-						  const char *emission,
-						  const char *source)
+        const char *emission,
+        const char *source)
 {
 	GL_CHECK(data);
 	gl_timeline_s *timeline_d = (gl_timeline_s *)data;
@@ -1014,7 +1039,7 @@ static void __gl_timeline_on_title2_show_finished(void *data, Evas_Object *obj,
 }
 
 static int __gl_timeline_add_title_trans_finished_cbs(gl_timeline_s *timeline_d,
-						      bool b_add)
+        bool b_add)
 {
 	GL_CHECK_VAL(timeline_d, -1);
 	gl_dbg("b_add: %d", b_add);
@@ -1022,21 +1047,21 @@ static int __gl_timeline_add_title_trans_finished_cbs(gl_timeline_s *timeline_d,
 	if (b_add) {
 		/* Add callback for title updating */
 		edje_object_signal_callback_add(_EDJ(timeline_d->layout),
-						GL_TL_TITLE2_SHOW_FINISHED, "",
-						__gl_timeline_on_title2_show_finished,
-						(void *)timeline_d);
+		                                GL_TL_TITLE2_SHOW_FINISHED, "",
+		                                __gl_timeline_on_title2_show_finished,
+		                                (void *)timeline_d);
 		edje_object_signal_callback_add(_EDJ(timeline_d->layout),
-						GL_TL_TITLE_HIDE_FINISHED, "",
-						__gl_timeline_on_title_hide_finished,
-						(void *)timeline_d);
+		                                GL_TL_TITLE_HIDE_FINISHED, "",
+		                                __gl_timeline_on_title_hide_finished,
+		                                (void *)timeline_d);
 	} else {
 		/* Add callback for title updating */
 		edje_object_signal_callback_del(_EDJ(timeline_d->layout),
-						GL_TL_TITLE2_SHOW_FINISHED, "",
-						__gl_timeline_on_title2_show_finished);
+		                                GL_TL_TITLE2_SHOW_FINISHED, "",
+		                                __gl_timeline_on_title2_show_finished);
 		edje_object_signal_callback_del(_EDJ(timeline_d->layout),
-						GL_TL_TITLE_HIDE_FINISHED, "",
-						__gl_timeline_on_title_hide_finished);
+		                                GL_TL_TITLE_HIDE_FINISHED, "",
+		                                __gl_timeline_on_title_hide_finished);
 	}
 	return 0;
 }
@@ -1056,16 +1081,16 @@ static Eina_Bool __gl_timeline_title_trans_cb(void *data)
 	timeline_d->animator = NULL;
 
 	edje_object_signal_emit(_EDJ(timeline_d->layout),
-				GL_TL_TITLE_FADE_OUT, "elm");
+	                        GL_TL_TITLE_FADE_OUT, "elm");
 	//edje_object_message_signal_process(_EDJ(timeline_d->layout));
 	edje_object_signal_emit(_EDJ(timeline_d->layout),
-				GL_TL_TITLE2_FADE_IN, "elm");
+	                        GL_TL_TITLE2_FADE_IN, "elm");
 	edje_object_message_signal_process(_EDJ(timeline_d->layout));
 	edje_object_signal_emit(_EDJ(timeline_d->layout),
-				GL_TL_TITLE_HIDE_DEFERRED, "elm");
+	                        GL_TL_TITLE_HIDE_DEFERRED, "elm");
 	edje_object_message_signal_process(_EDJ(timeline_d->layout));
 	edje_object_signal_emit(_EDJ(timeline_d->layout),
-				GL_TL_TITLE2_SHOW_DEFERRED, "elm");
+	                        GL_TL_TITLE2_SHOW_DEFERRED, "elm");
 	edje_object_message_signal_process(_EDJ(timeline_d->layout));
 
 	gl_dbg("done");
@@ -1076,17 +1101,17 @@ static int __gl_timeline_start_title_trans(gl_timeline_s *timeline_d)
 {
 	GL_CHECK_VAL(timeline_d, -1);
 	edje_object_signal_emit(_EDJ(timeline_d->layout), GL_TL_TITLE_SHOW,
-				"elm");
+	                        "elm");
 	edje_object_signal_emit(_EDJ(timeline_d->layout), GL_TL_TITLE2_CREATED,
-				"elm");
+	                        "elm");
 	edje_object_message_signal_process(_EDJ(timeline_d->layout));
 	timeline_d->animator = ecore_animator_add(__gl_timeline_title_trans_cb,
-						  timeline_d);
+	                       timeline_d);
 	return 0;
 }
 
 static int __gl_timeline_update_title(gl_timeline_s *timeline_d, gl_tlp_s *it_d,
-				      bool b_forced)
+                                      bool b_forced)
 {
 	GL_CHECK_VAL(it_d, -1);
 	GL_CHECK_VAL(timeline_d, -1);
@@ -1114,10 +1139,12 @@ static int __gl_timeline_update_title(gl_timeline_s *timeline_d, gl_tlp_s *it_d,
 			continue;
 		}
 
-		if (i == 0)
+		if (i == 0) {
 			mtime1 = item->mtime;
-		if (i == count - 1)
+		}
+		if (i == count - 1) {
 			mtime2 = item->mtime;
+		}
 
 		item = NULL;
 	}
@@ -1128,7 +1155,7 @@ static int __gl_timeline_update_title(gl_timeline_s *timeline_d, gl_tlp_s *it_d,
 	__gl_timeline_get_tm(mtime1, mtime2, &t1, &t2);
 	/* Time changed? */
 	if (!b_forced &&
-	    !__gl_timeline_is_tm_changed(t1, t2, &(timeline_d->tm_s), &(timeline_d->tm_e))) {
+	        !__gl_timeline_is_tm_changed(t1, t2, &(timeline_d->tm_s), &(timeline_d->tm_e))) {
 		if (!elm_object_part_content_get(timeline_d->layout, "title")) {
 			gl_dbgW("Title is empty, recreate it!");
 		} else {
@@ -1144,7 +1171,7 @@ static int __gl_timeline_update_title(gl_timeline_s *timeline_d, gl_tlp_s *it_d,
 	title = __gl_timeline_add_title(timeline_d->layout, text1, text2);
 	GL_CHECK_VAL(title, -1);
 	if (!b_forced && /* Dont transit if it's forced to update title */
-	    elm_object_part_content_get(timeline_d->layout, "title")) {
+	        elm_object_part_content_get(timeline_d->layout, "title")) {
 		/* Play Animation for title updating */
 		gl_dbg("Animate title");
 		if (timeline_d->b_updating_title) {
@@ -1152,11 +1179,11 @@ static int __gl_timeline_update_title(gl_timeline_s *timeline_d, gl_tlp_s *it_d,
 			GL_IF_DEL_ANIMATOR(timeline_d->animator);
 			/* Delete callback first to skip useless operation */
 			__gl_timeline_add_title_trans_finished_cbs(timeline_d,
-								   false);
+			        false);
 			__gl_timeline_reset_title(timeline_d);
 			/* Add callback again */
 			__gl_timeline_add_title_trans_finished_cbs(timeline_d,
-								   true);
+			        true);
 		} else {
 			timeline_d->b_updating_title = true;
 		}
@@ -1170,7 +1197,7 @@ static int __gl_timeline_update_title(gl_timeline_s *timeline_d, gl_tlp_s *it_d,
 }
 
 static int __gl_timeline_get_tile_size(int count, int idx, bool b_land, int *w,
-				       int *h)
+                                       int *h)
 {
 	GL_CHECK_VAL(w, -1);
 	GL_CHECK_VAL(h, -1);
@@ -1198,12 +1225,12 @@ static int __gl_timeline_get_tile_size(int count, int idx, bool b_land, int *w,
 
 /* Free data after page deleted */
 static void __gl_timeline_del_page_cb(void *data, Evas *e, Evas_Object *obj,
-					void *ei)
+                                      void *ei)
 {
 	gl_dbgW("Delete page ---");
 	GL_CHECK(data);
 	evas_object_smart_callback_del(obj, "layout,page,deleted",
-				       __gl_timeline_page_deleted_cb);
+	                               __gl_timeline_page_deleted_cb);
 	gl_tlp_s *it_d = (gl_tlp_s *)data;
 	GL_IF_DEL_IDLER(it_d->update_idler);
 	it_d->b_created = false;
@@ -1211,11 +1238,11 @@ static void __gl_timeline_del_page_cb(void *data, Evas *e, Evas_Object *obj,
 }
 
 static void __gl_timeline_page_deleted_cb(void *data, Evas_Object *obj,
-						 void *ei)
+        void *ei)
 {
 	gl_dbgW("Deleted page ------");
 	evas_object_event_callback_del(obj, EVAS_CALLBACK_DEL,
-				       __gl_timeline_del_page_cb);
+	                               __gl_timeline_del_page_cb);
 	GL_CHECK(data);
 	gl_tlp_s *it_d = (gl_tlp_s *)data;
 	GL_IF_DEL_IDLER(it_d->update_idler);
@@ -1239,8 +1266,9 @@ static int __gl_timeline_update_page(gl_tlp_s *it_d)
 	}
 
 	bool b_landscape = false;
-	if (it_d->w > it_d->h)
+	if (it_d->w > it_d->h) {
 		b_landscape = true;
+	}
 
 	Evas_Object *layout = it_d->layout;
 	Evas_Object *bg = NULL;
@@ -1260,14 +1288,14 @@ static int __gl_timeline_update_page(gl_tlp_s *it_d)
 			continue;
 		}
 
-/* Checkme: Scrolling doesn't work smoothly if original file was used */
+		/* Checkme: Scrolling doesn't work smoothly if original file was used */
 		/* Get orientation for original file */
 		if (((i == 0 && count <= 5) ||
-		     (i == 1 && count <= 3 && !b_landscape) ||
-		     (i == 2 && count == 4 && !b_landscape) ||
-		     (i == 1 && (count == 2 || count == 4) && b_landscape)) &&
-		    item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-		    GL_FILE_EXISTS(item->file_url)) {
+		        (i == 1 && count <= 3 && !b_landscape) ||
+		        (i == 2 && count == 4 && !b_landscape) ||
+		        (i == 1 && (count == 2 || count == 4) && b_landscape)) &&
+		        item->type == MEDIA_CONTENT_TYPE_IMAGE &&
+		        GL_FILE_EXISTS(item->file_url)) {
 			path = item->file_url;
 #ifdef _USE_ROTATE_BG
 			if (_gl_exif_get_orientation(path, &orient) < 0) {
@@ -1276,9 +1304,9 @@ static int __gl_timeline_update_page(gl_tlp_s *it_d)
 			}
 #endif
 			__gl_timeline_get_tile_size(count, i, b_landscape, &w,
-						    &h);
+			                            &h);
 			part = g_strdup_printf(GL_TL_CONTENTS_FORMAT,
-					       it_d->count, i + 1);
+			                       it_d->count, i + 1);
 			bg = elm_object_part_content_get(layout, part);
 			if (bg) {
 				_gl_rotate_bg_set_file(bg, path, w, h);
@@ -1297,11 +1325,11 @@ static int __gl_timeline_update_page(gl_tlp_s *it_d)
 }
 
 static void __gl_timeline_page_transited_cb(void *data, Evas_Object *obj,
-						 void *ei)
+        void *ei)
 {
 	gl_dbgW("Transited page ------");
 	evas_object_event_callback_del(obj, EVAS_CALLBACK_DEL,
-				       __gl_timeline_del_page_cb);
+	                               __gl_timeline_del_page_cb);
 	GL_CHECK(data);
 	gl_tlp_s *it_d = (gl_tlp_s *)data;
 	GL_IF_DEL_IDLER(it_d->update_idler);
@@ -1331,19 +1359,19 @@ static int __gl_timeline_check_page_idler(gl_tlp_s *it_d)
 	gl_slide_zop_e zoom = _gl_slider_get_zop(it_d->timeline_d->view);
 	gl_dbg("zoom-%d, tran_op-%d", zoom, it_d->timeline_d->tran_op);
 	if (it_d->timeline_d->tran_op == GL_TRANS_OP_PREPARE ||
-	    it_d->timeline_d->tran_op == GL_TRANS_OP_DONE) {
+	        it_d->timeline_d->tran_op == GL_TRANS_OP_DONE) {
 		gl_dbg("Update checked by transit callback");
 	} else if (it_d->timeline_d->tran_op == GL_TRANS_OP_START) {
 		gl_dbg("Delay idler callback");
 		it_d->timeline_d->idlers = eina_list_append(it_d->timeline_d->idlers,
-							    it_d);
+		                           it_d);
 	} else if (zoom == GL_SLIDE_ZOP_OUT || zoom == GL_SLIDE_ZOP_IN) {
 		gl_dbg("Updated by transit callback");
 	} else {
 		GL_IF_DEL_IDLER(it_d->update_idler);
 		gl_dbg("Add idler callback");
 		it_d->update_idler = ecore_idler_add(__gl_timeline_page_update_idler_cb,
-						     it_d);
+		                                     it_d);
 	}
 	return 0;
 }
@@ -1355,17 +1383,17 @@ static int __gl_timeline_add_page_cbs(gl_tlp_s *it_d, Evas_Object *layout)
 
 	/* Register delete callback */
 	evas_object_event_callback_add(layout, EVAS_CALLBACK_DEL,
-				       __gl_timeline_del_page_cb, it_d);
+	                               __gl_timeline_del_page_cb, it_d);
 	evas_object_smart_callback_add(layout, "layout,page,deleted",
-				       __gl_timeline_page_deleted_cb, it_d);
+	                               __gl_timeline_page_deleted_cb, it_d);
 	/* Register transit callback */
 	evas_object_smart_callback_add(layout, "layout,page,transited",
-				       __gl_timeline_page_transited_cb, it_d);
+	                               __gl_timeline_page_transited_cb, it_d);
 	return 0;
 }
 
 static void __gl_timeline_transit_op(Elm_Transit_Effect *data,
-				     Elm_Transit *transit, double progress)
+                                     Elm_Transit *transit, double progress)
 {
 	gl_dbg("");
 }
@@ -1375,8 +1403,9 @@ static void __gl_timeline_transit_done(Elm_Transit_Effect *data, Elm_Transit *tr
 	GL_CHECK(data);
 	gl_tile_s *tile = (gl_tile_s *)data;
 	gl_dbgW("%d/%d", tile->count, tile->total);
-	if (tile->count != tile->total)
+	if (tile->count != tile->total) {
 		return;
+	}
 
 	gl_dbgW("tran_op: %d", tile->timeline_d->tran_op);
 	if (tile->timeline_d->tran_op == GL_TRANS_OP_START) {
@@ -1390,7 +1419,7 @@ static void __gl_timeline_transit_done(Elm_Transit_Effect *data, Elm_Transit *tr
 		EINA_LIST_FREE(tile->timeline_d->idlers, it_d) {
 			gl_dbg("it_d: %p", it_d);
 			it_d->update_idler = ecore_idler_add(__gl_timeline_page_update_idler_cb,
-							     it_d);
+			                                     it_d);
 			it_d = NULL;
 		}
 		tile->timeline_d->idlers = NULL;
@@ -1417,18 +1446,18 @@ static int __gl_timeline_tile_transit(gl_tile_s *tile)
 	gl_dbg("");
 	GL_CHECK_VAL(tile, -1);
 
-        tile->trans = elm_transit_add();
-        elm_transit_object_add(tile->trans, tile->bg);
+	tile->trans = elm_transit_add();
+	elm_transit_object_add(tile->trans, tile->bg);
 
-        elm_transit_tween_mode_set(tile->trans,
-				   ELM_TRANSIT_TWEEN_MODE_DECELERATE);
+	elm_transit_tween_mode_set(tile->trans,
+	                           ELM_TRANSIT_TWEEN_MODE_DECELERATE);
 
 	elm_transit_effect_color_add(tile->trans, 0, 0, 0, 0, 255, 255, 255,
-				     255);
+	                             255);
 	elm_transit_effect_zoom_add(tile->trans, 0.4, 1.0);
-	elm_transit_effect_add(tile->trans,__gl_timeline_transit_op,
-			       (Elm_Transit_Effect *)tile,
-			       __gl_timeline_transit_done);
+	elm_transit_effect_add(tile->trans, __gl_timeline_transit_op,
+	                       (Elm_Transit_Effect *)tile,
+	                       __gl_timeline_transit_done);
 	elm_transit_del_cb_set(tile->trans, __gl_timeline_transit_del_cb, tile);
 
 	elm_transit_duration_set(tile->trans, GL_TL_TRANS_TIME);
@@ -1465,7 +1494,7 @@ static int __gl_timeline_transit_tiles(gl_timeline_s *timeline_d)
 }
 
 static int __gl_timeline_add_tile(gl_tlp_s *it_d, Evas_Object *parent,
-				  Evas_Object *bg, int count, int total)
+                                  Evas_Object *bg, int count, int total)
 {
 	GL_CHECK_VAL(it_d, -1);
 
@@ -1478,7 +1507,7 @@ static int __gl_timeline_add_tile(gl_tlp_s *it_d, Evas_Object *parent,
 	tile->total = total;
 	tile->timeline_d = it_d->timeline_d;
 	it_d->timeline_d->tiles = eina_list_append(it_d->timeline_d->tiles,
-						   tile);
+	                          tile);
 	return 0;
 }
 
@@ -1497,9 +1526,9 @@ static Evas_Object *__gl_timeline_get_page_tiles(gl_tlp_s *it_d)
 	for (i = 0; i < count; i++) {
 		/* Add images */
 		part = g_strdup_printf(GL_TL_CONTENTS_FORMAT, it_d->count,
-				       i + 1);
+		                       i + 1);
 
-		bg= elm_object_part_content_get(it_d->layout, part);
+		bg = elm_object_part_content_get(it_d->layout, part);
 		__gl_timeline_add_tile(it_d, NULL, bg, i + 1, count);
 
 		part = NULL;
@@ -1527,16 +1556,16 @@ static int __gl_timeline_show_tiles_trans(gl_timeline_s *timeline_d)
 
 /* Only for local medias */
 static void __gl_timeline_create_thumb_cb(media_content_error_e error,
-					const char *path, void *user_data)
+        const char *path, void *user_data)
 {
 	GL_CHECK(user_data);
 	Evas_Object *bg = (Evas_Object *)user_data;
 
 	if (error == MEDIA_CONTENT_ERROR_NONE && GL_FILE_EXISTS(path) &&
-	    g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
+	        g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
 		gl_sdbgW("path[%s]!", path);
 		_gl_rotate_bg_set_file(bg, path, GL_TIMELINE_PAGE_SIZE,
-				       GL_TIMELINE_PAGE_SIZE);
+		                       GL_TIMELINE_PAGE_SIZE);
 		_gl_rotate_bg_rotate_image(bg, GL_ORIENTATION_ROT_0);
 	} else {
 		gl_sdbgE("[%d]Invalid path[%s]!", error, path);
@@ -1555,28 +1584,31 @@ static int __gl_timeline_create_thumbs(gl_timeline_s *timeline_d)
 	int ret = -1;
 
 	EINA_LIST_FOREACH(timeline_d->thumbs, l, bg) {
-		if (bg == NULL)
+		if (bg == NULL) {
 			continue;
+		}
 		item = (gl_media_s *)evas_object_data_get(bg,
-							  GL_TL_TILE_DATA_KEY);
+		        GL_TL_TILE_DATA_KEY);
 		if (item && !GL_FILE_EXISTS(item->thumb_url) &&
-		    GL_FILE_EXISTS(item->file_url)) {
+		        GL_FILE_EXISTS(item->file_url)) {
 			gl_dbgW("Add thumb creation!");
 			ret = _gl_data_create_thumb(item,
-						    __gl_timeline_create_thumb_cb,
-						    bg);
-			if (ret == 0)
+			                            __gl_timeline_create_thumb_cb,
+			                            bg);
+			if (ret == 0) {
 				continue;
-			else
+			} else {
 				goto GL_TL_FAILED;
+			}
 		} else {
- GL_TL_FAILED:
+GL_TL_FAILED:
 
 			evas_object_data_del(bg, GL_TL_TILE_DATA_KEY);
 			timeline_d->thumbs = eina_list_remove(timeline_d->thumbs,
-							      bg);
-			if (item)
+			                                      bg);
+			if (item) {
 				_gl_data_type_free_glitem((void **)(&item));
+			}
 		}
 	}
 	return 0;
@@ -1592,10 +1624,11 @@ static int __gl_timeline_cancel_thumbs(gl_timeline_s *timeline_d)
 	gl_media_s *item = NULL;
 
 	EINA_LIST_FOREACH(timeline_d->thumbs, l, bg) {
-		if (bg == NULL)
+		if (bg == NULL) {
 			continue;
+		}
 		item = (gl_media_s *)evas_object_data_get(bg,
-							  GL_TL_TILE_DATA_KEY);
+		        GL_TL_TILE_DATA_KEY);
 		if (item && item->b_create_thumb) {
 			gl_dbgW("Cancel thumb creation!");
 			_gl_data_cancel_thumb(item);
@@ -1611,32 +1644,33 @@ static int __gl_timeline_check_thumb(gl_media_s *item, Evas_Object *bg)
 	GL_CHECK_VAL(item, -1);
 
 	if (item->storage_type != GL_STORE_T_PHONE &&
-	    item->storage_type != GL_STORE_T_MMC)
+	        item->storage_type != GL_STORE_T_MMC) {
 		return -1;
+	}
 
 	if (GL_FILE_EXISTS(item->file_url)) {
 		int ret = -1;
 		ret = _gl_data_create_thumb(item, __gl_timeline_create_thumb_cb,
-					    (void *)bg);
+		                            (void *)bg);
 		return ret;
 	}
 	return -1;
 }
 
 static int __gl_timeline_check_glitem(gl_timeline_s *timeline_d,
-				      gl_media_s *item, Evas_Object *bg,
-				      bool b_check_thumb)
+                                      gl_media_s *item, Evas_Object *bg,
+                                      bool b_check_thumb)
 {
 	/* Check thumb */
 	if (b_check_thumb) {
 		gl_dbg("Check thumb");
 		if (__gl_timeline_check_thumb(item, bg) == 0) {
 			evas_object_data_set(bg, GL_TL_TILE_DATA_KEY,
-					     (void *)item);
+			                     (void *)item);
 			evas_object_data_set(bg, GL_TL_DATA_KEY,
-					     (void *)timeline_d);
+			                     (void *)timeline_d);
 			timeline_d->thumbs = eina_list_append(timeline_d->thumbs,
-							      (void *)bg);
+			                                      (void *)bg);
 		} else {
 			_gl_data_type_free_glitem((void **)(&item));
 		}
@@ -1672,10 +1706,11 @@ static Evas_Object *__gl_timeline_add_page(Evas_Object *parent, gl_tlp_s *it_d)
 	if (!it_d->b_created) {
 		it_d->b_created = true;
 		/* Add idler for showing original files for big tile */
-		if (count <= 5)
+		if (count <= 5) {
 			__gl_timeline_check_page_idler(it_d);
-		else
+		} else {
 			gl_dbg("count>5, no idler for showing original file");
+		}
 	}
 	it_d->layout = layout;
 	__gl_timeline_add_page_cbs(it_d, layout);
@@ -1697,15 +1732,15 @@ static Evas_Object *__gl_timeline_add_page(Evas_Object *parent, gl_tlp_s *it_d)
 			gl_dbgE("Invalid item!");
 			continue;
 		}
-/* Checkme: Scrolling doesn't work smoothly if original file was used */
+		/* Checkme: Scrolling doesn't work smoothly if original file was used */
 		/* Get orientation for original file */
 		if (((i == 0 && count <= 5) ||
-		     (i == 1 && count <= 3 && !b_landscape) ||
-		     (i == 2 && count == 4 && !b_landscape) ||
-		     (i == 1 && (count == 2 || count == 4) && b_landscape)) &&
-		    item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-		    (it_d->timeline_d->tran_op == GL_TRANS_OP_DONE ||
-		     !it_d->b_created) && GL_FILE_EXISTS(item->file_url)) {
+		        (i == 1 && count <= 3 && !b_landscape) ||
+		        (i == 2 && count == 4 && !b_landscape) ||
+		        (i == 1 && (count == 2 || count == 4) && b_landscape)) &&
+		        item->type == MEDIA_CONTENT_TYPE_IMAGE &&
+		        (it_d->timeline_d->tran_op == GL_TRANS_OP_DONE ||
+		         !it_d->b_created) && GL_FILE_EXISTS(item->file_url)) {
 			path = item->file_url;
 #ifdef _USE_ROTATE_BG
 			if (_gl_exif_get_orientation(path, &orient) < 0) {
@@ -1718,7 +1753,7 @@ static Evas_Object *__gl_timeline_add_page(Evas_Object *parent, gl_tlp_s *it_d)
 			}
 #endif
 			__gl_timeline_get_tile_size(count, i, b_landscape, &w,
-						    &h);
+			                            &h);
 		} else {
 			path = item->thumb_url;
 #ifdef _USE_ROTATE_BG
@@ -1732,37 +1767,38 @@ static Evas_Object *__gl_timeline_add_page(Evas_Object *parent, gl_tlp_s *it_d)
 
 		/* Add images */
 		part = g_strdup_printf(GL_TL_CONTENTS_FORMAT, it_d->count,
-				       i + 1);
+		                       i + 1);
 		bg = __gl_timeline_add_page_bg(layout, part, orient, path, w,
-					       h);
+		                               h);
 		evas_object_event_callback_add(bg, EVAS_CALLBACK_DEL,
-					       __gl_timeline_del_bg_cb, NULL);
+		                               __gl_timeline_del_bg_cb, NULL);
 #ifdef _USE_ROTATE_BG
 		_gl_rotate_bg_set_data(bg, (void *)i);
 #endif
 		GL_GFREEIF(part);
 		/* Add mouse event for launching Imageviewer */
 		evas_object_event_callback_add(bg, EVAS_CALLBACK_MOUSE_DOWN,
-					       __gl_timeline_mouse_down, it_d);
+		                               __gl_timeline_mouse_down, it_d);
 		evas_object_event_callback_add(bg, EVAS_CALLBACK_MOUSE_UP,
-					       __gl_timeline_mouse_up, it_d);
+		                               __gl_timeline_mouse_up, it_d);
 		/* Add checkbox */
 		if (it_d->timeline_d->view_m != GL_TL_VIEW_NORMAL) {
 			part = g_strdup_printf(GL_TL_CHECKBOX_FORMAT,
-					       it_d->count, i + 1);
+			                       it_d->count, i + 1);
 			ck = __gl_timeline_add_ck(layout, part,
-						  __gl_timeline_is_checked(it_d->timeline_d, item->uuid),
-						  it_d);
+			                          __gl_timeline_is_checked(it_d->timeline_d, item->uuid),
+			                          it_d);
 			evas_object_data_set(ck, "gl_tl_idx_key", (void *)i);
 			GL_GFREEIF(part);
 		}
 		/* Check data */
 		__gl_timeline_check_glitem(it_d->timeline_d, item, bg ,
-					   b_check_thumb);
+		                           b_check_thumb);
 		b_check_thumb = false;
 
-		if (it_d->timeline_d->tran_op == GL_TRANS_OP_PREPARE)
+		if (it_d->timeline_d->tran_op == GL_TRANS_OP_PREPARE) {
 			__gl_timeline_add_tile(it_d, parent, bg, i + 1, count);
+		}
 
 		item = NULL;
 	}
@@ -1818,14 +1854,14 @@ static Evas_Object *__gl_timeline_reset_cks(Evas_Object *parent, gl_tlp_s *it_d)
 			gl_dbgE("Invalid item!");
 			continue;
 		}
-/* Checkme: Scrolling doesn't work smoothly if original file was used */
+		/* Checkme: Scrolling doesn't work smoothly if original file was used */
 		/* Get orientation for original file */
 		if (((i == 0 && count <= 5) ||
-		     (i == 1 && count <= 3 && !b_landscape) ||
-		     (i == 2 && count == 4 && !b_landscape) ||
-		     (i == 1 && (count == 2 || count == 4) && b_landscape)) &&
-		    item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-		    GL_FILE_EXISTS(item->file_url)) {
+		        (i == 1 && count <= 3 && !b_landscape) ||
+		        (i == 2 && count == 4 && !b_landscape) ||
+		        (i == 1 && (count == 2 || count == 4) && b_landscape)) &&
+		        item->type == MEDIA_CONTENT_TYPE_IMAGE &&
+		        GL_FILE_EXISTS(item->file_url)) {
 			path = item->file_url;
 #ifdef _USE_ROTATE_BG
 			if (_gl_exif_get_orientation(path, &orient) < 0) {
@@ -1838,7 +1874,7 @@ static Evas_Object *__gl_timeline_reset_cks(Evas_Object *parent, gl_tlp_s *it_d)
 			}
 #endif
 			__gl_timeline_get_tile_size(count, i, b_landscape, &w,
-						    &h);
+			                            &h);
 		} else {
 			path = item->thumb_url;
 #ifdef _USE_ROTATE_BG
@@ -1852,33 +1888,33 @@ static Evas_Object *__gl_timeline_reset_cks(Evas_Object *parent, gl_tlp_s *it_d)
 
 		/* Add images */
 		part = g_strdup_printf(GL_TL_CONTENTS_FORMAT, it_d->count,
-				       i + 1);
+		                       i + 1);
 		bg = __gl_timeline_add_page_bg(layout, part, orient, path, w,
-					       h);
+		                               h);
 		evas_object_event_callback_add(bg, EVAS_CALLBACK_DEL,
-					       __gl_timeline_del_bg_cb, NULL);
+		                               __gl_timeline_del_bg_cb, NULL);
 #ifdef _USE_ROTATE_BG
 		_gl_rotate_bg_set_data(bg, (void *)i);
 #endif
 		GL_GFREEIF(part);
 		/* Add mouse event for launching Imageviewer */
 		evas_object_event_callback_add(bg, EVAS_CALLBACK_MOUSE_DOWN,
-					       __gl_timeline_mouse_down, it_d);
+		                               __gl_timeline_mouse_down, it_d);
 		evas_object_event_callback_add(bg, EVAS_CALLBACK_MOUSE_UP,
-					       __gl_timeline_mouse_up, it_d);
+		                               __gl_timeline_mouse_up, it_d);
 		/* Add checkbox */
 		if (it_d->timeline_d->view_m != GL_TL_VIEW_NORMAL) {
 			part = g_strdup_printf(GL_TL_CHECKBOX_FORMAT,
-					       it_d->count, i + 1);
+			                       it_d->count, i + 1);
 			ck = __gl_timeline_add_ck(layout, part,
-						  __gl_timeline_is_checked(it_d->timeline_d, item->uuid),
-						  it_d);
+			                          __gl_timeline_is_checked(it_d->timeline_d, item->uuid),
+			                          it_d);
 			evas_object_data_set(ck, "gl_tl_idx_key", (void *)i);
 			GL_GFREEIF(part);
 		}
 		/* Check data */
 		__gl_timeline_check_glitem(it_d->timeline_d, item, bg ,
-					   b_check_thumb);
+		                           b_check_thumb);
 		b_check_thumb = false;
 
 		item = NULL;
@@ -1902,12 +1938,13 @@ static bool __gl_timeline_set_cks_state(gl_tlp_s *it_d, bool b_checked)
 
 	for (i = 0; i < it_d->count; i++) {
 		part = g_strdup_printf(GL_TL_CHECKBOX_FORMAT, it_d->count,
-				       i + 1);
+		                       i + 1);
 		ck = elm_object_part_content_get(it_d->layout, part);
 		if (ck) {
 			checked = elm_check_state_get(ck);
-			if (checked != b_checked)
+			if (checked != b_checked) {
 				elm_check_state_set(ck, b_checked);
+			}
 		} else {
 			gl_dbgW("Invalid checkbox!");
 		}
@@ -1939,10 +1976,11 @@ static int __gl_timeline_update_tiles_cnt(int zlevel, int default_cnt)
 	if (zlevel == GL_TM_ZOOM_OUT_TWO) {
 		tiles_cnt = GL_TL_PINCH_OUT_2_CNT;
 	} else if (zlevel == GL_TM_ZOOM_OUT_ONE) {
-		if (default_cnt <= 2)
+		if (default_cnt <= 2) {
 			tiles_cnt = default_cnt * GL_TL_PINCH_OUT_CNT_STEP;
-		else
+		} else {
 			tiles_cnt = GL_TL_PINCH_OUT_1_CNT;
+		}
 	} else {
 		tiles_cnt = default_cnt;
 	}
@@ -1950,7 +1988,7 @@ static int __gl_timeline_update_tiles_cnt(int zlevel, int default_cnt)
 }
 
 static int __gl_timeline_update_zoom_flags(gl_timeline_s *timeline_d,
-					   bool b_pout)
+        bool b_pout)
 {
 	GL_CHECK_VAL(timeline_d, -1);
 
@@ -1963,17 +2001,18 @@ static int __gl_timeline_update_zoom_flags(gl_timeline_s *timeline_d,
 		_gl_slider_set_zop(timeline_d->view, GL_SLIDE_ZOP_OUT);
 	}
 	/* Reset zoom level for overscrolling showing in slider */
-	if (timeline_d->zoom_level == GL_TM_ZOOM_DEFAULT)
+	if (timeline_d->zoom_level == GL_TM_ZOOM_DEFAULT) {
 		_gl_slider_set_zlevel(timeline_d->view, GL_SLIDE_ZLEVEL_MAX);
-	else if (timeline_d->zoom_level == GL_TM_ZOOM_OUT_TWO)
+	} else if (timeline_d->zoom_level == GL_TM_ZOOM_OUT_TWO) {
 		_gl_slider_set_zlevel(timeline_d->view, GL_SLIDE_ZLEVEL_MIN);
-	else
+	} else {
 		_gl_slider_set_zlevel(timeline_d->view, GL_SLIDE_ZLEVEL_MID);
+	}
 	return 0;
 }
 
 static int __gl_timeline_update_zoom_pages(gl_timeline_s *timeline_d,
-					   bool b_pout)
+        bool b_pout)
 {
 	GL_CHECK_VAL(timeline_d, -1);
 	int i = 0;
@@ -2006,32 +2045,32 @@ static int __gl_timeline_update_zoom_pages(gl_timeline_s *timeline_d,
 		if (list_cnt > index) {
 			/* Reuse count of page */
 			cnt = (int)eina_list_nth(timeline_d->count_list,
-						 index);
+			                         index);
 			gl_dbg("%d", cnt);
 		} else {
 			/* Add new random count */
 			cnt = 1 + rand() % 5;
 			timeline_d->count_list = eina_list_append(timeline_d->count_list,
-								  (void *)cnt);
+			                         (void *)cnt);
 		}
 
 		it_d->count = __gl_timeline_update_tiles_cnt(timeline_d->zoom_level,
-							     cnt);
+		              cnt);
 		it_d->index = index++;
 		it_d->start_pos = i;
 		/* Refer to first item of next loop */
 		i += it_d->count;
 		it_d->end_pos = i - 1;
 		/* Get new index of page */
-		if (new_cur_page_idx ==0 &&
-		    page_first_img_idx >= it_d->start_pos &&
-		    page_first_img_idx <= it_d->end_pos) {
+		if (new_cur_page_idx == 0 &&
+		        page_first_img_idx >= it_d->start_pos &&
+		        page_first_img_idx <= it_d->end_pos) {
 			gl_dbgW("New page index got!");
 			new_cur_page_idx = it_d->index;
 		}
 		/* Reset count and end_pos of last page */
 		if (timeline_d->zoom_level != GL_TM_ZOOM_OUT_TWO &&
-		    i >= timeline_d->count) {
+		        i >= timeline_d->count) {
 			it_d->end_pos = timeline_d->count - 1;
 			it_d->count = it_d->end_pos - it_d->start_pos + 1;
 			break;
@@ -2041,7 +2080,7 @@ static int __gl_timeline_update_zoom_pages(gl_timeline_s *timeline_d,
 	gl_dbg("length: %d", eina_list_count(timeline_d->list));
 
 	_gl_slider_set_list(timeline_d->view, timeline_d->list,
-			    new_cur_page_idx);
+	                    new_cur_page_idx);
 	_gl_slider_load_first_item(timeline_d->view);
 	return 0;
 }
@@ -2051,12 +2090,14 @@ static Eina_Bool __gl_timeline_zoom_in(gl_timeline_s *timeline_d)
 	GL_CHECK_FALSE(timeline_d);
 	gl_dbg("");
 
-	if (gl_get_view_mode(timeline_d->ad) != GL_VIEW_TIMELINE)
+	if (gl_get_view_mode(timeline_d->ad) != GL_VIEW_TIMELINE) {
 		return false;
+	}
 
 	gl_dbg("level: %d", timeline_d->zoom_level);
-	if (timeline_d->zoom_level >= GL_TM_ZOOM_DEFAULT)
+	if (timeline_d->zoom_level >= GL_TM_ZOOM_DEFAULT) {
 		return false;
+	}
 
 	/* Update view */
 	__gl_timeline_update_zoom_pages(timeline_d, false);
@@ -2068,12 +2109,14 @@ static Eina_Bool __gl_timeline_zoom_out(gl_timeline_s *timeline_d)
 	GL_CHECK_FALSE(timeline_d);
 	gl_dbg("");
 
-	if (gl_get_view_mode(timeline_d->ad) != GL_VIEW_TIMELINE)
+	if (gl_get_view_mode(timeline_d->ad) != GL_VIEW_TIMELINE) {
 		return false;
+	}
 
 	gl_dbg("level: %d", timeline_d->zoom_level);
-	if (timeline_d->zoom_level <= GL_TM_ZOOM_OUT_TWO)
+	if (timeline_d->zoom_level <= GL_TM_ZOOM_OUT_TWO) {
 		return false;
+	}
 
 	/* Update view */
 	__gl_timeline_update_zoom_pages(timeline_d, true);
@@ -2086,38 +2129,38 @@ static void __gl_timeline_slider_clicked_cb(void *data, Evas_Object *obj, void *
 }
 
 static void __gl_timeline_slider_long_press_start_cb(void *data,
-						     Evas_Object *obj, void *ei)
+        Evas_Object *obj, void *ei)
 {
 	gl_dbg("");
 }
 
 static void __gl_timeline_slider_long_press_end_cb(void *data, Evas_Object *obj,
-						   void *ei)
+        void *ei)
 {
 	gl_dbg("");
 }
 
 static void __gl_timeline_slider_item_changed_cb(void *data, Evas_Object *obj,
-						 void *ei)
+        void *ei)
 {
 	GL_CHECK(ei);
 	GL_CHECK(data);
 	gl_dbg("");
 
 	__gl_timeline_update_title((gl_timeline_s *)data,
-				   (gl_tlp_s *)_gl_slider_get_sitem_data(ei),
-				   false);
+	                           (gl_tlp_s *)_gl_slider_get_sitem_data(ei),
+	                           false);
 }
 
 static void __gl_timeline_slider_item_state_changed_cb(void *data,
-						       Evas_Object *obj,
-						       void *ei)
+        Evas_Object *obj,
+        void *ei)
 {
 	gl_dbg("");
 }
 
 static void __gl_timeline_slider_items_resized_cb(void *data, Evas_Object *obj,
-						  void *ei)
+        void *ei)
 {
 	gl_dbgW("start");
 	GL_CHECK(data);
@@ -2137,7 +2180,7 @@ static void __gl_timeline_slider_items_resized_cb(void *data, Evas_Object *obj,
 }
 
 static void __gl_timeline_slider_items_zoom_out_cb(void *data, Evas_Object *obj,
-						   void *ei)
+        void *ei)
 {
 	gl_dbgW("start");
 	GL_CHECK(data);
@@ -2148,7 +2191,7 @@ static void __gl_timeline_slider_items_zoom_out_cb(void *data, Evas_Object *obj,
 }
 
 static void __gl_timeline_slider_items_zoom_in_cb(void *data, Evas_Object *obj,
-						  void *ei)
+        void *ei)
 {
 	gl_dbgW("start");
 	GL_CHECK(data);
@@ -2160,11 +2203,11 @@ static void __gl_timeline_slider_items_zoom_in_cb(void *data, Evas_Object *obj,
 #endif
 
 static void __gl_timeline_resize_layout_cb(void *data, Evas *e,
-					   Evas_Object *obj, void *ei)
+        Evas_Object *obj, void *ei)
 {
 	GL_CHECK(data);
 	gl_timeline_s *timeline_d = (gl_timeline_s *)data;
-	Evas_Coord x,y,w,h;
+	Evas_Coord x, y, w, h;
 
 	evas_object_geometry_get(obj, &x, &y, &w, &h);
 	gl_dbg("MainView resized geomtery XYWH(%d,%d,%d,%d)", x, y, w, h);
@@ -2182,30 +2225,30 @@ static int __gl_timeline_add_slider_cbs(Evas_Object *slider, void *cb_data)
 	GL_CHECK_VAL(slider, -1);
 
 	evas_object_smart_callback_add(slider, "slider,clicked",
-				       __gl_timeline_slider_clicked_cb,
-				       cb_data);
+	                               __gl_timeline_slider_clicked_cb,
+	                               cb_data);
 	evas_object_smart_callback_add(slider, "slider,longpress,start",
-				       __gl_timeline_slider_long_press_start_cb,
-				       cb_data);
+	                               __gl_timeline_slider_long_press_start_cb,
+	                               cb_data);
 	evas_object_smart_callback_add(slider, "slider,longpress,end",
-				       __gl_timeline_slider_long_press_end_cb,
-				       cb_data);
+	                               __gl_timeline_slider_long_press_end_cb,
+	                               cb_data);
 
 	evas_object_smart_callback_add(slider, "slider,item,changed",
-				       __gl_timeline_slider_item_changed_cb,
-				       cb_data);
+	                               __gl_timeline_slider_item_changed_cb,
+	                               cb_data);
 	evas_object_smart_callback_add(slider, "slider,item,state,changed",
-				       __gl_timeline_slider_item_state_changed_cb,
-				       cb_data);
+	                               __gl_timeline_slider_item_state_changed_cb,
+	                               cb_data);
 	evas_object_smart_callback_add(slider, "slider,items,resized",
-				       __gl_timeline_slider_items_resized_cb,
-				       cb_data);
+	                               __gl_timeline_slider_items_resized_cb,
+	                               cb_data);
 	evas_object_smart_callback_add(slider, "slider,items,zoomout",
-				       __gl_timeline_slider_items_zoom_out_cb,
-				       cb_data);
+	                               __gl_timeline_slider_items_zoom_out_cb,
+	                               cb_data);
 	evas_object_smart_callback_add(slider, "slider,items,zoomin",
-				       __gl_timeline_slider_items_zoom_in_cb,
-				       cb_data);
+	                               __gl_timeline_slider_items_zoom_in_cb,
+	                               cb_data);
 	return 0;
 }
 
@@ -2218,11 +2261,11 @@ static Evas_Object *__gl_timeline_create_slider(gl_timeline_s *timeline_d)
 	GL_CHECK_NULL(slider);
 
 	evas_object_data_set(slider, "create_func",
-			     (void *)__gl_timeline_add_page);
+	                     (void *)__gl_timeline_add_page);
 	evas_object_data_set(slider, "reset_cks_func",
-			     (void *)__gl_timeline_reset_cks);
+	                     (void *)__gl_timeline_reset_cks);
 	evas_object_data_set(slider, "set_cks_state_func",
-			     (void *)__gl_timeline_set_cks_state);
+	                     (void *)__gl_timeline_set_cks_state);
 	__gl_timeline_add_slider_cbs(slider, (void *)timeline_d);
 	int bx = 0;
 	int by = 0;
@@ -2246,12 +2289,12 @@ static int __gl_timelne_show_nocontents(gl_timeline_s *timeline_d)
 
 	GL_IF_DEL_OBJ(timeline_d->view);
 	Evas_Object *title = elm_object_part_content_get(timeline_d->layout,
-							 "title");
+	                     "title");
 	GL_IF_DEL_OBJ(title);
 
 	Evas_Object *noc = _gl_nocontents_create(timeline_d->parent);
 	elm_object_part_content_set(timeline_d->layout, "elm.swallow",
-					    noc);
+	                            noc);
 	timeline_d->nocontents = noc;
 
 	return 0;
@@ -2262,8 +2305,9 @@ static int __gl_timelne_del_nocontents(gl_timeline_s *timeline_d)
 	GL_CHECK_VAL(timeline_d, -1);
 	GL_CHECK_VAL(timeline_d->ad, -1);
 
-	if (timeline_d->nocontents == NULL)
+	if (timeline_d->nocontents == NULL) {
 		return 0;
+	}
 
 	gl_dbg("Delete nocontents view first");
 	GL_IF_DEL_OBJ(timeline_d->nocontents);
@@ -2279,7 +2323,7 @@ static int __gl_timelne_del_nocontents(gl_timeline_s *timeline_d)
 	elm_naviframe_item_title_enabled_set(timeline_d->nf_it, EINA_TRUE, EINA_TRUE);
 	timeline_d->view = view;
 	elm_object_part_content_set(timeline_d->layout, "elm.swallow",
-				    view);
+	                            view);
 
 	return 0;
 }
@@ -2330,8 +2374,7 @@ static void __gl_timeline_thumbs_sel_cb(void *data, Evas_Object *obj, void *ei)
 		if (item && item->file_url) {
 			int index = _gl_timeline_get_item_index(ad, item->file_url);
 			_gl_ext_load_iv_timeline(ad, item->file_url, index, ad->tlinfo->time_media_display_order);
-		}
-		else {
+		} else {
 			gl_dbgW("Image wasn't found!");
 		}
 	}
@@ -2339,7 +2382,7 @@ static void __gl_timeline_thumbs_sel_cb(void *data, Evas_Object *obj, void *ei)
 }
 
 Evas_Object *_gl_timeline_thumbs_get_content(void *data, Evas_Object *parent,
-				    int w, int h)
+        int w, int h)
 {
 	GL_CHECK_NULL(parent);
 	GL_CHECK_NULL(data);
@@ -2362,30 +2405,30 @@ Evas_Object *_gl_timeline_thumbs_get_content(void *data, Evas_Object *parent,
 			v_dur = item->video_info->duration;
 		}
 		layout = _gl_thumb_show_video(parent, path, v_dur, w, h,
-				zoom_level);
+		                              zoom_level);
 	} else {
 		if (item->image_info &&
-				item->image_info->burstshot_id) {
+		        item->image_info->burstshot_id) {
 			layout = _gl_thumb_show_image(parent, path, 0, w, h,
-					zoom_level);
+			                              zoom_level);
 			item->mode = GL_CM_MODE_BURSTSHOT;
 		} else {
 			layout = _gl_thumb_show_image(parent, path, 0, w, h,
-					zoom_level);
+			                              zoom_level);
 		}
 	}
 	return layout;
 }
 
 static void __gl_timeline_thumbs_create_thumb_cb(media_content_error_e error,
-					const char *path, void *user_data)
+        const char *path, void *user_data)
 {
 	GL_CHECK(user_data);
 	gl_media_s *thumb_data = (gl_media_s *)user_data;
 
 	thumb_data->b_create_thumb = false;
 	if (error == MEDIA_CONTENT_ERROR_NONE && GL_FILE_EXISTS(path) &&
-	    g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
+	        g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
 		GL_CHECK(thumb_data);
 		/* Update thumb path */
 		GL_FREEIF(thumb_data->thumb_url);
@@ -2404,7 +2447,7 @@ int _gl_timeline_thumbs_create_thumb(gl_media_s *gitem)
 
 	if (GL_FILE_EXISTS(gitem->file_url)) {
 		_gl_data_create_thumb(gitem, __gl_timeline_thumbs_create_thumb_cb,
-				      gitem);
+		                      gitem);
 		return 0;
 	}
 	return -1;
@@ -2423,8 +2466,8 @@ static void __gl_timeline_thumbs_realized(void *data, Evas_Object *obj, void *ei
 	GL_CHECK(gitem);
 	/* Checking for local files only */
 	if (gitem->storage_type == GL_STORE_T_MMC ||
-			gitem->storage_type == GL_STORE_T_ALL ||
-			gitem->storage_type == GL_STORE_T_PHONE) {
+	        gitem->storage_type == GL_STORE_T_ALL ||
+	        gitem->storage_type == GL_STORE_T_PHONE) {
 		/* Use default image */
 		if (!GL_FILE_EXISTS(gitem->thumb_url)) {
 			_gl_timeline_thumbs_create_thumb(gitem);
@@ -2443,8 +2486,8 @@ static void __gl_timeline_thumbs_unrealized(void *data, Evas_Object *obj, void *
 	GL_CHECK(gitem);
 	/* Checking for local files only */
 	if (gitem->storage_type == GL_STORE_T_MMC ||
-	    gitem->storage_type == GL_STORE_T_ALL ||
-	    gitem->storage_type == GL_STORE_T_PHONE) {
+	        gitem->storage_type == GL_STORE_T_ALL ||
+	        gitem->storage_type == GL_STORE_T_PHONE) {
 		if (gitem->b_create_thumb) {
 			_gl_data_cancel_thumb(gitem);
 		}
@@ -2471,7 +2514,7 @@ void _gl_timeline_open_image_in_select_mode(void *data, Evas_Object *obj, void *
 }
 
 static Evas_Object *__gl_timeline_thumbs_get_content(void *data, Evas_Object *obj,
-					    const char *part)
+        const char *part)
 {
 	GL_CHECK_NULL(part);
 	GL_CHECK_NULL(strlen(part));
@@ -2484,8 +2527,8 @@ static Evas_Object *__gl_timeline_thumbs_get_content(void *data, Evas_Object *ob
 
 	if (!g_strcmp0(part, GL_THUMB_ICON)) {
 		Evas_Object *layout = _gl_timeline_thumbs_get_content(gitem, obj,
-				timeline_d->w,
-				timeline_d->h);
+		                      timeline_d->w,
+		                      timeline_d->h);
 		if (gitem->storage_type == GL_STORE_T_MMC) {
 			elm_object_item_signal_emit(gitem->elm_item, "show_sd_card_icon", "sd_card_icon_img");
 		}
@@ -2519,7 +2562,7 @@ static Evas_Object *__gl_timeline_thumbs_get_content(void *data, Evas_Object *ob
 			evas_object_propagate_events_set(btn1, EINA_FALSE);
 		} else {
 			btn1 = elm_object_item_part_content_get(gitem->elm_item,
-					"elm_image_open_icon_swallow_blocker");
+			                                        "elm_image_open_icon_swallow_blocker");
 			if (btn1) {
 				evas_object_del(btn1);
 				btn1 = NULL;
@@ -2536,7 +2579,7 @@ static Evas_Object *__gl_timeline_thumbs_get_content(void *data, Evas_Object *ob
 			evas_object_smart_callback_add(btn, "clicked", _gl_timeline_open_image_in_select_mode, gitem);
 		} else {
 			btn = elm_object_item_part_content_get(gitem->elm_item,
-					"elm_image_open_icon_swallow");
+			                                       "elm_image_open_icon_swallow");
 			if (btn) {
 				evas_object_del(btn);
 				btn = NULL;
@@ -2563,7 +2606,7 @@ int _gl_timeline_thumb_set_size(void *data, Evas_Object *view, int *size_w, int 
 	_gl_get_win_factor(ad->maininfo.win, &win_w, &win_h);
 
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-			(rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_TWO) {
 			items_per_row = GL_GRID_6_PER_ROW;
 		} else if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_ONE) {
@@ -2591,21 +2634,26 @@ int _gl_timeline_thumb_set_size(void *data, Evas_Object *view, int *size_w, int 
 	_h_l = _w_l;
 
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-			(rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		elm_gengrid_item_size_set(view, _w_l, _h_l);
-		if (size_w)
-			*size_w = _w_l-4;
-		if (size_h)
-			*size_h = _h_l-4;
+		if (size_w) {
+			*size_w = _w_l - 4;
+		}
+		if (size_h) {
+			*size_h = _h_l - 4;
+		}
 	} else {
 		elm_gengrid_item_size_set(view, _w, _h);
-		if (size_w)
-			*size_w = _w-4;
-		if (size_h)
-			*size_h = _h-4;
+		if (size_w) {
+			*size_w = _w - 4;
+		}
+		if (size_h) {
+			*size_h = _h - 4;
+		}
 	}
-	if (size_w && size_h)
+	if (size_w && size_h) {
 		gl_dbg("P: %dx%d, size_w: %d,size_h: %d", _w, _h, *size_w, *size_h);
+	}
 	return 0;
 }
 
@@ -2630,10 +2678,10 @@ Evas_Object *_gl_grid_add(Evas_Object *parent)
 	elm_gengrid_horizontal_set(grid, EINA_FALSE);
 	elm_scroller_bounce_set(grid, EINA_FALSE, EINA_TRUE);
 	elm_scroller_policy_set(grid, ELM_SCROLLER_POLICY_OFF,
-			ELM_SCROLLER_POLICY_AUTO);
+	                        ELM_SCROLLER_POLICY_AUTO);
 	elm_gengrid_multi_select_set(grid, EINA_TRUE);
 	evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND,
-			EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_show(grid);
 
 	return grid;
@@ -2645,8 +2693,9 @@ void _gl_time_finialize_media_data(gl_timeline_s *timeline_d)
 	if (timeline_d->data_list) {
 		gl_media_s *item = NULL;
 		EINA_LIST_FREE(timeline_d->data_list, item) {
-			if (!item || !item->uuid)
+			if (!item || !item->uuid) {
 				continue;
+			}
 			_gl_data_type_free_glitem((void **)(&item));
 			item = NULL;
 		}
@@ -2673,9 +2722,9 @@ void _gl_time_update_selected_media(gl_timeline_s *timeline_d, Eina_List *list)
 }
 
 static void _gl_time_view_append_gengrid_items(Evas_Object *
-		pGengrid,
-		int nGenItemIndex,
-		gl_timeline_s *timeline_d)
+        pGengrid,
+        int nGenItemIndex,
+        gl_timeline_s *timeline_d)
 {
 	static Elm_Gengrid_Item_Class *gic;
 	gic = elm_gengrid_item_class_new();
@@ -2695,15 +2744,15 @@ static void _gl_time_view_append_gengrid_items(Evas_Object *
 		gl_dbgE("Invalid item!");
 		return;
 	}
-	int numberOfItemsOnParticularDate = _get_count_of_items_on_same_date(item, timeline_d->data_list, &text, nIndex+1);
-	int k =1;
+	int numberOfItemsOnParticularDate = _get_count_of_items_on_same_date(item, timeline_d->data_list, &text, nIndex + 1);
+	int k = 1;
 	Elm_Object_Item *gridItem = NULL;
 	for (; (nIndex < nMaxIndex) && (nIndex < nVideoListSize) && (k <= numberOfItemsOnParticularDate) ; nIndex++) {
 		item = eina_list_nth(timeline_d->data_list, nIndex);
 		gridItem =
-				elm_gengrid_item_append(pGengrid, gic, item, __gl_timeline_thumbs_sel_cb, timeline_d);
+		    elm_gengrid_item_append(pGengrid, gic, item, __gl_timeline_thumbs_sel_cb, timeline_d);
 		elm_gengrid_item_select_mode_set(gridItem,
-				ELM_OBJECT_SELECT_MODE_ALWAYS);
+		                                 ELM_OBJECT_SELECT_MODE_ALWAYS);
 		item->elm_item = gridItem;
 		item->ad = timeline_d->ad;
 		k++;
@@ -2713,14 +2762,14 @@ static void _gl_time_view_append_gengrid_items(Evas_Object *
 }
 
 static Evas_Object *__gl_get_icon_of_grid_cb(const void
-		*pUserData,
-		Evas_Object *
-		pObject,
-		const char
-		*pPart)
+        *pUserData,
+        Evas_Object *
+        pObject,
+        const char
+        *pPart)
 {
 	int nGenItemIndex = (int) pUserData;
-	gl_timeline_s *timeline_d = (gl_timeline_s *)evas_object_data_get(pObject,"data");
+	gl_timeline_s *timeline_d = (gl_timeline_s *)evas_object_data_get(pObject, "data");
 	if (!timeline_d) {
 		return NULL;
 	}
@@ -2801,7 +2850,7 @@ int _gl_time_get_number_of_items_per_row(void *data)
 	int rotate_mode = ad->maininfo.rotate_mode;
 	int items_per_row = 0;
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-			(rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_TWO) {
 			items_per_row = GL_GRID_6_PER_ROW;
 		} else if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_ONE) {
@@ -2840,7 +2889,7 @@ char *_gl_time_get_genlist_style(void *data)
 		ad->pinchinfo.zoom_level = GL_ZOOM_IN_ONE;
 	}
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-			(rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_TWO) {
 			items_per_row = GL_GRID_6_PER_ROW;
 		} else if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_ONE) {
@@ -2850,7 +2899,7 @@ char *_gl_time_get_genlist_style(void *data)
 		} else {
 			items_per_row = GL_GRID_7_PER_ROW;
 		}
-		height = ceil((double)win_h/items_per_row);
+		height = ceil((double)win_h / items_per_row);
 	} else {
 		if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_TWO) {
 			items_per_row = GL_GRID_3_PER_ROW;
@@ -2861,9 +2910,9 @@ char *_gl_time_get_genlist_style(void *data)
 		} else {
 			items_per_row = GL_GRID_4_PER_ROW;
 		}
-		height = ceil((double)win_w/items_per_row);
+		height = ceil((double)win_w / items_per_row);
 	}
-	style = g_strdup_printf(GL_TL_CONTENT_FORMAT,height);
+	style = g_strdup_printf(GL_TL_CONTENT_FORMAT, height);
 
 	return style;
 }
@@ -2879,8 +2928,9 @@ int _gl_timeline_create_grid_view(gl_timeline_s *timeline_d, Evas_Object *genlis
 
 	/* Check media-content to show */
 	ret = _gl_data_get_item_cnt(GL_ALBUM_ALL_ID, GL_STORE_T_ALL, &item_cnt);
-	if (ret != 0 || item_cnt == 0)
+	if (ret != 0 || item_cnt == 0) {
 		gl_dbgE("Empty!");
+	}
 
 	Eina_List *list = NULL;
 	if (!update) {
@@ -2935,7 +2985,7 @@ int _gl_timeline_create_grid_view(gl_timeline_s *timeline_d, Evas_Object *genlis
 	pGenGridItc->item_style = style_name;
 	pGenGridItc->func.text_get = NULL;
 	pGenGridItc->func.content_get =
-			(void *) __gl_get_icon_of_grid_cb;
+	    (void *) __gl_get_icon_of_grid_cb;
 	pGenGridItc->func.state_get = NULL;
 	pGenGridItc->func.del = NULL;
 	pGenGridItc->decorate_item_style = NULL;
@@ -2964,12 +3014,12 @@ int _gl_timeline_create_grid_view(gl_timeline_s *timeline_d, Evas_Object *genlis
 	for (i = 0; i < item_cnt; i++) {
 		item = eina_list_nth(list, i);
 
-		number_of_items_on_particular_date = _get_count_of_items_on_same_date(item, list, &text, i+1);
+		number_of_items_on_particular_date = _get_count_of_items_on_same_date(item, list, &text, i + 1);
 		items_per_row = _gl_time_get_number_of_items_per_row(timeline_d->ad);
 		if (items_per_row < 0) {
 			items_per_row = 4;
 		}
-		number_of_rows = ceil((double)number_of_items_on_particular_date/items_per_row);
+		number_of_rows = ceil((double)number_of_items_on_particular_date / items_per_row);
 		it = elm_genlist_item_append(genlist, pGenGridZoomItc, (void*)text, NULL, ELM_GENLIST_ITEM_TREE, NULL, NULL);
 
 		for (k = 0; k < number_of_rows; k++) {
@@ -2993,7 +3043,7 @@ Evas_Object *_gl_box_add(Evas_Object *parent)
 {
 	Evas_Object *box = NULL;
 	box = elm_box_add(parent);
-	elm_box_align_set(box,0.0, 0.0);
+	elm_box_align_set(box, 0.0, 0.0);
 	evas_object_show(box);
 
 	return box;
@@ -3130,7 +3180,7 @@ static int __gl_timeline_page_rand(gl_timeline_s *timeline_d)
 		if (list_cnt > index) {
 			/* Reuse count of page */
 			cnt = (int)eina_list_nth(timeline_d->count_list,
-						 index);
+			                         index);
 		} else {
 			/* Add new random count */
 			cnt = 1 + rand() % 5;
@@ -3138,7 +3188,7 @@ static int __gl_timeline_page_rand(gl_timeline_s *timeline_d)
 		}
 
 		it_d->count = __gl_timeline_update_tiles_cnt(timeline_d->zoom_level,
-							     cnt);
+		              cnt);
 		it_d->index = index++;
 		it_d->start_pos = i;
 		/* Refer to first item of next loop */
@@ -3146,17 +3196,17 @@ static int __gl_timeline_page_rand(gl_timeline_s *timeline_d)
 		it_d->end_pos = i - 1;
 		/* Reset count and end_pos of last page */
 		if (timeline_d->zoom_level != GL_TM_ZOOM_OUT_TWO &&
-		    i >= item_cnt) {
+		        i >= item_cnt) {
 			it_d->end_pos = item_cnt - 1;
 			it_d->count = it_d->end_pos - it_d->start_pos + 1;
 			if (b_new_count)
 				timeline_d->count_list = eina_list_append(timeline_d->count_list,
-									  (void *)it_d->count);
+				                         (void *)it_d->count);
 			break;
 		}
 		if (b_new_count)
 			timeline_d->count_list = eina_list_append(timeline_d->count_list,
-								  (void *)it_d->count);
+			                         (void *)it_d->count);
 		it_d = NULL;
 	}
 	return 0;
@@ -3171,8 +3221,9 @@ static int __gl_timeline_update_view(gl_timeline_s *timeline_d, bool b_first)
 
 	/* Check media-content to show */
 	ret = _gl_data_get_item_cnt(GL_ALBUM_ALL_ID, GL_STORE_T_ALL, &item_cnt);
-	if (ret != 0 || item_cnt == 0)
+	if (ret != 0 || item_cnt == 0) {
 		gl_dbgE("Empty!");
+	}
 
 	Eina_List *list = NULL;
 	_gl_data_get_items(0, 0, &list);
@@ -3187,8 +3238,9 @@ static int __gl_timeline_update_view(gl_timeline_s *timeline_d, bool b_first)
 	}
 
 	gl_media_s *item = eina_list_nth(list, 0);
-	if (item)
+	if (item) {
 		last_mtime = item->mtime;
+	}
 
 	item = NULL;
 	EINA_LIST_FREE(list, item) {
@@ -3198,7 +3250,7 @@ static int __gl_timeline_update_view(gl_timeline_s *timeline_d, bool b_first)
 
 	if (!b_first) {
 		if (last_mtime == timeline_d->last_mtime &&
-		    item_cnt == timeline_d->count) {
+		        item_cnt == timeline_d->count) {
 			gl_dbgW("Nothing changed!");
 			evas_object_show(timeline_d->view); /* To show slide items */
 			__gl_timeline_show_tiles_trans(timeline_d);
@@ -3211,24 +3263,26 @@ static int __gl_timeline_update_view(gl_timeline_s *timeline_d, bool b_first)
 	/* Set rand image count for each page */
 	__gl_timeline_page_rand(timeline_d);
 	/* Reset zoom level for overscrolling showing in slider */
-	if (timeline_d->zoom_level == GL_TM_ZOOM_DEFAULT)
+	if (timeline_d->zoom_level == GL_TM_ZOOM_DEFAULT) {
 		_gl_slider_set_zlevel(timeline_d->view, GL_SLIDE_ZLEVEL_MAX);
-	else if (timeline_d->zoom_level == GL_TM_ZOOM_DEFAULT)
+	} else if (timeline_d->zoom_level == GL_TM_ZOOM_DEFAULT) {
 		_gl_slider_set_zlevel(timeline_d->view, GL_SLIDE_ZLEVEL_MIN);
-	else
+	} else {
 		_gl_slider_set_zlevel(timeline_d->view, GL_SLIDE_ZLEVEL_MID);
+	}
 
 	_gl_slider_set_list(timeline_d->view, timeline_d->list, 0);
 	evas_object_show(timeline_d->view); /* To show slide items */
-	if (timeline_d->b_created)
+	if (timeline_d->b_created) {
 		_gl_slider_start(timeline_d->view);
+	}
 	return 0;
 }
 #endif
 
 /* Free data after layout deleted */
 static void __gl_timeline_del_layout_cb(void *data, Evas *e, Evas_Object *obj,
-					void *ei)
+                                        void *ei)
 {
 	gl_dbg("Delete timeline layout ---");
 	evas_object_data_del(obj, "page_w");
@@ -3259,16 +3313,16 @@ static int __gl_timeline_add_cbs(gl_timeline_s *timeline_d)
 	__gl_timeline_add_title_trans_finished_cbs(timeline_d, true);
 	/* Register delete callback */
 	evas_object_event_callback_add(timeline_d->layout, EVAS_CALLBACK_DEL,
-				       __gl_timeline_del_layout_cb, timeline_d);
+	                               __gl_timeline_del_layout_cb, timeline_d);
 	evas_object_event_callback_add(timeline_d->layout, EVAS_CALLBACK_RESIZE,
-				       __gl_timeline_resize_layout_cb,
-				       timeline_d);
+	                               __gl_timeline_resize_layout_cb,
+	                               timeline_d);
 	int bx = 0;
 	int by = 0;
 	int bw = 0;
 	int bh = 0;
 	evas_object_geometry_get(timeline_d->ad->maininfo.naviframe, &bx, &by,
-				 &bw, &bh);
+	                         &bw, &bh);
 	gl_dbg("naviframe. (%d,%d,%d,%d)", bx, by, bw, bh);
 	evas_object_geometry_get(timeline_d->layout, &bx, &by, &bw, &bh);
 	gl_dbg("layout. (%d,%d,%d,%d)", bx, by, bw, bh);
@@ -3286,7 +3340,7 @@ static int __gl_timeline_start_slideshow(void *data)
 	gl_item *gitem = NULL;
 	gl_media_s *item = NULL;
 	_gl_data_get_items(GL_FIRST_VIEW_START_POS,
-			   GL_FIRST_VIEW_START_POS, &list);
+	                   GL_FIRST_VIEW_START_POS, &list);
 	if (list != NULL) {
 		item = (gl_media_s *)eina_list_nth(list, 0);
 		GL_IF_FREE_ELIST(list);
@@ -3309,15 +3363,15 @@ static int __gl_timeline_slideshow(void *data, const char *label)
 		__gl_timeline_start_slideshow(data);
 	} else if (!g_strcmp0(label, _gl_str(GL_STR_ID_SETTINGS))) {
 		evas_object_data_set(ad->maininfo.naviframe,
-				     GL_NAVIFRAME_SLIDESHOW_DATA_KEY,
-				     __gl_timeline_start_slideshow);
+		                     GL_NAVIFRAME_SLIDESHOW_DATA_KEY,
+		                     __gl_timeline_start_slideshow);
 		gl_ext_load_ug(data, GL_UG_GALLERY_SETTING_SLIDESHOW);
 	} else if (!g_strcmp0(label, _gl_str(GL_STR_ID_SELECT_ITEMS))) {
 #ifdef _USE_APP_SLIDESHOW
 		__gl_timeline_edit(data);
 		evas_object_data_set(ad->maininfo.naviframe,
-				     GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY,
-				     gl_pop_to_ctrlbar_ly);
+		                     GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY,
+		                     gl_pop_to_ctrlbar_ly);
 #else
 		_gl_ext_launch_gallery_ug(data);
 #endif
@@ -3368,24 +3422,25 @@ static int __gl_timeline_edit(void *data)
 
 	if (ad->tlinfo->album == NULL)
 		ad->tlinfo->album = _gl_data_util_new_gcluster_all(data,
-								   item_cnt);
+		                    item_cnt);
 	GL_CHECK_VAL(ad->tlinfo->album, -1);
 	_gl_albums_set_current(data, ad->tlinfo->album);
 	Eina_List *medias_elist = NULL;
 	_gl_data_get_items_album(data, ad->tlinfo->album,
-				 GL_FIRST_VIEW_START_POS, GL_FIRST_VIEW_END_POS,
-				 &medias_elist);
+	                         GL_FIRST_VIEW_START_POS, GL_FIRST_VIEW_END_POS,
+	                         &medias_elist);
 	_gl_thumbs_set_list(ad, medias_elist);
 	_gl_thumbs_set_edit_mode(data, GL_THUMBS_EDIT_SLIDESHOW);
 	_gl_thumbs_create_view(data, GL_NAVI_THUMBS, GL_STR_ID_ALL_ALBUMS, true,
-			       __gl_timeline_edit_cancel_cb);
+	                       __gl_timeline_edit_cancel_cb);
 
 	gl_dbg("Done edit");
 	return 0;
 }
 #endif
 
-void __gl_timeline_desc_mode_set(void *data) {
+void __gl_timeline_desc_mode_set(void *data)
+{
 	gl_dbg("ENTRY");
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -3397,7 +3452,8 @@ void __gl_timeline_desc_mode_set(void *data) {
 	__gl_update_timeline(ad);
 }
 
-void __gl_timeline_asc_mode_set(void *data) {
+void __gl_timeline_asc_mode_set(void *data)
+{
 	gl_dbg("ENTRY");
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -3487,8 +3543,9 @@ static int __gl_timeline_del_op(void *data)
 		i++;
 		if (item) {
 			ret = _gl_del_media_by_id(data, (const char *)item);
-			if (ret != 0)
+			if (ret != 0) {
 				gl_dbgE("Get media failed[%d]!", ret);
+			}
 			item = NULL;
 		}
 
@@ -3519,7 +3576,7 @@ static int __gl_timeline_update_del_view(void *data)
 
 #if 0
 static int __gl_timeline_get_path_str(void *data, gchar sep_c, char **path_str,
-				      int *sel_cnt)
+                                      int *sel_cnt)
 {
 	GL_CHECK_VAL(path_str, -1);
 	GL_CHECK_VAL(data, -1);
@@ -3556,8 +3613,9 @@ static int __gl_timeline_get_path_str(void *data, gchar sep_c, char **path_str,
 		GL_FREE(path);
 	}
 	gl_dbg("Selected items count: %d.", selected_item_cnt);
-	if (sel_cnt)
+	if (sel_cnt) {
 		*sel_cnt = selected_item_cnt;
+	}
 	int len = strlen(selected_path_list->str);
 	g_string_truncate(selected_path_list, len - 1);
 	/**
@@ -3571,7 +3629,7 @@ static int __gl_timeline_get_path_str(void *data, gchar sep_c, char **path_str,
 	gl_dbg("Total string:\n\n\t>>@@:> %s <:@@<<\n", *path_str);
 	return 0;
 
- GL_TL_FAILED:
+GL_TL_FAILED:
 
 	if (selected_path_list) {
 		g_string_free(selected_path_list, true);
@@ -3599,7 +3657,7 @@ static void __gl_timeline_ie_cb(void *data, Evas_Object *obj, void *ei)
 	if (__gl_timeline_get_sel_cnt(timeline_d) == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 
@@ -3625,11 +3683,13 @@ static int __gl_timeline_move_copy_op(void *data)
 		if (item) {
 			gl_sdbg("Selected [%s]", item);
 			if (ad->maininfo.medias_op_type == GL_MEDIA_OP_COPY_TIMELINE) {
-				if (_gl_move_media_thumb_by_id(data, (const char *)item, ad->albuminfo.dest_folder, &popup_op, GL_MC_COPY) != 0)
+				if (_gl_move_media_thumb_by_id(data, (const char *)item, ad->albuminfo.dest_folder, &popup_op, GL_MC_COPY) != 0) {
 					gl_dbg("Failed to copy this item");
+				}
 			} else if (ad->maininfo.medias_op_type == GL_MEDIA_OP_MOVE_TIMELINE) {
-				if (_gl_move_media_thumb_by_id(data, (const char *)item, ad->albuminfo.dest_folder, &popup_op, GL_MC_MOVE) != 0)
+				if (_gl_move_media_thumb_by_id(data, (const char *)item, ad->albuminfo.dest_folder, &popup_op, GL_MC_MOVE) != 0) {
 					gl_dbg("Failed to move this item");
+				}
 			} else {
 				gl_dbgE("Wrong mode!");
 			}
@@ -3658,8 +3718,9 @@ static int __gl_timeline_update_move_copy_view(void *data)
 	} else {
 		gl_dbgE("Wrong mode!");
 	}
-	if (noti_str)
+	if (noti_str) {
 		_gl_notify_create_notiinfo(noti_str);
+	}
 	elm_naviframe_item_pop_to(ad->tlinfo->nf_it);
 	__gl_timeline_change_mode(data, GL_TL_VIEW_NORMAL);
 	/* Update view */
@@ -3689,39 +3750,40 @@ static int __gl_timeline_move_copy(void *data)
 		gl_dbg("New album");
 		if (gl_make_new_album(ad->albuminfo.new_name) != 0) {
 			gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-					      GL_STR_SAME_NAME_ALREADY_IN_USE);
+			                      GL_STR_SAME_NAME_ALREADY_IN_USE);
 			gl_dbgE("Failed to make a new directory!");
 			goto GL_FAILED;
 		}
 		snprintf(folder_fullpath, GL_DIR_PATH_LEN_MAX, "%s/%s",
-			 GL_DEFAULT_PATH_IMAGES, ad->albuminfo.new_name);
+		         GL_DEFAULT_PATH_IMAGES, ad->albuminfo.new_name);
 	} else {
 		g_strlcpy(folder_fullpath, ad->albuminfo.path,
-			  GL_DIR_PATH_LEN_MAX);
+		          GL_DIR_PATH_LEN_MAX);
 		GL_FREE(ad->albuminfo.path);
 	}
 
 	memset(ad->albuminfo.dest_folder, 0x00, GL_DIR_PATH_LEN_MAX);
 	g_strlcpy(ad->albuminfo.dest_folder, folder_fullpath,
-		  GL_DIR_PATH_LEN_MAX);
+	          GL_DIR_PATH_LEN_MAX);
 
 	/* Check MMC state for cancel operation */
 	gl_check_mmc_state(ad, folder_fullpath);
 	gl_dbg("MMC state: %d.", ad->maininfo.mmc_state);
 	_gl_set_file_op_cbs(data, __gl_timeline_move_copy_op, NULL,
-			    __gl_timeline_update_move_copy_view, cnt);
+	                    __gl_timeline_update_move_copy_view, cnt);
 
 	if (ad->albuminfo.file_mc_mode == GL_MC_MOVE)
 		_gl_use_thread_operate_medias(ad, GL_STR_ID_MOVING, cnt,
-					      GL_MEDIA_OP_MOVE_TIMELINE);
+		                              GL_MEDIA_OP_MOVE_TIMELINE);
 	else if (ad->albuminfo.file_mc_mode == GL_MC_COPY)
 		_gl_use_thread_operate_medias(ad, GL_STR_ID_COPYING, cnt,
-					      GL_MEDIA_OP_COPY_TIMELINE);
-	else
+		                              GL_MEDIA_OP_COPY_TIMELINE);
+	else {
 		gl_dbgE("Wrong mode!");
+	}
 	return 0;
 
- GL_FAILED:
+GL_FAILED:
 
 	/* Update the label text */
 	_gl_ui_update_navi_title_text(timeline_d->nf_it, cnt, false);
@@ -3743,7 +3805,7 @@ static void __gl_timeline_move_cb(void *data, Evas_Object *obj, void *ei)
 	if (__gl_timeline_get_sel_cnt(timeline_d) == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(data, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 
@@ -3764,7 +3826,7 @@ static void __gl_timeline_copy_cb(void *data, Evas_Object *obj, void *ei)
 	if (__gl_timeline_get_sel_cnt(timeline_d) == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(data, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 
@@ -3790,20 +3852,23 @@ static int __gl_timeline_rotate_op(void *data)
 	char *item = NULL;
 	int cnt = __gl_timeline_get_sel_cnt(timeline_d);
 
-	if (ad->maininfo.medias_op_type == GL_MEDIA_OP_ROTATING_LEFT_TIMELINE)
+	if (ad->maininfo.medias_op_type == GL_MEDIA_OP_ROTATING_LEFT_TIMELINE) {
 		b_left = true;
+	}
 
 	EINA_LIST_FREE(timeline_d->sel_d->sel_list, item) {
 		i++;
 		if (item) {
 			ret = _gl_rotate_image_by_id(data, (const char *)item,
-						     b_left);
-			if (ret != 0)
+			                             b_left);
+			if (ret != 0) {
 				gl_dbgE("Rotate image failed[%d]!", ret);
+			}
 
 			/* Add some delay for last two images to wait for thumb updated */
-			if (i > cnt - 2)
+			if (i > cnt - 2) {
 				_gl_delay(GL_ROTATE_DELAY);
+			}
 
 			if (i == cnt) {
 				gl_dbgW("Last image rotated!");
@@ -3846,18 +3911,19 @@ static int __gl_timeline_rotate_images(void *data, bool b_left)
 	/* Rotate left */
 	int op_type = GL_MEDIA_OP_ROTATING_LEFT_TIMELINE;
 	/* Rotate right */
-	if (!b_left)
+	if (!b_left) {
 		op_type = GL_MEDIA_OP_ROTATING_RIGHT_TIMELINE;
+	}
 	_gl_db_update_lock_always(data, true);
 	_gl_set_file_op_cbs(data, __gl_timeline_rotate_op, NULL,
-			    __gl_timeline_update_rotate_view, cnt);
+	                    __gl_timeline_update_rotate_view, cnt);
 	_gl_use_thread_operate_medias(ad, GL_STR_ID_ROTATING, cnt, op_type);
 
 	return 0;
 }
 
 static void __gl_timeline_edit_rotate_left_cb(void *data, Evas_Object *obj,
-					    void *ei)
+        void *ei)
 {
 	GL_CHECK(data);
 	_gl_ctxpopup_del(data);
@@ -3869,14 +3935,14 @@ static void __gl_timeline_edit_rotate_left_cb(void *data, Evas_Object *obj,
 	if (__gl_timeline_get_sel_cnt(timeline_d) == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(data, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 	__gl_timeline_rotate_images(data, true);
 }
 
 static void __gl_timeline_edit_rotate_right_cb(void *data, Evas_Object *obj,
-					     void *ei)
+        void *ei)
 {
 	GL_CHECK(data);
 	_gl_ctxpopup_del(data);
@@ -3888,7 +3954,7 @@ static void __gl_timeline_edit_rotate_right_cb(void *data, Evas_Object *obj,
 	if (__gl_timeline_get_sel_cnt(timeline_d) == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(data, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 	__gl_timeline_rotate_images(data, false);
@@ -3913,17 +3979,17 @@ static int __gl_timeline_ctxpopup_append(void *data, Evas_Object *parent)
 	if (cnt > 0) {
 		/* View As */
 		_gl_ctxpopup_append(parent, GL_STR_ID_VIEW_AS,
-				__gl_albums_viewas_pop_cb, data);
+		                    __gl_albums_viewas_pop_cb, data);
 		/* Delete */
 		_gl_ctxpopup_append(parent, GL_STR_ID_DELETE,
-				    __gl_timeline_edit_cb, data);
+		                    __gl_timeline_edit_cb, data);
 		/* Sort */
 		_gl_ctxpopup_append(parent, GL_STR_SORT,
-				    __gl_timeline_sort_cb, data);
+		                    __gl_timeline_sort_cb, data);
 #ifdef SUPPORT_SLIDESHOW
 		/* Slide show */
 		_gl_ctxpopup_append(parent, GL_STR_ID_SLIDESHOW,
-				    __gl_timeline_slideshow_cb, data);
+		                    __gl_timeline_slideshow_cb, data);
 #endif
 	}
 
@@ -3947,11 +4013,11 @@ static int __gl_timeline_edit_ctxpopup_append(void *data, Evas_Object *parent)
 	if (ad->tlinfo->sel_d->jpge_cnt == cnt) {
 		gl_dbg("Enable more button");
 		_gl_ctxpopup_append(parent, GL_STR_ID_ROTATE_LEFT,
-				    __gl_timeline_edit_rotate_left_cb,
-				    data);
+		                    __gl_timeline_edit_rotate_left_cb,
+		                    data);
 		_gl_ctxpopup_append(parent, GL_STR_ID_ROTATE_RIGHT,
-				    __gl_timeline_edit_rotate_right_cb,
-				    data);
+		                    __gl_timeline_edit_rotate_right_cb,
+		                    data);
 	}
 #endif
 	return 0;
@@ -3973,10 +4039,11 @@ static void __gl_timeline_more_cb(void *data, Evas_Object *obj, void *ei)
 	gl_dbg("Menu is clicked");
 	GL_CHECK(ad->tlinfo);
 	/* Edit mode */
-	if (ad->tlinfo->view_m == GL_TL_VIEW_NORMAL)
+	if (ad->tlinfo->view_m == GL_TL_VIEW_NORMAL) {
 		_gl_ctxpopup_create(data, obj, __gl_timeline_ctxpopup_append);
-	else
+	} else {
 		gl_dbg("Unavailable menu operation");
+	}
 }
 
 #if 0
@@ -3993,8 +4060,9 @@ static int __gl_timeline_reset_label(void *data)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 
-	if (ad->tlinfo == NULL)
+	if (ad->tlinfo == NULL) {
 		return -1;
+	}
 	if (ad->tlinfo->view_m == GL_TL_VIEW_NORMAL) {
 		gl_dbg("Normal mode");
 		return -1;
@@ -4012,8 +4080,9 @@ static int __gl_timeline_reset_btns(void *data)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 
-	if (ad->tlinfo == NULL)
+	if (ad->tlinfo == NULL) {
 		return -1;
+	}
 	/* Check Button menu state in Easymode */
 	_gl_ui_disable_menu(ad->tlinfo->nf_it, false);
 	return 0;
@@ -4064,8 +4133,8 @@ static int __gl_timeline_add_btns(void *data)
 
 	/* More */
 	btn = _gl_but_create_but(parent, NULL, NULL,
-				 GL_BUTTON_STYLE_NAVI_MORE,
-				 __gl_timeline_more_cb, data);
+	                         GL_BUTTON_STYLE_NAVI_MORE,
+	                         __gl_timeline_more_cb, data);
 	GL_CHECK_VAL(btn, -1);
 	elm_object_item_part_content_set(nf_it, GL_NAVIFRAME_MORE, btn);
 	elm_object_signal_emit(ad->ctrlinfo.ctrlbar_view_ly, "elm,selectall,state,default", "elm");
@@ -4092,9 +4161,9 @@ static void __gl_timeline_del_cb(void *data, Evas_Object *obj, void *ei)
 	gl_dbg("MMC state: %d.", ad->maininfo.mmc_state);
 	_gl_db_update_lock_always(data, true);
 	_gl_set_file_op_cbs(data, __gl_timeline_del_op, NULL,
-			    __gl_timeline_update_del_view, cnt);
+	                    __gl_timeline_update_del_view, cnt);
 	_gl_use_thread_operate_medias(ad, GL_STR_ID_DELETING, cnt,
-				      GL_MEDIA_OP_DELETE_TIMELINE);
+	                              GL_MEDIA_OP_DELETE_TIMELINE);
 }
 
 /* Select-all checkbox selected/deselected */
@@ -4124,14 +4193,16 @@ static void __gl_timeline_edit_selall_cb(void *data, Evas_Object *obj, void *ei)
 	} else {
 		Eina_List *list = NULL;
 		ret = _gl_data_get_items(GL_GET_ALL_RECORDS, GL_GET_ALL_RECORDS,
-					 &list);
-		if (ret != 0 || !list)
+		                         &list);
+		if (ret != 0 || !list) {
 			gl_dbgW("Empty!");
+		}
 
 		gl_media_s *item = NULL;
 		EINA_LIST_FREE(list, item) {
-			if (!item || !item->uuid)
+			if (!item || !item->uuid) {
 				continue;
+			}
 			__gl_timeline_check_special_file(ad->tlinfo, item, true);
 			__gl_timeline_sel_append_item(ad->tlinfo, item->uuid);
 			_gl_data_type_free_glitem((void **)(&item));
@@ -4220,7 +4291,7 @@ static void __gl_timeline_thumb_edit_selall_cb(void *data, Evas_Object *obj, voi
 		_gl_ui_update_navi_title_text(ad->tlinfo->nf_it, sel_cnt, false);
 
 		__gl_timeline_check_btns_state(ad->tlinfo, ad->tlinfo->count,
-				sel_cnt);
+		                               sel_cnt);
 	}
 	elm_genlist_realized_items_update(genlist);
 }
@@ -4240,8 +4311,8 @@ static int __gl_timeline_edit_add_btns(void *data)
 
 	/* More */
 	Evas_Object *btn = _gl_but_create_but(parent, NULL, NULL,
-					      GL_BUTTON_STYLE_NAVI_MORE,
-					      __gl_timeline_more_cb, data);
+	                                      GL_BUTTON_STYLE_NAVI_MORE,
+	                                      __gl_timeline_more_cb, data);
 	GL_CHECK_VAL(btn, -1);
 	_gl_ui_disable_btn(btn);
 	elm_object_item_part_content_set(nf_it, GL_NAVIFRAME_MORE, btn);
@@ -4253,12 +4324,12 @@ static int __gl_timeline_edit_add_btns(void *data)
 	/* Title Cancel Button */
 	elm_object_style_set(btn1, "naviframe/title_left");
 	elm_object_item_part_content_set(ad->ctrlinfo.nf_it, GL_NAVIFRAME_TITLE_LEFT_BTN, btn1);
-	_gl_ui_set_translate_str(btn1,GL_STR_ID_CANCEL_CAP);
+	_gl_ui_set_translate_str(btn1, GL_STR_ID_CANCEL_CAP);
 	evas_object_smart_callback_add(btn1, "clicked", __gl_timeline_edit_cancel_cb, ad);
 	/* Title Done Button */
 	elm_object_style_set(btn2, "naviframe/title_right");
 	elm_object_item_part_content_set(ad->ctrlinfo.nf_it, GL_NAVIFRAME_TITLE_RIGHT_BTN, btn2);
-	_gl_ui_set_translate_str(btn2,GL_STR_ID_DONE_CAP);
+	_gl_ui_set_translate_str(btn2, GL_STR_ID_DONE_CAP);
 	evas_object_smart_callback_add(btn2, "clicked", __gl_timeline_del_cb, ad);
 	elm_object_disabled_set(btn2, EINA_TRUE);
 
@@ -4266,7 +4337,7 @@ static int __gl_timeline_edit_add_btns(void *data)
 	elm_object_signal_emit(ad->ctrlinfo.ctrlbar_view_ly, "elm,selectall,state,visible,bg", "elm");
 	elm_object_signal_emit(ad->ctrlinfo.ctrlbar_view_ly, "elm,selectall,state,visible", "elm");
 	_gl_ui_add_selall_ck(ad->ctrlinfo.ctrlbar_view_ly, "select.all.area.check", "select.all.area.check",
-			    __gl_timeline_thumb_edit_selall_cb, data);
+	                     __gl_timeline_thumb_edit_selall_cb, data);
 	return 0;
 }
 
@@ -4304,12 +4375,13 @@ static int __gl_timeline_share_get_path(void *data, char **files)
 	}
 	return i;
 
- GL_TL_FAILED:
+GL_TL_FAILED:
 
-       for (; i > 0; --i)
-	       GL_FREEIF(files[i - 1]);
-       GL_FREEIF(path);
-       return 0;
+	for (; i > 0; --i) {
+		GL_FREEIF(files[i - 1]);
+	}
+	GL_FREEIF(path);
+	return 0;
 }
 
 static void __gl_timeline_share_op_cb(void *data, Evas_Object *obj, void *ei)
@@ -4343,21 +4415,22 @@ static int __gl_timeline_share_add_btns(void *data)
 	Evas_Object *toolbar = _gl_ctrl_add_toolbar(parent);
 	/* Cancel */
 	_gl_ctrl_append_item(toolbar, NULL, GL_STR_ID_CANCEL,
-			     __gl_timeline_edit_cancel_cb, data);
+	                     __gl_timeline_edit_cancel_cb, data);
 	/* Share */
 	tb_it = _gl_ctrl_append_item(toolbar, NULL, GL_STR_ID_SHARE,
-				     __gl_timeline_share_op_cb, data);
+	                             __gl_timeline_share_op_cb, data);
 	_gl_ctrl_disable_item(tb_it, true);
 	elm_object_item_part_content_set(nf_it, "toolbar", toolbar);
 	/* Select-all */
 	ad->selinfo.ck_state = false;
 	_gl_ui_add_xpt_btns(nf_it, GL_UI_XPT_SEL_ALL,
-			    __gl_timeline_thumb_edit_selall_cb, NULL, data);
+	                    __gl_timeline_thumb_edit_selall_cb, NULL, data);
 	return 0;
 }
 #endif
 
-bool __gl_update_timeline(void *data) {
+bool __gl_update_timeline(void *data)
+{
 	GL_CHECK_FALSE(data);
 	gl_appdata *ad = (gl_appdata *)data;
 	GL_CHECK_FALSE(ad->tlinfo);
@@ -4398,7 +4471,7 @@ static int __gl_timeline_change_mode(void *data, int mode)
 		ad->tlinfo->sel_d = g_new0(gl_sel_s, 1);
 		GL_CHECK_VAL(ad->tlinfo->sel_d, -1);
 		_gl_ui_change_navi_title(ad->tlinfo->nf_it, GL_STR_ID_SELECT_ITEM,
-				  false);
+		                         false);
 		if (GL_TL_VIEW_EDIT == mode) {
 			__gl_timeline_edit_add_btns(data);
 		}
@@ -4440,7 +4513,7 @@ int _gl_timeline_create_view(void *data, Evas_Object *parent)
 
 	/* Set pop callback for operating when button back clicked */
 	evas_object_data_set(ad->maininfo.naviframe, GL_NAVIFRAME_POP_CB_KEY,
-			     (void *)__gl_timeline_pop_op);
+	                     (void *)__gl_timeline_pop_op);
 
 	evas_object_geometry_get(parent, NULL, NULL, &w, &h);
 	gl_dbg("content's size(%dx%d)", w, h);
@@ -4521,7 +4594,7 @@ int _gl_timeline_create_view(void *data, Evas_Object *parent)
 	__gl_timeline_add_cbs(timeline_d);
 	return 0;
 
- GL_TIMELINE_FAILED:
+GL_TIMELINE_FAILED:
 
 	GL_IF_DEL_OBJ(layout);
 	return -1;
@@ -4568,8 +4641,9 @@ int _gl_timeline_hide_view(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 	gl_dbg("");
 
-	if (ad->tlinfo == NULL)
+	if (ad->tlinfo == NULL) {
 		return -1;
+	}
 
 	GL_TL_DEL_TRANSITS(ad->tlinfo->tiles);
 	/* To hide slide items */
@@ -4579,7 +4653,7 @@ int _gl_timeline_hide_view(void *data)
 	/* Hide previous view */
 	Evas_Object *pre_view = NULL;
 	pre_view = elm_object_part_content_unset(ad->tlinfo->parent,
-						 "elm.swallow.view");
+	           "elm.swallow.view");
 	evas_object_hide(pre_view);
 	return 0;
 }
@@ -4609,7 +4683,7 @@ int _gl_timeline_view_rotate(void *data)
 	ad->tlinfo->view = view;
 	elm_object_part_content_set(ad->tlinfo->layout, "elm.swallow", view);
 	if ((ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-			(ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		elm_object_signal_emit(ad->tlinfo->parent, "timelineview,landscape", "");
 	} else {
 		elm_object_signal_emit(ad->tlinfo->parent, "timelineview,portrait", "");
@@ -4755,7 +4829,7 @@ int _gl_ext_load_time_iv_selected_list(app_control_h service, void *data)
 
 	if (count > 0) {
 		app_control_add_extra_data_array(service, "Selected index",
-				(const char **)value, count);
+		                                 (const char **)value, count);
 	}
 
 	if (value) {

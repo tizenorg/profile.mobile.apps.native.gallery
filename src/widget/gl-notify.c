@@ -40,8 +40,9 @@ int _gl_notify_create_notiinfo(const char *text)
 {
 	GL_CHECK_VAL(text, -1);
 	int ret = notification_status_message_post(text);
-	if (ret != 0)
+	if (ret != 0) {
 		gl_sdbgE("status_message_post()... [0x%x]!", ret);
+	}
 	return ret;
 }
 
@@ -49,7 +50,7 @@ int _gl_notify_create_notiinfo(const char *text)
 * Check select-all widget state.
 */
 int _gl_notify_check_selall(void *data, Elm_Object_Item *nf_it, int all_cnt,
-			    int selected_cnt)
+                            int selected_cnt)
 {
 	GL_CHECK_VAL(data, -1);
 	GL_CHECK_VAL(nf_it, -1);
@@ -125,7 +126,7 @@ int _gl_notify_update_size(void *noti, unsigned long long total)
 }
 
 int _gl_notify_update_progress(void *noti, unsigned long long total,
-			       unsigned long long byte)
+                               unsigned long long byte)
 {
 	GL_CHECK_VAL(noti, -1);
 	gl_noti_s *noti_d = noti;

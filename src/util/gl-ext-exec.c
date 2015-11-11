@@ -78,32 +78,32 @@ static int __gl_ext_launch_video_player(void *data, app_control_h service)
 		if (cur_cluster->cluster->type == GL_STORE_T_ALL) {
 			gl_dbg("All album");
 			app_control_add_extra_data(service,
-					       GL_ARGV_VIDEO_LIST_TYPE,
-					       GL_ARGV_VIDEO_ALL_FOLDER_VIDEO);
+			                           GL_ARGV_VIDEO_LIST_TYPE,
+			                           GL_ARGV_VIDEO_ALL_FOLDER_VIDEO);
 			app_control_add_extra_data(service,
-					       GL_ARGV_VIDEO_ORDER_TYPE,
-					       GL_ARGV_VIDEO_ORDER_DATE_DESC);
+			                           GL_ARGV_VIDEO_ORDER_TYPE,
+			                           GL_ARGV_VIDEO_ORDER_DATE_DESC);
 			app_control_add_extra_data(service,
-					       GL_ARGV_VIDEO_LAUNCH_APP,
-					       GL_ARGV_VIDEO_LAUNCH_GALLERY);
+			                           GL_ARGV_VIDEO_LAUNCH_APP,
+			                           GL_ARGV_VIDEO_LAUNCH_GALLERY);
 			app_control_add_extra_data(service,
-					       GL_ARGV_VIDEO_START_POS,
-					       last_pos_str);
+			                           GL_ARGV_VIDEO_START_POS,
+			                           last_pos_str);
 		} else if (cur_cluster->cluster->type == GL_STORE_T_PHONE ||
-			 cur_cluster->cluster->type == GL_STORE_T_MMC) {
+		           cur_cluster->cluster->type == GL_STORE_T_MMC) {
 			gl_dbg("Real album");
 			app_control_add_extra_data(service,
-					       GL_ARGV_VIDEO_LIST_TYPE,
-					       GL_ARGV_VIDEO_FOLDER);
+			                           GL_ARGV_VIDEO_LIST_TYPE,
+			                           GL_ARGV_VIDEO_FOLDER);
 			app_control_add_extra_data(service,
-					       GL_ARGV_VIDEO_ORDER_TYPE,
-					       GL_ARGV_VIDEO_ORDER_DATE_DESC);
+			                           GL_ARGV_VIDEO_ORDER_TYPE,
+			                           GL_ARGV_VIDEO_ORDER_DATE_DESC);
 			app_control_add_extra_data(service,
-					       GL_ARGV_VIDEO_LAUNCH_APP,
-					       GL_ARGV_VIDEO_LAUNCH_GALLERY);
+			                           GL_ARGV_VIDEO_LAUNCH_APP,
+			                           GL_ARGV_VIDEO_LAUNCH_GALLERY);
 			app_control_add_extra_data(service,
-					       GL_ARGV_VIDEO_START_POS,
-					       last_pos_str);
+			                           GL_ARGV_VIDEO_START_POS,
+			                           last_pos_str);
 		} else {
 			gl_dbg("Web album? Under construction...");
 		}
@@ -122,15 +122,16 @@ static int __gl_ext_launch_video_player(void *data, app_control_h service)
 	}
 	ret = app_control_send_launch_request(service, NULL, NULL);
 
-	if (ret == APP_CONTROL_ERROR_NONE)
+	if (ret == APP_CONTROL_ERROR_NONE) {
 		return 0;
-	else
+	} else {
 		return -1;
+	}
 }
 
 static int __gl_ext_compose_exec_cmd(void *data, gl_ext_app_type type,
-				      char *path, char **pkg_name,
-				      app_control_h service)
+                                     char *path, char **pkg_name,
+                                     app_control_h service)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_sdbg("type:%d, path:%s", type, path);
@@ -149,7 +150,7 @@ static int __gl_ext_compose_exec_cmd(void *data, gl_ext_app_type type,
 
 #ifdef GL_EXTENDED_FEATURES
 static void __gl_ext_app_control_reply_cb(app_control_h request, app_control_h reply,
-				      app_control_result_e result, void *user_data)
+        app_control_result_e result, void *user_data)
 {
 	gl_dbg("");
 	switch (result) {
@@ -251,8 +252,9 @@ int _gl_ext_load_camera(void *data)
 	gl_dbg("");
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
-	if (ad->ctrlinfo.avoid_multi_tap)
+	if (ad->ctrlinfo.avoid_multi_tap) {
 		return 0;
+	}
 	Ecore_Timer *timer = NULL;
 	timer = ecore_timer_add(2.0, __gl_ext_avoid_multi_click_timer_cb, data);
 	ad->ctrlinfo.avoid_multi_tap = timer;
@@ -311,7 +313,7 @@ int _gl_ext_load_ie(void *data, void *get_path_cb)
 	GL_CHECK_VAL(data, -1);
 	char *filepath_arg = NULL;
 
-	int (*_get_path_cb) (void *data, gchar sep_c, char **path_str, int *sel_cnt);
+	int (*_get_path_cb)(void * data, gchar sep_c, char **path_str, int * sel_cnt);
 	_get_path_cb = get_path_cb;
 
 	_get_path_cb(data, GL_SEPERATOR_IE, &filepath_arg, NULL);
@@ -323,7 +325,7 @@ int _gl_ext_load_ie(void *data, void *get_path_cb)
 	gl_dbg("Launch Image-editor");
 	int ret = GL_LAUNCH_FAIL;
 	ret = _gl_ext_load(filepath_arg, APP_CONTROL_OPERATION_EDIT, GL_APP_PKG_IE,
-			   NULL, NULL);
+	                   NULL, NULL);
 	if (filepath_arg) {
 		g_free(filepath_arg);
 		filepath_arg = NULL;
@@ -333,7 +335,7 @@ int _gl_ext_load_ie(void *data, void *get_path_cb)
 }
 
 int _gl_ext_load(const char *uri, const char *operation, const char *pkg,
-		 const char *pkg_id, const char *mime)
+                 const char *pkg_id, const char *mime)
 {
 	gl_dbg("operation: %s, pkg: %s, uri: %s", operation, pkg, uri);
 	int ret = -1;
@@ -349,7 +351,7 @@ int _gl_ext_load(const char *uri, const char *operation, const char *pkg,
 	ret = app_control_set_operation(handle, operation);
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_set_operation [%s] failed[%d]!", operation,
-			ret);
+		        ret);
 		goto GL_EXT_FAILED;
 	}
 
@@ -373,7 +375,7 @@ int _gl_ext_load(const char *uri, const char *operation, const char *pkg,
 		ret = app_control_set_app_id(handle, pkg);
 		if (ret != APP_CONTROL_ERROR_NONE) {
 			gl_dbgE("app_control_set_app_id [%s] failed[%d]!", pkg,
-				ret);
+			        ret);
 			goto GL_EXT_FAILED;
 		}
 	}
@@ -382,19 +384,19 @@ int _gl_ext_load(const char *uri, const char *operation, const char *pkg,
 		ret = app_control_set_app_id(handle, pkg_id);
 		if (ret != APP_CONTROL_ERROR_NONE) {
 			gl_dbgE("app_control_set_app_id [%s] failed[%d]!", pkg_id,
-				ret);
+			        ret);
 			goto GL_EXT_FAILED;
 		}
 	}
 
 	ret = app_control_send_launch_request(handle, __gl_ext_app_control_reply_cb,
-					  NULL);
+	                                      NULL);
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_send_launch_request failed[%d]!", ret);
 		goto GL_EXT_FAILED;
 	}
 
- GL_EXT_FAILED:
+GL_EXT_FAILED:
 	destroy_ret = app_control_destroy(handle);
 	if (destroy_ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_destroy failed[%d]!", destroy_ret);
@@ -428,7 +430,7 @@ int _gl_ext_launch_share(void *data, int total_cnt, void *get_path_cb)
 	files = (char **)calloc(1, sizeof(char *) * total_cnt);
 	GL_CHECK_VAL(files, -1);
 
-	int (*_get_path_cb) (void *data, char **files);
+	int (*_get_path_cb)(void * data, char **files);
 	_get_path_cb = get_path_cb;
 	int real_cnt = _get_path_cb(data, files);
 	app_control_h service = NULL;
@@ -444,16 +446,17 @@ int _gl_ext_launch_share(void *data, int total_cnt, void *get_path_cb)
 	}
 	char prefix_file[GL_ARRAY_LEN_MAX] = {0,};
 	snprintf(prefix_file, GL_ARRAY_LEN_MAX, "%s%s", GL_SHARE_FILE_PREFIX,
-		 files[0]);
+	         files[0]);
 	ret = app_control_set_uri(service, prefix_file);
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_set_uri failed[%d]", ret);
 		goto SHARE_PANEL_END;
 	}
-	if (real_cnt == 1)
+	if (real_cnt == 1) {
 		operation = GL_SHARE_OPERATION_SINGLE;
-	else
+	} else {
 		operation = GL_SHARE_OPERATION_MULTIPLE;
+	}
 	ret = app_control_set_operation(service, operation);
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_set_operation failed[%d]", ret);
@@ -461,8 +464,8 @@ int _gl_ext_launch_share(void *data, int total_cnt, void *get_path_cb)
 	}
 	if (real_cnt > 1) {
 		ret = app_control_add_extra_data_array(service, GL_SHARE_SVC_FILE_PATH,
-						   (const char **)files,
-						   real_cnt);
+		                                       (const char **)files,
+		                                       real_cnt);
 		if (ret != APP_CONTROL_ERROR_NONE) {
 			gl_dbgE("app_control_add_extra_data_array failed[%d]", ret);
 			goto SHARE_PANEL_END;
@@ -475,22 +478,25 @@ int _gl_ext_launch_share(void *data, int total_cnt, void *get_path_cb)
 		goto SHARE_PANEL_END;
 	}
 	ret = app_control_send_launch_request(service, NULL, NULL);
-	if (ret != APP_CONTROL_ERROR_NONE)
+	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_send_launch_request failed[%d]!", ret);
+	}
 
- SHARE_PANEL_END:
+SHARE_PANEL_END:
 
-	if (service)
+	if (service) {
 		app_control_destroy(service);
+	}
 	if (files) {
-		for (; real_cnt > 0; --real_cnt)
+		for (; real_cnt > 0; --real_cnt) {
 			GL_FREEIF(files[real_cnt - 1]);
+		}
 		GL_FREE(files);
 	}
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		_gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
-				 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
-				 NULL, NULL, NULL, NULL, NULL, NULL);
+		                 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
+		                 NULL, NULL, NULL, NULL, NULL, NULL);
 		return -1;
 	}
 	return 0;
@@ -503,7 +509,7 @@ int _gl_ext_is_larger_than_share_max(int total_cnt)
 	if (total_cnt > GL_SHARE_CNT_MAX) {
 		char limit_str[256] = {0};
 		snprintf(limit_str, sizeof(limit_str), GL_STR_ID_SHARE_LIMIT,
-			 GL_SHARE_CNT_MAX);
+		         GL_SHARE_CNT_MAX);
 		_gl_notify_create_notiinfo(limit_str);
 		return true;
 	}
@@ -531,16 +537,17 @@ int _gl_ext_launch_share_with_files(void *data, int total_cnt, char **files)
 	}
 	char prefix_file[GL_ARRAY_LEN_MAX] = {0,};
 	snprintf(prefix_file, GL_ARRAY_LEN_MAX, "%s%s", GL_SHARE_FILE_PREFIX,
-		 files[0]);
+	         files[0]);
 	ret = app_control_set_uri(service, prefix_file);
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_set_uri failed[%d]", ret);
 		goto SHARE_PANEL_END;
 	}
-	if (total_cnt == 1)
+	if (total_cnt == 1) {
 		operation = GL_SHARE_OPERATION_SINGLE;
-	else
+	} else {
 		operation = GL_SHARE_OPERATION_MULTIPLE;
+	}
 	ret = app_control_set_operation(service, operation);
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_set_operation failed[%d]", ret);
@@ -548,8 +555,8 @@ int _gl_ext_launch_share_with_files(void *data, int total_cnt, char **files)
 	}
 	if (total_cnt > 1) {
 		ret = app_control_add_extra_data_array(service, GL_SHARE_SVC_FILE_PATH,
-						   (const char **)files,
-						   total_cnt);
+		                                       (const char **)files,
+		                                       total_cnt);
 		if (ret != APP_CONTROL_ERROR_NONE) {
 			gl_dbgE("app_control_add_extra_data_array failed[%d]", ret);
 			goto SHARE_PANEL_END;
@@ -562,17 +569,19 @@ int _gl_ext_launch_share_with_files(void *data, int total_cnt, char **files)
 		goto SHARE_PANEL_END;
 	}
 	ret = app_control_send_launch_request(service, NULL, NULL);
-	if (ret != APP_CONTROL_ERROR_NONE)
+	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_send_launch_request failed[%d]!", ret);
+	}
 
- SHARE_PANEL_END:
+SHARE_PANEL_END:
 
-	if (service)
+	if (service) {
 		app_control_destroy(service);
+	}
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		_gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
-				 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
-				 NULL, NULL, NULL, NULL, NULL, NULL);
+		                 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
+		                 NULL, NULL, NULL, NULL, NULL, NULL);
 		return -1;
 	}
 	return 0;
@@ -585,7 +594,7 @@ int _gl_ext_launch_image_editor(const char *path_string)
 	gl_dbg("Launch Image-editor");
 	int ret = GL_LAUNCH_FAIL;
 	ret = _gl_ext_load(path_string, APP_CONTROL_OPERATION_EDIT, GL_APP_PKG_IE,
-			   NULL, NULL);
+	                   NULL, NULL);
 	return ret;
 }
 
@@ -618,7 +627,7 @@ int _gl_ext_launch_gallery_ug(void *data)
 		goto GL_EXT_FAILED;
 	}
 	ret = app_control_add_extra_data(service, "launch-type",
-				     "select-slideshow");
+	                                 "select-slideshow");
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("Add launched type failed: 0x%x", ret);
 		goto GL_EXT_FAILED;
@@ -641,23 +650,22 @@ int _gl_ext_launch_gallery_ug(void *data)
 	int tab_mode = _gl_ctrl_get_tab_mode(ad);
 	gl_dbg("tab_mode: %d", tab_mode);
 	switch (tab_mode) {
-	case GL_CTRL_TAB_ALBUMS:
-	{
+	case GL_CTRL_TAB_ALBUMS: {
 		char *album_id = NULL;
 		gl_cluster *cur_album = _gl_albums_get_current(data);
 		if (cur_album && cur_album->cluster &&
-		   cur_album->cluster->uuid) {
+		        cur_album->cluster->uuid) {
 			album_id = g_strdup(cur_album->cluster->uuid);
 		}
 		if (album_id) {
 			ret = app_control_add_extra_data(service, GL_VIEW_BY,
-						     "albums1");
+			                                 "albums1");
 			if (ret != APP_CONTROL_ERROR_NONE) {
 				gl_dbgE("Add view by failed: 0x%x", ret);
 				goto GL_EXT_FAILED;
 			}
 			ret = app_control_add_extra_data(service, "album-id",
-						     album_id);
+			                                 album_id);
 			if (ret != APP_CONTROL_ERROR_NONE) {
 				gl_dbgE("Add album id failed: 0x%x", ret);
 				goto GL_EXT_FAILED;
@@ -666,7 +674,7 @@ int _gl_ext_launch_gallery_ug(void *data)
 		} else {
 			gl_dbg("Albums2");
 			ret = app_control_add_extra_data(service, GL_VIEW_BY,
-						     "all");
+			                                 "all");
 			if (ret != APP_CONTROL_ERROR_NONE) {
 				gl_dbgE("Add view by failed: 0x%x", ret);
 				goto GL_EXT_FAILED;
@@ -687,7 +695,7 @@ int _gl_ext_launch_gallery_ug(void *data)
 	}
 
 	ret = app_control_send_launch_request(service, __gl_ext_app_control_reply_cb,
-					  NULL);
+	                                      NULL);
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("app_control_send_launch_request Failed: 0x%x", ret);
 		goto GL_EXT_FAILED;
@@ -696,7 +704,7 @@ int _gl_ext_launch_gallery_ug(void *data)
 	app_control_destroy(service);
 	return 0;
 
- GL_EXT_FAILED:
+GL_EXT_FAILED:
 
 	app_control_destroy(service);
 	return -1;

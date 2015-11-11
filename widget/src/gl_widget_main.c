@@ -175,9 +175,9 @@ widget_class_h app_create(void *data)
 	app_event_handler_h region_changed_handler;
 
 	widget_app_add_event_handler(&lang_changed_handler, APP_EVENT_LANGUAGE_CHANGED,
-		&app_language_changed, data);
+	                             &app_language_changed, data);
 	widget_app_add_event_handler(&region_changed_handler, APP_EVENT_REGION_FORMAT_CHANGED,
-		&app_region_changed, data);
+	                             &app_region_changed, data);
 
 	widget_instance_lifecycle_callback_s ops;
 	ops.create = widget_Create;

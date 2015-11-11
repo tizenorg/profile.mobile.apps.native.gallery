@@ -40,7 +40,7 @@ struct _gl_entry_t {
 #if 0
 /* Free data after layout deleted */
 static void __gl_entry_layout_del_cb(void *data, Evas *e, Evas_Object *obj,
-				     void *ei)
+                                     void *ei)
 {
 	gl_dbg("Delete entry layout ---");
 	GL_FREEIF(data);
@@ -57,14 +57,15 @@ static Eina_Bool __gl_entry_pop_cb(void *data, Elm_Object_Item *it)
 	/* Call cancel callback */
 	Evas_Object *entry = _gl_editfield_get_entry(entry_d->ad);
 	GL_CHECK_FALSE(entry);
-	Eina_Bool (*pop_cb)(void *data, Elm_Object_Item *it);
+	Eina_Bool(*pop_cb)(void * data, Elm_Object_Item * it);
 	pop_cb = evas_object_data_get(entry, "gl_entry_pop_cb_key");
 	/* Clear editfield variables */
 	_gl_editfield_destroy_imf(entry_d->ad);
-	if (pop_cb)
+	if (pop_cb) {
 		return pop_cb(entry_d->ad, it);
-	else
+	} else {
 		return EINA_TRUE;
+	}
 }
 #endif
 
@@ -81,13 +82,13 @@ static void __gl_entry_done_cb(void *data, Evas_Object *obj, void *ei)
 	Evas_Object *entry = _gl_editfield_get_entry(entry_d->ad);
 	GL_CHECK(entry);
 
-	int (*process_cb)(void *data, bool b_enter);
+	int (*process_cb)(void * data, bool b_enter);
 	process_cb = evas_object_data_get(entry, "gl_entry_process_cb_key");
 	GL_CHECK(process_cb);
 	/* Delete callback when it is clicked to prevent it is called for many times */
 	if (process_cb(entry_d->ad, false) == 0)
 		evas_object_smart_callback_del(obj, "clicked",
-					       __gl_entry_done_cb);
+		                               __gl_entry_done_cb);
 	/* Clear nf_it to cancel hide title in landscape mode */
 	ad->entryinfo.nf_it = NULL;
 	GL_FREEIF(ad->albuminfo.temp_album_name);
@@ -109,17 +110,18 @@ static void __gl_entry_cancel_cb(void *data, Evas_Object *obj, void *ei)
 static void __gl_entry_trans_finished_cb(void *data, Evas_Object *obj, void *ei)
 {
 	evas_object_smart_callback_del(obj, GL_TRANS_FINISHED,
-				       __gl_entry_trans_finished_cb);
+	                               __gl_entry_trans_finished_cb);
 	GL_CHECK(data);
 	gl_dbg("");
 
 	Evas_Object *entry = _gl_editfield_get_entry(data);
 	GL_CHECK(entry);
 
-	int (*transit_cb)(void *data);
+	int (*transit_cb)(void * data);
 	transit_cb = evas_object_data_get(entry, "gl_entry_transit_cb_key");
-	if (transit_cb)
+	if (transit_cb) {
 		transit_cb(data);
+	}
 
 }
 #endif
@@ -129,8 +131,8 @@ static void __gl_entry_trans_finished_cb(void *data, Evas_Object *obj, void *ei)
  *  @param obj is the content to be pushed.
  */
 static int __gl_entry_push_view(void *data, Evas_Object *parent,
-				Evas_Object *obj, char *title,
-				gl_entry_s *entry_d)
+                                Evas_Object *obj, char *title,
+                                gl_entry_s *entry_d)
 {
 	gl_dbg("");
 	GL_CHECK_VAL(parent, -1);
@@ -141,14 +143,14 @@ static int __gl_entry_push_view(void *data, Evas_Object *parent,
 	Evas_Object *right_btn = NULL;
 
 	right_btn = _gl_but_create_image_but(parent, NULL, GL_STR_ID_SAVE,
-					NULL, __gl_entry_done_cb, entry_d, EINA_FALSE);
+	                                     NULL, __gl_entry_done_cb, entry_d, EINA_FALSE);
 	GL_CHECK_VAL(right_btn, -1);
 	ad->entryinfo.done_btn = right_btn;
 	entry_d->done_btn = right_btn;
 
 	/* Cancel */
 	left_btn = _gl_but_create_image_but(parent, NULL, GL_STR_ID_CANCEL,
-					NULL, __gl_entry_cancel_cb, data, EINA_FALSE);
+	                                    NULL, __gl_entry_cancel_cb, data, EINA_FALSE);
 	GL_CHECK_VAL(left_btn, -1);
 
 	elm_object_part_content_set(parent, "button1", left_btn);
@@ -193,7 +195,7 @@ static void _showFinishedCb(void *data, Evas_Object *obj, void *event_info)
 	gl_appdata *ad = (gl_appdata *)data;
 	_gl_editfield_show_imf(ad);
 	evas_object_smart_callback_del(ad->popupinfo.popup, "show,finished",
-			_showFinishedCb);
+	                               _showFinishedCb);
 }
 
 int _gl_entry_create_view(void *data, char *name, char *title)
@@ -216,7 +218,7 @@ int _gl_entry_create_view(void *data, char *name, char *title)
 	popup = elm_popup_add(ad->maininfo.layout);
 	ad->popupinfo.popup = popup;
 	evas_object_size_hint_weight_set(popup, EVAS_HINT_EXPAND,
-			EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 
 	_gl_ui_set_translate_part_str(popup, "title,text", title);
 
@@ -258,13 +260,13 @@ int _gl_entry_create_view(void *data, char *name, char *title)
 	entry_d->ad = ad;
 
 	__gl_entry_push_view(ad, popup, NULL, title,
-			     entry_d);
+	                     entry_d);
 
 	/* Register delete callback */
 	eext_object_event_callback_add(popup, EEXT_CALLBACK_BACK,
-			__gl_entry_cancel_cb, entry_d->ad);
+	                               __gl_entry_cancel_cb, entry_d->ad);
 	evas_object_smart_callback_add(popup, "show,finished",
-			_showFinishedCb, entry_d->ad);
+	                               _showFinishedCb, entry_d->ad);
 	ad->entryinfo.b_hide_sip = true;
 	return 0;
 
@@ -276,8 +278,9 @@ int _gl_entry_resume_view(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 	Elm_Object_Item *top_nf_it = NULL;
 
-	if (!ad->entryinfo.nf_it)
+	if (!ad->entryinfo.nf_it) {
 		return -1;
+	}
 
 	top_nf_it = elm_naviframe_top_item_get(ad->maininfo.naviframe);
 	if (ad->entryinfo.nf_it != top_nf_it) {

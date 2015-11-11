@@ -42,9 +42,9 @@
 * @Param b_ck_box  true: Checkbox selection, false: album cover selection.
 */
 static int __gl_albums_edit_update_check_state(void *data,
-					       gl_cluster *album_item,
-					       Evas_Object *check_obj,
-					       bool b_ck_box)
+        gl_cluster *album_item,
+        Evas_Object *check_obj,
+        bool b_ck_box)
 {
 	GL_CHECK_VAL(album_item, -1);
 	GL_CHECK_VAL(album_item->cluster, -1);
@@ -57,7 +57,7 @@ static int __gl_albums_edit_update_check_state(void *data,
 	/* Update state of checkbox */
 	album_item->checked = !album_item->checked;
 	gl_sdbg("album (%s) check state: %d", album_item->cluster->display_name,
-	       album_item->checked);
+	        album_item->checked);
 
 	/**
 	* If album cover selected, update checkbox icon manually,
@@ -66,33 +66,33 @@ static int __gl_albums_edit_update_check_state(void *data,
 	Evas_Object *ck = NULL;
 	if (b_ck_box == false)
 		ck = elm_object_item_part_content_get(album_item->item,
-						      GL_TILE_CHECKBOX);
+		                                      GL_TILE_CHECKBOX);
 	else
 		ck = elm_object_item_part_content_get(album_item->item,
-						      GL_TILE_CHECKBOX_GRID);
+		                                      GL_TILE_CHECKBOX_GRID);
 	elm_check_state_set(ck, album_item->checked);
 
 	if (album_item->checked) {
 		gl_sdbg("Append:%s, id:%s", album_item->cluster->display_name,
-		       album_item->cluster->uuid);
+		        album_item->cluster->uuid);
 		_gl_data_albums_selected_list_append(ad, album_item);
 	} else {
 		gl_sdbg("Remove:%s, id:%s", album_item->cluster->display_name,
-		       album_item->cluster->uuid);
+		        album_item->cluster->uuid);
 		_gl_data_albums_selected_list_remove(ad, album_item);
 	}
 
 	/* Display selectioninfo */
 	int cnt = _gl_data_get_albums_selected_cnt(ad);
 	_gl_notify_check_selall(ad, ad->ctrlinfo.nf_it,
-				ad->albuminfo.elist->edit_cnt, cnt);
+	                        ad->albuminfo.elist->edit_cnt, cnt);
 	/* Update the label text */
 	_gl_ui_update_navi_title_text(ad->ctrlinfo.nf_it, cnt, false);
 	return 0;
 }
 
 static void __gl_albums_edit_check_changed(void *data, Evas_Object *obj,
-					   void *ei)
+        void *ei)
 {
 	GL_CHECK(obj);
 	GL_CHECK(data);
@@ -113,7 +113,7 @@ static void __gl_albums_edit_check_changed(void *data, Evas_Object *obj,
 }
 
 static void __gl_albums_edit_check_grid_changed(void *data, Evas_Object *obj,
-						void *ei)
+        void *ei)
 {
 	GL_CHECK(obj);
 	GL_CHECK(data);
@@ -140,12 +140,13 @@ static void __gl_albums_edit_rename(gl_cluster *album)
 	GL_CHECK(album->ad);
 	gl_appdata *ad = (gl_appdata *)album->ad;
 	/* save album selected for rename */
-	if (_gl_albums_rename_create_view(album->ad, album) == 0)
+	if (_gl_albums_rename_create_view(album->ad, album) == 0) {
 		ad->albuminfo.selected = album;
+	}
 }
 
 static void __gl_albums_edit_rename_btn_cb(void *data, Evas_Object *obj,
-				     void *event_info)
+        void *event_info)
 {
 	gl_dbg("");
 	GL_CHECK(data);
@@ -159,7 +160,7 @@ static void __gl_albums_edit_rename_btn_cb(void *data, Evas_Object *obj,
 #endif
 
 static void __gl_albums_edit_del_cb(void *data, Evas_Object *obj,
-				    void *ei)
+                                    void *ei)
 {
 	elm_toolbar_item_selected_set((Elm_Object_Item *)ei, EINA_FALSE);
 	GL_CHECK(data);
@@ -169,12 +170,12 @@ static void __gl_albums_edit_del_cb(void *data, Evas_Object *obj,
 		if (_gl_data_get_albums_selected_cnt(data) == 0) {
 			gl_dbgW("No albums selected!");
 			gl_popup_create_popup(data, GL_POPUP_NOBUT,
-					      GL_STR_NO_ALBUMS_SELECTED);
+			                      GL_STR_NO_ALBUMS_SELECTED);
 			return;
 		}
 		_gl_popup_create_del(data, GL_POPUP_DEL_ALBUM,
-				     _gl_data_get_albums_selected_cnt,
-				     _gl_del_albums, data);
+		                     _gl_data_get_albums_selected_cnt,
+		                     _gl_del_albums, data);
 	} else {
 		gl_dbgE("Unknow mode!");
 	}
@@ -224,34 +225,34 @@ void _gl_albums_edit_share(void *data)
 	if (cnt == 0) {
 		gl_dbgW("No albums selected!");
 		gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-				      GL_STR_NO_ALBUMS_SELECTED);
+		                      GL_STR_NO_ALBUMS_SELECTED);
 		return;
 	}
 	/* Check albums are empty */
 	if (_gl_data_is_albums_selected_empty(ad)) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 
 	int media_cnt = 0;
 	_gl_data_get_albums_selected_files(data, __gl_albums_edit_get_cnt,
-					   (void *)(&media_cnt));
+	                                   (void *)(&media_cnt));
 	gl_dbg("media_cnt: %d", media_cnt);
 	/* Check albums are empty */
 	if (media_cnt == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 	_gl_ext_launch_share(data, media_cnt,
-			     __gl_albums_edit_get_path_cb);
+	                     __gl_albums_edit_get_path_cb);
 }
 
 static void __gl_albums_edit_share_cb(void *data, Evas_Object *obj,
-				      void *ei)
+                                      void *ei)
 {
 	elm_toolbar_item_selected_set((Elm_Object_Item *)ei, EINA_FALSE);
 	GL_CHECK(data);
@@ -312,10 +313,11 @@ static void __gl_albums_edit_selall_cb(void *data, Evas_Object *obj, void *ei)
 		/* Update checkbox state */
 		album->checked = state;
 		/* Update selected list */
-		if (state == EINA_TRUE)
+		if (state == EINA_TRUE) {
 			_gl_data_albums_selected_list_append(ad, album);
-		else
+		} else {
 			_gl_data_albums_selected_list_remove(ad, album);
+		}
 
 		if (last_it == first_it) {
 			gl_dbg("Update done!");
@@ -326,14 +328,15 @@ static void __gl_albums_edit_selall_cb(void *data, Evas_Object *obj, void *ei)
 	}
 	/* Update all realized items */
 	_gl_ui_update_realized_grid_ck(ad->albuminfo.view,
-				       GL_TILE_CHECKBOX_GRID, GL_TILE_CHECKBOX,
-				       state);
+	                               GL_TILE_CHECKBOX_GRID, GL_TILE_CHECKBOX,
+	                               state);
 
 	/* Recreate selection info for both cases */
-	if (state == EINA_FALSE)
+	if (state == EINA_FALSE) {
 		sel_all_cnt = 0;
-	else
+	} else {
 		sel_all_cnt = item_cnt;
+	}
 
 	_gl_notify_check_selall(ad, ad->ctrlinfo.nf_it, item_cnt, sel_all_cnt);
 	/* Update the label text */
@@ -354,7 +357,7 @@ static int __gl_albums_edit_ctxpopup_append(void *data, Evas_Object *parent)
 
 	/* Rename */
 	_gl_ctxpopup_append(parent, GL_STR_ID_RENAME,
-			    __gl_albums_edit_rename_btn_cb, album_item);
+	                    __gl_albums_edit_rename_btn_cb, album_item);
 	return 0;
 }
 
@@ -364,22 +367,24 @@ static void __gl_albums_edit_more_btn_cb(void *data, Evas_Object *obj, void *ei)
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
 
-	if (GL_GRID_EDIT != ad->albuminfo.b_share_mode)
+	if (GL_GRID_EDIT != ad->albuminfo.b_share_mode) {
 		return;
+	}
 	GL_CHECK(ad->albuminfo.sel_elist);
 	gl_cluster *album_item = NULL;
 	album_item = (gl_cluster *)eina_list_nth(ad->albuminfo.sel_elist, 0);
 	GL_CHECK(album_item);
 	if (1 != _gl_data_get_albums_selected_cnt(ad) ||
-	    album_item->cluster->type > GL_STORE_T_MMC ||
-	    _gl_data_is_camera_album(album_item->cluster))
+	        album_item->cluster->type > GL_STORE_T_MMC ||
+	        _gl_data_is_camera_album(album_item->cluster)) {
 		return;
+	}
 	_gl_ctxpopup_create(data, obj, __gl_albums_edit_ctxpopup_append);
 }
 #endif
 
 Evas_Object *_gl_albums_edit_add_content(void *data, Evas_Object *obj,
-					 const char *part)
+        const char *part)
 {
 	GL_CHECK_NULL(part);
 	GL_CHECK_NULL(data);
@@ -388,21 +393,23 @@ Evas_Object *_gl_albums_edit_add_content(void *data, Evas_Object *obj,
 	Evas_Object *_obj = NULL;
 
 	if (!g_strcmp0(part, GL_TILE_CHECKBOX_GRID)) {
-		if (album->cluster->type >= GL_STORE_T_ALL)
+		if (album->cluster->type >= GL_STORE_T_ALL) {
 			return NULL;
+		}
 
-	 	_obj = _gl_tile_show_part_checkbox_grid(obj, album->checked,
-	 						__gl_albums_edit_check_grid_changed,
-	 						data);
+		_obj = _gl_tile_show_part_checkbox_grid(obj, album->checked,
+		                                        __gl_albums_edit_check_grid_changed,
+		                                        data);
 	} else if (!g_strcmp0(part, GL_TILE_CHECKBOX)) {
-		if (album->cluster->type >= GL_STORE_T_ALL)
+		if (album->cluster->type >= GL_STORE_T_ALL) {
 			return NULL;
+		}
 
-	 	_obj = _gl_tile_show_part_checkbox(obj, album->checked,
-	 					   __gl_albums_edit_check_changed,
-	 					   data);
+		_obj = _gl_tile_show_part_checkbox(obj, album->checked,
+		                                   __gl_albums_edit_check_changed,
+		                                   data);
 	} else if (!g_strcmp0(part, GL_TILE_DIM) &&
-		   album->cluster->type >= GL_STORE_T_ALL) {
+	           album->cluster->type >= GL_STORE_T_ALL) {
 		_obj = _gl_tile_show_part_dim(obj); /* Disable item */
 	}
 
@@ -433,20 +440,20 @@ int _gl_albums_edit_add_btns(void *data, Evas_Object *parent)
 	/* Title Cancel Button */
 	elm_object_style_set(btn1, "naviframe/title_left");
 	elm_object_item_part_content_set(ad->ctrlinfo.nf_it, GL_NAVIFRAME_TITLE_LEFT_BTN, btn1);
-	_gl_ui_set_translate_str(btn1,GL_STR_ID_CANCEL_CAP);
+	_gl_ui_set_translate_str(btn1, GL_STR_ID_CANCEL_CAP);
 	evas_object_smart_callback_add(btn1, "clicked", __gl_albums_edit_cancel_cb, ad);
 
 	/* Title Done Button */
 	elm_object_style_set(btn2, "naviframe/title_right");
 	elm_object_item_part_content_set(ad->ctrlinfo.nf_it, GL_NAVIFRAME_TITLE_RIGHT_BTN, btn2);
-	_gl_ui_set_translate_str(btn2,GL_STR_ID_DONE_CAP);
+	_gl_ui_set_translate_str(btn2, GL_STR_ID_DONE_CAP);
 	evas_object_smart_callback_add(btn2, "clicked", __gl_albums_edit_del_cb, ad);
 	elm_object_disabled_set(btn2, EINA_TRUE);
 
 	/* Select-all */
 	ad->selinfo.ck_state = false;
 	_gl_ui_add_selall_ck(ad->ctrlinfo.ctrlbar_view_ly, "select.all.area.check", "select.all.area.check",
-			    __gl_albums_edit_selall_cb, data);
+	                     __gl_albums_edit_selall_cb, data);
 	return 0;
 }
 
@@ -457,7 +464,7 @@ int _gl_albums_edit_update_view(void *data)
 	gl_dbg("");
 
 	if (gl_check_gallery_empty(data) ||
-	    ad->albuminfo.elist->edit_cnt == 0) {
+	        ad->albuminfo.elist->edit_cnt == 0) {
 		/* Remove invalid widgets */
 		gl_del_invalid_widgets(data, GL_INVALID_NONE);
 		gl_dbgW("None editable albums, show albums view!");
@@ -481,7 +488,7 @@ int _gl_albums_edit_update_view(void *data)
 	_gl_albums_create_items(data, ad->albuminfo.view);
 	/* Display selectioninfo */
 	_gl_notify_check_selall(data, ad->ctrlinfo.nf_it,
-				ad->albuminfo.elist->edit_cnt, sel_cnt);
+	                        ad->albuminfo.elist->edit_cnt, sel_cnt);
 	/* Update the label text */
 	_gl_ui_update_navi_title_text(ad->ctrlinfo.nf_it, sel_cnt, false);
 	return 0;

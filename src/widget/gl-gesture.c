@@ -75,8 +75,8 @@ enum _gl_pinch_plan_t {
 };
 
 static gl_pinch_event_s *__gl_gesture_create_event_obj(void *data,
-						       Evas_Object *object,
-						       int device)
+        Evas_Object *object,
+        int device)
 {
 	GL_CHECK_NULL(data);
 	gl_gesture_s *gesture_d = (gl_gesture_s *)data;
@@ -94,7 +94,7 @@ static gl_pinch_event_s *__gl_gesture_create_event_obj(void *data,
 	evas_object_geometry_get(object, &ev->x, &ev->y, &ev->w, &ev->h);
 
 	gesture_d->s_event_elist = eina_list_append(gesture_d->s_event_elist,
-						    ev);
+	                           ev);
 	return ev;
 }
 
@@ -108,7 +108,7 @@ static int __gl_gesture_destroy_event_obj(void *data, gl_pinch_event_s *ev)
 	ev->pinch_obj = NULL;
 	ev->pinch_dis = 0;
 	gesture_d->s_event_elist = eina_list_remove(gesture_d->s_event_elist,
-						    ev);
+	                           ev);
 	GL_IF_DEL_TIMER(ev->hold_timer);
 	/* We don't need to reset the hold_timer object */
 
@@ -124,8 +124,9 @@ static gl_pinch_event_s *__gl_gesture_get_event_obj(void *data, int device)
 	gl_pinch_event_s *ev = NULL;
 
 	EINA_LIST_FOREACH(gesture_d->s_event_elist, l, ev) {
-		if (ev && ev->device == device)
+		if (ev && ev->device == device) {
 			break;
+		}
 		ev = NULL;
 	}
 
@@ -133,7 +134,7 @@ static gl_pinch_event_s *__gl_gesture_get_event_obj(void *data, int device)
 }
 
 static int __gl_gesture_get_distance(Evas_Coord x1, Evas_Coord y1, Evas_Coord x2,
-				     Evas_Coord y2)
+                                     Evas_Coord y2)
 {
 	int dis, dx, dy;
 
@@ -159,14 +160,15 @@ static int __gl_gesture_get_multi_device(void *data)
 	gl_pinch_event_s *ev = NULL;
 
 	EINA_LIST_FOREACH(gesture_d->s_event_elist, l, ev) {
-		if (ev && ev->device != 0)
+		if (ev && ev->device != 0) {
 			return ev->device;
+		}
 	}
 	return 0;
 }
 
 static void __gl_gesture_mouse_down_event(void *data, Evas *e,
-					  Evas_Object *evas_obj, void *ei)
+        Evas_Object *evas_obj, void *ei)
 {
 	GL_CHECK(ei);
 	GL_CHECK(data);
@@ -175,12 +177,14 @@ static void __gl_gesture_mouse_down_event(void *data, Evas *e,
 
 	gl_pinch_event_s *ev0;
 	ev0 = __gl_gesture_get_event_obj(data, 0);
-	if (ev0)
+	if (ev0) {
 		return;
+	}
 
 	ev0 = __gl_gesture_create_event_obj(data, evas_obj, 0);
-	if (!ev0)
+	if (!ev0) {
 		return;
+	}
 
 	ev0->hold_timer = NULL;
 	ev0->prev.x = ev->output.x;
@@ -188,7 +192,7 @@ static void __gl_gesture_mouse_down_event(void *data, Evas *e,
 }
 
 static void __gl_gesture_multi_down_event(void *data, Evas *evas,
-					  Evas_Object *obj, void *ei)
+        Evas_Object *obj, void *ei)
 {
 	GL_CHECK(ei);
 	GL_CHECK(data);
@@ -197,12 +201,14 @@ static void __gl_gesture_multi_down_event(void *data, Evas *evas,
 	/*gl_dbg(""); */
 
 	ev = __gl_gesture_get_event_obj(data, down->device);
-	if (ev)
+	if (ev) {
 		return;
+	}
 
 	ev = __gl_gesture_create_event_obj(data, obj, down->device);
-	if (!ev)
+	if (!ev) {
 		return;
+	}
 
 	ev->hold_timer = NULL;
 	ev->prev.x = down->output.x;
@@ -210,7 +216,7 @@ static void __gl_gesture_multi_down_event(void *data, Evas *evas,
 }
 
 static void __gl_gesture_mouse_up_event(void *data, Evas *e,
-					Evas_Object *obj, void *ei)
+                                        Evas_Object *obj, void *ei)
 {
 	GL_CHECK(data);
 	gl_gesture_s *gesture_d = (gl_gesture_s *)data;
@@ -240,7 +246,7 @@ static void __gl_gesture_mouse_up_event(void *data, Evas *e,
 
 		GL_IF_DEL_TIMER(ev->hold_timer);
 		ev->hold_timer = ecore_timer_add(GL_PINCH_HOLD_TIME_DELAY,
-						 __gl_gesture_hold_timer_cb, ev);
+		                                 __gl_gesture_hold_timer_cb, ev);
 	}
 
 	if (!gesture_d->ad->gridinfo.multi_touch) {
@@ -252,7 +258,7 @@ static void __gl_gesture_mouse_up_event(void *data, Evas *e,
 }
 
 static void __gl_gesture_multi_up_event(void *data, Evas *evas,
-					Evas_Object *obj, void *ei)
+                                        Evas_Object *obj, void *ei)
 {
 	GL_CHECK(ei);
 	GL_CHECK(data);
@@ -279,8 +285,8 @@ static void __gl_gesture_multi_up_event(void *data, Evas *evas,
 		/* timer for pinch */
 		GL_IF_DEL_TIMER(ev0->hold_timer);
 		ev0->hold_timer = ecore_timer_add(GL_PINCH_HOLD_TIME_DELAY,
-						  __gl_gesture_hold_timer_cb,
-						  ev0);
+		                                  __gl_gesture_hold_timer_cb,
+		                                  ev0);
 	} else {
 		/* up when device 0 is off */
 	}
@@ -288,7 +294,7 @@ static void __gl_gesture_multi_up_event(void *data, Evas *evas,
 }
 
 static void __gl_gesture_mouse_move_event(void *data, Evas *e,
-					  Evas_Object *obj, void *ei)
+        Evas_Object *obj, void *ei)
 {
 	GL_CHECK(ei);
 	GL_CHECK(data);
@@ -318,7 +324,7 @@ static void __gl_gesture_zoom_out_job_cb(void *data)
 
 	if (gesture_d->zoom_out_cb)
 		gesture_d->zoom_out_cb(gesture_d->gesture,
-				       gesture_d->zoom_out_data);
+		                       gesture_d->zoom_out_data);
 
 	GL_IF_DEL_JOB(gesture_d->pinch_job);
 }
@@ -336,13 +342,13 @@ static void __gl_gesture_zoom_in_job_cb(void *data)
 
 	if (gesture_d->zoom_in_cb)
 		gesture_d->zoom_in_cb(gesture_d->gesture,
-				      gesture_d->zoom_in_data);
+		                      gesture_d->zoom_in_data);
 
 	GL_IF_DEL_JOB(gesture_d->pinch_job);
 }
 
 static void __gl_gesture_multi_move_event(void *data, Evas *evas,
-					  Evas_Object *obj, void *ei)
+        Evas_Object *obj, void *ei)
 {
 	GL_CHECK(data);
 	gl_gesture_s *gesture_d = (gl_gesture_s *)data;
@@ -365,8 +371,8 @@ static void __gl_gesture_multi_move_event(void *data, Evas *evas,
 	}
 
 	if (gl_get_view_mode(gesture_d->ad) == GL_VIEW_THUMBS
-			|| gl_get_view_mode(gesture_d->ad) == GL_VIEW_THUMBS_EDIT
-			|| gl_get_view_mode(gesture_d->ad) == GL_VIEW_THUMBS_SELECT) {
+	        || gl_get_view_mode(gesture_d->ad) == GL_VIEW_THUMBS_EDIT
+	        || gl_get_view_mode(gesture_d->ad) == GL_VIEW_THUMBS_SELECT) {
 		if (gl_get_view_mode(gesture_d->ad) == GL_VIEW_THUMBS_EDIT) {
 			gl_dbg("Prevent multi move in thumbs edit view");
 			return;
@@ -390,14 +396,14 @@ static void __gl_gesture_multi_move_event(void *data, Evas *evas,
 	}
 
 	dis_new = __gl_gesture_get_distance(ev0->prev.x, ev0->prev.y,
-					    ev->prev.x, ev->prev.y);
+	                                    ev->prev.x, ev->prev.y);
 
 	int dis_old = gesture_d->dis_old;
 	if (dis_old != 0) {
 		if (dis_old - dis_new > 0 &&
-		    ev->pinch_dis > GL_PINCH_TOUCH_HOLD_RANGE) {
+		        ev->pinch_dis > GL_PINCH_TOUCH_HOLD_RANGE) {
 			if (gesture_d->pinch_dis_old &&
-			    ev->pinch_dis < (gesture_d->pinch_dis_old * GL_PINCH_TOUCH_FACTOR)) {
+			        ev->pinch_dis < (gesture_d->pinch_dis_old * GL_PINCH_TOUCH_FACTOR)) {
 				ev->pinch_dis += (dis_old - dis_new);
 				gesture_d->dis_old = dis_new;
 				return;
@@ -407,7 +413,7 @@ static void __gl_gesture_multi_move_event(void *data, Evas *evas,
 			if (!gesture_d->pinch_job) {
 				gl_dbgW("Add job pinch zoom out");
 				gesture_d->pinch_job = ecore_job_add(__gl_gesture_zoom_out_job_cb,
-								     data);
+				                                     data);
 			} else {
 				gl_dbgW("Added job pinch zoom out");
 			}
@@ -415,9 +421,9 @@ static void __gl_gesture_multi_move_event(void *data, Evas *evas,
 			gesture_d->pinch_dis_old = ev->pinch_dis;
 			ev->pinch_dis = 0;
 		} else if (dis_old - dis_new < 0 &&
-			   ev->pinch_dis < -GL_PINCH_TOUCH_HOLD_RANGE) {
+		           ev->pinch_dis < -GL_PINCH_TOUCH_HOLD_RANGE) {
 			if (gesture_d->pinch_dis_old &&
-			    ev->pinch_dis > (gesture_d->pinch_dis_old * GL_PINCH_TOUCH_FACTOR)) {
+			        ev->pinch_dis > (gesture_d->pinch_dis_old * GL_PINCH_TOUCH_FACTOR)) {
 				ev->pinch_dis += (dis_old - dis_new);
 				gesture_d->dis_old = dis_new;
 				return;
@@ -427,7 +433,7 @@ static void __gl_gesture_multi_move_event(void *data, Evas *evas,
 			if (!gesture_d->pinch_job) {
 				gl_dbgW("Add job pinch zoom in");
 				gesture_d->pinch_job = ecore_job_add(__gl_gesture_zoom_in_job_cb,
-								     data);
+				                                     data);
 			} else {
 				gl_dbgW("Added job pinch zoom in");
 			}
@@ -445,7 +451,7 @@ static void __gl_gesture_multi_move_event(void *data, Evas *evas,
 }
 
 static void __gl_gesture_del_cb(void *data, Evas *e, Evas_Object *obj,
-			     void *ei)
+                                void *ei)
 {
 	gl_dbg("Delete gesture ---");
 	if (data) {
@@ -478,38 +484,38 @@ Evas_Object *_gl_gesture_add(void *data, Evas_Object *parent)
 	gesture_d->gesture = gesture;
 
 	evas_object_event_callback_add(gesture, EVAS_CALLBACK_MOUSE_DOWN,
-				       __gl_gesture_mouse_down_event,
-				       gesture_d);
+	                               __gl_gesture_mouse_down_event,
+	                               gesture_d);
 	evas_object_event_callback_add(gesture, EVAS_CALLBACK_MOUSE_UP,
-				       __gl_gesture_mouse_up_event, gesture_d);
+	                               __gl_gesture_mouse_up_event, gesture_d);
 	evas_object_event_callback_add(gesture, EVAS_CALLBACK_MOUSE_MOVE,
-				       __gl_gesture_mouse_move_event,
-				       gesture_d);
+	                               __gl_gesture_mouse_move_event,
+	                               gesture_d);
 
 	evas_object_event_callback_add(gesture, EVAS_CALLBACK_MULTI_DOWN,
-				       __gl_gesture_multi_down_event,
-				       gesture_d);
+	                               __gl_gesture_multi_down_event,
+	                               gesture_d);
 	evas_object_event_callback_add(gesture, EVAS_CALLBACK_MULTI_UP,
-				       __gl_gesture_multi_up_event, gesture_d);
+	                               __gl_gesture_multi_up_event, gesture_d);
 	evas_object_event_callback_add(gesture, EVAS_CALLBACK_MULTI_MOVE,
-				       __gl_gesture_multi_move_event,
-				       gesture_d);
+	                               __gl_gesture_multi_move_event,
+	                               gesture_d);
 
 	evas_object_data_set(gesture, GL_GESTURE_KEY_DATA, (void *)gesture_d);
 	evas_object_event_callback_add(gesture, EVAS_CALLBACK_DEL,
-				       __gl_gesture_del_cb, gesture_d);
+	                               __gl_gesture_del_cb, gesture_d);
 	return gesture;
 }
 
 int _gl_gesture_set_zoom_in_cb(Evas_Object *gesture, gl_gesture_cb cb,
-			       void *data)
+                               void *data)
 {
 	GL_CHECK_VAL(cb, -1);
 	GL_CHECK_VAL(gesture, -1);
 	gl_gesture_s *gesture_d = NULL;
 
 	gesture_d = (gl_gesture_s *)evas_object_data_get(gesture,
-							 GL_GESTURE_KEY_DATA);
+	            GL_GESTURE_KEY_DATA);
 	GL_CHECK_VAL(gesture_d, -1);
 	gesture_d->zoom_in_cb = cb;
 	gesture_d->zoom_in_data = data;
@@ -517,14 +523,14 @@ int _gl_gesture_set_zoom_in_cb(Evas_Object *gesture, gl_gesture_cb cb,
 }
 
 int _gl_gesture_set_zoom_out_cb(Evas_Object *gesture, gl_gesture_cb cb,
-				void *data)
+                                void *data)
 {
 	GL_CHECK_VAL(cb, -1);
 	GL_CHECK_VAL(gesture, -1);
 	gl_gesture_s *gesture_d = NULL;
 
 	gesture_d = (gl_gesture_s *)evas_object_data_get(gesture,
-							 GL_GESTURE_KEY_DATA);
+	            GL_GESTURE_KEY_DATA);
 	GL_CHECK_VAL(gesture_d, -1);
 	gesture_d->zoom_out_cb = cb;
 	gesture_d->zoom_out_data = data;
@@ -537,7 +543,7 @@ int _gl_gesture_reset_flags(Evas_Object *gesture)
 	gl_gesture_s *gesture_d = NULL;
 
 	gesture_d = (gl_gesture_s *)evas_object_data_get(gesture,
-							 GL_GESTURE_KEY_DATA);
+	            GL_GESTURE_KEY_DATA);
 	GL_CHECK_VAL(gesture_d, -1);
 	GL_IF_DEL_JOB(gesture_d->pinch_job);
 	gesture_d->next_plan = GL_PINCH_PLAN_NONE;
@@ -550,7 +556,7 @@ Evas_Object *_gl_gesture_get_parent(Evas_Object *gesture)
 	gl_gesture_s *gesture_d = NULL;
 
 	gesture_d = (gl_gesture_s *)evas_object_data_get(gesture,
-							 GL_GESTURE_KEY_DATA);
+	            GL_GESTURE_KEY_DATA);
 	GL_CHECK_NULL(gesture_d);
 	return gesture_d->parent;
 }

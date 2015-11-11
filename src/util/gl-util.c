@@ -80,7 +80,7 @@ static Eina_Bool _gl_start_thread_op_timer_cb(void *data)
 * for displaying progrssabar UI
 */
 int _gl_use_thread_operate_medias(void *data, char *pbar_title, int all_cnt,
-				  int op_type)
+                                  int op_type)
 {
 	gl_dbg("all_cnt: %d, op_type: %d.", all_cnt, op_type);
 	GL_CHECK_VAL(data, -1);
@@ -98,7 +98,7 @@ int _gl_use_thread_operate_medias(void *data, char *pbar_title, int all_cnt,
 	GL_IF_DEL_TIMER(ad->pbarinfo.start_thread_timer);
 	Ecore_Timer *timer = NULL;
 	timer = ecore_timer_add(GL_TIMER_INTERVAL_PBAR_SHOWED,
-				_gl_start_thread_op_timer_cb, ad);
+	                        _gl_start_thread_op_timer_cb, ad);
 	ad->pbarinfo.start_thread_timer = timer;
 	/* Set media operation type */
 	ad->maininfo.medias_op_type = op_type;
@@ -133,10 +133,11 @@ static Eina_Bool __gl_db_update_noti_idler_cb(void *data)
 		if (error_code == STORAGE_ERROR_NONE) {
 			if (state == STORAGE_STATE_MOUNTED) {
 				gl_dbg("state[%d] : STORAGE_STATE_MOUNTED", state);
-				if (ad->maininfo.mmc_state == GL_MMC_STATE_REMOVED)
+				if (ad->maininfo.mmc_state == GL_MMC_STATE_REMOVED) {
 					ad->maininfo.mmc_state = GL_MMC_STATE_ADDING_MOVING;
-				else
+				} else {
 					ad->maininfo.mmc_state = GL_MMC_STATE_ADDED;
+				}
 
 				gl_update_view(ad, GL_UPDATE_VIEW_MMC_ADDED);
 				//evas_object_smart_callback_call(ad->maininfo.naviframe,
@@ -144,7 +145,7 @@ static Eina_Bool __gl_db_update_noti_idler_cb(void *data)
 				/* Remove ctxpopup */
 				_gl_ctxpopup_del(ad);
 			} else if (state == STORAGE_STATE_REMOVED ||
-				   state == STORAGE_STATE_UNMOUNTABLE) {
+			           state == STORAGE_STATE_UNMOUNTABLE) {
 				gl_dbg("state[%d] : STORAGE_STATE_REMOVED", state);
 				if (ad->maininfo.mmc_state == GL_MMC_STATE_ADDED_MOVING) {
 					/*
@@ -169,20 +170,22 @@ static Eina_Bool __gl_db_update_noti_idler_cb(void *data)
 				_gl_ctxpopup_del(ad);
 			}
 		}
-	} else
+	} else {
 		gl_dbgE("Error when check MMC Status");
+	}
 	GL_IF_DEL_IDLER(ad->maininfo.mmc_idler);
 	return ECORE_CALLBACK_CANCEL;
 }
 
-void _gl_db_update_sdcard_info(int storage_id, storage_state_e state, void *user_data) {
+void _gl_db_update_sdcard_info(int storage_id, storage_state_e state, void *user_data)
+{
 
 	GL_CHECK(user_data);
 	gl_appdata *ad = (gl_appdata *)user_data;
 	GL_IF_DEL_IDLER(ad->maininfo.mmc_idler);
 	gl_dbg("mmc_idler: %p", ad->maininfo.mmc_idler);
 	ad->maininfo.mmc_idler = ecore_idler_add(__gl_db_update_noti_idler_cb,
-			user_data);
+	                         user_data);
 }
 
 static inline int __gl_set_sound_status(void *data, int status)
@@ -218,7 +221,7 @@ static int __gl_reg_svi_noti(void *data)
 {
 	GL_CHECK_VAL(data, -1);
 	int retcode = system_settings_set_changed_cb(SYSTEM_SETTINGS_KEY_SOUND_SILENT_MODE,
-				       __gl_change_sound_status_cb, data);
+	              __gl_change_sound_status_cb, data);
 	if (retcode != SYSTEM_SETTINGS_ERROR_NONE) {
 		gl_dbgE("Failed to register the sound status callback");
 		return -1;
@@ -228,7 +231,7 @@ static int __gl_reg_svi_noti(void *data)
 
 static int __gl_dereg_svi_noti(void)
 {
-	int retcode = system_settings_unset_changed_cb (SYSTEM_SETTINGS_KEY_SOUND_SILENT_MODE);
+	int retcode = system_settings_unset_changed_cb(SYSTEM_SETTINGS_KEY_SOUND_SILENT_MODE);
 	if (retcode != SYSTEM_SETTINGS_ERROR_NONE) {
 		gl_dbgE("Failed to un-register the sound status callback");
 		return -1;
@@ -254,10 +257,11 @@ static bool _gl_check_mmc_file_selected(void *data)
 		/* File on MMC is selected */
 		if (gitem && gitem->item && gitem->item->file_url) {
 			on_mmc = strncmp(GL_ROOT_PATH_MMC,
-					 gitem->item->file_url,
-					 strlen(GL_ROOT_PATH_MMC));
-			if (on_mmc == 0)
+			                 gitem->item->file_url,
+			                 strlen(GL_ROOT_PATH_MMC));
+			if (on_mmc == 0) {
 				return true;
+			}
 		}
 	}
 	return false;
@@ -311,35 +315,24 @@ int gl_get_entry_text(Evas_Object * entry, char *entry_text, int len_max)
 	memset(entry_text, 0x00, len_max);
 
 	char *entry_str = (char *)elm_entry_entry_get(entry);
-	if (entry_str)
-	{
-		if (strlen(entry_str) == 0)
-		{
+	if (entry_str) {
+		if (strlen(entry_str) == 0) {
 			gl_dbg("Entry string is empty!");
-		}
-		else
-		{
+		} else {
 			char *entry_utf8 = elm_entry_markup_to_utf8(entry_str);	// changes user input to utf-8 encoding format
-			if (entry_utf8 == NULL)
-			{
+			if (entry_utf8 == NULL) {
 				gl_dbgE("Make entry string to UTF8 failed!");
 				return -1;
-			}
-			else if (strlen(entry_utf8) == 0)
-			{
+			} else if (strlen(entry_utf8) == 0) {
 				gl_dbg("Entry text is empty!");
-			}
-			else
-			{
+			} else {
 				g_strlcpy(entry_text, entry_utf8, len_max);
 				entry_text[len_max - 1] = '\0';
 			}
 
 			GL_FREE(entry_utf8);
 		}
-	}
-	else
-	{
+	} else {
 		gl_dbgE("Get entry string failed!");
 		return -1;
 	}
@@ -386,7 +379,7 @@ int gl_set_entry_text(Evas_Object *entry, char *entry_text)
 *
 */
 int _gl_get_valid_album_name(void *data, char *album_name, bool b_new,
-			     bool b_enter)
+                             bool b_enter)
 {
 	GL_CHECK_VAL(album_name, -1);
 	GL_CHECK_VAL(data, -1);
@@ -407,12 +400,13 @@ int _gl_get_valid_album_name(void *data, char *album_name, bool b_new,
 			goto INVALID_ALBUM_NAME;
 		}
 
-		if (b_new)
+		if (b_new) {
 			mode = GL_POPUP_ALBUM_NEW_EMPTY;
-		else
+		} else {
 			mode = GL_POPUP_ALBUM_RENAME_EMPTY;
+		}
 		snprintf(popup_desc, GL_POPUP_STRING_MAX, "%s<br>%s",
-			GL_STR_ENTRY_IS_EMPTY, GL_STR_RETRY_Q);
+		         GL_STR_ENTRY_IS_EMPTY, GL_STR_RETRY_Q);
 		gl_popup_create_popup(ad, mode, popup_desc);
 		goto INVALID_ALBUM_NAME;
 	}
@@ -427,12 +421,13 @@ int _gl_get_valid_album_name(void *data, char *album_name, bool b_new,
 			goto INVALID_ALBUM_NAME;
 		}
 
-		if (b_new)
+		if (b_new) {
 			mode = GL_POPUP_ALBUM_NEW_EMPTY;
-		else
+		} else {
 			mode = GL_POPUP_ALBUM_RENAME_EMPTY;
+		}
 		snprintf(popup_desc, GL_POPUP_STRING_MAX, "%s<br>%s",
-			GL_STR_INVALID_INPUT_PARAMETER, GL_STR_RETRY_Q);
+		         GL_STR_INVALID_INPUT_PARAMETER, GL_STR_RETRY_Q);
 		gl_popup_create_popup(ad, mode, popup_desc);
 		goto INVALID_ALBUM_NAME;
 	}
@@ -440,12 +435,13 @@ int _gl_get_valid_album_name(void *data, char *album_name, bool b_new,
 	/* Check if there is any invalid character in string */
 	if (_gl_fs_validate_name(album_name) == false) {
 		gl_dbgW("Album name includes invalid character!");
-		if (b_new)
+		if (b_new) {
 			mode = GL_POPUP_ALBUM_NEW_INVALID;
-		else
+		} else {
 			mode = GL_POPUP_ALBUM_RENAME_INVALID;
+		}
 		snprintf(popup_desc, GL_POPUP_STRING_MAX, "%s<br>%s",
-			GL_STR_INVALID_INPUT_PARAMETER, GL_STR_RETRY_Q);
+		         GL_STR_INVALID_INPUT_PARAMETER, GL_STR_RETRY_Q);
 		gl_popup_create_popup(ad, mode, popup_desc);
 		goto INVALID_ALBUM_NAME;
 	}
@@ -454,7 +450,7 @@ int _gl_get_valid_album_name(void *data, char *album_name, bool b_new,
 
 	return 0;
 
- INVALID_ALBUM_NAME:
+INVALID_ALBUM_NAME:
 	GL_FREE(popup_desc);
 	return -1;
 }
@@ -491,7 +487,7 @@ int _gl_validate_album_name(void *data, char *album_name)
 
 	return 0;
 
- INVALID_ALBUM_NAME:
+INVALID_ALBUM_NAME:
 
 	return -1;
 }
@@ -511,7 +507,7 @@ int _gl_validate_input_character(void *data, char *album_name)
 
 	return 0;
 
- INVALID_ALBUM_NAME:
+INVALID_ALBUM_NAME:
 
 	return -1;
 }
@@ -544,7 +540,7 @@ char *_gl_get_i18n_album_name(gl_album_s *cluster)
 		cluster->display_name = strdup(GL_STR_ID_ALL_ALBUMS);
 		i18n_name = cluster->display_name;
 	} else if (cluster->type == GL_STORE_T_PHONE ||
-    		cluster->type == GL_STORE_T_MMC) {
+	           cluster->type == GL_STORE_T_MMC) {
 		if (_gl_data_is_root_path(cluster->path)) {
 			/* check root case */
 			i18n_name = GL_STR_ID_NO_NAME;
@@ -557,14 +553,15 @@ char *_gl_get_i18n_album_name(gl_album_s *cluster)
 		i18n_name = cluster->display_name;
 	}
 
-	if (i18n_name == NULL || strlen(i18n_name) <= 0)
+	if (i18n_name == NULL || strlen(i18n_name) <= 0) {
 		i18n_name = GL_STR_ID_NO_NAME;
+	}
 
 	return i18n_name;
 }
 
 int gl_get_selected_files_path_str(void *data, gchar sep_c, char **path_str,
-				   int *sel_cnt)
+                                   int *sel_cnt)
 {
 	GL_CHECK_VAL(path_str, -1);
 	GL_CHECK_VAL(data, -1);
@@ -589,14 +586,15 @@ int gl_get_selected_files_path_str(void *data, gchar sep_c, char **path_str,
 		} else {
 			selected_item_cnt++;
 			g_string_append(selected_path_list,
-					current->item->file_url);
+			                current->item->file_url);
 			g_string_append_c(selected_path_list, sep_c);
 		}
 
 	}
 	gl_dbg("Selected items count: %d.", selected_item_cnt);
-	if (sel_cnt)
+	if (sel_cnt) {
 		*sel_cnt = selected_item_cnt;
+	}
 	int len = strlen(selected_path_list->str);
 	g_string_truncate(selected_path_list, len - 1);
 	/**
@@ -627,7 +625,7 @@ bool gl_make_new_album(const char *name)
 
 /* Used for loal medias, thumbnail was moved to new dest first, then rename file */
 int _gl_move_media_thumb(void *data, gl_item *gitem, char *new_dir_name,
-			 bool is_full_path, int *popup_op, int mc_mode)
+                         bool is_full_path, int *popup_op, int mc_mode)
 {
 	gl_dbg("Move/Copy[%d] media item START>>>", mc_mode);
 	char new_path[GL_FILE_PATH_LEN_MAX] = { 0, };
@@ -643,12 +641,12 @@ int _gl_move_media_thumb(void *data, gl_item *gitem, char *new_dir_name,
 
 	if (is_full_path) {
 		if (!gitem->item->file_url || !strlen(gitem->item->file_url) ||
-		    !gitem->item->display_name) {
+		        !gitem->item->display_name) {
 			gl_dbgE("Invalid file!");
 			return -1;
 		}
 		snprintf(new_path, sizeof(new_path), "%s/%s", new_dir_name,
-			 (char *)(gitem->item->display_name));
+		         (char *)(gitem->item->display_name));
 		gl_sdbg("New path : %s", new_path);
 
 		if (mc_mode == GL_MC_MOVE && !g_strcmp0(new_path, gitem->item->file_url)) {
@@ -659,8 +657,9 @@ int _gl_move_media_thumb(void *data, gl_item *gitem, char *new_dir_name,
 			_gl_fs_get_path_without_ext(new_path, ext, new_path_noext);
 			char *final_path = NULL;
 			final_path = _gl_fs_get_unique_full_path(new_path_noext, ext);
-			if (final_path == NULL)
+			if (final_path == NULL) {
 				return -1;
+			}
 			gl_dbg("Created unique path: %s", final_path);
 			memset(new_path, 0x00, GL_FILE_PATH_LEN_MAX);
 			g_strlcpy(new_path, final_path, GL_FILE_PATH_LEN_MAX);
@@ -669,8 +668,8 @@ int _gl_move_media_thumb(void *data, gl_item *gitem, char *new_dir_name,
 		}
 	} else {
 		snprintf(new_path, GL_FILE_PATH_LEN_MAX, "%s/%s/%s",
-			 GL_DEFAULT_PATH_IMAGES, new_dir_name,
-			 (char *)(gitem->item->display_name));
+		         GL_DEFAULT_PATH_IMAGES, new_dir_name,
+		         (char *)(gitem->item->display_name));
 	}
 
 	new_path[strlen(new_path)] = '\0';
@@ -689,15 +688,16 @@ int _gl_move_media_thumb(void *data, gl_item *gitem, char *new_dir_name,
 	}
 
 	gl_dbg("Move/Copy media item OVER<<<");
-	if (!ret)
+	if (!ret) {
 		return -1;
-	else
+	} else {
 		return 0;
+	}
 }
 
 /* Used for loal medias, thumbnail was moved to new dest first, then rename file */
 int _gl_move_media_thumb_by_id(void *data, const char *uuid, char *new_dir_name,
-			       int *popup_op, int mc_mode)
+                               int *popup_op, int mc_mode)
 {
 	gl_dbg("Move/Copy[%d] media item START>>>", mc_mode);
 	char new_path[GL_FILE_PATH_LEN_MAX] = { 0, };
@@ -744,8 +744,9 @@ int _gl_move_media_thumb_by_id(void *data, const char *uuid, char *new_dir_name,
 		_gl_fs_get_path_without_ext(new_path, ext, new_path_noext);
 		char *final_path = NULL;
 		final_path = _gl_fs_get_unique_full_path(new_path_noext, ext);
-		if (final_path == NULL)
+		if (final_path == NULL) {
 			goto GL_DONE;
+		}
 		gl_dbg("Created unique path: %s", final_path);
 		memset(new_path, 0x00, GL_FILE_PATH_LEN_MAX);
 		g_strlcpy(new_path, final_path, GL_FILE_PATH_LEN_MAX);
@@ -773,17 +774,19 @@ int _gl_move_media_thumb_by_id(void *data, const char *uuid, char *new_dir_name,
 		gl_dbgE("Wrong mode!");
 	}
 
- GL_DONE:
+GL_DONE:
 	GL_FREEIF(name);
 	GL_FREEIF(path);
-	if (media_h)
+	if (media_h) {
 		media_info_destroy(media_h);
+	}
 
 	gl_dbg("Move/Copy media item OVER<<<");
-	if (ret != MEDIA_CONTENT_ERROR_NONE)
+	if (ret != MEDIA_CONTENT_ERROR_NONE) {
 		return -1;
-	else
+	} else {
 		return 0;
+	}
 }
 
 /* Used for move file to new dest */
@@ -800,12 +803,12 @@ int _gl_move_media(gl_item *gitem, char *new_dir_name, bool is_full_path)
 
 	if (is_full_path) {
 		if (!gitem->item->file_url || !strlen(gitem->item->file_url) ||
-		    !gitem->item->display_name) {
+		        !gitem->item->display_name) {
 			gl_dbgE("file url or name is invalid!");
 			return -1;
 		}
 		snprintf(new_path, sizeof(new_path), "%s/%s",
-			new_dir_name, (char *)(gitem->item->display_name));
+		         new_dir_name, (char *)(gitem->item->display_name));
 		gl_dbg("New path : %s", new_path);
 
 		if (!g_strcmp0(new_path, gitem->item->file_url)) {
@@ -815,8 +818,9 @@ int _gl_move_media(gl_item *gitem, char *new_dir_name, bool is_full_path)
 			_gl_fs_get_path_without_ext(new_path, ext, new_path_noext);
 			char *final_path = NULL;
 			final_path = _gl_fs_get_unique_full_path(new_path_noext, ext);
-			if (final_path == NULL)
+			if (final_path == NULL) {
 				return -1;
+			}
 			gl_dbg("Created unique path: %s", final_path);
 			memset(new_path, 0x00, GL_FILE_PATH_LEN_MAX);
 			g_strlcpy(new_path, final_path, GL_FILE_PATH_LEN_MAX);
@@ -824,8 +828,8 @@ int _gl_move_media(gl_item *gitem, char *new_dir_name, bool is_full_path)
 		}
 	} else {
 		snprintf(new_path, GL_FILE_PATH_LEN_MAX, "%s/%s/%s",
-			 GL_DEFAULT_PATH_IMAGES, new_dir_name,
-			 (char *)(gitem->item->display_name));
+		         GL_DEFAULT_PATH_IMAGES, new_dir_name,
+		         (char *)(gitem->item->display_name));
 	}
 
 	new_path[strlen(new_path)] = '\0';
@@ -913,8 +917,9 @@ int gl_check_mmc_state(void *data, char *dest_folder)
 	gl_appdata *ad = (gl_appdata *)data;
 
 	/* MMC hasn't been inserted */
-	if (ad->maininfo.mmc_state == GL_MMC_STATE_REMOVED)
+	if (ad->maininfo.mmc_state == GL_MMC_STATE_REMOVED) {
 		return 0;
+	}
 
 	int on_mmc = -1;
 	/**
@@ -925,9 +930,10 @@ int gl_check_mmc_state(void *data, char *dest_folder)
 	/* Move files to MMC album */
 	if (dest_folder) {
 		on_mmc = strncmp(GL_ROOT_PATH_MMC, dest_folder,
-				 strlen(GL_ROOT_PATH_MMC));
-		if (on_mmc == 0)
+		                 strlen(GL_ROOT_PATH_MMC));
+		if (on_mmc == 0) {
 			goto ON_MMC;
+		}
 	}
 
 	gl_cluster *cur_album = _gl_albums_get_current(data);
@@ -937,20 +943,21 @@ int gl_check_mmc_state(void *data, char *dest_folder)
 	/* Move files from MMC album */
 	GL_CHECK_VAL(cur_album->cluster->uuid, -1);
 	g_strlcpy(src_folder_path, cur_album->cluster->path,
-		  GL_DIR_PATH_LEN_MAX);
+	          GL_DIR_PATH_LEN_MAX);
 	on_mmc = strncmp(GL_ROOT_PATH_MMC, src_folder_path,
-			 strlen(GL_ROOT_PATH_MMC));
+	                 strlen(GL_ROOT_PATH_MMC));
 	/* Check MMC files selected in album [All albums] */
 	if (on_mmc == 0) {
 		goto ON_MMC;
 	} else if (cur_album->cluster->type == GL_STORE_T_ALL) {
 		gl_dbg("In album [All albums].");
-		if (_gl_check_mmc_file_selected(ad))
+		if (_gl_check_mmc_file_selected(ad)) {
 			goto ON_MMC;
+		}
 	}
 	return 0;
 
- ON_MMC:
+ON_MMC:
 	gl_dbgW("Operate medias on MMC!");
 	ad->maininfo.mmc_state = GL_MMC_STATE_ADDED_MOVING;
 	return 0;
@@ -972,7 +979,7 @@ static int __gl_reg_db_noti(void *data)
 				gl_dbg("###### :::::: MMC loaded! :::::: ######");
 				ad->maininfo.mmc_state = GL_MMC_STATE_ADDED;
 			} else if (state == STORAGE_STATE_REMOVED ||
-					 state == STORAGE_STATE_UNMOUNTABLE) {
+			           state == STORAGE_STATE_UNMOUNTABLE) {
 				gl_dbg("###### :::::: MMC removed! :::::: ######");
 				ad->maininfo.mmc_state = GL_MMC_STATE_REMOVED;
 			}
@@ -1076,8 +1083,9 @@ static int __gl_del_medias_op(void *data)
 	for (i = 0; i < cnt; i++) {
 		gitem = eina_list_nth(ad->selinfo.elist, i);
 		if (gitem != NULL && gitem->item != NULL) {
-			if (_gl_data_delete_file(gitem->item->file_url, gitem->item->uuid, false) < 0)
+			if (_gl_data_delete_file(gitem->item->file_url, gitem->item->uuid, false) < 0) {
 				gl_dbgE("Failed to delete file!");
+			}
 			_gl_thumbs_get_list(data, &media_elist);
 			media_elist = eina_list_remove(media_elist, gitem);
 			_gl_thumbs_set_list(data, media_elist);
@@ -1088,7 +1096,7 @@ static int __gl_del_medias_op(void *data)
 		}
 
 		gl_dbg("Write pipe, make progressbar updated!");
-		gl_thread_write_pipe(ad, i+1, popup_op);
+		gl_thread_write_pipe(ad, i + 1, popup_op);
 		gitem = NULL;
 	}
 	return 0;
@@ -1150,8 +1158,9 @@ int _gl_update_operation_view(void *data, const char *noti_str)
 		_gl_notify_create_notiinfo(noti_str);
 	}
 	/* Add notification */
-	if (noti_str && cancel_flag != GL_PB_CANCEL_ERROR)
+	if (noti_str && cancel_flag != GL_PB_CANCEL_ERROR) {
 		_gl_notify_create_notiinfo(noti_str);
+	}
 	return 0;
 }
 
@@ -1185,8 +1194,9 @@ char *_gl_delete_folder(char *path)
 {
 	GL_CHECK_NULL(path);
 	char *del_path = strdup(path);
-	if (NULL == del_path)
+	if (NULL == del_path) {
 		return NULL;
+	}
 	char *sub_path = del_path;
 	while (gl_file_dir_is_empty(del_path) == 1) {
 		gl_dbg("this dir is empty, rm it!");
@@ -1218,9 +1228,9 @@ int gl_del_medias(void *data)
 		gl_check_mmc_state(ad, NULL);
 		gl_dbg("MMC state: %d.", ad->maininfo.mmc_state);
 		_gl_set_file_op_cbs(data, __gl_del_medias_op, NULL,
-					__gl_update_del_medias_view, cnt);
+		                    __gl_update_del_medias_view, cnt);
 		_gl_use_thread_operate_medias(ad, GL_STR_ID_DELETING, cnt,
-						  GL_MEDIA_OP_DELETE);
+		                              GL_MEDIA_OP_DELETE);
 	}
 	return 0;
 }
@@ -1293,16 +1303,16 @@ int gl_remove_album(void *data, gl_cluster *album_item, bool is_hide)
 	GL_CHECK_VAL(data, -1);
 
 	if (album_item == NULL || album_item->cluster == NULL ||
-	    album_item->cluster->uuid == NULL) {
+	        album_item->cluster->uuid == NULL) {
 		gl_dbgE("Invalid album!");
 		return -1;
 	}
 
 	gl_sdbg("Remove album: %s, id=%s", album_item->cluster->display_name,
-	       album_item->cluster->uuid);
+	        album_item->cluster->uuid);
 	/* remove album from db*/
 	if (_gl_local_data_delete_album(album_item->cluster,
-					NULL, data, is_hide) != 0) {
+	                                NULL, data, is_hide) != 0) {
 		gl_dbgE("delete album failed!");
 		//return -1;
 	}
@@ -1341,10 +1351,11 @@ static int __gl_del_albums_op(void *data)
 		album = eina_list_nth(ad->albuminfo.sel_elist, i);
 
 		if (album && album->cluster && album->cluster->uuid) {
-			if ((ret = gl_remove_album(ad, album, false)) < 0)
+			if ((ret = gl_remove_album(ad, album, false)) < 0) {
 				gl_dbgE("remove album failed[%d]!", ret);
+			}
 		}
-		gl_thread_write_pipe(ad, i+1, GL_POPUP_OP_NONE);
+		gl_thread_write_pipe(ad, i + 1, GL_POPUP_OP_NONE);
 	}
 	return 0;
 }
@@ -1356,15 +1367,15 @@ int _gl_del_albums(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 	/* Get all selected albums count */
 	int cnt = _gl_data_get_albums_selected_cnt(ad);
-	if (cnt !=0) {
+	if (cnt != 0) {
 		_gl_db_update_lock_always(data, true);
 		/* Check MMC state for cancel operation */
 		gl_check_mmc_state(ad, NULL);
 		gl_dbg("MMC state: %d.", ad->maininfo.mmc_state);
 		_gl_set_file_op_cbs(data, __gl_del_albums_op, NULL,
-					__gl_update_del_albums_view, cnt);
+		                    __gl_update_del_albums_view, cnt);
 		_gl_use_thread_operate_medias(ad, GL_STR_ID_DELETING, cnt,
-						  GL_MEDIA_OP_DELETE_ALBUM);
+		                              GL_MEDIA_OP_DELETE_ALBUM);
 	}
 
 	return 0;
@@ -1411,11 +1422,11 @@ int _gl_refresh_albums_list(void *data, bool b_path, bool b_select)
 		uuid = strdup(cur_album->cluster->uuid);
 		b_get_cur_album = true;
 		if (ad->gridinfo.view &&
-				ad->gridinfo.view != ad->gridinfo.nocontents) {
+		        ad->gridinfo.view != ad->gridinfo.nocontents) {
 			elm_gengrid_clear(ad->gridinfo.view);
 		}
 		if (ad->gridinfo.select_view &&
-				ad->gridinfo.select_view != ad->gridinfo.nocontents) {
+		        ad->gridinfo.select_view != ad->gridinfo.nocontents) {
 			elm_gengrid_clear(ad->gridinfo.select_view);
 		}
 	} else {
@@ -1423,11 +1434,11 @@ int _gl_refresh_albums_list(void *data, bool b_path, bool b_select)
 			gl_dbgW("Current album is unavailable!");
 		} else if (!_gl_thumbs_check_zero(data)) {
 			/* Update data if items list exists */
-			Eina_List *sel_id_list= NULL;
+			Eina_List *sel_id_list = NULL;
 			Eina_List *media_elist = NULL;
 			int view_m = gl_get_view_mode(ad);
 			if (view_m == GL_VIEW_THUMBS_EDIT ||
-					view_m == GL_VIEW_THUMBS_SELECT) {
+			        view_m == GL_VIEW_THUMBS_SELECT) {
 				gl_dbg("Edit view.");
 				/* Get ID list of selected items */
 				_gl_data_save_selected_str_ids(data, &sel_id_list);
@@ -1447,11 +1458,11 @@ int _gl_refresh_albums_list(void *data, bool b_path, bool b_select)
 		if (b_path) {
 			gl_dbg("Path: %s", ad->albuminfo.dest_folder);
 			if (strlen(ad->albuminfo.dest_folder) > 0 &&
-					GL_FILE_EXISTS(ad->albuminfo.dest_folder)) {
+			        GL_FILE_EXISTS(ad->albuminfo.dest_folder)) {
 				gl_dbgW("Cluster record updated!");
 				_gl_data_get_cluster_by_path(ad,
-						ad->albuminfo.dest_folder,
-						&cur_album);
+				                             ad->albuminfo.dest_folder,
+				                             &cur_album);
 			} else {
 				gl_dbgE("Invalid folder path!");
 				_gl_data_get_cluster_by_id(ad, uuid, &cur_album);
@@ -1463,13 +1474,13 @@ int _gl_refresh_albums_list(void *data, bool b_path, bool b_select)
 		if (cur_album && cur_album->cluster) {
 			_gl_albums_set_current(data, cur_album);
 			gl_sdbg("Reset current album: %s",
-					cur_album->cluster->display_name);
+			        cur_album->cluster->display_name);
 			/* Get ID list of selected items */
 			int view_m = gl_get_view_mode(ad);
 			Eina_List *sel_id_list = NULL;
 			Eina_List *media_elist = NULL;
 			if (view_m == GL_VIEW_THUMBS_EDIT ||
-					view_m == GL_VIEW_THUMBS_SELECT) {
+			        view_m == GL_VIEW_THUMBS_SELECT) {
 				_gl_data_copy_selected_info_save_current_selected(ad, &sel_id_list);
 			}
 			_gl_data_update_item_list(ad, &sel_id_list, &media_elist);
@@ -1496,8 +1507,9 @@ int _gl_update_albums_data(void *data)
 	gl_cluster *cur_album = _gl_albums_get_current(data);
 	char *uuid = NULL;
 
-	if (cur_album && cur_album->cluster && cur_album->cluster->uuid)
+	if (cur_album && cur_album->cluster && cur_album->cluster->uuid) {
 		uuid = strdup(cur_album->cluster->uuid);
+	}
 
 	_gl_data_get_cluster_list(ad);
 	/* need to reset current album */
@@ -1506,8 +1518,9 @@ int _gl_update_albums_data(void *data)
 
 	if (uuid) {
 		_gl_data_get_cluster_by_id(ad, uuid, &cur_album);
-		if (cur_album)
+		if (cur_album) {
 			_gl_albums_set_current(data, cur_album);
+		}
 		GL_FREE(uuid);
 	}
 
@@ -1528,7 +1541,7 @@ int _gl_update_albums_list(void *data)
 	/* Save cluster ID to set new current_album from new albums list */
 	if (cur_album && cur_album->cluster && cur_album->cluster->uuid) {
 		g_strlcpy(cluster_id, cur_album->cluster->uuid,
-			  GL_MTYPE_ITEN_ID_LEN_MAX);
+		          GL_MTYPE_ITEN_ID_LEN_MAX);
 		b_get_cur_album = true;
 	} else {
 		gl_dbg("None album selected, current album is unavailable.");
@@ -1544,13 +1557,13 @@ int _gl_update_albums_list(void *data)
 		if (cur_album && cur_album->cluster) {
 			_gl_albums_set_current(data, cur_album);
 			gl_sdbg("Reset current album: %s",
-			       cur_album->cluster->display_name);
-			Eina_List *sel_id_list= NULL;
+			        cur_album->cluster->display_name);
+			Eina_List *sel_id_list = NULL;
 			Eina_List *media_elist = NULL;
 			int view_m = gl_get_view_mode(ad);
 			if (view_m == GL_VIEW_THUMBS_EDIT ||
-			    view_m == GL_VIEW_THUMBS_SELECT) {
-			    	gl_dbg("Edit view.");
+			        view_m == GL_VIEW_THUMBS_SELECT) {
+				gl_dbg("Edit view.");
 				/* Get ID list of selected items */
 				_gl_data_save_selected_str_ids(data, &sel_id_list);
 			}
@@ -1560,8 +1573,9 @@ int _gl_update_albums_list(void *data)
 			return 0;
 		} else {
 			/* Clear items list if current album doesn't exist */
-			if (ad->selinfo.elist)
+			if (ad->selinfo.elist) {
 				_gl_data_clear_selected_info(ad);
+			}
 		}
 	}
 
@@ -1583,7 +1597,7 @@ int gl_move_root_album(void *data, gl_cluster *cur_album, char *dest_path)
 
 	/* Get all medias of current album */
 	_gl_data_get_items_album(ad, cur_album, GL_GET_ALL_RECORDS,
-				 GL_GET_ALL_RECORDS, &medias_elist);
+	                         GL_GET_ALL_RECORDS, &medias_elist);
 	GL_CHECK_VAL(medias_elist, -1);
 
 	Eina_List *l = NULL;
@@ -1594,8 +1608,9 @@ int gl_move_root_album(void *data, gl_cluster *cur_album, char *dest_path)
 	EINA_LIST_FOREACH(medias_elist, l, gitem) {
 		if (gitem && gitem->item) {
 			gl_sdbg("Move [%s]", gitem->item->file_url);
-			if (_gl_move_media_thumb(data, gitem, dest_path, true, &popup_op, GL_MC_MOVE) != 0)
+			if (_gl_move_media_thumb(data, gitem, dest_path, true, &popup_op, GL_MC_MOVE) != 0) {
 				gl_dbgW("Failed to move this item");
+			}
 
 			gitem = NULL;
 		} else {
@@ -1625,12 +1640,14 @@ static int __gl_move_copy_op(void *data)
 			gl_sdbg("Selected [%s]", gitem->item->file_url);
 
 			if (ad->maininfo.medias_op_type == GL_MEDIA_OP_COPY) {
-				if (_gl_move_media_thumb(data, gitem, ad->albuminfo.dest_folder, true, &popup_op, GL_MC_COPY) != 0)
+				if (_gl_move_media_thumb(data, gitem, ad->albuminfo.dest_folder, true, &popup_op, GL_MC_COPY) != 0) {
 					gl_dbg("Failed to copy this item");
+				}
 				gl_dbg("File Copied:::::::%d/%d-->try to update progressbar", i, cnt);
 			} else if (ad->maininfo.medias_op_type == GL_MEDIA_OP_MOVE) {
-				if (_gl_move_media_thumb(data, gitem, ad->albuminfo.dest_folder, true, &popup_op, ad->albuminfo.file_mc_mode) != 0)
+				if (_gl_move_media_thumb(data, gitem, ad->albuminfo.dest_folder, true, &popup_op, ad->albuminfo.file_mc_mode) != 0) {
 					gl_dbg("Failed to move this item");
+				}
 
 				/*_gl_thumbs_get_list(data, &media_elist);
 				media_elist = eina_list_remove(media_elist, gitem);
@@ -1646,7 +1663,7 @@ static int __gl_move_copy_op(void *data)
 		}
 
 		gl_dbg("Write pipe, make progressbar updated!");
-		gl_thread_write_pipe(ad, i+1, popup_op);
+		gl_thread_write_pipe(ad, i + 1, popup_op);
 
 		popup_op = GL_POPUP_OP_NONE;
 	}
@@ -1705,7 +1722,7 @@ static int __gl_update_move_copy_view(void *data)
 	return 0;
 }
 
-unsigned long long _gl_get_file_storage_space_required(char *path )
+unsigned long long _gl_get_file_storage_space_required(char *path)
 {
 	struct stat info;
 	if (stat(path, &info)) {
@@ -1750,7 +1767,7 @@ int gl_move_copy_to_album(void *data)
 		if (free_size == 0) {
 			gl_dbgW("Low memory.");
 			gl_popup_create_popup(ad, GL_POPUP_ALBUM_MEMORY_FULL,
-					GL_DEVICE_MEMORY_FULL);
+			                      GL_DEVICE_MEMORY_FULL);
 			goto GL_FAILED;
 		}
 		unsigned long long total_space = 0;
@@ -1759,7 +1776,7 @@ int gl_move_copy_to_album(void *data)
 		if (total_space > free_size) {
 			gl_dbgW("Low memory.");
 			gl_popup_create_popup(ad, GL_POPUP_ALBUM_MEMORY_FULL,
-					GL_DEVICE_MEMORY_FULL);
+			                      GL_DEVICE_MEMORY_FULL);
 			goto GL_FAILED;
 		}
 
@@ -1773,54 +1790,54 @@ int gl_move_copy_to_album(void *data)
 		gl_dbg("---Popup list item: New album---");
 		if (gl_make_new_album(ad->albuminfo.new_name) == false) {
 			gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-					GL_STR_SAME_NAME_ALREADY_IN_USE);
+			                      GL_STR_SAME_NAME_ALREADY_IN_USE);
 			gl_dbgE("Failed to make a new directory!");
 			goto GL_FAILED;
 		}
 		snprintf(folder_fullpath, GL_DIR_PATH_LEN_MAX, "%s/%s",
-				GL_DEFAULT_PATH_IMAGES, ad->albuminfo.new_name);
+		         GL_DEFAULT_PATH_IMAGES, ad->albuminfo.new_name);
 	} else {
 		g_strlcpy(folder_fullpath, ad->albuminfo.path,
-				GL_DIR_PATH_LEN_MAX);
+		          GL_DIR_PATH_LEN_MAX);
 		GL_FREE(ad->albuminfo.path);
 	}
 
 	if (!ad->albuminfo.b_new_album &&
-			(cur_album == NULL || cur_album->cluster == NULL)) {
+	        (cur_album == NULL || cur_album->cluster == NULL)) {
 		gl_dbgE("[Error] Current album is NULL!");
 		goto GL_FAILED;
 	}
 
 	memset(ad->albuminfo.dest_folder, 0x00, GL_DIR_PATH_LEN_MAX);
 	g_strlcpy(ad->albuminfo.dest_folder, folder_fullpath,
-			GL_DIR_PATH_LEN_MAX);
+	          GL_DIR_PATH_LEN_MAX);
 	/* Check MMC state for cancel operation */
 	gl_check_mmc_state(ad, folder_fullpath);
 	gl_dbg("MMC state: %d.", ad->maininfo.mmc_state);
 	if (cnt != 0) {
 		if (ad->albuminfo.file_mc_mode == GL_MC_MOVE) {
 			_gl_set_file_op_cbs(data, __gl_move_copy_op,
-					NULL, __gl_update_move_copy_view, cnt);
+			                    NULL, __gl_update_move_copy_view, cnt);
 			_gl_use_thread_operate_medias(ad, GL_STR_ID_MOVING, cnt,
-					GL_MEDIA_OP_MOVE);
+			                              GL_MEDIA_OP_MOVE);
 		} else if (ad->albuminfo.file_mc_mode == GL_MC_COPY) {
 			_gl_set_file_op_cbs(data, __gl_move_copy_op, NULL,
-					__gl_update_move_copy_view, cnt);
+			                    __gl_update_move_copy_view, cnt);
 			_gl_use_thread_operate_medias(ad, GL_STR_ID_COPYING, cnt,
-					GL_MEDIA_OP_COPY);
+			                              GL_MEDIA_OP_COPY);
 		} else {
 			gl_dbgE("Wrong mode!");
 		}
 	}
 	return 0;
 
-	GL_FAILED:
+GL_FAILED:
 
 	_gl_notify_check_selall(ad, ad->gridinfo.nf_it, ad->gridinfo.count,
-			_gl_data_selected_list_count(ad));
+	                        _gl_data_selected_list_count(ad));
 	/* Update the label text */
 	_gl_thumbs_update_label_text(ad->gridinfo.nf_it,
-			_gl_data_selected_list_count(ad), false);
+	                             _gl_data_selected_list_count(ad), false);
 	_gl_db_update_lock_always(data, false);
 	return -1;
 }
@@ -1861,34 +1878,36 @@ int _gl_rotate_op(void *data)
 	int ret = -1;
 	bool b_left = false;
 
-	if (ad->maininfo.medias_op_type == GL_MEDIA_OP_ROTATING_LEFT)
+	if (ad->maininfo.medias_op_type == GL_MEDIA_OP_ROTATING_LEFT) {
 		b_left = true;
+	}
 
 	gl_cluster *current_album = _gl_albums_get_current(data);
 	/* Save cluster path to set new current_album from new albums list */
 	if (current_album && current_album->cluster &&
-	    current_album->cluster->path &&
-	    strlen(current_album->cluster->path))
+	        current_album->cluster->path &&
+	        strlen(current_album->cluster->path))
 		g_strlcpy(ad->albuminfo.dest_folder,
-			  current_album->cluster->path, GL_DIR_PATH_LEN_MAX);
-	else
+		          current_album->cluster->path, GL_DIR_PATH_LEN_MAX);
+	else {
 		gl_dbgE("Invalid folder path!");
+	}
 
 	/* Removed media from selected_media_elist */
 	for (i = 0; i < cnt; i++) {
 		gitem = eina_list_nth(ad->selinfo.elist, i);
 		if (gitem != NULL && gitem->item != NULL &&
-		    gitem->item->file_url &&
-		    gitem->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-		    GL_FILE_EXISTS(gitem->item->file_url)) {
+		        gitem->item->file_url &&
+		        gitem->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
+		        GL_FILE_EXISTS(gitem->item->file_url)) {
 			/* Save orient in file */
 			ret = _gl_exif_get_orientation(gitem->item->file_url,
-						       &orient);
+			                               &orient);
 			if (ret == 0) {
 				new_orient = _gl_exif_get_rotated_orientation(orient,
-									      b_left);
+				             b_left);
 				_gl_exif_set_orientation(gitem->item->file_url,
-							 new_orient);
+				                         new_orient);
 				/* Update thumbnail */
 				media_info_refresh_metadata_to_db(gitem->item->uuid);
 			}
@@ -1897,8 +1916,9 @@ int _gl_rotate_op(void *data)
 		}
 
 		/* Add some delay for last two images to wait for thumb updated */
-		if (i > cnt - 2)
+		if (i > cnt - 2) {
 			_gl_delay(GL_ROTATE_DELAY);
+		}
 
 		if (i == cnt) {
 			gl_dbgW("Last image rotated!");
@@ -1906,7 +1926,7 @@ int _gl_rotate_op(void *data)
 			_gl_delay(GL_ROTATE_DELAY);
 		}
 		gl_dbg("Write pipe, make progressbar updated!");
-		gl_thread_write_pipe(ad, i+1, popup_op);
+		gl_thread_write_pipe(ad, i + 1, popup_op);
 		gitem = NULL;
 	}
 	return 0;
@@ -1950,11 +1970,12 @@ int _gl_rotate_images(void *data, bool b_left)
 	/* Rotate left */
 	int op_type = GL_MEDIA_OP_ROTATING_LEFT;
 	/* Rotate right */
-	if (!b_left)
+	if (!b_left) {
 		op_type = GL_MEDIA_OP_ROTATING_RIGHT;
+	}
 	_gl_db_update_lock_always(data, true);
 	_gl_set_file_op_cbs(data, _gl_rotate_op, NULL, _gl_update_rotate_view,
-			    cnt);
+	                    cnt);
 	_gl_use_thread_operate_medias(ad, GL_STR_ID_ROTATING, cnt, op_type);
 
 	return 0;
@@ -1974,8 +1995,9 @@ int _gl_rotate_image_by_id(void *data, const char *uuid, bool b_left)
 	ret = media_info_get_media_from_db(uuid, &media_h);
 	if (ret != MEDIA_CONTENT_ERROR_NONE || media_h == NULL) {
 		gl_dbgE("Get media failed[%d]!", ret);
-		if (media_h)
+		if (media_h) {
 			media_info_destroy(media_h);
+		}
 		return -1;
 	}
 	ret = media_info_get_media_type(media_h, &media_type);
@@ -1995,7 +2017,7 @@ int _gl_rotate_image_by_id(void *data, const char *uuid, bool b_left)
 		ret = _gl_exif_get_orientation(path, &orient);
 		if (ret == 0) {
 			new_orient = _gl_exif_get_rotated_orientation(orient,
-								      b_left);
+			             b_left);
 			_gl_exif_set_orientation(path, new_orient);
 			/* Update thumbnail */
 			media_info_refresh_metadata_to_db(uuid);
@@ -2027,16 +2049,16 @@ Eina_Bool gl_update_view(void *data, int mode)
 	}
 
 	if (view_mode == GL_VIEW_ALBUMS ||
-		   view_mode == GL_VIEW_ALBUMS_EDIT ||
-		   view_mode == GL_VIEW_ALBUMS_RENAME) {
+	        view_mode == GL_VIEW_ALBUMS_EDIT ||
+	        view_mode == GL_VIEW_ALBUMS_RENAME) {
 		/* Albums list should be updated first */
 		gl_albums_update_view(ad);
 	} else if (view_mode == GL_VIEW_THUMBS) {
 		gl_cluster *cur = _gl_albums_get_current(data);
 		/* MMC removed, change to albums view if in mmc album */
 		if (mode == GL_UPDATE_VIEW_MMC_REMOVED &&
-		    _gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS && cur &&
-		    cur->cluster && cur->cluster->type == GL_STORE_T_MMC) {
+		        _gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS && cur &&
+		        cur->cluster && cur->cluster->type == GL_STORE_T_MMC) {
 			gl_dbgW("MMC removed, change to albums view!");
 			gl_pop_to_ctrlbar_ly(ad);
 			return EINA_TRUE;
@@ -2053,8 +2075,8 @@ Eina_Bool gl_update_view(void *data, int mode)
 
 		gl_cluster *cur = _gl_albums_get_current(data);
 		if (mode == GL_UPDATE_VIEW_MMC_REMOVED &&
-		    _gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS && cur &&
-		    cur->cluster && cur->cluster->type == GL_STORE_T_MMC) {
+		        _gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS && cur &&
+		        cur->cluster && cur->cluster->type == GL_STORE_T_MMC) {
 			/* MMC removed, change to albums view if in mmc album */
 			gl_dbgW("MMC removed, change to albums view!");
 			gl_pop_to_ctrlbar_ly(ad);
@@ -2117,15 +2139,17 @@ int gl_get_share_mode(void *data)
 		share_mode = GL_SHARE_IMAGE_VIDEO;
 	} else if (image_cnt) {
 		if (ad->selinfo.jpeg_cnt == sel_cnt) {
-			if (image_cnt == 1)
+			if (image_cnt == 1) {
 				share_mode = GL_SHARE_IMAGE_ONE_JPEG;
-			else
+			} else {
 				share_mode = GL_SHARE_IMAGE_MULTI_JPEG;
+			}
 		} else {
-			if (image_cnt == 1)
+			if (image_cnt == 1) {
 				share_mode = GL_SHARE_IMAGE_ONE;
-			else
+			} else {
 				share_mode = GL_SHARE_IMAGE_MULTI;
+			}
 		}
 	} else if (video_cnt) {
 		if (video_cnt == 1) {
@@ -2219,7 +2243,7 @@ char *_gl_get_duration_string(unsigned int v_dur)
 		}
 
 		snprintf(dur_str, GL_FILE_PATH_LEN_MAX, "%02d:%02d:%02d",
-			 dur_hr, dur_min, dur_sec);
+		         dur_hr, dur_min, dur_sec);
 	} else {
 		snprintf(dur_str, GL_FILE_PATH_LEN_MAX, "00:00:00");
 	}
@@ -2240,21 +2264,23 @@ gl_icon_type_e _gl_get_icon_type(gl_item *git)
 char *_gl_str(char *str_id)
 {
 	GL_CHECK_NULL(str_id);
-	if (strstr(str_id, "IDS_COM"))
+	if (strstr(str_id, "IDS_COM")) {
 		return dgettext(GL_STR_DOMAIN_SYS, str_id);
-	else if (strstr(str_id, "IDS_"))
+	} else if (strstr(str_id, "IDS_")) {
 		return dgettext(GL_STR_DOMAIN_LOCAL, str_id);
-	else
+	} else {
 		return str_id;
+	}
 }
 
 bool _gl_is_str_id(const char *str_id)
 {
 	GL_CHECK_NULL(str_id);
-	if (strstr(str_id, "IDS_"))
+	if (strstr(str_id, "IDS_")) {
 		return true;
-	else
+	} else {
 		return false;
+	}
 }
 
 double _gl_get_win_factor(Evas_Object *win, int *width, int *height)
@@ -2286,10 +2312,12 @@ double _gl_get_win_factor(Evas_Object *win, int *width, int *height)
 		factor = scale;
 	}
 	gl_dbg("factor: %f", factor);
-	if (width)
+	if (width) {
 		*width = win_w;
-	if (height)
+	}
+	if (height) {
 		*height = win_h;
+	}
 	return factor;
 }
 
@@ -2345,7 +2373,7 @@ int _gl_play_sound(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 	if (ad->maininfo.sound_status)
 		svi_play(ad->maininfo.svi_handle, SVI_VIB_NONE,
-			 SVI_SND_TOUCH_TOUCH1);
+		         SVI_SND_TOUCH_TOUCH1);
 	return 0;
 }
 
@@ -2373,7 +2401,7 @@ int _gl_dereg_storage_state_change_notify(void *data)
 }
 
 int _gl_set_file_op_cbs(void *data, void *op_cb, void *del_item_cb,
-			void *update_cb, int total_cnt)
+                        void *update_cb, int total_cnt)
 {
 	GL_CHECK_VAL(data, -1);
 	_gl_thread_set_op_cb(data, op_cb);
@@ -2406,8 +2434,8 @@ int _gl_get_album_images_path(void *data, char **files, bool b_hide)
 	GL_CHECK_VAL(get_d, 0);
 	get_d->files = files;
 	int count = _gl_data_get_albums_selected_files(data,
-						       _gl_append_album_images_path,
-						       (void *)get_d);
+	            _gl_append_album_images_path,
+	            (void *)get_d);
 	GL_GFREE(get_d);
 	return count;
 }
@@ -2416,10 +2444,12 @@ int _gl_free_selected_list(void *data)
 {
 	GL_CHECK_VAL(data, -1);
 	int view_mode = gl_get_view_mode(data);
-	if (GL_VIEW_ALBUMS == view_mode)
+	if (GL_VIEW_ALBUMS == view_mode) {
 		_gl_data_finalize_albums_selected_list(data);
-	if (GL_VIEW_THUMBS == view_mode)
+	}
+	if (GL_VIEW_THUMBS == view_mode) {
 		_gl_data_selected_list_finalize(data);
+	}
 	return 0;
 }
 
@@ -2436,7 +2466,7 @@ int _gl_dlopen_imageviewer(void *data)
 	ad->maininfo.dlopen_iv_handle = dlopen(GL_SO_PATH_IMAGEVIEWER, RTLD_NOW);
 	if (ad->maininfo.dlopen_iv_handle == NULL) {
 		gl_sdbgE("Lib %s is not opened, %s!", GL_SO_PATH_IMAGEVIEWER,
-			 dlerror());
+		         dlerror());
 		return -1;
 	}
 	gl_sdbg("dlopen %s done", GL_SO_PATH_IMAGEVIEWER);

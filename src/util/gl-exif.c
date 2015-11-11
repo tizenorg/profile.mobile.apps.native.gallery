@@ -142,8 +142,9 @@ static int __gl_exif_read_2_bytes(FILE *fd, unsigned int *len)
 		return -1;
 	}
 
-	if (len)
+	if (len) {
 		*len = (((unsigned int)c1) << 8) + ((unsigned int)c2);
+	}
 
 	return 0;
 }
@@ -164,38 +165,43 @@ static int __gl_exif_add_header(FILE *fd, unsigned int *orientation)
 	};
 	/* Write File head, check for JPEG SOI + Exif APP1 */
 	for (i = 0; i < 4; i++) {
-		if (__gl_exif_write_1_byte(fd, exif1[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif1[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	/* SET the marker parameter length count */
 	/* Length includes itself, so must be at least 2
 	    Following Exif data length must be at least 6; 30+36 bytes*/
 	const unsigned char exif2[] = { 0x00, 0x42 };
 	for (i = 0; i < 2; i++) {
-		if (__gl_exif_write_1_byte(fd, exif2[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif2[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 
 	/* Write Exif head -- "Exif" */
 	const unsigned char exif3[] = { 0x45, 0x78, 0x69, 0x66, 0x00, 0x00 };
 	for (i = 0; i < 6; i++) {
-		if (__gl_exif_write_1_byte(fd, exif3[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif3[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 
 	/* Set byte order and Tag Mark , "II(0x4949)" */
 	const unsigned char exif4[] = { 0x49, 0x49, 0x2A, 0x00 };
 	for (i = 0; i < 4; i++) {
-		if (__gl_exif_write_1_byte(fd, exif4[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif4[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 4;
 
 	/* Set first IFD offset (offset to IFD0) , II-08000000 */
 	const unsigned char exif5[] = { 0x08, 0x00, 0x00, 0x00 };
 	for (i = 0; i < 4; i++) {
-		if (__gl_exif_write_1_byte(fd, exif5[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif5[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 4;
 
@@ -204,59 +210,67 @@ static int __gl_exif_add_header(FILE *fd, unsigned int *orientation)
 	  * 2 entry: orientation, data time */
 	const unsigned char exif6[] = { 0x02, 0x00 };
 	for (i = 0; i < 2; i++) {
-		if (__gl_exif_write_1_byte(fd, exif6[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif6[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 2;
 
 	/* Add Orientation Tag in IFD0; 0x0112 */
 	const unsigned char exif7[] = { 0x12, 0x01 };
 	for (i = 0; i < 2; i++) {
-		if (__gl_exif_write_1_byte(fd, exif7[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif7[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 2;
 
 	gl_dbg("Write: %d", *orientation);
 	const unsigned char exif8[] = { 0x03, 0x00, 0x01, 0x00, 0x00, 0x00 };
 	for (i = 0; i < 6; i++) {
-		if (__gl_exif_write_1_byte(fd, exif8[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif8[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 6;
 
 	/* Set the Orientation value */
-	if (__gl_exif_write_1_byte(fd, (unsigned char)(*orientation)) < 0)
+	if (__gl_exif_write_1_byte(fd, (unsigned char)(*orientation)) < 0) {
 		goto GL_EXIF_FAILED;
+	}
 
 	const unsigned char exif9[] = { 0x00, 0x00, 0x00 };
 	for (i = 0; i < 3; i++) {
-		if (__gl_exif_write_1_byte(fd, exif9[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif9[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 4;
 
 	/* Add Data Time Tag in IFD0; 0x0132 */
 	const unsigned char exif10[] = { 0x32, 0x01 };
 	for (i = 0; i < 2; i++) {
-		if (__gl_exif_write_1_byte(fd, exif10[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif10[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 2;
 
 	/* Type: strings */
 	const unsigned char exif11[] = { 0x02, 0x00 };
 	for (i = 0; i < 2; i++) {
-		if (__gl_exif_write_1_byte(fd, exif11[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif11[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 2;
 
 	/* Data lengh, byte count */
 	const unsigned char exif12[] = { 0x14, 0x00, 0x00, 0x00 };
 	for (i = 0; i < 4; i++) {
-		if (__gl_exif_write_1_byte(fd, exif12[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif12[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	offset += 8;
 
@@ -265,13 +279,15 @@ static int __gl_exif_add_header(FILE *fd, unsigned int *orientation)
 
 	gl_dbg("offset: %2X", offset + 8);
 	/* Too add data offset, plus 4 bytes self and plus 4 bytes IFD terminator */
-	if (__gl_exif_write_1_byte(fd, (unsigned char)(offset + 4)) < 0)
+	if (__gl_exif_write_1_byte(fd, (unsigned char)(offset + 4)) < 0) {
 		goto GL_EXIF_FAILED;
+	}
 
 	const unsigned char exif13[] = { 0x00, 0x00, 0x00 };
 	for (i = 0; i < 3; i++) {
-		if (__gl_exif_write_1_byte(fd, exif13[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif13[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 
 	/*After last directory entry, there is a 4bytes of data('LLLLLLLL' at the chart),
@@ -279,8 +295,9 @@ static int __gl_exif_add_header(FILE *fd, unsigned int *orientation)
 	  * it means this is the last IFD and there is no linked IFD */
 	const unsigned char exif14[] = { 0x00, 0x00, 0x00, 0x00 };
 	for (i = 0; i < 4; i++) {
-		if (__gl_exif_write_1_byte(fd, exif14[i]) < 0)
+		if (__gl_exif_write_1_byte(fd, exif14[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 
 	/* Date Time of image was last modified.
@@ -290,7 +307,7 @@ static int __gl_exif_add_header(FILE *fd, unsigned int *orientation)
 	struct tm tms;
 	struct tm *tm;
 
-	t = time (NULL);
+	t = time(NULL);
 	tm = localtime_r(&t, &tms);
 	if (!tm) {
 		gl_dbgE("Faild to allocate memory!");
@@ -303,9 +320,9 @@ static int __gl_exif_add_header(FILE *fd, unsigned int *orientation)
 		goto GL_EXIF_FAILED;
 	}
 	snprintf(time_buf, GL_EXIF_BUF_TIME_LEN_MAX,
-		 "%04i:%02i:%02i %02i:%02i:%02i",
-		 tm->tm_year + GL_EXIF_DEFAULT_YEAR, tm->tm_mon + 1,
-		 tm->tm_mday, tm->tm_hour, tm->tm_min, tm->tm_sec);
+	         "%04i:%02i:%02i %02i:%02i:%02i",
+	         tm->tm_year + GL_EXIF_DEFAULT_YEAR, tm->tm_mon + 1,
+	         tm->tm_mday, tm->tm_hour, tm->tm_min, tm->tm_sec);
 
 	gl_dbg("time_buf: %s", time_buf);
 	if (fwrite(time_buf, 1, GL_EXIF_BUF_TIME_LEN_MAX, fd) != GL_EXIF_BUF_TIME_LEN_MAX) {
@@ -315,7 +332,7 @@ static int __gl_exif_add_header(FILE *fd, unsigned int *orientation)
 
 	ret = 0;
 
- GL_EXIF_FAILED:
+GL_EXIF_FAILED:
 
 	gl_dbg("All done");
 	GL_FREEIF(time_buf);
@@ -344,8 +361,9 @@ static int __gl_exif_add_exif_to_jfif(char *file_path, unsigned int *orientation
 	}
 
 	/* Add raw EXIF header data */
-	if (__gl_exif_add_header(tmp_fd, orientation) < 0)
+	if (__gl_exif_add_header(tmp_fd, orientation) < 0) {
 		goto GL_EXIF_FAILED;
+	}
 
 	size_t r_size = 0;
 	/* Remove start of JPEG image data section, 20 bytes */
@@ -355,8 +373,9 @@ static int __gl_exif_add_exif_to_jfif(char *file_path, unsigned int *orientation
 	/* Write JPEG image data to tmp file after EXIF header */
 	while ((r_size = fread(tmp, 1, sizeof(tmp), fd)) > 0) {
 		gl_dbg("r_size: %ld", r_size);
-		if (fwrite(tmp, 1, r_size, tmp_fd) != r_size)
+		if (fwrite(tmp, 1, r_size, tmp_fd) != r_size) {
 			gl_dbgW("Write and read size are diff!");
+		}
 
 		memset(tmp, 0x00, GL_EXIF_BUF_LEN_MAX);
 	}
@@ -373,24 +392,28 @@ static int __gl_exif_add_exif_to_jfif(char *file_path, unsigned int *orientation
 	fseek(tmp_fd, 0, SEEK_SET);
 	while ((r_size = fread(tmp, 1, sizeof(tmp), tmp_fd)) > 0) {
 		gl_dbg("r_size: %ld", r_size);
-		if (fwrite(tmp, 1, r_size, fd) != r_size)
+		if (fwrite(tmp, 1, r_size, fd) != r_size) {
 			gl_dbgW("Write and read size are diff!");
+		}
 
 		memset(tmp, 0x00, GL_EXIF_BUF_LEN_MAX);
 	}
 
 	ret = 0;
 
- GL_EXIF_FAILED:
+GL_EXIF_FAILED:
 
-	if (fd)
+	if (fd) {
 		fclose(fd);
-	if (tmp_fd)
+	}
+	if (tmp_fd) {
 		fclose(tmp_fd);
+	}
 
 	/* Delete tmp file */
-	if (!gl_file_unlink(tmp_file))
+	if (!gl_file_unlink(tmp_file)) {
 		gl_dbgE("Delete file failed");
+	}
 
 	gl_dbg("All done");
 	return ret;
@@ -400,7 +423,8 @@ static int __gl_exif_add_exif_to_jfif(char *file_path, unsigned int *orientation
 
 /* Add  orientation tag to jpegs which have exif tag but do not have orientation tag: include jfif and exif*/
 static int __gl_exif_add_orientation_tag(char *file_path,
-						unsigned int *orientation) {
+        unsigned int *orientation)
+{
 
 	GL_CHECK_VAL(orientation, -1);
 	GL_CHECK_VAL(file_path, -1);
@@ -446,12 +470,14 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	bool b_tag_ff = false;
 	while (1) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		/*copy data from jpeg to tmp_fd (from "FF D8" to " FF E1",because those data we needn't modify)*/
-		if (__gl_exif_write_1_byte(tmp_fd, tmp_exif) < 0)
+		if (__gl_exif_write_1_byte(tmp_fd, tmp_exif) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		tmp[0] = (unsigned char)tmp_exif;
 
@@ -470,14 +496,15 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 			gl_dbgW("Exif in APP1!");
 			break;
 		} else {
-			gl_dbgW("0x%02X!",tmp[0]);
+			gl_dbgW("0x%02X!", tmp[0]);
 			b_tag_ff = false;
 		}
 	}
 
 	/* Get the marker parameter length count */
-	if (__gl_exif_read_2_bytes(fd, &length) < 0)
+	if (__gl_exif_read_2_bytes(fd, &length) < 0) {
 		goto GL_EXIF_FAILED;
+	}
 	gl_dbg("length: %d", length);
 	/* Length includes itself, so must be at least 2
 	    Following Exif data length must be at least 6 */
@@ -488,47 +515,52 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	/*modify  the marker parameter length, orientation tag is 12*/
 	length += 12;
 	gl_dbgW("modified length: %d", length);
-	tmp[0] = (length >> 8)& 0xff ;
+	tmp[0] = (length >> 8) & 0xff ;
 	tmp[1] = length & 0xff ;
 	for (i = 0; i < 2; i++) {
-		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0)
+		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 
 	for (i = 0; i < 6; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		tmp[i] = (unsigned char)tmp_exif;
 		gl_dbg("- %02X", tmp[i]);
-		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0)
+		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 	if (tmp[0] == 0x45 && tmp[1] == 0x78 && tmp[2] == 0x69 && tmp[3] == 0x66 &&
-	tmp[4] == 0x00 && tmp[5] == 0x00) {
+	        tmp[4] == 0x00 && tmp[5] == 0x00) {
 		gl_dbgW("Met Exif!");
 	} else {
 		gl_dbgW("Not met Exif!");
-			goto GL_EXIF_FAILED;
+		goto GL_EXIF_FAILED;
 	}
 	/* Read Exif body */
 	for (i = 0; i < 4; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 		tmp[i] = (unsigned char)tmp_exif;
-		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0)
+		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0) {
 			goto GL_EXIF_FAILED;
+		}
 	}
 
 	/* Check byte order and Tag Mark , "II(0x4949)" or "MM(0x4d4d)" */
 	if (tmp[0] == 0x49 && tmp[1] == 0x49 && tmp[2] == 0x2A &&
-	    tmp[3] == 0x00) {
+	        tmp[3] == 0x00) {
 		gl_dbg("Intel");
 		is_motorola = false;
 	} else if (tmp[0] == 0x4D && tmp[1] == 0x4D && tmp[2] == 0x00 &&
-		   tmp[3] == 0x2A) {
+	           tmp[3] == 0x2A) {
 		gl_dbg("Motorola");
 		is_motorola = true;
 	} else {
@@ -537,25 +569,29 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 
 	for (i = 0; i < 4; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		tmp[i] = (unsigned char)tmp_exif;
 		gl_dbg("- %02X", tmp[i]);
-		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0)
-		goto GL_EXIF_FAILED;
+		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0) {
+			goto GL_EXIF_FAILED;
+		}
 	}
 
 	/* Get first IFD offset (offset to IFD0) , MM-08000000, II-00000008 */
 	if (is_motorola) {
-		if (tmp[0] != 0 && tmp[1] != 0)
+		if (tmp[0] != 0 && tmp[1] != 0) {
 			goto GL_EXIF_FAILED;
+		}
 		offset = tmp[2];
 		offset <<= 8;
 		offset += tmp[3];
 	} else {
-		if (tmp[3] != 0 && tmp[2] != 0)
+		if (tmp[3] != 0 && tmp[2] != 0) {
 			goto GL_EXIF_FAILED;
+		}
 		offset = tmp[1];
 		offset <<= 8;
 		offset += tmp[0];
@@ -565,13 +601,15 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	if (offset > 8) {
 		for (i = 0; i < (offset - 8); i++) {
 			tmp_exif = __gl_exif_read_1_byte(fd);
-			if (tmp_exif < 0)
-			goto GL_EXIF_FAILED;
+			if (tmp_exif < 0) {
+				goto GL_EXIF_FAILED;
+			}
 
 			tmp[i] = (unsigned char)tmp_exif;
 			gl_dbg("- %02X", tmp[i]);
-			if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0)
-			goto GL_EXIF_FAILED;
+			if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0) {
+				goto GL_EXIF_FAILED;
+			}
 		}
 	}
 
@@ -580,8 +618,9 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	unsigned int tags_cnt = 0;
 	for (i = 0; i < 2; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		tmp[i] = (unsigned char)tmp_exif;
 	}
@@ -607,8 +646,9 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	}
 	for (i = 0; i < 2; i++) {
 		gl_dbg("modified- %02X", tmp[i]);
-		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0)
-		goto GL_EXIF_FAILED;
+		if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0) {
+			goto GL_EXIF_FAILED;
+		}
 
 	}
 	/* Add   Orientation Tag in IFD0 */
@@ -654,10 +694,11 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	}
 	/*if there is no other tag, then only insert orientation_tag,don't go to the while (1)*/
 	if (tags_cnt == 1) {
-		for (j = 0; j < 12 ;j++) {
+		for (j = 0; j < 12 ; j++) {
 			gl_dbg("orientation_tag- %02X", orientation_tag[j]);
-			if (__gl_exif_write_1_byte(tmp_fd, orientation_tag[j]) < 0)
+			if (__gl_exif_write_1_byte(tmp_fd, orientation_tag[j]) < 0) {
 				goto GL_EXIF_FAILED;
+			}
 		}
 	}
 	while (1) {
@@ -668,8 +709,9 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 		/* Every directory entry size is 12 */
 		for (i = 0; i < 12; i++) {
 			tmp_exif = __gl_exif_read_1_byte(fd);
-			if (tmp_exif < 0)
+			if (tmp_exif < 0) {
 				goto GL_EXIF_FAILED;
+			}
 
 			tmp[i] = (unsigned char)tmp_exif;
 		}
@@ -689,10 +731,11 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 
 		} else if (tag_num > 0x0112) {
 			if (!b_found_position) {
-				for (j = 0; j < 12 ;j++) {
+				for (j = 0; j < 12 ; j++) {
 					gl_dbg("orientation_tag- %02X", orientation_tag[j]);
-					if (__gl_exif_write_1_byte(tmp_fd, orientation_tag[j]) < 0)
-					goto GL_EXIF_FAILED;
+					if (__gl_exif_write_1_byte(tmp_fd, orientation_tag[j]) < 0) {
+						goto GL_EXIF_FAILED;
+					}
 				}
 				b_found_position = true;
 			}
@@ -723,7 +766,7 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 			}
 			gl_dbgW("data_type %02X!" , data_type);
 			gl_dbgW("unit_num %02X!" , unit_num);
-			if ((data_type < 1) ||(data_type > 12)) {
+			if ((data_type < 1) || (data_type > 12)) {
 				gl_dbgE("Wrong data type!");
 				goto GL_EXIF_FAILED;
 			}
@@ -779,10 +822,11 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 			}
 
 		}
-		for (i = 0; i < 12 ;i++) {
+		for (i = 0; i < 12 ; i++) {
 			gl_dbg("- %02X", tmp[i]);
-			if (__gl_exif_write_1_byte(tmp_fd,tmp[i]) < 0)
+			if (__gl_exif_write_1_byte(tmp_fd, tmp[i]) < 0) {
 				goto GL_EXIF_FAILED;
+			}
 
 		}
 		memset(tmp, 0x00, 12);
@@ -792,8 +836,9 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	/* Write JPEG image data to tmp file after EXIF header */
 	while ((r_size = fread(tmp, 1, sizeof(tmp), fd)) > 0) {
 		gl_dbg("r_size: %ld", r_size);
-		if (fwrite(tmp, 1, r_size, tmp_fd) != r_size)
+		if (fwrite(tmp, 1, r_size, tmp_fd) != r_size) {
 			gl_dbgW("Write and read size are diff!");
+		}
 
 		memset(tmp, 0x00, GL_EXIF_BUF_LEN_MAX);
 	}
@@ -810,14 +855,15 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	fseek(tmp_fd, 0, SEEK_SET);
 	while ((r_size = fread(tmp, 1, sizeof(tmp), tmp_fd)) > 0) {
 		gl_dbg("r_size: %ld", r_size);
-		if (fwrite(tmp, 1, r_size, fd) != r_size)
-		gl_dbgW("Write and read size are diff!");
+		if (fwrite(tmp, 1, r_size, fd) != r_size) {
+			gl_dbgW("Write and read size are diff!");
+		}
 		memset(tmp, 0x00, GL_EXIF_BUF_LEN_MAX);
 	}
 
 	ret = 0;
 
-	GL_EXIF_FAILED:
+GL_EXIF_FAILED:
 
 	if (fd) {
 		fclose(fd);
@@ -830,15 +876,16 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 	}
 
 	/* Delete tmp file */
-	if (!gl_file_unlink(tmp_file))
+	if (!gl_file_unlink(tmp_file)) {
 		gl_dbgE("Delete file failed");
+	}
 
 	gl_dbg("All done");
 	return ret;
 }
 
 static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
-			     unsigned int *orientation, bool b_write)
+                             unsigned int *orientation, bool b_write)
 {
 	GL_CHECK_VAL(fd, -1);
 	GL_CHECK_VAL(file_path, -1);
@@ -852,28 +899,31 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 	int ret = -1;
 	/*unsigned char version = 0x00; */
 
-	if (__gl_exif_read_2_bytes(fd, &length) < 0)
+	if (__gl_exif_read_2_bytes(fd, &length) < 0) {
 		goto GL_EXIF_FAILED;
+	}
 	gl_dbg("length: %d", length);
 
 	for (i = 0; i < 5; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 		tmp[i] = (unsigned char)tmp_exif;
 	}
 
 	/* JFIF0 */
 	if (tmp[0] != 0x4A || tmp[1] != 0x46 || tmp[2] != 0x49 ||
-	    tmp[3] != 0x46 || tmp[4] != 0x00) {
+	        tmp[3] != 0x46 || tmp[4] != 0x00) {
 		gl_dbgE("Not met Jfif!");
 		goto GL_EXIF_FAILED;
 	}
 
 	for (i = 0; i < 2; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 		tmp[i] = (unsigned char)tmp_exif;
 	}
 
@@ -896,8 +946,9 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 	bool b_tag_ff = false;
 	while (1) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		tmp[0] = (unsigned char)tmp_exif;
 
@@ -942,7 +993,7 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 			gl_dbg("- %02X", tmp[i]);
 		}
 		if (tmp[0] == 0x45 && tmp[1] == 0x78 && tmp[2] == 0x69 && tmp[3] == 0x66 &&
-		    tmp[4] == 0x00 && tmp[5] == 0x00) {
+		        tmp[4] == 0x00 && tmp[5] == 0x00) {
 			gl_dbgW("Met Exif!");
 			break;
 		} else {
@@ -958,18 +1009,19 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 	/* Read Exif body */
 	for (i = 0; i < 4; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 		tmp[i] = (unsigned char)tmp_exif;
 	}
 
 	/* Check byte order and Tag Mark , "II(0x4949)" or "MM(0x4d4d)" */
 	if (tmp[0] == 0x49 && tmp[1] == 0x49 && tmp[2] == 0x2A &&
-	    tmp[3] == 0x00) {
+	        tmp[3] == 0x00) {
 		gl_dbg("Intel");
 		is_motorola = false;
 	} else if (tmp[0] == 0x4D && tmp[1] == 0x4D && tmp[2] == 0x00 &&
-		   tmp[3] == 0x2A) {
+	           tmp[3] == 0x2A) {
 		gl_dbg("Motorola");
 		is_motorola = true;
 	} else {
@@ -978,8 +1030,9 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 
 	for (i = 0; i < 4; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		tmp[i] = (unsigned char)tmp_exif;
 		gl_dbg("- %02X", tmp[i]);
@@ -987,14 +1040,16 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 
 	/* Get first IFD offset (offset to IFD0) , MM-08000000, II-00000008 */
 	if (is_motorola) {
-		if (tmp[0] != 0 && tmp[1] != 0)
+		if (tmp[0] != 0 && tmp[1] != 0) {
 			goto GL_EXIF_FAILED;
+		}
 		offset = tmp[2];
 		offset <<= 8;
 		offset += tmp[3];
 	} else {
-		if (tmp[3] != 0 && tmp[2] != 0)
+		if (tmp[3] != 0 && tmp[2] != 0) {
 			goto GL_EXIF_FAILED;
+		}
 		offset = tmp[1];
 		offset <<= 8;
 		offset += tmp[0];
@@ -1006,8 +1061,9 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 	unsigned int tags_cnt = 0;
 	for (i = 0; i < 2; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		tmp[i] = (unsigned char)tmp_exif;
 	}
@@ -1029,7 +1085,7 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 			fd = NULL;
 			return __gl_exif_add_orientation_tag(file_path, orientation);
 
-		} else{
+		} else {
 			/* Normal orientation = 0degree = 1 */
 			*orientation = 1;
 			ret = 0;
@@ -1043,8 +1099,9 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 		/* Every directory entry size is 12 */
 		for (i = 0; i < 12; i++) {
 			tmp_exif = __gl_exif_read_1_byte(fd);
-			if (tmp_exif < 0)
+			if (tmp_exif < 0) {
 				goto GL_EXIF_FAILED;
+			}
 
 			tmp[i] = (unsigned char)tmp_exif;
 		}
@@ -1071,7 +1128,7 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 				fd = NULL;
 				return __gl_exif_add_orientation_tag(file_path, orientation);
 
-			} else{
+			} else {
 				/* Normal orientation = 0degree = 1 */
 				*orientation = 1;
 				ret = 0;
@@ -1085,10 +1142,11 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 	if (b_write) {
 		gl_dbg("Write: %d", *orientation);
 		/* Set the Orientation value */
-		if (is_motorola)
+		if (is_motorola) {
 			tmp[9] = (unsigned char)(*orientation);
-		else
+		} else {
 			tmp[8] = (unsigned char)(*orientation);
+		}
 
 		/* Move pointer back to the entry start point */
 		if (fseek(fd, -12, SEEK_CUR) < 0) {
@@ -1120,7 +1178,7 @@ static int __gl_exif_rw_jfif(FILE *fd, char *file_path,
 
 	ret = 0;
 
- GL_EXIF_FAILED:
+GL_EXIF_FAILED:
 
 	fclose(fd);
 	gl_dbg("All done");
@@ -1144,8 +1202,9 @@ bool _gl_exif_check_img_type(char *file_path)
 	/* Read File head, check for JPEG SOI + Exif APP1 */
 	for (i = 0; i < 4; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		exif_data[i] = (unsigned char)tmp_exif;
 	}
@@ -1161,14 +1220,14 @@ bool _gl_exif_check_img_type(char *file_path)
 		gl_dbgW("Exif in APP1!");
 		ret = true;
 	} else if (exif_data[2] == GL_EXIF_TAG &&
-		   exif_data[3] == GL_EXIF_APP0) {
+	           exif_data[3] == GL_EXIF_APP0) {
 		gl_dbgW("Jfif in APP0!");
 		ret = true;
 	} else {
 		gl_dbgE("Not a Exif in APP1 or Jiff in APP2[%d]!", exif_data[3]);
 		ret = false;
 	}
- GL_EXIF_FAILED:
+GL_EXIF_FAILED:
 
 	fclose(fd);
 	gl_dbg("");
@@ -1206,8 +1265,9 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 	/* Read File head, check for JPEG SOI + Exif APP1 */
 	for (i = 0; i < 4; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		exif_data[i] = (unsigned char)tmp_exif;
 	}
@@ -1222,7 +1282,7 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 	if (exif_data[2] == GL_EXIF_TAG && exif_data[3] == GL_EXIF_APP1) {
 		gl_dbgW("Exif in APP1!");
 	} else if (exif_data[2] == GL_EXIF_TAG &&
-		   exif_data[3] == GL_EXIF_APP0) {
+	           exif_data[3] == GL_EXIF_APP0) {
 		gl_dbgW("Jfif in APP0!");
 		int ret = __gl_exif_rw_jfif(fd, file_path, orient, b_write);
 		return ret;
@@ -1232,8 +1292,9 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 	}
 
 	/* Get the marker parameter length count */
-	if (__gl_exif_read_2_bytes(fd, &length) < 0)
+	if (__gl_exif_read_2_bytes(fd, &length) < 0) {
 		goto GL_EXIF_FAILED;
+	}
 	gl_dbg("length: %d", length);
 	/* Length includes itself, so must be at least 2
 	    Following Exif data length must be at least 6 */
@@ -1243,7 +1304,7 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 	}
 	length -= 8;
 
-	 /* Length of an IFD entry */
+	/* Length of an IFD entry */
 	if (length < 12) {
 		gl_dbgE("length < 12");
 		goto GL_EXIF_FAILED;
@@ -1252,36 +1313,39 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 	/* Read Exif head, check for "Exif" */
 	for (i = 0; i < 6; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 
 		exif_data[i] = (unsigned char)tmp_exif;
 	}
 
 	if (exif_data[0] != 0x45 || exif_data[1] != 0x78 ||
-	    exif_data[2] != 0x69 || exif_data[3] != 0x66 ||
-	    exif_data[4] != 0x00 || exif_data[5] != 0x00) {
+	        exif_data[2] != 0x69 || exif_data[3] != 0x66 ||
+	        exif_data[4] != 0x00 || exif_data[5] != 0x00) {
 		gl_dbgE("Not met Exif!");
-		for (i = 0; i < 6; i++)
+		for (i = 0; i < 6; i++) {
 			gl_dbg("- %02X", exif_data[i]);
+		}
 		goto GL_EXIF_FAILED;
 	}
 
 	/* Read Exif body */
 	for (i = 0; i < length; i++) {
 		tmp_exif = __gl_exif_read_1_byte(fd);
-		if (tmp_exif < 0)
+		if (tmp_exif < 0) {
 			goto GL_EXIF_FAILED;
+		}
 		exif_data[i] = (unsigned char)tmp_exif;
 	}
 
 	/* Check byte order and Tag Mark , "II(0x4949)" or "MM(0x4d4d)" */
 	if (exif_data[0] == 0x49 && exif_data[1] == 0x49 &&
-	    exif_data[2] == 0x2A && exif_data[3] == 0x00) {
+	        exif_data[2] == 0x2A && exif_data[3] == 0x00) {
 		gl_dbg("Intel");
 		is_motorola = false;
 	} else if (exif_data[0] == 0x4D && exif_data[1] == 0x4D &&
-		 exif_data[2] == 0x00 && exif_data[3] == 0x2A) {
+	           exif_data[2] == 0x00 && exif_data[3] == 0x2A) {
 		gl_dbg("Motorola");
 		is_motorola = true;
 	} else {
@@ -1290,14 +1354,16 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 
 	/* Get first IFD offset (offset to IFD0) , MM-00000008, II-08000000 */
 	if (is_motorola) {
-		if (exif_data[4] != 0 && exif_data[5] != 0)
+		if (exif_data[4] != 0 && exif_data[5] != 0) {
 			goto GL_EXIF_FAILED;
+		}
 		offset = exif_data[6];
 		offset <<= 8;
 		offset += exif_data[7];
 	} else {
-		if (exif_data[7] != 0 && exif_data[6] != 0)
+		if (exif_data[7] != 0 && exif_data[6] != 0) {
 			goto GL_EXIF_FAILED;
+		}
 		offset = exif_data[5];
 		offset <<= 8;
 		offset += exif_data[4];
@@ -1313,9 +1379,9 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 	if (is_motorola) {
 		tags_cnt = exif_data[offset];
 		tags_cnt <<= 8;
-		tags_cnt += exif_data[offset+1];
+		tags_cnt += exif_data[offset + 1];
 	} else {
-		tags_cnt = exif_data[offset+1];
+		tags_cnt = exif_data[offset + 1];
 		tags_cnt <<= 8;
 		tags_cnt += exif_data[offset];
 	}
@@ -1337,9 +1403,9 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 		if (is_motorola) {
 			tag_num = exif_data[offset];
 			tag_num <<= 8;
-			tag_num += exif_data[offset+1];
+			tag_num += exif_data[offset + 1];
 		} else {
-			tag_num = exif_data[offset+1];
+			tag_num = exif_data[offset + 1];
 			tag_num <<= 8;
 			tag_num += exif_data[offset];
 		}
@@ -1356,7 +1422,7 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 				fd = NULL;
 				return __gl_exif_add_orientation_tag(file_path, orient);
 
-			} else{
+			} else {
 				/* Normal orientation = 0degree = 1 */
 				*orient = 1;
 				ret = 0;
@@ -1371,10 +1437,11 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 	if (b_write) {
 		gl_dbg("Write: %d", *orient);
 		/* Set the Orientation value */
-		if (is_motorola)
-			exif_data[offset+9] = (unsigned char)(*orient);
-		else
-			exif_data[offset+8] = (unsigned char)(*orient);
+		if (is_motorola) {
+			exif_data[offset + 9] = (unsigned char)(*orient);
+		} else {
+			exif_data[offset + 8] = (unsigned char)(*orient);
+		}
 
 		if (fseek(fd, jfif_offset + (4 + 2 + 6 + 2) + offset, SEEK_SET) < 0) {
 			gl_dbgE("fseek failed!");
@@ -1384,17 +1451,17 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 	} else {
 		/* Get the Orientation value */
 		if (is_motorola) {
-			if (exif_data[offset+8] != 0) {
+			if (exif_data[offset + 8] != 0) {
 				gl_dbgE("exif_data[offset+8] != 0");
 				goto GL_EXIF_FAILED;
 			}
-			*orient = (unsigned int)exif_data[offset+9];
+			*orient = (unsigned int)exif_data[offset + 9];
 		} else {
-			if (exif_data[offset+9] != 0) {
+			if (exif_data[offset + 9] != 0) {
 				gl_dbgE("exif_data[offset+9] != 0");
 				goto GL_EXIF_FAILED;
 			}
-			*orient = (unsigned int)exif_data[offset+8];
+			*orient = (unsigned int)exif_data[offset + 8];
 		}
 		if (*orient > 8) {
 			gl_dbgE("*orient > 8");
@@ -1405,7 +1472,7 @@ static int __gl_exif_rw_orient(char *file_path, unsigned int *orient, bool b_wri
 
 	ret = 0;
 
- GL_EXIF_FAILED:
+GL_EXIF_FAILED:
 
 	fclose(fd);
 	gl_dbg("All done");
@@ -1437,39 +1504,44 @@ int _gl_exif_get_rotated_orientation(unsigned int orientation, bool b_left)
 	switch (orientation) {
 	case GL_ORIENTATION_ROT_0:
 		/* true: 0 -> 270, false: 0 -> 90 */
-		if (b_left)
+		if (b_left) {
 			rotated_orientataion = GL_ORIENTATION_ROT_270;
-		else
+		} else {
 			rotated_orientataion = GL_ORIENTATION_ROT_90;
+		}
 		break;
 	case GL_ORIENTATION_ROT_90:
 		/* true: 90 -> 0, false: 90 -> 180 */
-		if (b_left)
+		if (b_left) {
 			rotated_orientataion = GL_ORIENTATION_ROT_0;
-		else
+		} else {
 			rotated_orientataion = GL_ORIENTATION_ROT_180;
+		}
 		break;
 	case GL_ORIENTATION_ROT_180:
 		/* true: 180 -> 90, false: 180 -> 270 */
-		if (b_left)
+		if (b_left) {
 			rotated_orientataion = GL_ORIENTATION_ROT_90;
-		else
+		} else {
 			rotated_orientataion = GL_ORIENTATION_ROT_270;
+		}
 		break;
 	case GL_ORIENTATION_ROT_270:
 		/* true: 270 -> 180, false: 270 -> 0 */
-		if (b_left)
+		if (b_left) {
 			rotated_orientataion = GL_ORIENTATION_ROT_180;
-		else
+		} else {
 			rotated_orientataion = GL_ORIENTATION_ROT_0;
+		}
 		break;
 	default:
 		gl_dbgE("Wrong oriectation: %d!", orientation);
 		/* true: 0 -> 270, false: 0 -> 90 */
-		if (b_left)
+		if (b_left) {
 			rotated_orientataion = GL_ORIENTATION_ROT_270;
-		else
+		} else {
 			rotated_orientataion = GL_ORIENTATION_ROT_90;
+		}
 		break;
 	}
 

@@ -84,7 +84,7 @@ int gl_pb_make_thread_pbar_wheel(void *data, Evas_Object *parent, char *title)
 
 	/*Delete the Popup if the Popup has a BACK event.*/
 	eext_object_event_callback_add(popup, EEXT_CALLBACK_BACK,
-			__gl_pb_cancel_thread_pbar_cb, data);
+	                               __gl_pb_cancel_thread_pbar_cb, data);
 	Evas_Object *popupLayout = elm_layout_add(popup);
 	elm_layout_file_set(popupLayout, GL_EDJ_FILE, "popup_text_progressbar_view_layout");
 	evas_object_size_hint_weight_set(popupLayout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
@@ -124,8 +124,8 @@ int gl_pb_refresh_thread_pbar(void *data, int cur_cnt, int total_cnt)
 	GL_CHECK_VAL(ad->pbarinfo.status_label, -1);
 
 	snprintf(status_info, sizeof(status_info),
-		 GL_FONT_STYLE_POP_S"%d/%d"GL_FONT_STYLE_POP_E, cur_cnt,
-		 total_cnt);
+	         GL_FONT_STYLE_POP_S"%d/%d"GL_FONT_STYLE_POP_E, cur_cnt,
+	         total_cnt);
 	/* Save medias count already operated */
 	ad->pbarinfo.finished_cnt = cur_cnt;
 	elm_object_text_set(ad->pbarinfo.status_label, status_info);
@@ -145,7 +145,7 @@ int gl_pb_add_pbar_timer(void *data)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 	ad->pbarinfo.pbar_timer = ecore_timer_add(1.0f, __gl_pb_pbar_timer_cb,
-						  data);
+	                          data);
 	return 0;
 }
 
@@ -181,7 +181,7 @@ Evas_Object *gl_pb_make_pbar(void *data, Evas_Object *parent, char *state)
 		}
 		gl_dbg("Progressbar already created, update its label.");
 		snprintf(label_str, sizeof(label_str),
-			 GL_FONT_STYLE_POP_S"%s"GL_FONT_STYLE_POP_E, state);
+		         GL_FONT_STYLE_POP_S"%s"GL_FONT_STYLE_POP_E, state);
 		elm_object_text_set(ad->pbarinfo.status_label, label_str);
 		return ad->pbarinfo.popup;
 	}
@@ -195,14 +195,14 @@ Evas_Object *gl_pb_make_pbar(void *data, Evas_Object *parent, char *state)
 
 	/*Delete the Popup if the Popup has a BACK event.*/
 	eext_object_event_callback_add(popup, EEXT_CALLBACK_BACK, eext_popup_back_cb,
-				     NULL);
+	                               NULL);
 
 	elm_object_style_set(popup, "content_no_vhpad");
 
 	label = elm_label_add(popup);
 	elm_object_style_set(label, "popup/default");
 	snprintf(label_str, sizeof(label_str),
-		 GL_FONT_STYLE_POP_S"%s"GL_FONT_STYLE_POP_E, state);
+	         GL_FONT_STYLE_POP_S"%s"GL_FONT_STYLE_POP_E, state);
 	elm_object_text_set(label, label_str);
 	/**
 	* width got from evas_object_geometry_get equals 0
@@ -219,7 +219,7 @@ Evas_Object *gl_pb_make_pbar(void *data, Evas_Object *parent, char *state)
 	layout = elm_layout_add(popup);
 	elm_layout_file_set(layout, GL_EDJ_FILE, "popup_processing");
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 
 	progressbar = elm_progressbar_add(popup);
 	elm_object_style_set(progressbar, GL_PROGRESSBAR_STYLE_PROCESS);
@@ -227,9 +227,9 @@ Evas_Object *gl_pb_make_pbar(void *data, Evas_Object *parent, char *state)
 	elm_progressbar_unit_format_set(progressbar, NULL);
 	elm_progressbar_pulse(progressbar, EINA_TRUE);
 	evas_object_size_hint_align_set(progressbar, EVAS_HINT_FILL,
-					EVAS_HINT_FILL);
+	                                EVAS_HINT_FILL);
 	evas_object_size_hint_weight_set(progressbar, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_show(progressbar);
 
 	elm_object_part_content_set(layout, "elm.swallow.content", progressbar);
@@ -255,9 +255,9 @@ Evas_Object *_gl_pb_make_place_pbar(Evas_Object *parent)
 	elm_progressbar_unit_format_set(progressbar, NULL);
 	elm_progressbar_pulse(progressbar, EINA_TRUE);
 	evas_object_size_hint_align_set(progressbar, EVAS_HINT_FILL,
-					EVAS_HINT_FILL);
+	                                EVAS_HINT_FILL);
 	evas_object_size_hint_weight_set(progressbar, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_show(progressbar);
 	return progressbar;
 }
