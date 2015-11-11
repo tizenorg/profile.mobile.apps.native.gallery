@@ -83,18 +83,21 @@ int _gl_lang_update(void *data)
 		_gl_timeline_update_lang(data);
 		break;
 	case GL_VIEW_THUMBS:
-		if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS)
+		if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS) {
 			__gl_lang_update_albums(data);
+		}
 		_gl_thumbs_update_lang(data);
 		break;
 	case GL_VIEW_THUMBS_EDIT:
-		if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS)
+		if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS) {
 			__gl_lang_update_albums(data);
+		}
 		_gl_thumbs_edit_update_lang(data);
 		break;
 	case GL_VIEW_THUMBS_SELECT:
-		if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS)
+		if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS) {
 			__gl_lang_update_albums(data);
+		}
 		_gl_thumbs_update_lang(data);
 		_gl_thumbs_sel_update_lang(data);
 		break;

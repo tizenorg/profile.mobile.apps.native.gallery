@@ -50,7 +50,7 @@ static void _gallery_lang_changed_cb(app_event_info_h event_info, void *data)
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
 	evas_object_smart_callback_call(ad->maininfo.naviframe,
-					"gallery,language,changed", data);
+	                                "gallery,language,changed", data);
 	/* Change text in APP */
 	_gl_lang_update(data);
 }
@@ -63,11 +63,11 @@ static void _gallery_resume(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 
 	evas_object_data_set(ad->maininfo.naviframe,
-		"gl_obj_key_gallery_paused",
-		(void *)0);
+	                     "gl_obj_key_gallery_paused",
+	                     (void *)0);
 	if (ad->maininfo.b_paused) {
 		evas_object_smart_callback_call(ad->maininfo.naviframe,
-						"gallery,view,resumed", data);
+		                                "gallery,view,resumed", data);
 		ad->maininfo.b_paused = false;
 	}
 
@@ -173,7 +173,8 @@ static Eina_Bool __gallery_key_down_cb(void *data, int type, void *event)
 		gl_sdbgW("Power key");
 	} else if (!g_strcmp0(key_event->keyname, "XF86Menu")) {
 		gl_sdbgW("menu key is pressed");
-	}	gl_sdbg("Key down : %s", key_event->keyname);
+	}
+	gl_sdbg("Key down : %s", key_event->keyname);
 
 	return ECORE_CALLBACK_PASS_ON;
 }
@@ -215,9 +216,9 @@ static bool _gallery_create(void *data)
 	/* Register key down handler */
 
 	ad->maininfo.keydown_handler = ecore_event_handler_add(
-		ECORE_EVENT_KEY_DOWN,
-		__gallery_key_down_cb,
-		data);
+	                                   ECORE_EVENT_KEY_DOWN,
+	                                   __gallery_key_down_cb,
+	                                   data);
 
 	GL_PROFILE_F_OUT("register noti callback");
 	GL_PROFILE_OUT;
@@ -233,10 +234,10 @@ static void _gallery_pause(void *data)
 	ad->maininfo.reentrant = TRUE;
 
 	evas_object_data_set(ad->maininfo.naviframe,
-		"gl_obj_key_gallery_paused",
-		(void *)1);
+	                     "gl_obj_key_gallery_paused",
+	                     (void *)1);
 	evas_object_smart_callback_call(ad->maininfo.naviframe,
-					"gallery,view,paused", data);
+	                                "gallery,view,paused", data);
 	ad->maininfo.b_paused = true;
 
 	//ug_pause();
@@ -252,7 +253,7 @@ static int __gallery_parse_param(void *data, app_control_h service)
 
 	char *value = NULL;
 	app_control_get_extra_data(service,
-		"http://tizen.org/appcontrol/data/multiwindow", &value);
+	                           "http://tizen.org/appcontrol/data/multiwindow", &value);
 	if (value) {
 		if (!strcmp(value, "on")) {
 			gl_dbg("multiwindow value = %s", value);
@@ -280,7 +281,7 @@ static void _gallery_reset(app_control_h service, void *data)
 
 	if (ad->maininfo.b_paused) {
 		evas_object_smart_callback_call(ad->maininfo.naviframe,
-						"gallery,view,resumed", data);
+		                                "gallery,view,resumed", data);
 		ad->maininfo.b_paused = false;
 	}
 
@@ -324,18 +325,18 @@ EXPORT_API int main(int argc, char *argv[])
 	event_callback.app_control = _gallery_reset;
 
 	ret = ui_app_add_event_handler(&hLowBatteryHandle,
-		APP_EVENT_LOW_BATTERY, _gallery_low_battery_cb, (void *)&gl_ad);
+	                               APP_EVENT_LOW_BATTERY, _gallery_low_battery_cb, (void *)&gl_ad);
 	if (ret != APP_ERROR_NONE) {
 		gl_dbgE("failed to add LOW_BATTERY event_handler: [%d]", ret);
 		return -1;
 	}
 
 	ret = ui_app_add_event_handler(&hLanguageChangedHandle,
-		APP_EVENT_LANGUAGE_CHANGED, _gallery_lang_changed_cb,
-		(void *)&gl_ad);
+	                               APP_EVENT_LANGUAGE_CHANGED, _gallery_lang_changed_cb,
+	                               (void *)&gl_ad);
 	if (ret != APP_ERROR_NONE) {
 		gl_dbgE("failed to add LANGUAGE_CHANGED event_handler: [%d]",
-			ret);
+		        ret);
 		return -1;
 	}
 	/* Enable OpenGL */

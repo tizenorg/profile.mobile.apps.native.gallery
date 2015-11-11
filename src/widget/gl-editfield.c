@@ -29,7 +29,7 @@
 
 /* The maximun length reached callback */
 static void __gl_editfield_maxlen_reached_cb(void *data, Evas_Object *obj,
-					      void *ei)
+        void *ei)
 {
 	gl_dbg("Entry maximum length reached, show notification.");
 	GL_CHECK(data);
@@ -79,15 +79,16 @@ static void __gl_editfield_space_check_cb(void *data, Evas_Object *obj, void *ei
 		gl_dbg("Entry string is empty!");
 		b_disabled = true;
 	} else {
-		int (*valiate_cb)(void *data, char *text);
+		int (*valiate_cb)(void * data, char * text);
 		valiate_cb = evas_object_data_get(obj, "gl_entry_validate_cb_key");
 		gl_dbgW("valiate_cb[%p]", valiate_cb);
 		if (valiate_cb && valiate_cb(data, entry_utf8) < 0) {
-			entry_utf8[strlen(entry_utf8)-1] = '\0';
+			entry_utf8[strlen(entry_utf8) - 1] = '\0';
 			elm_entry_entry_set(obj, entry_utf8);
 			elm_entry_cursor_end_set(obj);
-			if (!strlen(entry_utf8))
+			if (!strlen(entry_utf8)) {
 				b_disabled = true;
+			}
 		}
 	}
 
@@ -108,17 +109,18 @@ static void __gl_editfield_enter_cb(void *data, Evas_Object *obj, void *ei)
 	GL_CHECK(data);
 	/* Unfocus to hide cursor */
 	_gl_editfield_hide_imf(data);
-	int (*process_cb)(void *data, bool b_enter);
+	int (*process_cb)(void * data, bool b_enter);
 	process_cb = evas_object_data_get(obj, "gl_entry_process_cb_key");
 	gl_dbgW("process_cb[%p]", process_cb);
-	if (process_cb)
+	if (process_cb) {
 		process_cb(data, true);
-	else
+	} else {
 		gl_dbgW("Invalid process_cb");
+	}
 }
 
 int __gl_editfield_set_entry(void *data, Evas_Object *layout,
-				    Evas_Object *entry, char *default_label)
+                             Evas_Object *entry, char *default_label)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -133,9 +135,9 @@ int __gl_editfield_set_entry(void *data, Evas_Object *layout,
 	limit_filter->max_byte_count = 0;
 
 	elm_entry_markup_filter_append(entry, elm_entry_filter_limit_size,
-				       limit_filter);
+	                               limit_filter);
 	elm_entry_input_panel_return_key_type_set(entry,
-						  ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
+	        ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
 	elm_entry_autocapital_type_set(entry, ELM_AUTOCAPITAL_TYPE_SENTENCE);
 
 	if (gl_set_entry_text(entry, default_label) != 0) {
@@ -144,19 +146,19 @@ int __gl_editfield_set_entry(void *data, Evas_Object *layout,
 	}
 	elm_entry_cursor_end_set(entry);
 	evas_object_smart_callback_add(entry, "maxlength,reached",
-				       __gl_editfield_maxlen_reached_cb, ad);
+	                               __gl_editfield_maxlen_reached_cb, ad);
 	evas_object_smart_callback_add(entry, "activated",
-				       __gl_editfield_enter_cb, ad);
+	                               __gl_editfield_enter_cb, ad);
 	/* Add space check callback */
 	evas_object_smart_callback_add(entry, "changed",
-				       __gl_editfield_space_check_cb, ad);
+	                               __gl_editfield_space_check_cb, ad);
 	evas_object_smart_callback_add(entry, "preedit,changed",
-				       __gl_editfield_space_check_cb, ad);
+	                               __gl_editfield_space_check_cb, ad);
 	return 0;
 }
 
 Evas_Object *_gl_editfield_create(void *data, Evas_Object *parent,
-				  char *default_label)
+                                  char *default_label)
 {
 	GL_CHECK_NULL(data);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -203,7 +205,7 @@ Evas_Object *_gl_editfield_create(void *data, Evas_Object *parent,
 
 /* Add editfield to genlist item */
 Evas_Object *_gl_editfield_create_genlist(void *data, Evas_Object *parent,
-					   Elm_Object_Item *it, char *label)
+				Elm_Object_Item *it, char *label)
 {
 	GL_CHECK_NULL(label);
 	GL_CHECK_NULL(parent);
@@ -230,14 +232,14 @@ Evas_Object *_gl_editfield_create_genlist(void *data, Evas_Object *parent,
 	limit_filter->max_byte_count = 0;
 	elm_entry_cnp_mode_set(entry, ELM_CNP_MODE_PLAINTEXT);
 	elm_entry_input_panel_return_key_type_set(entry,
-						  ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
+	        ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
 	elm_entry_autocapital_type_set(entry, ELM_AUTOCAPITAL_TYPE_SENTENCE);
 	elm_entry_markup_filter_append(entry, elm_entry_filter_limit_size,
-				       limit_filter);
+	                               limit_filter);
 	evas_object_smart_callback_add(entry, "maxlength,reached",
-				       __gl_editfield_maxlen_reached_cb, ad);
+	                               __gl_editfield_maxlen_reached_cb, ad);
 	evas_object_smart_callback_add(entry, "activated",
-				       __gl_editfield_enter_cb, ad);
+	                               __gl_editfield_enter_cb, ad);
 	/**
 	 * Do not unset rename mode on unfocused event
 	 *otherwise clipboard does not work properly
@@ -269,24 +271,25 @@ Evas_Object *_gl_editfield_create_entry(void *data, Evas_Object *layout, char *t
 	elm_entry_scrollable_set(entry, EINA_TRUE);
 
 	limit_filter_data.max_char_count = GL_ENTRY_STR_CHAR_MAX;
-	if (text)
+	if (text) {
 		elm_entry_entry_set(entry, text);
+	}
 	elm_entry_cursor_end_set(entry);
 
 	elm_entry_markup_filter_append(entry, elm_entry_filter_limit_size,
-				       &limit_filter_data);
+	                               &limit_filter_data);
 
 	evas_object_smart_callback_add(entry, "maxlength,reached",
-				       __gl_editfield_maxlen_reached_cb, data);
+	                               __gl_editfield_maxlen_reached_cb, data);
 	evas_object_smart_callback_add(entry, "changed",
-				       __gl_editfield_space_check_cb, data);
+	                               __gl_editfield_space_check_cb, data);
 	evas_object_smart_callback_add(entry, "preedit,changed",
-				       __gl_editfield_space_check_cb, data);
+	                               __gl_editfield_space_check_cb, data);
 	evas_object_smart_callback_add(entry, "activated",
-				       __gl_editfield_enter_cb, data);
+	                               __gl_editfield_enter_cb, data);
 	elm_entry_cnp_mode_set(entry, ELM_CNP_MODE_PLAINTEXT);
 	elm_entry_input_panel_return_key_type_set(entry,
-						  ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
+	        ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
 	elm_entry_autocapital_type_set(entry, ELM_AUTOCAPITAL_TYPE_SENTENCE);
 	ad->entryinfo.entry = entry;
 	ad->entryinfo.context = elm_entry_imf_context_get(entry);
@@ -302,8 +305,9 @@ int _gl_editfield_hide_imf(void *data)
 	gl_dbg("");
 
 	/* Unfocus to hide cursor */
-	if (ad->entryinfo.entry)
+	if (ad->entryinfo.entry) {
 		elm_object_focus_set(ad->entryinfo.entry, EINA_FALSE);
+	}
 
 	return 0;
 }
@@ -328,23 +332,24 @@ int _gl_editfield_destroy_imf(void *data)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 
-	if (ad->entryinfo.entry == NULL)
+	if (ad->entryinfo.entry == NULL) {
 		return -1;
+	}
 	/* Remove callbacks */
 	_gl_ui_del_conform_cbs(ad->maininfo.naviframe);
 
 	evas_object_smart_callback_del(ad->entryinfo.entry,
-				       "maxlength,reached",
-				       __gl_editfield_maxlen_reached_cb);
+	                               "maxlength,reached",
+	                               __gl_editfield_maxlen_reached_cb);
 	evas_object_smart_callback_del(ad->entryinfo.entry,
-				       "activated", __gl_editfield_enter_cb);
+	                               "activated", __gl_editfield_enter_cb);
 
 	evas_object_smart_callback_del(ad->entryinfo.entry,
-				       "changed",
-				       __gl_editfield_space_check_cb);
+	                               "changed",
+	                               __gl_editfield_space_check_cb);
 	evas_object_smart_callback_del(ad->entryinfo.entry,
-				       "preedit,changed",
-				       __gl_editfield_space_check_cb);
+	                               "preedit,changed",
+	                               __gl_editfield_space_check_cb);
 	ad->entryinfo.mode = GL_ENTRY_NONE;
 
 	GL_IF_DEL_OBJ(ad->entryinfo.popup);

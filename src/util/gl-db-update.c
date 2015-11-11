@@ -24,8 +24,7 @@
 
 #define GL_MONITOE_TIME_DELAY 1.0f
 
-typedef enum
-{
+typedef enum {
 	GL_DU_LOCK_NONE,
 	GL_DU_LOCK_ONCE,
 	GL_DU_LOCK_ALWAYS,
@@ -53,7 +52,7 @@ static Eina_Bool __gl_db_update_idler(void *data)
 	gl_db_noti_s *db_noti = ad->db_noti_d;
 	gl_update_view(ad, GL_UPDATE_VIEW_INOTIFY);
 	evas_object_smart_callback_call(ad->maininfo.naviframe,
-					"gallery,db,data,updated", data);
+	                                "gallery,db,data,updated", data);
 	GL_IF_DEL_IDLER(db_noti->db_idl);
 	return ECORE_CALLBACK_CANCEL;
 }
@@ -68,8 +67,9 @@ static Eina_Bool __gl_db_update_timer_cb(void *data)
 	gl_dbg("db_update[%d]", db_noti->lock_state);
 	if (db_noti->lock_state) {
 		gl_dbgW("Don't update, locked!");
-		if (db_noti->lock_state == GL_DU_LOCK_ONCE)
+		if (db_noti->lock_state == GL_DU_LOCK_ONCE) {
 			db_noti->lock_state = GL_DU_LOCK_NONE;
+		}
 	} else {
 		GL_IF_DEL_IDLER(db_noti->db_idl);
 		db_noti->db_idl = ecore_idler_add(__gl_db_update_idler, data);
@@ -80,10 +80,10 @@ static Eina_Bool __gl_db_update_timer_cb(void *data)
 }
 
 static int __gl_db_update_op(media_content_error_e error, int pid,
-			     media_content_db_update_item_type_e update_item,
-			     media_content_db_update_type_e update_type,
-			     media_content_type_e media_type, char *uuid,
-			     char *path, char *mime_type, void *data)
+                             media_content_db_update_item_type_e update_item,
+                             media_content_db_update_type_e update_type,
+                             media_content_type_e media_type, char *uuid,
+                             char *path, char *mime_type, void *data)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -95,8 +95,8 @@ static int __gl_db_update_op(media_content_error_e error, int pid,
 		return -1;
 	}
 	if (update_item == MEDIA_ITEM_FILE &&
-	    MEDIA_CONTENT_TYPE_IMAGE != media_type &&
-	    MEDIA_CONTENT_TYPE_VIDEO != media_type) {
+	        MEDIA_CONTENT_TYPE_IMAGE != media_type &&
+	        MEDIA_CONTENT_TYPE_VIDEO != media_type) {
 		gl_dbg("Media type is wrong");
 		return -1;
 	} else if (update_item == MEDIA_ITEM_DIRECTORY) {
@@ -128,7 +128,7 @@ static int __gl_db_update_op(media_content_error_e error, int pid,
 	db_noti->update_item = update_item;
 	db_noti->update_type = update_type;
 	if (uuid && update_item == MEDIA_ITEM_FILE &&
-	    update_type == MEDIA_CONTENT_DELETE) {
+	        update_type == MEDIA_CONTENT_DELETE) {
 		gl_dbgW("Append: %s", uuid);
 		db_noti->uuids = g_list_append(db_noti->uuids, (gpointer)g_strdup(uuid));
 	}
@@ -138,17 +138,17 @@ static int __gl_db_update_op(media_content_error_e error, int pid,
 }
 
 static void __gl_db_update_cb(media_content_error_e error, int pid,
-			      media_content_db_update_item_type_e update_item,
-			      media_content_db_update_type_e update_type,
-			      media_content_type_e media_type, char *uuid,
-			      char *path, char *mime_type, void *data)
+                              media_content_db_update_item_type_e update_item,
+                              media_content_db_update_type_e update_type,
+                              media_content_type_e media_type, char *uuid,
+                              char *path, char *mime_type, void *data)
 {
 	gl_dbg("update_item[%d], update_type[%d], media_type[%d]", update_item,
 	       update_type, media_type);
 	GL_CHECK(data);
 	gl_dbg("uuid[%s], path[%s]", uuid, path);
 	__gl_db_update_op(error, pid, update_item, update_type, media_type,
-			  uuid, path, mime_type, data);
+	                  uuid, path, mime_type, data);
 }
 
 /*
@@ -175,7 +175,7 @@ int _gl_db_update_add_timer(void *data)
 
 	GL_IF_DEL_TIMER(db_noti->db_timer);
 	db_noti->db_timer = ecore_timer_add(GL_MONITOE_TIME_DELAY,
-					    __gl_db_update_timer_cb, data);
+	                                    __gl_db_update_timer_cb, data);
 	gl_dbgW("TIMER[1.0f] added!");
 	return 0;
 }
@@ -187,10 +187,11 @@ bool _gl_db_update_lock_once(void *data, bool status)
 	gl_appdata *ad = (gl_appdata *)data;
 	GL_CHECK_FALSE(ad->db_noti_d);
 	gl_db_noti_s *db_noti = ad->db_noti_d;
-	if (status)
+	if (status) {
 		db_noti->lock_state = GL_DU_LOCK_ONCE;
-	else
+	} else {
 		db_noti->lock_state = GL_DU_LOCK_NONE;
+	}
 	return true;
 }
 
@@ -201,10 +202,11 @@ bool _gl_db_update_lock_always(void *data, bool status)
 	gl_appdata *ad = (gl_appdata *)data;
 	GL_CHECK_FALSE(ad->db_noti_d);
 	gl_db_noti_s *db_noti = ad->db_noti_d;
-	if (status)
+	if (status) {
 		db_noti->lock_state = GL_DU_LOCK_ALWAYS;
-	else
+	} else {
 		db_noti->lock_state = GL_DU_LOCK_NONE;
+	}
 	return true;
 }
 
@@ -220,18 +222,20 @@ bool _gl_db_update_set_count(void *data, int count)
 }
 
 int _gl_db_update_get_info(void *data,
-			   media_content_db_update_item_type_e *update_item,
-			   media_content_db_update_type_e *update_type,
-			   GList **uuids)
+                           media_content_db_update_item_type_e *update_item,
+                           media_content_db_update_type_e *update_type,
+                           GList **uuids)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 	GL_CHECK_VAL(ad->db_noti_d, -1);
 
-	if (update_item)
+	if (update_item) {
 		*update_item = ad->db_noti_d->update_item;
-	if (update_type)
+	}
+	if (update_type) {
 		*update_type = ad->db_noti_d->update_type;
+	}
 	if (ad->db_noti_d->uuids && uuids) {
 		*uuids = ad->db_noti_d->uuids;
 		ad->db_noti_d->uuids = NULL;
@@ -250,8 +254,9 @@ bool _gl_db_update_reg_cb(void *data)
 
 	gl_dbg("Set db updated callback");
 	ret = media_content_set_db_updated_cb(__gl_db_update_cb, data);
-	if (ret != MEDIA_CONTENT_ERROR_NONE)
+	if (ret != MEDIA_CONTENT_ERROR_NONE) {
 		gl_dbgE("Set db updated cb failed[%d]!", ret);
+	}
 //	ret = media_content_set_db_updated_cloud_cb(&(ad->db_noti_d->cloud_h),
 //						    __gl_db_update_coud_cb,
 //						    data);
@@ -279,8 +284,9 @@ bool _gl_db_update_finalize(void *data)
 	gl_dbg("Unset db updated callback");
 
 	ret = media_content_unset_db_updated_cb();
-	if (ret != MEDIA_CONTENT_ERROR_NONE)
+	if (ret != MEDIA_CONTENT_ERROR_NONE) {
 		gl_dbgE("UNSet db updated cb failed[%d]!", ret);
+	}
 
 	GL_CHECK_FALSE(data);
 	gl_appdata *ad = (gl_appdata *)data;

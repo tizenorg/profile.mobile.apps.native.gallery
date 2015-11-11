@@ -57,7 +57,7 @@ static int __gl_local_data_create_filter(gl_filter_s *condition, filter_h *filte
 
 	if (strlen(condition->cond) > 0) {
 		ret = media_filter_set_condition(tmp_filter, condition->cond,
-						 condition->collate_type);
+		                                 condition->collate_type);
 		if (ret != MEDIA_CONTENT_ERROR_NONE) {
 			gl_dbgE("Fail to set condition");
 			goto GL_LOCAL_FAILED;
@@ -66,8 +66,8 @@ static int __gl_local_data_create_filter(gl_filter_s *condition, filter_h *filte
 
 	if (strlen(condition->sort_keyword) > 0) {
 		ret = media_filter_set_order(tmp_filter, condition->sort_type,
-					     condition->sort_keyword,
-					     condition->collate_type);
+		                             condition->sort_keyword,
+		                             condition->collate_type);
 		if (ret != MEDIA_CONTENT_ERROR_NONE) {
 			gl_dbgE("Fail to set order");
 			goto GL_LOCAL_FAILED;
@@ -75,9 +75,9 @@ static int __gl_local_data_create_filter(gl_filter_s *condition, filter_h *filte
 	}
 
 	if (condition->offset != -1 && condition->count != -1 &&
-	    condition->count > 0) {
+	        condition->count > 0) {
 		ret = media_filter_set_offset(tmp_filter, condition->offset,
-					      condition->count);
+		                              condition->count);
 		if (ret != MEDIA_CONTENT_ERROR_NONE) {
 			gl_dbgE("Fail to set offset");
 			goto GL_LOCAL_FAILED;
@@ -87,7 +87,7 @@ static int __gl_local_data_create_filter(gl_filter_s *condition, filter_h *filte
 	*filter = tmp_filter;
 	return 0;
 
- GL_LOCAL_FAILED:
+GL_LOCAL_FAILED:
 
 	if (tmp_filter) {
 		media_filter_destroy(tmp_filter);
@@ -109,7 +109,7 @@ static int __gl_local_data_destroy_filter(filter_h filter)
 }
 
 static bool __gl_local_data_get_album_list_cb(media_folder_h folder,
-					      void *data)
+        void *data)
 {
 	GL_CHECK_FALSE(data);
 	gl_transfer_data_s *tmp_data = (gl_transfer_data_s *)data;
@@ -173,7 +173,7 @@ static bool __gl_local_data_get_album_list_cb(media_folder_h folder,
 
 	return true;
 
- GL_LOCAL_FAILED:
+GL_LOCAL_FAILED:
 
 	_gl_data_type_free_glitem((void **)(&album));
 	return false;
@@ -219,7 +219,7 @@ static bool __gl_local_data_get_media_list_cb(media_info_h media, void *data)
 		goto GL_LOCAL_FAILED;
 	}
 
-	if (media_info_get_media_type(media, (media_content_type_e *)&(item->type)) != MEDIA_CONTENT_ERROR_NONE) {
+	if (media_info_get_media_type(media, (media_content_type_e *) & (item->type)) != MEDIA_CONTENT_ERROR_NONE) {
 		gl_dbgE("Get media type failed!");
 		goto GL_LOCAL_FAILED;
 	}
@@ -244,15 +244,17 @@ static bool __gl_local_data_get_media_list_cb(media_info_h media, void *data)
 		gl_dbgE("Get storage type failed!");
 		goto GL_LOCAL_FAILED;
 	}
-	if (storage_type == MEDIA_CONTENT_STORAGE_INTERNAL) /* The device's internal storage */
+	if (storage_type == MEDIA_CONTENT_STORAGE_INTERNAL) { /* The device's internal storage */
 		item->storage_type = GL_STORE_T_PHONE;
-	else if (storage_type == MEDIA_CONTENT_STORAGE_EXTERNAL) /* The device's external storage */
+	} else if (storage_type == MEDIA_CONTENT_STORAGE_EXTERNAL) { /* The device's external storage */
 		item->storage_type = GL_STORE_T_MMC;
-	else
+	} else {
 		gl_dbgE("Undefined mode[%d]!", storage_type);
+	}
 	/* Without meta */
-	if (!tmp_data->with_meta)
+	if (!tmp_data->with_meta) {
 		goto GL_LOCAL_SUCCESS;
+	}
 
 	if (item->type == MEDIA_CONTENT_TYPE_IMAGE) {
 		ret = media_info_get_image(media, &image_handle);
@@ -278,7 +280,7 @@ static bool __gl_local_data_get_media_list_cb(media_info_h media, void *data)
 			goto GL_LOCAL_FAILED;
 		}
 
-		if (image_meta_get_orientation(image_handle, (media_content_orientation_e *)&(image_info->orientation)) != MEDIA_CONTENT_ERROR_NONE) {
+		if (image_meta_get_orientation(image_handle, (media_content_orientation_e *) & (image_info->orientation)) != MEDIA_CONTENT_ERROR_NONE) {
 			gl_dbgE("Get image orientation failed!");
 			goto GL_LOCAL_FAILED;
 		}
@@ -340,35 +342,39 @@ static bool __gl_local_data_get_media_list_cb(media_info_h media, void *data)
 			video_info->bookmarks = 0;
 			int count = 0;
 			ret = media_info_get_bookmark_count_from_db(video_info->media_uuid,
-								    NULL,
-								    &count);
-			if (ret != MEDIA_CONTENT_ERROR_NONE)
+			        NULL,
+			        &count);
+			if (ret != MEDIA_CONTENT_ERROR_NONE) {
 				gl_dbgE("Failed to get bookmark[%d]", ret);
-			else
+			} else {
 				video_info->bookmarks = count;
+			}
 		}
 	} else {
 		gl_dbgE("Wrong media type[%d]!", item->type);
 	}
 
- GL_LOCAL_SUCCESS:
+GL_LOCAL_SUCCESS:
 
 	/* Get extension */
 	ext = strrchr(item->file_url, '.');
-	if (ext)
+	if (ext) {
 		item->ext = strdup(ext + 1);
-	else
+	} else {
 		gl_dbgE("Extension is NULL!");
+	}
 
 	*elist = eina_list_append(*elist, item);
 	return true;
 
- GL_LOCAL_FAILED:
+GL_LOCAL_FAILED:
 
-	 if (image_handle)
-		 image_meta_destroy(image_handle);
-	 if (video_handle)
-		 video_meta_destroy(video_handle);
+	if (image_handle) {
+		image_meta_destroy(image_handle);
+	}
+	if (video_handle) {
+		video_meta_destroy(video_handle);
+	}
 
 	_gl_data_type_free_glitem((void **)(&item));
 	return false;
@@ -400,7 +406,7 @@ static bool __gl_local_data_get_album_cover_cb(media_info_h media, void *data)
 		gl_dbgE("Get media file path failed!");
 		goto GL_LOCAL_FAILED;
 	}
-	if (media_info_get_media_type(media, (media_content_type_e *)&(item->type)) != MEDIA_CONTENT_ERROR_NONE) {
+	if (media_info_get_media_type(media, (media_content_type_e *) & (item->type)) != MEDIA_CONTENT_ERROR_NONE) {
 		gl_dbgE("Get media type failed!");
 		goto GL_LOCAL_FAILED;
 	}
@@ -413,7 +419,7 @@ static bool __gl_local_data_get_album_cover_cb(media_info_h media, void *data)
 	*elist = eina_list_append(*elist, item);
 	return true;
 
- GL_LOCAL_FAILED:
+GL_LOCAL_FAILED:
 
 	_gl_data_type_free_glitem((void **)(&item));
 	return false;
@@ -438,7 +444,7 @@ static bool __gl_local_data_get_fav_album_cover_cb(media_info_h media, void *dat
 		gl_dbgE("Get media file path failed!");
 		goto GL_LOCAL_FAILED;
 	}
-	if (media_info_get_media_type(media, (media_content_type_e *)&(item->type)) != MEDIA_CONTENT_ERROR_NONE) {
+	if (media_info_get_media_type(media, (media_content_type_e *) & (item->type)) != MEDIA_CONTENT_ERROR_NONE) {
 		gl_dbgE("Get media type failed!");
 		goto GL_LOCAL_FAILED;
 	}
@@ -451,7 +457,7 @@ static bool __gl_local_data_get_fav_album_cover_cb(media_info_h media, void *dat
 	*elist = eina_list_append(*elist, item);
 	return true;
 
-	GL_LOCAL_FAILED:
+GL_LOCAL_FAILED:
 
 	_gl_data_type_free_glitem((void **)(&item));
 	return false;
@@ -514,7 +520,7 @@ int _gl_local_data_get_album_by_path(char *path, gl_album_s **album)
 	gl_album_s *_item = NULL;
 	int i = 0;
 
-	if (strlen(path) <=0) {
+	if (strlen(path) <= 0) {
 		gl_dbgE("Invalid path!");
 		return -1;
 	}
@@ -530,8 +536,8 @@ int _gl_local_data_get_album_by_path(char *path, gl_album_s **album)
 	condition.with_meta = false;
 
 	snprintf(condition.cond, CONDITION_LENGTH,
-		 "(%s=0 OR %s=1) AND %s=\'%s\'", MEDIA_TYPE, MEDIA_TYPE,
-		 FOLDER_PATH, path);
+	         "(%s=0 OR %s=1) AND %s=\'%s\'", MEDIA_TYPE, MEDIA_TYPE,
+	         FOLDER_PATH, path);
 
 	ret = _gl_local_data_get_album_list(&condition, &list);
 	if (ret != 0 || NULL == list) {
@@ -577,10 +583,10 @@ int _gl_local_data_get_album_list(gl_filter_s *condition, Eina_List **elist)
 	memset(&media_condition, 0x00, sizeof(gl_filter_s));
 	/* Get all contents(including local and cloud) for albums list */
 	g_strlcpy(media_condition.cond, GL_CONDITION_IMAGE_VIDEO,
-		  CONDITION_LENGTH);
+	          CONDITION_LENGTH);
 	media_condition.sort_type = MEDIA_CONTENT_ORDER_DESC;
 	g_strlcpy(media_condition.sort_keyword, GL_CONDITION_ORDER,
-		  KEYWORD_LENGTH);
+	          KEYWORD_LENGTH);
 	media_condition.collate_type = MEDIA_CONTENT_COLLATE_NOCASE;
 	media_condition.offset = -1;
 	media_condition.count = -1;
@@ -602,8 +608,8 @@ int _gl_local_data_get_album_list(gl_filter_s *condition, Eina_List **elist)
 
 	gl_dbg("Get folders--start");
 	ret = media_folder_foreach_folder_from_db(filter,
-						  __gl_local_data_get_album_list_cb,
-						  &tran_data);
+	        __gl_local_data_get_album_list_cb,
+	        &tran_data);
 	gl_dbg("Get folders---over");
 
 	__gl_local_data_destroy_filter(media_filter);
@@ -637,8 +643,9 @@ int _gl_local_data_get_media_by_id(char *media_id, gl_media_s **mitem)
 	ret = media_info_get_media_from_db(media_id, &media_h);
 	if (ret != MEDIA_CONTENT_ERROR_NONE || media_h == NULL) {
 		gl_dbgE("Failed to get media handle[%d]!", ret);
-		if (media_h)
+		if (media_h) {
 			media_info_destroy(media_h);
+		}
 		return -1;
 	}
 
@@ -688,7 +695,7 @@ int _gl_local_data_get_media_by_path(const char *path, gl_media_s **mitem)
 	gl_media_s *_mitem = NULL;
 	int i = 0;
 
-	if (strlen(path) <=0) {
+	if (strlen(path) <= 0) {
 		gl_dbgE("Invalid path!");
 		return -1;
 	}
@@ -704,8 +711,8 @@ int _gl_local_data_get_media_by_path(const char *path, gl_media_s **mitem)
 	condition.with_meta = true;
 
 	snprintf(condition.cond, CONDITION_LENGTH,
-		 "(%s=0 OR %s=1) AND %s=\'%s\'", MEDIA_TYPE, MEDIA_TYPE,
-		 MEDIA_PATH, path);
+	         "(%s=0 OR %s=1) AND %s=\'%s\'", MEDIA_TYPE, MEDIA_TYPE,
+	         MEDIA_PATH, path);
 	ret = _gl_local_data_get_all_albums_media_list(&condition, &list);
 	if (ret != 0 || NULL == list) {
 		gl_dbgE("Failed to get all albums[%d]!", ret);
@@ -733,7 +740,7 @@ int _gl_local_data_get_media_by_path(const char *path, gl_media_s **mitem)
 }
 
 int _gl_local_data_get_media_count(const char *cluster_id, gl_filter_s *condition,
-				   int *item_cnt)
+                                   int *item_cnt)
 {
 	GL_CHECK_VAL(cluster_id, -1);
 	GL_CHECK_VAL(condition, -1);
@@ -791,7 +798,7 @@ int _gl_local_data_get_all_media_count(gl_filter_s *condtion, int *item_cnt)
 }
 
 int _gl_local_data_get_album_media_list(gl_filter_s *condition,
-					const char *album_id, Eina_List **elist)
+                                        const char *album_id, Eina_List **elist)
 {
 	GL_CHECK_VAL(elist, -1);
 	GL_CHECK_VAL(album_id, -1);
@@ -815,8 +822,8 @@ int _gl_local_data_get_album_media_list(gl_filter_s *condition,
 
 	gl_dbg("Get medias--start");
 	ret = media_folder_foreach_media_from_db(album_id, filter,
-								 __gl_local_data_get_media_list_cb,
-								 &tran_data);
+	        __gl_local_data_get_media_list_cb,
+	        &tran_data);
 	gl_dbg("Get medias--start");
 
 	__gl_local_data_destroy_filter(filter);
@@ -830,7 +837,7 @@ int _gl_local_data_get_album_media_list(gl_filter_s *condition,
 }
 
 int _gl_local_data_get_album_cover(gl_filter_s *condition, const char *album_id,
-				   Eina_List **elist)
+                                   Eina_List **elist)
 {
 	GL_CHECK_VAL(elist, -1);
 	GL_CHECK_VAL(album_id, -1);
@@ -847,8 +854,8 @@ int _gl_local_data_get_album_cover(gl_filter_s *condition, const char *album_id,
 
 	gl_dbg("Get medias--start");
 	ret = media_folder_foreach_media_from_db(album_id, filter,
-						 __gl_local_data_get_album_cover_cb,
-						 elist);
+	        __gl_local_data_get_album_cover_cb,
+	        elist);
 	gl_dbg("Get medias--start");
 
 	__gl_local_data_destroy_filter(filter);
@@ -862,7 +869,7 @@ int _gl_local_data_get_album_cover(gl_filter_s *condition, const char *album_id,
 }
 
 int _gl_local_data_get_all_albums_media_list(gl_filter_s *condition,
-					     Eina_List **elist)
+        Eina_List **elist)
 {
 	GL_CHECK_VAL(elist, -1);
 	GL_CHECK_VAL(condition, -1);
@@ -884,8 +891,8 @@ int _gl_local_data_get_all_albums_media_list(gl_filter_s *condition,
 
 	gl_dbg("Get all medias--start");
 	ret = media_info_foreach_media_from_db(filter,
-							       __gl_local_data_get_media_list_cb,
-							       &tran_data);
+	                                       __gl_local_data_get_media_list_cb,
+	                                       &tran_data);
 	gl_dbg("Get all medias--over");
 
 	__gl_local_data_destroy_filter(filter);
@@ -899,7 +906,7 @@ int _gl_local_data_get_all_albums_media_list(gl_filter_s *condition,
 }
 
 int _gl_local_data_get_fav_albums_media_list(gl_filter_s *condition,
-					     Eina_List **elist)
+        Eina_List **elist)
 {
 	GL_CHECK_VAL(elist, -1);
 	GL_CHECK_VAL(condition, -1);
@@ -921,7 +928,7 @@ int _gl_local_data_get_fav_albums_media_list(gl_filter_s *condition,
 
 	gl_dbg("Get all medias--start");
 	ret = media_info_foreach_media_from_db(filter,
-			__gl_local_data_get_fav_media_list_cb, &tran_data);
+	                                       __gl_local_data_get_fav_media_list_cb, &tran_data);
 	gl_dbg("Get all medias--over");
 
 	__gl_local_data_destroy_filter(filter);
@@ -935,7 +942,7 @@ int _gl_local_data_get_fav_albums_media_list(gl_filter_s *condition,
 }
 
 int _gl_local_data_get_all_albums_cover(gl_filter_s *condition,
-					Eina_List **elist)
+                                        Eina_List **elist)
 {
 	GL_CHECK_VAL(elist, -1);
 	GL_CHECK_VAL(condition, -1);
@@ -950,8 +957,8 @@ int _gl_local_data_get_all_albums_cover(gl_filter_s *condition,
 
 	gl_dbg("Get all medias--start");
 	ret = media_info_foreach_media_from_db(filter,
-					       __gl_local_data_get_album_cover_cb,
-					       elist);
+	                                       __gl_local_data_get_album_cover_cb,
+	                                       elist);
 	gl_dbg("Get all medias--over");
 
 	__gl_local_data_destroy_filter(filter);
@@ -965,7 +972,7 @@ int _gl_local_data_get_all_albums_cover(gl_filter_s *condition,
 }
 
 int _gl_local_data_get_fav_albums_cover(gl_filter_s *condition,
-					Eina_List **elist)
+                                        Eina_List **elist)
 {
 	GL_CHECK_VAL(elist, -1);
 	GL_CHECK_VAL(condition, -1);
@@ -980,7 +987,7 @@ int _gl_local_data_get_fav_albums_cover(gl_filter_s *condition,
 
 	gl_dbg("Get all medias--start");
 	ret = media_info_foreach_media_from_db(filter,
-			__gl_local_data_get_fav_album_cover_cb, elist);
+	                                       __gl_local_data_get_fav_album_cover_cb, elist);
 	gl_dbg("Get all medias--over");
 
 	__gl_local_data_destroy_filter(filter);
@@ -1020,8 +1027,8 @@ int _gl_local_data_delete_album(gl_album_s *cluster, void *cb, void *data, bool 
 			return -1;
 		}
 		ret = media_folder_foreach_media_from_db(cluster->uuid, filter,
-							 __gl_local_data_delete_album_cb,
-							 &itemlist);
+		        __gl_local_data_delete_album_cb,
+		        &itemlist);
 		__gl_local_data_destroy_filter(filter);
 	}
 
@@ -1036,12 +1043,13 @@ int _gl_local_data_delete_album(gl_album_s *cluster, void *cb, void *data, bool 
 			continue;
 		}
 
-		if (!gl_file_unlink(item->file_url))
+		if (!gl_file_unlink(item->file_url)) {
 			gl_dbgE("file_unlink failed!");
+		}
 		if (!is_hide) {
 			media_info_delete_from_db(item->uuid);
 			if (cb) {
-				int (*delete_cb) (void *data, char *uuid);
+				int (*delete_cb)(void * data, char * uuid);
 				delete_cb = cb;
 				delete_cb(data, item->uuid);
 			}
@@ -1084,8 +1092,8 @@ int _gl_local_data_hide_album_media(void *data, gl_album_s *cluster, char *new_p
 		return -1;
 	}
 	ret = media_folder_foreach_media_from_db(cluster->uuid, filter,
-						 __gl_local_data_delete_album_cb,
-						 &itemlist);
+	        __gl_local_data_delete_album_cb,
+	        &itemlist);
 	__gl_local_data_destroy_filter(filter);
 
 	if (ret != MEDIA_CONTENT_ERROR_NONE) {
@@ -1104,7 +1112,7 @@ int _gl_local_data_hide_album_media(void *data, gl_album_s *cluster, char *new_p
 		name = strrchr(item->file_url, '/');
 		if (name) {
 			snprintf(new_file, GL_FILE_PATH_LEN_MAX, "%s/%s",
-				 new_path, name+1);
+			         new_path, name + 1);
 			gl_dbgE("new file: %s", new_file);
 			if (!_gl_fs_move(data, item->file_url, new_file)) {
 				gl_dbgE("rename failed!");
@@ -1125,8 +1133,9 @@ int _gl_local_data_add_media(const char *file_url, media_info_h *info)
 	ret = media_info_insert_to_db(file_url, &item);
 	if (ret != MEDIA_CONTENT_ERROR_NONE) {
 		gl_dbgE("Failed to insert media to DB[%d]!", ret);
-		if (item)
+		if (item) {
 			media_info_destroy(item);
+		}
 		return -1;
 	}
 
@@ -1210,12 +1219,12 @@ int _gl_local_data_get_path_by_id(const char *uuid, char **path)
 
 	*path = _path;
 
- GL_LD_FAILED:
+GL_LD_FAILED:
 
-       if (media_h) {
-	       media_info_destroy(media_h);
-	       media_h = NULL;
-       }
-       return 0;
+	if (media_h) {
+		media_info_destroy(media_h);
+		media_h = NULL;
+	}
+	return 0;
 }
 

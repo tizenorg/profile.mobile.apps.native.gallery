@@ -32,20 +32,21 @@
 
 #if 0
 static void __gl_thumbs_sel_trans_finished_cb(void *data, Evas_Object *obj,
-					      void *event_info)
+			void *event_info)
 {
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
 	int view_mode = gl_get_view_mode(ad);
 	gl_dbgW("view_mode: %d", view_mode);
 	evas_object_smart_callback_del(obj, GL_TRANS_FINISHED,
-				       __gl_thumbs_sel_trans_finished_cb);
+	                               __gl_thumbs_sel_trans_finished_cb);
 
 	/* Clear previous view after animation finished */
-	if (view_mode == GL_VIEW_THUMBS_SELECT)
+	if (view_mode == GL_VIEW_THUMBS_SELECT) {
 		elm_gengrid_clear(ad->albuminfo.select_view);
-	else
+	} else {
 		gl_dbgE("Wrong view mode!");
+	}
 
 	if (ad->gridinfo.is_append) {
 		_gl_thumbs_append_items(data);
@@ -115,10 +116,10 @@ static void __gl_thumbs_sel_done_cb(void *data, Evas_Object *obj, void *ei)
 	}
 	/* For new album case */
 	_gl_popup_create(data, GL_STR_ID_NEW_ALBUM,
-			 GL_STR_ID_NEW_ALBUM_CONFIRMATION, GL_STR_ID_CANCEL_ABB,
-			 __gl_thumbs_sel_popup_cb, data, GL_STR_ID_MOVE,
-			 __gl_thumbs_sel_popup_cb, data, GL_STR_ID_COPY,
-			 __gl_thumbs_sel_popup_cb, data);
+	                 GL_STR_ID_NEW_ALBUM_CONFIRMATION, GL_STR_ID_CANCEL_ABB,
+	                 __gl_thumbs_sel_popup_cb, data, GL_STR_ID_MOVE,
+	                 __gl_thumbs_sel_popup_cb, data, GL_STR_ID_COPY,
+	                 __gl_thumbs_sel_popup_cb, data);
 }
 
 static void __gl_thumbs_sel_cancel_cb(void *data, Evas_Object *obj, void *ei)
@@ -137,7 +138,7 @@ static void __gl_thumbs_sel_cancel_cb(void *data, Evas_Object *obj, void *ei)
  *  @param obj is the content to be pushed.
  */
 static int __gl_thumbs_sel_push_view(void *data, Evas_Object *parent,
-				     Evas_Object *obj, char *title)
+                                     Evas_Object *obj, char *title)
 {
 	gl_dbg("GL_NAVI_THUMBS_SELECT");
 	GL_CHECK_VAL(obj, -1);
@@ -148,11 +149,11 @@ static int __gl_thumbs_sel_push_view(void *data, Evas_Object *parent,
 
 	/* Add transition finished callback */
 	evas_object_smart_callback_add(parent, GL_TRANS_FINISHED,
-				       __gl_thumbs_sel_trans_finished_cb, data);
+	                               __gl_thumbs_sel_trans_finished_cb, data);
 
 	/* Push to stack */
 	nf_it = elm_naviframe_item_push(parent, title, NULL, NULL, obj,
-					NULL);
+	                                NULL);
 	/* use pop_cb_set to support HW key event */
 	elm_naviframe_item_pop_cb_set(nf_it, __gl_thumbs_sel_pop_cb, data);
 	_gl_ui_set_translatable_item(nf_it, title);
@@ -162,11 +163,11 @@ static int __gl_thumbs_sel_push_view(void *data, Evas_Object *parent,
 	Evas_Object *toolbar = _gl_ctrl_add_toolbar(parent);
 	/* Add 'Cancel' button */
 	_gl_ctrl_append_item(toolbar, NULL, GL_STR_ID_CANCEL,
-			     __gl_thumbs_sel_cancel_cb, data);
+	                     __gl_thumbs_sel_cancel_cb, data);
 	char *str = GL_STR_ID_DONE;
 	/* Add 'Done' button */
 	tb_it = _gl_ctrl_append_item(toolbar, NULL, str,
-				     __gl_thumbs_sel_done_cb, data);
+	                             __gl_thumbs_sel_done_cb, data);
 	_gl_ctrl_disable_item(tb_it, true);
 	elm_object_item_part_content_set(nf_it, "toolbar", toolbar);
 	return 0;
@@ -175,7 +176,7 @@ static int __gl_thumbs_sel_push_view(void *data, Evas_Object *parent,
 
 /* Free data after layout deleted */
 static void __gl_thumbs_sel_delete_layout_cb(void *data, Evas *e,
-					     Evas_Object *obj, void *ei)
+			Evas_Object *obj, void *ei)
 {
 	gl_dbg("Delete layout ---");
 	GL_CHECK(data);
@@ -183,7 +184,7 @@ static void __gl_thumbs_sel_delete_layout_cb(void *data, Evas *e,
 
 	Elm_Gengrid_Item_Class *gic = NULL;
 	gic = evas_object_data_get(ad->gridinfo.select_view,
-				   "gl_thumbs_item_style_key");
+	                           "gl_thumbs_item_style_key");
 	GL_CHECK(gic);
 	gic->func.del = NULL;
 
@@ -231,13 +232,14 @@ static void __gl_thumbs_sel_selall_cb(void *data, Evas_Object *obj, void *ei)
 		GL_CHECK(gitem);
 		GL_CHECK(gitem->item);
 
-		if (gitem->checked == state)
+		if (gitem->checked == state) {
 			continue;
+		}
 
 		gitem->checked = state;
 
 		if (state == EINA_TRUE) {
-			if (strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID)==0) {
+			if (strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID) == 0) {
 				Eina_List *sel_list1 = ad->selinfo.fav_elist;
 				sel_list1 = eina_list_append(sel_list1, gitem);
 				ad->selinfo.fav_elist = sel_list1;
@@ -246,7 +248,7 @@ static void __gl_thumbs_sel_selall_cb(void *data, Evas_Object *obj, void *ei)
 			}
 			gitem->album->elist = eina_list_append(gitem->album->elist, gitem);
 		} else {
-			if (strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID)==0) {
+			if (strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID) == 0) {
 				_gl_data_selected_fav_list_remove(ad, gitem);
 			} else {
 				_gl_data_selected_list_remove(ad, gitem);
@@ -256,19 +258,20 @@ static void __gl_thumbs_sel_selall_cb(void *data, Evas_Object *obj, void *ei)
 	}
 	/* Update all realized items */
 	_gl_ui_update_realized_grid_ck(ad->gridinfo.select_view,
-			GL_THUMB_CHECKBOX, NULL,
-			ad->selinfo.ck_state);
+	                               GL_THUMB_CHECKBOX, NULL,
+	                               ad->selinfo.ck_state);
 	/* Recreate selection info for both cases */
-	if (state == EINA_FALSE)
+	if (state == EINA_FALSE) {
 		sel_all_cnt = 0;
-	else
+	} else {
 		sel_all_cnt = item_cnt;
+	}
 
 	int sel_cnt = eina_list_count(ad->selinfo.elist);
 	int fav_sel_cnt = eina_list_count(ad->selinfo.fav_elist);
 	int total_sel_count = sel_cnt + fav_sel_cnt;
 	_gl_notify_check_selall(ad, ad->albuminfo.nf_it_select, item_cnt,
-				sel_all_cnt);
+	                        sel_all_cnt);
 	if (gitem->album->item) {
 		elm_gengrid_item_update(gitem->album->item);
 	}
@@ -307,15 +310,14 @@ int _gl_thumbs_sel_create_view(void *data, gl_cluster *album_item)
 	/* Get items list without current tag */
 	Eina_List *medias_elist = NULL;
 	_gl_data_get_items_album(ad, album_item, GL_FIRST_VIEW_START_POS,
-			GL_GET_UNTIL_LAST_RECORD, &medias_elist);
+	                         GL_GET_UNTIL_LAST_RECORD, &medias_elist);
 	ad->gridinfo.is_append = true;
 	_gl_thumbs_set_list(ad, medias_elist);
 	_gl_thumb_sel_add_album_data(album_item, medias_elist);
 	int count = eina_list_count(medias_elist);
 	int i;
 
-	if (strcmp(album_item->cluster->uuid, GL_ALBUM_FAVOURITE_ID)== 0)
-	{
+	if (strcmp(album_item->cluster->uuid, GL_ALBUM_FAVOURITE_ID) == 0) {
 		for (i = 0; i < count ; i++) {
 			gitem = eina_list_nth(medias_elist, i);
 			_gl_data_restore_selected(ad->selinfo.fav_elist, gitem);
@@ -338,11 +340,11 @@ int _gl_thumbs_sel_create_view(void *data, gl_cluster *album_item)
 	layout = _gl_ctrl_add_layout(ad->maininfo.naviframe);
 	GL_CHECK_VAL(layout, -1);
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND,
-			EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(layout, EVAS_HINT_FILL, EVAS_HINT_FILL);
 	/* Register delete callback */
 	evas_object_event_callback_add(layout, EVAS_CALLBACK_DEL,
-			__gl_thumbs_sel_delete_layout_cb, data);
+	                               __gl_thumbs_sel_delete_layout_cb, data);
 	/* Save view mode */
 	int pre_view_m = gl_get_view_mode(data);
 	/* Set new view mode */
@@ -374,13 +376,13 @@ int _gl_thumbs_sel_create_view(void *data, gl_cluster *album_item)
 	/* Title Cancel Button */
 	elm_object_style_set(btn1, "naviframe/title_left");
 	elm_object_item_part_content_set(ad->albuminfo.nf_it_select, GL_NAVIFRAME_TITLE_LEFT_BTN, btn1);
-	_gl_ui_set_translate_str(btn1,GL_STR_ID_CANCEL_CAP);
+	_gl_ui_set_translate_str(btn1, GL_STR_ID_CANCEL_CAP);
 	evas_object_smart_callback_add(btn1, "clicked", __gl_thumbs_sel_cancel_cb, ad);
 
 	/* Title Done Button */
 	elm_object_style_set(btn2, "naviframe/title_right");
 	elm_object_item_part_content_set(ad->albuminfo.nf_it_select, GL_NAVIFRAME_TITLE_RIGHT_BTN, btn2);
-	_gl_ui_set_translate_str(btn2,GL_STR_ID_DONE_CAP);
+	_gl_ui_set_translate_str(btn2, GL_STR_ID_DONE_CAP);
 	evas_object_smart_callback_add(btn2, "clicked", __gl_thumbs_sel_done_cb, ad);
 	elm_object_disabled_set(btn2, EINA_TRUE);
 
@@ -399,7 +401,7 @@ int _gl_thumbs_sel_create_view(void *data, gl_cluster *album_item)
 	elm_object_signal_emit(ad->albuminfo.select_layout, "elm,selectall,state,visible,bg", "elm");
 	elm_object_signal_emit(ad->albuminfo.select_layout, "elm,selectall,state,visible", "elm");
 	_gl_ui_add_selall_ck(ad->albuminfo.select_layout, "select.all.area.check", "select.all.area.check",
-			__gl_thumbs_sel_selall_cb, data);
+	                     __gl_thumbs_sel_selall_cb, data);
 
 	int sel_cnt = _gl_data_selected_list_count(ad);
 
@@ -435,8 +437,9 @@ int _gl_thumbs_sel_update_view(void *data)
 #ifdef _USE_ROTATE_BG
 	bool is_select = true;
 	if (_gl_ctrl_get_tab_mode(data) == GL_CTRL_TAB_ALBUMS ||
-			_gl_ctrl_get_tab_mode(data) == GL_CTRL_TAB_TIMELINE)
+	        _gl_ctrl_get_tab_mode(data) == GL_CTRL_TAB_TIMELINE) {
 		is_select = false;
+	}
 	_gl_refresh_albums_list(data, false, is_select);
 #else
 	/* Checkme: albums list is not updated */
@@ -473,11 +476,11 @@ int _gl_thumbs_sel_update_view(void *data)
 
 		/* Display selectioninfo */
 		_gl_notify_check_selall(ad, ad->albuminfo.nf_it_select,
-				ad->gridinfo.count, album_sel_count);
+		                        ad->gridinfo.count, album_sel_count);
 
 		/* Update the label text */
 		_gl_ui_update_label_text(ad->albuminfo.nf_it_select, sel_cnt,
-				false);
+		                         false);
 	}
 
 	return 0;
