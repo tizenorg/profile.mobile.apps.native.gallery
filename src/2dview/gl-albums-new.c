@@ -42,12 +42,12 @@ static int __gl_albums_new_pop_view(void *data)
 		ad->albuminfo.b_new_album = false;
 	}  else if (view_mode == GL_VIEW_THUMBS_EDIT) {
 		_gl_notify_check_selall(ad, ad->gridinfo.nf_it,
-					ad->gridinfo.count,
-					_gl_data_selected_list_count(ad));
+		                        ad->gridinfo.count,
+		                        _gl_data_selected_list_count(ad));
 		/* Update the label text */
 		_gl_thumbs_update_label_text(ad->gridinfo.nf_it,
-					     _gl_data_selected_list_count(ad),
-					     false);
+		                             _gl_data_selected_list_count(ad),
+		                             false);
 	}
 
 	return 0;
@@ -89,9 +89,9 @@ int _gl_albums_new_create_view(void *data, void *op_func)
 	Evas_Object *entry = _gl_editfield_get_entry(data);
 	GL_CHECK_VAL(entry, -1);
 	evas_object_data_set(entry, "gl_entry_process_cb_key",
-			     _gl_albums_new_process);
+	                     _gl_albums_new_process);
 	evas_object_data_set(entry, "gl_entry_pop_cb_key",
-			     __gl_albums_new_pop_cb);
+	                     __gl_albums_new_pop_cb);
 	return 0;
 }
 
@@ -121,8 +121,9 @@ int _gl_albums_new_process(void *data, bool b_enter)
 
 	/* Get valid name */
 	if (_gl_validate_album_name(data, name) != 0) {
-		if (b_enter)
+		if (b_enter) {
 			_gl_editfield_hide_imf(ad);
+		}
 		return -1;
 	}
 	gl_sdbg("Valid album name: %s", name);
@@ -132,7 +133,7 @@ int _gl_albums_new_process(void *data, bool b_enter)
 
 	/* Make dir full new_path of new album */
 	snprintf(new_path, GL_DIR_PATH_LEN_MAX, "%s/%s", GL_DEFAULT_PATH_IMAGES,
-		 name);
+	         name);
 	gl_sdbg("New dir new_path: %s", new_path);
 #ifdef _RENAME_ALBUM_SENSITIVE
 	if (_gl_fs_check_name_case(new_path, name))
@@ -140,19 +141,19 @@ int _gl_albums_new_process(void *data, bool b_enter)
 	{
 		memset(new_path, 0x00, GL_DIR_PATH_LEN_MAX);
 		snprintf(new_path, GL_DIR_PATH_LEN_MAX, "%s/%s",
-			 GL_DEFAULT_PATH_IMAGES, name);
+		         GL_DEFAULT_PATH_IMAGES, name);
 		gl_sdbg("New dir new_path: %s", new_path);
 		int res = gl_file_dir_is_empty(new_path);
 		/**
 		* If dir is empty, 1 is returned,
 		* if it contains at least 1 file, 0 is returned.
 		* On failure, -1 is returned.
-	 	*/
+		*/
 		gl_dbg("file_dir_is_empty return value: %d", res);
 		if (res == 0) {
 			gl_dbgW("New folder already exists!");
 			_gl_popup_create_local(data, GL_POPUP_NOBUT,
-					       GL_STR_ID_SAME_NAME_ALREADY_IN_USE);
+			                       GL_STR_ID_SAME_NAME_ALREADY_IN_USE);
 			return -1;
 		}
 	}
@@ -162,11 +163,12 @@ int _gl_albums_new_process(void *data, bool b_enter)
 	g_strlcpy(new_album, name, GL_ALBUM_NAME_LEN_MAX);
 	new_album[GL_ALBUM_NAME_LEN_MAX - 1] = '\0';
 
-	if (ad->albuminfo.view)
+	if (ad->albuminfo.view) {
 		elm_gengrid_clear(ad->albuminfo.view);
+	}
 
 	if (ad->entryinfo.op_cb) {
-		int (*mc_cb)(void *data);
+		int (*mc_cb)(void * data);
 		/* Get operation funciton */
 		mc_cb = ad->entryinfo.op_cb;
 		/* Move/Save/Copy files to dest album */

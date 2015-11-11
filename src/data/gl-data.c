@@ -32,7 +32,7 @@
 #include "gl-data-util.h"
 
 static int __gl_data_append_gitems(void *data, Eina_List *elist, int store_type,
-				   Eina_List **p_elist)
+                                   Eina_List **p_elist)
 {
 	GL_CHECK_VAL(p_elist, -1);
 	GL_CHECK_VAL(elist, -1);
@@ -63,7 +63,8 @@ static int __gl_data_append_gitems(void *data, Eina_List *elist, int store_type,
 	return 0;
 }
 
-int _gl_get_fav_image_count(int *count) {
+int _gl_get_fav_image_count(int *count)
+{
 	gl_filter_s filter;
 	memset(&filter, 0x00, sizeof(gl_filter_s));
 	_gl_data_util_get_fav_cond(filter.cond);
@@ -110,9 +111,9 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 		gl_dbg("Update mode.");
 		gl_cluster *album_item = ad->albuminfo.selected;
 		if (album_item && album_item->cluster &&
-		    album_item->cluster->uuid) {
+		        album_item->cluster->uuid) {
 			g_strlcpy(sel_id, album_item->cluster->uuid,
-				  GL_MTYPE_ITEN_ID_LEN_MAX);
+			          GL_MTYPE_ITEN_ID_LEN_MAX);
 			gl_sdbg("Save selected album ID: %s.", sel_id);
 		}
 		ad->albuminfo.selected = NULL;
@@ -131,7 +132,7 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 		memset(ad->albuminfo.new_name, 0x00, GL_ALBUM_NAME_LEN_MAX);
 		//get gl_media_s from DB via folder full path(URL).
 		err = _gl_local_data_get_album_by_path(ad->albuminfo.dest_folder,
-						       &new_mc);
+		                                       &new_mc);
 		if (err != 0) {
 			gl_dbgE("Faild to get album[%d]!", err);
 		} else if (new_mc->count == 0) {
@@ -139,9 +140,9 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 			//save the cluster ID.
 			//update cluster item count while refresh albums view in _gl_albums_get_label().
 			gl_sdbg("Get newly created gl_media_s, url: %s.",
-			       ad->albuminfo.dest_folder);
+			        ad->albuminfo.dest_folder);
 			g_strlcpy(new_mc_id, new_mc->uuid,
-				  GL_MTYPE_ITEN_ID_LEN_MAX);
+			          GL_MTYPE_ITEN_ID_LEN_MAX);
 			_gl_data_type_free_glitem((void **)&new_mc);
 		}
 	}
@@ -163,8 +164,9 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 	if (err != 0) {
 		gl_dbg("No record!");
 		ad->albuminfo.elist->clist = NULL;
-		if (item_list)
+		if (item_list) {
 			_gl_data_util_clear_gtype_item_list(&item_list);
+		}
 		/* Continue to add AllShare album */
 	}
 
@@ -186,15 +188,15 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 		* in case of delay updating in DB.
 		*/
 		if ((ad->maininfo.mmc_state == GL_MMC_STATE_REMOVED_MOVING ||
-		     ad->maininfo.mmc_state == GL_MMC_STATE_REMOVED) &&
-		     f_data->type == GL_STORE_T_MMC) {
+		        ad->maininfo.mmc_state == GL_MMC_STATE_REMOVED) &&
+		        f_data->type == GL_STORE_T_MMC) {
 			gl_dbgW("MMC was unmounted, skip MMC album!");
 			_gl_data_type_free_glitem((void **)&f_data);
 			continue;
 		}
 
 		if (f_data->type == GL_STORE_T_PHONE ||
-		    f_data->type == GL_STORE_T_MMC) {
+		        f_data->type == GL_STORE_T_MMC) {
 			if (f_data->count == 0) {
 				if (!g_strcmp0(f_data->uuid, new_mc_id)) {
 					/* append the newly created cluster to list */
@@ -208,8 +210,9 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 			}
 			all_item_cnt += f_data->count;
 			if (f_data->type == GL_STORE_T_PHONE ||
-			    f_data->type == GL_STORE_T_MMC)
+			        f_data->type == GL_STORE_T_MMC) {
 				phone_cnt++;
+			}
 		}
 
 		gcluster = NULL;
@@ -236,36 +239,36 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 				/* album 'Camera' is in phone, set it before MMC album 'Camera' */
 				if (_gl_data_check_root_type(f_data->path, GL_ROOT_PATH_PHONE)) {
 					ad->albuminfo.elist->clist = eina_list_prepend(ad->albuminfo.elist->clist,
-										       gcluster);
+					                             gcluster);
 				} else {
 					ad->albuminfo.elist->clist = eina_list_append_relative(ad->albuminfo.elist->clist,
-											       gcluster,
-											       default_album);
+					                             gcluster,
+					                             default_album);
 					default_album = gcluster;
 				}
 			} else {
 				default_album = gcluster;
 				ad->albuminfo.elist->clist = eina_list_prepend(ad->albuminfo.elist->clist,
-									       gcluster);
+				                             gcluster);
 			}
 		} else if (_gl_data_is_default_album(GL_STR_ALBUM_DOWNLOADS, f_data) || _gl_data_is_screenshot_album(GL_STR_ALBUM_SCREENSHOTS, f_data)) {
 			if (default_album)
 				ad->albuminfo.elist->clist = eina_list_append_relative(ad->albuminfo.elist->clist,
-										       gcluster,
-										       default_album);
+				                             gcluster,
+				                             default_album);
 			else
 				ad->albuminfo.elist->clist = eina_list_prepend(ad->albuminfo.elist->clist,
-									       gcluster);
+				                             gcluster);
 		} else {
 			ad->albuminfo.elist->clist = eina_list_append(ad->albuminfo.elist->clist,
-								      gcluster);
+			                             gcluster);
 		}
 		/* Default album 'Camera shots' showed in edit view */
 		edit_album_cnt++;
 
 		if (sel_id_list) {
 			b_selected = _gl_data_util_check_selected_str_id(&sel_id_list,
-									 f_data->uuid);
+			             f_data->uuid);
 			if (b_selected) {
 				b_selected = false;
 				/* Set checkbox state */
@@ -283,7 +286,7 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 	/* Clear list of selected ID */
 	if (sel_id_list) {
 		b_selected = _gl_data_util_check_selected_str_id(&sel_id_list,
-								 GL_ALBUM_ALL_ID);
+		             GL_ALBUM_ALL_ID);
 		_gl_data_util_free_selected_str_list(&sel_id_list);
 	}
 
@@ -313,11 +316,11 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 
 		if (default_album)
 			ad->albuminfo.elist->clist = eina_list_append_relative(ad->albuminfo.elist->clist,
-									       gcluster,
-									       default_album);
+			                             gcluster,
+			                             default_album);
 		else
 			ad->albuminfo.elist->clist = eina_list_prepend(ad->albuminfo.elist->clist,
-								       gcluster);
+			                             gcluster);
 		default_album = gcluster;
 
 		/* Save all count */
@@ -348,10 +351,10 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 
 		if (default_album) {
 			ad->albuminfo.elist->clist = eina_list_append_relative(
-					ad->albuminfo.elist->clist, gcluster, default_album);
+			                                 ad->albuminfo.elist->clist, gcluster, default_album);
 		} else {
 			ad->albuminfo.elist->clist = eina_list_prepend(
-					ad->albuminfo.elist->clist, gcluster);
+			                                 ad->albuminfo.elist->clist, gcluster);
 		}
 		default_album = gcluster;
 	}
@@ -404,13 +407,13 @@ bool _gl_data_is_default_album(const char *match_folder, gl_album_s *album)
 
 	/* Name is 'Camera' folder locates in Phone */
 	if (!g_strcmp0(album->display_name, match_folder) &&
-	    album->type == GL_STORE_T_PHONE) {
+	        album->type == GL_STORE_T_PHONE) {
 		char parent_path[GL_DIR_PATH_LEN_MAX] = { 0, };
 
 		gl_sdbg("Full path: %s", album->path);
 
 		_gl_data_util_get_file_dir_name(album->path, NULL, NULL,
-						parent_path);
+		                                parent_path);
 		gl_sdbg("Parent path: %s.", parent_path);
 
 		/* And parent folder is Phone root path, it's default folder */
@@ -431,11 +434,11 @@ bool _gl_data_is_screenshot_album(const char *match_folder, gl_album_s *album)
 	GL_CHECK_FALSE(match_folder);
 
 	if (!g_strcmp0(album->display_name, match_folder) &&
-	    album->type == GL_STORE_T_PHONE) {
+	        album->type == GL_STORE_T_PHONE) {
 		char parent_path[GL_DIR_PATH_LEN_MAX] = { 0, };
 
 		_gl_data_util_get_file_dir_name(album->path, NULL, NULL,
-						parent_path);
+		                                parent_path);
 		/* And parent folder is Phone Image path, it's default folder */
 		return (!g_strcmp0(parent_path, GL_DEFAULT_PATH_PICTURES));
 	}
@@ -458,14 +461,15 @@ bool _gl_data_is_camera_album(gl_album_s *album)
 		GL_CHECK_FALSE(parent_path);
 
 		const char *root = NULL;
-		if (album->type == GL_STORE_T_PHONE)
+		if (album->type == GL_STORE_T_PHONE) {
 			root = GL_ROOT_PATH_PHONE;
-		else
+		} else {
 			root = GL_ROOT_PATH_MMC;
+		}
 
 		gl_sdbg("Full path: %s", album->path);
 		_gl_data_util_get_file_dir_name(album->path, NULL, NULL,
-						parent_path);
+		                                parent_path);
 		gl_sdbg("Parent path: %s.", parent_path);
 
 		char *dcim_path = g_strdup_printf("%s/%s", root, GL_DCIM);
@@ -495,11 +499,13 @@ int _gl_data_cp_item_list(void *data, Eina_List *elist, Eina_List **p_elist)
 	gl_item *gitem = NULL;
 	gl_item *ngitem = NULL;
 	EINA_LIST_FOREACH(elist, l, gitem) {
-		if (!gitem || !gitem->item)
+		if (!gitem || !gitem->item) {
 			continue;
+		}
 		ngitem = _gl_data_new_gitem(data, gitem->item->uuid);
-		if (ngitem)
+		if (ngitem) {
 			*p_elist = eina_list_append(*p_elist, ngitem);
+		}
 	}
 	return 0;
 }
@@ -560,8 +566,9 @@ bool _gl_data_get_cluster_list(void *data)
 	ad->albuminfo.elist = _gl_data_util_calloc_cluster_list();
 	GL_CHECK_FALSE(ad->albuminfo.elist);
 	n_entire_items = __gl_data_get_cluster_list(ad, false);
-	if (n_entire_items <= 0) /* if error code is returned, negative value is possible */
+	if (n_entire_items <= 0) { /* if error code is returned, negative value is possible */
 		return false;
+	}
 
 	gl_dbg("cluster-length:%d", n_entire_items);
 	GL_PROFILE_OUT;
@@ -610,14 +617,15 @@ bool _gl_data_get_cluster_list_edit_mode(void *data)
 
 	/* Free old list */
 	_gl_data_copy_cluster_list(ad, true, &list);
-	if (!list ) {
+	if (!list) {
 		gl_dbg("list is null");
 	}
 	ad->albuminfo.elist = _gl_data_util_calloc_cluster_list();
 	GL_CHECK_FALSE(ad->albuminfo.elist);
 	n_entire_items = __gl_data_get_cluster_list(ad, false);
-	if (n_entire_items <= 0) /* if error code is returned, negative value is possible */
+	if (n_entire_items <= 0) { /* if error code is returned, negative value is possible */
 		return false;
+	}
 
 	_gl_update_album_selected_data(data, &list);
 	GL_PROFILE_OUT;
@@ -633,8 +641,9 @@ int _gl_data_update_cluster_list(void *data)
 
 	len = __gl_data_get_cluster_list(ad, true);
 	gl_dbg("Cluster list length: %d.", len);
-	if (len <= 0)
+	if (len <= 0) {
 		return -1;
+	}
 
 	return 0;
 }
@@ -654,14 +663,14 @@ int _gl_data_cluster_list_remove(void *data, gl_cluster *item)
 	Eina_List *cluster_list = ad->albuminfo.elist->clist;
 	EINA_LIST_FOREACH(cluster_list, l, current) {
 		if (current == NULL || current->cluster == NULL ||
-		    current->cluster->uuid == NULL) {
+		        current->cluster->uuid == NULL) {
 			gl_dbgE("Invalid album item!");
 			continue;
 		}
 
 		if (!g_strcmp0(current->cluster->uuid, item->cluster->uuid)) {
 			ad->albuminfo.elist->clist = eina_list_remove(ad->albuminfo.elist->clist,
-								      current);
+			                             current);
 			_gl_data_util_free_gcluster(current);
 			break;
 		}
@@ -672,7 +681,7 @@ int _gl_data_cluster_list_remove(void *data, gl_cluster *item)
 }
 
 int _gl_data_get_cluster_by_id(void *data, const char *cluster_id,
-			       gl_cluster **cluster)
+                               gl_cluster **cluster)
 {
 	GL_CHECK_VAL(data, -1);
 	GL_CHECK_VAL(cluster, -1);
@@ -706,7 +715,7 @@ int _gl_data_get_cluster_by_id(void *data, const char *cluster_id,
 }
 
 int _gl_data_get_cluster_by_path(void *data, const char *path,
-				 gl_cluster **cluster)
+                                 gl_cluster **cluster)
 {
 	GL_CHECK_VAL(data, -1);
 	GL_CHECK_VAL(cluster, -1);
@@ -753,11 +762,12 @@ int _gl_data_albums_selected_list_append(void *data, gl_cluster *item)
 	int web_cnt = 0;
 
 	if (GL_STORE_T_PHONE != item->cluster->type ||
-	    _gl_data_is_camera_album(item->cluster) ||
-	    _gl_data_is_default_album(GL_STR_ALBUM_DOWNLOADS, item->cluster))
+	        _gl_data_is_camera_album(item->cluster) ||
+	        _gl_data_is_default_album(GL_STR_ALBUM_DOWNLOADS, item->cluster)) {
 		++ad->selinfo.disable_hide_cnt;
+	}
 	_gl_data_util_check_album_selected_files(item, &img_cnt,
-						 &sel_cnt, &web_cnt);
+	        &sel_cnt, &web_cnt);
 
 	ad->selinfo.images_cnt = ad->selinfo.images_cnt + img_cnt;
 	ad->selinfo.sel_cnt = ad->selinfo.sel_cnt + sel_cnt;
@@ -805,10 +815,10 @@ int _gl_data_get_item_cnt(const char *cluster_id, int album_type, int *item_cnt)
 
 	GL_CHECK_VAL(cluster_id, -1);
 	if (album_type == GL_STORE_T_PHONE ||
-	    album_type == GL_STORE_T_MMC) {
+	        album_type == GL_STORE_T_MMC) {
 		/*It's normal album*/
 		err = _gl_local_data_get_media_count(cluster_id, &filter,
-						     item_cnt);
+		                                     item_cnt);
 	} else if (album_type == GL_STORE_T_ALL) {
 		/* All albums */
 		gl_dbg("All albums media count.");
@@ -880,7 +890,7 @@ int _gl_data_get_items(int start_pos, int end_pos, Eina_List **list)
 }
 
 int _gl_data_get_items_album(void *data, gl_cluster *album, int start_pos,
-			     int end_pos, Eina_List **p_elist)
+                             int end_pos, Eina_List **p_elist)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -908,37 +918,37 @@ int _gl_data_get_items_album(void *data, gl_cluster *album, int start_pos,
 
 	/* Real album */
 	if (store_type == GL_STORE_T_PHONE ||
-	    store_type == GL_STORE_T_MMC) {
+	        store_type == GL_STORE_T_MMC) {
 		ad->uginfo.sort_type = filter.sort_type;
 
 		if (start_pos == (GL_FIRST_VIEW_END_POS + 1) &&
-			end_pos == GL_GET_UNTIL_LAST_RECORD) {
+		        end_pos == GL_GET_UNTIL_LAST_RECORD) {
 			/* Keep medias_elist and medias_cnt unchanged */
 			gl_dbg("Gridview append idler; Keep medias_elist unchanged.");
 		}
 		err = _gl_local_data_get_album_media_list(&filter,
-							  album->cluster->uuid,
-							  &itemlist);
+		        album->cluster->uuid,
+		        &itemlist);
 	} else if (store_type == GL_STORE_T_ALL) {
 		/* Get "All" album medias */
 		gl_dbg("All albums");
 		ad->uginfo.sort_type = filter.sort_type;
 
 		if (start_pos == (GL_FIRST_VIEW_END_POS + 1) &&
-		    end_pos == GL_GET_UNTIL_LAST_RECORD) {
+		        end_pos == GL_GET_UNTIL_LAST_RECORD) {
 			/* Keep medias_elist and medias_cnt unchanged */
 			gl_dbg("Keep medias_elist unchanged");
 		}
 
 		err = _gl_local_data_get_all_albums_media_list(&filter,
-							       &itemlist);
+		        &itemlist);
 	} else if (store_type == GL_STORE_T_FAV) {
 		/* Get "All" album medias */
 		gl_dbg("fav albums");
 		ad->uginfo.sort_type = filter.sort_type;
 
 		if (start_pos == (GL_FIRST_VIEW_END_POS + 1) &&
-				end_pos == GL_GET_UNTIL_LAST_RECORD) {
+		        end_pos == GL_GET_UNTIL_LAST_RECORD) {
 			/* Keep medias_elist and medias_cnt unchanged */
 			gl_dbg("Keep medias_elist unchanged");
 		}
@@ -955,7 +965,7 @@ int _gl_data_get_items_album(void *data, gl_cluster *album, int start_pos,
 		filter_fav.with_meta = true;
 
 		err = _gl_local_data_get_fav_albums_media_list(&filter_fav,
-				&itemlist);
+		        &itemlist);
 	} else {
 		gl_dbgE("Wrong cluster type!");
 		return -1;
@@ -973,7 +983,7 @@ int _gl_data_get_items_album(void *data, gl_cluster *album, int start_pos,
 }
 
 int _gl_data_update_item_list(void *data, Eina_List **sel_id_list,
-			      Eina_List **p_elist)
+                              Eina_List **p_elist)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -995,7 +1005,7 @@ int _gl_data_update_item_list(void *data, Eina_List **sel_id_list,
 
 	/* In albums tab, or album select view from tag, current album is available */
 	if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS ||
-	    view_mode == GL_VIEW_THUMBS_SELECT) {
+	        view_mode == GL_VIEW_THUMBS_SELECT) {
 		gl_cluster *cur_album = _gl_albums_get_current(data);
 		GL_CHECK_VAL(cur_album, -1);
 		GL_CHECK_VAL(cur_album->cluster, -1);
@@ -1006,7 +1016,7 @@ int _gl_data_update_item_list(void *data, Eina_List **sel_id_list,
 		if (store_type == GL_STORE_T_ALL) {
 			gl_dbg("All albums medias");
 			err = _gl_local_data_get_all_albums_media_list(&filter,
-								       &itemlist);
+			        &itemlist);
 		} else if (store_type == GL_STORE_T_FAV) {
 			gl_filter_s filter_fav;
 
@@ -1022,8 +1032,8 @@ int _gl_data_update_item_list(void *data, Eina_List **sel_id_list,
 		} else {
 			gl_dbg("Local album medias");
 			err = _gl_local_data_get_album_media_list(&filter,
-								  cur_album->cluster->uuid,
-								  &itemlist);
+			        cur_album->cluster->uuid,
+			        &itemlist);
 		}
 	}
 
@@ -1036,8 +1046,9 @@ int _gl_data_update_item_list(void *data, Eina_List **sel_id_list,
 			*sel_id_list = NULL;
 		}
 
-		if (itemlist)
+		if (itemlist) {
 			_gl_data_util_clear_gtype_item_list(&itemlist);
+		}
 
 		return err;
 	}
@@ -1069,7 +1080,7 @@ int _gl_data_update_item_list(void *data, Eina_List **sel_id_list,
 
 		if (sel_id_list && *sel_id_list) {
 			b_selected = _gl_data_util_check_selected_str_id(sel_id_list,
-									 item->uuid);
+			             item->uuid);
 			if (b_selected) {
 				b_selected = false;
 				/* Set checkbox state */
@@ -1081,14 +1092,15 @@ int _gl_data_update_item_list(void *data, Eina_List **sel_id_list,
 	}
 
 	/* Clear list of selected ID */
-	if (sel_id_list && *sel_id_list)
+	if (sel_id_list && *sel_id_list) {
 		_gl_data_util_free_selected_str_list(sel_id_list);
+	}
 	gl_dbg("done");
 	return err;
 }
 
 int _gl_data_get_album_cover(gl_cluster *album, gl_item **pgitem,
-			     media_content_order_e sort_type)
+                             media_content_order_e sort_type)
 {
 	GL_CHECK_VAL(pgitem, -1);
 	GL_CHECK_VAL(album, -1);
@@ -1111,15 +1123,16 @@ int _gl_data_get_album_cover(gl_cluster *album, gl_item **pgitem,
 	filter.with_meta = false;
 
 	if (album->cluster->type == GL_STORE_T_PHONE ||
-	    album->cluster->type == GL_STORE_T_MMC) {
+	        album->cluster->type == GL_STORE_T_MMC) {
 		/* real album */
 		err = _gl_local_data_get_album_cover(&filter,
-						     album->cluster->uuid,
-						     &item_list);
+		                                     album->cluster->uuid,
+		                                     &item_list);
 		if (err != 0 || item_list == NULL) {
 			gl_dbgE("Get album medias failed[%d]", err);
-			if (item_list)
+			if (item_list) {
 				_gl_data_util_clear_gtype_item_list(&item_list);
+			}
 			return -1;
 		}
 
@@ -1147,8 +1160,9 @@ int _gl_data_get_album_cover(gl_cluster *album, gl_item **pgitem,
 		err = _gl_local_data_get_all_albums_cover(&filter, &item_list);
 		if (err != 0 || item_list == NULL) {
 			gl_dbgE("Failed to get all medias[%d]!", err);
-			if (item_list)
+			if (item_list) {
 				_gl_data_util_clear_gtype_item_list(&item_list);
+			}
 
 			return -1;
 		}
@@ -1189,8 +1203,9 @@ int _gl_data_get_album_cover(gl_cluster *album, gl_item **pgitem,
 		err = _gl_local_data_get_fav_albums_cover(&filter_fav, &item_list);
 		if (err != 0 || item_list == NULL) {
 			gl_dbgE("Failed to get fav medias[%d]!", err);
-			if (item_list)
+			if (item_list) {
 				_gl_data_util_clear_gtype_item_list(&item_list);
+			}
 			return -1;
 		}
 
@@ -1218,12 +1233,12 @@ int _gl_data_get_album_cover(gl_cluster *album, gl_item **pgitem,
 
 	if (*pgitem)
 		gl_sdbg("Album(%s) cover[%p]", album->cluster->display_name,
-		       *pgitem);
+		        *pgitem);
 	return 0;
 }
 
 bool _gl_data_is_item_cnt_zero(void *data, media_content_type_e type,
-			       Eina_List *elist)
+                               Eina_List *elist)
 {
 	GL_CHECK_VAL(data, false);
 	gl_item *gitem = NULL;
@@ -1242,7 +1257,7 @@ bool _gl_data_is_item_cnt_zero(void *data, media_content_type_e type,
 }
 
 int _gl_data_get_first_item(media_content_type_e type, Eina_List *elist,
-			    gl_item **p_gitem)
+                            gl_item **p_gitem)
 {
 	GL_CHECK_VAL(p_gitem, -1);
 	GL_CHECK_VAL(elist, -1);
@@ -1314,9 +1329,10 @@ int _gl_data_free_burstshot_items(gl_item *gitem, Eina_List *elist)
 	GL_CHECK_VAL(gitem->item, -1);
 
 	if (gitem->item->type != MEDIA_CONTENT_TYPE_IMAGE ||
-	    gitem->item->image_info == NULL ||
-	    gitem->item->image_info->burstshot_id == NULL)
+	        gitem->item->image_info == NULL ||
+	        gitem->item->image_info->burstshot_id == NULL) {
 		return -1;
+	}
 
 	int i = gitem->sequence;
 	int cnt = eina_list_count(elist);
@@ -1325,12 +1341,12 @@ int _gl_data_free_burstshot_items(gl_item *gitem, Eina_List *elist)
 	for (; i < cnt; i++) {
 		cur_gitem = eina_list_nth(elist, i);
 		if (cur_gitem == NULL || cur_gitem->item == NULL ||
-		    cur_gitem->item->uuid == NULL) {
+		        cur_gitem->item->uuid == NULL) {
 			gl_dbgE("Invalid gitem. continue!");
 			continue;
 		} else if (cur_gitem->item->type != MEDIA_CONTENT_TYPE_IMAGE ||
-			   cur_gitem->item->image_info == NULL ||
-			   cur_gitem->item->image_info->burstshot_id == NULL) {
+		           cur_gitem->item->image_info == NULL ||
+		           cur_gitem->item->image_info->burstshot_id == NULL) {
 			/* No more same burstshot items */
 			break;
 		}
@@ -1355,9 +1371,10 @@ int _gl_data_selected_add_burstshot(void *data, gl_item *gitem, Eina_List *elist
 	gl_appdata *ad = (gl_appdata *)data;
 
 	if (gitem->item->type != MEDIA_CONTENT_TYPE_IMAGE ||
-	    gitem->item->image_info == NULL ||
-	    gitem->item->image_info->burstshot_id == NULL)
+	        gitem->item->image_info == NULL ||
+	        gitem->item->image_info->burstshot_id == NULL) {
 		return -1;
+	}
 
 	int i = gitem->sequence;
 	int cnt = eina_list_count(elist);
@@ -1366,12 +1383,12 @@ int _gl_data_selected_add_burstshot(void *data, gl_item *gitem, Eina_List *elist
 	for (; i < cnt; i++) {
 		cur_gitem = eina_list_nth(elist, i);
 		if (cur_gitem == NULL || cur_gitem->item == NULL ||
-		    cur_gitem->item->uuid == NULL) {
+		        cur_gitem->item->uuid == NULL) {
 			gl_dbgE("Invalid gitem. continue!");
 			continue;
 		} else if (cur_gitem->item->type != MEDIA_CONTENT_TYPE_IMAGE ||
-			cur_gitem->item->image_info == NULL ||
-			cur_gitem->item->image_info->burstshot_id == NULL) {
+		           cur_gitem->item->image_info == NULL ||
+		           cur_gitem->item->image_info->burstshot_id == NULL) {
 			/* No more same burstshot items */
 			break;
 		}
@@ -1381,14 +1398,16 @@ int _gl_data_selected_add_burstshot(void *data, gl_item *gitem, Eina_List *elist
 			ad->selinfo.images_cnt++;
 #ifdef _USE_ROTATE_BG
 			if (cur_gitem->item->ext &&
-			    !strcasecmp(cur_gitem->item->ext, GL_JPEG_FILE_EXT))
-				if (_gl_exif_check_img_type(cur_gitem->item->file_url))
+			        !strcasecmp(cur_gitem->item->ext, GL_JPEG_FILE_EXT))
+				if (_gl_exif_check_img_type(cur_gitem->item->file_url)) {
 					ad->selinfo.jpeg_cnt++;
+				}
 #endif
-			if (gitem->item->storage_type != GL_STORE_T_PHONE)
+			if (gitem->item->storage_type != GL_STORE_T_PHONE) {
 				++ad->selinfo.disable_hide_cnt;
+			}
 			ad->selinfo.elist = eina_list_append(ad->selinfo.elist,
-							     cur_gitem);
+			                                     cur_gitem);
 		} else {
 			/* No more same burstshot items */
 			break;
@@ -1402,10 +1421,11 @@ bool _gl_data_get_burstshot_status(void *data, gl_item *gitem)
 {
 	GL_CHECK_FALSE(gitem);
 	if (gitem->item == NULL ||
-	    gitem->item->type != MEDIA_CONTENT_TYPE_IMAGE ||
-	    gitem->item->image_info == NULL ||
-	    gitem->item->image_info->burstshot_id == NULL)
+	        gitem->item->type != MEDIA_CONTENT_TYPE_IMAGE ||
+	        gitem->item->image_info == NULL ||
+	        gitem->item->image_info->burstshot_id == NULL) {
 		return gitem->checked;
+	}
 
 	GL_CHECK_FALSE(data);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -1416,15 +1436,16 @@ bool _gl_data_get_burstshot_status(void *data, gl_item *gitem)
 	gl_item *current = NULL;
 	EINA_LIST_FOREACH(sel_list, l, current) {
 		if (current == NULL || current->item == NULL ||
-		    current->item->type != MEDIA_CONTENT_TYPE_IMAGE ||
-		    current->item->image_info == NULL ||
-		    current->item->image_info->burstshot_id == NULL) {
+		        current->item->type != MEDIA_CONTENT_TYPE_IMAGE ||
+		        current->item->image_info == NULL ||
+		        current->item->image_info->burstshot_id == NULL) {
 			gl_dbgE("Invalid gitem!");
 			continue;
 		}
 		if (!g_strcmp0(gitem->item->image_info->burstshot_id,
-			       current->item->image_info->burstshot_id))
+		               current->item->image_info->burstshot_id)) {
 			return true;
+		}
 	}
 	return false;
 }
@@ -1443,14 +1464,16 @@ int _gl_data_selected_list_append(void *data, gl_item *gitem)
 #ifdef _USE_ROTATE_BG
 		gl_dbg("Ext: %s", gitem->item->ext);
 		if (gitem->item->ext &&
-		    !strcasecmp(gitem->item->ext, GL_JPEG_FILE_EXT)) {
-		   	 if (_gl_exif_check_img_type(gitem->item->file_url))
+		        !strcasecmp(gitem->item->ext, GL_JPEG_FILE_EXT)) {
+			if (_gl_exif_check_img_type(gitem->item->file_url)) {
 				ad->selinfo.jpeg_cnt++;
+			}
 		}
 #endif
 	}
-	if (gitem->item->storage_type != GL_STORE_T_PHONE)
+	if (gitem->item->storage_type != GL_STORE_T_PHONE) {
 		++ad->selinfo.disable_hide_cnt;
+	}
 
 	Eina_List *sel_list = ad->selinfo.elist;
 	sel_list = eina_list_append(sel_list, gitem);
@@ -1470,13 +1493,13 @@ int _gl_data_selected_fav_list_remove(void *data, gl_item *gitem)
 
 	EINA_LIST_FOREACH(ad->selinfo.fav_elist, l, current) {
 		if (current == NULL || current->item == NULL ||
-		    current->item->uuid == NULL) {
+		        current->item->uuid == NULL) {
 			gl_dbgE("Invalid gitem!");
 			continue;
 		}
 		if (!g_strcmp0(current->item->uuid, gitem->item->uuid)) {
 			ad->selinfo.fav_elist = eina_list_remove(ad->selinfo.fav_elist,
-							     current);
+			                        current);
 		}
 		current = NULL;
 	}
@@ -1496,38 +1519,41 @@ int _gl_data_selected_list_remove(void *data, gl_item *gitem)
 	bool b_removed = false;
 	char *burstshot_id = NULL;
 	if (gitem->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-	    gitem->item->image_info)
+	        gitem->item->image_info) {
 		burstshot_id = gitem->item->image_info->burstshot_id;
+	}
 
 	EINA_LIST_FOREACH(ad->selinfo.elist, l, current) {
 		if (current == NULL || current->item == NULL ||
-		    current->item->uuid == NULL) {
+		        current->item->uuid == NULL) {
 			gl_dbgE("Invalid gitem!");
 			continue;
 		}
 		if (!g_strcmp0(current->item->uuid, gitem->item->uuid) ||
-		    (burstshot_id &&
-		     current->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-		     current->item->image_info &&
-		     current->item->image_info->burstshot_id &&
-		     !g_strcmp0(burstshot_id, current->item->image_info->burstshot_id))) {
-			if (gitem->item->storage_type != GL_STORE_T_PHONE)
+		        (burstshot_id &&
+		         current->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
+		         current->item->image_info &&
+		         current->item->image_info->burstshot_id &&
+		         !g_strcmp0(burstshot_id, current->item->image_info->burstshot_id))) {
+			if (gitem->item->storage_type != GL_STORE_T_PHONE) {
 				ad->selinfo.disable_hide_cnt--;
+			}
 			/* Update selected images count */
 			if (current->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-			    ad->selinfo.images_cnt > 0) {
+			        ad->selinfo.images_cnt > 0) {
 				ad->selinfo.images_cnt--;
 #ifdef _USE_ROTATE_BG
 				if (current->item->ext &&
-				    !strcasecmp(current->item->ext, GL_JPEG_FILE_EXT) &&
-				    ad->selinfo.jpeg_cnt > 0)
-					if (_gl_exif_check_img_type(current->item->file_url))
+				        !strcasecmp(current->item->ext, GL_JPEG_FILE_EXT) &&
+				        ad->selinfo.jpeg_cnt > 0)
+					if (_gl_exif_check_img_type(current->item->file_url)) {
 						ad->selinfo.jpeg_cnt--;
+					}
 #endif
 			}
 
 			ad->selinfo.elist = eina_list_remove(ad->selinfo.elist,
-							     current);
+			                                     current);
 			if (burstshot_id == NULL) {
 				break;
 			} else {
@@ -1554,21 +1580,23 @@ int _gl_data_selected_list_remove_one(void *data, gl_item *gitem)
 
 	/* Update selected images count */
 	if (gitem->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-	    ad->selinfo.images_cnt > 0) {
+	        ad->selinfo.images_cnt > 0) {
 		ad->selinfo.images_cnt--;
 #ifdef _USE_ROTATE_BG
 		if (gitem->item->ext &&
-			!strcasecmp(gitem->item->ext,GL_JPEG_FILE_EXT) &&
-			ad->selinfo.jpeg_cnt > 0) {
-			if (_gl_exif_check_img_type(gitem->item->file_url))
+		        !strcasecmp(gitem->item->ext, GL_JPEG_FILE_EXT) &&
+		        ad->selinfo.jpeg_cnt > 0) {
+			if (_gl_exif_check_img_type(gitem->item->file_url)) {
 				ad->selinfo.jpeg_cnt--;
+			}
 		}
 #endif
 	}
-	if (gitem->item->storage_type != GL_STORE_T_PHONE)
+	if (gitem->item->storage_type != GL_STORE_T_PHONE) {
 		ad->selinfo.disable_hide_cnt--;
+	}
 	ad->selinfo.elist = eina_list_remove(ad->selinfo.elist,
-					     gitem);
+	                                     gitem);
 	return 0;
 }
 
@@ -1577,8 +1605,9 @@ int _gl_data_selected_list_finalize(void *data)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 
-	if (ad->selinfo.elist == NULL)
+	if (ad->selinfo.elist == NULL) {
 		return -1;
+	}
 
 	gl_item *gitem = NULL;
 	int i;
@@ -1613,8 +1642,9 @@ int _gl_data_clear_selected_info(void *data)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 
-	if (ad->selinfo.elist == NULL)
+	if (ad->selinfo.elist == NULL) {
 		return -1;
+	}
 
 	eina_list_free(ad->selinfo.elist);
 	gl_dbg("eina free selected list");
@@ -1668,11 +1698,12 @@ int _gl_data_selected_list_count(void *data)
 
 bool _gl_data_is_root_path(const char *path)
 {
-	if (path == NULL)
+	if (path == NULL) {
 		return false;
+	}
 
 	if (!g_strcmp0(GL_ROOT_PATH_PHONE, path) ||
-	    !g_strcmp0(GL_ROOT_PATH_MMC, path)) {
+	        !g_strcmp0(GL_ROOT_PATH_MMC, path)) {
 		gl_sdbg("Root path: %s", path);
 		return true;
 	}
@@ -1682,8 +1713,9 @@ bool _gl_data_is_root_path(const char *path)
 
 bool _gl_data_check_root_type(const char *path, const char *root)
 {
-	if (path == NULL || root == NULL)
+	if (path == NULL || root == NULL) {
 		return false;
+	}
 
 	if (!strncmp(root, path, strlen(root))) {
 		gl_sdbg("Root path: %s", path);
@@ -1701,8 +1733,9 @@ bool _gl_data_is_albums_selected_empty(void *data)
 
 	Eina_List *l = NULL;
 	EINA_LIST_FOREACH(ad->albuminfo.sel_elist, l, album) {
-		if (album && album->cluster && album->cluster->count)
+		if (album && album->cluster && album->cluster->count) {
 			return false;
+		}
 		album = NULL;
 	}
 
@@ -1726,15 +1759,16 @@ int _gl_data_get_albums_selected_files(void *data, void *get_cb, void *cb_data)
 	gl_filter_s filter;
 	int count = 0;
 
-	int (*_get_cb) (void *cb_data, gl_media_s *item) = NULL;
-	if (get_cb)
+	int (*_get_cb)(void * cb_data, gl_media_s * item) = NULL;
+	if (get_cb) {
 		_get_cb = get_cb;
+	}
 
 	memset(&filter, 0x00, sizeof(gl_filter_s));
 	_gl_data_util_get_cond(filter.cond);
 	filter.sort_type = MEDIA_CONTENT_ORDER_DESC;
 	g_strlcpy(filter.sort_keyword, GL_CONDITION_ORDER,
-		  KEYWORD_LENGTH);
+	          KEYWORD_LENGTH);
 	filter.collate_type = MEDIA_CONTENT_COLLATE_NOCASE;
 	filter.offset = GL_GET_ALL_RECORDS;
 	filter.count = GL_GET_ALL_RECORDS;
@@ -1742,16 +1776,16 @@ int _gl_data_get_albums_selected_files(void *data, void *get_cb, void *cb_data)
 
 	EINA_LIST_FOREACH(ad->albuminfo.sel_elist, l, album) {
 		if (album == NULL || album->cluster == NULL ||
-		    album->cluster->uuid == NULL) {
+		        album->cluster->uuid == NULL) {
 			continue;
 		}
 		if (!strcmp(GL_ALBUM_ALL_ID, album->cluster->uuid))
 			err = _gl_local_data_get_all_albums_media_list(&filter,
-								       &elist);
+			        &elist);
 		else
 			err = _gl_local_data_get_album_media_list(&filter,
-								  album->cluster->uuid,
-								  &elist);
+			        album->cluster->uuid,
+			        &elist);
 		if ((err == 0) && (elist != NULL)) {
 			gl_media_s *item = NULL;
 			EINA_LIST_FREE(elist, item) {
@@ -1759,8 +1793,9 @@ int _gl_data_get_albums_selected_files(void *data, void *get_cb, void *cb_data)
 					gl_dbgE("Invalid item!");
 					continue;
 				}
-				if (_get_cb)
+				if (_get_cb) {
 					_get_cb(cb_data, item);
+				}
 				count++;
 				item = NULL;
 			}
@@ -1788,14 +1823,15 @@ int _gl_data_albums_selected_list_remove(void *data, gl_cluster *item)
 	Eina_List *l = NULL;
 
 	if (GL_STORE_T_PHONE != item->cluster->type ||
-	    _gl_data_is_camera_album(item->cluster) ||
-	    _gl_data_is_default_album(GL_STR_ALBUM_DOWNLOADS, item->cluster))
+	        _gl_data_is_camera_album(item->cluster) ||
+	        _gl_data_is_default_album(GL_STR_ALBUM_DOWNLOADS, item->cluster)) {
 		--ad->selinfo.disable_hide_cnt;
+	}
 
 	Eina_List *sel_list = ad->albuminfo.sel_elist;
 	EINA_LIST_FOREACH(sel_list, l, current) {
 		if (current == NULL || current->cluster == NULL ||
-		    current->cluster->uuid == NULL) {
+		        current->cluster->uuid == NULL) {
 			gl_dbgE("Invalid gcluster!");
 			continue;
 		}
@@ -1806,15 +1842,15 @@ int _gl_data_albums_selected_list_remove(void *data, gl_cluster *item)
 			int web_cnt = 0;
 
 			_gl_data_util_check_album_selected_files(item,
-								 &img_cnt,
-								 &sel_cnt,
-								 &web_cnt);
+			        &img_cnt,
+			        &sel_cnt,
+			        &web_cnt);
 
 			ad->selinfo.images_cnt = ad->selinfo.images_cnt - img_cnt;
 			ad->selinfo.sel_cnt = ad->selinfo.sel_cnt - sel_cnt;
 
 			ad->albuminfo.sel_elist = eina_list_remove(ad->albuminfo.sel_elist,
-								   current);
+			                          current);
 			break;
 		}
 		current = NULL;
@@ -1831,8 +1867,9 @@ int _gl_data_finalize_albums_selected_list(void *data)
 
 	Eina_List *sel_list = ad->albuminfo.sel_elist;
 	EINA_LIST_FREE(sel_list, item) {
-		if (item)
+		if (item) {
 			item->checked = false;
+		}
 	}
 
 	ad->selinfo.images_cnt = 0;
@@ -1846,8 +1883,9 @@ int _gl_data_init(void *data)
 {
 	GL_CHECK_VAL(data, -1);
 	int err = _gl_local_data_connect();
-	if (err != 0)
+	if (err != 0) {
 		gl_dbgE("Connect to media-content DB failed!");
+	}
 	return err;
 }
 
@@ -1855,8 +1893,9 @@ int _gl_data_finalize(void *data)
 {
 	GL_CHECK_VAL(data, -1);
 	int err = _gl_local_data_disconnect();
-	if (err != 0)
+	if (err != 0) {
 		gl_dbgE("Disconnect with media-content DB failed!");
+	}
 	return err;
 }
 
@@ -1868,8 +1907,8 @@ int _gl_data_delete_media(void *data, gl_media_s *media_item)
 
 /* Creates a thumbnail image for given the media, asynchronously */
 int _gl_data_create_thumb(gl_media_s *item,
-			  media_thumbnail_completed_cb callback,
-			  void *user_data)
+                          media_thumbnail_completed_cb callback,
+                          void *user_data)
 {
 	GL_CHECK_VAL(item, -1);
 	GL_CHECK_VAL(item->media_h, -1);
@@ -1909,8 +1948,9 @@ int _gl_data_save_selected_str_ids(void *data, Eina_List **elist)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 	/* Get ID list of selected items */
-	if (ad->selinfo.elist == NULL)
+	if (ad->selinfo.elist == NULL) {
 		return -1;
+	}
 	_gl_data_util_get_selected_str_ids(&(ad->selinfo.elist), elist);
 	/* Reset old flags */
 	ad->selinfo.images_cnt = 0;
@@ -1928,7 +1968,7 @@ int _gl_data_restore_selected(Eina_List *sel_ids, gl_item *gitem)
 	if (sel_ids) {
 		bool b_selected = false;
 		b_selected = _gl_data_check_selected_id(sel_ids,
-							gitem->item->uuid);
+		                                        gitem->item->uuid);
 		if (b_selected) {
 			gl_dbg("b_selected");
 			b_selected = false;
@@ -1948,7 +1988,7 @@ int _gl_data_restore_update_selected(Eina_List *sel_ids, gl_item *gitem)
 	if (sel_ids) {
 		bool b_selected = false;
 		b_selected = _gl_data_check_selected_id(sel_ids,
-							gitem->item->uuid);
+		                                        gitem->item->uuid);
 		if (b_selected) {
 			gl_dbg("b_selected");
 			b_selected = false;
@@ -1971,7 +2011,7 @@ bool _gl_data_check_selected_id(Eina_List *sel_id_list, const char *id)
 		return false;
 	}
 	EINA_LIST_FOREACH(sel_id_list, tmp_elist, sit) {
-		if (sit == NULL || sit->item ==NULL || sit->item->uuid == NULL) {
+		if (sit == NULL || sit->item == NULL || sit->item->uuid == NULL) {
 			gl_dbgE("Invalid p_id!");
 			sit = NULL;
 			continue;

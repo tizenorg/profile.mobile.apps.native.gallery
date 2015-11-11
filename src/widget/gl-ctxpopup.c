@@ -52,15 +52,15 @@ static void __gl_ctxpopup_move_for_hwkey(void *data, Evas_Object *ctxpopup)
 	switch (changed_ang) {
 	case APP_DEVICE_ORIENTATION_0:
 	case APP_DEVICE_ORIENTATION_180:
-		move_x = win_w/2;
+		move_x = win_w / 2;
 		move_y = win_h;
 		break;
 	case APP_DEVICE_ORIENTATION_90:
-		move_x = win_h/2;
+		move_x = win_h / 2;
 		move_y = win_w;
 		break;
 	case APP_DEVICE_ORIENTATION_270:
-		move_x = win_h/2;
+		move_x = win_h / 2;
 		move_y = win_w;
 		break;
 	}
@@ -70,7 +70,7 @@ static void __gl_ctxpopup_move_for_hwkey(void *data, Evas_Object *ctxpopup)
 }
 
 static bool __gl_ctxpopup_check_btn_pos(void *data, Evas_Object *btn, int x,
-					int y, int w, int h)
+                                        int y, int w, int h)
 {
 	GL_CHECK_FALSE(data);
 	GL_CHECK_FALSE(btn);
@@ -80,7 +80,7 @@ static bool __gl_ctxpopup_check_btn_pos(void *data, Evas_Object *btn, int x,
 	elm_win_screen_size_get(ad->maininfo.win, NULL, NULL, &win_w, &win_h);
 
 	if (((x > 0) && (x < win_w)) && ((y > 0) && (y < win_h)) &&
-	    ((w > 0) && (h > 0))) {
+	        ((w > 0) && (h > 0))) {
 		/* button's position is inside the main window, and button's size is not zero */
 		return true;
 	}
@@ -132,7 +132,7 @@ static void __gl_ctxpopup_hide_cb(void *data, Evas_Object *obj, void *ei)
 	gl_appdata *ad = (gl_appdata *)data;
 
 	bool ct_rotate = (bool)evas_object_data_get(obj,
-						    GL_CTXPOPUP_OBJ_ROTATE_KEY);
+	                 GL_CTXPOPUP_OBJ_ROTATE_KEY);
 
 	if (!ct_rotate) {
 		gl_dbg("ctxpopup is dismissed");
@@ -143,7 +143,7 @@ static void __gl_ctxpopup_hide_cb(void *data, Evas_Object *obj, void *ei)
 		/* when "dismissed" cb is called next time,
 		  * ctxpopup should be dismissed if device is not rotated. */
 		evas_object_data_set(obj, GL_CTXPOPUP_OBJ_ROTATE_KEY,
-				     (void *)false);
+		                     (void *)false);
 		/* If ctxpopup is not dismissed, then it must be shown again.
 		  * Otherwise "dismissed" cb will be called one more time. */
 		evas_object_show(ad->maininfo.ctxpopup);
@@ -163,14 +163,14 @@ static int __gl_ctxpopup_show(void *data, Evas_Object *btn, Evas_Object *ctxpopu
 	int h = 0;
 
 	elm_ctxpopup_direction_priority_set(ctxpopup, ELM_CTXPOPUP_DIRECTION_UP,
-					    ELM_CTXPOPUP_DIRECTION_LEFT,
-					    ELM_CTXPOPUP_DIRECTION_RIGHT,
-					    ELM_CTXPOPUP_DIRECTION_DOWN);
+	                                    ELM_CTXPOPUP_DIRECTION_LEFT,
+	                                    ELM_CTXPOPUP_DIRECTION_RIGHT,
+	                                    ELM_CTXPOPUP_DIRECTION_DOWN);
 	/* Only for more button */
 	evas_object_geometry_get(btn, &x_position, &y_position, &w, &h);
 	if (__gl_ctxpopup_check_btn_pos(data, btn, x_position, y_position, w, h) == true) {
 		/* the more button is inside the main window */
-		evas_object_move(ctxpopup, x_position+w/2, y_position + h/2);
+		evas_object_move(ctxpopup, x_position + w / 2, y_position + h / 2);
 		gl_dbg("(%d, %d) - (%d, %d)", x_position, y_position, w, h);
 	} else {
 		/* the more button is not inside the main windown,
@@ -184,24 +184,25 @@ static int __gl_ctxpopup_show(void *data, Evas_Object *btn, Evas_Object *ctxpopu
 }
 
 static void __gl_ctxpopup_parent_resize_cb(void *data, Evas *e,
-					   Evas_Object *obj, void *ei)
+        Evas_Object *obj, void *ei)
 {
 	gl_dbg("");
 	GL_CHECK(data);
 	evas_object_data_set((Evas_Object *)data, GL_CTXPOPUP_OBJ_ROTATE_KEY,
-			     (void *)true);
+	                     (void *)true);
 }
 
 static void __gl_ctxpopup_items_update_cb(void *data, Evas_Object *obj, void *ei)
 {
 	gl_dbg("");
 	GL_CHECK(data);
-	int (*update_cb)(void *data, Evas_Object *parent);
+	int (*update_cb)(void * data, Evas_Object * parent);
 	update_cb = evas_object_data_get((Evas_Object *)data,
-					 "gl_ctxpopup_update_items_cb");
+	                                 "gl_ctxpopup_update_items_cb");
 	gl_sdbg("callback: %p", update_cb);
-	if (update_cb)
+	if (update_cb) {
 		update_cb(ei, (Evas_Object *)data);
+	}
 }
 
 
@@ -213,7 +214,7 @@ static void __gl_ctxpopup_rotate_cb(void *data, Evas_Object *obj, void *ei)
 
 	Evas_Object *more_btn = NULL;
 	more_btn = (Evas_Object *)evas_object_data_get(ad->maininfo.ctxpopup,
-						       GL_CTXPOPUP_OBJ_MORE_BTN_KEY);
+	           GL_CTXPOPUP_OBJ_MORE_BTN_KEY);
 	GL_CHECK(more_btn);
 	__gl_ctxpopup_show(data, more_btn, ad->maininfo.ctxpopup);
 }
@@ -229,18 +230,18 @@ static void __gl_ctxpopup_del_cb(void *data, Evas *e, Evas_Object *obj, void *ei
 	evas_object_data_del(ctxpopup, GL_CTXPOPUP_OBJ_MORE_BTN_KEY);
 	evas_object_data_del(ctxpopup, GL_CTXPOPUP_OBJ_ROTATE_KEY);
 	evas_object_smart_callback_del(ctxpopup, "dismissed",
-				       __gl_ctxpopup_hide_cb);
+	                               __gl_ctxpopup_hide_cb);
 	evas_object_event_callback_del(ctxpopup, EVAS_CALLBACK_DEL,
-				       __gl_ctxpopup_del_cb);
+	                               __gl_ctxpopup_del_cb);
 	evas_object_event_callback_del(ad->maininfo.naviframe,
-				       EVAS_CALLBACK_RESIZE,
-				       __gl_ctxpopup_parent_resize_cb);
+	                               EVAS_CALLBACK_RESIZE,
+	                               __gl_ctxpopup_parent_resize_cb);
 	evas_object_smart_callback_del(ad->maininfo.naviframe,
-				       "ctxpopup,items,update",
-				       __gl_ctxpopup_items_update_cb);
+	                               "ctxpopup,items,update",
+	                               __gl_ctxpopup_items_update_cb);
 	evas_object_smart_callback_del(elm_object_top_widget_get(ctxpopup),
-				       "rotation,changed",
-				       __gl_ctxpopup_rotate_cb);
+	                               "rotation,changed",
+	                               __gl_ctxpopup_rotate_cb);
 	void *ctx_data = evas_object_data_get(ctxpopup, GL_CTXPOPUP_OBJ_DATA_KEY);
 	GL_FREEIF(ctx_data);
 	gl_dbg("done");
@@ -254,26 +255,26 @@ static int __gl_ctxpopup_add_callbacks(void *data, Evas_Object *ctxpopup)
 	GL_CHECK_VAL(ad->maininfo.naviframe, -1);
 
 	evas_object_smart_callback_add(ctxpopup, "dismissed",
-				       __gl_ctxpopup_hide_cb, data);
+	                               __gl_ctxpopup_hide_cb, data);
 	evas_object_event_callback_add(ctxpopup, EVAS_CALLBACK_DEL,
-				       __gl_ctxpopup_del_cb, data);
+	                               __gl_ctxpopup_del_cb, data);
 	evas_object_event_callback_add(ad->maininfo.naviframe,
-				       EVAS_CALLBACK_RESIZE,
-				       __gl_ctxpopup_parent_resize_cb,
-				       ctxpopup);
+	                               EVAS_CALLBACK_RESIZE,
+	                               __gl_ctxpopup_parent_resize_cb,
+	                               ctxpopup);
 	evas_object_smart_callback_add(ad->maininfo.naviframe,
-				       "ctxpopup,items,update",
-				       __gl_ctxpopup_items_update_cb, ctxpopup);
+	                               "ctxpopup,items,update",
+	                               __gl_ctxpopup_items_update_cb, ctxpopup);
 	evas_object_smart_callback_add(elm_object_top_widget_get(ctxpopup),
-				       "rotation,changed",
-				       __gl_ctxpopup_rotate_cb, data);
+	                               "rotation,changed",
+	                               __gl_ctxpopup_rotate_cb, data);
 
 	gl_dbg("done");
 	return 0;
 }
 
 Elm_Object_Item *_gl_ctxpopup_append(Evas_Object *obj, char *label_id,
-				     Evas_Smart_Cb func, const void *data)
+                                     Evas_Smart_Cb func, const void *data)
 {
 	Evas_Object *ic = NULL;
 	char *path = __gl_ctxpopup_get_icon(label_id);
@@ -286,7 +287,7 @@ Elm_Object_Item *_gl_ctxpopup_append(Evas_Object *obj, char *label_id,
 
 	gl_ctx_data_s *ctx_data = NULL;
 	ctx_data = (gl_ctx_data_s *)evas_object_data_get(obj,
-							 GL_CTXPOPUP_OBJ_DATA_KEY);
+	           GL_CTXPOPUP_OBJ_DATA_KEY);
 	if (ctx_data) {
 		ctx_data->items_count++;
 	}
@@ -294,7 +295,7 @@ Elm_Object_Item *_gl_ctxpopup_append(Evas_Object *obj, char *label_id,
 }
 
 Elm_Object_Item *_gl_ctxpopup_append_with_icon(Evas_Object *obj, char *label,
-				     char *icon_path, Evas_Smart_Cb func, const void *data)
+        char *icon_path, Evas_Smart_Cb func, const void *data)
 {
 	Evas_Object *ic = NULL;
 
@@ -306,7 +307,7 @@ Elm_Object_Item *_gl_ctxpopup_append_with_icon(Evas_Object *obj, char *label,
 
 	gl_ctx_data_s *ctx_data = NULL;
 	ctx_data = (gl_ctx_data_s *)evas_object_data_get(obj,
-							 GL_CTXPOPUP_OBJ_DATA_KEY);
+	           GL_CTXPOPUP_OBJ_DATA_KEY);
 	if (ctx_data) {
 		ctx_data->items_count++;
 	}
@@ -334,9 +335,9 @@ int _gl_ctxpopup_create(void *data, Evas_Object *but, ctx_append_cb append_cb)
 	/* more btn is needed to decide ctxpopup's position. */
 	evas_object_data_set(ctxpopup, GL_CTXPOPUP_OBJ_MORE_BTN_KEY, but);
 	evas_object_data_set(ctxpopup, GL_CTXPOPUP_OBJ_ROTATE_KEY,
-			     (void *)false);
+	                     (void *)false);
 	evas_object_data_set(ctxpopup, GL_CTXPOPUP_OBJ_DATA_KEY,
-			     (void *)ctx_data);
+	                     (void *)ctx_data);
 
 	/* Add callbacks for ctxpopup */
 	__gl_ctxpopup_add_callbacks(data, ctxpopup);

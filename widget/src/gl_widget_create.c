@@ -53,33 +53,33 @@
 #define GL_STR_ID_DEC dgettext("sys_string", "IDS_COM_BODY_DECEMBER")
 
 int images_in_loops[] = {3, 2, 1, 4}; //count of images in each iteration of animation
-int swallows_in_loops[5][10] = {{1, 1, 0, 0, 0, 1 ,0}, {0, 0, 0, 0, 1, 1, 0}, {0, 0, 0, 0, 0, 0, 1}, {1, 1, 1, 1, 0, 0, 0}}; //arrangement of swallows in each iteration of animation
+int swallows_in_loops[5][10] = {{1, 1, 0, 0, 0, 1 , 0}, {0, 0, 0, 0, 1, 1, 0}, {0, 0, 0, 0, 0, 0, 1}, {1, 1, 1, 1, 0, 0, 0}}; //arrangement of swallows in each iteration of animation
 int loop_count = 0; //counter to the iteration number;
 
-static void gl_widget_on_no_image_cb(void *data,Evas_Object *obj,
-	const char *emission, const char *source);
+static void gl_widget_on_no_image_cb(void *data, Evas_Object *obj,
+                                     const char *emission, const char *source);
 static Eina_Bool gl_widget_timer_cb(void *data);
 void _gl_widget_create_edit_btn(_widget_data* widget_data);
 
 void gl_widget_win_del_cb(void *data, Evas *evas, Evas_Object *obj,
-	void *event_info)
+                          void *event_info)
 {
 	ecore_timer_del(data);
 }
 
 void gl_widget_key_down_cb(void *data, Evas *evas, Evas_Object *obj,
-	void *event_info)
+                           void *event_info)
 {
 	elm_exit();
 }
 
 void gl_widget_app_get_resource(const char *edj_file_in, char *edj_path_out,
-	int edj_path_max)
+                                int edj_path_max)
 {
 	char *res_path = app_get_resource_path();
 	if (res_path) {
 		snprintf(edj_path_out, edj_path_max, "%s%s", res_path,
-			edj_file_in);
+		         edj_file_in);
 		free(res_path);
 	}
 }
@@ -94,7 +94,7 @@ void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 	_widget_data *widget_data = (_widget_data *)data;
 	const char *file_name = NULL;
 	const char *group_name = NULL;
-	elm_image_file_get (obj, &file_name, &group_name);
+	elm_image_file_get(obj, &file_name, &group_name);
 	if (file_name) {
 		int ret;
 		app_control_h service = NULL;
@@ -105,7 +105,7 @@ void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 				return;
 			}
 			app_control_add_extra_data(service, GL_WIDGET_ARGV_IV_VIEW_BY,
-					GL_WIDGET_ARGV_IV_VIEW_BY_FOLER);
+			                           GL_WIDGET_ARGV_IV_VIEW_BY_FOLER);
 			app_control_add_extra_data(service, GL_WIDGET_ARGV_IV_PATH, file_name);
 			app_control_set_app_id(service, GL_WIDGET_UG_PKG_IV);
 			ret = app_control_send_launch_request(service, NULL, NULL);
@@ -125,10 +125,11 @@ int gl_widget_file_exists(const char *path)
 {
 	struct stat info = {0,};
 
-	if (stat(path, &info) == 0)
+	if (stat(path, &info) == 0) {
 		return 1;
-	else
+	} else {
 		return 0;
+	}
 }
 
 static Eina_Bool gl_widget_animator_cb(void *data)
@@ -156,18 +157,18 @@ static Eina_Bool gl_widget_animator_cb(void *data)
 			widget_data->images_count = widget_data->images_count % widget_data->selected_count;
 			Evas_Object *image_object = elm_image_add(layout);
 			dlog_print(DLOG_ERROR, LOG_TAG, "gl_widget_animator_cb Image is %s",
-				widget_data->selected_images[widget_data->images_count]);
+			           widget_data->selected_images[widget_data->images_count]);
 
 			if (!gl_widget_file_exists(widget_data->selected_images[widget_data->images_count])) {
 				int index = 0;
 
 				index = widget_data->images_count;
-				if (index != widget_data->selected_count-1) {
-					strcpy(widget_data->selected_images[index], widget_data->selected_images[widget_data->selected_count-1]);
+				if (index != widget_data->selected_count - 1) {
+					strcpy(widget_data->selected_images[index], widget_data->selected_images[widget_data->selected_count - 1]);
 				} else {
 					widget_data->images_count = 0;
 				}
-				free(widget_data->selected_images[widget_data->selected_count-1]);
+				free(widget_data->selected_images[widget_data->selected_count - 1]);
 				widget_data->selected_count--;
 			}
 
@@ -175,14 +176,14 @@ static Eina_Bool gl_widget_animator_cb(void *data)
 				dlog_print(DLOG_ERROR, LOG_TAG, "File Set Failed");
 			}
 
-			elm_image_aspect_fixed_set(image_object,EINA_FALSE);
+			elm_image_aspect_fixed_set(image_object, EINA_FALSE);
 			snprintf(buffer, sizeof(buffer), "image%d", i);
 			elm_object_part_content_set(layout, buffer, image_object);
 			snprintf(buffer, sizeof(buffer), "show%d", i);
 			elm_object_signal_emit(layout, buffer, "elm");
 			widget_data->images_count++;
 			evas_object_smart_callback_add(image_object,
-				"clicked", _gl_launch_iv, widget_data);
+			                               "clicked", _gl_launch_iv, widget_data);
 		}
 	}
 	return EINA_TRUE;
@@ -198,17 +199,17 @@ static Eina_Bool gl_widget_animator_for_one(void *data)
 		return EINA_FALSE;
 	}
 
-	if (!gl_widget_file_exists(widget_data->selected_images[0])){
+	if (!gl_widget_file_exists(widget_data->selected_images[0])) {
 		if (widget_data->timer) {
 			ecore_timer_del(widget_data->timer);
 			widget_data->timer = NULL;
 		}
 
-		free(widget_data->selected_images[widget_data->selected_count-1]);
+		free(widget_data->selected_images[widget_data->selected_count - 1]);
 		widget_data->selected_count--;
 		Evas_Object *btn = elm_object_part_content_unset(
-				widget_data->layout,
-				"Edit_button");
+		                       widget_data->layout,
+		                       "Edit_button");
 		if (btn) {
 			evas_object_hide(btn);
 		}
@@ -216,9 +217,9 @@ static Eina_Bool gl_widget_animator_for_one(void *data)
 		elm_object_signal_emit(widget_data->layout, "hide_album_date_info", "elm");
 
 		elm_object_domain_translatable_part_text_set(widget_data->layout, "TitleText", "gallery",
-				"IDS_GALLERY_OPT_GALLERY_ABB");
+		        "IDS_GALLERY_OPT_GALLERY_ABB");
 		elm_object_domain_translatable_part_text_set(widget_data->layout, "HelpText", "gallery",
-				"IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES");
+		        "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES");
 
 		elm_object_signal_callback_add(widget_data->layout, "mouse,clicked,1", "bg", gl_widget_on_no_image_cb, widget_data);
 	}
@@ -243,18 +244,18 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 
 	Evas_Object *image_object = elm_image_add(layout);
 	dlog_print(DLOG_ERROR, LOG_TAG, "selected images: %s",
-			widget_data->selected_images[widget_data->images_count]);
+	           widget_data->selected_images[widget_data->images_count]);
 
 	if (!gl_widget_file_exists(widget_data->selected_images[widget_data->images_count])) {
 		int index = 0;
 
 		index = widget_data->images_count;
-		if (index != widget_data->selected_count-1) {
-			strcpy(widget_data->selected_images[index], widget_data->selected_images[widget_data->selected_count-1]);
+		if (index != widget_data->selected_count - 1) {
+			strcpy(widget_data->selected_images[index], widget_data->selected_images[widget_data->selected_count - 1]);
 		} else {
 			widget_data->images_count = 0;
 		}
-		free(widget_data->selected_images[widget_data->selected_count-1]);
+		free(widget_data->selected_images[widget_data->selected_count - 1]);
 		widget_data->selected_count--;
 	}
 
@@ -265,7 +266,7 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 	widget_data->images_count++;
 	widget_data->images_count = widget_data->images_count % widget_data->selected_count;
 	evas_object_smart_callback_add(image_object, "clicked",
-		_gl_launch_iv, widget_data);
+	                               _gl_launch_iv, widget_data);
 
 	return EINA_TRUE;
 }
@@ -330,11 +331,13 @@ char *_gl_widget_get_file_date(const char *filename)
 	struct stat statbuf = {0};
 	struct tm tmtime;
 
-	if (!filename)
+	if (!filename) {
 		return NULL;
+	}
 
-	if (stat(filename, &statbuf) == -1)
+	if (stat(filename, &statbuf) == -1) {
 		return NULL;
+	}
 
 	time_t temptime = statbuf.st_mtime;
 	memset(&tmtime, 0x00, sizeof(struct tm));
@@ -347,10 +350,11 @@ char *_gl_widget_get_file_date(const char *filename)
 	localtime_r(&ctime, &ct);
 
 	char *month[12] = { GL_STR_ID_JAN, GL_STR_ID_FEB, GL_STR_ID_MAR, GL_STR_ID_APR, GL_STR_ID_MAY, GL_STR_ID_JUN,
-			GL_STR_ID_JUL, GL_STR_ID_AUG, GL_STR_ID_SEP, GL_STR_ID_OCT, GL_STR_ID_NOV, GL_STR_ID_DEC};
+	                    GL_STR_ID_JUL, GL_STR_ID_AUG, GL_STR_ID_SEP, GL_STR_ID_OCT, GL_STR_ID_NOV, GL_STR_ID_DEC
+	                  };
 
 	char * str = (char *)g_strdup_printf("%s%02d, %s %d", "",
-			tmtime.tm_mday, month[tmtime.tm_mon], 1900 + tmtime.tm_year);
+	                                     tmtime.tm_mday, month[tmtime.tm_mon], 1900 + tmtime.tm_year);
 	return str;
 }
 
@@ -435,10 +439,10 @@ static Eina_Bool gl_widget_check_default_album(char* pathInfo)
 	}
 
 	if (!strcmp("/opt/usr/media/Pictures/", path) ||
-		!strcmp("/opt/usr/media/Images/", path) ||
-		!strcmp("/opt/usr/media/DCIM/Camera", path) ||
-		!strcmp("/opt/usr/media/Downloads/", path) ||
-		!strcmp("/opt/storage/sdcard/DCIM/", path)) {
+	        !strcmp("/opt/usr/media/Images/", path) ||
+	        !strcmp("/opt/usr/media/DCIM/Camera", path) ||
+	        !strcmp("/opt/usr/media/Downloads/", path) ||
+	        !strcmp("/opt/storage/sdcard/DCIM/", path)) {
 		free(path);
 		return EINA_TRUE;
 	}
@@ -505,7 +509,8 @@ static char *gl_widget_extract_date_info(char** patharray, int count)
 }
 
 void _gl_widget_show_album_date_info(int arrayLength, char** pathArray,
-		_widget_data* widget_data, Evas_Object* layout) {
+                                     _widget_data* widget_data, Evas_Object* layout)
+{
 
 	Eina_Bool isSameAlbum = gl_widget_check_albumInfo(pathArray, arrayLength);
 	Eina_Bool isDefaultAlbum = false;
@@ -514,7 +519,7 @@ void _gl_widget_show_album_date_info(int arrayLength, char** pathArray,
 	}
 	widget_data->showAlbumDetails = isSameAlbum && !isDefaultAlbum;
 	widget_data->showDateDetails = gl_widget_check_dateInfo(pathArray,
-			arrayLength);
+	                               arrayLength);
 	if (widget_data->showAlbumDetails) {
 		char* albuminfo = gl_widget_extract_album_info(pathArray[0]);
 		if (albuminfo) {
@@ -540,7 +545,7 @@ void _gl_widget_show_album_date_info(int arrayLength, char** pathArray,
 }
 
 static void gl_widget_result_cb(app_control_h request, app_control_h reply,
-		app_control_result_e result, void *data)
+                                app_control_result_e result, void *data)
 {
 	_widget_data *widget_data = (_widget_data *)data;
 	if (!widget_data) {
@@ -562,11 +567,11 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 	Eet_File *fp = NULL;
 
 	app_control_get_extra_data_array(reply, APP_CONTROL_DATA_PATH,
-		&pathArray, &arrayLength);
+	                                 &pathArray, &arrayLength);
 	if (arrayLength > 0) {
 		dlog_print(DLOG_ERROR, LOG_TAG, "Result Length %d", arrayLength);
 		widget_data->selected_images = (char **)malloc(arrayLength * sizeof(char *));
-		fp = eet_open(dbPath,EET_FILE_MODE_READ_WRITE);
+		fp = eet_open(dbPath, EET_FILE_MODE_READ_WRITE);
 		if (!fp) {
 			dlog_print(DLOG_ERROR, LOG_TAG, "File open failed");
 			return;
@@ -578,7 +583,7 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 				widget_data->selected_images[j] = strdup(pathArray[j]);
 				snprintf(buffer, sizeof(buffer), "image%d", j);
 				eet_write(fp, buffer, pathArray[j],
-					strlen(pathArray[j]) + 1, 0);
+				          strlen(pathArray[j]) + 1, 0);
 			}
 			eet_close(fp);
 		} else {
@@ -590,8 +595,8 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 	} else {
 		if (!widget_data->is_edit) {
 			Evas_Object *btn = elm_object_part_content_unset(
-						widget_data->layout,
-						"Edit_button");
+			                       widget_data->layout,
+			                       "Edit_button");
 			if (btn) {
 				evas_object_hide(btn);
 			}
@@ -606,10 +611,10 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 	}
 
 	_gl_widget_show_album_date_info(arrayLength, pathArray, widget_data,
-			layout);
+	                                layout);
 	for (i = 0; i < arrayLength; i++) {
 		if (pathArray[i]) {
-			free (pathArray[i]);
+			free(pathArray[i]);
 		}
 	}
 	if (pathArray) {
@@ -624,11 +629,11 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 
 	loop_count++;
 	elm_object_signal_callback_del(layout, "mouse,clicked,1",
-		"bg", gl_widget_on_no_image_cb);
+	                               "bg", gl_widget_on_no_image_cb);
 
 	if (widget_data->selected_count) {
 		widget_data->timer = ecore_timer_loop_add(TIMER_INTERVAL,
-			  gl_widget_timer_cb, widget_data);
+		                     gl_widget_timer_cb, widget_data);
 	}
 }
 
@@ -649,18 +654,18 @@ static void gl_widget_on_edit_cb(void *data, Evas_Object *obj, void *event_info)
 		} else {
 			app_control_set_operation(service, APP_CONTROL_OPERATION_PICK);
 			app_control_add_extra_data(service,
-					"http://tizen.org/appcontrol/data/selection_mode",
-					"multiple");
+			                           "http://tizen.org/appcontrol/data/selection_mode",
+			                           "multiple");
 			app_control_set_mime(service, "image/*");
 			app_control_add_extra_data(service, "launch-type", "multiple");
 			app_control_add_extra_data(service, "file-type", "image");
-			app_control_set_app_id(service,"ug-gallery-efl");
+			app_control_set_app_id(service, "ug-gallery-efl");
 
 			ret = app_control_send_launch_request(service,
-					gl_widget_result_cb, (void *)widget_data);
+			                                      gl_widget_result_cb, (void *)widget_data);
 			if (ret != APP_CONTROL_ERROR_NONE) {
 				dlog_print(DLOG_ERROR, LOG_TAG,
-						"lauching operation pic failed");
+				           "lauching operation pic failed");
 				ret = -1;
 			} else {
 				ret = 0;
@@ -672,12 +677,13 @@ static void gl_widget_on_edit_cb(void *data, Evas_Object *obj, void *event_info)
 	}
 }
 
-void _gl_widget_create_edit_btn(_widget_data* widget_data) {
+void _gl_widget_create_edit_btn(_widget_data* widget_data)
+{
 
 	if (widget_data) {
 		Evas_Object* boxTop = elm_box_add(widget_data->layout);
 		evas_object_size_hint_weight_set(boxTop, EVAS_HINT_EXPAND,
-				EVAS_HINT_EXPAND);
+		                                 EVAS_HINT_EXPAND);
 		evas_object_size_hint_align_set(boxTop, EVAS_HINT_FILL, EVAS_HINT_FILL);
 		elm_box_horizontal_set(boxTop, EINA_TRUE);
 		elm_box_homogeneous_set(boxTop, EINA_FALSE);
@@ -685,14 +691,14 @@ void _gl_widget_create_edit_btn(_widget_data* widget_data) {
 		elm_object_style_set(button, "transparent");
 		Evas_Object* layoutButton = elm_layout_add(button);
 		evas_object_size_hint_weight_set(layoutButton, EVAS_HINT_EXPAND,
-				EVAS_HINT_EXPAND);
+		                                 EVAS_HINT_EXPAND);
 		evas_object_size_hint_align_set(layoutButton, EVAS_HINT_FILL,
-				EVAS_HINT_FILL);
+		                                EVAS_HINT_FILL);
 		elm_layout_file_set(layoutButton,
-				"/usr/apps/org.tizen.gallery/res/edje/gallerywidget.edj",
-				"today_button");
+		                    "/usr/apps/org.tizen.gallery/res/edje/gallerywidget.edj",
+		                    "today_button");
 		elm_object_domain_translatable_part_text_set(layoutButton, "elm.text",
-				"gallery", "IDS_QP_ACBUTTON_EDIT_ABB");
+		        "gallery", "IDS_QP_ACBUTTON_EDIT_ABB");
 		evas_object_show(layoutButton);
 		elm_object_content_set(button, layoutButton);
 		elm_box_pack_end(boxTop, button);
@@ -700,7 +706,7 @@ void _gl_widget_create_edit_btn(_widget_data* widget_data) {
 		evas_object_show(button);
 		elm_object_part_content_set(widget_data->layout, "Edit_button", boxTop);
 		evas_object_smart_callback_add(button, "clicked", gl_widget_on_edit_cb,
-				widget_data);
+		                               widget_data);
 	}
 }
 
@@ -716,16 +722,16 @@ static int gl_widget_launch_gallery_ug(_widget_data *widget_data)
 		} else {
 			app_control_set_operation(service, APP_CONTROL_OPERATION_PICK);
 			app_control_add_extra_data(service,
-					"http://tizen.org/appcontrol/data/selection_mode",
-					"multiple");
+			                           "http://tizen.org/appcontrol/data/selection_mode",
+			                           "multiple");
 			app_control_set_mime(service, "image/*");
 			app_control_add_extra_data(service, "launch-type", "multiple");
 			app_control_add_extra_data(service, "file-type", "image");
-			app_control_set_app_id(service,"ug-gallery-efl");
+			app_control_set_app_id(service, "ug-gallery-efl");
 
 			ret = app_control_send_launch_request(service,
-					gl_widget_result_cb,
-					(void *)widget_data);
+			                                      gl_widget_result_cb,
+			                                      (void *)widget_data);
 			if (ret != APP_CONTROL_ERROR_NONE) {
 				dlog_print(DLOG_ERROR, LOG_TAG, "lauching operation pic failed");
 				ret = -1;
@@ -741,7 +747,7 @@ static int gl_widget_launch_gallery_ug(_widget_data *widget_data)
 }
 
 static void gl_widget_on_no_image_cb(void *data, Evas_Object *obj,
-	const char *emission, const char *source)
+                                     const char *emission, const char *source)
 {
 	_widget_data *widget_data = (_widget_data *)data;
 	if (!widget_data) {
@@ -823,18 +829,18 @@ int gl_widget_create(_widget_data *widget_data, int w, int h)
 	}
 
 	elm_layout_file_set(layout,
-		"/usr/apps/org.tizen.gallery/res/edje/gallerywidget.edj",
-		"widget_custom_main");
+	                    "/usr/apps/org.tizen.gallery/res/edje/gallerywidget.edj",
+	                    "widget_custom_main");
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	evas_object_resize(layout, WIDGET_WIDTH,WIDGET_HEIGHT);
+	evas_object_resize(layout, WIDGET_WIDTH, WIDGET_HEIGHT);
 	evas_object_show(layout);
 	widget_data->layout = layout;
 
 	if (!gl_widget_load_preselected_images(widget_data)) {
 		elm_object_domain_translatable_part_text_set(layout, "TitleText", "gallery",
-				"IDS_GALLERY_OPT_GALLERY_ABB");
+		        "IDS_GALLERY_OPT_GALLERY_ABB");
 		elm_object_domain_translatable_part_text_set(layout, "HelpText", "gallery",
-				"IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES");
+		        "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES");
 		elm_object_signal_callback_add(layout, "mouse,clicked,1", "bg", gl_widget_on_no_image_cb, widget_data);
 	} else {
 		if (widget_data->selected_count >= IMAGES_THRESHOLD) {
@@ -848,12 +854,12 @@ int gl_widget_create(_widget_data *widget_data, int w, int h)
 		}
 		_gl_widget_create_edit_btn(widget_data);
 		_gl_widget_show_album_date_info(widget_data->selected_count, widget_data->selected_images, widget_data,
-				layout);
+		                                layout);
 	}
 
 	evas_object_resize(layout, w, h);
 	evas_object_event_callback_add(widget_data->win, EVAS_CALLBACK_KEY_DOWN,
-		gl_widget_key_down_cb, NULL);
+	                               gl_widget_key_down_cb, NULL);
 
 	return 0;
 }

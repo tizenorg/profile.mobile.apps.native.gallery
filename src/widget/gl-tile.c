@@ -54,7 +54,7 @@
 #define GL_CHECKBOX_STYLE_ALBUM_GRID "gallery/album/grid"
 
 static Evas_Object *__gl_tile_add_icon_bg(Evas_Object *obj, bg_file_set_cb func,
-					  void *data)
+        void *data)
 {
 	GL_CHECK_NULL(func);
 	GL_CHECK_NULL(obj);
@@ -110,7 +110,7 @@ static Eina_Bool __gl_tile_zoom_out_cb(Evas_Object *gesture, void *data)
 		return false;
 	}
 	if ((ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-	    (ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		gl_dbg("Skip in landscape mode");
 		/* Keep level if pinching zoom in in landscape mode */
 		return false;
@@ -122,16 +122,18 @@ static Eina_Bool __gl_tile_zoom_out_cb(Evas_Object *gesture, void *data)
 	GL_CHECK_CANCEL(view);
 
 	/* Not a valid gengrid */
-	if (elm_gengrid_items_count(view) <= 0)
+	if (elm_gengrid_items_count(view) <= 0) {
 		return false;
+	}
 
 	int level = (int)evas_object_data_get(view, GL_GESTURE_KEY_PINCH_LEVEL);
-	if (GL_ZOOM_NONE == level)
+	if (GL_ZOOM_NONE == level) {
 		return false;
+	}
 	if (level >= GL_ZOOM_DEFAULT) {
 		level--;
 		evas_object_data_set(view, GL_GESTURE_KEY_PINCH_LEVEL,
-				     (void *)level);
+		                     (void *)level);
 	}
 	gl_dbg("level: %d", level);
 	/* Update item size */
@@ -150,7 +152,7 @@ static Eina_Bool __gl_tile_zoom_in_cb(Evas_Object *gesture, void *data)
 
 	if (view_m == GL_VIEW_TIMELINE) {
 		if ((ad->pinchinfo.zoom_level >= GL_ZOOM_DEFAULT) &&
-				(ad->pinchinfo.zoom_level < (GL_ZOOM_MAX - 1))) {
+		        (ad->pinchinfo.zoom_level < (GL_ZOOM_MAX - 1))) {
 			/* Skip in wrong mode */
 			ad->pinchinfo.zoom_level++;
 			gl_dbg("Update time view size");
@@ -162,7 +164,7 @@ static Eina_Bool __gl_tile_zoom_in_cb(Evas_Object *gesture, void *data)
 	}
 
 	if ((ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-		(ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		gl_dbg("Skip in landscape mode");
 		/* Keep level if pinching zoom in in landscape mode */
 		return false;
@@ -174,16 +176,18 @@ static Eina_Bool __gl_tile_zoom_in_cb(Evas_Object *gesture, void *data)
 	GL_CHECK_FALSE(view);
 
 	/* Not a valid gengrid */
-	if (elm_gengrid_items_count(view) <= 0)
+	if (elm_gengrid_items_count(view) <= 0) {
 		return false;
+	}
 
 	int level = (int)evas_object_data_get(view, GL_GESTURE_KEY_PINCH_LEVEL);
-	if (GL_ZOOM_DEFAULT == level)
+	if (GL_ZOOM_DEFAULT == level) {
 		return false;
+	}
 	if (level < GL_ZOOM_DEFAULT) {
 		level++;
 		evas_object_data_set(view, GL_GESTURE_KEY_PINCH_LEVEL,
-				     (void *)level);
+		                     (void *)level);
 	}
 	gl_dbg("level: %d", level);
 	/* Update item size */
@@ -192,7 +196,7 @@ static Eina_Bool __gl_tile_zoom_in_cb(Evas_Object *gesture, void *data)
 }
 
 static void __gl_title_grid_del_cb(void *data, Evas *e, Evas_Object *obj,
-			     void *ei)
+                                   void *ei)
 {
 	gl_dbg("Delete grid ---");
 	if (obj) {
@@ -202,7 +206,7 @@ static void __gl_title_grid_del_cb(void *data, Evas *e, Evas_Object *obj,
 }
 
 Evas_Object *_gl_tile_show_part_icon(Evas_Object *obj, const char *part,
-				     bg_file_set_cb func, void *data)
+                                     bg_file_set_cb func, void *data)
 {
 	GL_CHECK_NULL(part);
 	GL_CHECK_NULL(strlen(part));
@@ -234,8 +238,8 @@ Evas_Object *_gl_tile_show_part_dim(Evas_Object *obj)
 }
 
 Evas_Object *_gl_tile_show_part_checkbox_grid(Evas_Object *obj, bool checked,
-					      Evas_Smart_Cb func,
-					      const void *data)
+        Evas_Smart_Cb func,
+        const void *data)
 {
 	GL_CHECK_NULL(func);
 	GL_CHECK_NULL(obj);
@@ -252,7 +256,7 @@ Evas_Object *_gl_tile_show_part_checkbox_grid(Evas_Object *obj, bool checked,
 }
 
 Evas_Object *_gl_tile_show_part_checkbox(Evas_Object *obj, bool checked,
-					 Evas_Smart_Cb func, const void *data)
+        Evas_Smart_Cb func, const void *data)
 {
 	GL_CHECK_NULL(func);
 	GL_CHECK_NULL(obj);
@@ -268,13 +272,13 @@ Evas_Object *_gl_tile_show_part_checkbox(Evas_Object *obj, bool checked,
 }
 
 Evas_Object *_gl_tile_show_part_rename(Evas_Object *obj, Evas_Smart_Cb func,
-				       const void *data)
+                                       const void *data)
 {
 	GL_CHECK_NULL(func);
 	GL_CHECK_NULL(obj);
 	Evas_Object *btn = NULL;
 	btn = _gl_but_create_but(obj, NULL, NULL, GL_BUTTON_STYLE_RENAME, func,
-				 data);
+	                         data);
 	GL_CHECK_NULL(btn);
 	evas_object_propagate_events_set(btn, EINA_FALSE);
 	return btn;
@@ -317,12 +321,14 @@ int _gl_tile_get_mtime(time_t *mtime1, time_t *mtime2, char *buf, int max_len)
 	GL_CHECK_VAL(date1, -1);
 
 	date2 = (char *)calloc(1, GL_DATE_INFO_LEN_MAX);
-	if (date2 == NULL)
+	if (date2 == NULL) {
 		goto GL_TILE_ERROR;
+	}
 
 	date3 = (char *)calloc(1, GL_DATE_INFO_LEN_MAX);
-	if (date3 == NULL)
+	if (date3 == NULL) {
 		goto GL_TILE_ERROR;
+	}
 
 	struct tm t1;
 	memset(&t1, 0x00, sizeof(struct tm));
@@ -347,7 +353,7 @@ int _gl_tile_get_mtime(time_t *mtime1, time_t *mtime2, char *buf, int max_len)
 	GL_FREEIF(date3);
 	return 0;
 
- GL_TILE_ERROR:
+GL_TILE_ERROR:
 
 	GL_FREEIF(date1);
 	GL_FREEIF(date2);
@@ -375,15 +381,15 @@ Evas_Object *_gl_tile_add_gengrid(Evas_Object *parent)
 	elm_scroller_bounce_set(grid, EINA_FALSE, EINA_TRUE);
 #endif
 	elm_scroller_policy_set(grid, ELM_SCROLLER_POLICY_OFF,
-				ELM_SCROLLER_POLICY_AUTO);
+	                        ELM_SCROLLER_POLICY_AUTO);
 
 	elm_gengrid_multi_select_set(grid, EINA_TRUE);
 	evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_data_set(grid, GL_GESTURE_KEY_PINCH_LEVEL,
-			     (void *)GL_ZOOM_DEFAULT);
+	                     (void *)GL_ZOOM_DEFAULT);
 	evas_object_event_callback_add(grid, EVAS_CALLBACK_DEL,
-				       __gl_title_grid_del_cb, grid);
+	                               __gl_title_grid_del_cb, grid);
 	return grid;
 }
 
@@ -409,7 +415,7 @@ int _gl_tile_update_item_size(void *data, Evas_Object *grid, bool b_update)
 
 	w = (int)(win_w / GL_TILE_2_PER_ROW);
 	h = (int)(GL_TILE_ITEM_HEIGHT * scale);
-	w_l= (int)(win_h / GL_TILE_3_PER_ROW);
+	w_l = (int)(win_h / GL_TILE_3_PER_ROW);
 	h_l = (int)(GL_TILE_ITEM_L_H * scale);
 	c = GL_TILE_ITEM_CNT;
 	c_l = GL_TILE_ITEM_L_CNT;
@@ -434,41 +440,42 @@ int _gl_tile_update_item_size(void *data, Evas_Object *grid, bool b_update)
 	gl_dbg("count: %d, align_x: %f, align_y: %f", count, align_x, align_y);
 
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-	    (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		/* >=3, (0.0, 0.5);  <3, (0.5, 0.5) */
 		if (count >= c_l && (align_x > GL_TILE_ALIGN_CON1 ||
-				     align_y > GL_TILE_ALIGN_CON2))
+		                     align_y > GL_TILE_ALIGN_CON2))
 			elm_gengrid_align_set(grid, GL_TILE_ALIGN_LEFT,
-					      GL_TILE_ALIGN_MID);
+			                      GL_TILE_ALIGN_MID);
 		else if (count < c_l && (align_x < GL_TILE_ALIGN_CON1 ||
-					 align_y > GL_TILE_ALIGN_CON2))
+		                         align_y > GL_TILE_ALIGN_CON2))
 			elm_gengrid_align_set(grid, GL_TILE_ALIGN_MID,
-					      GL_TILE_ALIGN_MID);
+			                      GL_TILE_ALIGN_MID);
 
 		elm_gengrid_item_size_set(grid, w_l, h_l);
 	} else {
 		/* >=6, (0.0, 1.0);  <3, (0.5, 0.5);  <6, (0.5, 1.0) */
 		if (count >= c && (align_x > GL_TILE_ALIGN_CON1 ||
-				   align_y < GL_TILE_ALIGN_CON2)) {
+		                   align_y < GL_TILE_ALIGN_CON2)) {
 			elm_gengrid_align_set(grid, GL_TILE_ALIGN_LEFT,
-					      GL_TILE_ALIGN_MID);
+			                      GL_TILE_ALIGN_MID);
 		} else if (count < c) {
 			if (count < c2 &&
-			    (align_x < GL_TILE_ALIGN_CON1 ||
-			     align_y > GL_TILE_ALIGN_CON2))
+			        (align_x < GL_TILE_ALIGN_CON1 ||
+			         align_y > GL_TILE_ALIGN_CON2))
 				elm_gengrid_align_set(grid, GL_TILE_ALIGN_MID,
-						      GL_TILE_ALIGN_MID);
+				                      GL_TILE_ALIGN_MID);
 			else if (count >= c2 &&
-				 (align_x < GL_TILE_ALIGN_CON1 ||
-				  align_y < GL_TILE_ALIGN_CON2))
+			         (align_x < GL_TILE_ALIGN_CON1 ||
+			          align_y < GL_TILE_ALIGN_CON2))
 				elm_gengrid_align_set(grid, GL_TILE_ALIGN_MID,
-						      GL_TILE_ALIGN_MID);
+				                      GL_TILE_ALIGN_MID);
 		}
 		elm_gengrid_item_size_set(grid, w, h);
 	}
 
-	if (b_update)
+	if (b_update) {
 		elm_gengrid_realized_items_update(grid);
+	}
 	return 0;
 }
 #else
@@ -492,7 +499,7 @@ int _gl_tile_update_item_size(void *data, Evas_Object *grid, bool b_update)
 
 	w = (int)(win_w / GL_TILE_2_PER_ROW);
 	h = (int)(298 * scale);
-	w_l= (int)(win_h / GL_TILE_3_PER_ROW);
+	w_l = (int)(win_h / GL_TILE_3_PER_ROW);
 	h_l = w_l;
 	c = GL_TILE_ITEM_CNT;
 	c_l = GL_TILE_ITEM_L_CNT;
@@ -505,8 +512,8 @@ int _gl_tile_update_item_size(void *data, Evas_Object *grid, bool b_update)
 		h = (int)(200 * scale);
 		c = GL_TILE_ITEM_CNT2;
 	}
-	h = w + win_w/9;
-	h_l = w_l + win_h/9;
+	h = w + win_w / 9;
+	h_l = w_l + win_h / 9;
 	gl_dbg("P %dx%d L %dx%d C %dx%d", w, h, w_l, h_l, c, c_l);
 
 	double align_x = 0.0f;
@@ -517,18 +524,19 @@ int _gl_tile_update_item_size(void *data, Evas_Object *grid, bool b_update)
 	gl_dbg("count: %d, align_x: %f, align_y: %f", count, align_x, align_y);
 
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-	    (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		/* >=3, (0.5, 0.0);  <3, (0.5, 0.5) */
-		if (count >= c_l && align_y > GL_TILE_ALIGN_CON1)
+		if (count >= c_l && align_y > GL_TILE_ALIGN_CON1) {
 			elm_gengrid_align_set(grid, GL_TILE_ALIGN_MID, 0.0);
-		else if (count < c_l && align_y < GL_TILE_ALIGN_CON1)
+		} else if (count < c_l && align_y < GL_TILE_ALIGN_CON1) {
 			elm_gengrid_align_set(grid, GL_TILE_ALIGN_MID, 0.0);
+		}
 
 		elm_gengrid_item_size_set(grid, w_l, h_l);
 	} else {
 		/* >=6, (0.5, 0.0);  <3, (0.5, 0.5);  <6, (0.5, 1.0) */
 		if (count >= c && (align_x > GL_TILE_ALIGN_CON1 ||
-				   align_y < GL_TILE_ALIGN_CON2)) {
+		                   align_y < GL_TILE_ALIGN_CON2)) {
 			elm_gengrid_align_set(grid, GL_TILE_ALIGN_MID, 0.0);
 		} else if (count < c && align_y < GL_TILE_ALIGN_CON1) {
 			elm_gengrid_align_set(grid, GL_TILE_ALIGN_MID, 0.0);
@@ -536,8 +544,9 @@ int _gl_tile_update_item_size(void *data, Evas_Object *grid, bool b_update)
 		elm_gengrid_item_size_set(grid, w, h);
 	}
 
-	if (b_update)
+	if (b_update) {
 		elm_gengrid_realized_items_update(grid);
+	}
 	return 0;
 }
 #endif

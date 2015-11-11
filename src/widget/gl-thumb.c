@@ -65,7 +65,7 @@
 #define GL_PHOTOFRAME_BURSTSHOT2 "burstshot2"
 
 static Evas_Object *__gl_thumb_add_image(Evas_Object *parent, char *path,
-					    unsigned int orient, int w, int h)
+        unsigned int orient, int w, int h)
 {
 	GL_CHECK_NULL(parent);
 
@@ -74,8 +74,9 @@ static Evas_Object *__gl_thumb_add_image(Evas_Object *parent, char *path,
 #else
 	Evas_Object *bg = elm_bg_add(parent);
 #endif
-	if (bg == NULL)
+	if (bg == NULL) {
 		return NULL;
+	}
 
 #ifdef _USE_ROTATE_BG
 	_gl_rotate_bg_set_file(bg, path, w, h);
@@ -92,7 +93,7 @@ static Evas_Object *__gl_thumb_add_image(Evas_Object *parent, char *path,
 }
 
 Evas_Object *_gl_thumb_show_image(Evas_Object *obj, char *path, int orient,
-				  int w, int h, int zoom_level)
+                                  int w, int h, int zoom_level)
 {
 	GL_CHECK_NULL(obj);
 
@@ -106,12 +107,13 @@ Evas_Object *_gl_thumb_show_image(Evas_Object *obj, char *path, int orient,
 	}
 
 	char *bs_style = GL_PHOTOFRAME_DEFAULT;
-	if (zoom_level == GL_ZOOM_IN_ONE)
+	if (zoom_level == GL_ZOOM_IN_ONE) {
 		bs_style = GL_PHOTOFRAME_DEFAULT2;
-	else if (zoom_level == GL_ZOOM_IN_TWO)
+	} else if (zoom_level == GL_ZOOM_IN_TWO) {
 		bs_style = GL_PHOTOFRAME_DEFAULT3;
+	}
 	elm_layout_theme_set(layout, GL_CLASS_GENGRID, GL_GRP_PHOTOFRAME,
-			bs_style);
+	                     bs_style);
 	elm_object_part_content_set(layout, "elm.swallow.icon", bg);
 
 	evas_object_show(layout);
@@ -120,9 +122,9 @@ Evas_Object *_gl_thumb_show_image(Evas_Object *obj, char *path, int orient,
 }
 
 Evas_Object *_gl_thumb_show_burstshot(Evas_Object *obj, char *path1,
-				      char *path2, char *path3,
-				      unsigned int orient, int w, int h,
-				      int zoom_level)
+                                      char *path2, char *path3,
+                                      unsigned int orient, int w, int h,
+                                      int zoom_level)
 {
 	GL_CHECK_NULL(obj);
 	Evas_Object *bg = NULL;
@@ -133,12 +135,13 @@ Evas_Object *_gl_thumb_show_burstshot(Evas_Object *obj, char *path1,
 	Evas_Object *layout = elm_layout_add(obj);
 	GL_CHECK_NULL(layout);
 	const char *bs_style = GL_PHOTOFRAME_BURSTSHOT;
-	if (zoom_level == GL_ZOOM_IN_ONE)
+	if (zoom_level == GL_ZOOM_IN_ONE) {
 		bs_style = GL_PHOTOFRAME_BURSTSHOT1;
-	else if (zoom_level == GL_ZOOM_IN_TWO)
+	} else if (zoom_level == GL_ZOOM_IN_TWO) {
 		bs_style = GL_PHOTOFRAME_BURSTSHOT2;
+	}
 	elm_layout_theme_set(layout, GL_CLASS_GENGRID, GL_GRP_PHOTOFRAME,
-			     bs_style);
+	                     bs_style);
 
 	/* Add bg for burstshot mode */
 	for (i = 0; i < 3; i++) {
@@ -169,8 +172,8 @@ Evas_Object *_gl_thumb_show_burstshot(Evas_Object *obj, char *path1,
 }
 
 Evas_Object *_gl_thumb_show_video(Evas_Object *obj, char *path,
-				  unsigned int v_dur, int w, int h,
-				  int zoom_level)
+                                  unsigned int v_dur, int w, int h,
+                                  int zoom_level)
 {
 	GL_CHECK_NULL(obj);
 
@@ -200,12 +203,13 @@ Evas_Object *_gl_thumb_show_video(Evas_Object *obj, char *path,
 #endif
 
 	char *bs_style = GL_PHOTOFRAME_VIDEO;
-	if (zoom_level == GL_ZOOM_IN_ONE)
+	if (zoom_level == GL_ZOOM_IN_ONE) {
 		bs_style = GL_PHOTOFRAME_VIDEO2;
-	else if (zoom_level == GL_ZOOM_IN_TWO)
+	} else if (zoom_level == GL_ZOOM_IN_TWO) {
 		bs_style = GL_PHOTOFRAME_VIDEO3;
+	}
 	elm_layout_theme_set(layout, GL_CLASS_GENGRID, GL_GRP_PHOTOFRAME,
-			bs_style);
+	                     bs_style);
 	elm_object_part_content_set(layout, "elm.swallow.icon", bg);
 
 	char *dur_str = _gl_get_duration_string(v_dur);
@@ -218,7 +222,7 @@ Evas_Object *_gl_thumb_show_video(Evas_Object *obj, char *path,
 }
 
 Evas_Object *_gl_thumb_show_checkbox(Evas_Object *obj, bool checked,
-				     Evas_Smart_Cb func, const void *data)
+                                     Evas_Smart_Cb func, const void *data)
 {
 	GL_CHECK_NULL(func);
 	GL_CHECK_NULL(obj);
@@ -296,10 +300,10 @@ Evas_Object *_gl_thumb_add_gengrid(Evas_Object *parent)
 	elm_scroller_bounce_set(grid, EINA_FALSE, EINA_TRUE);
 #endif
 	elm_scroller_policy_set(grid, ELM_SCROLLER_POLICY_OFF,
-				ELM_SCROLLER_POLICY_AUTO);
+	                        ELM_SCROLLER_POLICY_AUTO);
 	elm_gengrid_multi_select_set(grid, EINA_TRUE);
 	evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	return grid;
 }
 
@@ -346,7 +350,7 @@ int _gl_thumb_set_size(void *data, Evas_Object *view, int *size_w, int *size_h)
 		_h = (int)(GL_GRID_H_ZOOM_02 * scale);
 		align_c = GL_GRID_ITEM_ZOOM_02_CNT;
 	} else if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_ONE) {
- GL_THUMB_SIZE:
+GL_THUMB_SIZE:
 		_w = (int)(win_w / GL_GRID_4_PER_ROW);
 		_h = (int)(GL_GRID_H_ZOOM_03 * scale);
 		align_c = GL_GRID_ITEM_ZOOM_03_CNT;
@@ -359,26 +363,32 @@ int _gl_thumb_set_size(void *data, Evas_Object *view, int *size_w, int *size_h)
 	}
 
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-	    (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		align_c = GL_GRID_ITEM_L_CNT;
 		elm_gengrid_item_size_set(view, _w_l, _h_l);
-		if (size_w)
-			*size_w = _w_l-4;
-		if (size_h)
-			*size_h = _h_l-4;
+		if (size_w) {
+			*size_w = _w_l - 4;
+		}
+		if (size_h) {
+			*size_h = _h_l - 4;
+		}
 	} else {
 		elm_gengrid_item_size_set(view, _w, _h);
-		if (size_w)
-			*size_w = _w-4;
-		if (size_h)
-			*size_h = _h-4;
+		if (size_w) {
+			*size_w = _w - 4;
+		}
+		if (size_h) {
+			*size_h = _h - 4;
+		}
 	}
-	if (count <= align_c)
+	if (count <= align_c) {
 		elm_gengrid_align_set(view, 0.5, 0.5);
-	else
+	} else {
 		elm_gengrid_align_set(view, 0.0, 0.5);
-	if (size_w && size_h)
+	}
+	if (size_w && size_h) {
 		gl_dbg("P: %dx%d, size_w: %d,size_h: %d", _w, _h, *size_w, *size_h);
+	}
 	return 0;
 }
 #else
@@ -402,13 +412,13 @@ int _gl_thumb_set_size(void *data, Evas_Object *view, int *size_w, int *size_h)
 		ad->pinchinfo.zoom_level = GL_ZOOM_IN_ONE;
 	}
 	gl_dbg("rotate_mode: %d, zoom level: %d", rotate_mode,
-			ad->pinchinfo.zoom_level);
+	       ad->pinchinfo.zoom_level);
 
 	if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_TWO) {
 		_w = (int)(win_w / GL_GRID_3_PER_ROW);
 		_w_l = (int)(win_h / GL_GRID_6_PER_ROW);
 	} else if (ad->pinchinfo.zoom_level == GL_ZOOM_IN_ONE) {
-		GL_THUMB_SIZE:
+GL_THUMB_SIZE:
 		_w = (int)(win_w / GL_GRID_4_PER_ROW);
 		_w_l = (int)(win_h / GL_GRID_7_PER_ROW);
 	} else if (ad->pinchinfo.zoom_level == GL_ZOOM_DEFAULT) {
@@ -422,25 +432,30 @@ int _gl_thumb_set_size(void *data, Evas_Object *view, int *size_w, int *size_h)
 	_h_l = _w_l;
 	_h = _w;
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-			(rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		elm_gengrid_item_size_set(view, _w_l, _h_l);
-		if (size_w)
-			*size_w = _w_l-4;
-		if (size_h)
-			*size_h = _h_l-4;
+		if (size_w) {
+			*size_w = _w_l - 4;
+		}
+		if (size_h) {
+			*size_h = _h_l - 4;
+		}
 	} else {
 		elm_gengrid_item_size_set(view, _w, _h);
-		if (size_w)
-			*size_w = _w-4;
-		if (size_h)
-			*size_h = _h-4;
+		if (size_w) {
+			*size_w = _w - 4;
+		}
+		if (size_h) {
+			*size_h = _h - 4;
+		}
 	}
 	/*if (elm_gengrid_items_count(view) <= align_c)
 		elm_gengrid_align_set(view, 0.5, 0.5);
 	else
 		elm_gengrid_align_set(view, 0.0, 0.0);*/
-	if (size_w && size_h)
+	if (size_w && size_h) {
 		gl_dbg("P: %dx%d, size_w: %d,size_h: %d", _w, _h, *size_w, *size_h);
+	}
 	return 0;
 }
 #endif
@@ -459,15 +474,15 @@ int _gl_thumb_split_set_size(void *data, Evas_Object *view)
 	int win_h = 0;
 	double scale = _gl_get_win_factor(ad->maininfo.win, &win_w, &win_h);
 	gl_dbg("rotate_mode: %d, zoom level: %d, scale : %f", rotate_mode,
-			ad->pinchinfo.zoom_level, scale);
+	       ad->pinchinfo.zoom_level, scale);
 
-	_w = (int)((2*win_w) / (3*GL_GRID_2_PER_ROW));
+	_w = (int)((2 * win_w) / (3 * GL_GRID_2_PER_ROW));
 	_h = _w;
-	_w_l = (int)((win_h-win_w/3) / GL_GRID_5_PER_ROW);
+	_w_l = (int)((win_h - win_w / 3) / GL_GRID_5_PER_ROW);
 	_h_l = _w_l;
 
 	if ((rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-			(rotate_mode == APP_DEVICE_ORIENTATION_90)) {
+	        (rotate_mode == APP_DEVICE_ORIENTATION_90)) {
 		elm_gengrid_item_size_set(view, _w_l, _h_l);
 	} else {
 		elm_gengrid_item_size_set(view, _w, _h);
@@ -484,8 +499,9 @@ bool _gl_thumb_insert_date(void *data, Evas_Object *parent)
 	gl_appdata *ad = (gl_appdata *)data;
 	bool b_remove = false;
 
-	if (ad->pinchinfo.zoom_level != GL_ZOOM_DEFAULT)
+	if (ad->pinchinfo.zoom_level != GL_ZOOM_DEFAULT) {
 		b_remove = true;
+	}
 
 	gl_item *gitem = NULL;
 	gl_item *pre_gitem = NULL;
@@ -512,23 +528,24 @@ bool _gl_thumb_insert_date(void *data, Evas_Object *parent)
 		} else if (pre_gitem == NULL) { /* Insert */
 			b_insert = true;
 		} else if (gitem->elm_item && !gitem->preappend &&
-			   pre_gitem->item) {
+		           pre_gitem->item) {
 			struct tm t1;
 			struct tm t2;
 			int mth = 0;
 			int yth = 0;
-			localtime_r((time_t *)&(pre_gitem->item->mtime),
-				    &t1);
+			localtime_r((time_t *) & (pre_gitem->item->mtime),
+			            &t1);
 			mth = t1.tm_mon;
 			yth = t1.tm_year;
-			localtime_r((time_t *) &(gitem->item->mtime), &t2);
-			if (mth != t2.tm_mon || yth != t2.tm_year)
+			localtime_r((time_t *) & (gitem->item->mtime), &t2);
+			if (mth != t2.tm_mon || yth != t2.tm_year) {
 				b_insert = true;
+			}
 		}
 		if (b_insert && gitem->elm_item && !gitem->preappend) {
 			elm_gengrid_item_insert_before(parent, dgic,
-						       gitem, gitem->elm_item,
-						       NULL, NULL);
+			                               gitem, gitem->elm_item,
+			                               NULL, NULL);
 			gitem->preappend = true;
 			gitem->pre_gitem = gitem;
 			inserted_gitem = gitem;
@@ -539,7 +556,7 @@ bool _gl_thumb_insert_date(void *data, Evas_Object *parent)
 		pre_gitem = gitem;
 		b_insert = false;
 
- GL_THUMB_NEXT:
+GL_THUMB_NEXT:
 
 		gitem->pre_gitem = NULL;
 		elm_item = next_elm_item;

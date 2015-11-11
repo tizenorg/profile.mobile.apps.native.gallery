@@ -50,7 +50,7 @@ static int __gl_ctrl_reset_previous_tab(void *data)
 	/* Hide previous view */
 	Evas_Object *pre_view = NULL;
 	pre_view = elm_object_part_content_unset(ad->ctrlinfo.ctrlbar_view_ly,
-						 "elm.swallow.view");
+	           "elm.swallow.view");
 	evas_object_hide(pre_view);
 	return 0;
 }
@@ -125,7 +125,7 @@ Evas_Object *_gl_ctrl_add_main_layout(Evas_Object *parent)
 	Evas_Object *layout = elm_layout_add(parent);
 	GL_CHECK_NULL(layout);
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(layout, EVAS_HINT_FILL, EVAS_HINT_FILL);
 	elm_layout_theme_set(layout, "layout", "application", "default");
 	evas_object_show(layout);
@@ -148,7 +148,7 @@ int _gl_ctrl_show_title(void *data, int tab_mode)
 		text = GL_STR_ID_ALBUMS;
 		break;
 	case GL_CTRL_TAB_TIMELINE:
-	// :TODO Timeline token need to be addressed
+		// :TODO Timeline token need to be addressed
 		text = GL_STR_TIME_VIEW;
 		break;
 	default:
@@ -243,13 +243,14 @@ Evas_Object *_gl_ctrl_add_toolbar(Evas_Object *parent)
 }
 
 Elm_Object_Item *_gl_ctrl_append_item(Evas_Object *obj, const char *icon,
-				      const char *label, Evas_Smart_Cb func,
-				      const void *data)
+                                      const char *label, Evas_Smart_Cb func,
+                                      const void *data)
 {
 	Elm_Object_Item *it = NULL;
 	it = elm_toolbar_item_append(obj, icon, label, func, data);
-	if (label)
+	if (label) {
 		_gl_ui_set_translatable_item(it, label);
+	}
 	return it;
 }
 
@@ -279,7 +280,7 @@ int _gl_ctrl_disable_items(Elm_Object_Item *nf_it, bool b_disabled)
 }
 
 int _gl_ctrl_disable_items_with_check(Elm_Object_Item *nf_it, bool b_disabled,
-				      char *check_str, bool b_check_disabled)
+                                      char *check_str, bool b_check_disabled)
 {
 	GL_CHECK_VAL(nf_it, -1);
 	Evas_Object *toolbar = NULL;
@@ -298,10 +299,11 @@ int _gl_ctrl_disable_items_with_check(Elm_Object_Item *nf_it, bool b_disabled,
 			continue;
 		}
 		if (check_str) {
-			if (text && !g_strcmp0(text, _gl_str(check_str)))
+			if (text && !g_strcmp0(text, _gl_str(check_str))) {
 				_gl_ctrl_disable_item(it, b_check_disabled);
-			else
+			} else {
 				_gl_ctrl_disable_item(it, b_disabled);
+			}
 		} else {
 			_gl_ctrl_disable_item(it, b_disabled);
 		}
@@ -311,7 +313,7 @@ int _gl_ctrl_disable_items_with_check(Elm_Object_Item *nf_it, bool b_disabled,
 }
 
 int _gl_ctrl_disable_item_with_check(Elm_Object_Item *nf_it, char *check_str,
-				     bool b_disabled)
+                                     bool b_disabled)
 {
 	GL_CHECK_VAL(check_str, -1);
 	GL_CHECK_VAL(nf_it, -1);
