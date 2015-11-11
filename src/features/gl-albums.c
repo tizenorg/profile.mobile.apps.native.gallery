@@ -69,11 +69,12 @@ static void __gl_albums_realized(void *data, Evas_Object *obj, void *ei)
 
 	gl_dbg("realized");
 	if (!GL_FILE_EXISTS(album->cover->item->thumb_url) &&
-	    GL_FILE_EXISTS(album->cover->item->file_url) &&
-	    (album->cluster->type == GL_STORE_T_PHONE ||
-	     album->cluster->type == GL_STORE_T_MMC ||
-	     album->cluster->type == GL_STORE_T_ALL))
+	        GL_FILE_EXISTS(album->cover->item->file_url) &&
+	        (album->cluster->type == GL_STORE_T_PHONE ||
+	         album->cluster->type == GL_STORE_T_MMC ||
+	         album->cluster->type == GL_STORE_T_ALL)) {
 		__gl_albums_create_thumb(album->cover, album);
+	}
 }
 
 static void __gl_albums_unrealized(void *data, Evas_Object *obj, void *ei)
@@ -89,8 +90,8 @@ static void __gl_albums_unrealized(void *data, Evas_Object *obj, void *ei)
 
 	/* Checking for local files only */
 	if (album->cluster->type == GL_STORE_T_PHONE ||
-	    album->cluster->type == GL_STORE_T_MMC ||
-	    album->cluster->type == GL_STORE_T_ALL) {
+	        album->cluster->type == GL_STORE_T_MMC ||
+	        album->cluster->type == GL_STORE_T_ALL) {
 		if (album->cover->item->b_create_thumb) {
 			_gl_data_cancel_thumb(album->cover->item);
 		}
@@ -237,7 +238,7 @@ static char *__gl_albums_get_text(void *data, Evas_Object *obj, const char *part
 		}
 		gl_item *gitem = NULL;
 		_gl_data_get_album_cover(album_item, &gitem,
-				MEDIA_CONTENT_ORDER_DESC);
+		                         MEDIA_CONTENT_ORDER_DESC);
 		if (gitem == NULL || gitem->item == NULL) {
 			gl_dbg("Empty album...");
 			_gl_data_util_free_gitem(gitem);
@@ -250,28 +251,28 @@ static char *__gl_albums_get_text(void *data, Evas_Object *obj, const char *part
 		GL_PROFILE_F_OUT("__gl_albums_get_text(date)");
 	} else if (!g_strcmp0(part, "elm.text.badge")) {
 		if (gl_get_view_mode(album_item->ad) == GL_VIEW_THUMBS_EDIT ||
-				gl_get_view_mode(album_item->ad) == GL_VIEW_THUMBS_SELECT) {
+		        gl_get_view_mode(album_item->ad) == GL_VIEW_THUMBS_SELECT) {
 			if (album_item->elist) {
 				int sel_cnt = eina_list_count(album_item->elist);
 				if (sel_cnt > 0) {
 					elm_object_item_signal_emit(album_item->item,
-							"elm,state,elm.text.badge,visible",
-							"elm");
+					                            "elm,state,elm.text.badge,visible",
+					                            "elm");
 					snprintf(buf, sizeof(buf), "%d", sel_cnt);
 				} else {
 					elm_object_item_signal_emit(album_item->item,
-							"elm,state,elm.text.badge,hidden",
-							"elm");
+					                            "elm,state,elm.text.badge,hidden",
+					                            "elm");
 				}
 			} else {
 				elm_object_item_signal_emit(album_item->item,
-						"elm,state,elm.text.badge,hidden",
-						"elm");
+				                            "elm,state,elm.text.badge,hidden",
+				                            "elm");
 			}
 		} else {
 			elm_object_item_signal_emit(album_item->item,
-					"elm,state,elm.text.badge,hidden",
-					"elm");
+			                            "elm,state,elm.text.badge,hidden",
+			                            "elm");
 		}
 	}
 	return strdup(buf);
@@ -279,7 +280,7 @@ static char *__gl_albums_get_text(void *data, Evas_Object *obj, const char *part
 
 /* Only for local medias */
 static void __gl_albums_create_thumb_cb(media_content_error_e error,
-					const char *path, void *user_data)
+                                        const char *path, void *user_data)
 {
 	GL_CHECK(user_data);
 	gl_album_data_s *album_data = (gl_album_data_s *)user_data;
@@ -290,12 +291,13 @@ static void __gl_albums_create_thumb_cb(media_content_error_e error,
 	album->album_data = NULL;
 
 	if (gl_get_view_mode(ad) != GL_VIEW_ALBUMS &&
-	    gl_get_view_mode(ad) != GL_VIEW_ALBUMS_EDIT &&
-	    gl_get_view_mode(ad) != GL_VIEW_ALBUMS_SELECT)
+	        gl_get_view_mode(ad) != GL_VIEW_ALBUMS_EDIT &&
+	        gl_get_view_mode(ad) != GL_VIEW_ALBUMS_SELECT) {
 		return;
+	}
 
 	if (error == MEDIA_CONTENT_ERROR_NONE && GL_FILE_EXISTS(path) &&
-	    g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
+	        g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
 		GL_CHECK(album);
 		GL_CHECK(album->item);
 		elm_gengrid_item_update(album->item);
@@ -320,7 +322,7 @@ static int __gl_albums_create_thumb(gl_item *gitem, gl_cluster *album)
 		album_data->album = album;
 		album->album_data = album_data;
 		_gl_data_create_thumb(gitem->item, __gl_albums_create_thumb_cb,
-				      album_data);
+		                      album_data);
 		return 0;
 	}
 	return -1;
@@ -342,12 +344,13 @@ static int __gl_albums_set_bg_file(Evas_Object *bg, void *data)
 
 	ret_val = 0;
 	bg_path = GL_ICON_NO_THUMBNAIL;
-	if (GL_FILE_EXISTS(git->item->thumb_url))
+	if (GL_FILE_EXISTS(git->item->thumb_url)) {
 		bg_path = git->item->thumb_url;
-	else
+	} else {
 		ret_val = -1;
+	}
 
- GL_ALBUMS_FAILED:
+GL_ALBUMS_FAILED:
 
 #ifdef _USE_ROTATE_BG
 	_gl_rotate_bg_set_image_file(bg, bg_path);
@@ -367,13 +370,13 @@ static Evas_Object *__gl_albums_get_type_icon(Evas_Object *obj, gl_cluster *albu
 
 	if (_gl_data_is_camera_album(album->cluster))
 		_obj = _gl_tile_show_part_type_icon(obj,
-						    GL_TILE_TYPE_CAMERA);
+		                                    GL_TILE_TYPE_CAMERA);
 	else if (_gl_data_is_default_album(GL_STR_ALBUM_DOWNLOADS, album->cluster))
 		_obj = _gl_tile_show_part_type_icon(obj,
-						    GL_TILE_TYPE_DOWNLOAD);
+		                                    GL_TILE_TYPE_DOWNLOAD);
 	else
 		_obj = _gl_tile_show_part_type_icon(obj,
-						    GL_TILE_TYPE_FOLDER);
+		                                    GL_TILE_TYPE_FOLDER);
 	return _obj;
 }
 
@@ -384,8 +387,7 @@ _gl_count_set(Evas_Object *layout, const char *text)
 	Edje_Message_Float *msg;
 	if (text) {
 		elm_layout_text_set(layout, "elm.sub.text", text);
-	}
-	else {
+	} else {
 		elm_layout_text_set(layout, "elm.sub.text", "");
 	}
 	edje = elm_layout_edje_get(layout);
@@ -397,7 +399,7 @@ _gl_count_set(Evas_Object *layout, const char *text)
 }
 
 static Evas_Object *__gl_albums_get_content(void *data, Evas_Object *obj,
-					    const char *part)
+					const char *part)
 {
 	GL_CHECK_NULL(part);
 	GL_CHECK_NULL(strlen(part));
@@ -410,12 +412,12 @@ static Evas_Object *__gl_albums_get_content(void *data, Evas_Object *obj,
 	int view_mode = gl_get_view_mode(ad);
 
 	if (view_mode != GL_VIEW_ALBUMS &&
-	    view_mode != GL_VIEW_ALBUMS_EDIT &&
-	    view_mode != GL_VIEW_ALBUMS_SELECT &&
-	    view_mode != GL_VIEW_THUMBS &&
-	    view_mode != GL_VIEW_THUMBS_EDIT &&
-	    view_mode != GL_VIEW_THUMBS_SELECT &&
-	    view_mode != GL_VIEW_ALBUM_REORDER) {
+	        view_mode != GL_VIEW_ALBUMS_EDIT &&
+	        view_mode != GL_VIEW_ALBUMS_SELECT &&
+	        view_mode != GL_VIEW_THUMBS &&
+	        view_mode != GL_VIEW_THUMBS_EDIT &&
+	        view_mode != GL_VIEW_THUMBS_SELECT &&
+	        view_mode != GL_VIEW_ALBUM_REORDER) {
 		gl_dbg("Album is empty, view mode is : % d", view_mode);
 		return NULL;
 	}
@@ -436,33 +438,35 @@ static Evas_Object *__gl_albums_get_content(void *data, Evas_Object *obj,
 
 		return layout;
 	} else if (!g_strcmp0(part, GL_TILE_ICON)) {
-		if (album_item->cover_thumbs_cnt <= 0)
+		if (album_item->cover_thumbs_cnt <= 0) {
 			gl_dbg("Empty album");
+		}
 
 		_obj = _gl_tile_show_part_icon(obj, part,
-					       __gl_albums_set_bg_file,
-					       (void *)(album_item->cover));
+		                               __gl_albums_set_bg_file,
+		                               (void *)(album_item->cover));
 		int first_cnt = 2;
 		int level = (int)evas_object_data_get(ad->albuminfo.view,
-						      GL_GESTURE_KEY_PINCH_LEVEL);
+		                                      GL_GESTURE_KEY_PINCH_LEVEL);
 		if (ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90 ||
-		    ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270 ||
-		    level == GL_ZOOM_NONE)
+		        ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270 ||
+		        level == GL_ZOOM_NONE) {
 			first_cnt = 3;
+		}
 		if (album_item->index < first_cnt && album_item->item)
 			elm_object_item_signal_emit(album_item->item,
-						    "show_top_pad",
-						    "padding.top");
+			                            "show_top_pad",
+			                            "padding.top");
 	} else if (!g_strcmp0(part, GL_TILE_TYPE_ICON)) {
 		_obj = __gl_albums_get_type_icon(obj, album_item);
 	} else if (!g_strcmp0(part, GL_TILE_SD_ICON)) {
 		if (GL_STORE_T_MMC == album_item->cluster->type) {
 			_obj = _gl_tile_show_part_type_icon(obj,
-							    GL_TILE_TYPE_MMC_STORAGE);
+			                                    GL_TILE_TYPE_MMC_STORAGE);
 		} else {
 			elm_object_item_signal_emit(album_item->item,
-						    "hide_sd_icon",
-						    "elm.swallow.sd_icon");
+			                            "hide_sd_icon",
+			                            "elm.swallow.sd_icon");
 		}
 	} else if (view_mode == GL_VIEW_ALBUMS_EDIT) {
 		_obj = _gl_albums_edit_add_content(data, obj, part);
@@ -471,7 +475,7 @@ static Evas_Object *__gl_albums_get_content(void *data, Evas_Object *obj,
 }
 
 static Evas_Object *__gl_albums_get_content_split_view(void *data, Evas_Object *obj,
-					    const char *part)
+					const char *part)
 {
 	GL_CHECK_NULL(part);
 	GL_CHECK_NULL(strlen(part));
@@ -484,12 +488,12 @@ static Evas_Object *__gl_albums_get_content_split_view(void *data, Evas_Object *
 	int view_mode = gl_get_view_mode(ad);
 
 	if (view_mode != GL_VIEW_ALBUMS &&
-	    view_mode != GL_VIEW_ALBUMS_EDIT &&
-	    view_mode != GL_VIEW_ALBUMS_SELECT &&
-	    view_mode != GL_VIEW_THUMBS &&
-	    view_mode != GL_VIEW_THUMBS_EDIT &&
-	    view_mode != GL_VIEW_THUMBS_SELECT &&
-	    view_mode != GL_VIEW_ALBUM_REORDER) {
+	        view_mode != GL_VIEW_ALBUMS_EDIT &&
+	        view_mode != GL_VIEW_ALBUMS_SELECT &&
+	        view_mode != GL_VIEW_THUMBS &&
+	        view_mode != GL_VIEW_THUMBS_EDIT &&
+	        view_mode != GL_VIEW_THUMBS_SELECT &&
+	        view_mode != GL_VIEW_ALBUM_REORDER) {
 		gl_dbg("Album is empty, view mode is : % d", view_mode);
 		return NULL;
 	}
@@ -507,33 +511,35 @@ static Evas_Object *__gl_albums_get_content_split_view(void *data, Evas_Object *
 
 		return layout;
 	} else if (!g_strcmp0(part, GL_TILE_ICON)) {
-		if (album_item->cover_thumbs_cnt <= 0)
+		if (album_item->cover_thumbs_cnt <= 0) {
 			gl_dbg("Empty album");
+		}
 
 		_obj = _gl_tile_show_part_icon(obj, part,
-					       __gl_albums_set_bg_file,
-					       (void *)(album_item->cover));
+		                               __gl_albums_set_bg_file,
+		                               (void *)(album_item->cover));
 		int first_cnt = 2;
 		int level = (int)evas_object_data_get(ad->albuminfo.view,
-						      GL_GESTURE_KEY_PINCH_LEVEL);
+		                                      GL_GESTURE_KEY_PINCH_LEVEL);
 		if (ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90 ||
-		    ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270 ||
-		    level == GL_ZOOM_NONE)
+		        ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270 ||
+		        level == GL_ZOOM_NONE) {
 			first_cnt = 3;
+		}
 		if (album_item->index < first_cnt && album_item->item)
 			elm_object_item_signal_emit(album_item->item,
-						    "show_top_pad",
-						    "padding.top");
+			                            "show_top_pad",
+			                            "padding.top");
 	} else if (!g_strcmp0(part, GL_TILE_TYPE_ICON)) {
 		_obj = __gl_albums_get_type_icon(obj, album_item);
 	} else if (!g_strcmp0(part, GL_TILE_SD_ICON)) {
 		if (GL_STORE_T_MMC == album_item->cluster->type) {
 			_obj = _gl_tile_show_part_type_icon(obj,
-							    GL_TILE_TYPE_MMC_STORAGE);
+			                                    GL_TILE_TYPE_MMC_STORAGE);
 		} else {
 			elm_object_item_signal_emit(album_item->item,
-						    "hide_sd_icon",
-						    "elm.swallow.sd_icon");
+			                            "hide_sd_icon",
+			                            "elm.swallow.sd_icon");
 		}
 	} else if (view_mode == GL_VIEW_ALBUMS_EDIT) {
 		_obj = _gl_albums_edit_add_content(data, obj, part);
@@ -558,8 +564,9 @@ static void __gl_albums_longpressed_cb(void *data, Evas_Object *obj, void *ei)
 	GL_CHECK(ei);
 	GL_CHECK(data);
 
-	if (GL_VIEW_ALBUMS != gl_get_view_mode(data))
-			return;
+	if (GL_VIEW_ALBUMS != gl_get_view_mode(data)) {
+		return;
+	}
 	Elm_Object_Item *it = (Elm_Object_Item *)ei;
 	gl_cluster *album = elm_object_item_data_get(it);
 	GL_CHECK(album);
@@ -572,7 +579,7 @@ static void __gl_albums_longpressed_cb(void *data, Evas_Object *obj, void *ei)
 
 /* Free data after layout deleted */
 static void __gl_albums_delete_layout_cb(void *data, Evas *e, Evas_Object *obj,
-					 void *ei)
+			void *ei)
 {
 	gl_dbg("Delete layout ---");
 	GL_CHECK(data);
@@ -684,7 +691,7 @@ static int __gl_albums_start_slideshow(void *data)
 	gl_media_s *item = NULL;
 	bool is_all = true;
 	if (ad->albuminfo.sel_elist &&
-	    eina_list_count(ad->albuminfo.sel_elist) > 0) {
+	        eina_list_count(ad->albuminfo.sel_elist) > 0) {
 		gl_cluster *album = NULL;
 		album = eina_list_nth(ad->albuminfo.sel_elist, 0);
 		_gl_data_get_items_album(data, album, 0, 0, &list);
@@ -692,21 +699,24 @@ static int __gl_albums_start_slideshow(void *data)
 		is_all = false;
 	} else {
 		_gl_data_get_items(GL_FIRST_VIEW_START_POS,
-				   GL_FIRST_VIEW_START_POS, &list);
+		                   GL_FIRST_VIEW_START_POS, &list);
 		item = (gl_media_s *)eina_list_nth(list, 0);
 		gitem = _gl_data_new_item_mitem(item);
 	}
-	if (list)
+	if (list) {
 		eina_list_free(list);
+	}
 	if (gitem) {
 		GL_CHECK_VAL(gitem, -1);
-		if (is_all)
+		if (is_all) {
 			gl_ext_load_iv_ug(data, gitem, GL_UG_IV_SLIDESHOW_ALL);
-		else
+		} else {
 			gl_ext_load_iv_ug(data, gitem, GL_UG_IV_SLIDESHOW);
+		}
 	}
-	if (gitem)
+	if (gitem) {
 		_gl_data_util_free_gitem(gitem);
+	}
 	_gl_data_finalize_albums_selected_list(data);
 	return 0;
 }
@@ -733,11 +743,11 @@ static int __gl_albums_select_slideshow(void *data)
 	_gl_albums_set_current(data, cluster);
 	Eina_List *medias_elist = NULL;
 	_gl_data_get_items_album(data, cluster, GL_FIRST_VIEW_START_POS,
-				 GL_FIRST_VIEW_END_POS, &medias_elist);
+	                         GL_FIRST_VIEW_END_POS, &medias_elist);
 	_gl_thumbs_set_edit_mode(data, GL_THUMBS_EDIT_SLIDESHOW);
 	_gl_thumbs_set_list(ad, medias_elist);
 	_gl_thumbs_create_view(data, GL_NAVI_THUMBS, GL_STR_ID_ALL_ALBUMS, true,
-			       __gl_albums_close_album_cb);
+	                       __gl_albums_close_album_cb);
 
 	gl_dbg("Done edit");
 	return 0;
@@ -756,15 +766,15 @@ static int __gl_albums_slideshow(void *data, const char *label)
 		__gl_albums_start_slideshow(data);
 	} else if (!g_strcmp0(label, _gl_str(GL_STR_ID_SETTINGS))) {
 		evas_object_data_set(ad->maininfo.naviframe,
-				     GL_NAVIFRAME_SLIDESHOW_DATA_KEY,
-				     __gl_albums_start_slideshow);
+		                     GL_NAVIFRAME_SLIDESHOW_DATA_KEY,
+		                     __gl_albums_start_slideshow);
 		gl_ext_load_ug(data, GL_UG_GALLERY_SETTING_SLIDESHOW);
 	} else if (!g_strcmp0(label, _gl_str(GL_STR_ID_SELECT_ITEMS))) {
 #ifdef _USE_APP_SLIDESHOW
 		__gl_albums_select_slideshow(data);
 		evas_object_data_set(ad->maininfo.naviframe,
-				     GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY,
-				     gl_pop_to_ctrlbar_ly);
+		                     GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY,
+		                     gl_pop_to_ctrlbar_ly);
 #else
 		_gl_ext_launch_gallery_ug(data);
 #endif
@@ -793,19 +803,19 @@ static int __gl_albums_ctxpopup_append(void *data, Evas_Object *parent)
 	if (ad->albuminfo.elist->edit_cnt > 0) {
 		/* 1.  View As*/
 		_gl_ctxpopup_append(parent, GL_STR_ID_VIEW_AS,
-				__gl_albums_viewas_pop_cb, data);
+		                    __gl_albums_viewas_pop_cb, data);
 		/* 2. New album*/
 		_gl_ctxpopup_append(parent, GL_STR_ID_NEW_ALBUM,
-				    __gl_albums_newalbum_cb, data);
+		                    __gl_albums_newalbum_cb, data);
 		_gl_ctxpopup_append(parent, GL_STR_ID_REORDER,
-				    __gl_albums_reorder_cb, data);
+		                    __gl_albums_reorder_cb, data);
 		/* 3. Delete */
 		_gl_ctxpopup_append(parent, GL_STR_ID_DELETE, __gl_albums_edit_cb,
-				    data);
+		                    data);
 #ifdef SUPPORT_SLIDESHOW
 		/* 4. Slideshow */
 		_gl_ctxpopup_append(parent, GL_STR_ID_SLIDESHOW,
-				    __gl_albums_slideshow_cb, data);
+		                    __gl_albums_slideshow_cb, data);
 #endif
 	}
 	return 0;
@@ -909,7 +919,7 @@ static int __gl_albums_add_btns(void *data)
 	_gl_ui_clear_btns(data);
 	/* More */
 	btn = _gl_but_create_but(parent, NULL, NULL, GL_BUTTON_STYLE_NAVI_MORE,
-				 __gl_albums_more_btn_cb, data);
+	                         __gl_albums_more_btn_cb, data);
 	GL_CHECK_VAL(btn, -1);
 
 	elm_object_item_part_content_set(nf_it, GL_NAVIFRAME_MORE, btn);
@@ -945,7 +955,7 @@ int gl_albums_update_items(void *data)
 	elm_naviframe_item_title_enabled_set(ad->ctrlinfo.nf_it, EINA_TRUE, EINA_TRUE);
 	if (gl_check_gallery_empty(ad)) {
 
- GL_ALBUMS_SHOW_NOCONTENTS:
+GL_ALBUMS_SHOW_NOCONTENTS:
 
 		if (ad->albuminfo.view) {
 			/* Clear callbacks for gengrid view */
@@ -964,17 +974,17 @@ int gl_albums_update_items(void *data)
 		elm_naviframe_item_title_enabled_set(ad->ctrlinfo.nf_it, EINA_FALSE, EINA_FALSE);
 		Evas_Object *old_view = NULL;
 		old_view = elm_object_part_content_unset(ad->ctrlinfo.ctrlbar_view_ly,
-							 "elm.swallow.view");
+		           "elm.swallow.view");
 		GL_IF_DEL_OBJ(old_view);
 		elm_object_part_content_set(ad->ctrlinfo.ctrlbar_view_ly,
-				   	    "elm.swallow.view", noc);
+		                            "elm.swallow.view", noc);
 	} else {
 		if (view_mode == GL_VIEW_ALBUMS_EDIT) {
 			_gl_albums_create_items(ad, ad->albuminfo.view);
 			/* Display selectioninfo */
 			int cnt = _gl_data_get_albums_selected_cnt(ad);
 			_gl_notify_check_selall(ad, ad->ctrlinfo.nf_it,
-						ad->albuminfo.albums_cnt, cnt);
+			                        ad->albuminfo.albums_cnt, cnt);
 			/* Update the label text */
 			_gl_ui_update_navi_title_text(ad->ctrlinfo.nf_it, cnt, false);
 		} else {
@@ -1011,7 +1021,7 @@ int _gl_albums_create_view(void *data, Evas_Object *parent)
 	ad->albuminfo.view = layout_inner;
 	/* Register delete callback */
 	evas_object_event_callback_add(parent, EVAS_CALLBACK_DEL,
-				       __gl_albums_delete_layout_cb, data);
+	                               __gl_albums_delete_layout_cb, data);
 	GL_PROFILE_OUT;
 	return 0;
 }
@@ -1068,10 +1078,10 @@ int gl_albums_change_to_view(void *data)
 		elm_naviframe_item_title_enabled_set(ad->ctrlinfo.nf_it, EINA_FALSE, EINA_FALSE);
 		Evas_Object *old_view = NULL;
 		old_view = elm_object_part_content_unset(ad->ctrlinfo.ctrlbar_view_ly,
-							 "elm.swallow.view");
+		           "elm.swallow.view");
 		evas_object_hide(old_view);
 		elm_object_part_content_set(ad->ctrlinfo.ctrlbar_view_ly,
-					    "elm.swallow.view", noc);
+		                            "elm.swallow.view", noc);
 	} else {
 		_gl_albums_create_items(ad, ad->albuminfo.view);
 	}
@@ -1099,7 +1109,7 @@ int gl_albums_remove_nocontents(void *data)
 
 		view = _gl_albums_add_view(ad, ad->maininfo.naviframe);
 		elm_object_part_content_set(ad->ctrlinfo.ctrlbar_view_ly,
-				   	    "elm.swallow.view", view);
+		                            "elm.swallow.view", view);
 		evas_object_show(view);
 		ad->albuminfo.view = view;
 		_gl_albums_check_btns(data);
@@ -1107,10 +1117,11 @@ int gl_albums_remove_nocontents(void *data)
 		gl_dbg("Gallery is empty!");
 		bool b_update = false;
 		b_update = _gl_nocontents_update_label(ad->albuminfo.nocontents,
-							  GL_STR_NO_ALBUMS);
+		                                       GL_STR_NO_ALBUMS);
 		/* Update toolbar state */
-		if (b_update)
+		if (b_update) {
 			_gl_albums_check_btns(data);
+		}
 	} else {
 		gl_dbg("Nocontents was removed!");
 	}
@@ -1139,7 +1150,7 @@ int _gl_albums_show_view_tab(void *data, Evas_Object *parent)
 
 	/* Set pop callback for operating when button back clicked */
 	evas_object_data_set(ad->maininfo.naviframe, GL_NAVIFRAME_POP_CB_KEY,
-			     (void *)__gl_albums_pop_op);
+	                     (void *)__gl_albums_pop_op);
 
 	gl_set_view_mode(data, GL_VIEW_ALBUMS);
 	_gl_ctrl_show_title(data, GL_CTRL_TAB_ALBUMS);
@@ -1154,7 +1165,7 @@ int _gl_albums_show_view_tab(void *data, Evas_Object *parent)
 	if (!ad->albuminfo.nocontents) {
 		evas_object_show(ad->albuminfo.view);
 		elm_object_part_content_set(parent, "elm.swallow.view",
-					    ad->albuminfo.view);
+		                            ad->albuminfo.view);
 	} else {
 		/* Register service if nocontents created for the first launching */
 		_gl_main_add_reg_idler(data);
@@ -1180,7 +1191,7 @@ int _gl_albums_hide_view_tab(void *data)
 		_gl_data_finalize_albums_selected_list(data);
 		/* CLEAR GENGRID */
 		if (ad->albuminfo.view &&
-		    ad->albuminfo.view != ad->albuminfo.nocontents) {
+		        ad->albuminfo.view != ad->albuminfo.nocontents) {
 			gl_dbg("elm_gengrid_clear view");
 			elm_gengrid_clear(ad->albuminfo.view);
 		}
@@ -1188,7 +1199,7 @@ int _gl_albums_hide_view_tab(void *data)
 		gl_dbg("GL_VIEW_ALBUMS");
 		/* CLEAR GENGRID */
 		if (ad->albuminfo.view &&
-		    ad->albuminfo.view != ad->albuminfo.nocontents) {
+		        ad->albuminfo.view != ad->albuminfo.nocontents) {
 			gl_dbg("elm_gengrid_clear view");
 			elm_gengrid_clear(ad->albuminfo.view);
 		}
@@ -1196,7 +1207,7 @@ int _gl_albums_hide_view_tab(void *data)
 	/* Hide previous view */
 	Evas_Object *pre_view = NULL;
 	pre_view = elm_object_part_content_unset(ad->ctrlinfo.ctrlbar_view_ly,
-						 "elm.swallow.view");
+	           "elm.swallow.view");
 	evas_object_hide(pre_view);
 	return 0;
 }
@@ -1219,10 +1230,10 @@ int _gl_albums_change_mode(void *data, bool b_edit)
 		_gl_show_grid_checks_dual(ad->albuminfo.view, GL_TILE_CHECKBOX, GL_TILE_CHECKBOX_GRID);
 #else
 		evas_object_smart_callback_del(ad->albuminfo.view, "unrealized",
-					       __gl_albums_unrealized);
+		                               __gl_albums_unrealized);
 		elm_gengrid_realized_items_update(ad->albuminfo.view);
 		evas_object_smart_callback_add(ad->albuminfo.view, "unrealized",
-					       __gl_albums_unrealized, data);
+		                               __gl_albums_unrealized, data);
 #endif
 	} else {
 		_gl_ui_change_navi_title(ad->ctrlinfo.nf_it, GL_STR_ID_ALBUM, true);
@@ -1243,8 +1254,9 @@ int _gl_albums_check_btns(void *data)
 	bool b_disabled = false;
 
 	/* Disable button share */
-	if (gl_check_gallery_empty(data) || ad->albuminfo.elist->edit_cnt <= 0)
+	if (gl_check_gallery_empty(data) || ad->albuminfo.elist->edit_cnt <= 0) {
 		b_disabled = true;
+	}
 	gl_dbg("b_disable: %d", b_disabled);
 
 	_gl_ui_disable_menu(ad->ctrlinfo.nf_it, false);
@@ -1256,8 +1268,9 @@ int _gl_albums_rotate_view(void *data)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 
-	if (ad->albuminfo.view == ad->albuminfo.nocontents)
+	if (ad->albuminfo.view == ad->albuminfo.nocontents) {
 		return -1;
+	}
 	Elm_Object_Item *item = elm_gengrid_first_item_get(ad->albuminfo.view);
 	if (item) {
 		item = elm_gengrid_item_next_get(item);
@@ -1265,8 +1278,8 @@ int _gl_albums_rotate_view(void *data)
 			item = elm_gengrid_item_next_get(item);
 			if (item)
 				elm_object_item_signal_emit(item,
-							    "show_top_pad",
-							    "padding.top");
+				                            "show_top_pad",
+				                            "padding.top");
 		}
 	}
 	return _gl_tile_update_item_size(data, ad->albuminfo.view, true);
@@ -1294,9 +1307,9 @@ int _gl_albums_clear_cbs(Evas_Object *view)
 	GL_CHECK_VAL(view, -1);
 	evas_object_smart_callback_del(view, "realized", __gl_albums_realized);
 	evas_object_smart_callback_del(view, "unrealized",
-			__gl_albums_unrealized);
+	                               __gl_albums_unrealized);
 	evas_object_smart_callback_del(view, "longpressed",
-			__gl_albums_longpressed_cb);
+	                               __gl_albums_longpressed_cb);
 	return 0;
 }
 
@@ -1348,7 +1361,7 @@ int gl_albums_open_album(gl_cluster *album)
 		_gl_albums_set_current(ad, album);
 		Eina_List *medias_elist = NULL;
 		_gl_data_get_items_album(ad, album, GL_FIRST_VIEW_START_POS,
-				GL_GET_UNTIL_LAST_RECORD - 1, &medias_elist);
+		                         GL_GET_UNTIL_LAST_RECORD - 1, &medias_elist);
 		_gl_add_album_data(album, medias_elist);
 		EINA_LIST_FREE(album->elist, data) {
 			if (data) {
@@ -1357,7 +1370,7 @@ int gl_albums_open_album(gl_cluster *album)
 		}
 		_gl_thumbs_set_list(ad, medias_elist);
 		_gl_thumbs_update_split_view(ad, GL_NAVI_THUMBS, i18n_name, true,
-				__gl_albums_close_album_cb);
+		                             __gl_albums_close_album_cb);
 		return 0;
 	} else if (view_mode == GL_VIEW_THUMBS_EDIT) {
 		gl_dbg("Split edit view!");
@@ -1367,7 +1380,7 @@ int gl_albums_open_album(gl_cluster *album)
 
 		Eina_List *medias_elist = NULL;
 		_gl_data_get_items_album(ad, album, GL_FIRST_VIEW_START_POS,
-				GL_GET_UNTIL_LAST_RECORD - 1, &medias_elist);
+		                         GL_GET_UNTIL_LAST_RECORD - 1, &medias_elist);
 		_gl_add_album_data(album, medias_elist);
 		EINA_LIST_FREE(album->elist, data) {
 			if (data) {
@@ -1382,7 +1395,7 @@ int gl_albums_open_album(gl_cluster *album)
 			_gl_data_restore_selected(ad->selinfo.elist, gitem);
 		}
 		_gl_thumbs_update_edit_split_view(ad, GL_NAVI_THUMBS, i18n_name, true,
-				__gl_albums_close_album_cb);
+		                                  __gl_albums_close_album_cb);
 		return 0;
 	} else {
 		gl_dbgW("Wrong view mode");
@@ -1393,7 +1406,7 @@ int gl_albums_open_album(gl_cluster *album)
 	_gl_albums_set_current(ad, album);
 	Eina_List *medias_elist = NULL;
 	_gl_data_get_items_album(ad, album, GL_FIRST_VIEW_START_POS,
-				 GL_FIRST_VIEW_END_POS, &medias_elist);
+	                         GL_FIRST_VIEW_END_POS, &medias_elist);
 	_gl_add_album_data(album, medias_elist);
 	EINA_LIST_FREE(album->elist, data) {
 		if (data) {
@@ -1402,7 +1415,7 @@ int gl_albums_open_album(gl_cluster *album)
 	}
 	_gl_thumbs_set_list(ad, medias_elist);
 	_gl_thumbs_create_view(ad, GL_NAVI_THUMBS, i18n_name, true,
-			       __gl_albums_close_album_cb);
+	                       __gl_albums_close_album_cb);
 	gl_dbg("albums_view 0x%x cleared", ad->albuminfo.view);
 	gl_dbg("Done albums selected");
 	return 0;
@@ -1415,15 +1428,15 @@ Evas_Object *_gl_albums_add_gengrid(void *data, Evas_Object *parent)
 	GL_CHECK_NULL(data);
 	Evas_Object *grid = _gl_tile_add_gengrid(parent);
 	evas_object_smart_callback_add(grid, "realized", __gl_albums_realized,
-				       data);
+	                               data);
 	evas_object_smart_callback_add(grid, "unrealized",
-				       __gl_albums_unrealized, data);
+	                               __gl_albums_unrealized, data);
 #if 0
 	evas_object_smart_callback_add(grid, "language,changed",
-				       __gl_albums_lang_changed, data);
+	                               __gl_albums_lang_changed, data);
 #endif
 	evas_object_smart_callback_add(grid, "longpressed",
-				       __gl_albums_longpressed_cb, data);
+	                               __gl_albums_longpressed_cb, data);
 	evas_object_show(grid);
 	_gl_ui_reset_scroller_pos(grid);
 	GL_PROFILE_OUT;
@@ -1440,10 +1453,10 @@ Evas_Object * _gl_albums_create_album_sel_gengrid(void *data)
 	elm_gengrid_horizontal_set(layout_inner, EINA_FALSE);
 	elm_scroller_bounce_set(layout_inner, EINA_FALSE, EINA_TRUE);
 	elm_scroller_policy_set(layout_inner, ELM_SCROLLER_POLICY_OFF,
-			ELM_SCROLLER_POLICY_AUTO);
+	                        ELM_SCROLLER_POLICY_AUTO);
 	elm_gengrid_multi_select_set(layout_inner, EINA_TRUE);
 	evas_object_size_hint_weight_set(layout_inner, EVAS_HINT_EXPAND,
-			EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	return layout_inner;
 }
 
@@ -1555,7 +1568,7 @@ int _gl_split_albums_create_items(void *data, Evas_Object *parent)
 	int length = 0;
 	gl_dbg("");
 	evas_object_smart_callback_add(parent, "realized", __gl_split_albums_realized,
-					       data);
+	                               data);
 	if (elm_gengrid_items_count(parent) > 0) {
 		/* Save scroller position before clearing gengrid */
 		_gl_ui_save_scroller_pos(parent);
@@ -1585,23 +1598,23 @@ int _gl_split_albums_create_items(void *data, Evas_Object *parent)
 		} else {
 			int view_mode = gl_get_view_mode(ad);
 			if (view_mode == GL_VIEW_ALBUMS
-					|| view_mode == GL_VIEW_ALBUMS_EDIT
-					|| view_mode == GL_VIEW_TIMELINE
-					|| view_mode == GL_VIEW_THUMBS_EDIT
-					|| view_mode == GL_VIEW_THUMBS_SELECT
-					) {
+			        || view_mode == GL_VIEW_ALBUMS_EDIT
+			        || view_mode == GL_VIEW_TIMELINE
+			        || view_mode == GL_VIEW_THUMBS_EDIT
+			        || view_mode == GL_VIEW_THUMBS_SELECT
+			   ) {
 				gl_dbg("skip the item");
 				continue;
 			}
 		}
 		album_item->item = elm_gengrid_item_append(parent, pgic,
-							   album_item,
-							   __gl_albums_sel_cb,
-							   album_item);
+		                   album_item,
+		                   __gl_albums_sel_cb,
+		                   album_item);
 		album_item->index = item_cnt;
 		item_cnt++;
 		gl_sdbg("Append[%s], id=%s.", album_item->cluster->display_name,
-		       album_item->cluster->uuid);
+		        album_item->cluster->uuid);
 	}
 	/* Restore previous position of scroller */
 	_gl_ui_restore_scroller_pos(parent);
@@ -1610,9 +1623,9 @@ int _gl_split_albums_create_items(void *data, Evas_Object *parent)
 	if (item_cnt) {
 		gl_sdbg("Item count is 0");
 		return 0;
-	}
-	else
+	} else {
 		return -1;
+	}
 }
 
 int _gl_albums_create_items(void *data, Evas_Object *parent)
@@ -1630,11 +1643,11 @@ int _gl_albums_create_items(void *data, Evas_Object *parent)
 		/* Save scroller position before clearing gengrid */
 		_gl_ui_save_scroller_pos(parent);
 		evas_object_smart_callback_del(parent, "unrealized",
-					       __gl_albums_unrealized);
+		                               __gl_albums_unrealized);
 		/* Clear albums view */
 		elm_gengrid_clear(parent);
 		evas_object_smart_callback_add(parent, "unrealized",
-					       __gl_albums_unrealized, data);
+		                               __gl_albums_unrealized, data);
 	}
 	ad->albuminfo.gic.item_style = GL_GENGRID_STYLE_ALBUM_VIEW;
 	ad->albuminfo.gic.func.text_get = __gl_albums_get_text;
@@ -1658,18 +1671,18 @@ int _gl_albums_create_items(void *data, Evas_Object *parent)
 		if (album_item->cluster->type < GL_STORE_T_ALL) {
 			ad->albuminfo.elist->edit_cnt++;
 		} else {
-			if(gl_get_view_mode(ad) != GL_VIEW_ALBUMS) {
+			if (gl_get_view_mode(ad) != GL_VIEW_ALBUMS) {
 				continue;
 			}
 		}
 		album_item->item = elm_gengrid_item_append(parent, pgic,
-							   album_item,
-							   __gl_albums_sel_cb,
-							   album_item);
+		                   album_item,
+		                   __gl_albums_sel_cb,
+		                   album_item);
 		album_item->index = item_cnt;
 		item_cnt++;
 		gl_sdbg("Append[%s], id=%s.", album_item->cluster->display_name,
-		       album_item->cluster->uuid);
+		        album_item->cluster->uuid);
 	}
 	/* Restore previous position of scroller */
 	_gl_ui_restore_scroller_pos(parent);
@@ -1677,9 +1690,10 @@ int _gl_albums_create_items(void *data, Evas_Object *parent)
 	ad->albuminfo.albums_cnt = item_cnt;
 	_gl_tile_update_item_size(data, parent, false);
 	GL_PROFILE_OUT;
-	if (item_cnt)
+	if (item_cnt) {
 		return 0;
-	else
+	} else {
 		return -1;
+	}
 }
 

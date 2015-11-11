@@ -54,7 +54,7 @@ static void __gl_main_win_del_cb(void *data, Evas_Object *obj, void *ei)
  * And don't use app_device_orientation_cb callback which is supported by capi
 */
 static void __gl_main_win_rot_changed_cb(void *data, Evas_Object *obj,
-					 void *event)
+			void *event)
 {
 	GL_CHECK(data);
 	GL_CHECK(obj);
@@ -65,10 +65,11 @@ static void __gl_main_win_rot_changed_cb(void *data, Evas_Object *obj,
 	int changed_ang = elm_win_rotation_get(obj);
 	gl_dbg("New angle: %d, old angle: %d", changed_ang,
 	       ad->maininfo.rotate_mode);
-	if (changed_ang == ad->maininfo.rotate_mode)
+	if (changed_ang == ad->maininfo.rotate_mode) {
 		return;
-	else
+	} else {
 		ad->maininfo.rotate_mode = changed_ang;
+	}
 #if 0
 	enum ug_event evt = UG_EVENT_NONE;
 	/* Send event to UG */
@@ -108,9 +109,9 @@ static Evas_Object *__gl_main_create_bg(Evas_Object *parent)
 
 	bg = evas_object_rectangle_add(evas_object_evas_get(parent));
 	evas_object_color_set(bg, GL_BG_COLOR_DEFAULT, GL_BG_COLOR_DEFAULT,
-			      GL_BG_COLOR_DEFAULT, GL_BG_COLOR_A);
+	                      GL_BG_COLOR_DEFAULT, GL_BG_COLOR_A);
 	evas_object_size_hint_weight_set(bg, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	elm_win_resize_object_add(parent, bg);
 	evas_object_show(bg);
 
@@ -126,7 +127,7 @@ static Evas_Object *__gl_main_create_conform(Evas_Object *parent)
 	Evas_Object *conform = NULL;
 	conform = elm_conformant_add(parent);
 	evas_object_size_hint_weight_set(conform, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(conform, EVAS_HINT_FILL, EVAS_HINT_FILL);
 	elm_win_resize_object_add(parent, conform);
 	evas_object_show(conform);
@@ -161,7 +162,7 @@ static Evas_Object *__gl_main_create_ly(Evas_Object *parent)
 	/* Apply the layout style */
 	elm_layout_theme_set(layout, "layout", "application", "default");
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_show(layout);
 	GL_PROFILE_OUT;
 	return layout;
@@ -177,10 +178,10 @@ static Evas_Object *__gl_main_create_naviframe(Evas_Object *parent)
 	elm_naviframe_prev_btn_auto_pushed_set(nf, EINA_FALSE);
 	/* Pop the most top view if the Naviframe has the BACK event */
 	eext_object_event_callback_add(nf, EEXT_CALLBACK_BACK, eext_naviframe_back_cb,
-				     NULL);
+	                               NULL);
 	/* Call the more_cb() of the most top view if the Naviframe has the MORE event */
 	eext_object_event_callback_add(nf, EEXT_CALLBACK_MORE, eext_naviframe_more_cb,
-				     NULL);
+	                               NULL);
 	evas_object_show(nf);
 	gl_dbg("naviframe added");
 	GL_PROFILE_OUT;
@@ -225,9 +226,9 @@ static Eina_Bool __gl_main_pop_op(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 
 	void *pop_cb = evas_object_data_get(ad->maininfo.naviframe,
-					    GL_NAVIFRAME_POP_CB_KEY);
+	                                    GL_NAVIFRAME_POP_CB_KEY);
 	if (pop_cb) {
-		Eina_Bool (*_pop_cb) (void *data);
+		Eina_Bool(*_pop_cb)(void * data);
 		_pop_cb = pop_cb;
 
 		if (_pop_cb(data)) {
@@ -273,11 +274,11 @@ static int __gl_main_push_view(void *data, Evas_Object *parent, Evas_Object *obj
 	*/
 	GL_CHECK_VAL(ad->maininfo.win, -1);
 	prev_btn = _gl_but_create_but(parent, NULL, NULL,
-				      GL_BUTTON_STYLE_NAVI_PRE, NULL, NULL);
+	                              GL_BUTTON_STYLE_NAVI_PRE, NULL, NULL);
 	GL_CHECK_VAL(prev_btn, -1);
 	/* Push view to stack */
 	nf_it = elm_naviframe_item_push(parent, NULL, prev_btn, NULL, obj,
-					NULL);
+	                                NULL);
 	Evas_Object *unset = elm_object_item_part_content_unset(nf_it, GL_NAVIFRAME_PREV_BTN);
 	evas_object_hide(unset);
 	ad->ctrlinfo.nf_it = nf_it;
@@ -297,13 +298,14 @@ static int __gl_main_add_view(void *data, Evas_Object *parent)
 
 	/* Add gesture for parent */
 	Evas_Object *gesture = _gl_tile_add_gesture(data, parent);
-	if (gesture == NULL)
+	if (gesture == NULL) {
 		gl_dbgE("Failed to create gesture!");
-	else
+	} else {
 		elm_object_part_content_set(parent, "gesture", gesture);
+	}
 
 	__gl_main_push_view(data, ad->maininfo.naviframe,
-			    ad->ctrlinfo.ctrlbar_ly);
+	                    ad->ctrlinfo.ctrlbar_ly);
 
 	GL_PROFILE_OUT;
 	return 0;
@@ -337,8 +339,9 @@ static Evas_Object *__gl_main_create_win(void *data, const char *name)
 	 */
 	if (elm_win_wm_rotation_supported_get(win)) {
 		const int rots[3] = { APP_DEVICE_ORIENTATION_0,
-				      APP_DEVICE_ORIENTATION_90,
-				      APP_DEVICE_ORIENTATION_270 };
+		                      APP_DEVICE_ORIENTATION_90,
+		                      APP_DEVICE_ORIENTATION_270
+		                    };
 		elm_win_wm_rotation_available_rotations_set(win, rots, 3);
 	}
 	/* pass '-1' value to this API then it will unset preferred rotation angle */
@@ -347,9 +350,9 @@ static Evas_Object *__gl_main_create_win(void *data, const char *name)
 	elm_win_autodel_set(win, EINA_TRUE);
 	elm_win_title_set(win, name);
 	evas_object_smart_callback_add(win, "delete,request",
-				       __gl_main_win_del_cb, data);
+	                               __gl_main_win_del_cb, data);
 	evas_object_smart_callback_add(win, "wm,rotation,changed",
-				       __gl_main_win_rot_changed_cb, data);
+	                               __gl_main_win_rot_changed_cb, data);
 	evas_object_show(win);
 	GL_PROFILE_OUT;
 	return win;
@@ -363,7 +366,7 @@ int _gl_main_add_reg_idler(void *data)
 	if (!ad->maininfo.b_reged_idler && !ad->maininfo.reg_idler) {
 		gl_dbgW("Register idler!");
 		ad->maininfo.reg_idler = ecore_timer_add(0.6f, __gl_main_reg_idler_cb,
-							  data);
+		                         data);
 	}
 	return 0;
 }
@@ -403,7 +406,7 @@ int _gl_main_create_view(gl_appdata *ad)
 	*/
 	elm_win_indicator_mode_set(ad->maininfo.win, ELM_WIN_INDICATOR_SHOW);
 	elm_win_indicator_opacity_set(ad->maininfo.win,
-				      ELM_WIN_INDICATOR_TRANSPARENT);
+	                              ELM_WIN_INDICATOR_TRANSPARENT);
 	/* Conformant. */
 	Evas_Object *conform = __gl_main_create_conform(ad->maininfo.win);
 	GL_CHECK_VAL(conform, -1);
@@ -422,10 +425,10 @@ int _gl_main_create_view(gl_appdata *ad)
 	GL_CHECK_VAL(ad->maininfo.naviframe, -1);
 	/* Set Naviframe to main layout */
 	elm_object_part_content_set(ad->maininfo.layout, "elm.swallow.content",
-				    ad->maininfo.naviframe);
+	                            ad->maininfo.naviframe);
 	/* Save conform pointer to naviframe object */
 	evas_object_data_set(ad->maininfo.naviframe, GL_NAVIFRAME_OBJ_DATA_KEY,
-			     conform);
+	                     conform);
 	/* init value */
 	evas_object_data_set(ad->maininfo.naviframe, "gl_obj_key_gallery_paused", (void *)0);
 
@@ -454,7 +457,7 @@ int _gl_main_clear_view(gl_appdata *ad)
 	GL_CHECK_VAL(ad, -1);
 	/* Remove win rotation callback */
 	evas_object_smart_callback_del(ad->maininfo.win, "wm,rotation,changed",
-				       __gl_main_win_rot_changed_cb);
+	                               __gl_main_win_rot_changed_cb);
 	_gl_ctxpopup_del(ad);
 	elm_theme_extension_del(NULL, GL_EDJ_FILE);
 	return 0;

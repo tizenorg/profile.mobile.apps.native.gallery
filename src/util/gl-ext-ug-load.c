@@ -76,8 +76,8 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 	int view_mode = gl_get_view_mode(ad);
 	gl_item *gitem = NULL;
 
-	gitem = eina_list_nth (ad->gridinfo.medias_elist,0);
-	if(gitem && strcmp(gitem->album->cluster->uuid,GL_ALBUM_FAVOURITE_ID) == 0) {
+	gitem = eina_list_nth(ad->gridinfo.medias_elist, 0);
+	if (gitem && strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID) == 0) {
 		app_control_get_extra_data_array(reply, "Selected index fav", &select_result, &count);
 	} else {
 		app_control_get_extra_data_array(reply, "Selected index", &select_result, &count);
@@ -90,7 +90,7 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 	}
 
 	if (select_result) {
-		if(gitem && strcmp(gitem->album->cluster->uuid,GL_ALBUM_FAVOURITE_ID) == 0) {
+		if (gitem && strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID) == 0) {
 			EINA_LIST_FOREACH(ad->gridinfo.medias_elist, l, data) {
 				if (!data || !data->item) {
 					continue;
@@ -118,7 +118,7 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 					}
 				}
 			}
-		}else {
+		} else {
 			EINA_LIST_FOREACH(ad->gridinfo.medias_elist, l, data) {
 				if (!data || !data->item) {
 					continue;
@@ -146,7 +146,7 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 			}
 		}
 	} else {
-		if(gitem && strcmp(gitem->album->cluster->uuid,GL_ALBUM_FAVOURITE_ID) == 0) {
+		if (gitem && strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID) == 0) {
 			EINA_LIST_FOREACH(ad->gridinfo.medias_elist, l, data) {
 				if (!data || !data->item) {
 					continue;
@@ -175,18 +175,18 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 	if (data && data->album && data->album->item) {
 		if (sel_count > 0) {
 			elm_object_item_signal_emit(data->album->item,
-					"elm,state,elm.text.badge,visible",
-					"elm");
+			                            "elm,state,elm.text.badge,visible",
+			                            "elm");
 		} else {
 			elm_object_item_signal_emit(data->album->item,
-					"elm,state,elm.text.badge,hidden",
-					"elm");
+			                            "elm,state,elm.text.badge,hidden",
+			                            "elm");
 		}
 #if 0
 		elm_gengrid_item_fields_update(data->album->item, "elm.text.badge", ELM_GENGRID_ITEM_FIELD_TEXT);
 #endif
 	}
-	int total_selected_count = eina_list_count(ad->selinfo.elist)+eina_list_count(ad->selinfo.fav_elist);
+	int total_selected_count = eina_list_count(ad->selinfo.elist) + eina_list_count(ad->selinfo.fav_elist);
 	int item_cnt = eina_list_count(ad->gridinfo.medias_elist);
 	if (view_mode == GL_VIEW_THUMBS_EDIT) {
 		_gl_notify_check_selall(ad, ad->gridinfo.nf_it, item_cnt, sel_count);
@@ -195,7 +195,7 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 		elm_gengrid_realized_items_update(ad->gridinfo.view);
 	} else if (view_mode == GL_VIEW_THUMBS_SELECT) {
 		_gl_notify_check_selall(ad, ad->albuminfo.nf_it_select, item_cnt,
-				sel_count);
+		                        sel_count);
 		/* Update the label text */
 		_gl_ui_update_navi_title_text(ad->albuminfo.nf_it_select, total_selected_count, false);
 		elm_gengrid_realized_items_update(ad->gridinfo.select_view);
@@ -203,7 +203,7 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 
 	for (i = 0; i < count; i++) {
 		if (select_result[i]) {
-			free (select_result[i]);
+			free(select_result[i]);
 		}
 	}
 	if (select_result) {
@@ -239,10 +239,10 @@ static void __gl_appcontrol_result_cb(app_control_h request, app_control_h reply
 		}
 	}
 	void *cb = evas_object_data_get(ad->maininfo.naviframe,
-					GL_NAVIFRAME_UG_RESULT_KEY);
+	                                GL_NAVIFRAME_UG_RESULT_KEY);
 	gl_sdbg("result_cb [%p]", cb);
 	if (cb) {
-		int (*result_cb) (void *data, app_control_h ret_h);
+		int (*result_cb)(void * data, app_control_h ret_h);
 		result_cb = cb;
 		result_cb(ad, reply);
 	}
@@ -255,10 +255,10 @@ static void __gl_appcontrol_result_cb(app_control_h request, app_control_h reply
 	ad->uginfo.iv_type = -1;
 
 	cb = evas_object_data_get(ad->maininfo.naviframe,
-					GL_NAVIFRAME_UG_UPDATE_KEY);
+	                          GL_NAVIFRAME_UG_UPDATE_KEY);
 	gl_sdbg("update_cb [%p]", cb);
 	if (cb) {
-		int (*update_cb) (void *data);
+		int (*update_cb)(void * data);
 		update_cb = cb;
 		update_cb(ad);
 	}
@@ -277,13 +277,13 @@ static void __gl_appcontrol_result_cb(app_control_h request, app_control_h reply
 		ad->uginfo.ug_type = -1;
 		ad->uginfo.iv_type = -1;
 		void *cb = evas_object_data_get(ad->maininfo.naviframe,
-						GL_NAVIFRAME_SLIDESHOW_DATA_KEY);
+		                                GL_NAVIFRAME_SLIDESHOW_DATA_KEY);
 		gl_sdbg("StartSlideShow[%p]", cb);
 		if (cb) {
 			evas_object_data_set(ad->maininfo.naviframe,
-					     GL_NAVIFRAME_SLIDESHOW_DATA_KEY,
-					     NULL);
-			int (*start_slideshow) (void *data);
+			                     GL_NAVIFRAME_SLIDESHOW_DATA_KEY,
+			                     NULL);
+			int (*start_slideshow)(void * data);
 			start_slideshow = cb;
 			start_slideshow(user_data);
 		}
@@ -292,22 +292,22 @@ static void __gl_appcontrol_result_cb(app_control_h request, app_control_h reply
 	else if (ad->uginfo.b_selected_slideshow) {
 		ad->uginfo.b_selected_slideshow = false;
 		cb = evas_object_data_get(ad->maininfo.naviframe,
-						GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY);
+		                          GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY);
 		gl_sdbg("selected_slideshow [%p]", cb);
 		if (cb) {
 			evas_object_data_set(ad->maininfo.naviframe,
-					     GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY,
-					     NULL);
-			int (*selected_slideshow_update) (void *data);
+			                     GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY,
+			                     NULL);
+			int (*selected_slideshow_update)(void * data);
 			selected_slideshow_update = cb;
 			selected_slideshow_update(user_data);
 		}
 	}
 #endif
 	evas_object_data_set(ad->maininfo.naviframe,
-			     GL_NAVIFRAME_UG_RESULT_KEY, NULL);
+	                     GL_NAVIFRAME_UG_RESULT_KEY, NULL);
 	evas_object_data_set(ad->maininfo.naviframe,
-			     GL_NAVIFRAME_UG_UPDATE_KEY, NULL);
+	                     GL_NAVIFRAME_UG_UPDATE_KEY, NULL);
 }
 
 #ifdef _USE_APP_SLIDESHOW
@@ -341,13 +341,14 @@ static char **__gl_ext_get_select_index(void *data, int *size)
 		}
 		gl_dbg("Sequence: %d", current->sequence);
 		snprintf(index, GL_INTERGER_LEN_MAX, "%d",
-			 current->sequence - 1);
+		         current->sequence - 1);
 		media_index[i] = index;
 		index = NULL;
 	}
 
-	if (size)
+	if (size) {
 		*size = sel_cnt;
+	}
 
 	/* Clear selected list */
 	_gl_data_selected_list_finalize(ad);
@@ -371,7 +372,7 @@ static int __gl_ext_slideshow_selected(void *data, app_control_h service)
 	gl_dbg("Set selected medias, media_index[%p], size[%d]", media_index,
 	       media_size);
 	app_control_add_extra_data_array(service, GL_ARGC_SELECTED_FILES,
-				     (const char **)media_index, media_size);
+	                                 (const char **)media_index, media_size);
 	/*free space of the medias index*/
 	int i = 0;
 	for (i = 0; i < media_size; ++i) {
@@ -381,7 +382,7 @@ static int __gl_ext_slideshow_selected(void *data, app_control_h service)
 	media_index = NULL;
 
 	app_control_add_extra_data(service, GL_ARGV_IV_INDEX,
-			       GL_ARGV_IV_INDEX_VALUE);
+	                           GL_ARGV_IV_INDEX_VALUE);
 	return GL_UG_SUCCESS;
 }
 #endif
@@ -394,31 +395,31 @@ static int __gl_ext_add_sortby(app_control_h service, int sort)
 	case GL_SORT_BY_NAME_DESC:
 		/* Sort by display name descending */
 		app_control_add_extra_data(service, GL_ARGV_IV_SORT_BY,
-				       GL_ARGV_IV_SORT_NAMEDESC);
+		                           GL_ARGV_IV_SORT_NAMEDESC);
 		gl_dbg("Name descending");
 		break;
 	case GL_SORT_BY_NAME_ASC:
 		/* Sort by display name ascending */
 		app_control_add_extra_data(service, GL_ARGV_IV_SORT_BY,
-				       GL_ARGV_IV_SORT_NAME);
+		                           GL_ARGV_IV_SORT_NAME);
 		gl_dbg("Name ascending");
 		break;
 	case GL_SORT_BY_DATE_DESC:
 		/* Sort by modified_date descending */
 		app_control_add_extra_data(service, GL_ARGV_IV_SORT_BY,
-				       GL_ARGV_IV_SORT_DATEDESC);
+		                           GL_ARGV_IV_SORT_DATEDESC);
 		gl_dbg("Date descending");
 		break;
 	case GL_SORT_BY_DATE_ASC:
 		/* Sort by modified_date ascending */
 		app_control_add_extra_data(service, GL_ARGV_IV_SORT_BY,
-				       GL_ARGV_IV_SORT_DATE);
+		                           GL_ARGV_IV_SORT_DATE);
 		gl_dbg("Date ascending");
 		break;
 	default:
 		/* No Sort, use  GL_SORT_BY_NAME_ASC */
 		app_control_add_extra_data(service, GL_ARGV_IV_SORT_BY,
-				       GL_ARGV_IV_SORT_NAME);
+		                           GL_ARGV_IV_SORT_NAME);
 		gl_dbg("no sort, use default Name ascending");
 		break;
 	}
@@ -441,17 +442,17 @@ static int __gl_ext_set_thumbs_mode(void *data, app_control_h service, int type)
 	/* 2.0, Local file */
 	if (GL_UG_IV_SLIDESHOW == type ||
 #ifdef _USE_APP_SLIDESHOW
-	    GL_UG_IV_SLIDESHOW_SELECTED == type ||
+	        GL_UG_IV_SLIDESHOW_SELECTED == type ||
 #endif
-	    GL_UG_IV_SLIDESHOW_ALL == type)
+	        GL_UG_IV_SLIDESHOW_ALL == type)
 		app_control_add_extra_data(service, GL_ARGV_IV_VIEW_MODE,
-				       GL_ARGV_IV_VIEW_SLIDESHOW);
+		                           GL_ARGV_IV_VIEW_SLIDESHOW);
 	else
 		app_control_add_extra_data(service, GL_ARGV_IV_VIEW_MODE,
-				       GL_ARGV_IV_VIEW_GALLERY);
+		                           GL_ARGV_IV_VIEW_GALLERY);
 
 	app_control_add_extra_data(service, GL_ARGV_IV_MEDIA_TYPE,
-			       GL_ARGV_IV_MEDIA_ALL);
+	                           GL_ARGV_IV_MEDIA_ALL);
 	gl_dbg("Media type: All");
 	return GL_UG_SUCCESS;
 }
@@ -463,14 +464,15 @@ static int __gl_ext_albums_set_iv(void *data, app_control_h service, int type, g
 	gl_dbg("type: %d", type);
 
 	/* 2.0, Local file */
-	if (__gl_ext_set_thumbs_mode(data, service, type) == GL_UG_FAIL)
+	if (__gl_ext_set_thumbs_mode(data, service, type) == GL_UG_FAIL) {
 		return GL_UG_FAIL;
+	}
 
 	if (type == GL_UG_IV_SLIDESHOW_ALL) {
 		app_control_add_extra_data(service, GL_ARGV_IV_ALBUM_INDEX,
-				       GL_ALBUM_ALL_ID);
+		                           GL_ALBUM_ALL_ID);
 	} else if (cur_album && cur_album->cluster &&
-		   cur_album->cluster->uuid) {
+	           cur_album->cluster->uuid) {
 		gl_sdbg("album id: %s", cur_album->cluster->uuid);
 
 		if (!strcmp(GL_ALBUM_FAVOURITE_ID, cur_album->cluster->uuid)) {
@@ -480,7 +482,7 @@ static int __gl_ext_albums_set_iv(void *data, app_control_h service, int type, g
 		}
 
 		app_control_add_extra_data(service, GL_ARGV_IV_ALBUM_INDEX,
-				       cur_album->cluster->uuid);
+		                           cur_album->cluster->uuid);
 	}
 	return GL_UG_SUCCESS;
 }
@@ -495,16 +497,16 @@ static int __gl_ext_albums_set_iv_select_mode(void *data, app_control_h service,
 
 	/* 2.0, Local file */
 	app_control_add_extra_data(service, GL_ARGV_IV_VIEW_MODE,
-			"SELECT");
+	                           "SELECT");
 
 	app_control_add_extra_data(service, GL_ARGV_IV_MEDIA_TYPE,
-			GL_ARGV_IV_MEDIA_ALL);
+	                           GL_ARGV_IV_MEDIA_ALL);
 
 	int tab_mode = _gl_ctrl_get_tab_mode(ad);
 	switch (tab_mode) {
 	case GL_CTRL_TAB_ALBUMS:
 		if (cur_album && cur_album->cluster &&
-				cur_album->cluster->uuid) {
+		        cur_album->cluster->uuid) {
 			if (!strcmp(GL_ALBUM_ALL_ID, cur_album->cluster->uuid)) {
 				app_control_add_extra_data(service, GL_ARGV_IV_VIEW_BY, GL_ARGV_IV_VIEW_BY_ALL);
 			} else if (!strcmp(GL_ALBUM_FAVOURITE_ID, cur_album->cluster->uuid)) {
@@ -514,7 +516,7 @@ static int __gl_ext_albums_set_iv_select_mode(void *data, app_control_h service,
 			}
 
 			app_control_add_extra_data(service, GL_ARGV_IV_ALBUM_INDEX,
-					cur_album->cluster->uuid);
+			                           cur_album->cluster->uuid);
 			if (ad->gridinfo.media_display_order == ORDER_ASC) {
 				ad->uginfo.sort_type = GL_SORT_BY_DATE_ASC;
 			} else if (ad->gridinfo.media_display_order == ORDER_DESC) {
@@ -540,18 +542,18 @@ static int _gl_ext_load_iv_selected_list(app_control_h service, void *data)
 	int i;
 	gl_item *gitem = NULL;
 	int count = eina_list_count(ad->selinfo.elist);
-	int count_fav= eina_list_count(ad->selinfo.fav_elist);
+	int count_fav = eina_list_count(ad->selinfo.fav_elist);
 
 	char **value = NULL;
 	char **value_fav = NULL;
 	if (count > 0) {
-		(value) = (char**)malloc( count * sizeof (char *));
+		(value) = (char**)malloc(count * sizeof(char *));
 		if (!value) {
 			return GL_UG_FAIL;
 		}
 	}
 	if (count_fav > 0) {
-		(value_fav) = (char**)malloc( count_fav * sizeof (char *));
+		(value_fav) = (char**)malloc(count_fav * sizeof(char *));
 		if (!value_fav) {
 			return GL_UG_FAIL;
 		}
@@ -575,11 +577,11 @@ static int _gl_ext_load_iv_selected_list(app_control_h service, void *data)
 	}
 	if (count > 0) {
 		app_control_add_extra_data_array(service, "Selected index",
-				(const char **)value, count);
+		                                 (const char **)value, count);
 	}
 	if (count_fav > 0) {
 		app_control_add_extra_data_array(service, "Selected index fav",
-				(const char **)value_fav, count_fav);
+		                                 (const char **)value_fav, count_fav);
 	}
 
 
@@ -611,7 +613,7 @@ int gl_ext_load_iv_time_ug_select_mode(void *data, gl_media_s *item, gl_ext_iv_t
 	} else if (sort_type == ORDER_DESC) {
 		ad->uginfo.sort_type = GL_SORT_BY_DATE_DESC;
 	}
-	ret = gl_ext_load_iv_ug_select_mode (data, item, type);
+	ret = gl_ext_load_iv_ug_select_mode(data, item, type);
 
 	return ret;
 }
@@ -674,8 +676,8 @@ int gl_ext_load_iv_ug_select_mode(void *data, gl_media_s *item, gl_ext_iv_type t
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("ug_create failed!");
 		_gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
-				GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
-				NULL, NULL, NULL, NULL, NULL, NULL);
+		                 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
+		                 NULL, NULL, NULL, NULL, NULL, NULL);
 		return GL_UG_FAIL;
 	} else {
 		elm_object_tree_focus_allow_set(ad->maininfo.layout, EINA_FALSE);
@@ -747,16 +749,16 @@ int gl_ext_load_iv_ug(void *data, gl_item *item, gl_ext_iv_type type)
 		ad->uginfo.b_selected_slideshow = true;
 	} else
 #endif
-	if (type == GL_UG_IV_SLIDESHOW_ALL ||
-	    GL_VIEW_ALBUMS == gl_get_view_mode(data)) {
-		app_control_add_extra_data(service, GL_ARGV_IV_INDEX,
-				       GL_ARGV_IV_INDEX_VALUE);
-	} else if (type == GL_UG_IV || type == GL_UG_IV_SLIDESHOW) {
-		char sequence_str[GL_INTERGER_LEN_MAX] = { 0, };
-		eina_convert_itoa(item->sequence, sequence_str);
-		gl_dbg("sequence : %s", sequence_str);
-		app_control_add_extra_data(service, GL_ARGV_IV_INDEX, sequence_str);
-	}
+		if (type == GL_UG_IV_SLIDESHOW_ALL ||
+		        GL_VIEW_ALBUMS == gl_get_view_mode(data)) {
+			app_control_add_extra_data(service, GL_ARGV_IV_INDEX,
+			                           GL_ARGV_IV_INDEX_VALUE);
+		} else if (type == GL_UG_IV || type == GL_UG_IV_SLIDESHOW) {
+			char sequence_str[GL_INTERGER_LEN_MAX] = { 0, };
+			eina_convert_itoa(item->sequence, sequence_str);
+			gl_dbg("sequence : %s", sequence_str);
+			app_control_add_extra_data(service, GL_ARGV_IV_INDEX, sequence_str);
+		}
 	ret = app_control_set_launch_mode(service, APP_CONTROL_LAUNCH_MODE_GROUP);
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("set launch mode failed");
@@ -773,8 +775,8 @@ int gl_ext_load_iv_ug(void *data, gl_item *item, gl_ext_iv_type type)
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("ug_create failed!");
 		_gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
-				 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
-				 NULL, NULL, NULL, NULL, NULL, NULL);
+		                 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
+		                 NULL, NULL, NULL, NULL, NULL, NULL);
 		return GL_UG_FAIL;
 	} else {
 		elm_object_tree_focus_allow_set(ad->maininfo.layout, EINA_FALSE);
@@ -807,11 +809,11 @@ int _gl_ext_load_iv_timeline(void *data, const char *path, int sequence, int sor
 
 	/* Local file */
 	app_control_add_extra_data(service, GL_ARGV_IV_MEDIA_TYPE,
-			       GL_ARGV_IV_MEDIA_ALL);
+	                           GL_ARGV_IV_MEDIA_ALL);
 	gl_dbg("Media type: All");
 	/* 'All' album->thumbnails view */
 	app_control_add_extra_data(service, GL_ARGV_IV_VIEW_BY,
-			       GL_ARGV_IV_VIEW_BY_ALL);
+	                           GL_ARGV_IV_VIEW_BY_ALL);
 	gl_dbg("View By: All");
 
 	app_control_add_extra_data(service, GL_ARGV_IV_PATH, path);
@@ -843,10 +845,10 @@ int _gl_ext_load_iv_timeline(void *data, const char *path, int sequence, int sor
 
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("ug_create failed!");
-			_gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
-					 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
-					 NULL, NULL, NULL, NULL, NULL, NULL);
-			return GL_UG_FAIL;
+		_gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
+		                 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
+		                 NULL, NULL, NULL, NULL, NULL, NULL);
+		return GL_UG_FAIL;
 
 	} else {
 		/*Disable the focus permission of the app layout*/
@@ -900,27 +902,27 @@ int gl_ext_load_ug(void *data, gl_ext_ug_type type)
 	}
 	ad->uginfo.ug = service;
 
-	 if (ret != APP_CONTROL_ERROR_NONE) {
+	if (ret != APP_CONTROL_ERROR_NONE) {
 		gl_dbgE("ug_create failed!");
 		_gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
-				 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
-				 NULL, NULL, NULL, NULL, NULL, NULL);
+		                 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
+		                 NULL, NULL, NULL, NULL, NULL, NULL);
 		return GL_UG_FAIL;
-	 } else {
-		 gl_dbgW("ug_create success!");
-		 /*Disable the focus permission of the app layout*/
-		 /*or else the highlight will fall under the ug layout */
-		 elm_object_tree_focus_allow_set(ad->maininfo.layout, EINA_FALSE);
-		 return GL_UG_SUCCESS;
-	 }
+	} else {
+		gl_dbgW("ug_create success!");
+		/*Disable the focus permission of the app layout*/
+		/*or else the highlight will fall under the ug layout */
+		elm_object_tree_focus_allow_set(ad->maininfo.layout, EINA_FALSE);
+		return GL_UG_SUCCESS;
+	}
 
- EXT_UG_FAILED:
+EXT_UG_FAILED:
 
-	 gl_dbgE("EXT_UG_FAILED!");
-	 app_control_destroy(service);
-	 _gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
-			  GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
-			  NULL, NULL, NULL, NULL, NULL, NULL);
-	 return GL_UG_FAIL;
+	gl_dbgE("EXT_UG_FAILED!");
+	app_control_destroy(service);
+	_gl_popup_create(data, NULL, GL_STR_ID_OPERATION_FAILED,
+	                 GL_STR_ID_CLOSE, __gl_ext_popup_resp_cb, data,
+	                 NULL, NULL, NULL, NULL, NULL, NULL);
+	return GL_UG_FAIL;
 }
 

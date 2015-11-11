@@ -62,7 +62,7 @@ static int __gl_data_type_free_media(gl_media_s **item)
 	GL_FREEIF(tmp_item->ext);
 
 	if (MEDIA_CONTENT_TYPE_IMAGE == tmp_item->type &&
-	    tmp_item->image_info) {
+	        tmp_item->image_info) {
 		/* For local medias */
 		if (tmp_item->image_info->image_h) {
 			image_meta_destroy(tmp_item->image_info->image_h);
@@ -72,7 +72,7 @@ static int __gl_data_type_free_media(gl_media_s **item)
 		GL_FREEIF(tmp_item->image_info->media_uuid);
 		GL_FREE(tmp_item->image_info);
 	} else if (MEDIA_CONTENT_TYPE_VIDEO == tmp_item->type &&
-		   tmp_item->video_info) {
+	           tmp_item->video_info) {
 		/* For local medias */
 		if (tmp_item->video_info->video_h) {
 			video_meta_destroy(tmp_item->video_info->video_h);
@@ -96,8 +96,9 @@ int _gl_data_type_free_media_list(Eina_List **list)
 	gl_media_s *item = NULL;
 	Eina_List *tmp_list = *list;
 	EINA_LIST_FREE(tmp_list, item) {
-		if (item)
+		if (item) {
 			__gl_data_type_free_media(&item);
+		}
 	}
 	*list = NULL;
 	return 0;
@@ -113,8 +114,9 @@ static int __gl_data_type_free_album(gl_album_s **album)
 	GL_FREEIF(tmp_album->display_name);
 	GL_FREEIF(tmp_album->path);
 
-	if (tmp_album->folder_h)
+	if (tmp_album->folder_h) {
 		media_folder_destroy(tmp_album->folder_h);
+	}
 	GL_FREE(tmp_album);
 	*album = NULL;
 	return 0;
@@ -127,8 +129,9 @@ int _gl_data_type_free_album_list(Eina_List **list)
 	gl_album_s *item = NULL;
 	Eina_List *tmp_list = *list;
 	EINA_LIST_FREE(tmp_list, item) {
-		if (item)
+		if (item) {
 			__gl_data_type_free_album(&item);
+		}
 	}
 	*list = NULL;
 	return 0;
@@ -140,15 +143,17 @@ int _gl_data_type_free_glitem(void **item)
 	GL_CHECK_VAL(*item, -1);
 	int ret = -1;
 
-	if (((gl_album_s *)*item)->gtype == GL_TYPE_ALBUM)
+	if (((gl_album_s *)*item)->gtype == GL_TYPE_ALBUM) {
 		ret = __gl_data_type_free_album((gl_album_s **)item);
-	else if (((gl_media_s *)*item)->gtype == GL_TYPE_MEDIA ||
-		 ((gl_media_s *)*item)->gtype == GL_TYPE_WEB_MEDIA)
+	} else if (((gl_media_s *)*item)->gtype == GL_TYPE_MEDIA ||
+	           ((gl_media_s *)*item)->gtype == GL_TYPE_WEB_MEDIA) {
 		ret = __gl_data_type_free_media((gl_media_s **)item);
+	}
 
-	if (ret < 0)
+	if (ret < 0) {
 		return -1;
-	else
+	} else {
 		return 0;
+	}
 }
 

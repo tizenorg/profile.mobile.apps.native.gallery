@@ -34,19 +34,20 @@
 static void _gl_albums_sel_update_album_sel_list(void *data);
 
 static void __gl_albums_sel_trans_finished_cb(void *data, Evas_Object *obj,
-					      void *event_info)
+			void *event_info)
 {
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
 	int view_mode = gl_get_view_mode(ad);
 	gl_dbgW("view_mode: %d", view_mode);
 	evas_object_smart_callback_del(obj, GL_TRANS_FINISHED,
-				       __gl_albums_sel_trans_finished_cb);
+	                               __gl_albums_sel_trans_finished_cb);
 
 	/* Clear previous view after animation finished */
 	if (view_mode == GL_VIEW_ALBUMS_SELECT) {
-		if (ad->gridinfo.nocontents == NULL)
+		if (ad->gridinfo.nocontents == NULL) {
 			elm_gengrid_clear(ad->gridinfo.view);
+		}
 	} else {
 		gl_dbgE("Wrong view mode!");
 	}
@@ -81,7 +82,7 @@ static Eina_Bool __gl_albums_sel_pop_cb(void *data, Elm_Object_Item *it)
  *  @param obj is the content to be pushed.
  */
 static int __gl_albums_sel_push_view(void *data, Evas_Object *parent,
-				     Evas_Object *obj, char *title)
+                                     Evas_Object *obj, char *title)
 {
 	gl_dbg("GL_NAVI_ALBUMS_SELECT");
 	GL_CHECK_VAL(obj, -1);
@@ -92,11 +93,11 @@ static int __gl_albums_sel_push_view(void *data, Evas_Object *parent,
 
 	/* Add transition finished callback */
 	evas_object_smart_callback_add(parent, GL_TRANS_FINISHED,
-				       __gl_albums_sel_trans_finished_cb, data);
+	                               __gl_albums_sel_trans_finished_cb, data);
 
 	/* Push to stack */
 	nf_it = elm_naviframe_item_push(parent, title, NULL, NULL, obj,
-						NULL);
+	                                NULL);
 	/* use pop_cb_set to support HW key event */
 	elm_naviframe_item_pop_cb_set(nf_it, __gl_albums_sel_pop_cb, data);
 	ad->albuminfo.nf_it_select = nf_it;
@@ -105,7 +106,7 @@ static int __gl_albums_sel_push_view(void *data, Evas_Object *parent,
 
 /* Free data after layout deleted */
 static void __gl_albums_sel_delete_layout_cb(void *data, Evas *e,
-					     Evas_Object *obj, void *ei)
+			Evas_Object *obj, void *ei)
 {
 	gl_dbg("Delete layout ---");
 	GL_CHECK(data);
@@ -131,10 +132,10 @@ Evas_Object *_gl_albums_create_sel_gengrid(void *data)
 	elm_gengrid_horizontal_set(layout_inner, EINA_FALSE);
 	elm_scroller_bounce_set(layout_inner, EINA_FALSE, EINA_TRUE);
 	elm_scroller_policy_set(layout_inner, ELM_SCROLLER_POLICY_OFF,
-			ELM_SCROLLER_POLICY_AUTO);
+	                        ELM_SCROLLER_POLICY_AUTO);
 	elm_gengrid_multi_select_set(layout_inner, EINA_TRUE);
 	evas_object_size_hint_weight_set(layout_inner, EVAS_HINT_EXPAND,
-			EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	return layout_inner;
 }
 
@@ -149,9 +150,9 @@ int _gl_albums_create_split_album_sel_view(void *data, Evas_Object *layout_inner
 	int w = -1, h = -1;
 	evas_object_geometry_get(ad->maininfo.win, NULL, NULL, &w, &h);
 	if (w < h) {
-		elm_gengrid_item_size_set(layout_inner, (w/3)-10, (w/3)-10);
+		elm_gengrid_item_size_set(layout_inner, (w / 3) - 10, (w / 3) - 10);
 	} else {
-		elm_gengrid_item_size_set(layout_inner, (h/3)-10, (h/3)-10);
+		elm_gengrid_item_size_set(layout_inner, (h / 3) - 10, (h / 3) - 10);
 	}
 	return 0;
 }
@@ -168,11 +169,11 @@ int _gl_albums_sel_create_view(void *data)
 	layout = _gl_ctrl_add_layout(ad->maininfo.naviframe);
 	GL_CHECK_VAL(layout, -1);
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(layout, EVAS_HINT_FILL, EVAS_HINT_FILL);
 	/* Register delete callback */
 	evas_object_event_callback_add(layout, EVAS_CALLBACK_DEL,
-				       __gl_albums_sel_delete_layout_cb, data);
+	                               __gl_albums_sel_delete_layout_cb, data);
 	/* Save view mode */
 	int pre_view_m = gl_get_view_mode(data);
 	/* Set view mode of Select album */
@@ -227,20 +228,21 @@ int _gl_albums_sel_create_view(void *data)
 	elm_object_signal_emit(layout, "elm,splitview,state,visible", "elm");
 
 	if (w < h) {
-		elm_gengrid_item_size_set(view, (w/3)-10, (w/3)-10);
+		elm_gengrid_item_size_set(view, (w / 3) - 10, (w / 3) - 10);
 	} else {
-		elm_gengrid_item_size_set(view, (h/3)-10, (h/3)-10);
+		elm_gengrid_item_size_set(view, (h / 3) - 10, (h / 3) - 10);
 	}
 	elm_object_part_content_set(layout, "split.view", view);
 	Evas_Object *gesture = _gl_tile_add_gesture(data, layout);
-	if (gesture == NULL)
+	if (gesture == NULL) {
 		gl_dbgE("Failed to create gesture!");
-	else
+	} else {
 		elm_object_part_content_set(layout, "gesture", gesture);
+	}
 	ad->albuminfo.select_view = view;
 	ad->albuminfo.select_layout = layout;
 	__gl_albums_sel_push_view(data, ad->maininfo.naviframe, layout,
-				  "Select Item");
+	                          "Select Item");
 	__gl_albums_new_album_sel(album_item, view, (void *)album_item->item);
 	/* Save pointer of View and Layout */
 	elm_object_part_content_set(layout, "elm.swallow.view", ad->gridinfo.select_view);

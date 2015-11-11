@@ -39,8 +39,9 @@ static void __gl_albums_rename_trans_finished(void *data)
 	gl_dbgW("view_mode: %d", view_mode);
 
 	/* Clear previous view after animation finished */
-	if (view_mode == GL_VIEW_ALBUMS_RENAME)
+	if (view_mode == GL_VIEW_ALBUMS_RENAME) {
 		elm_gengrid_clear(ad->albuminfo.view);
+	}
 }
 
 static int __gl_albums_rename_pop_view(void *data)
@@ -116,7 +117,7 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 
 	album_item = ad->albuminfo.selected;
 	if (album_item == NULL || album_item->cluster == NULL ||
-	    album_item->cluster->uuid == NULL) {
+	        album_item->cluster->uuid == NULL) {
 		gl_dbgE("selected_album is NULL!");
 		goto RENAME_FAILED;
 	}
@@ -125,7 +126,7 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 	/* Get utf8 format string */
 	int ret = -1;
 	ret = gl_get_entry_text(ad->entryinfo.entry, name,
-				GL_FILE_NAME_LEN_MAX);
+	                        GL_FILE_NAME_LEN_MAX);
 	if (ret != 0) {
 		gl_dbgE("Get entry text failed!");
 		goto RENAME_FAILED;
@@ -133,8 +134,9 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 
 	/* Get valid name */
 	if (_gl_validate_album_name(data, name) != 0) {
-		if (b_enter)
+		if (b_enter) {
 			_gl_editfield_hide_imf(ad);
+		}
 		return -1;
 	}
 
@@ -143,7 +145,7 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 	char old_path[GL_DIR_PATH_LEN_MAX] = { 0, };
 	if (album_item->cluster->path) {
 		g_strlcpy(old_path, album_item->cluster->path,
-			  GL_DIR_PATH_LEN_MAX);
+		          GL_DIR_PATH_LEN_MAX);
 		gl_sdbg("Src folder: %s", old_path);
 		if (_gl_data_is_root_path(old_path)) {
 			/**
@@ -165,7 +167,7 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 
 	if (b_root_path) {
 		snprintf(new_path, GL_DIR_PATH_LEN_MAX, "%s/%s",
-			 GL_DEFAULT_PATH_IMAGES, name);
+		         GL_DEFAULT_PATH_IMAGES, name);
 		g_strlcpy(parent, GL_DEFAULT_PATH_IMAGES, GL_DIR_PATH_LEN_MAX);
 	} else {
 		g_strlcpy(new_path, old_path, GL_DIR_PATH_LEN_MAX);
@@ -176,9 +178,10 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 		for (i = length; i >= 0; i--) {
 			if (new_path[i] == '/') {
 				gl_dbg("length=%d, i=%d", length, i);
-				 /* Path like "/root/abc/" */
-				if (i == length - 1)
+				/* Path like "/root/abc/" */
+				if (i == length - 1) {
 					continue;
+				}
 				memcpy(&new_path[i + 1], name, strlen(name));
 				new_path[i + 1 + strlen(name)] =  '\0';
 				parent[i] =  '\0';
@@ -215,17 +218,17 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 		if (res == 0) {
 			char *popup_desc = NULL;
 			popup_desc = (char *)calloc(GL_POPUP_STRING_MAX,
-						   sizeof(char));
+			                            sizeof(char));
 			if (popup_desc == NULL) {
 				gl_dbgE("memory allocation fail!");
 				return -1;
 			}
 
 			snprintf(popup_desc, GL_POPUP_STRING_MAX, "%s<br>%s",
-				GL_STR_SAME_NAME_ALREADY_IN_USE, GL_STR_RETRY_Q);
+			         GL_STR_SAME_NAME_ALREADY_IN_USE, GL_STR_RETRY_Q);
 			popup_desc[strlen(popup_desc)] = '\0';
 			gl_popup_create_popup(ad, GL_POPUP_ALBUM_RENAME_DUPLICATE,
-					      popup_desc);
+			                      popup_desc);
 			GL_FREE(popup_desc);
 			gl_dbgW("New folder already exists!");
 			return -1;
@@ -245,7 +248,7 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 		*/
 		if (gl_make_new_album(name) == false) {
 			gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-					      GL_STR_UNABLE_tO_RENAME);
+			                      GL_STR_UNABLE_tO_RENAME);
 			gl_dbgE("Failed to make a new directory!");
 			goto RENAME_FAILED;
 		}
@@ -254,7 +257,7 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 		if (gl_move_root_album(ad, album_item, new_path) != 0) {
 			gl_dbg("gl_move_root_album failed!");
 			gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-					      GL_STR_UNABLE_tO_RENAME);
+			                      GL_STR_UNABLE_tO_RENAME);
 			goto RENAME_FAILED;
 		} else {
 			gl_dbg("New album added, update albums list.");
@@ -278,8 +281,9 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 		* So, do this first.
 		*/
 		if (gl_file_exists(old_path)) {
-			if (!gl_file_mv(old_path, new_path))
+			if (!gl_file_mv(old_path, new_path)) {
 				gl_dbg("file_mv failed!");
+			}
 		} else {
 			gl_dbgW("Source folder path doesn't exist!");
 		}
@@ -294,7 +298,7 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 	__gl_albums_rename_pop_view(data);
 	return 0;
 
- RENAME_FAILED:
+RENAME_FAILED:
 
 	elm_naviframe_item_pop(ad->maininfo.naviframe);
 	__gl_albums_rename_pop_view(data);
@@ -321,16 +325,16 @@ int _gl_albums_rename_create_view(void *data, gl_cluster *album)
 	Evas_Object *entry = _gl_editfield_get_entry(data);
 	GL_CHECK_VAL(entry, -1);
 	evas_object_data_set(entry, "gl_entry_process_cb_key",
-			     __gl_albums_rename_process);
+	                     __gl_albums_rename_process);
 	if (GL_VIEW_ALBUMS == gl_get_view_mode(data))
 		evas_object_data_set(entry, "gl_entry_pop_cb_key",
-				     __gl_albums_rename_pop_to_album_cb);
+		                     __gl_albums_rename_pop_to_album_cb);
 	else
 		evas_object_data_set(entry, "gl_entry_pop_cb_key",
-				     __gl_albums_rename_pop_cb);
+		                     __gl_albums_rename_pop_cb);
 
 	evas_object_data_set(entry, "gl_entry_transit_cb_key",
-			     __gl_albums_rename_trans_finished);
+	                     __gl_albums_rename_trans_finished);
 	gl_set_view_mode(data, GL_VIEW_ALBUMS_RENAME);
 	return 0;
 }
@@ -342,7 +346,7 @@ int _gl_albums_rename_update_view(void *data)
 	gl_dbg("");
 
 	if (gl_check_gallery_empty(data) ||
-	    ad->albuminfo.elist->edit_cnt == 0) {
+	        ad->albuminfo.elist->edit_cnt == 0) {
 		/* Remove invalid widgets */
 		gl_del_invalid_widgets(data, GL_INVALID_NONE);
 		gl_dbgW("None editable albums, show albums view!");
@@ -371,13 +375,13 @@ int _gl_albums_rename_update_lang(void *data)
 
 	if (ad->popupinfo.popup) {
 		char *popup_desc = (char *)calloc(GL_POPUP_STRING_MAX,
-						 sizeof(char));
+		                                  sizeof(char));
 		if (popup_desc) {
 			snprintf(popup_desc, GL_POPUP_STRING_MAX, "%s<br>%s",
-					 GL_STR_SAME_NAME_ALREADY_IN_USE, GL_STR_RETRY_Q);
+			         GL_STR_SAME_NAME_ALREADY_IN_USE, GL_STR_RETRY_Q);
 			popup_desc[strlen(popup_desc)] = '\0';
 			gl_popup_create_popup(ad, GL_POPUP_ALBUM_RENAME_DUPLICATE,
-								  popup_desc);
+			                      popup_desc);
 			GL_FREE(popup_desc);
 		}
 	}
