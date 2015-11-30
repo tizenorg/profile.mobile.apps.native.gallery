@@ -70,7 +70,7 @@ static int __gl_fs_compare(const void *data1, const void *data2)
 }
 
 static int __gl_fs_read_dir(char *path, Eina_List **dir_list,
-			    Eina_List **file_list)
+                            Eina_List **file_list)
 {
 	GL_CHECK_VAL(file_list, -1);
 	GL_CHECK_VAL(dir_list, -1);
@@ -90,21 +90,23 @@ static int __gl_fs_read_dir(char *path, Eina_List **dir_list,
 
 	while ((readdir_r(pdir, &ent_struct, &ent) == 0) && ent) {
 		if (g_strcmp0(ent->d_name, ".") == 0 ||
-		    g_strcmp0(ent->d_name, "..") == 0) {
+		        g_strcmp0(ent->d_name, "..") == 0) {
 			continue;
 		}
 		/*only deal with dirs and regular files*/
-		if ((ent->d_type & DT_DIR) == 0 && (ent->d_type & DT_REG) == 0)
+		if ((ent->d_type & DT_DIR) == 0 && (ent->d_type & DT_REG) == 0) {
 			continue;
+		}
 
 		/*get date & size*/
 		cp_len = strlen(path) + 1 + strlen(ent->d_name) + 1;
 		childpath = g_new0(char, cp_len);
-		if (childpath == NULL)
+		if (childpath == NULL) {
 			continue;
+		}
 
 		copiednum = g_snprintf(childpath, cp_len, "%s/%s", path,
-				       ent->d_name);
+		                       ent->d_name);
 		if (copiednum < 0) {
 			g_free(childpath);
 			childpath = NULL;
@@ -132,10 +134,11 @@ static int __gl_fs_read_dir(char *path, Eina_List **dir_list,
 		g_free(childpath);
 		childpath = NULL;
 
-		if (ent->d_type & DT_DIR)
+		if (ent->d_type & DT_DIR) {
 			*dir_list = eina_list_append(*dir_list, pnode);
-		else
+		} else {
 			*file_list = eina_list_append(*file_list, pnode);
+		}
 		count++;
 	}
 	closedir(pdir);
@@ -144,7 +147,7 @@ static int __gl_fs_read_dir(char *path, Eina_List **dir_list,
 }
 
 static int __gl_fs_get_file_list(GString *folder_name, Eina_List **dir_list,
-				 Eina_List **file_list)
+                                 Eina_List **file_list)
 {
 	GL_CHECK_VAL(folder_name, -1);
 	GL_CHECK_VAL(folder_name->str, -1);
@@ -196,17 +199,17 @@ static unsigned long long __gl_fs_sort_folders_by_mtime(char *path,
 				continue;
 			}
 			sub_folder = g_strconcat(pnode->path, "/", pnode->name,
-						 NULL);
+			                         NULL);
 			if (sub_folder) {
 				gl_sdbg("sub_folder[%s]", pnode->name);
 				sub_size = __gl_fs_sort_folders_by_mtime(sub_folder,
-									 sorted_list);
+				           sorted_list);
 				pnode->size = sub_size;
 				size += sub_size;
 				gl_dbg("mtime[%d]", pnode->mtime);
 				*sorted_list = eina_list_sorted_insert(*sorted_list,
-								     __gl_fs_compare,
-								     pnode);
+				                                       __gl_fs_compare,
+				                                       pnode);
 				g_free(sub_folder);
 				sub_folder = NULL;
 			} else {
@@ -221,8 +224,9 @@ static unsigned long long __gl_fs_sort_folders_by_mtime(char *path,
 		fullpath = NULL;
 	}
 
-	if (file_list)
+	if (file_list) {
 		__gl_fs_clear_list(&file_list);
+	}
 
 	if (dir_list) {
 		eina_list_free(dir_list);
@@ -260,14 +264,17 @@ Eina_Bool __gl_fs_cp_file(void *data, const char *src, const char *dst)
 	size_t num = 0;
 	Eina_Bool ret = EINA_TRUE;
 
-	if (!realpath(src, realpath1))
+	if (!realpath(src, realpath1)) {
 		return EINA_FALSE;
-	if (realpath(dst, realpath2) && !g_strcmp0(realpath1, realpath2))
+	}
+	if (realpath(dst, realpath2) && !g_strcmp0(realpath1, realpath2)) {
 		return EINA_FALSE;
+	}
 
 	f1 = fopen(src, "rb");
-	if (!f1)
+	if (!f1) {
 		return EINA_FALSE;
+	}
 	f2 = fopen(dst, "wb");
 	if (!f2) {
 		fclose(f1);
@@ -283,8 +290,9 @@ Eina_Bool __gl_fs_cp_file(void *data, const char *src, const char *dst)
 			gl_file_unlink(dst);
 			return EINA_FALSE;
 		}
-		if (fwrite(buf, 1, num, f2) != num)
+		if (fwrite(buf, 1, num, f2) != num) {
 			ret = EINA_FALSE;
+		}
 	}
 	fclose(f1);
 	fclose(f2);
@@ -317,8 +325,9 @@ int _gl_fs_get_file_stat(const char *filename, gl_node_info_s **node)
 	GL_CHECK_VAL(*node, -1);
 	GL_CHECK_VAL(filename, -1);
 
-	if (stat(filename, &statbuf) == -1)
+	if (stat(filename, &statbuf) == -1) {
 		return -1;
+	}
 
 	/* total size, in bytes */
 	(*node)->size = statbuf.st_size;
@@ -368,7 +377,7 @@ unsigned long long _gl_fs_get_folder_size(char *path)
 				continue;
 			}
 			sub_folder = g_strconcat(pnode->path, "/", pnode->name,
-						 NULL);
+			                         NULL);
 			if (sub_folder) {
 				gl_sdbg("sub_folder[%s]", pnode->name);
 				sub_size = _gl_fs_get_folder_size(sub_folder);
@@ -389,16 +398,18 @@ unsigned long long _gl_fs_get_folder_size(char *path)
 		fullpath = NULL;
 	}
 
-	if (file_list)
+	if (file_list) {
 		__gl_fs_clear_list(&file_list);
+	}
 
-	if (dir_list)
+	if (dir_list) {
 		__gl_fs_clear_list(&dir_list);
+	}
 	return size;
 }
 
 int _gl_fs_rm_folder(char *path, long long cut_size, long long max_size,
-		     unsigned int expired_time)
+                     unsigned int expired_time)
 {
 	GL_CHECK_VAL(path, -1);
 	gl_node_info_s *pnode = NULL;
@@ -412,10 +423,11 @@ int _gl_fs_rm_folder(char *path, long long cut_size, long long max_size,
 
 	char *folder = NULL;
 	unsigned long long _cut_size = 0;
-	if (size > max_size)
+	if (size > max_size) {
 		_cut_size = size - max_size + cut_size;
-	else if (size + cut_size > max_size)
+	} else if (size + cut_size > max_size) {
 		_cut_size = cut_size;
+	}
 	gl_dbg("Size cut/total[%llu/%llu]", _cut_size, size);
 
 	unsigned int current_t = 0;
@@ -426,13 +438,15 @@ int _gl_fs_rm_folder(char *path, long long cut_size, long long max_size,
 	unsigned long long rm_size = 0;
 
 	EINA_LIST_FOREACH(dir_list, l, pnode) {
-		if (pnode == NULL || pnode->path == NULL || pnode->name == NULL)
+		if (pnode == NULL || pnode->path == NULL || pnode->name == NULL) {
 			continue;
+		}
 
 		/* Get full path of folder */
 		folder = g_strconcat(pnode->path, "/", pnode->name, NULL);
-		if (folder == NULL)
+		if (folder == NULL) {
 			continue;
+		}
 
 		gl_sdbg("mtime[%d], path[%s]", pnode->mtime, folder);
 		if (pnode->mtime + expired_time < current_t) {
@@ -494,12 +508,12 @@ bool _gl_fs_check_name_case(char *dir, char *exist_name)
 		char *dir_name = NULL;
 		EINA_LIST_FREE(name_list, dir_name) {
 			if (dir_name &&
-			    strcasecmp(dir_name, dest_filename) == 0) {
+			        strcasecmp(dir_name, dest_filename) == 0) {
 				gl_dbg("Have same name directory");
 				ret = true;
 				memset(exist_name, 0x00, GL_ALBUM_NAME_LEN_MAX);
 				g_strlcpy(exist_name, dir_name,
-					  GL_ALBUM_NAME_LEN_MAX);
+				          GL_ALBUM_NAME_LEN_MAX);
 				break;
 			}
 			GL_FREEIF(dir_name);
@@ -514,7 +528,7 @@ bool _gl_fs_is_low_memory(unsigned long long total_size)
 	unsigned long long free_size = gl_fs_get_free_space(GL_STORE_T_PHONE);
 	if (total_size && free_size < total_size) {
 		gl_dbgE("Low memory: Free(%llu Byte) < required(%llu Byte)!",
-			free_size, total_size);
+		        free_size, total_size);
 		return true;
 	}
 
@@ -544,7 +558,7 @@ int _gl_fs_get_file_ext(const char *file_path, char *file_ext, int max_len)
 *   return file extension, f.e. jpg; then return new path without ext.
 */
 bool _gl_fs_get_path_without_ext(const char *file_path, char *file_ext,
-				 char *new_path)
+                                 char *new_path)
 {
 	int i = 0;
 	for (i = strlen(file_path); i >= 0; i--) {
@@ -557,8 +571,9 @@ bool _gl_fs_get_path_without_ext(const char *file_path, char *file_ext,
 		}
 
 		/* meet the dir. no ext */
-		if (file_path[i] == '/')
+		if (file_path[i] == '/') {
 			return true;
+		}
 	}
 	return true;
 }
@@ -653,8 +668,9 @@ Eina_Bool _gl_fs_move(void *data, const char *src, const char *dst)
 				/*
 				 * Delete src file
 				 */
-				if (!gl_file_unlink(src))
+				if (!gl_file_unlink(src)) {
 					gl_dbgE("Delete file failed[%d]!", errno);
+				}
 
 				/* Write file to filesystem immediately */
 				sync();
@@ -685,13 +701,15 @@ char *_gl_fs_get_unique_full_path(char *file_path, char *ext)
 	/* 1 means "_" */
 	int suffix_len = (int)log10(max_suffix_count + 1) + 1;
 
-	if (!file_path)
+	if (!file_path) {
 		return NULL;
+	}
 
 	gl_sdbg("file_path=[%s], ext=[%s]", file_path, ext);
 
-	if (extension)
+	if (extension) {
 		extension_len = strlen(extension);
+	}
 
 	/* first 1 for ".", last 1 for NULL */
 	final_path_len = strlen(file_name) + 1 + suffix_len + extension_len + 1;
@@ -708,18 +726,18 @@ char *_gl_fs_get_unique_full_path(char *file_path, char *ext)
 		if (0 == extension_len) {
 			if (suffix_count == 0) {
 				snprintf(final_path, final_path_len, "%s",
-					 file_name);
+				         file_name);
 			} else {
 				snprintf(final_path, final_path_len, "%s_%d",
-					 file_name, suffix_count);
+				         file_name, suffix_count);
 			}
 		} else {
 			if (suffix_count == 0) {
 				snprintf(final_path, final_path_len, "%s.%s",
-					 file_name, extension);
+				         file_name, extension);
 			} else {
 				snprintf(final_path, final_path_len, "%s_%d.%s",
-					 file_name, suffix_count, extension);
+				         file_name, suffix_count, extension);
 			}
 		}
 
@@ -743,7 +761,7 @@ char *_gl_fs_get_unique_full_path(char *file_path, char *ext)
 }
 
 char *_gl_fs_get_unique_new_album_name(char *parent_path, char *default_name,
-				       char **new_name)
+                                       char **new_name)
 {
 	char *final_path = NULL;
 	char *final_name = NULL;
@@ -755,8 +773,9 @@ char *_gl_fs_get_unique_new_album_name(char *parent_path, char *default_name,
 	/* 1 means "_" */
 	int suffix_len = (int)log10(max_suffix_count + 1) + 1;
 
-	if (!parent_path || !default_name || !new_name)
+	if (!parent_path || !default_name || !new_name) {
 		return NULL;
+	}
 
 	gl_sdbg("parent_path=[%s], default_name=[%s]", parent_path, default_name);
 
@@ -782,16 +801,16 @@ char *_gl_fs_get_unique_new_album_name(char *parent_path, char *default_name,
 			snprintf(final_name, final_name_len, "%s", default_name);
 		} else {
 			snprintf(final_name, final_name_len, "%s %d",
-				 default_name, suffix_count);
+			         default_name, suffix_count);
 		}
 		snprintf(final_path, final_path_len, "%s/%s", parent_path,
-			 final_name);
+		         final_name);
 
 		/**
 		* If dir is empty, 1 is returned,
 		* if it contains at least 1 file, 0 is returned.
 		* On failure, -1 is returned.
-	 	*/
+		*/
 		if (gl_file_dir_is_empty(final_path) == 0) {
 			suffix_count++;
 			if (suffix_count > max_suffix_count) {
@@ -859,7 +878,7 @@ int _gl_fs_get_default_folder(char *path)
 	GL_CHECK_VAL(path, -1);
 
 	len = snprintf(path, GL_DIR_PATH_LEN_MAX, "%s",
-		       GL_ROOT_PATH_PHONE);
+	               GL_ROOT_PATH_PHONE);
 	if (len < 0) {
 		gl_dbgE("snprintf returns failure!");
 		return -1;
@@ -869,7 +888,7 @@ int _gl_fs_get_default_folder(char *path)
 	}
 
 	len = g_strlcat(path, GL_DEFAULT_PATH_IMAGES,
-			GL_DIR_PATH_LEN_MAX);
+	                GL_DIR_PATH_LEN_MAX);
 	if (len >= GL_DIR_PATH_LEN_MAX) {
 		gl_dbgE("strlcat returns failure(%d)!", len);
 		return -1;

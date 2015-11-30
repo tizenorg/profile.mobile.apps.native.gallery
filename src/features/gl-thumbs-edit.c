@@ -49,7 +49,7 @@ int _gl_thumbs_edit_get_path(void *data, char **files)
 
 	EINA_LIST_FOREACH(ad->selinfo.elist, l, current) {
 		if (current == NULL || current->item == NULL ||
-		    current->item->file_url == NULL) {
+		        current->item->file_url == NULL) {
 			gl_dbgE("Invalid gitem!");
 			continue;
 		}
@@ -62,7 +62,7 @@ int _gl_thumbs_edit_get_path(void *data, char **files)
 
 #ifdef GL_EXTENDED_FEATURES
 static void __gl_thumbs_edit_share_cb(void *data, Evas_Object *obj,
-				      void *ei)
+                                      void *ei)
 {
 	elm_toolbar_item_selected_set((Elm_Object_Item *)ei, EINA_FALSE);
 	GL_CHECK(data);
@@ -81,7 +81,7 @@ static void __gl_thumbs_edit_share_cb(void *data, Evas_Object *obj,
 		if (cnt == 0) {
 			gl_dbg("No thumbs selected, return!");
 			gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-					      GL_STR_NO_FILES_SELECTED);
+			                      GL_STR_NO_FILES_SELECTED);
 			return;
 		}
 	} else {
@@ -95,7 +95,7 @@ static void __gl_thumbs_edit_share_cb(void *data, Evas_Object *obj,
 
 /* To launch Image-editor*/
 static void __gl_thumbs_edit_ie_cb(void *data, Evas_Object *obj,
-				   void *ei)
+                                   void *ei)
 {
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -110,7 +110,7 @@ static void __gl_thumbs_edit_ie_cb(void *data, Evas_Object *obj,
 	if (_gl_data_selected_list_count(ad) == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(ad, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 
@@ -126,7 +126,7 @@ static void __gl_thumbs_edit_ie_cb(void *data, Evas_Object *obj,
 
 /* Copy media to album in edit view */
 static void __gl_thumbs_edit_copy_cb(void *data, Evas_Object *obj,
-				     void *ei)
+                                     void *ei)
 {
 	GL_CHECK(data);
 	_gl_ctxpopup_del(data);
@@ -143,7 +143,7 @@ static void __gl_thumbs_edit_copy_cb(void *data, Evas_Object *obj,
 		if (_gl_data_selected_list_count(data) == 0) {
 			gl_dbgW("No thumbs selected!");
 			gl_popup_create_popup(data, GL_POPUP_NOBUT,
-					      GL_STR_NO_FILES_SELECTED);
+			                      GL_STR_NO_FILES_SELECTED);
 			return;
 		}
 
@@ -172,7 +172,7 @@ static void __gl_thumbs_edit_move_cb(void *data, Evas_Object *obj, void *ei)
 		if (_gl_data_selected_list_count(data) == 0) {
 			gl_dbgW("No thumbs selected!");
 			gl_popup_create_popup(data, GL_POPUP_NOBUT,
-					      GL_STR_NO_FILES_SELECTED);
+			                      GL_STR_NO_FILES_SELECTED);
 			return;
 		}
 
@@ -185,13 +185,13 @@ static void __gl_thumbs_edit_move_cb(void *data, Evas_Object *obj, void *ei)
 
 #ifdef _USE_ROTATE_BG
 static void __gl_thumbs_edit_rotate_left_cb(void *data, Evas_Object *obj,
-					    void *ei)
+			void *ei)
 {
 	GL_CHECK(data);
 	if (_gl_data_selected_list_count(data) == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(data, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 	_gl_ctxpopup_del(data);
@@ -199,13 +199,13 @@ static void __gl_thumbs_edit_rotate_left_cb(void *data, Evas_Object *obj,
 }
 
 static void __gl_thumbs_edit_rotate_right_cb(void *data, Evas_Object *obj,
-					     void *ei)
+			void *ei)
 {
 	GL_CHECK(data);
 	if (_gl_data_selected_list_count(data) == 0) {
 		gl_dbgW("No thumbs selected!");
 		gl_popup_create_popup(data, GL_POPUP_NOBUT,
-				      GL_STR_NO_FILES_SELECTED);
+		                      GL_STR_NO_FILES_SELECTED);
 		return;
 	}
 	_gl_ctxpopup_del(data);
@@ -227,21 +227,21 @@ static int __gl_thumbs_edit_ctxpopup_append(void *data, Evas_Object *parent)
 		/* More : Edit image/Add tag/Copy/Create collage/Hide items/Rotate left/Rotate right/Crete a story album*/
 		/* Image-editor is available if only images are selected */
 		if (share_m >= GL_SHARE_IMAGE_ONE &&
-		    share_m <= GL_SHARE_IMAGE_MULTI_JPEG)
+		        share_m <= GL_SHARE_IMAGE_MULTI_JPEG)
 			_gl_ctxpopup_append(parent, GL_STR_ID_EDIT_IMAGE,
-					    __gl_thumbs_edit_ie_cb, data);
+			                    __gl_thumbs_edit_ie_cb, data);
 		_gl_ctxpopup_append(parent, GL_STR_ID_COPY,
-				    __gl_thumbs_edit_copy_cb, data);
+		                    __gl_thumbs_edit_copy_cb, data);
 #ifdef _USE_ROTATE_BG
 		/* Rotation is available if only images are selected */
 		if (share_m == GL_SHARE_IMAGE_ONE_JPEG ||
-		     share_m == GL_SHARE_IMAGE_MULTI_JPEG) {
+		        share_m == GL_SHARE_IMAGE_MULTI_JPEG) {
 			_gl_ctxpopup_append(parent, GL_STR_ID_ROTATE_LEFT,
-					    __gl_thumbs_edit_rotate_left_cb,
-					    data);
+			                    __gl_thumbs_edit_rotate_left_cb,
+			                    data);
 			_gl_ctxpopup_append(parent, GL_STR_ID_ROTATE_RIGHT,
-					    __gl_thumbs_edit_rotate_right_cb,
-					    data);
+			                    __gl_thumbs_edit_rotate_right_cb,
+			                    data);
 		}
 #endif
 		break;
@@ -252,7 +252,7 @@ static int __gl_thumbs_edit_ctxpopup_append(void *data, Evas_Object *parent)
 }
 
 static void __gl_thumbs_edit_more_cb(void *data, Evas_Object *obj,
-				     void *ei)
+                                     void *ei)
 {
 	/* Add items */
 	GL_CHECK(data);
@@ -290,8 +290,8 @@ static void __gl_thumbs_edit_del(void *data)
 		}
 
 		_gl_popup_create_del(data, GL_POPUP_DEL_FILE,
-				     _gl_data_selected_list_count,
-				     gl_del_medias, data);
+		                     _gl_data_selected_list_count,
+		                     gl_del_medias, data);
 	} else {
 		gl_dbgW("Unknow mode!");
 	}
@@ -372,8 +372,9 @@ static void __gl_thumbs_edit_selall_cb(void *data, Evas_Object *obj, void *ei)
 		GL_CHECK(gitem);
 		GL_CHECK(gitem->item);
 
-		if (gitem->checked == ad->selinfo.ck_state)
+		if (gitem->checked == ad->selinfo.ck_state) {
 			continue;
+		}
 
 		gitem->checked = ad->selinfo.ck_state;
 		if (ad->selinfo.ck_state == EINA_TRUE) {
@@ -387,13 +388,14 @@ static void __gl_thumbs_edit_selall_cb(void *data, Evas_Object *obj, void *ei)
 	/* Update all realized items */
 	if (view_mode == GL_VIEW_THUMBS_EDIT)
 		_gl_ui_update_realized_grid_ck(ad->gridinfo.view,
-					       GL_THUMB_CHECKBOX, NULL,
-					       ad->selinfo.ck_state);
+		                               GL_THUMB_CHECKBOX, NULL,
+		                               ad->selinfo.ck_state);
 	/* Recreate selection info for both cases */
-	if (ad->selinfo.ck_state)
+	if (ad->selinfo.ck_state) {
 		item_cnt = sel_all_cnt;
-	else
+	} else {
 		sel_all_cnt = 0;
+	}
 
 	int total_selected_count = eina_list_count(ad->selinfo.elist);
 	_gl_notify_check_selall(ad, ad->gridinfo.nf_it, item_cnt, sel_all_cnt);
@@ -401,13 +403,13 @@ static void __gl_thumbs_edit_selall_cb(void *data, Evas_Object *obj, void *ei)
 		char buf[GL_ALBUM_NAME_LEN_MAX] = { 0, };
 		if (sel_all_cnt > 0) {
 			elm_object_item_signal_emit(gitem->album->item,
-					"elm,state,elm.text.badge,visible",
-					"elm");
+			                            "elm,state,elm.text.badge,visible",
+			                            "elm");
 			snprintf(buf, sizeof(buf), "%d", sel_all_cnt);
 		} else {
 			elm_object_item_signal_emit(gitem->album->item,
-					"elm,state,elm.text.badge,hidden",
-					"elm");
+			                            "elm,state,elm.text.badge,hidden",
+			                            "elm");
 		}
 #if 0
 		elm_gengrid_item_fields_update(gitem->album->item, "elm.text.badge", ELM_GENGRID_ITEM_FIELD_TEXT);
@@ -419,7 +421,7 @@ static void __gl_thumbs_edit_selall_cb(void *data, Evas_Object *obj, void *ei)
 
 #ifdef _USE_APP_SLIDESHOW
 static void __gl_thumbs_edit_selected_slideshow_cb(void *data, Evas_Object *obj,
-					  void *ei)
+			void *ei)
 {
 	elm_toolbar_item_selected_set((Elm_Object_Item *)ei, EINA_FALSE);
 	GL_CHECK(data);
@@ -435,12 +437,12 @@ static void __gl_thumbs_edit_selected_slideshow_cb(void *data, Evas_Object *obj,
 
 #ifdef GL_EXTENDED_FEATURES
 int _gl_thumbs_edit_add_more(void *data, Evas_Object *parent,
-			     Elm_Object_Item *nf_it)
+                             Elm_Object_Item *nf_it)
 {
 	Evas_Object *btn = NULL;
 	/* More */
 	btn = _gl_but_create_but(parent, NULL, NULL, GL_BUTTON_STYLE_NAVI_MORE,
-				 __gl_thumbs_edit_more_cb, data);
+	                         __gl_thumbs_edit_more_cb, data);
 	GL_CHECK_VAL(btn, -1);
 
 	elm_object_item_part_content_set(nf_it, GL_NAVIFRAME_MORE, btn);
@@ -451,7 +453,7 @@ int _gl_thumbs_edit_add_more(void *data, Evas_Object *parent,
 
 /* Delete/Copy/Move -- unavailable for Facebook(Facebook Team confirmed) */
 int _gl_thumbs_edit_add_btns(void *data, Evas_Object *parent,
-			     Elm_Object_Item *nf_it)
+                             Elm_Object_Item *nf_it)
 {
 	GL_CHECK_VAL(nf_it, -1);
 	GL_CHECK_VAL(parent, -1);
@@ -473,15 +475,15 @@ int _gl_thumbs_edit_add_btns(void *data, Evas_Object *parent,
 	free(msg);
 	elm_object_signal_emit(ad->gridinfo.layout, "elm,selectall,state,visible", "elm");
 	_gl_ui_add_selall_ck(ad->gridinfo.layout, "select.all.area.check", "select.all.area.check",
-					     __gl_thumbs_edit_selall_cb, data);
+	                     __gl_thumbs_edit_selall_cb, data);
 
 #ifdef _USE_APP_SLIDESHOW
 	/*only display the done button,ux:[Tizen] Gallery UI(T01)_v5.2_20130524*/
 	if (_gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_SLIDESHOW) {
 		gl_dbg("only display the done button for selected slideshow");
 		tb_it = _gl_ctrl_append_item(toolbar, NULL, GL_STR_ID_START,
-					     __gl_thumbs_edit_selected_slideshow_cb,
-					     data);
+		                             __gl_thumbs_edit_selected_slideshow_cb,
+		                             data);
 		_gl_ctrl_disable_item(tb_it, true);
 		/* elm_object_item_part_content_set(nf_it, "toolbar", toolbar); */
 		return 0;
@@ -510,10 +512,10 @@ int _gl_thumbs_edit_add_btns(void *data, Evas_Object *parent,
 		_gl_ui_set_translate_part_str(layout, "title_left_text", GL_STR_ID_CANCEL);
 		_gl_ui_set_translate_part_str(layout, "title_right_text", GL_STR_ID_SHARE);
 		_gl_ctrl_append_item(toolbar, NULL, GL_STR_ID_CANCEL,
-				     __gl_thumbs_edit_cancel_cb, data);
+		                     __gl_thumbs_edit_cancel_cb, data);
 		/* Share - to launch Share panel(app) */
 		tb_it = _gl_ctrl_append_item(toolbar, NULL, GL_STR_ID_SHARE,
-					     __gl_thumbs_edit_share_cb, data);
+		                             __gl_thumbs_edit_share_cb, data);
 		_gl_ctrl_disable_item(tb_it, true);
 		/* elm_object_item_part_content_set(nf_it, "toolbar", toolbar); */
 		return 0;
@@ -527,13 +529,13 @@ int _gl_thumbs_edit_add_btns(void *data, Evas_Object *parent,
 	/* Title Cancel Button */
 	elm_object_style_set(btn1, "naviframe/title_left");
 	elm_object_item_part_content_set(nf_it, GL_NAVIFRAME_TITLE_LEFT_BTN, btn1);
-	_gl_ui_set_translate_str(btn1,GL_STR_ID_CANCEL_CAP);
+	_gl_ui_set_translate_str(btn1, GL_STR_ID_CANCEL_CAP);
 	evas_object_smart_callback_add(btn1, "clicked", __gl_thumbs_edit_cancel_cb, ad);
 
 	/* Title Done Button */
 	elm_object_style_set(btn2, "naviframe/title_right");
 	elm_object_item_part_content_set(nf_it, GL_NAVIFRAME_TITLE_RIGHT_BTN, btn2);
-	_gl_ui_set_translate_str(btn2,GL_STR_ID_DONE_CAP);
+	_gl_ui_set_translate_str(btn2, GL_STR_ID_DONE_CAP);
 	evas_object_smart_callback_add(btn2, "clicked", __gl_thumbs_edit_done_cb, ad);
 	elm_object_disabled_set(btn2, EINA_TRUE);
 
@@ -548,7 +550,7 @@ int _gl_thumbs_edit_create_view(void *data)
 	gl_dbg("mode: %d", view_mode);
 
 	if (view_mode == GL_VIEW_THUMBS_EDIT &&
-	    _gl_thumbs_get_edit_mode(data) < GL_THUMBS_EDIT_FIRST) {
+	        _gl_thumbs_get_edit_mode(data) < GL_THUMBS_EDIT_FIRST) {
 		/* Fixme: maybe we should disable edit button until grid append idler is done */
 		/**
 		* Happen in quickly tap edit button,
@@ -570,7 +572,7 @@ int _gl_thumbs_edit_create_view(void *data)
 	_gl_thumbs_set_size(ad, gv);
 
 	_gl_thumbs_edit_add_btns(data, ad->maininfo.naviframe,
-				 ad->gridinfo.nf_it);
+	                         ad->gridinfo.nf_it);
 	/* Update the label text */
 	_gl_thumbs_update_label(ad->gridinfo.nf_it, GL_STR_ID_SELECT_ITEM);
 	/* Update realized items */
@@ -624,7 +626,7 @@ int _gl_thumbs_edit_pop_view(void *data)
 		_gl_thumbs_update_label(ad->gridinfo.nf_it, ad->gridinfo.title);
 		/* enable the grid pinch */
 		edje_object_signal_emit(_EDJ(ad->gridinfo.layout),
-					GL_SIGNAL_GESTURE_DEFAULT, "elm");
+		                        GL_SIGNAL_GESTURE_DEFAULT, "elm");
 
 		elm_object_signal_emit(ad->gridinfo.layout, "elm,selectall,state,default", "elm");
 #ifdef _USE_GRID_CHECK
@@ -650,7 +652,7 @@ int _gl_thumbs_edit_update_lang(void *data)
 	GL_CHECK_VAL(ad->gridinfo.nf_it, -1);
 	int cnt = _gl_data_selected_list_count(ad);
 	/* Update the label text */
-	if(cnt == 0) {
+	if (cnt == 0) {
 		_gl_ui_change_navi_title(ad->gridinfo.nf_it, GL_STR_ID_SELECT_ITEM, true);
 	}
 	_gl_thumbs_update_label_text(ad->gridinfo.nf_it, cnt, true);

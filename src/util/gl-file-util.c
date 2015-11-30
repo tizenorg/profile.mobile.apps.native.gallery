@@ -42,10 +42,11 @@ int gl_file_exists(const char *path)
 {
 	struct stat info = {0,};
 
-	if (stat(path, &info) == 0)
+	if (stat(path, &info) == 0) {
 		return 1;
-	else
+	} else {
 		return 0;
+	}
 }
 
 int gl_file_is_dir(const char *path)
@@ -68,8 +69,9 @@ int gl_file_dir_is_empty(const char *path)
 	struct dirent ent_struct;
 
 	dirp = opendir(path);
-	if (!dirp)
+	if (!dirp) {
 		return -1;
+	}
 
 	while ((readdir_r(dirp, &ent_struct, &dp) == 0) && dp) {
 		if ((strcmp(dp->d_name, ".")) && (strcmp(dp->d_name, ".."))) {
@@ -83,22 +85,24 @@ int gl_file_dir_is_empty(const char *path)
 
 int gl_mkdir(const char *dir)
 {
-	if (mkdir(dir, default_mode) < 0)
+	if (mkdir(dir, default_mode) < 0) {
 		return 0;
-	else
+	} else {
 		return 1;
+	}
 }
 
 static int
 gl_mkpath_if_not_exists(const char *path)
 {
 	struct stat st = {0,};
-	if (stat(path, &st) < 0)
+	if (stat(path, &st) < 0) {
 		return gl_mkdir(path);
-	else if (!S_ISDIR(st.st_mode))
+	} else if (!S_ISDIR(st.st_mode)) {
 		return 0;
-	else
+	} else {
 		return 1;
+	}
 }
 
 int gl_file_mkpath(const char *path)
@@ -106,17 +110,20 @@ int gl_file_mkpath(const char *path)
 	char ss[500] = {0,};
 	unsigned int i = 0;
 
-	if (gl_file_is_dir(path))
+	if (gl_file_is_dir(path)) {
 		return 1;
+	}
 
 	for (i = 0; path[i] != '\0'; ss[i] = path[i], i++) {
-		if (i == sizeof(ss) - 1)
+		if (i == sizeof(ss) - 1) {
 			return 0;
+		}
 
 		if ((path[i] == '/') && (i > 0)) {
 			ss[i] = '\0';
-			if (!gl_mkpath_if_not_exists(ss))
+			if (!gl_mkpath_if_not_exists(ss)) {
 				return 0;
+			}
 		}
 	}
 	ss[i] = '\0';
@@ -124,21 +131,23 @@ int gl_file_mkpath(const char *path)
 	return gl_mkpath_if_not_exists(ss);
 }
 
-int gl_file_unlink (const char *filename)
+int gl_file_unlink(const char *filename)
 {
 	int status = unlink(filename);
-	if (status < 0)
+	if (status < 0) {
 		return 0;
-	else
+	} else {
 		return 1;
+	}
 }
 
 int gl_file_size(const char *filename)
 {
 	struct stat info = {0,};
 	if (stat(filename, &info) == 0) {
-		if (!S_ISDIR(info.st_mode))
+		if (!S_ISDIR(info.st_mode)) {
 			return info.st_size;
+		}
 	}
 
 	return 0;
@@ -147,10 +156,11 @@ int gl_file_size(const char *filename)
 int gl_file_rmdir(const char *filename)
 {
 	int status = rmdir(filename);
-	if (status < 0)
+	if (status < 0) {
 		return 0;
-	else
+	} else {
 		return 1;
+	}
 }
 
 Eina_List *gl_file_ls(const char *dir)
@@ -162,8 +172,9 @@ Eina_List *gl_file_ls(const char *dir)
 	struct dirent ent_struct;
 
 	dirp = opendir(dir);
-	if (!dirp)
+	if (!dirp) {
 		return NULL;
+	}
 
 	while ((readdir_r(dirp, &ent_struct, &dp) == 0) && dp) {
 		if ((strcmp(dp->d_name , ".")) && (strcmp(dp->d_name , ".."))) {
@@ -195,17 +206,19 @@ int gl_file_recursive_rm(const char *dir)
 		dirp = opendir(dir);
 		if (dirp) {
 			while ((readdir_r(dirp, &ent_struct, &dp) == 0)
-				&& dp) {
+			        && dp) {
 				if ((strcmp(dp->d_name , ".")) && (strcmp(dp->d_name, ".."))) {
-					if (!gl_file_recursive_rm(dp->d_name))
+					if (!gl_file_recursive_rm(dp->d_name)) {
 						ret = 0;
+					}
 				}
 			}
 			closedir(dirp);
 		}
 
-		if (!gl_file_rmdir(dir))
+		if (!gl_file_rmdir(dir)) {
 			ret = 0;
+		}
 
 		return ret;
 	} else {
@@ -213,7 +226,7 @@ int gl_file_recursive_rm(const char *dir)
 	}
 }
 
-int gl_file_cp(const char *src,const char *dst)
+int gl_file_cp(const char *src, const char *dst)
 {
 	FILE *f1 = NULL;
 	FILE *f2 = NULL;
@@ -223,15 +236,18 @@ int gl_file_cp(const char *src,const char *dst)
 	size_t num;
 	int ret = 1;
 
-	if (!realpath(src, realpath1))
+	if (!realpath(src, realpath1)) {
 		return 0;
+	}
 
-	if (realpath(dst, realpath2) && !strcmp(realpath1, realpath2))
+	if (realpath(dst, realpath2) && !strcmp(realpath1, realpath2)) {
 		return 0;
+	}
 
 	f1 = fopen(src, "rb");
-	if (!f1)
+	if (!f1) {
 		return 0;
+	}
 
 	f2 = fopen(dst, "wb");
 	if (!f2) {
@@ -240,8 +256,9 @@ int gl_file_cp(const char *src,const char *dst)
 	}
 
 	while ((num = fread(buf, 1, sizeof(buf), f1)) > 0) {
-		if (fwrite(buf, 1, num, f2) != num)
+		if (fwrite(buf, 1, num, f2) != num) {
 			ret = 0;
+		}
 	}
 
 	fclose(f1);
@@ -253,8 +270,9 @@ int gl_file_cp(const char *src,const char *dst)
 int gl_file_mv(const char *src, const char *dst)
 {
 	struct stat info = {0,};
-	if (stat(dst, &info) == 0)
+	if (stat(dst, &info) == 0) {
 		return 0;
+	}
 
 	if (rename(src, dst)) {
 		memset(&info, 0x00, sizeof(struct stat));

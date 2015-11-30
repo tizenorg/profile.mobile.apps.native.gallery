@@ -41,8 +41,7 @@
 
 #define GL_THREAD_PBAR_TIMER_INC 0.5
 
-typedef struct
-{
+typedef struct {
 	GALLERY_MAGIC;
 	int finished_cnt;
 	int state;		/* 0: operation is over; 1: operation is in process */
@@ -57,12 +56,13 @@ static int _gl_thread_operate_medias(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 	int ret = -1;
 
-	int (*op_cb) (void *data);
+	int (*op_cb)(void * data);
 	op_cb = ad->pbarinfo.op_cb;
 	ad->pbarinfo.op_cb = NULL;
 	gl_dbg("Operation: %p", op_cb);
-	if (op_cb)
+	if (op_cb) {
 		ret = op_cb(data);
+	}
 	if (ret < 0) {
 		gl_thread_set_cancel_state(ad, GL_PB_CANCEL_ERROR);
 		gl_dbgE("Operation failed!");
@@ -77,14 +77,15 @@ static int _gl_thread_update_view(void *data)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 
-	int (*update_cb) (void *data);
+	int (*update_cb)(void * data);
 	update_cb = ad->pbarinfo.update_cb;
 	ad->pbarinfo.update_cb = NULL;
 	ad->pbarinfo.del_item_cb = NULL;
 	ad->pbarinfo.total_cnt = 0;
 	gl_dbg("Update: %p", update_cb);
-	if (update_cb)
+	if (update_cb) {
 		update_cb(data);
+	}
 	return 0;
 }
 
@@ -152,10 +153,8 @@ static void _gl_thread_pipe_cb(void *data, void *buffer, unsigned int nbyte)
 	int cancel_flag = false;
 	gl_thread_get_cancel_state(ad, &cancel_flag);
 
-	if (p_pipe_data->popup_op)
-	{
-		if (p_pipe_data->state)
-		{
+	if (p_pipe_data->popup_op) {
+		if (p_pipe_data->state) {
 			/* Check cancel_flag */
 			if (cancel_flag != GL_PB_CANCEL_NORMAL) {
 				gl_dbgE("Failed to kill thread, try again!");
@@ -182,7 +181,7 @@ static void _gl_thread_pipe_cb(void *data, void *buffer, unsigned int nbyte)
 
 		/* 1. Moving/deleting is in porcess */
 		gl_pb_refresh_thread_pbar(ad, p_pipe_data->finished_cnt,
-					  ad->pbarinfo.total_cnt);
+		                          ad->pbarinfo.total_cnt);
 		gl_dbg("@@@ finished/all = %d/%d, updating progressbar @@@",
 		       p_pipe_data->finished_cnt, ad->pbarinfo.total_cnt);
 		/* Emit signal to notice child thread handle next media */
@@ -193,7 +192,7 @@ static void _gl_thread_pipe_cb(void *data, void *buffer, unsigned int nbyte)
 		gl_dbg("@@@ finished: %d, updating progressbar @@@",
 		       ad->pbarinfo.finished_cnt);
 		gl_pb_refresh_thread_pbar(ad, ad->pbarinfo.finished_cnt,
-					  ad->pbarinfo.finished_cnt);
+		                          ad->pbarinfo.finished_cnt);
 		ad->pbarinfo.finished_cnt = 0;
 		gl_dbg("@@@@@@@ :::: Pipe close && Update view :::: @@@@@@@");
 		/* Delete timer for some error case, that timer called after idler callback */
@@ -215,7 +214,7 @@ static void _gl_thread_pipe_cb(void *data, void *buffer, unsigned int nbyte)
 			GL_IF_DEL_TIMER(ad->pbarinfo.del_pbar_timer);
 			Ecore_Timer *timer = NULL;
 			timer = ecore_timer_add(0.5f, _gl_thread_del_pbar_idler_cb,
-						ad);
+			                        ad);
 			ad->pbarinfo.del_pbar_timer = timer;
 		}
 
@@ -223,7 +222,7 @@ static void _gl_thread_pipe_cb(void *data, void *buffer, unsigned int nbyte)
 		       ad->maininfo.medias_op_type);
 		/* Operate medias related to MMC while moving medias */
 		if (ad->maininfo.mmc_state == GL_MMC_STATE_REMOVED_MOVING) {
-		    ad->maininfo.mmc_state = GL_MMC_STATE_REMOVED;
+			ad->maininfo.mmc_state = GL_MMC_STATE_REMOVED;
 
 			/**
 			* 1, Places: Add tag;
@@ -235,7 +234,7 @@ static void _gl_thread_pipe_cb(void *data, void *buffer, unsigned int nbyte)
 			*/
 			gl_cluster *cur_album = _gl_albums_get_current(data);
 			if (cur_album && cur_album->cluster &&
-			    cur_album->cluster->type == GL_STORE_T_MMC) {
+			        cur_album->cluster->type == GL_STORE_T_MMC) {
 				gl_dbgW("MMC removed, change to albums view!");
 				gl_pop_to_ctrlbar_ly(ad);
 			} else {
@@ -281,8 +280,7 @@ int gl_thread_emit_next_signal(void *data)
 
 	pthread_mutex_lock(&(ad->pbarinfo.refresh_lock));
 	gl_dbg("refresh_flag: %d.", ad->pbarinfo.refresh_flag);
-	if (ad->pbarinfo.refresh_flag == 0)
-	{
+	if (ad->pbarinfo.refresh_flag == 0) {
 		ad->pbarinfo.refresh_flag = 1;
 		pthread_cond_signal(&(ad->pbarinfo.refresh_cond));
 	}
@@ -313,8 +311,7 @@ int gl_thread_wait_next_signal(void *data)
 
 	pthread_mutex_lock(&(ad->pbarinfo.refresh_lock));
 	gl_dbg("refresh_flag: %d.", ad->pbarinfo.refresh_flag);
-	while (ad->pbarinfo.refresh_flag == 0)
-	{
+	while (ad->pbarinfo.refresh_flag == 0) {
 		gl_dbg("Thread waiting...");
 		pthread_cond_wait(&(ad->pbarinfo.refresh_cond), &(ad->pbarinfo.refresh_lock));
 	}
@@ -419,36 +416,27 @@ void gl_thread_write_pipe(void *data, int finished_cnt, int popup_op)
 	gl_thread_get_cancel_state(ad, &cancel_flag);
 
 	if (cancel_flag == GL_PB_CANCEL_BUTTON ||
-		cancel_flag == GL_PB_CANCEL_MMC ||
-		cancel_flag == GL_PB_CANCEL_ERROR ||
-		cancel_flag == GL_PB_CANCEL_RESET)
-	{
+	        cancel_flag == GL_PB_CANCEL_MMC ||
+	        cancel_flag == GL_PB_CANCEL_ERROR ||
+	        cancel_flag == GL_PB_CANCEL_RESET) {
 		//send cancel signal through pipe
 		pipe_data.finished_cnt = -1;
 		/* Set over state */
 		pipe_data.state = 0;
 		ecore_pipe_write(ad->pbarinfo.sync_pipe, &pipe_data, sizeof(gl_thread_pipe_data));
 		//exit the child thread
-		if (cancel_flag == GL_PB_CANCEL_BUTTON)
-		{
+		if (cancel_flag == GL_PB_CANCEL_BUTTON) {
 			gl_dbg("Cancel button tapped, child thread exit!");
-		}
-		else if (cancel_flag == GL_PB_CANCEL_MMC)
-		{
+		} else if (cancel_flag == GL_PB_CANCEL_MMC) {
 			gl_dbg("MMC removed, child thread exit!");
-		}
-		else if (cancel_flag == GL_PB_CANCEL_ERROR)
-		{
+		} else if (cancel_flag == GL_PB_CANCEL_ERROR) {
 			gl_dbg("Error happened, child thread exit!");
-		}
-		else if (cancel_flag == GL_PB_CANCEL_RESET) {
+		} else if (cancel_flag == GL_PB_CANCEL_RESET) {
 			gl_dbg("Reset gallery, child thread exit!");
 		}
 
 		pthread_exit((void *)1);
-	}
-	else
-	{
+	} else {
 		gl_dbg("Writing pipe...");
 		ecore_pipe_write(ad->pbarinfo.sync_pipe, &pipe_data, sizeof(gl_thread_pipe_data));
 	}
@@ -483,15 +471,12 @@ gl_thread_gen_data_thread(void *data)
 	ad->pbarinfo.sync_pipe = ecore_pipe_add(_gl_thread_pipe_cb, ad);
 	//initialize thread attributes
 	ret = pthread_attr_init(&attr);
-	if (ret == 0)
-	{
+	if (ret == 0) {
 		ret = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-		if (ret == 0)
-		{
+		if (ret == 0) {
 			//create child thread
 			ret = pthread_create(&tid, &attr, _gl_thread_data_thread, ad);
-			if (ret != 0)
-			{
+			if (ret != 0) {
 				gl_dbgE("[Error] ##### :: pthread_create failed :: #####");
 				pthread_attr_destroy(&attr);
 				return -1;

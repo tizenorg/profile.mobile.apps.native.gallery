@@ -119,16 +119,17 @@ static void __gl_thumbs_realized(void *data, Evas_Object *obj, void *ei)
 	Elm_Gengrid_Item_Class *gic = NULL;
 	gic = evas_object_data_get(obj, "gl_thumbs_item_style_key");
 	/* Do nothing for date item */
-	if (elm_gengrid_item_item_class_get(it) != gic)
+	if (elm_gengrid_item_item_class_get(it) != gic) {
 		return;
+	}
 
 	gl_item *gitem = elm_object_item_data_get(it);
 	GL_CHECK(gitem);
 	GL_CHECK(gitem->item);
 	/* Checking for local files only */
 	if (gitem->store_type == GL_STORE_T_MMC ||
-	    gitem->store_type == GL_STORE_T_ALL ||
-	    gitem->store_type == GL_STORE_T_PHONE) {
+	        gitem->store_type == GL_STORE_T_ALL ||
+	        gitem->store_type == GL_STORE_T_PHONE) {
 		/* Use default image */
 		if (!GL_FILE_EXISTS(gitem->item->thumb_url)) {
 			_gl_thumbs_create_thumb(gitem);
@@ -145,16 +146,17 @@ static void __gl_thumbs_unrealized(void *data, Evas_Object *obj, void *ei)
 	Elm_Gengrid_Item_Class *gic = NULL;
 	gic = evas_object_data_get(obj, "gl_thumbs_item_style_key");
 	/* Do nothing for date item */
-	if (elm_gengrid_item_item_class_get(it) != gic)
+	if (elm_gengrid_item_item_class_get(it) != gic) {
 		return;
+	}
 
 	gl_item *gitem = elm_object_item_data_get(it);
 	GL_CHECK(gitem);
 	GL_CHECK(gitem->item);
 	/* Checking for local files only */
 	if (gitem->store_type == GL_STORE_T_MMC ||
-	    gitem->store_type == GL_STORE_T_ALL ||
-	    gitem->store_type == GL_STORE_T_PHONE) {
+	        gitem->store_type == GL_STORE_T_ALL ||
+	        gitem->store_type == GL_STORE_T_PHONE) {
 		if (gitem->item->b_create_thumb) {
 			_gl_data_cancel_thumb(gitem->item);
 		}
@@ -168,11 +170,13 @@ static void __gl_thumbs_longpressed_cb(void *data, Evas_Object *obj, void *ei)
 	Elm_Gengrid_Item_Class *gic = NULL;
 	gic = evas_object_data_get(obj, "gl_thumbs_item_style_key");
 	/* Do nothing for date item */
-	if (elm_gengrid_item_item_class_get((Elm_Object_Item *)ei) != gic)
+	if (elm_gengrid_item_item_class_get((Elm_Object_Item *)ei) != gic) {
 		return;
+	}
 	if (GL_VIEW_THUMBS != gl_get_view_mode(data) ||
-	    GL_CTRL_TAB_ALBUMS != _gl_ctrl_get_tab_mode(data))
+	        GL_CTRL_TAB_ALBUMS != _gl_ctrl_get_tab_mode(data)) {
 		return;
+	}
 
 #if 0
 	gl_item *gitem = (gl_item *)elm_object_item_data_get(ei);
@@ -199,8 +203,9 @@ static void __gl_thumbs_lang_changed(void *data, Evas_Object *obj, void *ei)
 	its = elm_gengrid_realized_items_get(obj);
 	EINA_LIST_FOREACH(its, l, it) {
 		itc = elm_gengrid_item_item_class_get(it);
-		if (itc && itc->func.text_get) /* Date item */
+		if (itc && itc->func.text_get) { /* Date item */
 			elm_gengrid_item_update(it);
+		}
 		it = NULL;
 	}
 }
@@ -215,7 +220,7 @@ static void __gl_thumbs_check_changed(void *data, Evas_Object *obj, void *ei)
 	gl_appdata *ad = (gl_appdata *)gitem->ad;
 	int view_mode = gl_get_view_mode(ad);
 	Elm_Object_Item *nf_it = NULL;
-	int (*update_text) (Elm_Object_Item *nf_it, int sel_cnt, bool b_lang);
+	int (*update_text)(Elm_Object_Item * nf_it, int sel_cnt, bool b_lang);
 	gl_dbg("");
 
 	if (view_mode == GL_VIEW_THUMBS_EDIT) {
@@ -231,7 +236,7 @@ static void __gl_thumbs_check_changed(void *data, Evas_Object *obj, void *ei)
 	Eina_Bool checked = elm_check_state_get(obj);
 	gitem->checked = checked;
 	if (checked) {
-		if (strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID)==0) {
+		if (strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID) == 0) {
 			Eina_List *sel_list1 = ad->selinfo.fav_elist;
 			sel_list1 = eina_list_append(sel_list1, gitem);
 			ad->selinfo.fav_elist = sel_list1;
@@ -244,7 +249,7 @@ static void __gl_thumbs_check_changed(void *data, Evas_Object *obj, void *ei)
 		gitem->album->elist = eina_list_append(gitem->album->elist, gitem);
 	} else {
 		gl_sdbg("Remove:%s", gitem->item->file_url);
-		if (strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID)==0) {
+		if (strcmp(gitem->album->cluster->uuid, GL_ALBUM_FAVOURITE_ID) == 0) {
 			_gl_data_selected_fav_list_remove(ad, gitem);
 		} else {
 			_gl_data_selected_list_remove(ad, gitem);
@@ -260,13 +265,13 @@ static void __gl_thumbs_check_changed(void *data, Evas_Object *obj, void *ei)
 		char buf[GL_ALBUM_NAME_LEN_MAX] = { 0, };
 		if (album_select_count > 0) {
 			elm_object_item_signal_emit(gitem->album->item,
-					"elm,state,elm.text.badge,visible",
-					"elm");
+			                            "elm,state,elm.text.badge,visible",
+			                            "elm");
 			snprintf(buf, sizeof(buf), "%d", album_select_count);
 		} else {
 			elm_object_item_signal_emit(gitem->album->item,
-					"elm,state,elm.text.badge,hidden",
-					"elm");
+			                            "elm,state,elm.text.badge,hidden",
+			                            "elm");
 		}
 #if 0
 		elm_gengrid_item_fields_update(gitem->album->item, "elm.text.badge", ELM_GENGRID_ITEM_FIELD_TEXT);
@@ -284,7 +289,7 @@ static void __gl_thumbs_check_changed(void *data, Evas_Object *obj, void *ei)
 
 
 static void __gl_thumbs_shrink_cb(void *data, Evas_Object *obj,
-				  const char *emission, const char *source)
+                                  const char *emission, const char *source)
 {
 	GL_CHECK(data);
 	gl_item *gitem = (gl_item *) data;
@@ -295,13 +300,13 @@ static void __gl_thumbs_shrink_cb(void *data, Evas_Object *obj,
 	_gl_thumbs_open_file(data);
 
 	edje_object_signal_callback_del(obj, "shrink,expand,done", "bg",
-					__gl_thumbs_shrink_cb);
+	                                __gl_thumbs_shrink_cb);
 }
 #endif
 
 /* Only for local medias */
 static void __gl_thumbs_create_thumb_cb(media_content_error_e error,
-					const char *path, void *user_data)
+                                        const char *path, void *user_data)
 {
 	GL_CHECK(user_data);
 	gl_thumb_data_s *thumb_data = (gl_thumb_data_s *)user_data;
@@ -312,12 +317,13 @@ static void __gl_thumbs_create_thumb_cb(media_content_error_e error,
 	gitem->thumb_data = NULL;
 
 	if (gl_get_view_mode(ad) != GL_VIEW_THUMBS &&
-	    gl_get_view_mode(ad) != GL_VIEW_THUMBS_EDIT &&
-	    gl_get_view_mode(ad) != GL_VIEW_THUMBS_SELECT)
+	        gl_get_view_mode(ad) != GL_VIEW_THUMBS_EDIT &&
+	        gl_get_view_mode(ad) != GL_VIEW_THUMBS_SELECT) {
 		return;
+	}
 
 	if (error == MEDIA_CONTENT_ERROR_NONE && GL_FILE_EXISTS(path) &&
-	    g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
+	        g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
 		GL_CHECK(gitem);
 		GL_CHECK(gitem->item);
 		gl_dbg("Update item with new thumb path[%s]", path);
@@ -345,7 +351,7 @@ int _gl_thumbs_create_thumb(gl_item *gitem)
 		thumb_data->item = gitem;
 		gitem->thumb_data = thumb_data;
 		_gl_data_create_thumb(gitem->item, __gl_thumbs_create_thumb_cb,
-				      thumb_data);
+		                      thumb_data);
 		return 0;
 	}
 	return -1;
@@ -372,7 +378,7 @@ void open_image_in_select_mode(void *data, Evas_Object *obj, void *event_info)
 }
 
 static Evas_Object *__gl_thumbs_get_content(void *data, Evas_Object *obj,
-					    const char *part)
+					const char *part)
 {
 	GL_CHECK_NULL(part);
 	GL_CHECK_NULL(strlen(part));
@@ -385,20 +391,20 @@ static Evas_Object *__gl_thumbs_get_content(void *data, Evas_Object *obj,
 
 	if (!g_strcmp0(part, GL_THUMB_ICON)) {
 		Evas_Object *layout = _gl_thumbs_get_content(ad, obj, gitem,
-							     ad->gridinfo.icon_w,
-							     ad->gridinfo.icon_h);
+		                      ad->gridinfo.icon_w,
+		                      ad->gridinfo.icon_h);
 
 #ifdef _USE_SHRINK_EFFECT
 		evas_object_event_callback_add(layout, EVAS_CALLBACK_MOUSE_DOWN,
-					       _gl_thumbs_mouse_down, gitem);
+		                               _gl_thumbs_mouse_down, gitem);
 		evas_object_event_callback_add(layout, EVAS_CALLBACK_MOUSE_UP,
-					       _gl_thumbs_mouse_up, gitem);
+		                               _gl_thumbs_mouse_up, gitem);
 #endif
 		return layout;
 	} else if (!g_strcmp0(part, GL_THUMB_CHECKBOX)) {
 		Evas_Object *ck = NULL;
 		if (view_mode == GL_VIEW_THUMBS_EDIT ||
-				view_mode == GL_VIEW_THUMBS_SELECT) {
+		        view_mode == GL_VIEW_THUMBS_SELECT) {
 			bool checked = true;
 			if (!gitem->checked) {
 				checked = _gl_data_get_burstshot_status(ad, gitem);
@@ -406,11 +412,11 @@ static Evas_Object *__gl_thumbs_get_content(void *data, Evas_Object *obj,
 				checked = gitem->checked;
 			}
 			ck = _gl_thumb_show_checkbox(obj, checked,
-					__gl_thumbs_check_changed, data);
+			                             __gl_thumbs_check_changed, data);
 			elm_object_item_signal_emit(gitem->elm_item, "show_image_icon", "elm_image_open_icon_rect");
 		} else {
 			ck = elm_object_item_part_content_get(gitem->elm_item,
-					GL_THUMB_CHECKBOX);
+			                                      GL_THUMB_CHECKBOX);
 			elm_object_item_signal_emit(gitem->elm_item, "hide_image_icon", "elm_image_open_icon_rect");
 			if (ck) {
 				evas_object_del(ck);
@@ -421,14 +427,13 @@ static Evas_Object *__gl_thumbs_get_content(void *data, Evas_Object *obj,
 	} else if (!g_strcmp0(part, "elm_image_open_icon_swallow_blocker")) {
 		Evas_Object *btn1 = NULL;
 		if (view_mode == GL_VIEW_THUMBS_EDIT ||
-				view_mode == GL_VIEW_THUMBS_SELECT) {
+		        view_mode == GL_VIEW_THUMBS_SELECT) {
 			btn1 = evas_object_rectangle_add(evas_object_evas_get(obj));
 			evas_object_color_set(btn1, 0, 255, 0, 0);
 			evas_object_propagate_events_set(btn1, EINA_FALSE);
-		}
-		else {
+		} else {
 			btn1 = elm_object_item_part_content_get(gitem->elm_item,
-					"elm_image_open_icon_swallow_blocker");
+			                                        "elm_image_open_icon_swallow_blocker");
 			if (btn1) {
 				evas_object_del(btn1);
 				btn1 = NULL;
@@ -438,7 +443,7 @@ static Evas_Object *__gl_thumbs_get_content(void *data, Evas_Object *obj,
 	} else if (!g_strcmp0(part, "elm_image_open_icon_swallow")) {
 		Evas_Object *btn = NULL;
 		if (view_mode == GL_VIEW_THUMBS_EDIT ||
-				view_mode == GL_VIEW_THUMBS_SELECT) {
+		        view_mode == GL_VIEW_THUMBS_SELECT) {
 			btn = elm_button_add(obj);
 			elm_object_style_set(btn, "transparent");
 			evas_object_show(btn);
@@ -446,7 +451,7 @@ static Evas_Object *__gl_thumbs_get_content(void *data, Evas_Object *obj,
 			evas_object_smart_callback_add(btn, "clicked", open_image_in_select_mode, gitem);
 		} else {
 			btn = elm_object_item_part_content_get(gitem->elm_item,
-					"elm_image_open_icon_swallow");
+			                                       "elm_image_open_icon_swallow");
 			if (btn) {
 				evas_object_del(btn);
 				btn = NULL;
@@ -460,7 +465,7 @@ static Evas_Object *__gl_thumbs_get_content(void *data, Evas_Object *obj,
 }
 
 static char *__gl_thumbs_get_text(void *data, Evas_Object *obj,
-					 const char *part)
+                                  const char *part)
 {
 	GL_CHECK_NULL(part);
 	GL_CHECK_NULL(strlen(part));
@@ -469,18 +474,19 @@ static char *__gl_thumbs_get_text(void *data, Evas_Object *obj,
 	GL_CHECK_NULL(gitem->item);
 
 	struct tm time;
-	localtime_r((time_t *) &(gitem->item->mtime), &time);
+	localtime_r((time_t *) & (gitem->item->mtime), &time);
 
 	if (!g_strcmp0(part, GL_THUMB_YEAR)) {
 		char buf[GL_DATE_INFO_LEN_MAX] = {0};
-		snprintf(buf, sizeof(buf), "%d", GL_DEFAULT_YEAR+time.tm_year);
+		snprintf(buf, sizeof(buf), "%d", GL_DEFAULT_YEAR + time.tm_year);
 		return strdup(buf);
 	} else if (!g_strcmp0(part, GL_THUMB_MONTH)) {
 		char *mon_name[12] = {
-				GL_STR_ID_JAN, GL_STR_ID_FEB, GL_STR_ID_MAR,
-				GL_STR_ID_APR, GL_STR_ID_MAY, GL_STR_ID_JUN,
-				GL_STR_ID_JUL, GL_STR_ID_AUG, GL_STR_ID_SEP,
-				GL_STR_ID_OCT, GL_STR_ID_NOV, GL_STR_ID_DEC };
+			GL_STR_ID_JAN, GL_STR_ID_FEB, GL_STR_ID_MAR,
+			GL_STR_ID_APR, GL_STR_ID_MAY, GL_STR_ID_JUN,
+			GL_STR_ID_JUL, GL_STR_ID_AUG, GL_STR_ID_SEP,
+			GL_STR_ID_OCT, GL_STR_ID_NOV, GL_STR_ID_DEC
+		};
 		return g_ascii_strup(_gl_str(mon_name[time.tm_mon]), -1);
 	}
 
@@ -521,7 +527,7 @@ static int __gl_thumbs_set_item_style(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 
 	if (ad->gridinfo.date_gic.item_style == NULL ||
-	    ad->gridinfo.date_gic.func.text_get == NULL) {
+	        ad->gridinfo.date_gic.func.text_get == NULL) {
 		ad->gridinfo.date_gic.item_style = GL_GENGRID_ITEM_STYLE_DATE;
 		ad->gridinfo.date_gic.func.text_get = __gl_thumbs_get_text;
 		ad->gridinfo.date_gic.func.content_get = NULL;
@@ -556,15 +562,15 @@ static bool __gl_thumbs_create_items(void *data, Evas_Object *parent)
 		/* Save scroller position before clearing gengrid */
 		_gl_ui_save_scroller_pos(parent);
 		evas_object_smart_callback_del(parent, "unrealized",
-					       __gl_thumbs_unrealized);
+		                               __gl_thumbs_unrealized);
 		elm_gengrid_clear(parent);
 		evas_object_smart_callback_add(parent, "unrealized",
-					       __gl_thumbs_unrealized, ad);
+		                               __gl_thumbs_unrealized, ad);
 	}
 	for (i = 0; i < cnt; i++) {
 		gitem = eina_list_nth(media_elist, i);
 		if (gitem == NULL || gitem->item == NULL ||
-		    gitem->item->uuid == NULL) {
+		        gitem->item->uuid == NULL) {
 			gl_dbgE("Invalid gitem. continue...");
 			continue;
 		}
@@ -572,8 +578,9 @@ static bool __gl_thumbs_create_items(void *data, Evas_Object *parent)
 		if (!gitem->item->file_url) {
 			gl_dbg("file_url is invalid.");
 			ret = _gl_data_delete_media(ad, gitem->item);
-			if (ret != 0)
+			if (ret != 0) {
 				continue;
+			}
 			_gl_data_selected_list_remove(ad, gitem);
 			media_elist = eina_list_remove(media_elist, gitem);
 			_gl_thumbs_set_list(data, media_elist);
@@ -588,16 +595,16 @@ static bool __gl_thumbs_create_items(void *data, Evas_Object *parent)
 		}
 		if (_gl_thumbs_is_append(gitem, &burstshot_id)) {
 			gitem->elm_item = elm_gengrid_item_append(parent, gic,
-								  gitem,
-								  __gl_thumbs_sel_cb,
-								  gitem);
+			                  gitem,
+			                  __gl_thumbs_sel_cb,
+			                  gitem);
 			gitem->preappend = false;
 		}
 		item_cnt++;
 		gitem->sequence = item_cnt;
 	}
 	if (ad->gridinfo.media_display_order == ORDER_ASC) {
-			media_elist = eina_list_reverse(media_elist);
+		media_elist = eina_list_reverse(media_elist);
 	}
 	/* Restore previous position of scroller */
 	_gl_ui_restore_scroller_pos(parent);
@@ -609,10 +616,11 @@ static bool __gl_thumbs_create_items(void *data, Evas_Object *parent)
 	ad->gridinfo.count = item_cnt;
 	ad->gridinfo.back_to_normal = false;
 
-	if (item_cnt == 0)
+	if (item_cnt == 0) {
 		return EINA_FALSE;
-	else
+	} else {
 		return EINA_TRUE;
+	}
 }
 
 /*
@@ -625,10 +633,11 @@ static int __gl_thumbs_set_view(void *data, Evas_Object *view, bool b_noc)
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
 	ad->gridinfo.view = view;
-	if (b_noc)
+	if (b_noc) {
 		_gl_thumbs_set_nocontents(ad, view);
-	else
+	} else {
 		_gl_thumbs_set_nocontents(ad, NULL);
+	}
 	return 0;
 }
 
@@ -688,8 +697,8 @@ static int __gl_thumbs_idler_append_items(void *data)
 	}
 	/* Get other items from DB */
 	ret = _gl_data_get_items_album(ad, _gl_albums_get_current(data),
-				       (GL_FIRST_VIEW_END_POS + 1),
-				       GL_GET_UNTIL_LAST_RECORD, &media_elist);
+	                               (GL_FIRST_VIEW_END_POS + 1),
+	                               GL_GET_UNTIL_LAST_RECORD, &media_elist);
 	if (ret < 0) {
 		gl_dbgE("Get items list failed[%d]!", ret);
 		return ret;
@@ -711,9 +720,9 @@ static int __gl_thumbs_idler_append_items(void *data)
 	/* Check the first item of previous appending, maybe it's a burst item */
 	gitem = eina_list_nth(media_elist, i - 1);
 	if (gitem && gitem->item &&
-	    gitem->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-	    gitem->item->image_info &&
-	    gitem->item->image_info->burstshot_id) {
+	        gitem->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
+	        gitem->item->image_info &&
+	        gitem->item->image_info->burstshot_id) {
 		burstshot_id = gitem->item->image_info->burstshot_id;
 		gl_dbgW("Update burstshot item!");
 		elm_gengrid_item_update(gitem->elm_item);
@@ -722,7 +731,7 @@ static int __gl_thumbs_idler_append_items(void *data)
 	for (; i < cnt; i++) {
 		gitem = eina_list_nth(media_elist, i);
 		if (gitem == NULL || gitem->item == NULL ||
-		    gitem->item->uuid == NULL) {
+		        gitem->item->uuid == NULL) {
 			gl_dbgE("Invalid gitem, continue...");
 			continue;
 		}
@@ -740,9 +749,9 @@ static int __gl_thumbs_idler_append_items(void *data)
 		}
 		if (_gl_thumbs_is_append(gitem, &burstshot_id)) {
 			gitem->elm_item = elm_gengrid_item_append(view, gic,
-								  gitem,
-								  __gl_thumbs_sel_cb,
-								  gitem);
+			                  gitem,
+			                  __gl_thumbs_sel_cb,
+			                  gitem);
 			gitem->preappend = false;
 		}
 
@@ -786,12 +795,13 @@ static void __gl_thumbs_trans_finished_cb(void *data, Evas_Object *obj, void *ei
 	int view_mode = gl_get_view_mode(ad);
 	gl_dbgW("view_mode: %d", view_mode);
 	evas_object_smart_callback_del(obj, GL_TRANS_FINISHED,
-				       __gl_thumbs_trans_finished_cb);
+	                               __gl_thumbs_trans_finished_cb);
 
 	/* Clear previous view after animation finished */
 	if (view_mode == GL_VIEW_THUMBS || view_mode == GL_VIEW_THUMBS_EDIT) {
-		if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS)
+		if (_gl_ctrl_get_tab_mode(ad) == GL_CTRL_TAB_ALBUMS) {
 			elm_gengrid_clear(ad->albuminfo.view);
+		}
 	} else {
 		gl_dbgE("Wrong view mode!");
 	}
@@ -811,8 +821,9 @@ static Eina_Bool __gl_thumbs_pop_cb(void *data, Elm_Object_Item *it)
 		gl_dbg("GL_VIEW_THUMBS_EDIT");
 		_gl_thumbs_edit_pop_view(data);
 		/* Keep current view unchanged */
-		if (_gl_thumbs_get_edit_mode(data) < GL_THUMBS_EDIT_FIRST)
+		if (_gl_thumbs_get_edit_mode(data) < GL_THUMBS_EDIT_FIRST) {
 			return EINA_FALSE;
+		}
 	}
 
 	/* Call function to update previous view */
@@ -820,8 +831,9 @@ static Eina_Bool __gl_thumbs_pop_cb(void *data, Elm_Object_Item *it)
 	func = (Elm_Naviframe_Item_Pop_Cb)elm_object_item_data_get(ad->gridinfo.nf_it);
 	/* show albums view */
 	gl_dbg("func: %p", func);
-	if (func)
+	if (func) {
 		func(data, it);
+	}
 	/* Pop view(current naviframe item) */
 	if (ad->albuminfo.selected_uuid) {
 		free(ad->albuminfo.selected_uuid);
@@ -994,15 +1006,15 @@ static int __gl_thumbs_slideshow(void *data, const char *label)
 		__gl_thumbs_slideshow_op(data);
 	} else if (!g_strcmp0(label, _gl_str(GL_STR_ID_SETTINGS))) {
 		evas_object_data_set(ad->maininfo.naviframe,
-				     GL_NAVIFRAME_SLIDESHOW_DATA_KEY,
-				     __gl_thumbs_slideshow_op);
+		                     GL_NAVIFRAME_SLIDESHOW_DATA_KEY,
+		                     __gl_thumbs_slideshow_op);
 		gl_ext_load_ug(data, GL_UG_GALLERY_SETTING_SLIDESHOW);
 	} else if (!g_strcmp0(label, _gl_str(GL_STR_ID_SELECT_ITEMS))) {
 #ifdef _USE_APP_SLIDESHOW
 		_gl_thumbs_edit_create_view(data);
 		evas_object_data_set(ad->maininfo.naviframe,
-				     GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY,
-				     _gl_thumbs_edit_pop_view);
+		                     GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY,
+		                     _gl_thumbs_edit_pop_view);
 #else
 		_gl_ext_launch_gallery_ug(data);
 #endif
@@ -1044,31 +1056,31 @@ static int __gl_thumbs_ctxpopup_append(void *data, Evas_Object *parent)
 		/* 3. Sort by */
 		if (!_gl_thumbs_check_zero(data))
 			_gl_ctxpopup_append(parent, GL_STR_SORT,
-					__gl_thumbs_sortby_cb, data);
+			                    __gl_thumbs_sortby_cb, data);
 		return 0;
 	}
 	/* 2. Edit */
 	/* No 'edit' for facebook files, only share */
 	if (!_gl_thumbs_check_zero(data))
 		_gl_ctxpopup_append(parent, GL_STR_ID_DELETE,
-				    __gl_thumbs_edit_cb, data);
+		                    __gl_thumbs_edit_cb, data);
 	/* 3. Sort by */
-		if (!_gl_thumbs_check_zero(data))
-			_gl_ctxpopup_append(parent, GL_STR_SORT,
-					    __gl_thumbs_sortby_cb, data);
+	if (!_gl_thumbs_check_zero(data))
+		_gl_ctxpopup_append(parent, GL_STR_SORT,
+		                    __gl_thumbs_sortby_cb, data);
 	/* 4. Copy to album*/
 	if (!_gl_thumbs_check_zero(data))
-			_gl_ctxpopup_append(parent, GL_STR_ID_COPY_TO_ALBUM,
-					__gl_thumbs_copy_cb, data);
+		_gl_ctxpopup_append(parent, GL_STR_ID_COPY_TO_ALBUM,
+		                    __gl_thumbs_copy_cb, data);
 	/* 5. Move to album*/
 	if (!_gl_thumbs_check_zero(data))
-			_gl_ctxpopup_append(parent, GL_STR_ID_MOVE_TO_ALBUM,
-					__gl_thumbs_move_cb, data);
+		_gl_ctxpopup_append(parent, GL_STR_ID_MOVE_TO_ALBUM,
+		                    __gl_thumbs_move_cb, data);
 #ifdef SUPPORT_SLIDESHOW
 	/* 6. Slideshow */
 	if (!ad->gridinfo.b_slideshow_disable)
 		_gl_ctxpopup_append(parent, GL_STR_ID_SLIDESHOW,
-				    __gl_thumbs_slideshow_cb, data);
+		                    __gl_thumbs_slideshow_cb, data);
 #endif
 	return 0;
 }
@@ -1102,7 +1114,7 @@ static void __gl_thumbs_camera_cb(void *data, Evas_Object *obj, void *ei)
  *  @param obj is the content to be pushed.
  */
 static int __gl_thumbs_add_btns(void *data, Evas_Object *parent,
-					Elm_Object_Item *nf_it)
+                                Elm_Object_Item *nf_it)
 {
 	gl_dbg("GL_NAVI_THUMBS");
 	GL_CHECK_VAL(nf_it, -1);
@@ -1112,7 +1124,7 @@ static int __gl_thumbs_add_btns(void *data, Evas_Object *parent,
 
 	/* More */
 	btn = _gl_but_create_but(parent, NULL, NULL, GL_BUTTON_STYLE_NAVI_MORE,
-				 __gl_thumbs_more_btn_cb, data);
+	                         __gl_thumbs_more_btn_cb, data);
 	GL_CHECK_VAL(btn, -1);
 
 	elm_object_item_part_content_set(nf_it, GL_NAVIFRAME_MORE, btn);
@@ -1141,8 +1153,9 @@ static int __gl_thumbs_clear_data(void *data)
 			_gl_ui_del_scroller_pos(ad->gridinfo.view);
 			/* elm_gengrid_clear should be called after callbacks are unregistered */
 			if (ad->gridinfo.medias_elist &&
-			    eina_list_count(ad->gridinfo.medias_elist) > 0)
+			        eina_list_count(ad->gridinfo.medias_elist) > 0) {
 				elm_gengrid_clear(ad->gridinfo.view);
+			}
 		}
 		ad->gridinfo.view = NULL;
 	}
@@ -1160,7 +1173,7 @@ static int __gl_thumbs_clear_data(void *data)
 
 /* Free data after layout deleted */
 static void __gl_thumbs_delete_layout_cb(void *data, Evas *e, Evas_Object *obj,
-					 void *ei)
+			void *ei)
 {
 	gl_dbg("Delete layout ---");
 	GL_CHECK(data);
@@ -1175,8 +1188,8 @@ static void __gl_thumbs_delete_layout_cb(void *data, Evas *e, Evas_Object *obj,
 }
 
 static int __gl_thumbs_push_view(void *data, Evas_Object *parent,
-				 Evas_Object *obj, gl_navi_mode mode,
-				 char *title)
+                                 Evas_Object *obj, gl_navi_mode mode,
+                                 char *title)
 {
 	GL_CHECK_VAL(obj, -1);
 	GL_CHECK_VAL(parent, -1);
@@ -1186,7 +1199,7 @@ static int __gl_thumbs_push_view(void *data, Evas_Object *parent,
 
 	/* Add transition finished callback */
 	evas_object_smart_callback_add(parent, GL_TRANS_FINISHED,
-				       __gl_thumbs_trans_finished_cb, data);
+	                               __gl_thumbs_trans_finished_cb, data);
 	/* Push to stack with basic transition */
 	nf_it = elm_naviframe_item_push(parent, title, NULL, NULL, obj, NULL);
 	elm_object_item_part_text_set(nf_it, "elm.text.title", _gl_str(title));
@@ -1198,8 +1211,9 @@ static int __gl_thumbs_push_view(void *data, Evas_Object *parent,
 		return 0;
 	}
 	GL_FREEIF(ad->gridinfo.title);
-	if (title)
+	if (title) {
 		ad->gridinfo.title = strdup(title);
+	}
 
 	__gl_thumbs_add_btns(data, parent, nf_it);
 	gl_dbg("Done");
@@ -1208,13 +1222,14 @@ static int __gl_thumbs_push_view(void *data, Evas_Object *parent,
 
 /* Free data after layout deleted */
 static void __gl_thumbs_del_view_cb(void *data, Evas *e, Evas_Object *obj,
-					 void *ei)
+                                    void *ei)
 {
 	Elm_Gengrid_Item_Class *gic = NULL;
 	gic = evas_object_data_get(obj, "gl_thumbs_item_style_key");
 	evas_object_data_set(obj, "gl_thumbs_item_style_key", (void *)NULL);
-	if (gic)
+	if (gic) {
 		elm_gengrid_item_class_free(gic);
+	}
 }
 
 Eina_Bool _gl_thumbs_append_items(void *data)
@@ -1242,7 +1257,7 @@ Elm_Gengrid_Item_Class *_gl_thumbs_new_item_style(Evas_Object *parent)
 	GL_CHECK_NULL(gic);
 	/* Register delete callback */
 	evas_object_event_callback_add(parent, EVAS_CALLBACK_DEL,
-				       __gl_thumbs_del_view_cb, gic);
+	                               __gl_thumbs_del_view_cb, gic);
 	evas_object_data_set(parent, "gl_thumbs_item_style_key", (void *)gic);
 	gic->item_style = GL_GENGRID_ITEM_STYLE_THUMBNAIL;
 	gic->func.text_get = NULL;
@@ -1258,16 +1273,16 @@ int _gl_thumbs_update_realized_items(void *data)
 
 	/* Clear old view */
 	evas_object_smart_callback_del(ad->gridinfo.view, "unrealized",
-				       __gl_thumbs_unrealized);
+	                               __gl_thumbs_unrealized);
 	_gl_thumbs_set_size(ad, NULL);
 	elm_gengrid_realized_items_update(ad->gridinfo.view);
 	evas_object_smart_callback_add(ad->gridinfo.view, "unrealized",
-				       __gl_thumbs_unrealized, ad);
+	                               __gl_thumbs_unrealized, ad);
 	return 0;
 }
 
 Evas_Object *_gl_thumbs_get_content(void *data, Evas_Object *parent,
-				    gl_item *gitem, int w, int h)
+                                    gl_item *gitem, int w, int h)
 {
 	GL_CHECK_NULL(gitem);
 	GL_CHECK_NULL(gitem->item);
@@ -1292,16 +1307,16 @@ Evas_Object *_gl_thumbs_get_content(void *data, Evas_Object *parent,
 			v_dur = gitem->item->video_info->duration;
 		}
 		layout = _gl_thumb_show_video(parent, path, v_dur, w, h,
-					      zoom_level);
+		                              zoom_level);
 	} else {
 		if (gitem->item->image_info &&
-		    gitem->item->image_info->burstshot_id) {
+		        gitem->item->image_info->burstshot_id) {
 			layout = _gl_thumb_show_image(parent, path, 0, w, h,
-						      zoom_level);
+			                              zoom_level);
 			gitem->item->mode = GL_CM_MODE_BURSTSHOT;
 		} else {
 			layout = _gl_thumb_show_image(parent, path, 0, w, h,
-						      zoom_level);
+			                              zoom_level);
 		}
 	}
 	return layout;
@@ -1343,17 +1358,20 @@ void _gl_thumbs_mouse_up(void *data, Evas *e, Evas_Object *obj, void *ei)
 	GL_CHECK(gitem->ad);
 	gl_appdata *ad = (gl_appdata *)gitem->ad;
 
-	if (!ei || !obj)
+	if (!ei || !obj) {
 		goto RET_WO_EXEC;
+	}
 
 	Evas_Event_Mouse_Up *ev = (Evas_Event_Mouse_Up *)ei;
 	if (ev->event_flags & EVAS_EVENT_FLAG_ON_HOLD ||
-	    ev->event_flags & EVAS_EVENT_FLAG_ON_SCROLL)
+	        ev->event_flags & EVAS_EVENT_FLAG_ON_SCROLL) {
 		goto RET_WO_EXEC;
+	}
 
 	if ((abs(ad->gridinfo.mouse.x - ev->output.x) > GL_MOUSE_RANGE) ||
-	    (abs(ad->gridinfo.mouse.y - ev->output.y) > GL_MOUSE_RANGE))
+	        (abs(ad->gridinfo.mouse.y - ev->output.y) > GL_MOUSE_RANGE)) {
 		goto RET_WO_EXEC;
+	}
 
 	gl_dbg("");
 
@@ -1361,13 +1379,13 @@ void _gl_thumbs_mouse_up(void *data, Evas *e, Evas_Object *obj, void *ei)
 	if (ad->gridinfo.mouse.b_pressed) {
 		edje_object_signal_emit(_EDJ(obj), "mouse,up,expand", "bg");
 		edje_object_signal_callback_add(_EDJ(obj), "shrink,expand,done",
-						"bg", __gl_thumbs_shrink_cb,
-						data);
+		                                "bg", __gl_thumbs_shrink_cb,
+		                                data);
 		ad->gridinfo.mouse.b_pressed = false;
 	}
 	return;
 
-	RET_WO_EXEC:
+RET_WO_EXEC:
 
 	if (ad->gridinfo.mouse.b_pressed) {
 		edje_object_signal_emit(_EDJ(obj), "mouse,up,expand", "bg");
@@ -1377,13 +1395,13 @@ void _gl_thumbs_mouse_up(void *data, Evas *e, Evas_Object *obj, void *ei)
 	_gl_thumbs_open_file(data);
 	return;
 
-      RET_WO_EXEC:
+RET_WO_EXEC:
 	return;
 #endif
 }
 
 Evas_Object *_gl_thumbs_add_grid(void *data, Evas_Object *parent,
-				 gl_thumb_mode mode)
+                                 gl_thumb_mode mode)
 {
 	GL_CHECK_NULL(parent);
 	GL_CHECK_NULL(data);
@@ -1393,13 +1411,13 @@ Evas_Object *_gl_thumbs_add_grid(void *data, Evas_Object *parent,
 	int view_mode = gl_get_view_mode(ad);
 	grid = _gl_thumb_add_gengrid(parent);
 	evas_object_smart_callback_add(grid, "realized", __gl_thumbs_realized,
-				       data);
+	                               data);
 	evas_object_smart_callback_add(grid, "unrealized",
-				       __gl_thumbs_unrealized, data);
+	                               __gl_thumbs_unrealized, data);
 	evas_object_smart_callback_add(grid, "longpressed",
-				       __gl_thumbs_longpressed_cb, data);
+	                               __gl_thumbs_longpressed_cb, data);
 	evas_object_smart_callback_add(grid, "language,changed",
-				       __gl_thumbs_lang_changed, NULL);
+	                               __gl_thumbs_lang_changed, NULL);
 	/* Set grid view type */
 	__gl_thumbs_set_type(ad);
 	_gl_ui_reset_scroller_pos(grid);
@@ -1419,8 +1437,9 @@ Evas_Object *_gl_thumbs_add_grid(void *data, Evas_Object *parent,
 
 	gl_dbg("thumbs_cnt : %d", ad->gridinfo.count);
 	_gl_thumbs_set_size(ad, grid);
-	if (view_mode != GL_VIEW_THUMBS_SELECT)
+	if (view_mode != GL_VIEW_THUMBS_SELECT) {
 		_gl_thumbs_set_nocontents(ad, NULL);
+	}
 	evas_object_show(grid);
 
 	return grid;
@@ -1496,7 +1515,7 @@ Eina_Bool _gl_thumbs_show_items(void *data)
 		if (!res) {
 			gl_dbgW("create items failed!");
 			elm_object_part_content_unset(ad->gridinfo.layout,
-						      "elm.swallow.view");
+			                              "elm.swallow.view");
 			_gl_thumbs_delete_view(data);
 			__gl_thumbs_set_view(ad, NULL, false);
 			Evas_Object *noc = _gl_nocontents_create(ad->gridinfo.layout);
@@ -1504,14 +1523,14 @@ Eina_Bool _gl_thumbs_show_items(void *data)
 			__gl_thumbs_set_view(ad, noc, true);
 
 			elm_object_part_content_set(ad->gridinfo.layout,
-						    "elm.swallow.view", noc);
+			                            "elm.swallow.view", noc);
 		} else {
 			_gl_thumbs_set_size(ad, gv);
 		}
 	} else {
 		gl_dbg("Remove nocontents view.");
 		elm_object_part_content_unset(ad->gridinfo.layout,
-					      "elm.swallow.view");
+		                              "elm.swallow.view");
 		evas_object_hide(gv);
 		evas_object_del(gv);
 		__gl_thumbs_set_view(ad, NULL, false);
@@ -1526,7 +1545,7 @@ Eina_Bool _gl_thumbs_show_items(void *data)
 		__gl_thumbs_set_view(ad, view, b_noc);
 
 		elm_object_part_content_set(ad->gridinfo.layout,
-					    "elm.swallow.view", view);
+		                            "elm.swallow.view", view);
 	}
 
 	return res;
@@ -1567,7 +1586,7 @@ int _gl_thumbs_get_list(void *data, Eina_List **p_elist)
 }
 
 int _gl_thumbs_update_edit_split_view(void *data, int nf_mode, char *title, bool b_idler,
-			   Elm_Naviframe_Item_Pop_Cb func)
+                                      Elm_Naviframe_Item_Pop_Cb func)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -1591,12 +1610,13 @@ int _gl_thumbs_update_edit_split_view(void *data, int nf_mode, char *title, bool
 	if (title) {
 		ad->gridinfo.title = strdup(title);
 	}
-	if (_gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_NORMAL)
+	if (_gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_NORMAL) {
 		__gl_thumbs_edit_cb(ad, ad->gridinfo.view, NULL);
-	else if (_gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_COPY)
+	} else if (_gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_COPY) {
 		__gl_thumbs_copy_cb(ad, ad->gridinfo.view, NULL);
-	else if (_gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_MOVE)
+	} else if (_gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_MOVE) {
 		__gl_thumbs_move_cb(ad, ad->gridinfo.view, NULL);
+	}
 
 	int sel_cnt = _gl_data_selected_list_count(ad);
 	/* Update the label text */
@@ -1619,7 +1639,7 @@ int _gl_thumbs_update_edit_split_view(void *data, int nf_mode, char *title, bool
 }
 
 int _gl_thumbs_update_split_view(void *data, int nf_mode, char *title, bool b_idler,
-			   Elm_Naviframe_Item_Pop_Cb func)
+                                 Elm_Naviframe_Item_Pop_Cb func)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -1656,10 +1676,10 @@ _create_gengrid(void *data)
 	elm_gengrid_horizontal_set(layout_inner, EINA_FALSE);
 	elm_scroller_bounce_set(layout_inner, EINA_FALSE, EINA_TRUE);
 	elm_scroller_policy_set(layout_inner, ELM_SCROLLER_POLICY_OFF,
-			ELM_SCROLLER_POLICY_AUTO);
+	                        ELM_SCROLLER_POLICY_AUTO);
 	elm_gengrid_multi_select_set(layout_inner, EINA_TRUE);
 	evas_object_size_hint_weight_set(layout_inner, EVAS_HINT_EXPAND,
-			EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	return layout_inner;
 }
 
@@ -1675,15 +1695,15 @@ _create_split_album_view(void *data, Evas_Object *layout_inner)
 	int w = -1, h = -1;
 	evas_object_geometry_get(ad->maininfo.win, NULL, NULL, &w, &h);
 	if (w < h) {
-		elm_gengrid_item_size_set(layout_inner, (w/3)-40, (w/3)-20);
+		elm_gengrid_item_size_set(layout_inner, (w / 3) - 40, (w / 3) - 20);
 	} else {
-		elm_gengrid_item_size_set(layout_inner, (h/3)-20, (h/3)-40);
+		elm_gengrid_item_size_set(layout_inner, (h / 3) - 20, (h / 3) - 40);
 	}
 	return 0;
 }
 
 int _gl_thumbs_create_view(void *data, int nf_mode, char *title, bool b_idler,
-			   Elm_Naviframe_Item_Pop_Cb func)
+                           Elm_Naviframe_Item_Pop_Cb func)
 {
 	GL_CHECK_VAL(data, -1);
 	gl_appdata *ad = (gl_appdata *)data;
@@ -1694,10 +1714,11 @@ int _gl_thumbs_create_view(void *data, int nf_mode, char *title, bool b_idler,
 	layout_inner = _create_gengrid(ad);
 	GL_CHECK_VAL(layout_inner, -1);
 
-	if (_gl_thumbs_get_edit_mode(data) > GL_THUMBS_EDIT_FIRST)
-			gl_set_view_mode(data, GL_VIEW_THUMBS_EDIT);
-		else
-			gl_set_view_mode(data, GL_VIEW_THUMBS);
+	if (_gl_thumbs_get_edit_mode(data) > GL_THUMBS_EDIT_FIRST) {
+		gl_set_view_mode(data, GL_VIEW_THUMBS_EDIT);
+	} else {
+		gl_set_view_mode(data, GL_VIEW_THUMBS);
+	}
 
 	if (_create_split_album_view(ad, layout_inner) == -1) {
 		gl_dbgE("Failed to add album split view!");
@@ -1709,7 +1730,7 @@ int _gl_thumbs_create_view(void *data, int nf_mode, char *title, bool b_idler,
 	layout = _gl_ctrl_add_layout(ad->maininfo.naviframe);
 	GL_CHECK_VAL(layout, -1);
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND,
-					 EVAS_HINT_EXPAND);
+	                                 EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(layout, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
 	if (ad->gridinfo.split_view_mode) {
@@ -1741,11 +1762,11 @@ int _gl_thumbs_create_view(void *data, int nf_mode, char *title, bool b_idler,
 
 	elm_object_part_content_set(layout, "split.view", layout_inner);
 	__gl_thumbs_push_view(ad, ad->maininfo.naviframe, layout, nf_mode,
-			      title);
+	                      title);
 	elm_object_item_data_set(ad->gridinfo.nf_it, (void *)func);
 	/* Register delete callback */
 	evas_object_event_callback_add(layout, EVAS_CALLBACK_DEL,
-				       __gl_thumbs_delete_layout_cb, data);
+	                               __gl_thumbs_delete_layout_cb, data);
 	gl_dbg("Done");
 	return 0;
 }
@@ -1789,21 +1810,23 @@ int _gl_thumbs_update_items(void *data)
 		}
 
 		/* Normal view, return */
-		if (!b_edit_m)
+		if (!b_edit_m) {
 			return 0;
+		}
 
 		/* Get selected medias count */
 		int sel_cnt = _gl_data_selected_list_count(ad);
 		/* Remove invalid widgets */
-		if (sel_cnt == 0)
+		if (sel_cnt == 0) {
 			gl_del_invalid_widgets(ad, GL_INVALID_NEW_ENTRY);
+		}
 
 		/* Display selectioninfo */
 		gl_item *gitem = NULL;
 		gitem = eina_list_nth(ad->gridinfo.medias_elist, 0);
 		int album_sel_count = eina_list_count(gitem->album->elist);
 		_gl_notify_check_selall(ad, ad->gridinfo.nf_it,
-				ad->gridinfo.count, album_sel_count);
+		                        ad->gridinfo.count, album_sel_count);
 		_gl_thumbs_update_label_text(ad->gridinfo.nf_it, sel_cnt, false);
 	}
 
@@ -1833,7 +1856,7 @@ int _gl_thumbs_update_view(void *data)
 
 		_gl_thumbs_update_items(ad);
 	}
-		break;
+	break;
 	default:
 		gl_dbgE("Wrong grid type!");
 		return -1;
@@ -1856,8 +1879,9 @@ int _gl_thumbs_destroy_view(void *data, bool b_pop)
 		/* To launch __gl_thumbs_pop_cb in thumb selected mode */
 		elm_naviframe_item_pop_to(ad->gridinfo.nf_it);
 		/* To skip operation about edit mode */
-		if (view_mode == GL_VIEW_THUMBS_EDIT)
+		if (view_mode == GL_VIEW_THUMBS_EDIT) {
 			gl_set_view_mode(data, GL_VIEW_THUMBS);
+		}
 		elm_naviframe_item_pop_to(ad->ctrlinfo.nf_it);
 	}
 	return 0;
@@ -1874,7 +1898,7 @@ int _gl_thumbs_destroy_view_with_cb(void *data, void *cb)
 	/* Delete naviframe item dierctly to launch layout_delete_cb immediately */
 	_gl_ui_del_nf_items(ad->maininfo.naviframe, ad->ctrlinfo.nf_it);
 	if (cb) {
-		int (*close_cb) (void *data);
+		int (*close_cb)(void * data);
 		close_cb = cb;
 		close_cb(data);
 	}
@@ -1895,16 +1919,19 @@ bool _gl_thumbs_get_view(void *data, Evas_Object **view)
 	bool b_view = false;
 
 	gv = ad->gridinfo.view;
-	if (gv && ad->gridinfo.nocontents == NULL)
+	if (gv && ad->gridinfo.nocontents == NULL) {
 		b_view = true;
+	}
 
 	/* Nocontents */
-	if (!b_view)
+	if (!b_view) {
 		gl_dbg("Previous view is Nocontents...");
+	}
 
 	/* Return view */
-	if (view)
+	if (view) {
 		*view = gv;
+	}
 
 	return b_view;
 }
@@ -1927,7 +1954,7 @@ bool _gl_thumbs_show_nocontents(void *data)
 	elm_object_part_content_unset(ad->gridinfo.layout, "elm.swallow.view");
 	evas_object_show(ad->gridinfo.view);
 	elm_object_part_content_set(ad->gridinfo.layout, "elm.swallow.view",
-				    ad->gridinfo.view);
+	                            ad->gridinfo.view);
 	_gl_thumbs_check_btns(ad);
 	return true;
 }
@@ -1965,7 +1992,7 @@ int _gl_thumbs_set_size(void *data, Evas_Object *gridview)
 	}
 	if (ad->gridinfo.split_view_mode == DETAIL_VIEW) {
 		_gl_thumb_set_size(ad, gv, &(ad->gridinfo.icon_w),
-				&(ad->gridinfo.icon_h));
+		                   &(ad->gridinfo.icon_h));
 	} else if (ad->gridinfo.split_view_mode == SPLIT_VIEW) {
 		_gl_thumb_split_set_size(ad, gv);
 	}
@@ -1982,9 +2009,9 @@ int _gl_thumbs_clear_cbs(Evas_Object *grid)
 	GL_CHECK_VAL(grid, -1);
 	evas_object_smart_callback_del(grid, "realized", __gl_thumbs_realized);
 	evas_object_smart_callback_del(grid, "unrealized",
-				       __gl_thumbs_unrealized);
+	                               __gl_thumbs_unrealized);
 	evas_object_smart_callback_del(grid, "longpressed",
-				       __gl_thumbs_longpressed_cb);
+	                               __gl_thumbs_longpressed_cb);
 	return 0;
 }
 
@@ -2047,11 +2074,11 @@ bool _gl_thumbs_is_append(gl_item *gitem, char **burstshot_id)
 	bool b_to_append = false;
 
 	if (gitem->item->type == MEDIA_CONTENT_TYPE_IMAGE &&
-	    gitem->item->image_info &&
-	    gitem->item->image_info->burstshot_id) {
+	        gitem->item->image_info &&
+	        gitem->item->image_info->burstshot_id) {
 		/* First birstshot item,  two jacent birstshot items  */
 		if (*burstshot_id == NULL ||
-		    g_strcmp0(*burstshot_id, gitem->item->image_info->burstshot_id)) {
+		        g_strcmp0(*burstshot_id, gitem->item->image_info->burstshot_id)) {
 			*burstshot_id = gitem->item->image_info->burstshot_id;
 			b_to_append = true;
 		}
@@ -2077,14 +2104,15 @@ int _gl_thumbs_update_label(Elm_Object_Item *nf_it, char *title)
 {
 	GL_CHECK_VAL(nf_it, -1);
 	elm_object_item_part_text_set(nf_it, "elm.text.title", _gl_str(title));
-	if (_gl_is_str_id(title))
+	if (_gl_is_str_id(title)) {
 		_gl_ui_set_translatable_item(nf_it, title);
+	}
 	return 0;
 }
 
 /* Update the label text */
 int _gl_thumbs_update_label_text(Elm_Object_Item *nf_it, int sel_cnt,
-				 bool b_lang)
+                                 bool b_lang)
 {
 	GL_CHECK_VAL(nf_it, -1);
 	gl_dbg("Count: %d, lang: %d", sel_cnt, b_lang);
@@ -2136,11 +2164,12 @@ int _gl_thumbs_disable_share(void *data, bool b_disabled)
 	GL_CHECK_VAL(ad->gridinfo.nf_it, -1);
 	Evas_Object *btn = NULL;
 	btn = elm_object_item_part_content_get(ad->gridinfo.nf_it,
-					       GL_NAVIFRAME_TITLE_LEFT_BTN);
-	if (btn)
+	                                       GL_NAVIFRAME_TITLE_LEFT_BTN);
+	if (btn) {
 		elm_object_disabled_set(btn, b_disabled);
-	else
+	} else {
 		gl_dbgE("Failed to get share button!");
+	}
 	return 0;
 }
 
@@ -2162,8 +2191,9 @@ int _gl_thumbs_update_sequence(void *data)
 	Elm_Object_Item *last_it = NULL;
 
 	Evas_Object *view = ad->gridinfo.view;
-	if (gl_get_view_mode(data) == GL_VIEW_THUMBS_SELECT)
+	if (gl_get_view_mode(data) == GL_VIEW_THUMBS_SELECT) {
 		view = ad->gridinfo.select_view;
+	}
 	GL_CHECK_VAL(view, -1);
 	first_it = elm_gengrid_first_item_get(view);
 	last_it = elm_gengrid_last_item_get(view);
@@ -2172,15 +2202,17 @@ int _gl_thumbs_update_sequence(void *data)
 	while (first_it) {
 		next_it = elm_gengrid_item_next_get(first_it);
 
-		if (elm_gengrid_item_item_class_get(first_it) == &(ad->gridinfo.date_gic))
+		if (elm_gengrid_item_item_class_get(first_it) == &(ad->gridinfo.date_gic)) {
 			goto GL_THUMBS_NEXT;
+		}
 
 		gitem = elm_object_item_data_get(first_it);
-		if (gitem)
+		if (gitem) {
 			gitem->sequence = sequence++;
+		}
 		gitem = NULL;
 
- GL_THUMBS_NEXT:
+GL_THUMBS_NEXT:
 
 		if (last_it == first_it) {
 			gl_dbg("done!");
@@ -2216,8 +2248,9 @@ int _gl_thumbs_rotate_view(void *data)
 	Elm_Object_Item *it = NULL;
 	gl_item *gitem = NULL;
 
-	if (ad->gridinfo.view == ad->gridinfo.nocontents)
+	if (ad->gridinfo.view == ad->gridinfo.nocontents) {
 		return -1;
+	}
 
 	int w = -1;
 	int h = -1;
@@ -2247,8 +2280,8 @@ int _gl_thumbs_rotate_view(void *data)
 		}
 
 		gitem = elm_object_item_data_get(it);
-		if (gitem && gitem->item &&gitem->item->image_info &&
-		    gitem->item->image_info->burstshot_id) {
+		if (gitem && gitem->item && gitem->item->image_info &&
+		        gitem->item->image_info->burstshot_id) {
 			/* Realize burstshot item again */
 			elm_gengrid_item_update(it);
 		}
@@ -2303,7 +2336,8 @@ void _gl_thumbs_change_view(void *data, int prev_x, int current_x)
 	}
 }
 
-void _gl_thumb_update_split_view_badge(void *data) {
+void _gl_thumb_update_split_view_badge(void *data)
+{
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
 	GL_CHECK(ad->albuminfo.elist);
@@ -2326,10 +2360,11 @@ void _gl_thumb_update_split_view_badge(void *data) {
 	}
 }
 
-void _gl_thumb_update_split_view(void *data) {
+void _gl_thumb_update_split_view(void *data)
+{
 	GL_CHECK(data);
 	gl_appdata *ad = (gl_appdata *)data;
-	if(ad->gridinfo.update_split_view) {
+	if (ad->gridinfo.update_split_view) {
 
 		if (ad->gridinfo.layout) {
 			Evas_Object *layout_inner = elm_object_part_content_get(ad->gridinfo.layout, "split.view");

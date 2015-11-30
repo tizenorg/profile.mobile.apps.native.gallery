@@ -297,20 +297,20 @@ Evas_Object *_gl_rotate_bg_add(Evas_Object *parent, bool b_preload)
 
 	Evas_Object *base = NULL;
 	base = _gl_rotate_bg_add_layout(parent, GL_EDJ_FILE,
-					GL_ROTATE_BG_GROUP);
+	                                GL_ROTATE_BG_GROUP);
 	if (base == NULL) {
 		GL_FREE(bg_data);
 		return NULL;
 	}
 
-	bg_data->base= base;
+	bg_data->base = base;
 	bg_data->b_preload = b_preload;
 	if (!b_preload)
 		evas_object_event_callback_add(base, EVAS_CALLBACK_RESIZE,
-					       __gl_rotate_bg_custom_resize,
-					       bg_data);
+		                               __gl_rotate_bg_custom_resize,
+		                               bg_data);
 	evas_object_event_callback_add(base, EVAS_CALLBACK_DEL,
-				       __gl_rotate_bg_delete_cb, bg_data);
+	                               __gl_rotate_bg_delete_cb, bg_data);
 
 	evas_object_data_set(base, GL_ROTATE_BG_DATA_KEY, bg_data);
 	return base;
@@ -388,12 +388,14 @@ int _gl_rotate_bg_rotate_image(Evas_Object *bg, unsigned int orient)
 	GL_CHECK_VAL(bg_data, -1);
 
 	if (bg_data->file && g_strcmp0(bg_data->file, GL_ICON_NO_THUMBNAIL) &&
-	     g_strcmp0(bg_data->file, GL_ICON_CONTENTS_BROKEN))
+	        g_strcmp0(bg_data->file, GL_ICON_CONTENTS_BROKEN)) {
 		__gl_rotate_bg_rotate_image(bg_data->img, orient);
-	else
+	} else {
 		__gl_rotate_bg_rotate_image(bg_data->img, GL_ORIENTATION_ROT_0);
-	if (!bg_data->b_preload)
+	}
+	if (!bg_data->b_preload) {
 		__gl_rotate_bg_custom_resize(bg_data, NULL, NULL, NULL);
+	}
 	return 0;
 }
 

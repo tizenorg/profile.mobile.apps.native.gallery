@@ -122,13 +122,13 @@ int _gl_ui_rm_selall_btn(Elm_Object_Item *nf_it)
 	GL_CHECK_VAL(nf_it, -1);
 	Evas_Object *btn = NULL;
 	btn = elm_object_item_part_content_get(nf_it,
-					       GL_NAVIFRAME_TITLE_RIGHT_BTN);
+	                                       GL_NAVIFRAME_TITLE_RIGHT_BTN);
 	GL_IF_DEL_OBJ(btn);
 	return 0;
 }
 
 int _gl_ui_add_selall_btn(Evas_Object *naviframe, Elm_Object_Item *nf_it,
-			  Evas_Smart_Cb cb_func, void *data)
+                          Evas_Smart_Cb cb_func, void *data)
 {
 	GL_CHECK_VAL(data, -1);
 	GL_CHECK_VAL(naviframe, -1);
@@ -140,20 +140,20 @@ int _gl_ui_add_selall_btn(Evas_Object *naviframe, Elm_Object_Item *nf_it,
 		GL_CHECK_VAL(_nf_it, -1);
 	}
 	Evas_Object *sel_all_btn = NULL;
- 	sel_all_btn = _gl_but_create_image_but(naviframe,
-						GL_ICON_TITLE_SELECT_ALL, NULL,
-						GL_BUTTON_STYLE_NAVI_TITLE_ICON,
-						cb_func, data, EINA_FALSE);
+	sel_all_btn = _gl_but_create_image_but(naviframe,
+	                                       GL_ICON_TITLE_SELECT_ALL, NULL,
+	                                       GL_BUTTON_STYLE_NAVI_TITLE_ICON,
+	                                       cb_func, data, EINA_FALSE);
 	GL_CHECK_VAL(sel_all_btn, -1);
 	elm_object_item_part_content_set(_nf_it, GL_NAVIFRAME_TITLE_RIGHT_BTN,
-					 sel_all_btn);
+	                                 sel_all_btn);
 	ad->selinfo.ck_state = false;
 	return 0;
 }
 
 #if 0
 int _gl_ui_add_xpt_btns(Elm_Object_Item *nf_it, gl_ui_xpt_btn_e xpt_btn,
-			Evas_Smart_Cb r_cb, Evas_Smart_Cb l_cb, void *data)
+                        Evas_Smart_Cb r_cb, Evas_Smart_Cb l_cb, void *data)
 {
 	/* Get expanded title */
 	Evas_Object *title = NULL;
@@ -164,19 +164,19 @@ int _gl_ui_add_xpt_btns(Elm_Object_Item *nf_it, gl_ui_xpt_btn_e xpt_btn,
 		/* New-album , add left before right for customized TTS */
 		if (xpt_btn & GL_UI_XPT_SHARE)
 			_gl_expn_title_add_left_btn(title, GL_ICON_SHARE,
-						    _gl_str(GL_STR_ID_NEW_ALBUM),
-						    l_cb, data);
+			                            _gl_str(GL_STR_ID_NEW_ALBUM),
+			                            l_cb, data);
 		_gl_expn_title_add_right_btn(title, GL_ICON_CAMERA,
-					     _gl_str(GL_STR_ID_CAMERA), r_cb,
-					     data);
-	/* Select-all */
+		                             _gl_str(GL_STR_ID_CAMERA), r_cb,
+		                             data);
+		/* Select-all */
 	} else if (xpt_btn & GL_UI_XPT_SEL_ALL) {
 		if (xpt_btn & GL_UI_XPT_DONE)
 			_gl_expn_title_add_left_btn(title, GL_ICON_DONE,
-						    _gl_str(GL_STR_ID_DONE),
-						    l_cb, data);
+			                            _gl_str(GL_STR_ID_DONE),
+			                            l_cb, data);
 		_gl_expn_title_add_right_btn(title, GL_ICON_TITLE_SELECT_ALL,
-					     GL_STR_SELECT_ALL, r_cb, data);
+		                             GL_STR_SELECT_ALL, r_cb, data);
 	} else {
 		gl_dbgE("Wrong mode!");
 	}
@@ -191,8 +191,9 @@ Evas_Object *_gl_ui_get_xpt_btn(Elm_Object_Item *nf_it, gl_ui_xpt_btn_e ui_btn)
 	title = elm_object_item_part_content_get(nf_it, "title");
 	GL_CHECK_NULL(title);
 	gl_xtp_btn_e xpt_btn = GL_XPT_BTN_RIGHT;
-	if (ui_btn & GL_UI_XPT_SHARE)
+	if (ui_btn & GL_UI_XPT_SHARE) {
 		xpt_btn = GL_XPT_BTN_LEFT;
+	}
 	return _gl_expn_title_get_btn(title, xpt_btn);
 }
 
@@ -200,10 +201,11 @@ int _gl_ui_disable_xpt_btn(Elm_Object_Item *nf_it, gl_ui_xpt_btn_e ui_btn, bool 
 {
 	Evas_Object *btn = NULL;
 	btn = _gl_ui_get_xpt_btn(nf_it, ui_btn);
-	if (btn)
+	if (btn) {
 		elm_object_disabled_set(btn, b_disabled);
-	else
+	} else {
 		gl_dbgE("Failed to get xpt button!");
+	}
 	return 0;
 }
 
@@ -227,7 +229,7 @@ Evas_Object *_gl_ui_create_gridview_ly(void *data, Evas_Object *parent)
 
 	Evas_Object *layout = NULL;
 	layout = gl_ui_load_edj(ad->maininfo.naviframe, GL_EDJ_FILE,
-				GL_GRP_GRIDVIEW);
+	                        GL_GRP_GRIDVIEW);
 	evas_object_show(layout);
 
 	return layout;
@@ -246,7 +248,7 @@ gl_icon_type_e _gl_ui_elm_bg_file_set(Evas_Object *bg, gl_item *git)
 }
 
 int _gl_ui_set_content(Evas_Object *layout, const char *part,
-		       Evas_Object *new_content)
+                       Evas_Object *new_content)
 {
 	GL_CHECK_VAL(layout, -1);
 	GL_CHECK_VAL(new_content, -1);
@@ -273,10 +275,10 @@ int _gl_ui_set_toolbar_state(void *data, bool b_hide)
 	GL_CHECK_VAL(navi_it, -1);
 	if (b_hide)
 		elm_object_item_signal_emit(navi_it, "elm,state,toolbar,instant_close",
-					     "");
+		                            "");
 	else
 		elm_object_item_signal_emit(navi_it, "elm,state,toolbar,instant_open",
-					     "");
+		                            "");
 	return 0;
 
 }
@@ -305,17 +307,17 @@ int _gl_ui_add_conform_cbs(void *data)
 
 	/* Get conformant */
 	conform = (Evas_Object *)evas_object_data_get(naviframe,
-						      GL_NAVIFRAME_OBJ_DATA_KEY);
+	          GL_NAVIFRAME_OBJ_DATA_KEY);
 	GL_CHECK_VAL(conform, -1);
 
 	evas_object_smart_callback_add(conform, GL_IMF_ON,
-				       __gl_ui_show_title_toolbar, data);
+	                               __gl_ui_show_title_toolbar, data);
 	evas_object_smart_callback_add(conform, GL_IMF_OFF,
-				       __gl_ui_hide_title_toolbar, data);
+	                               __gl_ui_hide_title_toolbar, data);
 	evas_object_smart_callback_add(conform, GL_STA_ON,
-				       __gl_ui_show_title_toolbar, data);
+	                               __gl_ui_show_title_toolbar, data);
 	evas_object_smart_callback_add(conform, GL_STA_OFF,
-				       __gl_ui_hide_title_toolbar, data);
+	                               __gl_ui_hide_title_toolbar, data);
 	return 0;
 }
 
@@ -326,17 +328,17 @@ int _gl_ui_del_conform_cbs(Evas_Object *naviframe)
 
 	/* Get conformant */
 	conform = (Evas_Object *)evas_object_data_get(naviframe,
-						      GL_NAVIFRAME_OBJ_DATA_KEY);
+	          GL_NAVIFRAME_OBJ_DATA_KEY);
 	GL_CHECK_VAL(conform, -1);
 
 	evas_object_smart_callback_del(conform, GL_IMF_ON,
-				       __gl_ui_show_title_toolbar);
+	                               __gl_ui_show_title_toolbar);
 	evas_object_smart_callback_del(conform, GL_IMF_OFF,
-				       __gl_ui_hide_title_toolbar);
+	                               __gl_ui_hide_title_toolbar);
 	evas_object_smart_callback_del(conform, GL_STA_ON,
-				       __gl_ui_show_title_toolbar);
+	                               __gl_ui_show_title_toolbar);
 	evas_object_smart_callback_del(conform, GL_STA_OFF,
-				       __gl_ui_hide_title_toolbar);
+	                               __gl_ui_hide_title_toolbar);
 	return 0;
 }
 
@@ -348,7 +350,7 @@ int _gl_ui_set_conform_overlap(Evas_Object *naviframe)
 
 	/* Get conformant */
 	conform = (Evas_Object *)evas_object_data_get(naviframe,
-						      GL_NAVIFRAME_OBJ_DATA_KEY);
+	          GL_NAVIFRAME_OBJ_DATA_KEY);
 	GL_CHECK_VAL(conform, -1);
 	/* Modify to start content from 0,0 */
 	elm_object_signal_emit(conform, "elm,state,indicator,overlap", "");
@@ -358,15 +360,17 @@ int _gl_ui_set_conform_overlap(Evas_Object *naviframe)
 
 int _gl_ui_disable_btn(Evas_Object *btn)
 {
-	if (btn)
+	if (btn) {
 		elm_object_disabled_set(btn, EINA_TRUE);
+	}
 	return 0;
 }
 
 int _gl_ui_enable_btn(Evas_Object *btn)
 {
-	if (btn)
+	if (btn) {
 		elm_object_disabled_set(btn, EINA_FALSE);
+	}
 	return 0;
 }
 
@@ -377,14 +381,15 @@ int _gl_ui_disable_menu(Elm_Object_Item *nf_it, bool b_disabled)
 	Evas_Object *btn = NULL;
 	gl_dbg("more: %d", b_disabled);
 	btn = elm_object_item_part_content_get(nf_it, GL_NAVIFRAME_MORE);
-	if (btn)
+	if (btn) {
 		elm_object_disabled_set(btn, b_disabled);
+	}
 	return 0;
 }
 
 /* Get button*/
 Evas_Object *_gl_ui_get_btn(void *data, Elm_Object_Item *nf_it,
-			    const char *part)
+                            const char *part)
 {
 	Elm_Object_Item *_nf_it = nf_it;
 
@@ -400,7 +405,7 @@ Evas_Object *_gl_ui_get_btn(void *data, Elm_Object_Item *nf_it,
 
 /* Update all realized items's checkbox */
 int _gl_ui_update_realized_list_ck(Evas_Object *view, const char *part,
-				   Eina_Bool state)
+                                   Eina_Bool state)
 {
 	GL_CHECK_VAL(part, -1);
 	GL_CHECK_VAL(view, -1);
@@ -422,7 +427,7 @@ int _gl_ui_update_realized_list_ck(Evas_Object *view, const char *part,
 }
 
 int _gl_ui_update_realized_grid_ck(Evas_Object *view, const char *part1,
-				   const char *part2, Eina_Bool state)
+                                   const char *part2, Eina_Bool state)
 {
 	GL_CHECK_VAL(view, -1);
 	Eina_List *grid = NULL;
@@ -437,16 +442,18 @@ int _gl_ui_update_realized_grid_ck(Evas_Object *view, const char *part1,
 			gl_dbgE("Invalid item!");
 			continue;
 		}
-		if (part1)
+		if (part1) {
 			_gl_ui_set_checkbox_state(it, part1, state);
-		if (part2)
+		}
+		if (part2) {
 			_gl_ui_set_checkbox_state(it, part2, state);
+		}
 	}
 	return 0;
 }
 
 int _gl_ui_set_checkbox_state(Elm_Object_Item *it, const char *part,
-			      Eina_Bool state)
+                              Eina_Bool state)
 {
 	GL_CHECK_VAL(part, -1);
 	GL_CHECK_VAL(it, -1);
@@ -458,8 +465,9 @@ int _gl_ui_set_checkbox_state(Elm_Object_Item *it, const char *part,
 		return -1;
 	}
 
-	if (elm_check_state_get(ck) != state)
+	if (elm_check_state_get(ck) != state) {
 		elm_check_state_set(ck, state);
+	}
 	return 0;
 }
 
@@ -476,8 +484,9 @@ int _gl_ui_update_realized_list_field(Evas_Object *view, const char *part)
 	GL_CHECK_VAL(list, -1);
 
 	EINA_LIST_FOREACH(list, l, it) {
-		if (_gl_ui_update_list_field(it, part) < 0)
+		if (_gl_ui_update_list_field(it, part) < 0) {
 			return -1;
+		}
 	}
 	return 0;
 }
@@ -487,7 +496,7 @@ int _gl_ui_update_list_field(Elm_Object_Item *it, const char *part)
 	GL_CHECK_VAL(part, -1);
 	GL_CHECK_VAL(it, -1);
 	elm_genlist_item_fields_update(it, part,
-				       ELM_GENLIST_ITEM_FIELD_CONTENT);
+	                               ELM_GENLIST_ITEM_FIELD_CONTENT);
 	return 0;
 }
 
@@ -541,8 +550,9 @@ int _gl_ui_restore_scroller_pos(Evas_Object *obj)
 	w = (Evas_Coord)evas_object_data_get(obj, "prev_scroller_w");
 	h = (Evas_Coord)evas_object_data_get(obj, "prev_scroller_h");
 	gl_dbg("(%dx%d), (%dx%d)", x, y, w, h);
-	if (w > 0 && h > 0)
+	if (w > 0 && h > 0) {
 		elm_scroller_region_show(obj, x, y, w, h);
+	}
 	return 0;
 }
 
@@ -601,8 +611,9 @@ int _gl_ui_set_translate_str(Evas_Object *obj, const char *str)
 	GL_CHECK_VAL(str, -1);
 	GL_CHECK_VAL(obj, -1);
 	char *domain = GL_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM"))
+	if (strstr(str, "IDS_COM")) {
 		domain = GL_STR_DOMAIN_SYS;
+	}
 	elm_object_domain_translatable_text_set(obj, domain, str);
 	return 0;
 }
@@ -612,35 +623,38 @@ int _gl_ui_set_translatable_item(Elm_Object_Item *nf_it, const char *str)
 	GL_CHECK_VAL(str, -1);
 	GL_CHECK_VAL(nf_it, -1);
 	char *domain = GL_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM"))
+	if (strstr(str, "IDS_COM")) {
 		domain = GL_STR_DOMAIN_SYS;
+	}
 	elm_object_item_domain_text_translatable_set(nf_it, domain, EINA_TRUE);
 	return 0;
 }
 
 int _gl_ui_set_translatable_item_part(Elm_Object_Item *nf_it, const char *part,
-				      const char *str)
+                                      const char *str)
 {
 	GL_CHECK_VAL(str, -1);
 	GL_CHECK_VAL(nf_it, -1);
 	char *domain = GL_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM"))
+	if (strstr(str, "IDS_COM")) {
 		domain = GL_STR_DOMAIN_SYS;
+	}
 	elm_object_item_domain_part_text_translatable_set(nf_it, part, domain,
-							  EINA_TRUE);
+	        EINA_TRUE);
 	return 0;
 }
 
 int _gl_ui_set_translate_part_str(Evas_Object *obj, const char *part,
-				  const char *str)
+                                  const char *str)
 {
 	GL_CHECK_VAL(str, -1);
 	GL_CHECK_VAL(part, -1);
 	GL_CHECK_VAL(obj, -1);
 
 	char *domain = GL_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM"))
+	if (strstr(str, "IDS_COM")) {
 		domain = GL_STR_DOMAIN_SYS;
+	}
 	elm_object_domain_translatable_part_text_set(obj, part, domain, str);
 	return 0;
 }
@@ -719,7 +733,7 @@ int _gl_ui_update_navi_title_text(Elm_Object_Item *nf_it, int sel_cnt, bool b_la
 }
 
 int _gl_ui_add_selall_ck(Evas_Object *parent, char *part, char *part_btn,
-			  Evas_Smart_Cb cb_func, void *data)
+                         Evas_Smart_Cb cb_func, void *data)
 {
 	GL_CHECK_VAL(data, -1);
 	GL_CHECK_VAL(parent, -1);
@@ -756,8 +770,9 @@ int _gl_show_grid_checks(Evas_Object *view, const char *ck_part)
 	Elm_Object_Item *last_it = NULL;
 	first_it = elm_gengrid_first_item_get(view);
 	last_it = elm_gengrid_last_item_get(view);
-	if (first_it)
+	if (first_it) {
 		elm_gengrid_item_update(first_it);
+	}
 	while (first_it) {
 		next_it = elm_gengrid_item_next_get(first_it);
 		if (next_it == NULL) {
@@ -784,8 +799,9 @@ int _gl_show_grid_checks_dual(Evas_Object *view, const char *ck_part, const char
 	Elm_Object_Item *last_it = NULL;
 	first_it = elm_gengrid_first_item_get(view);
 	last_it = elm_gengrid_last_item_get(view);
-	if (first_it)
+	if (first_it) {
 		elm_gengrid_item_update(first_it);
+	}
 	while (first_it) {
 		next_it = elm_gengrid_item_next_get(first_it);
 		if (next_it == NULL) {
