@@ -135,9 +135,6 @@ INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/res/black_theme/images DESTINATION ${RESDI
 # install content shortcut uri file
 INSTALL(FILES ${CMAKE_SOURCE_DIR}/${RSRC_DIR}/gallery.uri DESTINATION /usr/share/miregex)
 
-# install smack rule file
-INSTALL(FILES ${CMAKE_SOURCE_DIR}/org.tizen.gallery.efl DESTINATION  /etc/smack/accesses.d)
-
 # install application HOME directory
 INSTALL(DIRECTORY DESTINATION /opt/usr/apps/${PKGNAME}/data)
 

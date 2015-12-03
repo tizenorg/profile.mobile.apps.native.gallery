@@ -87,7 +87,6 @@ chown -R 5000:5000 %{_appdatadir}/org.tizen.gallery/data
 %{_appdir}/org.tizen.gallery/res/locale/*
 /usr/share/icons/default/small/org.tizen.gallery.png
 /usr/share/icons/default/small/preview_gallery_4x4.png
-/etc/smack/accesses.d/org.tizen.gallery.efl
 %{_appdir}/org.tizen.gallery/res/images/*
 %{_appdir}/org.tizen.gallery/res/edje/*
 %{_appdatadir}/org.tizen.gallery/data
