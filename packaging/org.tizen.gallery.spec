@@ -1,10 +1,3 @@
-%define _optdir	/opt/usr
-%define _usrdir	/usr
-%define _appdir	%{_usrdir}/apps
-%define _appdatadir	%{_optdir}/apps
-
-%define _datadir /opt%{_ugdir}/data
-%define _sharedir /opt/usr/media/.iv
 Name:       org.tizen.gallery
 Summary:    org.tizen.gallery UX
 Version:    1.3.21
@@ -40,6 +33,7 @@ BuildRequires: pkgconfig(widget_service)
 BuildRequires: pkgconfig(widget)
 BuildRequires: pkgconfig(widget_provider)
 BuildRequires: pkgconfig(widget_provider_app)
+BuildRequires: pkgconfig(libtzplatform-config)
 
 %description
 Description: org.tizen.gallery UX
@@ -48,6 +42,11 @@ Description: org.tizen.gallery UX
 %setup -q
 
 %build
+
+%define _appdir	%{TZ_SYS_RO_APP}
+%define _app_icon_dir             %{TZ_SYS_RO_ICONS}/default/small
+%define _app_share_packages_dir   %{TZ_SYS_RO_PACKAGES}
+%define _app_license_dir          %{TZ_SYS_SHARE}/license
 
 %if 0%{?tizen_build_binary_release_type_eng}
 export CFLAGS="$CFLAGS -DTIZEN_ENGINEER_MODE"
@@ -59,38 +58,27 @@ export FFLAGS="$FFLAGS -DTIZEN_ENGINEER_MODE"
 CXXFLAGS+=" -D_ARCH_ARM_ -mfpu=neon"
 %endif
 
-cmake . -DCMAKE_INSTALL_PREFIX=%{_appdir}/org.tizen.gallery  -DCMAKE_DATA_DIR=%{_datadir} -DARCH=%{ARCH}
+cmake . -DCMAKE_INSTALL_PREFIX=%{_appdir}/org.tizen.gallery \
+	-DARCH=%{ARCH} \
+	-DCMAKE_APP_ICON_DIR=%{_app_icon_dir} \
+	-DCMAKE_APP_SHARE_PACKAGES_DIR=%{_app_share_packages_dir}
 
 make %{?jobs:-j%jobs}
 
-%install
-rm -rf %{buildroot}
-if [ ! -d %{buildroot}/opt/usr/apps/org.tizen.gallery/data ]
-then
-        mkdir -p %{buildroot}/opt/usr/apps/org.tizen.gallery/data
-fi
-
 %make_install
 
-mkdir -p %{buildroot}/usr/share/license
-mkdir -p %{buildroot}%{_sharedir}
-cp LICENSE %{buildroot}/usr/share/license/org.tizen.gallery
-
-%post
-chown -R 5000:5000 %{_appdatadir}/org.tizen.gallery/data
-%postun
+mkdir -p %{buildroot}%{_app_license_dir}
+cp LICENSE %{buildroot}%{_app_license_dir}/org.tizen.gallery
 
 %files -n org.tizen.gallery
 %manifest org.tizen.gallery.manifest
 %defattr(-,root,root,-)
 %{_appdir}/org.tizen.gallery/bin/*
 %{_appdir}/org.tizen.gallery/res/locale/*
-/usr/share/icons/default/small/org.tizen.gallery.png
-/usr/share/icons/default/small/preview_gallery_4x4.png
+%{TZ_SYS_RO_ICONS}/default/small/org.tizen.gallery.png
+%{TZ_SYS_RO_ICONS}/default/small/preview_gallery_4x4.png
 %{_appdir}/org.tizen.gallery/res/images/*
 %{_appdir}/org.tizen.gallery/res/edje/*
-%{_appdatadir}/org.tizen.gallery/data
-/usr/share/packages/org.tizen.gallery.xml
-/usr/share/miregex/*
-/usr/share/license/org.tizen.gallery
+%{TZ_SYS_RO_PACKAGES}/org.tizen.gallery.xml
+%{TZ_SYS_SHARE}/license/org.tizen.gallery
 
