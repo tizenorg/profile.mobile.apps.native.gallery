@@ -33,7 +33,8 @@ SET(BINDIR "${PREFIX}/bin")
 SET(RESDIR "${PREFIX}/res")
 SET(DATADIR "${PREFIX}/data")
 SET(LOCALEDIR "${RESDIR}/locale")
-SET(ICONDIR "/usr/share/icons/default/small")
+#SET(ICONDIR "/usr/share/icons/default/small")
+SET(ICONDIR "${CMAKE_APP_ICON_DIR}")
 SET(EDJDIR "${RESDIR}/edje")
 
 IF("${CMAKE_BUILD_TYPE}" STREQUAL "")
@@ -61,6 +62,7 @@ pkg_check_modules(pkgs REQUIRED
 	capi-content-media-content
 	capi-system-system-settings
 	capi-appfw-widget-application
+	libtzplatform-config
 )
 
 FOREACH(flag ${pkgs_CFLAGS})
@@ -126,14 +128,11 @@ INSTALL(FILES ${CMAKE_BINARY_DIR}/gallery.edj DESTINATION ${EDJDIR})
 INSTALL(FILES ${CMAKE_BINARY_DIR}/gl-images.edj DESTINATION ${EDJDIR})
 
 # install manifest file & icon
-INSTALL(FILES ${CMAKE_BINARY_DIR}/${PKGNAME}.xml DESTINATION /usr/share/packages)
+INSTALL(FILES ${CMAKE_BINARY_DIR}/${PKGNAME}.xml DESTINATION ${CMAKE_APP_SHARE_PACKAGES_DIR})
 INSTALL(FILES ${CMAKE_SOURCE_DIR}/${RSRC_DIR}/icon/${PKGNAME}.png DESTINATION ${ICONDIR})
 INSTALL(FILES ${CMAKE_SOURCE_DIR}/widget/res/preview_gallery_4x4.png DESTINATION ${ICONDIR})
 
 INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/res/black_theme/images DESTINATION ${RESDIR})
-
-# install content shortcut uri file
-INSTALL(FILES ${CMAKE_SOURCE_DIR}/${RSRC_DIR}/gallery.uri DESTINATION /usr/share/miregex)
 
 # install application HOME directory
 INSTALL(DIRECTORY DESTINATION /opt/usr/apps/${PKGNAME}/data)
