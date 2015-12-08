@@ -115,5 +115,8 @@
         <category name="http://tizen.org/widget/default"></category>
         <support-size preview="/usr/share/icons/default/small/preview_gallery_4x4.png">4x4</support-size>
     </widget-application>
+	<privileges>
+		 <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+	</privileges>
 
 </manifest>
