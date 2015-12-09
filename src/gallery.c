@@ -85,6 +85,10 @@ static void _gallery_resume(void *data)
 	}
 	/* Video palyer was close when pause Gallery */
 	ad->uginfo.b_app_called = false;
+
+	if (ad->albuminfo.nocontents) {
+		gl_albums_update_view(data);
+	}
 	_gl_entry_resume_view(ad);
 }
 
