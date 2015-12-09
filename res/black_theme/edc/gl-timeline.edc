@@ -20,6 +20,9 @@
 #define TIME_VIEW_GENLIST_STYLE(NAME, Y) \
 		group{ \
 			name: "elm/genlist/item/"#NAME"/default"; \
+			alias: "elm/genlist/item_compress/"#NAME"/default"; \
+			alias: "elm/genlist/tree/"#NAME"/default"; \
+			alias: "elm/genlist/tree_compress/"#NAME"/default";\
 			data.item: "contents" "elm.swallow"; \
 			data.item: "selectraise" "on"; \
 			data.item: "stacking" "above"; \
@@ -1460,6 +1463,9 @@ group{ name: "timeline_gridview_date_toast";
 
 group{
 	name: "elm/genlist/item/genlist_group_date/default";
+	alias: "elm/genlist/item_compress/genlist_group_date/default";
+	alias: "elm/genlist/tree/genlist_group_date/default";
+	alias: "elm/genlist/tree_compress/genlist_group_date/default";
 	data.item: "texts" "elm.text";
 	data.item: "contents" "elm.swallow";
 	data.item: "selectraise" "on";
