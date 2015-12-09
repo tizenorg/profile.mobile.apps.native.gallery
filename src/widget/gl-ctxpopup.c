@@ -331,7 +331,7 @@ int _gl_ctxpopup_create(void *data, Evas_Object *but, ctx_append_cb append_cb)
 	Evas_Object *ctxpopup = elm_ctxpopup_add(ad->maininfo.naviframe);
 	eext_object_event_callback_add(ctxpopup, EEXT_CALLBACK_BACK, eext_ctxpopup_back_cb, NULL);
 	eext_object_event_callback_add(ctxpopup, EEXT_CALLBACK_MORE, eext_ctxpopup_back_cb, NULL);
-	elm_object_style_set(ctxpopup, GL_CTXPOPUP_STYLE_MORE);
+//	elm_object_style_set(ctxpopup, GL_CTXPOPUP_STYLE_MORE);
 	/* more btn is needed to decide ctxpopup's position. */
 	evas_object_data_set(ctxpopup, GL_CTXPOPUP_OBJ_MORE_BTN_KEY, but);
 	evas_object_data_set(ctxpopup, GL_CTXPOPUP_OBJ_ROTATE_KEY,
