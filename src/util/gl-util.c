@@ -2495,6 +2495,7 @@ char *_gl_get_edje_path(void)
 		return NULL;
 	}
 	snprintf(edj_path, 1024, "%s%s/%s", path , "edje", GL_EDJ_FILE);
+	free(path);
 	return strdup(edj_path);
 }
 
