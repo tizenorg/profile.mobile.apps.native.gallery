@@ -256,6 +256,7 @@ int gl_remove_album(void *data, gl_cluster *album_item, bool is_hide);
 int _gl_free_selected_list(void *data);
 int _gl_dlopen_imageviewer(void *data);
 int _gl_dlclose_imageviewer(void *data);
+char * _gl_get_edje_path(void);
 
 #ifdef __cplusplus
 }

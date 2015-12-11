@@ -296,8 +296,10 @@ Evas_Object *_gl_rotate_bg_add(Evas_Object *parent, bool b_preload)
 	GL_CHECK_NULL(bg_data);
 
 	Evas_Object *base = NULL;
-	base = _gl_rotate_bg_add_layout(parent, GL_EDJ_FILE,
+	char *path = _gl_get_edje_path();
+	base = _gl_rotate_bg_add_layout(parent, path,
 	                                GL_ROTATE_BG_GROUP);
+	free(path);
 	if (base == NULL) {
 		GL_FREE(bg_data);
 		return NULL;

@@ -1465,8 +1465,10 @@ void _gl_list_pop_create(void *data, Evas_Object *obj, void *ei, char *title, ch
 
 	Evas_Object *ly = elm_layout_add(popup);
 	Evas_Object *ly1 = elm_layout_add(ly);
-	elm_layout_file_set(ly, GL_EDJ_FILE, "list_popup_swallow_ly");
-	elm_layout_file_set(ly1, GL_EDJ_FILE, "list_popup_content_ly");
+	char *path = _gl_get_edje_path();
+	elm_layout_file_set(ly, path, "list_popup_swallow_ly");
+	elm_layout_file_set(ly1, path, "list_popup_content_ly");
+	free(path);
 	_gl_ui_set_translate_part_str(ly1, "elm.text", first_text);
 	_gl_ui_set_translate_part_str(ly1, "elm.text.second", second_text);
 
@@ -1773,9 +1775,11 @@ int _gl_popup_create_copy_move(void *data, void *sel_cb, void *cb_data)
 	                       __gl_popup_menu_get_genlist_text, __gl_popup_menu_get_genlist_content,
 	                       _gl_genlist_item_apend);
 	Evas_Object *ly = elm_layout_add(popup);
-	elm_layout_file_set(ly, GL_EDJ_FILE, "list_popup_swallow_ly");
+	char *path = _gl_get_edje_path();
+	elm_layout_file_set(ly, path, "list_popup_swallow_ly");
 	Evas_Object *ly1 = elm_layout_add(popup);
-	elm_layout_file_set(ly1, GL_EDJ_FILE, "list_popup_content_ly");
+	elm_layout_file_set(ly1, path, "list_popup_content_ly");
+	free(path);
 	elm_object_part_content_set(ly, "list", genlist);
 	elm_object_content_set(popup, ly);
 	int w, h;

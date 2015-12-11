@@ -86,7 +86,9 @@ int gl_pb_make_thread_pbar_wheel(void *data, Evas_Object *parent, char *title)
 	eext_object_event_callback_add(popup, EEXT_CALLBACK_BACK,
 	                               __gl_pb_cancel_thread_pbar_cb, data);
 	Evas_Object *popupLayout = elm_layout_add(popup);
-	elm_layout_file_set(popupLayout, GL_EDJ_FILE, "popup_text_progressbar_view_layout");
+	char *path = _gl_get_edje_path();
+	elm_layout_file_set(popupLayout, path, "popup_text_progressbar_view_layout");
+	free(path);
 	evas_object_size_hint_weight_set(popupLayout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_show(popupLayout);
 
@@ -217,7 +219,9 @@ Evas_Object *gl_pb_make_pbar(void *data, Evas_Object *parent, char *state)
 	evas_object_show(label);
 
 	layout = elm_layout_add(popup);
-	elm_layout_file_set(layout, GL_EDJ_FILE, "popup_processing");
+	char *path = _gl_get_edje_path();
+	elm_layout_file_set(layout, path, "popup_processing");
+	free(path);
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND,
 	                                 EVAS_HINT_EXPAND);
 

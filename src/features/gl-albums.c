@@ -430,7 +430,9 @@ static Evas_Object *__gl_albums_get_content(void *data, Evas_Object *obj,
 		}
 		char cnt[GL_ALBUM_NAME_LEN_MAX] = { 0, };
 		Evas_Object *layout = elm_layout_add(obj);
-		elm_layout_file_set(layout, GL_EDJ_FILE, "ceter_algined_text_layout");
+		char *path = _gl_get_edje_path();
+		elm_layout_file_set(layout, path, "ceter_algined_text_layout");
+		free(path);
 		char *i18n_name = _gl_get_i18n_album_name(album_item->cluster);
 		elm_layout_text_set(layout, "elm.text", elm_entry_utf8_to_markup(_gl_str(i18n_name)));
 		snprintf(cnt, sizeof(cnt), "(%d)", (int)(album_item->cluster->count));
@@ -503,7 +505,9 @@ static Evas_Object *__gl_albums_get_content_split_view(void *data, Evas_Object *
 	if (!g_strcmp0(part, "elm.text.name.swallow")) {
 		char cnt[GL_ALBUM_NAME_LEN_MAX] = { 0, };
 		Evas_Object *layout = elm_layout_add(obj);
-		elm_layout_file_set(layout, GL_EDJ_FILE, "ceter_algined_text_layout_split_view");
+		char *path = _gl_get_edje_path();
+		elm_layout_file_set(layout, path, "ceter_algined_text_layout_split_view");
+		free(path);
 		char *i18n_name = _gl_get_i18n_album_name(album_item->cluster);
 		elm_layout_text_set(layout, "elm.text", _gl_str(i18n_name));
 		snprintf(cnt, sizeof(cnt), "(%d)", (int)(album_item->cluster->count));

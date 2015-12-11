@@ -23,6 +23,7 @@
 #include <efl_extension.h>
 
 #include "gl-data.h"
+#include "gl-util.h"
 
 #ifndef EXPORT_API
 #define EXPORT_API __attribute__ ((visibility("default")))
@@ -58,7 +59,7 @@ extern "C"
 
 /******** EDJ File path ********/
 
-#define GL_EDJ_FILE EDJDIR "/" PACKAGE ".edj"
+#define GL_EDJ_FILE "gallery.edj"
 
 /******** Groups name ********/
 
