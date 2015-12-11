@@ -387,7 +387,10 @@ int _gl_main_create_view(gl_appdata *ad)
 	GL_PROFILE_IN;
 	GL_CHECK_VAL(ad, -1);
 
-	elm_theme_extension_add(NULL, GL_EDJ_FILE);
+	char *path = _gl_get_edje_path();
+	GL_CHECK_VAL(path, -1);
+	elm_theme_extension_add(NULL, path);
+	free(path);
 	/* Set initial rotate angle */
 	ad->maininfo.rotate_mode = APP_DEVICE_ORIENTATION_0;
 	gl_dbg("Initial rotation mode: %d", ad->maininfo.rotate_mode);
@@ -459,7 +462,10 @@ int _gl_main_clear_view(gl_appdata *ad)
 	evas_object_smart_callback_del(ad->maininfo.win, "wm,rotation,changed",
 	                               __gl_main_win_rot_changed_cb);
 	_gl_ctxpopup_del(ad);
-	elm_theme_extension_del(NULL, GL_EDJ_FILE);
+	char *path = _gl_get_edje_path();
+	GL_CHECK_VAL(path, -1);
+	elm_theme_extension_del(NULL, path);
+	free(path);
 	return 0;
 }
 

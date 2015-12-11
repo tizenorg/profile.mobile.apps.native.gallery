@@ -2487,3 +2487,14 @@ int _gl_dlclose_imageviewer(void *data)
 	return -1;
 }
 
+char *_gl_get_edje_path(void)
+{
+	char edj_path[1024] = {0};
+	char *path = app_get_resource_path();
+	if (!path) {
+		return NULL;
+	}
+	snprintf(edj_path, 1024, "%s%s/%s", path , "edje", GL_EDJ_FILE);
+	return strdup(edj_path);
+}
+

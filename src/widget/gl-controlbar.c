@@ -111,7 +111,10 @@ Evas_Object *_gl_ctrl_add_layout(Evas_Object *parent)
 {
 	GL_CHECK_NULL(parent);
 	Evas_Object *layout = NULL;
-	layout = gl_ui_load_edj(parent, GL_EDJ_FILE, GL_GRP_CONTROLBAR);
+	char *path = _gl_get_edje_path();
+	GL_CHECK_NULL(path);
+	layout = gl_ui_load_edj(parent, path, GL_GRP_CONTROLBAR);
+	free(path);
 	GL_CHECK_NULL(layout);
 	evas_object_show(layout);
 	return layout;

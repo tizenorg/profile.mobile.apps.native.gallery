@@ -223,7 +223,10 @@ int _gl_entry_create_view(void *data, char *name, char *title)
 	_gl_ui_set_translate_part_str(popup, "title,text", title);
 
 	entry_ly = elm_layout_add(popup);
-	elm_layout_file_set(entry_ly, GL_EDJ_FILE, "popup_input_text");
+	char *path = _gl_get_edje_path();
+	GL_CHECK_VAL(path, -1);
+	elm_layout_file_set(entry_ly, path, "popup_input_text");
+	free(path);
 
 	Evas_Object *entry = elm_entry_add(entry_ly);
 	if (entry == NULL) {

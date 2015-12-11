@@ -718,6 +718,8 @@ static Evas_Object *__gl_timeline_add_page_ly(Evas_Object *parent,
 	GL_CHECK_NULL(parent);
 	Evas_Object *ly = NULL;
 
+	char *path = _gl_get_edje_path();
+	GL_CHECK_NULL(path);
 	char *group = NULL;
 	if (it_d->h > it_d->w) {
 		group = g_strdup_printf("gallery/timeline_%d", it_d->count);
@@ -725,7 +727,8 @@ static Evas_Object *__gl_timeline_add_page_ly(Evas_Object *parent,
 		group = g_strdup_printf("gallery/timeline_%dl", it_d->count);
 	}
 
-	ly = gl_ui_load_edj(parent, GL_EDJ_FILE, group);
+	ly = gl_ui_load_edj(parent, path, group);
+	free(path);
 	GL_GFREE(group);
 	GL_CHECK_NULL(ly);
 
@@ -2661,7 +2664,10 @@ Evas_Object *_gl_grid_layout_add(Evas_Object *parent)
 {
 	Evas_Object *layout = NULL;
 	layout = elm_layout_add(parent);
-	elm_layout_file_set(layout, GL_EDJ_FILE, "timeline_gridview");
+	char *path = _gl_get_edje_path();
+	GL_CHECK_NULL(path);
+	elm_layout_file_set(layout, path, "timeline_gridview");
+	free(path);
 	evas_object_size_hint_align_set(layout, EVAS_HINT_FILL, EVAS_HINT_FILL);
 	evas_object_show(layout);
 
@@ -3146,7 +3152,10 @@ static Evas_Object *__gl_timeline_create_list_view(gl_timeline_s *timeline_d, bo
 
 	layout = elm_layout_add(timeline_d->parent);
 	GL_CHECK_NULL(layout);
-	elm_layout_file_set(layout, GL_EDJ_FILE, "timeline_gridview_date_toast");
+	char *path = _gl_get_edje_path();
+	GL_CHECK_NULL(path);
+	elm_layout_file_set(layout, path, "timeline_gridview_date_toast");
+	free(path);
 	timeline_d->date_layout = layout;
 
 	if (_gl_timeline_create_grid_view(timeline_d, genlist, update) < 0) {
@@ -4559,7 +4568,10 @@ int _gl_timeline_create_view(void *data, Evas_Object *parent)
 	timeline_d->time_media_display_order = TIME_ORDER_DESC;
 	ad->pinchinfo.zoom_level = GL_ZOOM_IN_ONE;
 
-	layout = gl_ui_load_edj(parent, GL_EDJ_FILE, "timeline");
+	char *path = _gl_get_edje_path();
+	GL_CHECK_VAL(path, -1);
+	layout = gl_ui_load_edj(parent, path, "timeline");
+	free(path);
 	if (layout == NULL) {
 		gl_dbgE("Failed to create layout!");
 		goto GL_TIMELINE_FAILED;
