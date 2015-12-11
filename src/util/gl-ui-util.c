@@ -228,8 +228,11 @@ Evas_Object *_gl_ui_create_gridview_ly(void *data, Evas_Object *parent)
 	gl_dbg("");
 
 	Evas_Object *layout = NULL;
-	layout = gl_ui_load_edj(ad->maininfo.naviframe, GL_EDJ_FILE,
+	char *path = _gl_get_edje_path();
+	GL_CHECK_NULL(path);
+	layout = gl_ui_load_edj(ad->maininfo.naviframe, path,
 	                        GL_GRP_GRIDVIEW);
+	free(path);
 	evas_object_show(layout);
 
 	return layout;
