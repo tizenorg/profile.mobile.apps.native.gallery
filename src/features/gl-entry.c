@@ -252,7 +252,9 @@ int _gl_entry_create_view(void *data, char *name, char *title)
 	/* Set callback */
 	char *new_name = NULL;
 	char *full_path = NULL;
-	full_path = (char *)_gl_fs_get_unique_new_album_name(GL_DEFAULT_PATH_IMAGES, GL_STR_ID_ALBUM_DEFAULT, &new_name);
+	char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+	GL_CHECK_VAL(default_images_path, -1);
+	full_path = (char *)_gl_fs_get_unique_new_album_name(default_images_path, GL_STR_ID_ALBUM_DEFAULT, &new_name);
 	__gl_editfield_set_entry(ad, entry_ly, entry, new_name);
 	elm_entry_select_all(entry);
 	GL_FREEIF(new_name);

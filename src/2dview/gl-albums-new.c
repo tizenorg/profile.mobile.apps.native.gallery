@@ -126,13 +126,15 @@ int _gl_albums_new_process(void *data, bool b_enter)
 		}
 		return -1;
 	}
+	char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+	GL_CHECK_VAL(default_images_path, -1);
 	gl_sdbg("Valid album name: %s", name);
 
 	/* Check whether the new folder exist */
 	char new_path[GL_DIR_PATH_LEN_MAX] = { 0, };
 
 	/* Make dir full new_path of new album */
-	snprintf(new_path, GL_DIR_PATH_LEN_MAX, "%s/%s", GL_DEFAULT_PATH_IMAGES,
+	snprintf(new_path, GL_DIR_PATH_LEN_MAX, "%s/%s", default_images_path,
 	         name);
 	gl_sdbg("New dir new_path: %s", new_path);
 #ifdef _RENAME_ALBUM_SENSITIVE
@@ -141,7 +143,7 @@ int _gl_albums_new_process(void *data, bool b_enter)
 	{
 		memset(new_path, 0x00, GL_DIR_PATH_LEN_MAX);
 		snprintf(new_path, GL_DIR_PATH_LEN_MAX, "%s/%s",
-		         GL_DEFAULT_PATH_IMAGES, name);
+				default_images_path, name);
 		gl_sdbg("New dir new_path: %s", new_path);
 		int res = gl_file_dir_is_empty(new_path);
 		/**
@@ -154,9 +156,11 @@ int _gl_albums_new_process(void *data, bool b_enter)
 			gl_dbgW("New folder already exists!");
 			_gl_popup_create_local(data, GL_POPUP_NOBUT,
 			                       GL_STR_ID_SAME_NAME_ALREADY_IN_USE);
+			GL_FREE(default_images_path);
 			return -1;
 		}
 	}
+	GL_FREE(default_images_path);
 
 	/* Save new album name */
 	char *new_album = ad->albuminfo.new_name;
