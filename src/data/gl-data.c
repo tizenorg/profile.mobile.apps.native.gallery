@@ -30,6 +30,7 @@
 #include "gl-db-update.h"
 #include "gl-file-util.h"
 #include "gl-data-util.h"
+#include "gl-util.h"
 
 static int __gl_data_append_gitems(void *data, Eina_List *elist, int store_type,
                                    Eina_List **p_elist)
@@ -237,9 +238,11 @@ static int __gl_data_get_cluster_list(void *data, bool b_update)
 			*/
 			if (default_album) {
 				/* album 'Camera' is in phone, set it before MMC album 'Camera' */
-				if (_gl_data_check_root_type(f_data->path, GL_ROOT_PATH_PHONE)) {
+				char *phone_root_path = _gl_get_root_directory_path(STORAGE_TYPE_INTERNAL);
+				if (phone_root_path && _gl_data_check_root_type(f_data->path, phone_root_path)) {
 					ad->albuminfo.elist->clist = eina_list_prepend(ad->albuminfo.elist->clist,
 					                             gcluster);
+					free(phone_root_path);
 				} else {
 					ad->albuminfo.elist->clist = eina_list_append_relative(ad->albuminfo.elist->clist,
 					                             gcluster,
@@ -417,7 +420,11 @@ bool _gl_data_is_default_album(const char *match_folder, gl_album_s *album)
 		gl_sdbg("Parent path: %s.", parent_path);
 
 		/* And parent folder is Phone root path, it's default folder */
-		return (!g_strcmp0(parent_path, GL_ROOT_PATH_PHONE));
+		char *phone_root_path = _gl_get_root_directory_path(STORAGE_TYPE_INTERNAL);
+		if (phone_root_path && !g_strcmp0(parent_path, phone_root_path)) {
+			free(phone_root_path);
+			return true;
+		}
 	}
 
 	return false;
@@ -440,7 +447,11 @@ bool _gl_data_is_screenshot_album(const char *match_folder, gl_album_s *album)
 		_gl_data_util_get_file_dir_name(album->path, NULL, NULL,
 		                                parent_path);
 		/* And parent folder is Phone Image path, it's default folder */
-		return (!g_strcmp0(parent_path, GL_DEFAULT_PATH_PICTURES));
+		char *default_picture_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+		if (default_picture_path && !g_strcmp0(parent_path, default_picture_path)) {
+			GL_FREE(default_picture_path);
+			return true;
+		}
 	}
 
 	return false;
@@ -460,13 +471,17 @@ bool _gl_data_is_camera_album(gl_album_s *album)
 		char *parent_path = (char *)calloc(1, GL_DIR_PATH_LEN_MAX);
 		GL_CHECK_FALSE(parent_path);
 
-		const char *root = NULL;
+		char *root = NULL;
 		if (album->type == GL_STORE_T_PHONE) {
-			root = GL_ROOT_PATH_PHONE;
+			root = _gl_get_root_directory_path(STORAGE_TYPE_INTERNAL);
 		} else {
-			root = GL_ROOT_PATH_MMC;
+			root = _gl_get_root_directory_path(STORAGE_TYPE_EXTERNAL);
 		}
 
+		if (!root) {
+			GL_GFREE(parent_path);
+			return false;
+		}
 		gl_sdbg("Full path: %s", album->path);
 		_gl_data_util_get_file_dir_name(album->path, NULL, NULL,
 		                                parent_path);
@@ -481,6 +496,7 @@ bool _gl_data_is_camera_album(gl_album_s *album)
 		bool ret = false;
 		ret = !g_strcmp0(dcim_path, parent_path);
 
+		GL_GFREE(root);
 		GL_GFREE(parent_path);
 		GL_GFREE(dcim_path);
 		return ret;
@@ -1702,12 +1718,18 @@ bool _gl_data_is_root_path(const char *path)
 		return false;
 	}
 
-	if (!g_strcmp0(GL_ROOT_PATH_PHONE, path) ||
-	        !g_strcmp0(GL_ROOT_PATH_MMC, path)) {
+	char *phone_root_path = _gl_get_root_directory_path(STORAGE_TYPE_INTERNAL);
+	char *mmc_root_path = _gl_get_root_directory_path(STORAGE_TYPE_EXTERNAL);
+
+	if ((phone_root_path && !g_strcmp0(phone_root_path, path)) ||
+	        (mmc_root_path && !g_strcmp0(mmc_root_path, path))) {
 		gl_sdbg("Root path: %s", path);
+		GL_GFREEIF(phone_root_path);
+		GL_GFREEIF(mmc_root_path);
 		return true;
 	}
-
+	GL_GFREEIF(phone_root_path);
+	GL_GFREEIF(mmc_root_path);
 	return false;
 }
 

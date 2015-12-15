@@ -166,9 +166,12 @@ static int __gl_albums_rename_process(void *data, bool b_enter)
 	char parent[GL_DIR_PATH_LEN_MAX] = { 0, };
 
 	if (b_root_path) {
+		char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+		GL_CHECK_VAL(default_images_path, -1);
 		snprintf(new_path, GL_DIR_PATH_LEN_MAX, "%s/%s",
-		         GL_DEFAULT_PATH_IMAGES, name);
-		g_strlcpy(parent, GL_DEFAULT_PATH_IMAGES, GL_DIR_PATH_LEN_MAX);
+				default_images_path, name);
+		g_strlcpy(parent, default_images_path, GL_DIR_PATH_LEN_MAX);
+		GL_FREE(default_images_path);
 	} else {
 		g_strlcpy(new_path, old_path, GL_DIR_PATH_LEN_MAX);
 		g_strlcpy(parent, old_path, GL_DIR_PATH_LEN_MAX);
