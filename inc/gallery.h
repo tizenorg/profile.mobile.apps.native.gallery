@@ -21,7 +21,7 @@
 #include <pthread.h>
 #include <app.h>
 #include <efl_extension.h>
-
+#include <storage.h>
 #include "gl-data.h"
 #include "gl-util.h"
 
@@ -53,6 +53,21 @@ extern "C"
 #if !defined(IMAGEDIR)
 #  define IMAGEDIR APPDIR"/res/images/"
 #endif
+
+static inline char * get_path(int storage_directory_type)
+{
+	char *path = NULL;
+	storage_get_directory(STORAGE_TYPE_INTERNAL, storage_directory_type, &path);
+	return path;
+}
+
+static inline char * get_root_path(int storage_type)
+{
+	char *path = NULL;
+	storage_get_root_directory(storage_type, &path);
+	return path;
+}
+
 
 #define PKGNAME_GALLERY "org.tizen.gallery"
 #define GL_APP_DEFAULT_ICON_DIR "/usr/share/icons/default/small"
@@ -212,11 +227,12 @@ extern "C"
 #define GL_ERROR_BUF_LEN 1024
 
 /* File system related String definition */
-#define GL_ROOT_PATH_PHONE		"/opt/usr/media"
-#define GL_ROOT_PATH_MMC	"/opt/storage/sdcard"
-#define GL_DEFAULT_PATH_IMAGES GL_ROOT_PATH_PHONE"/Pictures" // refer to s4
-#define GL_DEFAULT_PATH_PICTURES GL_ROOT_PATH_PHONE"/Images"
-#define GL_DOWNLOADS_PATH GL_ROOT_PATH_PHONE"/Downloads"
+#define GL_ROOT_PATH_PHONE		get_root_path(STORAGE_TYPE_INTERNAL)
+#define GL_ROOT_PATH_MMC	get_root_path(STORAGE_TYPE_EXTERNAL)
+#define GL_DEFAULT_PATH_IMAGES get_path(STORAGE_DIRECTORY_IMAGES)
+
+#define GL_DEFAULT_PATH_PICTURES GL_DEFAULT_PATH_IMAGES
+#define GL_DOWNLOADS_PATH get_path(STORAGE_DIRECTORY_DOWNLOADS)
 #define GL_DATA_FOLDER_PATH "/opt/usr/apps/"PKGNAME_GALLERY"/data"
 
 #define GL_NAVIFRAME_OBJ_DATA_KEY "gl_naviframe_data_key"
