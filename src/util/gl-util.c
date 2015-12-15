@@ -256,9 +256,12 @@ static bool _gl_check_mmc_file_selected(void *data)
 		gitem = _gl_data_selected_list_get_nth(ad, i);
 		/* File on MMC is selected */
 		if (gitem && gitem->item && gitem->item->file_url) {
-			on_mmc = strncmp(GL_ROOT_PATH_MMC,
+			char *mmc_root_path = _gl_get_root_directory_path(STORAGE_TYPE_EXTERNAL);
+			GL_CHECK_FALSE(mmc_root_path);
+			on_mmc = strncmp(mmc_root_path,
 			                 gitem->item->file_url,
-			                 strlen(GL_ROOT_PATH_MMC));
+			                 strlen(mmc_root_path));
+			GL_FREEIF(mmc_root_path);
 			if (on_mmc == 0) {
 				return true;
 			}
@@ -614,12 +617,16 @@ bool gl_make_new_album(const char *name)
 	gl_dbg("");
 	char path[GL_DIR_PATH_LEN_MAX] = { 0, };
 
-	snprintf(path, GL_DIR_PATH_LEN_MAX, "%s/%s", GL_DEFAULT_PATH_IMAGES, name);
+	char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+	GL_CHECK_FALSE(default_images_path);
+
+	snprintf(path, GL_DIR_PATH_LEN_MAX, "%s/%s", default_images_path, name);
 	path[strlen(path)] = '\0';
 	gl_sdbg("Making %s directory", path);
 
-	_gl_fs_mkdir(GL_DEFAULT_PATH_IMAGES);
+	_gl_fs_mkdir(default_images_path);
 	bool isSuccessful = _gl_fs_mkdir(path);
+	GL_FREE(default_images_path);
 	return isSuccessful;
 }
 
@@ -667,9 +674,12 @@ int _gl_move_media_thumb(void *data, gl_item *gitem, char *new_dir_name,
 			*popup_op = GL_POPUP_OP_DUPLICATED_NAME;
 		}
 	} else {
+		char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+		GL_CHECK_VAL(default_images_path, -1);
 		snprintf(new_path, GL_FILE_PATH_LEN_MAX, "%s/%s/%s",
-		         GL_DEFAULT_PATH_IMAGES, new_dir_name,
+				default_images_path, new_dir_name,
 		         (char *)(gitem->item->display_name));
+		GL_FREE(default_images_path);
 	}
 
 	new_path[strlen(new_path)] = '\0';
@@ -827,9 +837,12 @@ int _gl_move_media(gl_item *gitem, char *new_dir_name, bool is_full_path)
 			GL_FREE(final_path);
 		}
 	} else {
+		char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+		GL_CHECK_VAL(default_images_path, -1);
 		snprintf(new_path, GL_FILE_PATH_LEN_MAX, "%s/%s/%s",
-		         GL_DEFAULT_PATH_IMAGES, new_dir_name,
+				default_images_path, new_dir_name,
 		         (char *)(gitem->item->display_name));
+		GL_FREE(default_images_path);
 	}
 
 	new_path[strlen(new_path)] = '\0';
@@ -922,6 +935,8 @@ int gl_check_mmc_state(void *data, char *dest_folder)
 	}
 
 	int on_mmc = -1;
+	char *mmc_root_path = _gl_get_root_directory_path(STORAGE_TYPE_EXTERNAL);
+	GL_CHECK_VAL(mmc_root_path, -1);
 	/**
 	* 1, Places: Add tag;
 	* 2, Tags: Add tag/remove tag;
@@ -929,8 +944,8 @@ int gl_check_mmc_state(void *data, char *dest_folder)
 	*/
 	/* Move files to MMC album */
 	if (dest_folder) {
-		on_mmc = strncmp(GL_ROOT_PATH_MMC, dest_folder,
-		                 strlen(GL_ROOT_PATH_MMC));
+		on_mmc = strncmp(mmc_root_path, dest_folder,
+		                 strlen(mmc_root_path));
 		if (on_mmc == 0) {
 			goto ON_MMC;
 		}
@@ -944,8 +959,8 @@ int gl_check_mmc_state(void *data, char *dest_folder)
 	GL_CHECK_VAL(cur_album->cluster->uuid, -1);
 	g_strlcpy(src_folder_path, cur_album->cluster->path,
 	          GL_DIR_PATH_LEN_MAX);
-	on_mmc = strncmp(GL_ROOT_PATH_MMC, src_folder_path,
-	                 strlen(GL_ROOT_PATH_MMC));
+	on_mmc = strncmp(mmc_root_path, src_folder_path,
+	                 strlen(mmc_root_path));
 	/* Check MMC files selected in album [All albums] */
 	if (on_mmc == 0) {
 		goto ON_MMC;
@@ -955,11 +970,13 @@ int gl_check_mmc_state(void *data, char *dest_folder)
 			goto ON_MMC;
 		}
 	}
+	GL_FREEIF(mmc_root_path);
 	return 0;
 
 ON_MMC:
 	gl_dbgW("Operate medias on MMC!");
 	ad->maininfo.mmc_state = GL_MMC_STATE_ADDED_MOVING;
+	GL_FREEIF(mmc_root_path);
 	return 0;
 }
 
@@ -1794,8 +1811,11 @@ int gl_move_copy_to_album(void *data)
 			gl_dbgE("Failed to make a new directory!");
 			goto GL_FAILED;
 		}
+		char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+		GL_CHECK_VAL(default_images_path, -1);
 		snprintf(folder_fullpath, GL_DIR_PATH_LEN_MAX, "%s/%s",
-		         GL_DEFAULT_PATH_IMAGES, ad->albuminfo.new_name);
+				default_images_path, ad->albuminfo.new_name);
+		GL_FREE(default_images_path);
 	} else {
 		g_strlcpy(folder_fullpath, ad->albuminfo.path,
 		          GL_DIR_PATH_LEN_MAX);
@@ -2499,3 +2519,16 @@ char *_gl_get_edje_path(void)
 	return strdup(edj_path);
 }
 
+char *_gl_get_directory_path(int storage_directory_type)
+{
+	char *path = NULL;
+	storage_get_directory(STORAGE_TYPE_INTERNAL, storage_directory_type, &path);
+	return path;
+}
+
+char *_gl_get_root_directory_path(int storage_type)
+{
+	char *path = NULL;
+	storage_get_root_directory(storage_type, &path);
+	return path;
+}

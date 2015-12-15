@@ -21,7 +21,7 @@
 #include <pthread.h>
 #include <app.h>
 #include <efl_extension.h>
-
+#include <storage.h>
 #include "gl-data.h"
 #include "gl-util.h"
 
@@ -212,11 +212,6 @@ extern "C"
 #define GL_ERROR_BUF_LEN 1024
 
 /* File system related String definition */
-#define GL_ROOT_PATH_PHONE		"/opt/usr/media"
-#define GL_ROOT_PATH_MMC	"/opt/storage/sdcard"
-#define GL_DEFAULT_PATH_IMAGES GL_ROOT_PATH_PHONE"/Pictures" // refer to s4
-#define GL_DEFAULT_PATH_PICTURES GL_ROOT_PATH_PHONE"/Images"
-#define GL_DOWNLOADS_PATH GL_ROOT_PATH_PHONE"/Downloads"
 #define GL_DATA_FOLDER_PATH "/opt/usr/apps/"PKGNAME_GALLERY"/data"
 
 #define GL_NAVIFRAME_OBJ_DATA_KEY "gl_naviframe_data_key"

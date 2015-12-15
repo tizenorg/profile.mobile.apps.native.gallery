@@ -26,6 +26,7 @@
 #include "gl-debug.h"
 #include "gl-thread-util.h"
 #include "gl-file-util.h"
+#include "gl-util.h"
 #include <storage.h>
 
 static int __gl_fs_free_node(gl_node_info_s *pnode)
@@ -876,9 +877,13 @@ int _gl_fs_get_default_folder(char *path)
 {
 	int len = 0;
 	GL_CHECK_VAL(path, -1);
+	char *phone_root_path = _gl_get_root_directory_path(STORAGE_TYPE_INTERNAL);
+	GL_CHECK_VAL(phone_root_path, -1);
 
 	len = snprintf(path, GL_DIR_PATH_LEN_MAX, "%s",
-	               GL_ROOT_PATH_PHONE);
+			phone_root_path);
+	GL_GFREEIF(phone_root_path);
+
 	if (len < 0) {
 		gl_dbgE("snprintf returns failure!");
 		return -1;
@@ -887,14 +892,17 @@ int _gl_fs_get_default_folder(char *path)
 		len = -1;
 	}
 
-	len = g_strlcat(path, GL_DEFAULT_PATH_IMAGES,
+	char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+	GL_CHECK_VAL(default_images_path, -1);
+	len = g_strlcat(path, default_images_path,
 	                GL_DIR_PATH_LEN_MAX);
+	GL_GFREEIF(default_images_path);
+
 	if (len >= GL_DIR_PATH_LEN_MAX) {
 		gl_dbgE("strlcat returns failure(%d)!", len);
 		return -1;
 	}
 	gl_sdbg("Default images path: %s.", path);
-
 	return 0;
 }
 

@@ -3763,8 +3763,13 @@ static int __gl_timeline_move_copy(void *data)
 			gl_dbgE("Failed to make a new directory!");
 			goto GL_FAILED;
 		}
+		char *default_images_path = _gl_get_directory_path(STORAGE_DIRECTORY_IMAGES);
+		 if (!default_images_path) {
+			 goto GL_FAILED;
+		 }
 		snprintf(folder_fullpath, GL_DIR_PATH_LEN_MAX, "%s/%s",
-		         GL_DEFAULT_PATH_IMAGES, ad->albuminfo.new_name);
+				default_images_path, ad->albuminfo.new_name);
+		GL_FREE(default_images_path);
 	} else {
 		g_strlcpy(folder_fullpath, ad->albuminfo.path,
 		          GL_DIR_PATH_LEN_MAX);

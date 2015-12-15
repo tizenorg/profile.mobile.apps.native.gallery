@@ -24,6 +24,7 @@ extern "C" {
 
 #include "gl-data.h"
 #include "gallery.h"
+#include <storage.h>
 
 /*	File system related String definition	*/
 
@@ -257,6 +258,8 @@ int _gl_free_selected_list(void *data);
 int _gl_dlopen_imageviewer(void *data);
 int _gl_dlclose_imageviewer(void *data);
 char *_gl_get_edje_path(void);
+char *_gl_get_directory_path(int storage_directory_type);
+char *_gl_get_root_directory_path(int storage_type);
 
 #ifdef __cplusplus
 }
