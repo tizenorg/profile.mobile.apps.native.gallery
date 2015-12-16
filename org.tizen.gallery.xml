@@ -116,7 +116,10 @@
         <support-size preview="/usr/share/icons/default/small/preview_gallery_4x4.png">4x4</support-size>
     </widget-application>
 	<privileges>
-		 <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+		<privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+		<privilege>http://tizen.org/privilege/externalstorage</privilege>
+		<privilege>http://tizen.org/privilege/content.write</privilege>
+		<privilege>http://tizen.org/privilege/mediastorage</privilege>
 	</privileges>
 
 </manifest>
