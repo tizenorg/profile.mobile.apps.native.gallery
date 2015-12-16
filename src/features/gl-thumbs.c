@@ -273,9 +273,7 @@ static void __gl_thumbs_check_changed(void *data, Evas_Object *obj, void *ei)
 			                            "elm,state,elm.text.badge,hidden",
 			                            "elm");
 		}
-#if 0
 		elm_gengrid_item_fields_update(gitem->album->item, "elm.text.badge", ELM_GENGRID_ITEM_FIELD_TEXT);
-#endif
 	}
 	_gl_notify_check_selall(ad, nf_it, ad->gridinfo.count, album_select_count);
 	/* Update the label text */

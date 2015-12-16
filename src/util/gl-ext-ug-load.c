@@ -182,9 +182,7 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 			                            "elm,state,elm.text.badge,hidden",
 			                            "elm");
 		}
-#if 0
 		elm_gengrid_item_fields_update(data->album->item, "elm.text.badge", ELM_GENGRID_ITEM_FIELD_TEXT);
-#endif
 	}
 	int total_selected_count = eina_list_count(ad->selinfo.elist) + eina_list_count(ad->selinfo.fav_elist);
 	int item_cnt = eina_list_count(ad->gridinfo.medias_elist);
