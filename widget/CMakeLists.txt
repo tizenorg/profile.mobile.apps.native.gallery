@@ -17,10 +17,7 @@ pkg_check_modules(app_pkgs REQUIRED
     evas
     appcore-efl
     dlog
-    widget
     widget_service
-    widget_provider_app
-    widget_provider
 )
 
 ADD_DEFINITIONS(${app_pkgs_CFLAGS})

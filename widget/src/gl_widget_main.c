@@ -20,10 +20,8 @@
 #include <app.h>
 #include <dlog.h>
 
-#include <widget.h>
 #include <widget_errno.h>
 #include <widget_service.h>
-#include <widget_provider_app.h>
 #include <widget_app.h>
 #include <widget_app_efl.h>
 

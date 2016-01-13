@@ -30,9 +30,6 @@ BuildRequires: capi-appfw-widget-application-devel
 BuildRequires: pkgconfig(capi-content-media-content)
 BuildRequires: pkgconfig(capi-system-system-settings)
 BuildRequires: pkgconfig(widget_service)
-BuildRequires: pkgconfig(widget)
-BuildRequires: pkgconfig(widget_provider)
-BuildRequires: pkgconfig(widget_provider_app)
 BuildRequires: pkgconfig(libtzplatform-config)
 
 %description
