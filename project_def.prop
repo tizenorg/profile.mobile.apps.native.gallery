@@ -1,7 +1,7 @@
 APPNAME = gallery
 
 type = app
-profile = mobile-2.4
+profile = mobile-3.0
 
 USER_SRCS = src/gallery.c
 USER_DEFS =
