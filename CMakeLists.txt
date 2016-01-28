@@ -61,6 +61,7 @@ pkg_check_modules(pkgs REQUIRED
 	capi-content-media-content
 	capi-system-system-settings
 	capi-appfw-widget-application
+	libtzplatform-config
 )
 
 FOREACH(flag ${pkgs_CFLAGS})

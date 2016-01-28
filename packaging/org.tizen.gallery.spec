@@ -30,6 +30,7 @@ BuildRequires: capi-appfw-widget-application-devel
 BuildRequires: pkgconfig(capi-content-media-content)
 BuildRequires: pkgconfig(capi-system-system-settings)
 BuildRequires: pkgconfig(widget_service)
+BuildRequires: pkgconfig(libtzplatform-config)
 
 %description
 Description: org.tizen.gallery UX
