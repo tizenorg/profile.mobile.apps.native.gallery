@@ -2142,6 +2142,12 @@ int _gl_thumbs_update_label_text(Elm_Object_Item *nf_it, int sel_cnt,
 int _gl_thumbs_update_lang(void *data)
 {
 	GL_CHECK_VAL(data, -1);
+	gl_appdata *ad = (gl_appdata *)data;
+	_gl_thumbs_update_view(data);
+
+	if (ad->gridinfo.title) {
+		_gl_ui_change_navi_title(ad->gridinfo.nf_it, ad->gridinfo.title, true);
+	}
 	return 0;
 }
 
