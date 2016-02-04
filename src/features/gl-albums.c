@@ -1409,7 +1409,7 @@ int gl_albums_open_album(gl_cluster *album)
 	}
 	char *i18n_name = _gl_get_i18n_album_name(album->cluster);
 	gl_sdbg("Album: %s, UUID: %s", i18n_name, album->cluster->uuid);
-	ad->gridinfo.title = album->cluster->uuid;
+	ad->gridinfo.title = strdup(album->cluster->uuid);
 	_gl_albums_set_current(ad, album);
 	Eina_List *medias_elist = NULL;
 	_gl_data_get_items_album(ad, album, GL_FIRST_VIEW_START_POS,
