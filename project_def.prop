@@ -1,11 +1,73 @@
+
+# Project Name
 APPNAME = gallery
 
+# Project Type
 type = app
+
+# Project Profile
 profile = mobile-3.0
 
-USER_SRCS = src/gallery.c
-USER_DEFS =
-USER_INC_DIRS = inc
-USER_OBJS =
-USER_LIBS =
-USER_EDCS =
+# C Sources
+USER_SRCS = src/widget/gl-editfield.c src/features/gl-pinchzoom.c src/widget/gl-progressbar.c src/2dview/gl-albums-edit.c src/2dview/gl-albums-rename.c src/widget/gl-controlbar.c src/util/gl-ext-exec.c src/features/gl-albums-sel.c src/util/gl-db-update.c src/data/gl-data-type.c src/gallery.c src/widget/gl-rotate-bg.c src/util/gl-ta.c src/widget/gl-tile.c src/widget/gl-gesture.c src/util/gl-util.c src/util/gl-ext-ug-load.c src/features/gl-thumbs.c src/data/gl-local-data.c src/widget/gl-nocontents.c src/widget/gl-popup.c src/util/gl-thread-util.c src/widget/gl-button.c src/widget/gl-ctxpopup.c src/features/gl-thumbs-edit.c src/util/gl-debug.c src/data/gl-data-util.c src/2dview/gl-albums-new.c src/util/gl-fs.c src/features/gl-main.c src/widget/gl-thumb.c src/data/gl-data.c src/util/gl-exif.c src/features/gl-albums.c src/2dview/gl-timeline.c src/util/gl-ui-util.c src/util/gl-file-util.c src/util/gl-lang.c src/features/gl-entry.c src/features/gl-thumbs-sel.c src/widget/gl-notify.c 
+
+# EDC Sources
+USER_EDCS =  
+
+# PO Sources
+USER_POS = res/po/ca.po res/po/fr_CA.po res/po/en_PH.po res/po/en_US.po res/po/ka.po res/po/uk.po res/po/et.po res/po/lt.po res/po/lv.po res/po/ro.po res/po/sv.po res/po/da.po res/po/tr_TR.po res/po/zh_HK.po res/po/uz.po res/po/hy.po res/po/az.po res/po/ja_JP.po res/po/ar.po res/po/it_IT.po res/po/fi.po res/po/sk.po res/po/ga.po res/po/pt_PT.po res/po/el_GR.po res/po/hu.po res/po/ko_KR.po res/po/zh_CN.po res/po/hi.po res/po/mk.po res/po/sr.po res/po/nl.po res/po/es_ES.po res/po/fr.po res/po/kk.po res/po/zh_TW.po res/po/hr.po res/po/ru_RU.po res/po/gl.po res/po/pt_BR.po res/po/eu.po res/po/nb.po res/po/is.po res/po/pl.po res/po/en.po res/po/de.po res/po/bg.po res/po/sl.po res/po/cs.po res/po/es_US.po 
+
+# User Defines
+USER_DEFS = _USE_DLOG_ _USE_SECURE_LOG_ _USE_ROTATE_BG _RENAME_ALBUM_SENSITIVE _USE_OPENGL_BACKEND _USE_ALBUM_SHARE _USE_GRID_CHECK 
+USER_CPP_DEFS = 
+
+# User Undefines
+USER_UNDEFS = 
+USER_CPP_UNDEFS = 
+
+# User Libraries
+USER_LIBS = 
+
+# User Objects
+USER_OBJS = 
+USER_OBJS_ABS = 
+
+# User Includes
+## C Compiler
+USER_INC_DIRS = inc src/2dview inc/data inc/features inc/util inc/widget 
+USER_INC_DIRS_ABS = 
+USER_INC_FILES = 
+USER_INC_FILES_ABS = 
+## C++ Compiler
+USER_CPP_INC_DIRS = 
+USER_CPP_INC_DIRS_ABS = 
+USER_CPP_INC_FILES = 
+USER_CPP_INC_FILES_ABS = 
+
+# User Library Path
+USER_LIB_DIRS = 
+USER_LIB_DIRS_ABS = 
+
+# EDC Resource Path
+USER_EDCS_IMAGE_DIRS = edje/images res/black_theme/images res/black_theme/images_edc res/black_theme/edc/images 
+USER_EDCS_IMAGE_DIRS_ABS = 
+USER_EDCS_SOUND_DIRS = edje/sounds res/black_theme/edc/sounds 
+USER_EDCS_SOUND_DIRS_ABS = 
+USER_EDCS_FONT_DIRS = edje/fonts 
+USER_EDCS_FONT_DIRS_ABS = 
+
+# EDC Flags
+USER_EXT_EDC_KEYS = EDC0 
+
+USER_EXT_EDC0_EDCS = res/black_theme/images_edc/gl-images.edc res/black_theme/edc/gallery.edc 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images res/black_theme/images res/black_theme/images_edc res/black_theme/edc/images 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
+USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds res/black_theme/edc/sounds 
+USER_EXT_EDC0_EDCS_SOUND_DIRS_ABS = 
+USER_EXT_EDC0_EDCS_FONT_DIRS = edje/fonts 
+USER_EXT_EDC0_EDCS_FONT_DIRS_ABS = 
+
+# Resource Filter
+USER_RES_INCLUDE = 
+USER_RES_EXCLUDE = 
+
