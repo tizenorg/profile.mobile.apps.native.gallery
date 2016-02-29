@@ -164,7 +164,8 @@ static Eina_Bool gl_widget_animator_cb(void *data)
 
 				index = widget_data->images_count;
 				if (index != widget_data->selected_count - 1) {
-					strcpy(widget_data->selected_images[index], widget_data->selected_images[widget_data->selected_count - 1]);
+					strncpy(widget_data->selected_images[index], widget_data->selected_images[widget_data->selected_count - 1],
+							strlen(widget_data->selected_images[widget_data->selected_count - 1]));
 				} else {
 					widget_data->images_count = 0;
 				}
@@ -251,7 +252,8 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 
 		index = widget_data->images_count;
 		if (index != widget_data->selected_count - 1) {
-			strcpy(widget_data->selected_images[index], widget_data->selected_images[widget_data->selected_count - 1]);
+			strncpy(widget_data->selected_images[index], widget_data->selected_images[widget_data->selected_count - 1],
+					strlen(widget_data->selected_images[widget_data->selected_count - 1]));
 		} else {
 			widget_data->images_count = 0;
 		}
