@@ -1,0 +1,746 @@
+/*
+* Copyright (c) 2000-2015 Samsung Electronics Co., Ltd All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+
+/* 720/2 */
+#define ALBUM_ITEM_W 360
+/* 720/2 */
+#define ALBUM_ITEM_H 360
+
+#define CHECK_GAP_L (0)
+#define CHECK_GAP_R (0)
+#define CHECK_GAP_T (15)
+
+#define ALBUM_ICON_GAP_L (0)
+#define ALBUM_ICON_GAP_R (0)
+#define ALBUM_ICON_GAP_T (0)
+#define ALBUM_ICON_GAP_B (0)
+
+#define ALBUM_ICON_W (ALBUM_ITEM_W-ALBUM_ICON_GAP_L-ALBUM_ICON_GAP_R)
+#define ALBUM_ICON_H (ALBUM_ITEM_H-ALBUM_ICON_GAP_T-ALBUM_ICON_GAP_B)
+
+#define ALBUM_RENAME_R_PAD 2
+#define ALBUM_RENAME_B_PAD 2
+
+#define ALBUM_TEXT_BG_W 195
+/* 7 + 31 + 31*/
+#define ALBUM_TEXT_BG_H 70
+#define ALBUM_TEXT_GAP_L 10
+#define ALBUM_TEXT_GAP_R 8
+#define ALBUM_TEXT_GAP_T 6
+#define ALBUM_TEXT_SNS_X 60
+#define ALBUM_TEXT_DATE_H 31
+
+#define ALBUM_TYPE_GAP_T 8
+
+#define ALBUM_NAME_COLOR_INC 0 0 0 255
+#define ALBUM_COUNT_SHADOW_COLOR_INC 0 0 0 0
+
+#define ALBUM_NAME_TEXT_SIZE 18
+#define SPLIT_ALBUM_NAME_TEXT_SIZE 10
+
+#define ALBUM_COUNT_COLOR_INC 0 0 0 255
+#define ALBUM_COUNT_TEXT_SIZE 15
+
+#define ALBUM_TYPE_ICON_W 48
+#define ALBUM_TYPE_ICON_H 48
+
+#define ALBUM_PBAR_W 183
+#define ALBUM_PBAR_H 0
+#define ALBUM_PBAR_GAP_L 6
+#define ALBUM_PBAR_GAP_T 8
+
+#define ALBUM_RENAME_BTN_W 63
+#define ALBUM_RENAME_BTN_H 63
+
+#define ALBUM_CHECKBOX_W 10
+#define ALBUM_CHECKBOX_H 10
+#define ALBUM_CHECKBOX_GAP_L 6
+#define ALBUM_CHECKBOX_GAP_T (6+4)
+
+#define PARTS_PADDING_LEFT(param_padding_name, param_padding_size ) \
+         part { name: param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: param_padding_size 0; \
+               fixed: 1 0; \
+               visible: 0; \
+               rel2.relative: 1.0 0.0; \
+               rel2.offset: -35 0; \
+               align: 0.0 0.0; \
+            } \
+         }
+
+#define PARTS_PADDING_RIGHT(param_padding_name, param_padding_size ) \
+       part { name: param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { state: "default" 0.0; \
+               min: param_padding_size 0; \
+               max: param_padding_size 0; \
+               fixed: 1 0; \
+               visible: 0; \
+               rel1.relative: 1.0  0.0; \
+               align: 1.0 0.0; \
+            } \
+         }
+#define PARTS_PADDING_TOP(param_padding_name, param_padding_size ) \
+       part { name: param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: 0 param_padding_size; \
+               fixed: 0 1; \
+               visible: 0; \
+               rel2.relative: 1.0 0.0; \
+               align: 1.0 0.0; \
+            } \
+         }
+
+#define GL_ALBUM_BG \
+		part { \
+			name: "bg"; \
+			type: RECT; \
+			description { \
+				state: "default" 0.0; \
+				color: 0 0 0 0; \
+				rel1 { relative: 0.0 0.0; } \
+				rel2 { relative: 1.0 1.0; } \
+			} \
+		}
+#define GL_ALBUM_BG_IMAGE \
+		part { \
+			name: "bg_image"; \
+			type: IMAGE; \
+			description { \
+				state: "default" 0.0; \
+				visible: 1; \
+				rel1 { relative: 0.0 0.0; to:"bg"; } \
+				rel2 { relative: 1.0 1.0; to:"bg"; } \
+				image.normal: GALLERY_EDC_IMAGE_ALBUM_BG; \
+				image.middle: 0; \
+			} \
+		}
+
+#define GL_ALBUM_ICON_BG \
+		part { name: "icon_bg"; \
+			type: RECT; \
+			mouse_events: 1; \
+			repeat_events: 1; \
+			scale : 1; \
+			description { \
+				state: "default" 0.0; \
+				color: 0 0 0 0; \
+				rel1 { relative: 0.0 0.0; to:"elm.swallow.icon"; } \
+				rel2 { relative: 1.0 1.0; to:"elm.swallow.icon"; } \
+			} \
+		}
+
+#define GL_ALBUM_ICON \
+		part { \
+			name: "elm.swallow.icon"; \
+			type: SWALLOW; \
+			clip_to: "elm.icon.clipper"; \
+			mouse_events: 1; \
+			description { \
+			state: "default" 0.0; \
+				rel1.to: "elm.icon.clipper"; \
+				rel2.to: "elm.icon.clipper"; \
+			} \
+		} \
+		part { \
+			name: "elm.icon.clipper"; \
+			type: RECT; \
+			description { \
+				state: "default" 0.0; \
+				rel1 { relative: 0 0; offset: 2 2; to:"bg_image"; } \
+				rel2 { relative: 1 270/330; offset: -2 -2; to:"bg_image"; } \
+			} \
+		}
+
+#define GL_ALBUM_LABEL_BG \
+		part { \
+			name: "label_bg"; \
+			type: RECT; \
+			mouse_events: 1; \
+			repeat_events: 1; \
+			description { \
+				state: "default" 0.0; \
+				color: 0 0 0 0; \
+				rel1 { relative: 0 270/330; to:"bg_image"; } \
+				rel2 { relative: 1 1; to:"bg_image"; } \
+			} \
+		}
+
+#define GL_ALBUM_TYPE_ICON \
+		part { \
+			name: "elm.swallow.type_icon"; \
+			type: RECT; \
+			mouse_events: 1; \
+			repeat_events: 1; \
+			description { \
+				state: "default" 0.0; \
+				align: 0.5 0.5; \
+				rel1 { relative: (ALBUM_TEXT_GAP_L+ALBUM_ICON_GAP_L)/ALBUM_ICON_W  0.0; to: "label_bg"; } \
+				rel2 { relative: (ALBUM_TYPE_ICON_W+ALBUM_TEXT_GAP_L+ALBUM_ICON_GAP_L)/ALBUM_ICON_W 1.0; to: "label_bg"; } \
+				color: 0 0 0 0 ; \
+			} \
+		}
+
+#define GL_ALBUM_SD_ICON \
+		part { \
+			name: "elm.swallow.sd_icon"; \
+			type: SWALLOW; \
+			mouse_events: 1; \
+			repeat_events: 1; \
+			description { \
+				state: "default" 0.0; \
+				align: 0.5 0.5; \
+				rel1 { relative: 0.82 0.82; to: "elm.icon.clipper"; } \
+				rel2 { relative: 0.98 0.98; to: "elm.icon.clipper"; } \
+			} \
+		}
+
+#define GL_ALBUM_COUNT \
+		part { \
+			name: "elm.pad.right_count"; \
+			type: RECT; \
+			mouse_events: 1; \
+			repeat_events: 1; \
+			scale: 1; \
+			description { \
+				state: "default" 0.0; \
+				color: 0 0 0 0; \
+				rel1 { relative: 1.0 0.0; to: "label_bg"; } \
+				rel2 { relative: 1.0 1.0; to: "label_bg"; } \
+				min: 20 0; \
+				max: 20 0; \
+				fixed: 1 0; \
+				align: 1.0 0.0; \
+			} \
+		} \
+		part { \
+			name: "elm.text.count"; \
+			type: TEXT; \
+			mouse_events: 1; \
+			effect: FAR_SHADOW TOP; \
+			repeat_events: 1; \
+			scale: 1; \
+			description { \
+				state: "default" 0.0; \
+				visible: 1; \
+				rel1 { relative: 0.0 0.0; to_x: "elm.pad.right_count"; to_y: "label_bg";} \
+				rel2 { relative: 0.0 1.0; to_x: "elm.pad.right_count"; to_y: "label_bg";} \
+				min: 10 0; \
+				fixed: 1 0; \
+				align: 1.0 0.5; \
+				color: ALBUM_COUNT_COLOR_INC; \
+				color2: ALBUM_COUNT_SHADOW_COLOR_INC; \
+				text { \
+					font: "Tizen:style=Bold"; \
+					text_class: "tizen"; \
+					size: ALBUM_COUNT_TEXT_SIZE; \
+					min: 1 0; \
+					align: 1.0 0.5; \
+				} \
+			} \
+		}
+
+#define GL_ALBUM_NAME \
+		part { \
+			name: "elm.text.name"; \
+			type: TEXT; \
+			mouse_events: 1; \
+			repeat_events: 1; \
+			scale: 1; \
+			description { \
+				state: "default" 0.0; \
+				rel1 { relative: 0.0 1.0; to: "elm.icon.clipper"; } \
+				rel2 { relative: 1.0 1.0; offset: 0 48;  to: "elm.icon.clipper"; } \
+				color: ALBUM_NAME_COLOR_INC; \
+				align: 0.5 0.5; \
+				text { \
+					font: "Tizen:style=Bold"; \
+					size: ALBUM_NAME_TEXT_SIZE; \
+					align: 0.5 0.5; \
+				} \
+			} \
+		}
+
+#define GL_ALBUM_PBAR \
+		part { \
+			name: "elm.swallow.progressbar"; \
+			type: SWALLOW; \
+			mouse_events: 1; \
+			repeat_events: 1; \
+			scale: 1; \
+			description { \
+				state: "default" 0.0; \
+				align: 0.0 1.0; \
+				rel1 { relative: 0.0 (ALBUM_ICON_H-ALBUM_PBAR_H)/ALBUM_ICON_H; to: "elm.swallow.icon"; offset: -1 0; } \
+				rel2 { relative: 1.0 1.0; to: "elm.swallow.icon";  offset: -2 0; } \
+			} \
+		}
+
+#define GL_ALBUM_CHECK_GRID \
+		part { \
+			name: "elm.swallow.check_grid"; \
+			type: SWALLOW; \
+			mouse_events: 1; \
+			repeat_events: 1; \
+			description { \
+				state: "default" 0.0; \
+				rel1 { relative: 0.0 0.0; to:"elm.swallow.icon"; } \
+				rel2 { relative: 1.0 1.0; to:"elm.swallow.icon"; } \
+			} \
+		}
+
+#define GL_ALBUM_CHECK \
+		part { \
+			name: "elm.swallow.check"; \
+			mouse_events: 1; \
+			type: SWALLOW; \
+			description { \
+				state: "default" 0.0; \
+				rel1 {relative: 1.0 1.0; to_x: "padding.check.left"; to_y: "padding.check.top"; }\
+				rel2 {relative: 1.0 1.0; to_x: "padding.check.right"; to_y: "padding.check.bottom"; }\
+			} \
+		}
+
+#define GL_ALBUM_DIM \
+		part { \
+			name: "elm.swallow.dim"; \
+			type: SWALLOW; \
+			description { \
+				state: "default" 0.0; \
+				rel1 { relative: 0.0 0.0; to: "elm.swallow.icon"; } \
+				rel2 { relative: 1.0 1.0; to: "elm.swallow.icon"; } \
+			} \
+		}
+
+group {
+	name: "elm/gengrid/item/gallery/albums_view/default";
+
+	data.item: "texts" "elm.text.date elm.text.count";
+	data.item: "contents" "elm.swallow.icon elm.swallow.check elm.swallow.type_icon elm.swallow.sd_icon elm.swallow.progressbar elm.swallow.check_grid elm.swallow.dim elm.text.name.swallow";
+	images {
+		image: GALLERY_EDC_IMAGE_ALBUM_BG COMP;
+		image: GALLERY_EDC_IMAGE_THUMBS_BG_FOCUS COMP;
+	}
+	parts {
+		PARTS_PADDING_LEFT("padding.check.left", CHECK_GAP_L)
+		PARTS_PADDING_LEFT("padding.check.right", CHECK_GAP_L+ALBUM_CHECKBOX_W)
+		PARTS_PADDING_RIGHT("padding.rename.left", CHECK_GAP_R+ALBUM_RENAME_BTN_W)
+		PARTS_PADDING_RIGHT("padding.rename.right", CHECK_GAP_R)
+		PARTS_PADDING_TOP("padding.rename.top", CHECK_GAP_T)
+		PARTS_PADDING_TOP("padding.rename.bottom", CHECK_GAP_T+ALBUM_RENAME_BTN_H)
+		PARTS_PADDING_TOP("padding.check.top", CHECK_GAP_T)
+		PARTS_PADDING_TOP("padding.check.bottom", CHECK_GAP_T+ALBUM_CHECKBOX_H)
+		part { name: "padding.top";
+			type: RECT;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				visible: 1;
+				min: 0 0;
+				max: 0 0;
+				fixed: 1 1;
+				align: 0.0 0.0;
+			}
+			description {
+				state: "show" 0.0;
+				inherit: "default" 0.0;
+				visible: 0;
+				min: 0 0;
+				max: 0 0;
+				fixed: 0 1;
+				rel2 { relative: 1.0 0.0;}
+				align: 0.0 0.0;
+			}
+		}
+		GL_ALBUM_BG
+		part { name: "focus_bg";
+			type: IMAGE;
+			mouse_events: 1;
+			repeat_events: 1;
+			description { state: "default" 0.0;
+				visible: 0;
+				image.normal: GALLERY_EDC_IMAGE_THUMBS_BG_FOCUS;
+				image.border: 13 13 13 13;
+				rel1 { relative: 0.0 0.0; to: "bg_image"; }
+				rel2 { relative: 1.0 270/330; to: "bg_image"; }
+			}
+			description { state: "enabled" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		part {
+			name: "bg_color";
+			type: RECT;
+			description {
+				state: "default" 0.0;
+				rel1.relative: 0 0;
+				rel1.to : "elm.swallow.icon";
+				rel1.offset : 2 2;
+				rel2.relative: 1 1;
+				rel2.to : "elm.swallow.icon";
+				color: 230 230 230 255;
+			}
+		}
+		GL_ALBUM_BG_IMAGE
+		GL_ALBUM_ICON_BG
+		GL_ALBUM_ICON
+		GL_ALBUM_LABEL_BG
+		GL_ALBUM_TYPE_ICON
+		GL_ALBUM_SD_ICON
+		GL_ALBUM_COUNT
+		part {
+			name: "elm.text.name.swallow";
+			type: SWALLOW;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0.0 1.0; to: "elm.icon.clipper"; }
+				rel2 { relative: 1.0 1.0; to: "label_bg"; }
+				color: ALBUM_NAME_COLOR_INC;
+				align: 0.5 0.5;
+			}
+		}
+		GL_ALBUM_PBAR
+
+		GL_ALBUM_CHECK_GRID
+		GL_GENGRID_FOCUS_EVENT("elm.swallow.icon");
+		GL_ALBUM_CHECK
+		GL_ALBUM_DIM
+	}
+	programs {
+		program {
+			name: "show_top_pad";
+			signal: "show_top_pad";
+			source: "padding.top";
+			action: STATE_SET "show" 0.0;
+			target: "padding.top";
+		}
+		program {
+			name: "hide_sd_icon";
+			signal: "hide_sd_icon";
+			source: "elm.swallow.sd_icon";
+			action: STATE_SET "default" 0.0;
+			target: "elm.swallow.sd_icon";
+		}
+		GL_GENGRID_FOCUS("focus_event")
+		GL_GENGRID_SOUND("focus_event")
+		GL_GENGRID_SOUND("elm.swallow.check")
+		GL_GENGRID_PLARY_SOUND
+	}
+}
+group {
+	name: "elm/gengrid/item/gallery/albums_split_view/default";
+
+	data.item: "texts" "elm.text.date elm.text.badge";
+	data.item: "contents" "elm.swallow.icon elm.swallow.delete.count elm.swallow.check_grid elm.swallow.sd_icon elm.text.name.swallow";
+	images {
+		image: GALLERY_EDC_IMAGE_ALBUM_BG COMP;
+		image: GALLERY_EDC_IMAGE_THUMBS_BG_FOCUS COMP;
+		image: GALLERY_EDC_IMAGE_BADGE_BG COMP;
+	}
+	parts {
+		part {
+			name: "bg";
+			type: RECT;
+			description {
+				state: "default" 0.0;
+				rel1.relative: 0 0;
+				rel2.relative: 1 1;
+				color: 0 0 0 0;
+			}
+		}
+		part { name: "padding.top";
+			type: RECT;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				visible: 1;
+				min: 0 0;
+				max: 0 0;
+				fixed: 1 1;
+				align: 0.0 0.0;
+			}
+			description {
+				state: "show" 0.0;
+				inherit: "default" 0.0;
+				visible: 0;
+				min: 0 0;
+				max: 0 0;
+				fixed: 0 1;
+				rel2 { relative: 1.0 0.0;}
+				align: 0.0 0.0;
+			}
+		}
+		part { name: "focus_bg";
+			type: IMAGE;
+			mouse_events: 1;
+			repeat_events: 1;
+			description { state: "default" 0.0;
+				visible: 0;
+				image.normal: GALLERY_EDC_IMAGE_THUMBS_BG_FOCUS;
+				image.border: 13 13 13 13;
+				rel1 { relative: 0.0 0.0; to: "bg"; }
+				rel2 { relative: 1.0 270/330; to: "bg"; }
+			}
+			description { state: "enabled" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		part {
+			name: "elm.icon.clipper";
+			type: RECT;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0 0; offset: 4 4; to:"bg"; }
+				rel2 { relative: 1 270/330; offset: -4 -4; to:"bg"; }
+			}
+		}
+		part {
+			name: "elm.swallow.icon";
+			type: SWALLOW;
+			clip_to: "elm.icon.clipper";
+			mouse_events: 1;
+			description {
+			state: "default" 0.0;
+				rel1.to: "elm.icon.clipper";
+				rel2.to: "elm.icon.clipper";
+			}
+		}
+	    part {
+			name: "elm.swallow.check_grid";
+			type: SWALLOW;
+			clip_to: "elm.icon.clipper";
+			mouse_events: 1;
+			description {
+			state: "default" 0.0;
+				rel1.to: "elm.icon.clipper";
+				rel2.to: "elm.icon.clipper";
+			}
+		}
+		part {
+			name: "elm.text.name.swallow";
+			type: SWALLOW;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				rel1 { relative: 0.0 1.0; to: elm.swallow.icon; }
+				rel2 { relative: 1.0 1.27; to: elm.swallow.icon; }
+				color: 0 0 0 0;
+				align: 0.5 0.5;
+			}
+		}
+		part {
+			name: "elm.swallow.sd_icon";
+			type: SWALLOW;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				align: 0.5 0.5;
+				rel1 { relative: 0.78 0.75; to: "elm.swallow.icon"; }
+				rel2 { relative: 0.98 0.95; to: "elm.swallow.icon"; }
+			}
+		}
+		part {
+			name: "elm.swallow.delete.count";
+			type: SWALLOW;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				align: 0.5 0.5;
+				rel1 { relative: 0.75 0.05; to: "elm.icon.clipper"; }
+				rel2 { relative: 0.95 0.25; to: "elm.icon.clipper"; }
+				color: 255 0 0 255;
+			}
+		}
+		part {
+			name: "padding.badge";
+			type: RECT;
+			scale: 1;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				align: 1.0 0.0;
+				rel1 {
+					relative: 1.0 0.0;
+				}
+				rel2 {
+					relative: 1.0 0.03;
+				}
+				min: 6 2;
+				fixed: 1 1;
+				visible: 0;
+			}
+			description {
+				state: "default" 0.10;
+				inherit: "default" 0.0;
+				min: 10 10;
+			}
+			description {
+				state: "default" 0.06;
+				inherit: "default" 0.0;
+				min: 6 10;
+			}
+			description {
+				state: "default" 0.04;
+				inherit: "default" 0.0;
+				min: 4 10;
+			}
+		}
+		part {
+			name: "elm.image.badge";
+			mouse_events: 0;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				visible: 0;
+				min: 25 25;
+				fixed: 1 1;
+				rel1 {
+					to: "left.padding.text";
+					relative: 0.0 0.0;
+				}
+				rel2 {
+					to: "right.padding.text";
+					relative: 1.0 1.0;
+				}
+				image {
+					normal: GALLERY_EDC_IMAGE_BADGE_BG;
+					border_scale: 1;
+				}
+			}
+			description {
+				state: "visible" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		part {
+			name: "left.padding.text";
+			type: RECT;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				visible: 0;
+				fixed: 1 1;
+				min: 5 25;
+				rel1 {
+					to: "elm.text.badge";
+					relative: 0.0 0.0;
+				}
+				rel2 {
+					to: "elm.text.badge";
+					relative: 0.0 1.0;
+				}
+				align: 1.0 0.0;
+			}
+		}
+		part {
+			name: "right.padding.text";
+			type: RECT;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				visible: 0;
+				fixed: 1 1;
+				min: 5 25;
+				rel1 {
+					to: "padding.badge";
+					relative: 0.0 1.0;
+				}
+				rel2 {
+					to: "padding.badge";
+					relative: 0.0 1.0;
+				}
+				align: 1.0 0.0;
+			}
+		}
+		part {
+			name: "elm.text.badge";
+			type: TEXT;
+			mouse_events: 0;
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				visible: 0;
+				rel1 {
+					to: "right.padding.text";
+					relative: 0.0 0.0;
+				}
+				rel2 {
+					to: "right.padding.text";
+					relative: 0.0 1.0;
+				}
+				min: 12 0;
+				fixed: 1 0;
+				align: 1.0 0.5;
+				color: 250 250 250 255;
+				text {
+					font: "Tizen:style=Bold";
+					size: 12;
+					min: 1 0;
+					text_class: "tizen";
+				}
+			}
+			description {
+				state: "visible" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		GL_GENGRID_FOCUS_EVENT("elm.swallow.icon");
+	}
+	programs {
+		program {
+			name: "show_top_pad";
+			signal: "show_top_pad";
+			source: "padding.top";
+			action: STATE_SET "show" 0.0;
+			target: "padding.top";
+		}
+		program { name: "badge_show";
+			signal: "elm,state,elm.text.badge,visible";
+			source: "elm";
+			action: STATE_SET "visible" 0.0;
+			target: "elm.text.badge";
+			target: "elm.image.badge";
+		}
+		program { name: "badge_hide";
+			signal: "elm,state,elm.text.badge,hidden";
+			source: "elm";
+			action:  STATE_SET "default" 0.0;
+			target: "elm.text.badge";
+			target: "elm.image.badge";
+		}
+		GL_GENGRID_FOCUS("focus_event")
+		GL_GENGRID_SOUND("focus_event")
+		GL_GENGRID_PLARY_SOUND
+	}
+}

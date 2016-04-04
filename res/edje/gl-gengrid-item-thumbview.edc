@@ -1,0 +1,558 @@
+/*
+* Copyright (c) 2000-2015 Samsung Electronics Co., Ltd All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+
+#define W 180
+#define H 126
+#define W2 240
+#define H2 168
+#define W3 360
+#define H3 252
+#define GAP_W 3
+#define GAP_H 3
+#define THUMB_CHECK_W 10
+#define THUMB_CHECK_H 10
+#define THUMB_CHECK_BORDER_L 1
+#define THUMB_CHECK_BORDER_T 10
+#define MODE_W 64
+#define MODE_H 64
+
+#define BURST_W 16
+#define BURST_H 12
+#define BURST_PAD_R 4
+#define BURST_PAD_L 1
+
+/* Favourites icon boundary size */
+#define FAVOR_ICON_W 30
+#define FAVOR_ICON_H 30
+
+#define THUMBS_PARTS_PADDING_LEFT(param_padding_name, param_padding_size) \
+         part { name: param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: param_padding_size 0; \
+               fixed: 1 0; \
+               visible: 0; \
+               rel2.relative: 1.0 0.0; \
+               rel2.offset: -35 0; \
+               align: 0.0 0.0; \
+            } \
+         }
+
+#define THUMBS_PARTS_PADDING_TOP(param_padding_name, param_padding_size) \
+       part { name: param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: 0 param_padding_size; \
+               fixed: 0 1; \
+               visible: 0; \
+               rel2.relative: 1.0 0.0; \
+               align: 1.0 0.0; \
+            } \
+         }
+
+#define PARTS_PADDING_BOT(param_padding_name, param_padding_size) \
+       part { name: param_padding_name; \
+            type: RECT; \
+            scale: 1; \
+            description { \
+               state: "default" 0.0; \
+               min: 0 param_padding_size; \
+               fixed: 0 1; \
+               visible: 0; \
+               rel1.relative: 0.0 1.0; \
+               align: 0.0 1.0; \
+            } \
+         }
+
+#define GL_GRID_PART_ICON_SIZE(w, h) \
+	part { \
+		name: "elm.swallow.icon"; \
+		type: SWALLOW; \
+		clip_to: "elm.icon.clipper"; \
+		description { \
+			state: "default" 0.0; \
+			rel1.to: "elm.icon.clipper"; \
+			rel2.to: "elm.icon.clipper"; \
+		} \
+	} \
+	part { \
+		name: "elm.icon.clipper"; \
+		type: RECT; \
+		description { \
+			state: "default" 0.0; \
+			rel1 { relative: GAP_W/w GAP_H/h;} \
+			rel2 { relative: (w-GAP_W)/w (h-GAP_H)/h;} \
+		} \
+	}
+
+#define GL_GRID_PART_ICON GL_GRID_PART_ICON_SIZE(W, H)
+
+#define GL_GRID_PART_BG \
+	part { \
+		name: "bg"; \
+		type: RECT; \
+		description { \
+			state: "default" 0.0; \
+			color: 0 0 0 0; \
+		} \
+	}
+
+group {
+	name: "elm/gengrid/item/gallery/thumbnail_view/default";
+	data.item: "contents" "elm.swallow.icon elm.swallow.mode elm.swallow.check elm_image_open_icon_swallow elm_image_open_icon_swallow_blocker";
+	images {
+	   image : GALLERY_EDC_IMAGE_THUMBS_BG_FOCUS COMP;
+	   image: GALLERY_EDC_DELETE_SHOW_IMAGE_BG COMP;
+	   image: GALLERY_EDC_DELETE_SHOW_IMAGE COMP;
+	   image: GALLERY_EDC_SD_CARD_ICON COMP;
+	}
+
+	parts {
+		THUMBS_PARTS_PADDING_LEFT("padding.end.left", THUMB_CHECK_BORDER_L);
+		THUMBS_PARTS_PADDING_LEFT("padding.end.right", THUMB_CHECK_BORDER_L+THUMB_CHECK_W);
+		THUMBS_PARTS_PADDING_TOP("padding.end.top", THUMB_CHECK_BORDER_T);
+		THUMBS_PARTS_PADDING_TOP("padding.end.bottom", THUMB_CHECK_BORDER_T+THUMB_CHECK_H);
+		THUMBS_PARTS_PADDING_LEFT("padding.end.left2", GAP_W);
+		THUMBS_PARTS_PADDING_LEFT("padding.end.right2", GAP_W+MODE_W);
+		PARTS_PADDING_BOT("padding.end.top2", GAP_H+MODE_H);
+		PARTS_PADDING_BOT("padding.end.bottom2", GAP_H);
+		GL_GRID_PART_BG
+		part {
+			name: "icon_bg";
+			type: RECT;
+			scale : 1;
+			description {
+				state: "default" 0.0;
+				align: 0.5 0.5;
+				visible: 0;
+				color: 0 0 0 0;
+			}
+		}
+		part {
+			name: "icon_bg_color";
+			type: RECT;
+			scale : 1;
+			description {
+				state: "default" 0.0;
+				align: 0.5 0.5;
+				visible: 1;
+				rel1.to : "elm.swallow.icon";
+				rel1.offset : 2 2;
+				rel2.to : "elm.swallow.icon";
+				color: 230 230 230 255;
+			}
+		}
+		part {
+			name: "elm.swallow.icon";
+			type: SWALLOW;
+			mouse_events: 1;
+			description {
+				state: "default" 0.0;
+				color: 0 0 0 0;
+			}
+		}
+		part {
+			name: "elm.swallow.mode";
+			type: SWALLOW;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				rel1 {relative: 1.0 0.0; to_x: "padding.end.left2"; to_y: "padding.end.top2"; }
+				rel2 {relative: 1.0 0.0; to_x: "padding.end.right2"; to_y: "padding.end.bottom2"; }
+			}
+		}
+		GL_GENGRID_FOCUS_BG
+		part {
+			name: "elm.swallow.check";
+			type: SWALLOW;
+			description {
+				state: "default" 0.0;
+				rel1 {relative: 1.0 1.0; to_x: "padding.end.left"; to_y: "padding.end.top"; }
+				rel2 {relative: 1.0 1.0; to_x: "padding.end.right"; to_y: "padding.end.bottom"; }
+			}
+		}
+		part {
+			name: "sd_card_icon_rect";
+			type: RECT;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				visible: 1;
+				rel1 {relative: 1 1; offset: -42 -42; to: bg; }
+				rel2 {relative: 1 1; offset: -8 -8; to: bg; }
+				min: 36 36;
+				max: 36 36;
+				color: 0 0 0 0;
+			}
+		}
+		part {
+			name: "sd_card_icon_img";
+			type: IMAGE;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				visible: 0;
+				rel1 {relative: 0 0; to: sd_card_icon_rect; }
+				rel2 {relative: 1 1; to: sd_card_icon_rect; }
+				image.normal: GALLERY_EDC_SD_CARD_ICON;
+			}
+			description {
+				state: "show" 0.0;
+				visible: 1;
+				rel1 {relative: 0 0; to: sd_card_icon_rect; }
+				rel2 {relative: 1 1; to: sd_card_icon_rect; }
+				image.normal: GALLERY_EDC_SD_CARD_ICON;
+			}
+		}
+		part {
+			name: "elm_image_open_icon_rect";
+			type: RECT;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				visible: 1;
+				rel1 {relative: 0 1; offset: 8 -42; to: bg; }
+				rel2 {relative: 0 1; offset: 42 -8; to: bg; }
+				min: 36 36;
+				max: 36 36;
+				color: 0 0 0 0;
+			}
+		}
+		part {
+			name: "elm_image_open_icon_bg";
+			type: IMAGE;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				visible: 0;
+				rel1 {relative: 0 0; to: elm_image_open_icon_rect; }
+				rel2 {relative: 1 1; to: elm_image_open_icon_rect; }
+				image.normal: GALLERY_EDC_DELETE_SHOW_IMAGE_BG;
+				color : 0 0 0 100;
+			}
+			description {
+				state: "show" 0.0;
+				visible: 1;
+				rel1 {relative: 0 0; to: elm_image_open_icon_rect; }
+				rel2 {relative: 1 1; to: elm_image_open_icon_rect; }
+				image.normal: GALLERY_EDC_DELETE_SHOW_IMAGE_BG;
+				color : 0 0 0 100;
+			}
+		}
+		part {
+			name: "elm_image_open_icon_image";
+			type: IMAGE;
+			mouse_events: 1;
+			repeat_events: 1;
+			description {
+				state: "default" 0.0;
+				visible: 0;
+				rel1 {relative: 0 0; to: elm_image_open_icon_rect; }
+				rel2 {relative: 1 1; to: elm_image_open_icon_rect; }
+				image.normal: GALLERY_EDC_DELETE_SHOW_IMAGE;
+			}
+			description {
+				state: "show" 0.0;
+				visible: 1;
+				rel1 {relative: 0 0; to: elm_image_open_icon_rect; }
+				rel2 {relative: 1 1; to: elm_image_open_icon_rect; }
+				image.normal: GALLERY_EDC_DELETE_SHOW_IMAGE;
+			}
+		}
+		part {
+			name: "elm_image_open_icon_swallow_blocker";
+			type: SWALLOW;
+			mouse_events: 1;
+			repeat_events : 0;
+			description {
+				state: "default" 0.0;
+				visible: 1;
+				rel1 {relative: 0 0.55; to: bg; }
+				rel2 {relative: 0.45 1.0; to: bg; }
+			}
+		}
+		part {
+			name: "elm_image_open_icon_swallow";
+			type: SWALLOW;
+			mouse_events: 1;
+			repeat_events : 0;
+			description {
+				state: "default" 0.0;
+				visible: 1;
+				rel1 {relative: 0 0.55; to: bg; }
+				rel2 {relative: 0.45 1.0; to: bg; }
+			}
+		}
+	}
+	programs {
+		GL_GENGRID_FOCUS("elm.swallow.icon")
+		GL_GENGRID_SOUND("elm.swallow.check")
+		GL_GENGRID_SOUND("elm.swallow.icon")
+		GL_GENGRID_SOUND("elm_image_open_icon_swallow")
+		GL_GENGRID_PLARY_SOUND
+		program {
+			name: "show_image";
+			signal: "show_image_icon";
+			source: "elm_image_open_icon_rect";
+			action: STATE_SET "show" 0.0;
+			target: "elm_image_open_icon_bg";
+			target: "elm_image_open_icon_image";
+		}
+		program {
+			name: "hide_image";
+			signal: "hide_image_icon";
+			source: "elm_image_open_icon_rect";
+			action: STATE_SET "default" 0.0;
+			target: "elm_image_open_icon_bg";
+			target: "elm_image_open_icon_image";
+		}
+		program {
+			name: "show_sd_icon";
+			signal: "show_sd_card_icon";
+			source: "sd_card_icon_img";
+			action: STATE_SET "show" 0.0;
+			target: "sd_card_icon_img";
+		}
+		program {
+			name: "hide_sd_icon";
+			signal: "hide_sd_card_icon";
+			source: "sd_card_icon_img";
+			action: STATE_SET "default" 0.0;
+			target: "sd_card_icon_img";
+		}
+	}
+}
+
+group {
+	name: "elm/gengrid/item/gallery/date_view/default";
+
+	data.item: "texts" "year month";
+
+	parts {
+		GL_GRID_PART_BG
+		part {
+			name: "year";
+			type: TEXT;
+			scale : 1;
+			description {
+				state: "default" 0.0;
+				color: 88 88 88 255;
+				rel1 { relative: 0.0 0.0;}
+				rel2 { relative: 1.0 24/127;}
+				text {
+					font: "Tizen:style=Regular";
+					text_class: "tizen";
+					size: 24;
+					align: 1.0 0.5;
+				}
+			}
+		}
+
+		part {
+			name: "month";
+			type: TEXT;
+			scale : 1;
+			description {
+				state: "default" 0.0;
+				color: 88 88 88 255;
+				rel1 { relative: 0.0 1.0; to: "year"; }
+				rel2 { relative: 1.0 48/127; to_x: "year"; }
+				text {
+					font: "Tizen:style=Bold";
+					text_class: "tizen";
+					size: 26;
+					align: 1.0 0.5;
+				}
+			}
+		}
+	}
+}
+
+#define GL_GENGRID_PHOTOFRAME_DEFAULT(NAME, w, h) \
+group \
+{ \
+	name: "elm/gengrid/photoframe/"NAME; \
+	parts { \
+		GL_GRID_PART_BG \
+		GL_GRID_PART_ICON_SIZE(w, h) \
+	} \
+}
+
+GL_GENGRID_PHOTOFRAME_DEFAULT("layout", W, H)
+GL_GENGRID_PHOTOFRAME_DEFAULT("layout2", W2, H2)
+GL_GENGRID_PHOTOFRAME_DEFAULT("layout3", W3, H3)
+
+#define GL_GENGRID_BURSTSHOT(icon_name, w, h, n, p1x, p1y, p2x, p2y) \
+	part { \
+		name: icon_name".bg"; \
+		type: IMAGE; \
+		description { \
+			state: "default" 0.0; \
+			rel1 { relative: (GAP_W+n*BURST_W)/w (GAP_H+n*BURST_H)/h;} \
+			rel2 { relative: (w-GAP_W-(2-n)*BURST_W)/w (h-GAP_H-(2-n)*BURST_H)/h;} \
+			image {normal: GALLERY_EDC_IMAGE_BUSTSHOT; border: 5 5 5 5;} \
+		} \
+	} \
+	part { \
+		name: icon_name".bg2"; \
+		type: RECT; \
+		description { \
+			state: "default" 0.0; \
+			color: GALLERY_EDC_COLOR_BG; \
+			rel1 { relative: 0.0 0.0; to: icon_name".clipper"; } \
+			rel2 { relative: 1.0 1.0; to: icon_name".clipper"; } \
+		} \
+	} \
+	part { \
+		name: icon_name".bg3"; \
+		type: RECT; \
+		description { \
+			state: "default" 0.0; \
+			color: 0 0 0 45; \
+			rel1 { relative: 0.0 0.0; to: icon_name".clipper"; } \
+			rel2 { relative: 1.0 1.0; to: icon_name".clipper"; } \
+		} \
+	} \
+	part { \
+		name: icon_name; \
+		type: SWALLOW; \
+		clip_to: icon_name".clipper"; \
+		description { \
+			state: "default" 0.0; \
+			rel1.to: icon_name".clipper"; \
+			rel2.to: icon_name".clipper"; \
+		} \
+	} \
+	part { \
+		name: icon_name".clipper"; \
+		type: RECT; \
+		description { \
+			state: "default" 0.0; \
+			align: 1.0 1.0; \
+			rel1 { relative: p1x/(w-2*GAP_W-2*BURST_W) p1y/(h-2*GAP_H-2*BURST_H); to: icon_name".bg"; } \
+			rel2 { relative: (w-2*GAP_W-2*BURST_W-p2x)/(w-2*GAP_W-2*BURST_W) (h-2*GAP_H-2*BURST_H-p2y)/(h-2*GAP_H-2*BURST_H); to: icon_name".bg"; } \
+		} \
+	}
+
+group {
+	 name: "elm/gengrid/photoframe/burstshot2";
+	 images {
+	 	 image: GALLERY_EDC_IMAGE_BUSTSHOT COMP;
+	 }
+	 parts {
+		GL_GRID_PART_BG
+	 	GL_GENGRID_BURSTSHOT("elm.swallow.icon3", W3, H3, 2, (BURST_PAD_L+0.5), BURST_PAD_L, (BURST_PAD_R+0.5), BURST_PAD_R)
+		GL_GENGRID_BURSTSHOT("elm.swallow.icon2", W3, H3, 1, (BURST_PAD_L+1.0), BURST_PAD_L, BURST_PAD_R, BURST_PAD_R)
+		GL_GENGRID_BURSTSHOT("elm.swallow.icon1", W3, H3, 0, (BURST_PAD_L+0.5), BURST_PAD_L, (BURST_PAD_R+0.5), BURST_PAD_R)
+	 }
+}
+
+group {
+	 name: "elm/gengrid/photoframe/burstshot1";
+	 images {
+	 	 image: GALLERY_EDC_IMAGE_BUSTSHOT COMP;
+	 }
+	 parts {
+		GL_GRID_PART_BG
+	 	GL_GENGRID_BURSTSHOT("elm.swallow.icon3", W2, H2, 2, (BURST_PAD_L+0.5), BURST_PAD_L, BURST_PAD_R, BURST_PAD_R)
+		GL_GENGRID_BURSTSHOT("elm.swallow.icon2", W2, H2, 1, (BURST_PAD_L+1.0), BURST_PAD_L, BURST_PAD_R, BURST_PAD_R)
+		GL_GENGRID_BURSTSHOT("elm.swallow.icon1", W2, H2, 0, (BURST_PAD_L+0.5), BURST_PAD_L, BURST_PAD_R, BURST_PAD_R)
+	 }
+}
+
+group {
+	 name: "elm/gengrid/photoframe/burstshot";
+	 images {
+	 	 image: GALLERY_EDC_IMAGE_BUSTSHOT COMP;
+	 }
+	 parts {
+		GL_GRID_PART_BG
+	 	GL_GENGRID_BURSTSHOT("elm.swallow.icon3", W, H, 2, (BURST_PAD_L+0.5), BURST_PAD_L, (BURST_PAD_R+0.5), BURST_PAD_R)
+		GL_GENGRID_BURSTSHOT("elm.swallow.icon2", W, H, 1, (BURST_PAD_L+1.0), BURST_PAD_L, BURST_PAD_R, BURST_PAD_R)
+		GL_GENGRID_BURSTSHOT("elm.swallow.icon1", W, H, 0, (BURST_PAD_L+0.5), BURST_PAD_L, (BURST_PAD_R+0.5), BURST_PAD_R)
+	 }
+}
+
+
+#define GL_GENGRID_PHOTOFRAME_VIDEO(NAME, w, h, time_h) \
+group \
+{ \
+	name: "elm/gengrid/photoframe/"NAME; \
+	images { \
+		image: GALLERY_EDC_IMAGE_BUTTON_VIDEO_PLAY COMP; \
+	} \
+		parts { \
+			part { \
+			name: "bg"; \
+			type: RECT; \
+			mouse_events: 1; \
+			description { \
+				state: "default" 0.0; \
+				rel1 { relative: 0.0 0.0;} \
+				rel2 { relative: 1.0 1.0;} \
+				color: 0 0 0 0; \
+			} \
+		} \
+		part { \
+			name: "elm.swallow.icon"; \
+			type: SWALLOW; \
+			clip_to: "elm.icon.clipper"; \
+			description { \
+				state: "default" 0.0; \
+				rel1.to: "elm.icon.clipper"; \
+				rel2.to: "elm.icon.clipper"; \
+			} \
+		} \
+		part { \
+			name: "elm.icon.clipper"; \
+			type: RECT; \
+			description { \
+				state: "default" 0.0; \
+				rel1 { relative: GAP_W/w GAP_H/h;} \
+				rel2 { relative: (w-GAP_W)/w (h-GAP_H)/h;} \
+			} \
+		} \
+		part { \
+			name: "elm.swallow.videoicon"; \
+			type: IMAGE; \
+			mouse_events: 0; \
+			repeat_events: 0; \
+			scale: 1; \
+			description { \
+				state: "default" 0.0; \
+				min: 24 24; \
+				max: 48 48; \
+				align: 0.5 0.5; \
+				aspect: 1.0 1.0; \
+				image.normal: GALLERY_EDC_IMAGE_BUTTON_VIDEO_PLAY; \
+			} \
+		} \
+	} \
+}
+
+GL_GENGRID_PHOTOFRAME_VIDEO("video", W, H, 20.5)
+GL_GENGRID_PHOTOFRAME_VIDEO("video2", W2, H2, 27.3)
+GL_GENGRID_PHOTOFRAME_VIDEO("video3", W3, H3, 41)
+
