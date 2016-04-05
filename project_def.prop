@@ -49,9 +49,9 @@ USER_LIB_DIRS =
 USER_LIB_DIRS_ABS = 
 
 # EDC Resource Path
-USER_EDCS_IMAGE_DIRS = edje/images res/black_theme/images res/black_theme/images_edc res/black_theme/edc/images 
-USER_EDCS_IMAGE_DIRS_ABS = 
-USER_EDCS_SOUND_DIRS = edje/sounds res/black_theme/edc/sounds 
+USER_EDCS_IMAGE_DIRS = edje/images 
+USER_EDCS_IMAGE_DIRS_ABS = /home/r.dadhich/git_code/tizen_3.0/Feb24/gallery/res/edje/images 
+USER_EDCS_SOUND_DIRS = edje/sounds res/edje/sounds 
 USER_EDCS_SOUND_DIRS_ABS = 
 USER_EDCS_FONT_DIRS = edje/fonts 
 USER_EDCS_FONT_DIRS_ABS = 
@@ -59,10 +59,10 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/black_theme/images_edc/gl-images.edc res/black_theme/edc/gallery.edc 
-USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images res/black_theme/images res/black_theme/images_edc res/black_theme/edc/images 
-USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
-USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds res/black_theme/edc/sounds 
+USER_EXT_EDC0_EDCS = res/edje/gallery.edc res/edje/gl-images.edc 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = /home/r.dadhich/git_code/tizen_3.0/Feb24/gallery/res/edje/images 
+USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds res/edje/sounds 
 USER_EXT_EDC0_EDCS_SOUND_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_FONT_DIRS = edje/fonts 
 USER_EXT_EDC0_EDCS_FONT_DIRS_ABS = 
