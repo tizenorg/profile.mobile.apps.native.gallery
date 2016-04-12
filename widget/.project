@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>gallery</name>
+	<name>widget</name>
 	<comment></comment>
 	<projects>
-		<project>widget</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -17,22 +16,16 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>org.tizen.nativecore.apichecker.core.builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.cdt.core.cnature</nature>
 		<nature>org.eclipse.cdt.core.ccnature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
-		<nature>org.tizen.nativecore.apichecker.core.tizenCppNature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>0</id>
+			<id>1460440948526</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -41,7 +34,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>0</id>
+			<id>1460440948528</id>
 			<name></name>
 			<type>6</type>
 			<matcher>

@@ -18,9 +18,6 @@
 #ifndef GL_WIDGET_H
 #define GL_WIDGET_H
 
-#include <Elementary.h>
-#include <stdbool.h>
-
 typedef struct widget_data {
 	Evas_Object *win;
 	Evas_Object *layout;

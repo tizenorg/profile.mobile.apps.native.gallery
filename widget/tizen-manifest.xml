@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="org.tizen.gallery-widget" version="1.0.0">
+	<profile name="mobile" />
+	<ui-application appid="org.tizen.gallery-widget" exec="widget" type="capp" multiple="false" taskmanage="true" nodisplay="false" launch_mode="single">
+		<icon>widget.png</icon>
+		<label>widget</label>
+	</ui-application>
+</manifest>

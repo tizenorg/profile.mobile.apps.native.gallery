@@ -7,9 +7,5 @@
     </platforms>
     <package>
         <blacklist/>
-        <resFallback autoGen="true"/>
-        <subProjects>
-            <tizenProject project="widget"/>
-        </subProjects>
     </package>
 </tproject>
