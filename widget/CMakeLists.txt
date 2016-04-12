@@ -5,7 +5,7 @@ SET(SRCS
     src/gl_widget_create.c
 )
 
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/inc)
 
 INCLUDE(FindPkgConfig)
 pkg_check_modules(app_pkgs REQUIRED
@@ -29,7 +29,7 @@ IF("${ARCH}" STREQUAL "arm")
 ENDIF("${ARCH}" STREQUAL "arm")
 
 ADD_DEFINITIONS("-DLOG_TAG=\"WIDGET_APP\"")
-INCLUDE_DIRECTORIES("${CMAKE_CURRENT_SOURCE_DIR}/include")
+INCLUDE_DIRECTORIES("${CMAKE_CURRENT_SOURCE_DIR}/inc")
 
 SET(CMAKE_EXE_LINKER_FLAGS "-Wl,--as-needed -pie -Wl,-z,noexecstack")
 
