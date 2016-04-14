@@ -611,6 +611,10 @@ void _gl_update_album_selected_data(void *data, Eina_List **list)
 					if (sit && sit->cluster) {
 						if (!g_strcmp0(current->cluster->uuid, sit->cluster->uuid)) {
 							current->elist = sit->elist;
+							current->checked = sit->checked;
+							if(sit->checked) {
+								_gl_data_albums_selected_list_append(ad, current);
+							}
 						}
 					}
 				}

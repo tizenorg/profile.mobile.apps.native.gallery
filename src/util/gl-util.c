@@ -1465,8 +1465,11 @@ int _gl_refresh_albums_list(void *data, bool b_path, bool b_select)
 			_gl_thumbs_clear_and_set_list(ad, media_elist);
 		}
 	}
+	/* need to reset selected album info for edit view */
+	ad->albuminfo.sel_elist = NULL;
 
 	_gl_data_get_cluster_list_edit_mode(ad);
+
 	/* need to reset current album */
 	_gl_albums_set_current(data, NULL);
 	cur_album = NULL;
