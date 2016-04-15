@@ -2535,3 +2535,28 @@ char *_gl_get_root_directory_path(int storage_type)
 	storage_get_root_directory(storage_type, &path);
 	return path;
 }
+
+void _gl_set_launch_state_preference(void *data)
+{
+	int ret;
+	if (gl_get_view_mode(data) == GL_VIEW_TIMELINE) {
+		ret = preference_set_boolean(GL_LAUNCH_STATE, true);
+	} else {
+		ret = preference_set_boolean(GL_LAUNCH_STATE, false);
+	}
+	if (ret != PREFERENCE_ERROR_NONE) {
+		gl_dbgE(" Unable to set preference for launch State ERROR(%d)", ret);
+	}
+}
+
+bool _gl_get_launch_state_preference()
+{
+	int ret;
+	bool launch_state = true;
+	ret = preference_get_boolean(GL_LAUNCH_STATE, &launch_state);
+	if (ret != PREFERENCE_ERROR_NONE) {
+		gl_dbgE("Unable to get preference for launch State ERROR(%d)",ret);
+		return false;
+	}
+	return launch_state;
+}

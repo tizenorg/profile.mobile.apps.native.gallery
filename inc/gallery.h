@@ -21,6 +21,7 @@
 #include <pthread.h>
 #include <app.h>
 #include <efl_extension.h>
+#include <app_preference.h>
 #include <storage.h>
 #include "gl-data.h"
 #include "gl-util.h"
@@ -222,6 +223,8 @@ extern "C"
 #define GL_NAVIFRAME_SELECTED_SLIDESHOW_KEY "gl_naviframe_selected_slideshow_key"
 #endif
 #define GL_NAVIFRAME_POP_CB_KEY "gl_naviframe_pop_cb_key"
+
+#define GL_LAUNCH_STATE "gallery_launch_state"
 
 /******** Enumeration ********/
 typedef enum _gl_view_mode

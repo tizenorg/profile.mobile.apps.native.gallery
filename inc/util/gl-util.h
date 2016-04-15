@@ -260,6 +260,8 @@ int _gl_dlclose_imageviewer(void *data);
 char *_gl_get_edje_path(void);
 char *_gl_get_directory_path(int storage_directory_type);
 char *_gl_get_root_directory_path(int storage_type);
+void _gl_set_launch_state_preference(void *data);
+bool _gl_get_launch_state_preference();
 
 #ifdef __cplusplus
 }

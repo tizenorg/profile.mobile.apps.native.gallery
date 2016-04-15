@@ -483,7 +483,11 @@ Eina_Bool _gl_main_update_view(void *data)
 	_gl_data_get_cluster_list(ad);
 	GL_CHECK_FALSE(ad->albuminfo.elist);
 	gl_dbg("_gl_data_get_cluster_list:done");
-	_gl_ctrl_show_view(data, GL_STR_ALBUMS);
+	if(_gl_get_launch_state_preference()) {
+		_gl_ctrl_show_view(data, "Timeline");
+	} else {
+		_gl_ctrl_show_view(data, GL_STR_ALBUMS);
+	}
 	gl_dbg("done");
 	GL_PROFILE_OUT;
 	return ECORE_CALLBACK_CANCEL;
@@ -495,7 +499,6 @@ int _gl_main_reset_view(void *data)
 	gl_appdata *ad = (gl_appdata *)data;
 	GL_CHECK_VAL(ad->maininfo.win, -1);
 	int view_mode = gl_get_view_mode(ad);
-	gl_dbg("");
 
 	if (view_mode == GL_VIEW_NONE) {
 		/* First launch gallery then show shortcut album/tag */
@@ -503,10 +506,17 @@ int _gl_main_reset_view(void *data)
 		gl_dbg("Launch gallery at the first time");
 		_gl_data_get_cluster_list(ad);
 		GL_CHECK_VAL(ad->albuminfo.elist, -1);
-		/* Set view mode */
-		gl_set_view_mode(ad, GL_VIEW_ALBUMS);
-		/* Select tabbar item contains shortcut item */
-		_gl_ctrl_show_view(data, GL_STR_ALBUMS);
+		if(_gl_get_launch_state_preference()) {
+			/* Set view mode */
+			gl_set_view_mode(ad, GL_VIEW_TIMELINE);
+			/* Select tabbar item contains shortcut item */
+			_gl_ctrl_show_view(data, "Timeline");
+		} else {
+			/* Set view mode */
+			gl_set_view_mode(ad, GL_VIEW_ALBUMS);
+			/* Select tabbar item contains shortcut item */
+			_gl_ctrl_show_view(data, GL_STR_ALBUMS);
+		}
 		/* Register servier if albums view wasn't created */
 		_gl_main_add_reg_idler(data);
 	}

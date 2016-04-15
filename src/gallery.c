@@ -136,6 +136,7 @@ static void _gallery_terminate(void *data)
 {
 	gl_dbgW("==Terminate==");
 	GL_CHECK(data);
+	_gl_set_launch_state_preference(data);
 	_gallery_close_app(data);
 }
 

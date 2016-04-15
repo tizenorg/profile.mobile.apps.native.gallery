@@ -3159,6 +3159,9 @@ static Evas_Object *__gl_timeline_create_list_view(gl_timeline_s *timeline_d, bo
 	timeline_d->date_layout = layout;
 
 	if (_gl_timeline_create_grid_view(timeline_d, genlist, update) < 0) {
+		if (timeline_d->nocontents) {
+			return timeline_d->nocontents;
+		}
 		return NULL;
 	}
 
@@ -4600,6 +4603,7 @@ int _gl_timeline_create_view(void *data, Evas_Object *parent)
 		GL_IF_DEL_OBJ(layout);
 		return -1;
 	}
+	_gl_main_add_reg_idler(ad);
 	timeline_d->view = view;
 	elm_object_part_content_set(timeline_d->layout, "elm.swallow", view);
 
