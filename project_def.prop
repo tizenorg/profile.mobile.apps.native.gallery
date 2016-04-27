@@ -9,13 +9,14 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/widget/gl-editfield.c src/features/gl-pinchzoom.c src/widget/gl-progressbar.c src/2dview/gl-albums-edit.c src/2dview/gl-albums-rename.c src/widget/gl-controlbar.c src/util/gl-ext-exec.c src/features/gl-albums-sel.c src/util/gl-db-update.c src/data/gl-data-type.c src/gallery.c src/widget/gl-rotate-bg.c src/util/gl-ta.c src/widget/gl-tile.c src/widget/gl-gesture.c src/util/gl-util.c src/util/gl-ext-ug-load.c src/features/gl-thumbs.c src/data/gl-local-data.c src/widget/gl-nocontents.c src/widget/gl-popup.c src/util/gl-thread-util.c src/widget/gl-button.c src/widget/gl-ctxpopup.c src/features/gl-thumbs-edit.c src/util/gl-debug.c src/data/gl-data-util.c src/2dview/gl-albums-new.c src/util/gl-fs.c src/features/gl-main.c src/widget/gl-thumb.c src/data/gl-data.c src/util/gl-exif.c src/features/gl-albums.c src/2dview/gl-timeline.c src/util/gl-ui-util.c src/util/gl-file-util.c src/util/gl-lang.c src/features/gl-entry.c src/features/gl-thumbs-sel.c src/widget/gl-notify.c 
+USER_SRCS = src/util/gl-fs.c src/features/gl-albums.c src/data/gl-data-util.c src/2dview/gl-albums-rename.c src/util/gl-ext-ug-load.c src/util/gl-exif.c src/features/gl-thumbs-sel.c src/data/gl-local-data.c src/features/gl-entry.c src/widget/gl-gesture.c src/widget/gl-tile.c src/widget/gl-rotate-bg.c src/util/gl-lang.c src/widget/gl-ctxpopup.c src/util/gl-db-update.c src/features/gl-main.c src/util/gl-thread-util.c src/widget/gl-editfield.c src/widget/gl-controlbar.c src/util/gl-ext-exec.c src/widget/gl-notify.c src/gallery.c src/util/gl-file-util.c src/util/gl-debug.c src/2dview/gl-timeline.c src/widget/gl-button.c src/util/gl-ta.c src/2dview/gl-albums-new.c src/2dview/gl-albums-edit.c src/widget/gl-nocontents.c src/data/gl-data-type.c src/widget/gl-progressbar.c src/widget/gl-thumb.c src/widget/gl-popup.c src/features/gl-pinchzoom.c src/features/gl-albums-sel.c src/data/gl-data.c src/features/gl-thumbs-edit.c src/util/gl-ui-util.c src/util/gl-util.c src/features/gl-thumbs.c 
+USER_SRCS_ABS = 
 
 # EDC Sources
 USER_EDCS =  
 
 # PO Sources
-USER_POS = res/po/ca.po res/po/fr_CA.po res/po/en_PH.po res/po/en_US.po res/po/ka.po res/po/uk.po res/po/et.po res/po/lt.po res/po/lv.po res/po/ro.po res/po/sv.po res/po/da.po res/po/tr_TR.po res/po/zh_HK.po res/po/uz.po res/po/hy.po res/po/az.po res/po/ja_JP.po res/po/ar.po res/po/it_IT.po res/po/fi.po res/po/sk.po res/po/ga.po res/po/pt_PT.po res/po/el_GR.po res/po/hu.po res/po/ko_KR.po res/po/zh_CN.po res/po/hi.po res/po/mk.po res/po/sr.po res/po/nl.po res/po/es_ES.po res/po/fr.po res/po/kk.po res/po/zh_TW.po res/po/hr.po res/po/ru_RU.po res/po/gl.po res/po/pt_BR.po res/po/eu.po res/po/nb.po res/po/is.po res/po/pl.po res/po/en.po res/po/de.po res/po/bg.po res/po/sl.po res/po/cs.po res/po/es_US.po 
+USER_POS = res/po/es_ES.po res/po/lv.po res/po/hy.po res/po/gl.po res/po/ga.po res/po/es_US.po res/po/zh_HK.po res/po/zh_TW.po res/po/et.po res/po/de.po res/po/ru_RU.po res/po/nb.po res/po/lt.po res/po/it_IT.po res/po/el_GR.po res/po/uz.po res/po/pt_BR.po res/po/nl.po res/po/fr.po res/po/ca.po res/po/kk.po res/po/eu.po res/po/tr_TR.po res/po/pt_PT.po res/po/hr.po res/po/is.po res/po/hu.po res/po/ko_KR.po res/po/mk.po res/po/bg.po res/po/fr_CA.po res/po/en_US.po res/po/hi.po res/po/en.po res/po/da.po res/po/pl.po res/po/cs.po res/po/az.po res/po/ja_JP.po res/po/sv.po res/po/sk.po res/po/ro.po res/po/sl.po res/po/uk.po res/po/sr.po res/po/zh_CN.po res/po/ka.po res/po/ar.po res/po/fi.po res/po/en_PH.po 
 
 # User Defines
 USER_DEFS = _USE_DLOG_ _USE_SECURE_LOG_ _USE_ROTATE_BG _RENAME_ALBUM_SENSITIVE _USE_OPENGL_BACKEND _USE_ALBUM_SHARE _USE_GRID_CHECK 
@@ -49,7 +50,7 @@ USER_LIB_DIRS =
 USER_LIB_DIRS_ABS = 
 
 # EDC Resource Path
-USER_EDCS_IMAGE_DIRS = edje/images res/edje/images
+USER_EDCS_IMAGE_DIRS = edje/images res/edje/images 
 USER_EDCS_IMAGE_DIRS_ABS = 
 USER_EDCS_SOUND_DIRS = edje/sounds res/edje/sounds 
 USER_EDCS_SOUND_DIRS_ABS = 
@@ -59,8 +60,8 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/edje/gallery.edc res/edje/gl-images.edc 
-USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images res/edje/images
+USER_EXT_EDC0_EDCS = res/edje/gl-images.edc res/edje/gallery.edc 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images res/edje/images 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds res/edje/sounds 
 USER_EXT_EDC0_EDCS_SOUND_DIRS_ABS = 
