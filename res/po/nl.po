@@ -18,9 +18,13 @@ msgstr "Privacy"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Verwijderen..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Annuleren"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
@@ -51,6 +55,8 @@ msgstr "Aug."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Apr."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopiëren"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Album"
@@ -589,6 +595,12 @@ msgstr "Favorieten"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Downloaden geannuleerd."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Verwijderen"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Opslaan"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Dit album verwijderen?"
 
@@ -682,6 +694,12 @@ msgstr "Geselecteerd album is hetzelfde als bronalbum. Selecteer een ander album
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Tik hier om afbeeldingen toe te voegen"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Verplaatsen"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Gekopieerd."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Kan gegevens niet opslaan"
 
@@ -756,4 +774,7 @@ msgstr "BEWERKEN"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Indeling wijzigen"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Verplaatst."
 

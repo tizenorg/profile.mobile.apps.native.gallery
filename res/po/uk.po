@@ -18,9 +18,13 @@ msgstr "Конфіденційність"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Вер"
+msgid "IDS_COM_POP_DELETING"
+msgstr "Видалення..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Жов"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Скасувати"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Лис."
@@ -51,6 +55,8 @@ msgstr "Сер"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Кві"
+msgid "IDS_COM_BODY_COPY"
+msgstr "Копіювати"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Альбом"
@@ -589,6 +595,12 @@ msgstr "Обрані"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Завантаження скасовано."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Видалити"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Зберегти"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Видалити цей альбом?"
 
@@ -682,6 +694,12 @@ msgstr "Вибраний і вихідний альбоми однакові. В
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Торкніться тут, щоб додати зображення"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Перемістити"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Скопійовано."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Неможливо зберегти дані"
 
@@ -756,4 +774,7 @@ msgstr "ЗМІНИТИ"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Упорядкування"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Переміщено."
 

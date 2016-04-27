@@ -18,9 +18,13 @@ msgstr "Privacidade"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Set."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Eliminando..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Out."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancelar"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
@@ -51,6 +55,8 @@ msgstr "Ag."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Abr."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Copiar"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Álbum"
@@ -173,7 +179,7 @@ msgid "IDS_MEDIABR_BODY_PD_ITEMS"
 msgstr "%d elementos"
 
 msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
-msgstr "Só hai un álbum"
+msgstr "Só hai un álbum."
 
 msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
 msgstr "Podes seleccionar ata %d elementos"
@@ -589,6 +595,12 @@ msgstr "Favoritos"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Descarga cancelada"
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Eliminar"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Gardar"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Eliminar este álbum?"
 
@@ -682,6 +694,12 @@ msgstr "O álbum seleccionado é o mesmo que o álbum de orixe. Selecciona outro
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Toca aquí para engadir imaxes"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Mover"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Copiado"
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Imposible gardar os datos"
 
@@ -695,7 +713,7 @@ msgid "IDS_MF_BUTTON_CANCEL_ABB3"
 msgstr "Cancelar"
 
 msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
-msgstr "Non amosar outra vez"
+msgstr "Non volver amosar"
 
 msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
 msgstr "O uso de datos móbiles en itinerancia pode implicar a aplicación de tarifas adicionais en función do teu plan de pagamento."
@@ -756,4 +774,7 @@ msgstr "EDITAR"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Reordenar"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Movido"
 

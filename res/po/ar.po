@@ -16,11 +16,15 @@ msgstr "هل تريد حذف %d عنصر (عناصر)؟"
 msgid "IDS_ST_HEADER_PRIVACY"
 msgstr "الخصوصية"
 
+msgid "IDS_COM_POP_DELETING"
+msgstr "جاري المسح..."
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "سبت"
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "أكت"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "إلغاء"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "نوف"
@@ -51,6 +55,8 @@ msgstr "أغس"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "إبر"
+msgid "IDS_COM_BODY_COPY"
+msgstr "نسخ"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "الألبوم"
@@ -68,7 +74,7 @@ msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
 msgstr "تم استخدام نفس الاسم مسبقا."
 
 msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
-msgstr "يتعذر تغيير الاسم. جاري استخدام الملف."
+msgstr "يتعذر تغيير الاسم."
 
 msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
 msgstr "لا توجد ألبومات محددة."
@@ -170,7 +176,7 @@ msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
 msgstr "جميع العناصر"
 
 msgid "IDS_MEDIABR_BODY_PD_ITEMS"
-msgstr "%d عناصر"
+msgstr "%d من العناصر"
 
 msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
 msgstr "يوجد ألبوم واحد فقط."
@@ -281,7 +287,7 @@ msgid "IDS_EMAIL_BODY_FAILED_M_STATUS"
 msgstr "فشل"
 
 msgid "IDS_EMAIL_BODY_DELETED"
-msgstr "تم المسح."
+msgstr "تم الحذف."
 
 msgid "IDS_EMAIL_POP_DELETE_Q"
 msgstr "مسح؟"
@@ -572,7 +578,7 @@ msgid "IDS_MEDIABR_OPT_PHOTOS"
 msgstr "صور فوتوغرافية"
 
 msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
-msgstr "التنزيل غير متوفر."
+msgstr "فشل في التنزيل."
 
 msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
 msgstr "ملف غير مدعوم."
@@ -588,6 +594,12 @@ msgstr "تفضيلات"
 
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "تم إلغاء التنزيل."
+
+msgid "IDS_COM_OPT_DELETE"
+msgstr "حذف"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "حفظ"
 
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "هل تريد حذف هذا الألبوم؟"
@@ -682,6 +694,12 @@ msgstr "إن الألبوم المحدد هو نفسه الألبوم المصد
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "النقر هنا لإضافة الصور"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "نقل"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "تم النسخ."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "يتعذر حفظ البيانات"
 
@@ -756,4 +774,7 @@ msgstr "تعديل"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "إعادة ترتيب"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "تم النقل."
 

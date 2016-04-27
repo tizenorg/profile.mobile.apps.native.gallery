@@ -2287,9 +2287,7 @@ gl_icon_type_e _gl_get_icon_type(gl_item *git)
 char *_gl_str(char *str_id)
 {
 	GL_CHECK_NULL(str_id);
-	if (strstr(str_id, "IDS_COM")) {
-		return dgettext(GL_STR_DOMAIN_SYS, str_id);
-	} else if (strstr(str_id, "IDS_")) {
+	if (strstr(str_id, "IDS_")) {
 		return dgettext(GL_STR_DOMAIN_LOCAL, str_id);
 	} else {
 		return str_id;

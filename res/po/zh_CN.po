@@ -1,11 +1,11 @@
 msgid "IDS_MF_POP_YOUR_DEVICE_IS_NOT_CONNECTED_TO_A_WI_FI_NETWORK_CONNECTING_TO_A_MOBILE_NETWORK_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
-msgstr "您的设备未连接至 Wi-Fi 网络。连接至移动网络根据您的付费方案可能产生额外费用。"
+msgstr "您的设备未连接至 Wi-Fi 网络。根据您的资费套餐，连接至移动网络可能产生额外费用。"
 
 msgid "IDS_VIDEO_TPOP_MOBILE_DATA_TURNED_OFF_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_TURN_ON_MOBILE_DATA_AND_TRY_AGAIN"
 msgstr "移动数据已关闭。改为连接至 Wi-Fi 网络或打开移动数据并重试。"
 
 msgid "IDS_VIDEO_BODY_AFTER_YOU_RECORD_VIDEOS_USING_THE_CAMERA_THEY_WILL_BE_SHOWN_HERE"
-msgstr "在您使用照相机录制视频后，其将显示在此处。"
+msgstr "在您使用相机录制视频后，其将显示在此处。"
 
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "文件名已被使用"
@@ -18,9 +18,13 @@ msgstr "隐私权"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "9月"
+msgid "IDS_COM_POP_DELETING"
+msgstr "删除中.."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "10月"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "取消"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "11月"
@@ -51,6 +55,8 @@ msgstr "8月"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "4月"
+msgid "IDS_COM_BODY_COPY"
+msgstr "复制"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "相册"
@@ -80,7 +86,7 @@ msgid "IDS_MEDIABR_BODY_NO_ALBUMS"
 msgstr "无相册"
 
 msgid "IDS_MEDIABR_POP_CREATE_FOLDER_Q"
-msgstr "创建文件夹吗？"
+msgstr "新建文件夹吗？"
 
 msgid "IDS_MEDIABR_POP_RETRY_Q"
 msgstr "重试？"
@@ -95,13 +101,13 @@ msgid "IDS_MEDIABR_POP_1_ALBUM_WILL_BE_DELETED"
 msgstr "将删除 1 个相册。"
 
 msgid "IDS_MEDIABR_BODY_CAMERA"
-msgstr "照相机"
+msgstr "相机"
 
 msgid "IDS_MEDIABR_BUTTON_START"
 msgstr "开始"
 
 msgid "IDS_MEDIABR_OPT_SETTINGS"
-msgstr "设定"
+msgstr "设置"
 
 msgid "IDS_MEDIABR_OPT_YES"
 msgstr "是"
@@ -143,7 +149,7 @@ msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINA
 msgstr "是否要从原始相册复制或移动照片？"
 
 msgid "IDS_MEDIABR_OPT_SHARE"
-msgstr "共享"
+msgstr "分享"
 
 msgid "IDS_MEDIABR_OPT_SLIDESHOW"
 msgstr "幻灯片播放"
@@ -152,7 +158,7 @@ msgid "IDS_MEDIABR_OPT_START_SLIDESHOW"
 msgstr "开始播放幻灯片"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
-msgstr "幻灯片播放设定"
+msgstr "幻灯片播放设置"
 
 msgid "IDS_MEDIABR_POP_NO_NAME"
 msgstr "无名称"
@@ -170,13 +176,13 @@ msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
 msgstr "所有项目"
 
 msgid "IDS_MEDIABR_BODY_PD_ITEMS"
-msgstr "%d个项目"
+msgstr "%d 个项目"
 
 msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
 msgstr "仅有一个相册"
 
 msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
-msgstr "最多可选择%d个项目。"
+msgstr "最多可选择 %d 个视频。"
 
 msgid "IDS_MF_BODY_DOWNLOADS"
 msgstr "下载列表"
@@ -224,10 +230,10 @@ msgid "IDS_MSG_BUTTON2_CREATE"
 msgstr "新建"
 
 msgid "IDS_MEDIABR_POP_NO_ITEMS"
-msgstr "无项目"
+msgstr "没有内容"
 
 msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
-msgstr "编辑图像"
+msgstr "编辑图片"
 
 msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
 msgstr "选择图片"
@@ -266,7 +272,7 @@ msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
 msgstr "无法载入"
 
 msgid "IDS_IV_BODY_SHARE_VIA"
-msgstr "共享通过"
+msgstr "分享通过"
 
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "不再询问"
@@ -293,7 +299,7 @@ msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "显示 %d 个项目"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
-msgstr "创建相册"
+msgstr "新建相册"
 
 msgid "IDS_GALLERY_OPT_GALLERY_ABB"
 msgstr "相册"
@@ -302,7 +308,7 @@ msgid "IDS_EMAIL_BUTTON_MORE"
 msgstr "更多"
 
 msgid "IDS_EMAIL_OPT_ACCOUNTS"
-msgstr "账户"
+msgstr "帐户"
 
 msgid "IDS_EMAIL_POP_OPERATION_FAILED"
 msgstr "操作失败"
@@ -317,7 +323,7 @@ msgid "IDS_GALLERY_BUTTON_BACK"
 msgstr "返回"
 
 msgid "IDS_GALLERY_BUTTON_CAMERA"
-msgstr "照相机"
+msgstr "相机"
 
 msgid "IDS_GALLERY_HEADER_ALL"
 msgstr "全部"
@@ -329,7 +335,7 @@ msgid "IDS_GALLERY_OPT_REMOVE"
 msgstr "移除"
 
 msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
-msgstr "在您上传照片至 Dropbox 后，将显示项目。"
+msgstr "在您上传照片至 Dropbox 后，将显示照片。"
 
 msgid "IDS_KEEPIT_BODY_GROUP_PLAY_ABB"
 msgstr "Group Play"
@@ -341,7 +347,7 @@ msgid "IDS_MEDIABR_OPT_CREATE"
 msgstr "新建"
 
 msgid "IDS_MEDIABR_OPT_DETAILS"
-msgstr "详情"
+msgstr "详细信息"
 
 msgid "IDS_MEDIABR_OPT_PRINT"
 msgstr "打印"
@@ -371,7 +377,7 @@ msgid "IDS_MF_POP_UNSUPPORTED_FILE_TYPE"
 msgstr "不支持的文件类型。"
 
 msgid "IDS_IMGE_BODY_AFTER_YOU_TAKE_PICTURES_PICTURES_WILL_BE_SHOWN"
-msgstr "在您拍照后，将显示照片。"
+msgstr "拍照后，将显示照片。"
 
 msgid "IDS_IME_BODY_LANDSCAPE_MODE"
 msgstr "横向模式"
@@ -404,7 +410,7 @@ msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
 msgstr "私人内容"
 
 msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
-msgstr "从 %s 移除"
+msgstr "从%s移除"
 
 msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
 msgstr "移除名称标签"
@@ -413,10 +419,10 @@ msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
 msgstr "无可显示事件。创建一个新事件。"
 
 msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
-msgstr "若要快速滚动至其他日期，请轻敲并按住屏幕右上方的日期指示。"
+msgstr "若要快速滚动至其他日期，请长按屏幕右上方的日期指示。"
 
 msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
-msgstr "移除%d个项目？"
+msgstr "是否移除 %d 个项目？"
 
 msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
 msgstr "是否移除该项目？"
@@ -458,7 +464,7 @@ msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
 msgstr "删除项目"
 
 msgid "IDS_MEDIABR_BODY_1_ITEM"
-msgstr "1个项目"
+msgstr "1 个附件"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
 msgstr "10 秒"
@@ -542,7 +548,7 @@ msgid "IDS_MF_POP_FAILED_TO_ADD_SHORTCUT"
 msgstr "添加快捷方式失败。"
 
 msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
-msgstr "存储空间不足。请删除部分项目。"
+msgstr "存储空间不足。请删除部分内容。"
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "已移除"
@@ -589,6 +595,12 @@ msgstr "收藏"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "已取消下载"
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "删除"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "保存"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "是否删除该相册？"
 
@@ -605,19 +617,19 @@ msgid "IDS_GALLERY_BODY_DATE"
 msgstr "日期"
 
 msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
-msgstr "无可显示的条目。"
+msgstr "没有可显示的内容。"
 
 msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
 msgstr "轻敲此处以拍摄照片或视频。"
 
 msgid "IDS_NFC_TPOP_MAXIMUM_NUMBER_OF_ITEMS_THAT_CAN_BE_SHARED_HPD_EXCEEDED"
-msgstr "已超过可共享的最大项目数 (%d)"
+msgstr "已超过可分享的最大项目数 (%d)"
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
-msgstr "点击添加图像"
+msgstr "点击添加图片"
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
-msgstr "是否从原始相册复制或移动选中项目？"
+msgstr "是否从原始相片集复制或移动选中项目？"
 
 msgid "IDS_GALLERY_HEADER_SELECT"
 msgstr "选择"
@@ -629,13 +641,13 @@ msgid "IDS_VIDEO_POP_THIS_ITEM_WILL_BE_DELETED"
 msgstr "该项目将被删除。"
 
 msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_FACEBOOK_ITEMS_WILL_BE_SHOWN"
-msgstr "在您上传照片至 Facebook 后，将显示项目。"
+msgstr "在您上传照片至 Facebook 后，将显示照片。"
 
 msgid "IDS_GALLERY_HEADER_SELECT_ALL_ABB"
 msgstr "全选"
 
 msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
-msgstr "%d 已选择"
+msgstr "已选择 %d"
 
 msgid "IDS_GALLERY_OPT_VIEW_AS"
 msgstr "查看方式"
@@ -647,7 +659,7 @@ msgid "IDS_GALLERY_OPT_DATE_HOLDEST_ABB3"
 msgstr "日期（最早）"
 
 msgid "IDS_GALLERY_BODY_AFTER_YOU_TAKE_PICTURES_THEY_WILL_BE_SHOWN_HERE"
-msgstr "在您拍摄照片后，其将显示在此处。"
+msgstr "拍照后，照片将在此处显示。"
 
 msgid "IDS_CLOUD_TPOP_CANCELLING_ING"
 msgstr "正在取消..."
@@ -665,7 +677,7 @@ msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
 msgstr "下载结束"
 
 msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
-msgstr "全部项目将被删除。"
+msgstr "将删除全部项目。"
 
 msgid "IDS_GALLERY_POP_1_ITEM_WILL_BE_DOWNLOADED"
 msgstr "将下载 1 个项目。"
@@ -680,16 +692,22 @@ msgid "IDS_GALLERY_TPOP_SELECTED_ALBUM_SAME_AS_SOURCE_ALBUM_SELECT_ANOTHER_ALBUM
 msgstr "选中的相册与源相册相同。请选择其他相册。"
 
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
-msgstr "点击此处以添加图像"
+msgstr "点击此处可添加图片"
+
+msgid "IDS_COM_BODY_MOVE"
+msgstr "移动"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "已复制"
 
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "无法保存数据"
 
 msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
-msgstr "您的设备存储空间不足。请进入设定 > 电源和存储 > 存储，然后删除部分文件并重试。"
+msgstr "您的设备存储空间不足。请进入【设置】>【电源和存储】>【存储】，然后删除部分文件并重试。"
 
 msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
-msgstr "您的 SD 卡存储空间不足。请进入设定 > 电源和存储 > 存储，然后删除部分文件并重试。"
+msgstr "您的 SD 卡存储空间不足。请进入【设置】>【电源和存储】>【存储】，然后删除部分文件并重试。"
 
 msgid "IDS_MF_BUTTON_CANCEL_ABB3"
 msgstr "取消"
@@ -698,7 +716,7 @@ msgid "IDS_MF_OPT_DO_NOT_SHOW_AGAIN_ABB2"
 msgstr "不再显示"
 
 msgid "IDS_MF_POP_USING_MOBILE_DATA_WHILE_ROAMING_MAY_RESULT_IN_ADDITIONAL_CHARGES_DEPENDING_ON_YOUR_PAYMENT_PLAN"
-msgstr "根据您的付费方案，漫游时使用移动数据可能产生额外费用。"
+msgstr "根据您的资费套餐，漫游时使用移动数据可能产生额外费用。"
 
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "将删除 %d 个项目。"
@@ -749,11 +767,14 @@ msgid "IDS_HS_ACBUTTON_EDIT"
 msgstr "编辑"
 
 msgid "IDS_MF_BUTTON_SETTINGS"
-msgstr "设定"
+msgstr "设置"
 
 msgid "IDS_QP_ACBUTTON_EDIT_ABB"
 msgstr "编辑"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "重新排序"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "已移动"
 

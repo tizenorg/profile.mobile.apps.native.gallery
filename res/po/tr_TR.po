@@ -18,9 +18,13 @@ msgstr "Gizlilik"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Eyl."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Siliniyor..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Eki."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "İptal"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Kas."
@@ -51,6 +55,8 @@ msgstr "Ağu."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Nis."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopyala"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Albüm"
@@ -589,6 +595,12 @@ msgstr "Favoriler"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Yükleme iptal edildi."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Sil"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Kaydet"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Bu albüm silinsin mi?"
 
@@ -682,6 +694,12 @@ msgstr "Seçilen albüm kaynak albümle aynı. Başka bir albüm seçin."
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Resim eklemek için buraya dokunun"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Taşı"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Kopyalandı."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Veriler kaydedilemiyor"
 
@@ -756,4 +774,7 @@ msgstr "DÜZENLE"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Yeniden sırala"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Taşındı."
 

@@ -18,9 +18,13 @@ msgstr "Prywatność"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Wrz."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Usuwanie..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Paź."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Anuluj"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Lis."
@@ -51,6 +55,8 @@ msgstr "Sie."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Kwi."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopiuj"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Album"
@@ -589,6 +595,12 @@ msgstr "Ulubione"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Anulowano pobieranie."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Usuń"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Zapisz"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Usunąć ten album?"
 
@@ -638,7 +650,7 @@ msgid "IDS_GALLERY_HEADER_PD_SELECTED_ABB"
 msgstr "Wybrano %d"
 
 msgid "IDS_GALLERY_OPT_VIEW_AS"
-msgstr "Widok"
+msgstr "Pokaż"
 
 msgid "IDS_GALLERY_OPT_DATE_HMOST_RECENT_ABB2"
 msgstr "Data (najnowsze)"
@@ -681,6 +693,12 @@ msgstr "Wybrany album ten sam co album źródłowy. Wybierz inny album."
 
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Dotknij tutaj, aby dodać obrazy"
+
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Przenieś"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Skopiowano."
 
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Nie można zapisać danych"
@@ -756,4 +774,7 @@ msgstr "EDYTUJ"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Zmień kolejność"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Przeniesiono."
 

@@ -18,9 +18,13 @@ msgstr "개인정보 보호"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "9월"
+msgid "IDS_COM_POP_DELETING"
+msgstr "삭제 중..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "10월"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "취소"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "11월"
@@ -51,6 +55,8 @@ msgstr "8월"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "4월"
+msgid "IDS_COM_BODY_COPY"
+msgstr "복사"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "앨범"
@@ -86,7 +92,7 @@ msgid "IDS_MEDIABR_POP_RETRY_Q"
 msgstr "다시 시도할까요?"
 
 msgid "IDS_MEDIABR_POPUP_REMOVE_Q"
-msgstr "제거할까요?"
+msgstr "삭제할까요?"
 
 msgid "IDS_MEDIABR_POP_PD_ALBUMS_WILL_BE_DELETED"
 msgstr "앨범 %d개를 삭제합니다."
@@ -239,7 +245,7 @@ msgid "IDS_GALLERY_OPT_SCENERY"
 msgstr "풍경"
 
 msgid "IDS_GALLERY_OPT_REMOVE_FROM_PRIVATE"
-msgstr "프라이빗에서 제거"
+msgstr "프라이빗에서 삭제"
 
 msgid "IDS_GALLERY_OPT_PETS"
 msgstr "애완동물"
@@ -287,7 +293,7 @@ msgid "IDS_EMAIL_POP_DELETE_Q"
 msgstr "삭제할까요?"
 
 msgid "IDS_MUSIC_POP_REMOVING"
-msgstr "제거 중..."
+msgstr "삭제 중..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "항목 %d개 표시"
@@ -314,7 +320,7 @@ msgid "IDS_GALLERY_BODY_SEARCH"
 msgstr "검색"
 
 msgid "IDS_GALLERY_BUTTON_BACK"
-msgstr "뒤로가기"
+msgstr "이전"
 
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "카메라"
@@ -326,7 +332,7 @@ msgid "IDS_GALLERY_OPT_REFRESH"
 msgstr "새로고침"
 
 msgid "IDS_GALLERY_OPT_REMOVE"
-msgstr "제거"
+msgstr "삭제"
 
 msgid "IDS_IV_BODY_AFTER_YOU_UPLOAD_PICTURES_TO_DROPBOX_ITEMS_WILL_BE_SHOWN"
 msgstr "사진을 Dropbox에 업로드하면 사진이 표시됩니다."
@@ -341,7 +347,7 @@ msgid "IDS_MEDIABR_OPT_CREATE"
 msgstr "추가"
 
 msgid "IDS_MEDIABR_OPT_DETAILS"
-msgstr "상세정보"
+msgstr "상세 정보"
 
 msgid "IDS_MEDIABR_OPT_PRINT"
 msgstr "인쇄"
@@ -404,10 +410,10 @@ msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
 msgstr "프라이빗 컨텐츠"
 
 msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
-msgstr "%s에서 제거"
+msgstr "%s에서 삭제"
 
 msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
-msgstr "이름 태그 제거"
+msgstr "이름 태그 삭제"
 
 msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
 msgstr "표시할 이벤트가 없습니다. 새 이벤트를 추가하세요."
@@ -416,10 +422,10 @@ msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_IN
 msgstr "다른 날짜로 빠르게 이동하려면 화면 상단 오른쪽에 있는 날짜 표시막대를 길게 누르세요."
 
 msgid "IDS_GP_POP_REMOVE_PD_ITEMS_Q"
-msgstr "항목 %d개를 제거할까요?"
+msgstr "항목 %d개를 삭제할까요?"
 
 msgid "IDS_GP_POP_REMOVE_THIS_ITEM_Q"
-msgstr "이 항목을 제거할까요?"
+msgstr "이 항목을 삭제할까요?"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "갤러리"
@@ -434,7 +440,7 @@ msgid "IDS_IV_BODY_AFTER_YOU_TAG_PICTURES_AS_YOUR_FAVOURITES_PICTURES_WILL_BE_SH
 msgstr "즐겨찾는 사진으로 태그하면 여기에 표시됩니다."
 
 msgid "IDS_IV_BODY_REMOVE_FACE_IDENTIFICATION_Q"
-msgstr "얼굴 인식을 제거할까요?"
+msgstr "얼굴 인식을 삭제할까요?"
 
 msgid "IDS_IV_OPT_ASSIGN_NAME"
 msgstr "이름 지정"
@@ -512,7 +518,7 @@ msgid "IDS_MEDIABR_POP_IMPORTING_ING"
 msgstr "가져오는 중..."
 
 msgid "IDS_MEDIABR_POP_LOADING_ING"
-msgstr "불러오는 중..."
+msgstr "로딩 중..."
 
 msgid "IDS_MEDIABR_POP_NEARBY_DEVICES_FOUND"
 msgstr "주변 디바이스를 찾았습니다."
@@ -545,7 +551,7 @@ msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
 msgstr "저장공간이 부족합니다. 일부 항목을 삭제하세요."
 
 msgid "IDS_MF_POP_REMOVED"
-msgstr "제거하였습니다."
+msgstr "삭제하였습니다."
 
 msgid "IDS_MUSIC_POP_ADDING"
 msgstr "추가 중..."
@@ -572,7 +578,7 @@ msgid "IDS_MEDIABR_OPT_PHOTOS"
 msgstr "사진"
 
 msgid "IDS_MEDIABR_POP_DOWNLOAD_FAILED"
-msgstr "다운로드하지 못하였습니다."
+msgstr "다운로드할 수 없습니다."
 
 msgid "IDS_MEDIABR_POP_UNSUPPORTED_FILE"
 msgstr "지원되지 않는 파일입니다."
@@ -588,6 +594,12 @@ msgstr "즐겨찾기"
 
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "다운로드를 취소하였습니다."
+
+msgid "IDS_COM_OPT_DELETE"
+msgstr "삭제"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "저장"
 
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "이 앨범을 삭제할까요?"
@@ -662,7 +674,7 @@ msgid "IDS_GALLERY_OPT_FROM_FACEBOOK_ABB"
 msgstr "Facebook"
 
 msgid "IDS_MUSIC_BODY_DOWNLOAD_COMPLETED"
-msgstr "다운로드를 완료하였습니다."
+msgstr "다운로드가 완료되었습니다."
 
 msgid "IDS_GALLERY_POP_ALL_ITEMS_WILL_BE_DELETED"
 msgstr "항목을 모두 삭제합니다."
@@ -682,14 +694,20 @@ msgstr "출처가 동일한 앨범을 선택하였습니다. 다른 앨범을 �
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "이미지를 추가하려면 여기를 누르세요"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "이동"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "복사하였습니다."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "데이터를 저장할 수 없음"
 
 msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
-msgstr "디바이스에 저장공간이 부족합니다. [설정] > [전원 및 저장공간] > [저장공간]에서 일부 파일을 삭제한 후 다시 시도하세요."
+msgstr "디바이스에 저장공간이 부족합니다. [설정 > 전원 및 저장공간 > 저장공간]에서 일부 파일을 삭제한 후 다시 시도하세요."
 
 msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
-msgstr "SD 카드에 저장공간이 부족합니다. [설정] > [전원 및 저장공간] > [저장공간]에서 일부 파일을 삭제한 후 다시 시도하세요."
+msgstr "SD 카드에 저장공간이 부족합니다. [설정 > 전원 및 저장공간 > 저장공간]에서 일부 파일을 삭제한 후 다시 시도하세요."
 
 msgid "IDS_MF_BUTTON_CANCEL_ABB3"
 msgstr "취소"
@@ -756,4 +774,7 @@ msgstr "편집"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "순서 변경"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "이동하였습니다."
 

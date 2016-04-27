@@ -18,9 +18,13 @@ msgstr "Konfidencialitāte"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep"
+msgid "IDS_COM_POP_DELETING"
+msgstr "Dzēš..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Atcelt"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov"
@@ -51,6 +55,8 @@ msgstr "Aug"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Apr"
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopēt"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Albums"
@@ -359,7 +365,7 @@ msgid "IDS_MF_HEADER_ENTER_NAME"
 msgstr "Ievadiet vārdu."
 
 msgid "IDS_MF_HEADER_MYFILES"
-msgstr "Mani Faili"
+msgstr "Mani faili"
 
 msgid "IDS_MF_POP_ADDED"
 msgstr "Pievienots."
@@ -589,6 +595,12 @@ msgstr "Izlases"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Lejupielāde atcelta."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Dzēst"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Saglabāt"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Vai izdzēst šo albumu?"
 
@@ -682,6 +694,12 @@ msgstr "Izvēlētais albums ir avota albums. Izvēlieties citu albumu."
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Pieskarieties šeit, lai pievienotu attēlus"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Pārvietot"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Nokopēts."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Nevar saglabāt datus"
 
@@ -756,4 +774,7 @@ msgstr "REDIĢĒT"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Pārkārtot"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Pārvietots."
 

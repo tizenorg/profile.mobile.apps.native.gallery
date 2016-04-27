@@ -18,9 +18,13 @@ msgstr "Confidencialitat"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Set."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Esborrant..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Oct."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancel·lar"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
@@ -51,6 +55,8 @@ msgstr "Ag."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Abr."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Copia"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Àlbum"
@@ -173,7 +179,7 @@ msgid "IDS_MEDIABR_BODY_PD_ITEMS"
 msgstr "%d elements"
 
 msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
-msgstr "Només hi ha un àlbum"
+msgstr "Només hi ha un àlbum."
 
 msgid "IDS_IV_POP_YOU_CAN_SELECT_UP_TO_PD_ITEMS"
 msgstr "Pot seleccionar fins a %d elements"
@@ -338,7 +344,7 @@ msgid "IDS_MEDIABR_HEADER_CONTACTS"
 msgstr "Contactes"
 
 msgid "IDS_MEDIABR_OPT_CREATE"
-msgstr "Crea"
+msgstr "Crear"
 
 msgid "IDS_MEDIABR_OPT_DETAILS"
 msgstr "Detalls"
@@ -589,6 +595,12 @@ msgstr "Preferits"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Descàrrega cancel·lada"
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Esborrar"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Desar"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Esborrar aquest àlbum?"
 
@@ -682,6 +694,12 @@ msgstr "L'àlbum seleccionat és el mateix que el d'origen. Seleccioni'n un altr
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Toqui aquí per afegir imatges"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Moure"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Copiat"
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "No es poden desar dades"
 
@@ -725,7 +743,7 @@ msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
 msgstr "S'ha excedit el nombre màxim d'elements (%d)."
 
 msgid "IDS_GALLERY_BUTTON_CANCEL"
-msgstr "Cancel"
+msgstr "Cancel·lar"
 
 msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
 msgstr "REALITZAT"
@@ -756,4 +774,7 @@ msgstr "EDITAR"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Tornar a ordenar"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Mogut"
 

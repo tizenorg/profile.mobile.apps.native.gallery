@@ -18,9 +18,13 @@ msgstr "Gizlilik"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sen."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Silinmə"
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Ləğv et"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Noy."
@@ -51,6 +55,8 @@ msgstr "Avq."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Apr."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Köçür"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Albom"
@@ -682,6 +688,12 @@ msgstr "Seçilmiş albom mənbə albomu ilə eynidir. Başqa albom seçin."
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Şəkillər əlavə etmək üçün buraya vurun"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Göndər"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Surəti saxlanıldı."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Məlum saxlamaq mümk deyil"
 
@@ -756,4 +768,7 @@ msgstr "REDAKTƏ"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Yenidən nizamla"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Göndərildi."
 

@@ -18,9 +18,13 @@ msgstr "Privacidade"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Set."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Apagando…"
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Out."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancelar"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
@@ -51,6 +55,8 @@ msgstr "Ago."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Abr."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Copiar"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Álbum"
@@ -320,7 +326,7 @@ msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Câmera"
 
 msgid "IDS_GALLERY_HEADER_ALL"
-msgstr "Todos"
+msgstr "Todas"
 
 msgid "IDS_GALLERY_OPT_REFRESH"
 msgstr "Atualizar"
@@ -589,6 +595,12 @@ msgstr "Favoritos"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Transferência cancelada."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Excluir"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Salvar"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Excluir este álbum?"
 
@@ -682,6 +694,12 @@ msgstr "O álbum selecionado é o mesmo álbum de origem. Selecione um outro ál
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Toque aqui para adicionar imagens"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Mover"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Copiado."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Impossível salvar dados"
 
@@ -756,4 +774,7 @@ msgstr "EDITAR"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Reordenar"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Movido."
 

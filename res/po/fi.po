@@ -18,9 +18,13 @@ msgstr "Yksityisyys"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Syy"
+msgid "IDS_COM_POP_DELETING"
+msgstr "Poistetaan..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Lok"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Peruuta"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Mar"
@@ -51,6 +55,8 @@ msgstr "Elo"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Huh"
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopioi"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Albumi"
@@ -589,6 +595,12 @@ msgstr "Suosikit"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Lataus peruutettu."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Poista"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Tallenna"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Poistetaanko tämä albumi?"
 
@@ -682,6 +694,12 @@ msgstr "Valittu albumi on sama kuin lähdealbumi. Valitse toinen albumi."
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Lisää kuvia napauttamalla tätä"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Siirrä"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Kopioitu."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Tietoja ei voi tallentaa"
 
@@ -756,4 +774,7 @@ msgstr "MUOKKAA"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Järjestä uudelleen"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Siirretty."
 

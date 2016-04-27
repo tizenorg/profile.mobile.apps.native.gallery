@@ -18,9 +18,13 @@ msgstr "Privat"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep"
+msgid "IDS_COM_POP_DELETING"
+msgstr "Raderar..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Avbryt"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov"
@@ -51,6 +55,8 @@ msgstr "Aug"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Apr"
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopiera"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Album"
@@ -589,6 +595,12 @@ msgstr "Favoriter"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Nedladdning avbruten."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Ta bort"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Spara"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Ta bort detta album?"
 
@@ -682,6 +694,12 @@ msgstr "Det valda albumet är samma som källalbumet. Välj ett annat album."
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Tryck här för att lägga till bilder"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Flytta"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Kopierad."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Går inte att spara data"
 
@@ -756,4 +774,7 @@ msgstr "REDIGERA"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Ordna om"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Flyttad."
 

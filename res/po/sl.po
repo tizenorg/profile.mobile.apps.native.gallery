@@ -18,9 +18,13 @@ msgstr "Zasebnost"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "sep."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Brišem"
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "okt."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Prekliči"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "nov."
@@ -51,6 +55,8 @@ msgstr "avg."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "apr."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopiraj"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Album"
@@ -589,6 +595,12 @@ msgstr "Priljubljene"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Nalaganje preklicano."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Izbriši"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Shrani"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Želite izbrisati ta album?"
 
@@ -682,6 +694,12 @@ msgstr "Izbrani album je enak kot izvirni album. Izberite drug album."
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Pritisnite tukaj, da dodate slike"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Premakni"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Kopirano."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Podat. ni mogoče shraniti"
 
@@ -756,4 +774,7 @@ msgstr "UREDI"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Prerazporeditev"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Premaknjeno."
 

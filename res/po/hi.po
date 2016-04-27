@@ -18,9 +18,13 @@ msgstr "गोपनीयता"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "सितं"
+msgid "IDS_COM_POP_DELETING"
+msgstr "हटाया जा रहा है..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "अक"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "रद्द"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "नवं"
@@ -51,6 +55,8 @@ msgstr "अग"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "अप्रै"
+msgid "IDS_COM_BODY_COPY"
+msgstr "कॉपी करें"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "एल्बम"
@@ -68,7 +74,7 @@ msgid "IDS_MEDIABR_POP_SAME_NAME_ALREADY_IN_USE"
 msgstr "ऐसा ही नाम पहले से उपयोग में है।"
 
 msgid "IDS_MEDIABR_POP_UNABLE_TO_RENAME"
-msgstr "नाम बदलने में अक्षम।"
+msgstr "नाम बदलने में असमर्थ।"
 
 msgid "IDS_MEDIABR_POP_NO_ALBUMS_SELECTED"
 msgstr "कोई एल्बम चुना नहीं गया।"
@@ -263,7 +269,7 @@ msgid "IDS_IV_POP_MAXIMUM_NUMBER_OF_CHARACTERS_HPD_REACHED"
 msgstr "वर्णों की अधिकतम संख्या (%d) तक पहुँच गया।"
 
 msgid "IDS_IV_BODY_UNABLE_TO_LOAD_PHOTO_ABB"
-msgstr "फोटो लोड करने में अक्षम।"
+msgstr "फोटो लोड करने में असमर्थ।"
 
 msgid "IDS_IV_BODY_SHARE_VIA"
 msgstr "इसके द्वारा साझा करें"
@@ -287,7 +293,7 @@ msgid "IDS_EMAIL_POP_DELETE_Q"
 msgstr "हटाएँ?"
 
 msgid "IDS_MUSIC_POP_REMOVING"
-msgstr "हटा रहा है..."
+msgstr "निकाल रहा है..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d मदें दिखाना"
@@ -398,7 +404,7 @@ msgid "IDS_GALLERY_HEADER_ADD_PICTURES_FROM_ABB"
 msgstr "इससे तस्वीरें जोड़ें"
 
 msgid "IDS_GALLERY_HEADER_CONNECTED_DEVICES_ABB"
-msgstr "जोड़े गए डिवाइस"
+msgstr "कनेक्ट किए गए डिवाइसेस"
 
 msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
 msgstr "व्यक्तिगत सामग्री"
@@ -589,6 +595,12 @@ msgstr "पसंदीदा"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "डाउनलोड रद्द।"
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "हटाएँ"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "सुरक्षित"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "यह एल्बम हटाएँ?"
 
@@ -682,6 +694,12 @@ msgstr "चयनित एल्बम, स्रोत एल्बम के 
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "छवियाँ जोड़ने के लिए यहाँ टैप करें"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "ले जाएँ"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "कॉपी हुआ।"
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "डाटा सुरक्षित करने में असमर्थ"
 
@@ -756,4 +774,7 @@ msgstr "संपादन"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "क्रम बदलें"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "ले जाया गया।"
 

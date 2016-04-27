@@ -18,9 +18,13 @@ msgstr "Privacy"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep"
+msgid "IDS_COM_POP_DELETING"
+msgstr "Deleting..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Oct"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancel"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov"
@@ -51,6 +55,8 @@ msgstr "Aug"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Apr"
+msgid "IDS_COM_BODY_COPY"
+msgstr "Copy"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Album"
@@ -589,6 +595,12 @@ msgstr "Favorites"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Download canceled."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Delete"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Save"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Delete this album?"
 
@@ -682,6 +694,12 @@ msgstr "Selected album same as source album. Select another album."
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Tap here to add images"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Move"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Copied."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Unable to save data"
 
@@ -756,4 +774,7 @@ msgstr "EDIT"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Reorder"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Moved."
 

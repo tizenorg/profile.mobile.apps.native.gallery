@@ -18,9 +18,13 @@ msgstr "Beskyttelse"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Sletter ..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Annuller"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
@@ -51,6 +55,8 @@ msgstr "Aug."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Apr"
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopiér"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Album"
@@ -134,7 +140,7 @@ msgid "IDS_MEDIABR_POP_ALL_DATA_RELATED_TO_THIS_ACCOUNT_WILL_BE_DELETED_CONTINUE
 msgstr "Alle data relateret til denne konto bliver slettet. Fortsæt?"
 
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
-msgstr "Annullér"
+msgstr "Annuller"
 
 msgid "IDS_MEDIABR_TAB4_NEW_ALBUM"
 msgstr "Nyt album"
@@ -212,7 +218,7 @@ msgid "IDS_CAM_SK_CLOSE"
 msgstr "Luk"
 
 msgid "IDS_MF_OPT_SORT_BY_ABB"
-msgstr "Sortér efter"
+msgstr "Sorter efter"
 
 msgid "IDS_CAM_POP_LATEST"
 msgstr "Seneste"
@@ -227,7 +233,7 @@ msgid "IDS_MEDIABR_POP_NO_ITEMS"
 msgstr "Ingen elementer"
 
 msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
-msgstr "Redigér billede"
+msgstr "Rediger billede"
 
 msgid "IDS_MEDIABR_BODY_SELECT_PICTURE"
 msgstr "Vælg billede"
@@ -323,7 +329,7 @@ msgid "IDS_GALLERY_HEADER_ALL"
 msgstr "Alle"
 
 msgid "IDS_GALLERY_OPT_REFRESH"
-msgstr "Opdatér"
+msgstr "Opdater"
 
 msgid "IDS_GALLERY_OPT_REMOVE"
 msgstr "Fjern"
@@ -389,7 +395,7 @@ msgid "IDS_EMAIL_OPT_DRAWER_ABB"
 msgstr "Skuffe"
 
 msgid "IDS_EMAIL_POP_MOBILE_DATA_IS_DISABLED_CONNECT_TO_WI_FI_NETWORK_INSTEAD_OR_ENABLE_MOBILE_DATA_AND_TRY_AGAIN"
-msgstr "Mobile data deaktiveret. Opret forbindelse til Wi-Fi-netværk i stedet, eller aktivér mobile data og prøv igen."
+msgstr "Mobile data deaktiveret. Opret forbindelse til Wi-Fi-netværk i stedet, eller aktiver mobile data og prøv igen."
 
 msgid "IDS_EMAIL_POP_WI_FI_CONNECTION_REQUIRED_CONNECT_TO_WI_FI_NETWORK_AND_TRY_AGAIN"
 msgstr "Wi-Fi-forbindelse kræves. Slut til Wi-Fi-netværk, og prøv igen."
@@ -410,7 +416,7 @@ msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
 msgstr "Fjern navnetag"
 
 msgid "IDS_GALLERY_POP_THERE_ARE_NO_EVENTS_TO_DISPLAY_CREATE_A_NEW_EVENT"
-msgstr "Der er ingen begivenheder at vise. Opret en ny begivenhed."
+msgstr "Der er ingen events at vise. Opret en ny event."
 
 msgid "IDS_GALLERY_POP_TO_SCROLL_QUICKLY_TO_OTHER_DATES_TAP_AND_HOLD_THE_DATE_INDICATOR_AT_THE_TOP_RIGHT_OF_THE_SCREEN"
 msgstr "For at rulle hurtigt igennem andre datoer, skal du trykke og holde nede på datoindikatoren øverst til højre på skærmen."
@@ -497,13 +503,13 @@ msgid "IDS_MEDIABR_OPT_FACEBOOK_CONTENT"
 msgstr "Facebook-indhold"
 
 msgid "IDS_MEDIABR_OPT_ROTATE_LEFT"
-msgstr "Rotér mod venstre"
+msgstr "Roter mod venstre"
 
 msgid "IDS_MEDIABR_OPT_ROTATE_RIGHT"
-msgstr "Rotér mod højre"
+msgstr "Roter mod højre"
 
 msgid "IDS_MEDIABR_POP_IMPORT"
-msgstr "Importér"
+msgstr "Importer"
 
 msgid "IDS_MEDIABR_POP_IMPORTED"
 msgstr "Importeret."
@@ -589,6 +595,12 @@ msgstr "Favoritter"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Download blev annulleret."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Slet"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Gem"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Slet dette album?"
 
@@ -596,7 +608,7 @@ msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Advarsel"
 
 msgid "IDS_ALM_OPT_SORT_BY"
-msgstr "Sortér efter"
+msgstr "Sorter efter"
 
 msgid "IDS_CLD_OPT_TODAY"
 msgstr "I dag"
@@ -682,6 +694,12 @@ msgstr "Det valgte album er det samme som kildealbummet. Vælg et andet album."
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Tryk her for at tilføje billeder"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Flyt"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Kopieret."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Kan ikke gemme data"
 
@@ -725,7 +743,7 @@ msgid "IDS_GALLERY_POP_THE_MAXIMUM_NUMBER_OF_ITEMS_HPD_HAS_BEEN_EXCEEDED"
 msgstr "Det maksimale antal elementer (%d) er overskredet."
 
 msgid "IDS_GALLERY_BUTTON_CANCEL"
-msgstr "Annullér"
+msgstr "Annuller"
 
 msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
 msgstr "UDFØRT"
@@ -756,4 +774,7 @@ msgstr "REDIGER"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Skift rækkefølge"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Flyttet."
 

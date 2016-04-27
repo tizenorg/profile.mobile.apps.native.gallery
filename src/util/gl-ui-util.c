@@ -614,9 +614,6 @@ int _gl_ui_set_translate_str(Evas_Object *obj, const char *str)
 	GL_CHECK_VAL(str, -1);
 	GL_CHECK_VAL(obj, -1);
 	char *domain = GL_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM")) {
-		domain = GL_STR_DOMAIN_SYS;
-	}
 	elm_object_domain_translatable_text_set(obj, domain, str);
 	return 0;
 }
@@ -626,9 +623,6 @@ int _gl_ui_set_translatable_item(Elm_Object_Item *nf_it, const char *str)
 	GL_CHECK_VAL(str, -1);
 	GL_CHECK_VAL(nf_it, -1);
 	char *domain = GL_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM")) {
-		domain = GL_STR_DOMAIN_SYS;
-	}
 	elm_object_item_domain_text_translatable_set(nf_it, domain, EINA_TRUE);
 	return 0;
 }
@@ -639,9 +633,6 @@ int _gl_ui_set_translatable_item_part(Elm_Object_Item *nf_it, const char *part,
 	GL_CHECK_VAL(str, -1);
 	GL_CHECK_VAL(nf_it, -1);
 	char *domain = GL_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM")) {
-		domain = GL_STR_DOMAIN_SYS;
-	}
 	elm_object_item_domain_part_text_translatable_set(nf_it, part, domain,
 	        EINA_TRUE);
 	return 0;
@@ -655,9 +646,6 @@ int _gl_ui_set_translate_part_str(Evas_Object *obj, const char *part,
 	GL_CHECK_VAL(obj, -1);
 
 	char *domain = GL_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM")) {
-		domain = GL_STR_DOMAIN_SYS;
-	}
 	elm_object_domain_translatable_part_text_set(obj, part, domain, str);
 	return 0;
 }

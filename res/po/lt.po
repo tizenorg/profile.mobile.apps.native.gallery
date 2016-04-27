@@ -18,9 +18,13 @@ msgstr "Privatumas"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Rug."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Trinama..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Spa."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Atšaukti"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Lap."
@@ -51,6 +55,8 @@ msgstr "Rgp."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Bal."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopijuoti"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Albumas"
@@ -589,6 +595,12 @@ msgstr "Parankiniai"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Atsisiuntimas atšauktas."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Trinti"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Išsaug."
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Trinti šį albumą?"
 
@@ -682,6 +694,12 @@ msgstr "Pasirinktas albumas toks pat kaip šaltinio albumas. Pasirinkite kitą a
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Bakstelėkite čia ir pridėkite vaizdų"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Perkelti"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Nukopijuota."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Negalima išsaug. duomenų"
 
@@ -756,4 +774,7 @@ msgstr "REDAG."
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Pertvarkyti"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Perkelta."
 

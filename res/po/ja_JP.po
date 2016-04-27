@@ -18,9 +18,13 @@ msgstr "プライバシー"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "9月"
+msgid "IDS_COM_POP_DELETING"
+msgstr "削除中..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "10月"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "キャンセル"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "11月"
@@ -51,6 +55,8 @@ msgstr "8月"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "4月"
+msgid "IDS_COM_BODY_COPY"
+msgstr "コピー"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "アルバム"
@@ -170,7 +176,7 @@ msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
 msgstr "全てのアイテム"
 
 msgid "IDS_MEDIABR_BODY_PD_ITEMS"
-msgstr "%dアイテム"
+msgstr "%d件"
 
 msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
 msgstr "1つのアルバムしかありません。"
@@ -224,7 +230,7 @@ msgid "IDS_MSG_BUTTON2_CREATE"
 msgstr "作成"
 
 msgid "IDS_MEDIABR_POP_NO_ITEMS"
-msgstr "アイテムがありません。"
+msgstr "アイテムがありません"
 
 msgid "IDS_MEDIABR_OPT_EDIT_IMAGE"
 msgstr "画像を編集"
@@ -299,7 +305,7 @@ msgid "IDS_GALLERY_OPT_GALLERY_ABB"
 msgstr "ギャラリー"
 
 msgid "IDS_EMAIL_BUTTON_MORE"
-msgstr "もっと見る"
+msgstr "その他"
 
 msgid "IDS_EMAIL_OPT_ACCOUNTS"
 msgstr "アカウント"
@@ -458,7 +464,7 @@ msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
 msgstr "アイテムを削除"
 
 msgid "IDS_MEDIABR_BODY_1_ITEM"
-msgstr "1アイテム"
+msgstr "1件"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
 msgstr "10秒"
@@ -589,6 +595,12 @@ msgstr "お気に入り"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "ダウンロードを中止しました。"
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "削除"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "保存"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "このアルバムを削除しますか？"
 
@@ -605,7 +617,7 @@ msgid "IDS_GALLERY_BODY_DATE"
 msgstr "日付"
 
 msgid "IDS_EMAIL_BODY_NO_ITEMS_TO_DISPLAY"
-msgstr "表示するメールはありません。"
+msgstr "表示するアイテムがありません"
 
 msgid "IDS_PBR_BODY_TAP_HERE_TO_TAKE_PICTURES_OR_VIDEOS"
 msgstr "写真や動画を撮影するには、ここをタップしてください。"
@@ -682,6 +694,12 @@ msgstr "元のアルバムと同じアルバムを選択しています。別の
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "画像を追加するには、ここをタップしてください"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "移動"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "コピーしました。"
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "データの保存不可"
 
@@ -756,4 +774,7 @@ msgstr "編集"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "並べ替え"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "移動しました。"
 

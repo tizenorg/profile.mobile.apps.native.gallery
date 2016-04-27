@@ -18,9 +18,13 @@ msgstr "Απόρρητο"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Σεπ."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Διαγραφή..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Οκτ."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Άκυρο"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Νοέ."
@@ -51,6 +55,8 @@ msgstr "Αύγ."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Απρ."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Αντιγραφή"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Άλμπουμ"
@@ -143,7 +149,7 @@ msgid "IDS_MEDIABR_POP_DO_YOU_WANT_TO_COPY_OR_MOVE_THE_PICTURES_FROM_THE_ORIGINA
 msgstr "Θέλετε να αντιγράψετε ή να μεταφέρετε φωτογραφίες από το αρχικό άλμπουμ;"
 
 msgid "IDS_MEDIABR_OPT_SHARE"
-msgstr "Κοινόχρηστο"
+msgstr "Κοινή χρήση"
 
 msgid "IDS_MEDIABR_OPT_SLIDESHOW"
 msgstr "Παρουσίαση"
@@ -589,6 +595,12 @@ msgstr "Favorites"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Ακύρωση λήψης."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Διαγραφή"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Αποθ/ση"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Να διαγραφεί αυτό το άλμπουμ;"
 
@@ -682,6 +694,12 @@ msgstr "Το επιλεγμένο άλμπουμ είναι ίδιο με το �
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Πατήστε εδώ για να προσθέσετε εικόνες"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Μετακίνηση"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Αντιγράφηκε."
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Αδύνατη η αποθήκ. δεδομ."
 
@@ -756,4 +774,7 @@ msgstr "ΕΠΕΞΕΡ."
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Αναδιάταξη"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Μετακινήθηκε."
 

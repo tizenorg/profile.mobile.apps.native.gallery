@@ -18,9 +18,13 @@ msgstr "私隱"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "9 月"
+msgid "IDS_COM_POP_DELETING"
+msgstr "正在刪除..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "10 月"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "取消"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "11 月"
@@ -51,6 +55,8 @@ msgstr "8 月"
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "4 月"
+msgid "IDS_COM_BODY_COPY"
+msgstr "複製"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "相簿"
@@ -170,7 +176,7 @@ msgid "IDS_MEDIABR_OPT_ALL_ITEMS"
 msgstr "全部項目"
 
 msgid "IDS_MEDIABR_BODY_PD_ITEMS"
-msgstr "%d 個項目"
+msgstr "%d 個附件"
 
 msgid "IDS_IV_BODY_THERE_IS_ONLY_ONE_ALBUM"
 msgstr "僅有一本相簿。"
@@ -404,7 +410,7 @@ msgid "IDS_GALLERY_OPT_PRIVATE_CONTENT"
 msgstr "私人資料夾內容"
 
 msgid "IDS_GALLERY_OPT_REMOVE_FROM_PS"
-msgstr "從 %s 移除"
+msgstr "從%s移除"
 
 msgid "IDS_GALLERY_OPT_REMOVE_NAME_TAG"
 msgstr "移除名稱標籤"
@@ -458,7 +464,7 @@ msgid "IDS_KEEPIT_HEADER_DELETE_ITEMS"
 msgstr "刪除項目"
 
 msgid "IDS_MEDIABR_BODY_1_ITEM"
-msgstr "1個項目"
+msgstr "1個附件"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
 msgstr "10 秒"
@@ -589,6 +595,12 @@ msgstr "我的最愛"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "下載已取消"
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "刪除"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "儲存"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "刪除此相簿嗎？"
 
@@ -682,14 +694,20 @@ msgstr "選擇的相簿與來源相簿相同。請選擇其他相簿。"
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "輕觸此處以加入圖像"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "移動"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "已複製。"
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "無法儲存數據"
 
 msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
-msgstr "您的裝置儲存空間不足。請前往設定 > 電源與儲存空間 > 儲存空間，然後刪除部分檔案並重試。"
+msgstr "您的裝置儲存空間不足。請前往 [設定] > [電源與儲存空間] > [儲存空間]，然後刪除部分檔案並重試。"
 
 msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
-msgstr "您的 SD 卡上的空間不足。請前往設定 > 電源與儲存空間 > 儲存空間，然後刪除部分檔案並重試。"
+msgstr "您的 SD 卡上的空間不足。請前往 [設定] > [電源與儲存空間] > [儲存空間]，然後刪除部分檔案並重試。"
 
 msgid "IDS_MF_BUTTON_CANCEL_ABB3"
 msgstr "取消"
@@ -756,4 +774,7 @@ msgstr "編輯"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "重新排序"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "已移動"
 

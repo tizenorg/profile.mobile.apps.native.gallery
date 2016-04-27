@@ -18,9 +18,13 @@ msgstr "Privacidad"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_POP_DELETING"
+msgstr "Eliminando..."
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Oct."
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancelar"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov"
@@ -51,6 +55,8 @@ msgstr "Ago."
 
 msgid "IDS_COM_BODY_APR_ABB"
 msgstr "Abr."
+msgid "IDS_COM_BODY_COPY"
+msgstr "Copiar"
 
 msgid "IDS_GALLERY_HEADER_ALBUM"
 msgstr "Álbum"
@@ -98,7 +104,7 @@ msgid "IDS_MEDIABR_BODY_CAMERA"
 msgstr "Cámara"
 
 msgid "IDS_MEDIABR_BUTTON_START"
-msgstr "Iniciar"
+msgstr "Inicio"
 
 msgid "IDS_MEDIABR_OPT_SETTINGS"
 msgstr "Ajustes"
@@ -359,7 +365,7 @@ msgid "IDS_MF_HEADER_ENTER_NAME"
 msgstr "Introducir nombre"
 
 msgid "IDS_MF_HEADER_MYFILES"
-msgstr "Mis Archivos"
+msgstr "Mis archivos"
 
 msgid "IDS_MF_POP_ADDED"
 msgstr "Añadido"
@@ -383,7 +389,7 @@ msgid "IDS_EMAIL_BODY_DOUBLE_TAP_TO_OPEN_DRAWER_MENU_TTS"
 msgstr "Pulse dos veces para abrir el menú desplegable."
 
 msgid "IDS_EMAIL_BODY_DRAG_AND_DROP"
-msgstr "Arrastrar y soltar"
+msgstr "Deslizar y soltar"
 
 msgid "IDS_EMAIL_OPT_DRAWER_ABB"
 msgstr "Cajón"
@@ -589,6 +595,12 @@ msgstr "Favoritos"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Descarga cancelada"
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Eliminar"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Guardar"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "¿Eliminar este álbum?"
 
@@ -599,7 +611,7 @@ msgid "IDS_ALM_OPT_SORT_BY"
 msgstr "Ordenar por"
 
 msgid "IDS_CLD_OPT_TODAY"
-msgstr "Hoy"
+msgstr "Para hoy"
 
 msgid "IDS_GALLERY_BODY_DATE"
 msgstr "Fecha"
@@ -682,14 +694,20 @@ msgstr "El álbum seleccionado es el mismo que el álbum de origen. Seleccione o
 msgid "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES"
 msgstr "Pulse aquí para añadir imágenes"
 
+msgid "IDS_COM_BODY_MOVE"
+msgstr "Mover"
+
+msgid "IDS_COM_POP_COPIED_P"
+msgstr "Copiado"
+
 msgid "IDS_MF_HEADER_UNABLE_TO_SAVE_DATA_ABB"
 msgstr "Imposible guardar datos"
 
 msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_IN_YOUR_DEVICE_STORAGE_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
-msgstr "No queda espacio suficiente en el almacenamiento del dispositivo. Vaya a Ajustes > Alimentación y almacenamiento > Almacenamiento y, a continuación, elimine algunos archivos e inténtelo de nuevo."
+msgstr "No hay espacio suficiente en la memoria del dispositivo. Vaya a Ajustes > Almacenamiento > Memoria de dispositivo y, a continuación, elimine algunos archivos e inténtelo de nuevo."
 
 msgid "IDS_MF_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_YOUR_SD_CARD_GO_TO_SETTINGS_POWER_AND_STORAGE_STORAGE_THEN_DELETE_SOME_FILES_AND_TRY_AGAIN"
-msgstr "No queda espacio suficiente en la tarjeta SD. Vaya a Ajustes > Alimentación y almacenamiento > Almacenamiento y, a continuación, elimine algunos archivos e inténtelo de nuevo."
+msgstr "No queda espacio suficiente en la tarjeta SD. Vaya a Ajustes > Almacenamiento > Memoria y, a continuación, elimine algunos archivos e inténtelo de nuevo."
 
 msgid "IDS_MF_BUTTON_CANCEL_ABB3"
 msgstr "Cancelar"
@@ -756,4 +774,7 @@ msgstr "EDITAR"
 
 msgid "IDS_CLOCK_HEADER_REORDER_ABB"
 msgstr "Reordenar"
+
+msgid "IDS_COM_POP_MOVED"
+msgstr "Movido"
 
