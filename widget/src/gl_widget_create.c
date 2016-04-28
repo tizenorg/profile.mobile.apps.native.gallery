@@ -27,6 +27,7 @@
 #include "gl_widget.h"
 #include <glib.h>
 
+#define GL_STR_DOMAIN_LOCAL "gallery"
 #define NUMBER_OF_ITERATION 4
 #define IMAGES_THRESHOLD 5
 #define SWALLOWS_COUNT 7
@@ -39,18 +40,18 @@
 #define GL_WIDGET_ARGV_IV_PATH "Path"
 #define GL_WIDGET_UG_PKG_IV			"image-viewer-efl"
 
-#define GL_STR_ID_JAN dgettext("sys_string", "IDS_COM_BODY_JANUARY")
-#define GL_STR_ID_FEB dgettext("sys_string", "IDS_COM_BODY_FEBRUARY")
-#define GL_STR_ID_MAR dgettext("sys_string", "IDS_COM_BODY_MARCH")
-#define GL_STR_ID_APR dgettext("sys_string", "IDS_COM_BODY_APRIL")
-#define GL_STR_ID_MAY dgettext("sys_string", "IDS_COM_BODY_MAY")
-#define GL_STR_ID_JUN dgettext("sys_string", "IDS_COM_BODY_JUNE")
-#define GL_STR_ID_JUL dgettext("sys_string", "IDS_COM_BODY_JULY")
-#define GL_STR_ID_AUG dgettext("sys_string", "IDS_COM_BODY_AUGUST")
-#define GL_STR_ID_SEP dgettext("sys_string", "IDS_COM_BODY_SEPTEMBER")
-#define GL_STR_ID_OCT dgettext("sys_string", "IDS_COM_BODY_OCTOBER")
-#define GL_STR_ID_NOV dgettext("sys_string", "IDS_COM_BODY_NOVEMBER")
-#define GL_STR_ID_DEC dgettext("sys_string", "IDS_COM_BODY_DECEMBER")
+#define GL_STR_ID_JAN dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_JAN_ABB")
+#define GL_STR_ID_FEB dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_FEB_ABB")
+#define GL_STR_ID_MAR dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_MAR_ABB")
+#define GL_STR_ID_APR dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_APR_ABB")
+#define GL_STR_ID_MAY dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_MAY_ABB")
+#define GL_STR_ID_JUN dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_JUN_ABB")
+#define GL_STR_ID_JUL dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_JUL_ABB")
+#define GL_STR_ID_AUG dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_AUG_ABB")
+#define GL_STR_ID_SEP dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_SEP_ABB")
+#define GL_STR_ID_OCT dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_OCT_ABB")
+#define GL_STR_ID_NOV dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_NOV_ABB")
+#define GL_STR_ID_DEC dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_DEC_ABB")
 
 int images_in_loops[] = {3, 2, 1, 4}; //count of images in each iteration of animation
 int swallows_in_loops[5][10] = {{1, 1, 0, 0, 0, 1 , 0}, {0, 0, 0, 0, 1, 1, 0}, {0, 0, 0, 0, 0, 0, 1}, {1, 1, 1, 1, 0, 0, 0}}; //arrangement of swallows in each iteration of animation
@@ -87,10 +88,10 @@ void gl_widget_app_get_resource(const char *edj_file_in, char *edj_path_out,
 void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 {
 	if (!obj) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid object!!");
+		ErrPrint("Invalid object!!");
 		return;
 	}
-
+	DbgPrint("loading IV");
 	_widget_data *widget_data = (_widget_data *)data;
 	const char *file_name = NULL;
 	const char *group_name = NULL;
@@ -101,7 +102,7 @@ void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 		if (!widget_data->is_ug_launched) {
 			app_control_create(&service);
 			if (!service) {
-				dlog_print(DLOG_ERROR, LOG_TAG, "fail to create service");
+				ErrPrint("fail to create service");
 				return;
 			}
 			app_control_add_extra_data(service, GL_WIDGET_ARGV_IV_VIEW_BY,
@@ -110,14 +111,16 @@ void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 			app_control_set_app_id(service, GL_WIDGET_UG_PKG_IV);
 			ret = app_control_send_launch_request(service, NULL, NULL);
 			if (ret != APP_CONTROL_ERROR_NONE) {
-				dlog_print(DLOG_ERROR, LOG_TAG, "image load failed");
+				ErrPrint("image load failed");
 				app_control_destroy(service);
 			} else {
 				widget_data->is_ug_launched = true;
 			}
+		} else {
+			DbgPrint("ug already launched");
 		}
 	} else {
-		dlog_print(DLOG_ERROR, LOG_TAG, "image path could not be retrieved");
+		ErrPrint("image path could not be retrieved");
 	}
 }
 
@@ -141,7 +144,7 @@ static Eina_Bool gl_widget_animator_cb(void *data)
 	int i = 0;
 
 	if (!layout) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid layout!!");
+		ErrPrint("Invalid layout!!");
 		return EINA_FALSE;
 	}
 
@@ -156,7 +159,7 @@ static Eina_Bool gl_widget_animator_cb(void *data)
 		if (swallows_in_loops[loop_count % NUMBER_OF_ITERATION][i] == 1) {
 			widget_data->images_count = widget_data->images_count % widget_data->selected_count;
 			Evas_Object *image_object = elm_image_add(layout);
-			dlog_print(DLOG_ERROR, LOG_TAG, "gl_widget_animator_cb Image is %s",
+			DbgPrint("gl_widget_animator_cb Image is %s",
 			           widget_data->selected_images[widget_data->images_count]);
 
 			if (!gl_widget_file_exists(widget_data->selected_images[widget_data->images_count])) {
@@ -174,7 +177,7 @@ static Eina_Bool gl_widget_animator_cb(void *data)
 			}
 
 			if (!elm_image_file_set(image_object, widget_data->selected_images[widget_data->images_count], NULL)) {
-				dlog_print(DLOG_ERROR, LOG_TAG, "File Set Failed");
+				ErrPrint("File Set Failed");
 			}
 
 			elm_image_aspect_fixed_set(image_object, EINA_FALSE);
@@ -196,7 +199,7 @@ static Eina_Bool gl_widget_animator_for_one(void *data)
 	Evas_Object *layout = (Evas_Object *)widget_data->layout;
 
 	if (!layout) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid layout!!");
+		ErrPrint("Invalid layout!!");
 		return EINA_FALSE;
 	}
 
@@ -234,7 +237,7 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 	Evas_Object *layout = (Evas_Object *)widget_data->layout;
 
 	if (!layout) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid layout!!");
+		ErrPrint("Invalid layout!!");
 		return EINA_FALSE;
 	}
 
@@ -244,7 +247,7 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 	evas_object_hide(content);
 
 	Evas_Object *image_object = elm_image_add(layout);
-	dlog_print(DLOG_ERROR, LOG_TAG, "selected images: %s",
+	DbgPrint("selected images: %s",
 	           widget_data->selected_images[widget_data->images_count]);
 
 	if (!gl_widget_file_exists(widget_data->selected_images[widget_data->images_count])) {
@@ -276,13 +279,13 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 static Eina_Bool gl_widget_timer_cb(void *data)
 {
 	if (!data) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid userdata!!");
+		ErrPrint("Invalid userdata!!");
 		return EINA_FALSE;
 	}
 
 	_widget_data *widget_data = (_widget_data *)data;
 
-	dlog_print(DLOG_ERROR, LOG_TAG, "selected_count[%d]", widget_data->selected_count);
+	DbgPrint("selected_count[%d]", widget_data->selected_count);
 	if (widget_data->selected_count >= IMAGES_THRESHOLD) {
 		gl_widget_animator_cb(data);
 	} else if (widget_data->selected_count >= 2) {
@@ -299,7 +302,7 @@ static Eina_Bool gl_widget_check_albumInfo(char** patharray, int count)
 {
 	int refcount = 0;
 	if (!patharray || count <= 0) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid data!!");
+		ErrPrint("Invalid data!!");
 		return EINA_FALSE;
 	}
 
@@ -309,7 +312,7 @@ static Eina_Bool gl_widget_check_albumInfo(char** patharray, int count)
 
 	basepath = (char*)malloc(sizeof(char) * (reflength + 1));
 	if (!basepath) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "allocation failed!!");
+		ErrPrint("allocation failed!!");
 		return EINA_FALSE;
 	}
 
@@ -319,7 +322,7 @@ static Eina_Bool gl_widget_check_albumInfo(char** patharray, int count)
 	for (refcount = 1; refcount < count; refcount++) {
 		if (strstr(patharray[refcount], basepath) == NULL) {
 			free(basepath);
-			dlog_print(DLOG_ERROR, LOG_TAG, "different selection!!");
+			ErrPrint("different selection!!");
 			return EINA_FALSE;
 		}
 	}
@@ -364,7 +367,7 @@ static Eina_Bool gl_widget_check_dateInfo(char** patharray, int count)
 {
 	int refcount = 0;
 	if (!patharray || count <= 0) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid data!!");
+		ErrPrint("Invalid data!!");
 		return EINA_FALSE;
 	}
 
@@ -373,14 +376,14 @@ static Eina_Bool gl_widget_check_dateInfo(char** patharray, int count)
 	char * next_date = NULL;
 	date = _gl_widget_get_file_date(patharray[0]);
 	if (!date) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "failed to extract date!!");
+		ErrPrint("failed to extract date!!");
 		return EINA_FALSE;
 	}
 
 	for (refcount = 1; refcount < count; refcount++) {
 		next_date = _gl_widget_get_file_date(patharray[refcount]);
 		if (!next_date) {
-			dlog_print(DLOG_ERROR, LOG_TAG, "failed to extract date!!");
+			ErrPrint("failed to extract date!!");
 			free(date);
 			return EINA_FALSE;
 		}
@@ -398,7 +401,7 @@ static Eina_Bool gl_widget_check_dateInfo(char** patharray, int count)
 static char *gl_widget_extract_album_path(char* pathInfo)
 {
 	if (!pathInfo) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid path!!");
+		ErrPrint("Invalid path!!");
 		return NULL;
 	}
 
@@ -431,12 +434,12 @@ static char *gl_widget_extract_album_path(char* pathInfo)
 static Eina_Bool gl_widget_check_default_album(char* pathInfo)
 {
 	if (!pathInfo) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid path!!");
+		ErrPrint("Invalid path!!");
 		return EINA_FALSE;
 	}
 	char *path = gl_widget_extract_album_path(pathInfo);
 	if (!path) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Failed to extract path!!");
+		ErrPrint("Failed to extract path!!");
 		return EINA_FALSE;
 	}
 
@@ -457,7 +460,7 @@ static Eina_Bool gl_widget_check_default_album(char* pathInfo)
 static char *gl_widget_extract_album_info(char* pathInfo)
 {
 	if (!pathInfo) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid path!!");
+		ErrPrint("Invalid path!!");
 		return NULL;
 	}
 
@@ -503,7 +506,7 @@ static char *gl_widget_extract_album_info(char* pathInfo)
 static char *gl_widget_extract_date_info(char** patharray, int count)
 {
 	if (!patharray || count <= 0) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid data!!");
+		ErrPrint("Invalid data!!");
 		return NULL;
 	}
 	char * date = _gl_widget_get_file_date(patharray[0]);
@@ -551,7 +554,7 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 {
 	_widget_data *widget_data = (_widget_data *)data;
 	if (!widget_data) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid userdata!!");
+		ErrPrint("Invalid userdata!!");
 		return;
 	}
 	widget_data->is_ug_launched = false;
@@ -571,11 +574,11 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 	app_control_get_extra_data_array(reply, APP_CONTROL_DATA_PATH,
 	                                 &pathArray, &arrayLength);
 	if (arrayLength > 0) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Result Length %d", arrayLength);
+		DbgPrint("Result Length %d", arrayLength);
 		widget_data->selected_images = (char **)malloc(arrayLength * sizeof(char *));
 		fp = eet_open(dbPath, EET_FILE_MODE_READ_WRITE);
 		if (!fp) {
-			dlog_print(DLOG_ERROR, LOG_TAG, "File open failed");
+			ErrPrint("File open failed");
 			return;
 		}
 		snprintf(buffer, sizeof(buffer), "%d", arrayLength);
@@ -589,7 +592,7 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 			}
 			eet_close(fp);
 		} else {
-			dlog_print(DLOG_ERROR, LOG_TAG, "Selected Image is NULL");
+			ErrPrint("Selected Image is NULL");
 		}
 		if (!widget_data->is_edit) {
 			_gl_widget_create_edit_btn(widget_data);
@@ -642,7 +645,7 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 static void gl_widget_on_edit_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	if (!data) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid userdata!!");
+		ErrPrint("Invalid userdata!!");
 		return;
 	}
 	_widget_data *widget_data = (_widget_data *)data;
@@ -666,8 +669,7 @@ static void gl_widget_on_edit_cb(void *data, Evas_Object *obj, void *event_info)
 			ret = app_control_send_launch_request(service,
 			                                      gl_widget_result_cb, (void *)widget_data);
 			if (ret != APP_CONTROL_ERROR_NONE) {
-				dlog_print(DLOG_ERROR, LOG_TAG,
-				           "lauching operation pic failed");
+				ErrPrint("lauching operation pic failed");
 				ret = -1;
 			} else {
 				ret = 0;
@@ -676,6 +678,8 @@ static void gl_widget_on_edit_cb(void *data, Evas_Object *obj, void *event_info)
 
 			app_control_destroy(service);
 		}
+	} else {
+		DbgPrint("ug already launched!!");
 	}
 }
 
@@ -720,7 +724,7 @@ static int gl_widget_launch_gallery_ug(_widget_data *widget_data)
 	if (!widget_data->is_ug_launched) {
 		ret = app_control_create(&service);
 		if (ret != APP_CONTROL_ERROR_NONE) {
-			dlog_print(DLOG_ERROR, LOG_TAG, "Failed to create app control!!");
+			DbgPrint("Failed to create app control!!");
 		} else {
 			app_control_set_operation(service, APP_CONTROL_OPERATION_PICK);
 			app_control_add_extra_data(service,
@@ -735,7 +739,7 @@ static int gl_widget_launch_gallery_ug(_widget_data *widget_data)
 			                                      gl_widget_result_cb,
 			                                      (void *)widget_data);
 			if (ret != APP_CONTROL_ERROR_NONE) {
-				dlog_print(DLOG_ERROR, LOG_TAG, "lauching operation pic failed");
+				DbgPrint("lauching operation pic failed");
 				ret = -1;
 			} else {
 				ret = 0;
@@ -744,6 +748,8 @@ static int gl_widget_launch_gallery_ug(_widget_data *widget_data)
 
 			app_control_destroy(service);
 		}
+	} else {
+		DbgPrint("ug already launched");
 	}
 	return ret;
 }
@@ -753,13 +759,13 @@ static void gl_widget_on_no_image_cb(void *data, Evas_Object *obj,
 {
 	_widget_data *widget_data = (_widget_data *)data;
 	if (!widget_data) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid userdata!!");
+		ErrPrint("Invalid userdata!!");
 		return;
 	}
 
 	Evas_Object *layout = widget_data->layout;
 	if (!layout) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid layout!!");
+		ErrPrint("Invalid layout!!");
 		return;
 	}
 
@@ -769,7 +775,7 @@ static void gl_widget_on_no_image_cb(void *data, Evas_Object *obj,
 Eina_Bool gl_widget_load_preselected_images(_widget_data *widget_data)
 {
 	if (!widget_data) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid userdata!!");
+		ErrPrint("Invalid userdata!!");
 		return -1;
 	}
 
@@ -789,7 +795,7 @@ Eina_Bool gl_widget_load_preselected_images(_widget_data *widget_data)
 			snprintf(buffer, sizeof(buffer), "%s", data);
 			arrayLength = atoi(buffer);
 			widget_data->selected_count = arrayLength;
-			dlog_print(DLOG_ERROR, LOG_TAG, "widget_data->selected_count %d - arrayLength %d", widget_data->selected_count, arrayLength);
+			DbgPrint("widget_data->selected_count %d - arrayLength %d", widget_data->selected_count, arrayLength);
 			free(data);
 		}
 		widget_data->selected_images = (char **)malloc(arrayLength * sizeof(char *));
@@ -819,11 +825,11 @@ Eina_Bool gl_widget_load_preselected_images(_widget_data *widget_data)
 int gl_widget_create(_widget_data *widget_data, int w, int h)
 {
 	if (!widget_data) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid userdata!!");
+		ErrPrint("Invalid userdata!!");
 		return -1;
 	}
 	Evas_Object *layout = NULL;
-	dlog_print(DLOG_ERROR, LOG_TAG, "here0 - %x", widget_data->win);
+	DbgPrint("here0 - %x", widget_data->win);
 	layout = elm_layout_add(widget_data->win);
 	if (!layout) {
 		dlog_print(DLOG_ERROR, LOG_TAG, "Invalid layout!!");
