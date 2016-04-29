@@ -196,6 +196,9 @@ msgstr "Apar"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Silinmə"
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Əlavə edildi."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Əməliyyat alınmadı."
 
@@ -595,6 +598,12 @@ msgstr "Sevimlilər"
 msgid "IDS_EMAIL_POP_DOWNLOAD_CANCELLED"
 msgstr "Yükləmədən imtina edildi."
 
+msgid "IDS_COM_OPT_DELETE"
+msgstr "Sil"
+
+msgid "IDS_COM_SK_SAVE"
+msgstr "Yaddaşa yaz"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Bu albom silinsin?"
 
@@ -771,4 +780,10 @@ msgstr "Yenidən nizamla"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Göndərildi."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Bu gün"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Dünən"
 

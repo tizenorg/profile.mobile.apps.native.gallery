@@ -196,6 +196,9 @@ msgstr "Mover"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Eliminando..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Engadido"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Fallo na operación"
 
@@ -777,4 +780,10 @@ msgstr "Reordenar"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Movido"
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Hoxe"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Onte"
 

@@ -196,6 +196,9 @@ msgstr "Áthelyez"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Törlés..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Hozzáadva."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Sikertelen művelet"
 
@@ -777,4 +780,10 @@ msgstr "Átrendezés"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Áthelyezve."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Ma"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Tegnap"
 

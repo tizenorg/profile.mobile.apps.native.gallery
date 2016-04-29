@@ -196,6 +196,9 @@ msgstr "Μετακίνηση"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Διαγραφή..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Προστέθηκε."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Λειτουργία απέτυχε."
 
@@ -777,4 +780,10 @@ msgstr "Αναδιάταξη"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Μετακινήθηκε."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Σήμερα"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Xθές"
 

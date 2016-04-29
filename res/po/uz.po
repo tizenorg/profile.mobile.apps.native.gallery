@@ -196,6 +196,9 @@ msgstr "Ko‘chir."
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "O'chirilmoqda…"
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Qo‘shildi."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operatsiya bajarilmadi."
 
@@ -777,4 +780,10 @@ msgstr "Qayta saralash"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Ko‘chirilgan."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Bugun"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Kecha"
 

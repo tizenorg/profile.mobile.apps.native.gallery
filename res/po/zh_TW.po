@@ -196,6 +196,9 @@ msgstr "移動"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "正在刪除..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "已新增。"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "操作失敗"
 
@@ -777,4 +780,10 @@ msgstr "重新排序"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "已移動"
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "今天"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "昨天"
 

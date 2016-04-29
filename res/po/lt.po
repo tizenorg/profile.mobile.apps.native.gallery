@@ -196,6 +196,9 @@ msgstr "Perkelti"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Trinama..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Pridėta."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Veiksmas nepavyko."
 
@@ -777,4 +780,10 @@ msgstr "Pertvarkyti"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Perkelta."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Šiandien"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Vakar"
 

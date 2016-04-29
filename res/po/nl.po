@@ -196,6 +196,9 @@ msgstr "Verplaatsen"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Verwijderen..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Toegevoegd."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Bewerking is mislukt."
 
@@ -777,4 +780,10 @@ msgstr "Indeling wijzigen"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Verplaatst."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Vandaag"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Gisteren"
 

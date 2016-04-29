@@ -196,6 +196,9 @@ msgstr "移動"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "削除中..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "追加しました。"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "操作に失敗しました。"
 
@@ -777,4 +780,10 @@ msgstr "並べ替え"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "移動しました。"
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "今日"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "昨日"
 

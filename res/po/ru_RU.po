@@ -196,6 +196,9 @@ msgstr "Переместить"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Удаление..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Добавлено."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Сбой операции."
 
@@ -777,4 +780,10 @@ msgstr "Изменить порядок"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Перемещено."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Сегодня"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Вчера"
 

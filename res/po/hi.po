@@ -196,6 +196,9 @@ msgstr "ले जाएँ"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "हटाया जा रहा है..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "जोड़ा गया।"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "संचालन विफल।"
 
@@ -777,4 +780,10 @@ msgstr "क्रम बदलें"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "ले जाया गया।"
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "आज"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "बीता हुआ कल"
 

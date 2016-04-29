@@ -196,6 +196,9 @@ msgstr "Mugitu"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Ezabatzen..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Gehituta"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Eragiketak huts egin du"
 
@@ -777,4 +780,10 @@ msgstr "Berrantolatu"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Mugitua"
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Gaur"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Atzo"
 

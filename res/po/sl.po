@@ -196,6 +196,9 @@ msgstr "Premik"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Brišem"
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Dodano."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Postopek ni uspel."
 
@@ -777,4 +780,10 @@ msgstr "Prerazporeditev"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Premaknjeno."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Danes"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Včeraj"
 

@@ -196,6 +196,9 @@ msgstr "Teisalda"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Kustutamine..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Lisatud."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Toiming nurjus."
 
@@ -777,4 +780,10 @@ msgstr "Järjesta ümber"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Teisaldatud."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Täna"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Eile"
 

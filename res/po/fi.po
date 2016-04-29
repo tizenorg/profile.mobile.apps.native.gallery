@@ -196,6 +196,9 @@ msgstr "Siirrä"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Poistetaan..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Lisätty."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Toiminto epäonnistui."
 
@@ -777,4 +780,10 @@ msgstr "Järjestä uudelleen"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Siirretty."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Tänään"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Eilen"
 

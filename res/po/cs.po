@@ -196,6 +196,9 @@ msgstr "Přesun"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Odstraňování..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Přidáno."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Otevření se nezdařilo."
 
@@ -777,4 +780,10 @@ msgstr "Změnit uspořádání"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Přesunuto."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Dnes"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Včera"
 

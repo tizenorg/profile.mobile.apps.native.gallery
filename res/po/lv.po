@@ -196,6 +196,9 @@ msgstr "Pārvietot"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Dzēš..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Pievienots."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Darbība neizdevās."
 
@@ -777,4 +780,10 @@ msgstr "Pārkārtot"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Pārvietots."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Šodien"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Vakar"
 

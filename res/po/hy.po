@@ -196,6 +196,9 @@ msgstr "Տեղափոխել"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Ջնջվում է..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Ավելացված է:"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Գործողությունը ձախողվեց:"
 
@@ -777,4 +780,10 @@ msgstr "Վերադասավորել"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Տեղափոխված է"
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Այսօր"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Երեկ"
 

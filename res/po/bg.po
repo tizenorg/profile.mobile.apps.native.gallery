@@ -196,6 +196,9 @@ msgstr "Мести"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Изтриване..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Добавен."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Операцията е неуспешна."
 
@@ -777,4 +780,10 @@ msgstr "Пренареждане"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Преместено."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Днес"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Вчера"
 

@@ -196,6 +196,9 @@ msgstr "نقل"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "جاري المسح..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "تمت الإضافة."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "فشلت العملية."
 
@@ -777,4 +780,10 @@ msgstr "إعادة ترتيب"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "تم النقل."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "اليوم"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "أمس"
 

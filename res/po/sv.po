@@ -196,6 +196,9 @@ msgstr "Flytta"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Raderar..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Tillagd."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Åtgärden misslyckades."
 
@@ -777,4 +780,10 @@ msgstr "Ordna om"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Flyttad."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Idag"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Igår"
 

@@ -196,6 +196,9 @@ msgstr "Taşı"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Siliniyor..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Eklendi."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "İşlem başarısız."
 
@@ -777,4 +780,10 @@ msgstr "Yeniden sırala"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Taşındı."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Bugün"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Dün"
 

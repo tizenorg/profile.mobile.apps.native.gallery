@@ -196,6 +196,9 @@ msgstr "Presun."
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Odstraňovanie..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Pridané."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operácia zlyhala."
 
@@ -777,4 +780,10 @@ msgstr "Zmeniť poradie"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Presunuté."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Dnes"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Včera"
 

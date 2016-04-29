@@ -196,6 +196,9 @@ msgstr "Flytja"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Verið er að eyða..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Bætt við."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Aðgerð mistókst."
 
@@ -777,4 +780,10 @@ msgstr "Endurraða"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Flutt."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Í dag"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Í gær"
 

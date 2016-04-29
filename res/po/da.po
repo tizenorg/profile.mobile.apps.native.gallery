@@ -196,6 +196,9 @@ msgstr "Flyt"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Sletter ..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Tilføjet."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Handlingen mislykkedes."
 
@@ -777,4 +780,10 @@ msgstr "Skift rækkefølge"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Flyttet."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "I dag"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "I går"
 

@@ -196,6 +196,9 @@ msgstr "Bog"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Ag scriosadh..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Curtha leis."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Theip ar oibríocht."
 
@@ -777,4 +780,10 @@ msgstr "Athordaigh"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Bogtha."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Inniu"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Inné"
 

@@ -196,6 +196,9 @@ msgstr "Moure"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Esborrant..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Afegit"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operació fallida"
 
@@ -777,4 +780,10 @@ msgstr "Tornar a ordenar"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Mogut"
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Avui"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Ahir"
 

@@ -196,6 +196,9 @@ msgstr "გადატანა"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "წაშლა..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "დამატებულია."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "ოპერაცია ვერ შესრულდა."
 
@@ -777,4 +780,10 @@ msgstr "გადალაგება"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "გადატანილია."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "დღეს"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "გუშინ"
 

@@ -196,6 +196,9 @@ msgstr "Ауыстыру"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Жойылуда..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Қосылды"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Әрекет сәтсіз аяқталды."
 
@@ -777,4 +780,10 @@ msgstr "Қайта тапсырыс беру"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Орналастырылды."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Бүгін"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Кеше"
 

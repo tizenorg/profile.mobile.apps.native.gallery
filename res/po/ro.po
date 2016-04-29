@@ -196,6 +196,9 @@ msgstr "Mutare"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Se şterge..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Adăugat"
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operaţie nereuşită"
 
@@ -777,4 +780,10 @@ msgstr "Reordonare"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Mutat"
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Azi"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Ieri"
 

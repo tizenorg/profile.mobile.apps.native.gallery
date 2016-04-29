@@ -196,6 +196,9 @@ msgstr "Przenieś"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Usuwanie..."
 
+msgid "IDS_COM_POP_ADDED"
+msgstr "Dodano."
+
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operacja nie powiodła się."
 
@@ -777,4 +780,10 @@ msgstr "Zmień kolejność"
 
 msgid "IDS_COM_POP_MOVED"
 msgstr "Przeniesiono."
+
+msgid "IDS_COM_BODY_TODAY"
+msgstr "Dzisiaj"
+
+msgid "IDS_COM_BODY_YESTERDAY"
+msgstr "Wczoraj"
 
