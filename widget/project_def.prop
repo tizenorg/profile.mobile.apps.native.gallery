@@ -36,7 +36,7 @@ USER_OBJS_ABS =
 # User Includes
 ## C Compiler
 USER_INC_DIRS = inc 
-USER_INC_DIRS_ABS = $(workspace_loc)/Gallery/gallery/inc/data $(workspace_loc)/Gallery/gallery/inc/features $(workspace_loc)/Gallery/gallery/inc/util $(workspace_loc)/Gallery/gallery/inc/widget 
+USER_INC_DIRS_ABS = $(workspace_loc)/inc/data $(workspace_loc)/inc/features $(workspace_loc)/inc/util $(workspace_loc)/inc/widget 
 USER_INC_FILES = 
 USER_INC_FILES_ABS = 
 ## C++ Compiler

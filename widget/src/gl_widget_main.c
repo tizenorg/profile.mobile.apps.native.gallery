@@ -27,8 +27,8 @@
 
 #include <media_content.h>
 
-#include "gl_widget.h"
 #include "gl_widget_debug.h"
+#include "gl_widget.h"
 
 void *getWidgetData(widget_context_h context)
 {
