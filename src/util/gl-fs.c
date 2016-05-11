@@ -27,7 +27,7 @@
 #include "gl-thread-util.h"
 #include "gl-file-util.h"
 #include "gl-util.h"
-#include <storage.h>
+#include <storage/storage.h>
 
 static int __gl_fs_free_node(gl_node_info_s *pnode)
 {

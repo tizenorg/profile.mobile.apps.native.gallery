@@ -24,7 +24,7 @@ extern "C" {
 
 #include "gl-data.h"
 #include "gallery.h"
-#include <storage.h>
+#include <storage/storage.h>
 
 /*	File system related String definition	*/
 

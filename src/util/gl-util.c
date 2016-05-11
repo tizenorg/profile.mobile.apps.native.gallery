@@ -21,7 +21,7 @@
 #endif
 #include <media_content.h>
 #include <system_settings.h>
-#include <storage.h>
+#include <storage/storage.h>
 #include "gl-debug.h"
 #include "gallery.h"
 #include "gl-albums.h"

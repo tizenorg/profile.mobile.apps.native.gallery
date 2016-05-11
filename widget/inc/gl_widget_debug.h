@@ -18,29 +18,10 @@
 #ifndef GL_WIDGET_DEBUG_H
 #define GL_WIDGET_DEBUG_H
 
-#ifndef LOGD
-#define LOGD(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, ##arg)
-#endif
-#ifndef LOGW
-#define LOGW(fmt, arg...) dlog_print(DLOG_INFO, LOG_TAG, ##arg)
-#endif
-#ifndef LOGE
-#define LOGE(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, ##arg)
-#endif
-#ifndef SECURE_LOGD
-#define SECURE_LOGD(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, ##arg)
-#endif
-#ifndef SECURE_LOGI
-#define SECURE_LOGI(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, ##arg)
-#endif
-#ifndef SECURE_LOGE
-#define SECURE_LOGE(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, ##arg)
-#endif
-
 #if !defined(FLOG)
-#define DbgPrint(format, arg...)	LOGD(true, format, ##arg)
-#define ErrPrint(format, arg...)	LOGE(true, format, ##arg)
-#define WarnPrint(format, arg...)	LOGW(true, format, ##arg)
+#define DbgPrint(fmt, arg...)	dlog_print(DLOG_DEBUG, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
+#define ErrPrint(fmt, arg...)	dlog_print(DLOG_ERROR, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
+#define WarnPrint(fmt, arg...)	dlog_print(DLOG_WARN, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
 #else
 extern FILE *__file_log_fp;
 #define DbgPrint(format, arg...) do { fprintf(__file_log_fp, "[LOG] [[32m%s/%s[0m:%d] " format, util_basename(__FILE__), __func__, __LINE__, ##arg); fflush(__file_log_fp); } while (0)

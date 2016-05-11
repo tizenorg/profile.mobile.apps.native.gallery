@@ -23,7 +23,6 @@
 #include <dlog.h>
 #include <media_content.h>
 #include "gl_widget_debug.h"
-#include "gl-data-type.h"
 #include "gl_widget.h"
 #include <glib.h>
 

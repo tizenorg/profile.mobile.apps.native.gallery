@@ -46,37 +46,15 @@ extern "C"
 
 #ifdef _USE_DLOG_
 
-#ifndef LOG_DEBUG
-#define LOG_DEBUG LOG_TAG
-#endif
-#ifndef LOGD
-#define LOGD(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, ##arg)
-#endif
-#ifndef LOGW
-#define LOGW(fmt, arg...) dlog_print(DLOG_INFO, LOG_TAG, ##arg)
-#endif
-#ifndef LOGE
-#define LOGE(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, ##arg)
-#endif
-#ifndef SECURE_LOGD
-#define SECURE_LOGD(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, ##arg)
-#endif
-#ifndef SECURE_LOGI
-#define SECURE_LOGI(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, ##arg)
-#endif
-#ifndef SECURE_LOGE
-#define SECURE_LOGE(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, ##arg)
-#endif
+#define gl_dbg(fmt, arg...)  dlog_print(DLOG_DEBUG, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
+#define gl_dbgI(fmt, arg...) dlog_print(DLOG_INFO, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
+#define gl_dbgW(fmt, arg...) dlog_print(DLOG_WARN, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
+#define gl_dbgE(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
 
-#define gl_dbg(fmt, arg...)  LOGD(true, FONT_COLOR_BLUE fmt FONT_COLOR_RESET, ##arg)
-#define gl_dbgI(fmt, arg...) LOGI(true, FONT_COLOR_GREEN fmt FONT_COLOR_RESET, ##arg)
-#define gl_dbgW(fmt, arg...) LOGW(true, FONT_COLOR_CYAN fmt FONT_COLOR_RESET, ##arg)
-#define gl_dbgE(fmt, arg...) LOGE(true, FONT_COLOR_RED fmt FONT_COLOR_RESET, ##arg)
-
-#define GL_PROFILE_IN  gl_dbg("%s LAUNCH [gallery:Application:%s:IN] %s", LOG_DEBUG, __FUNCTION__)
-#define GL_PROFILE_OUT gl_dbg("%s LAUNCH [gallery:Application:%s:OUT] %s", LOG_DEBUG, __FUNCTION__)
-#define GL_PROFILE_F_IN(func)  gl_dbg(LOG_DEBUG, "LAUNCH","[gallery:Application:"func":IN]")
-#define GL_PROFILE_F_OUT(func) gl_dbg(LOG_DEBUG, "LAUNCH","[gallery:Application:"func":OUT]")
+#define GL_PROFILE_IN  gl_dbg(" LAUNCH [gallery:Application:%s:IN] " , __FUNCTION__)
+#define GL_PROFILE_OUT gl_dbg(" LAUNCH [gallery:Application:%s:OUT]", __FUNCTION__)
+#define GL_PROFILE_F_IN(func)  gl_dbg("LAUNCH","[gallery:Application:"func":IN]")
+#define GL_PROFILE_F_OUT(func) gl_dbg("LAUNCH","[gallery:Application:"func":OUT]")
 
 #else
 
@@ -92,9 +70,9 @@ extern "C"
 #endif
 
 #ifdef _USE_SECURE_LOG_
-#define gl_sdbg(fmt, arg...)  SECURE_LOGD(true, FONT_COLOR_BLUE fmt FONT_COLOR_RESET, ##arg)
-#define gl_sdbgW(fmt, arg...) SECURE_LOGI(true, FONT_COLOR_GREEN fmt FONT_COLOR_RESET, ##arg)
-#define gl_sdbgE(fmt, arg...) SECURE_LOGE(true, FONT_COLOR_RED fmt FONT_COLOR_RESET, ##arg)
+#define gl_sdbg(fmt, arg...)  dlog_print(DLOG_DEBUG, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
+#define gl_sdbgW(fmt, arg...) dlog_print(DLOG_INFO, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
+#define gl_sdbgE(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
 #endif
 
 

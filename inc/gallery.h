@@ -22,7 +22,7 @@
 #include <app.h>
 #include <efl_extension.h>
 #include <app_preference.h>
-#include <storage.h>
+#include <storage/storage.h>
 #include "gl-data.h"
 #include "gl-util.h"
 
