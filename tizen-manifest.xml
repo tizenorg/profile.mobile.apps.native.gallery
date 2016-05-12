@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="org.tizen.gallery" version="1.0.0">
     <profile name="mobile"/>
-    <ui-application appid="org.tizen.gallery" exec="gallery" multiple="false" nodisplay="false" taskmanage="true" type="capp">
+    <ui-application appid="org.tizen.gallery" exec="gallery" hw-acceleration="on" process-pool="true" multiple="false" nodisplay="false" taskmanage="true" type="capp">
         <label>Gallery</label>
         <label xml:lang="hy-am">Պատկերասրահ</label>
         <label xml:lang="az-az">Qalereya</label>

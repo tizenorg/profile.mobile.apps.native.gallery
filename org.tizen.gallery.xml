@@ -3,7 +3,7 @@
         <label>Gallery</label>
         <author email="jiansong.jin@samsung.com" href="www.samsung.com">Jiansong Jin</author>
         <description>Gallery</description>
-        <ui-application  type="capp"  multiple="false" taskmanage="true" nodisplay="false" exec="/usr/apps/org.tizen.gallery/bin/gallery" appid="org.tizen.gallery">
+        <ui-application  type="capp"  multiple="false" hw-acceleration="on" process-pool="true" taskmanage="true" nodisplay="false" exec="/usr/apps/org.tizen.gallery/bin/gallery" appid="org.tizen.gallery">
                 <icon>org.tizen.gallery.png</icon>
                 <label>Gallery</label>
                 <label xml:lang="hy-am">Պատկերասրահ</label>
