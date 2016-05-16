@@ -10,6 +10,9 @@ msgstr "Здесь будут отображаться видеозаписи, �
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Имя файла уже используется"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Справка"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Удалить %d элем.?"
 
@@ -21,11 +24,19 @@ msgstr "Сен"
 msgid "IDS_COM_POP_DELETING"
 msgstr "Удаление..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Обработка..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Отменено."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Окт"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Отмена"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Выделить все"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Ноя"
 
@@ -169,6 +180,9 @@ msgstr "Все альбомы"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Выберите альбом"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Хроника"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "Будет удален 1 элемент."
 
@@ -196,8 +210,14 @@ msgstr "Переместить"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Удаление..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Удалено."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Добавлено."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Сбой."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Сбой операции."
@@ -604,8 +624,14 @@ msgstr "Удалить"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Соxранить"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Удалить?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Удалить этот альбом?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Назад"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Предупреждение"
@@ -630,6 +656,27 @@ msgstr "Превышено максимальное количество отп�
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Нажмите, чтобы добавить изображения."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Пн"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Вт"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Ср"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Чт"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Пт"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Сб"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Приложение не установлено."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Копировать или переместить выбранные элементы из исходного альбома?"
@@ -724,6 +771,9 @@ msgstr "За использование мобильных данных в ро�
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "Элементы (%d) будут удалены."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Камера"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Удалить"
 
@@ -786,4 +836,7 @@ msgstr "Сегодня"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Вчера"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Выбрано."
 

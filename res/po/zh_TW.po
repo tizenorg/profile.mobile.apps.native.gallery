@@ -10,6 +10,9 @@ msgstr "使用相機錄製影片後，將顯示於此。"
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "檔案名稱已被使用"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "說明"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "要刪除 %d 個項目嗎？"
 
@@ -21,11 +24,19 @@ msgstr "9 月"
 msgid "IDS_COM_POP_DELETING"
 msgstr "正在刪除..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "正在處理..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "已取消"
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "10 月"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "取消"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "全選"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "11 月"
 
@@ -169,6 +180,9 @@ msgstr "所有相簿"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "選擇相簿"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "時間表"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "將刪除 1 個項目。"
 
@@ -196,8 +210,14 @@ msgstr "移動"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "正在刪除..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "已刪除。"
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "已新增。"
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "失敗"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "操作失敗"
@@ -604,8 +624,14 @@ msgstr "刪除"
 msgid "IDS_COM_SK_SAVE"
 msgstr "儲存"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "要刪除嗎？"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "刪除此專輯嗎？"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "返回"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "警告"
@@ -630,6 +656,27 @@ msgstr "超過可共享的項目數量上限(%d)。"
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "輕觸以新增圖像。"
+
+msgid "IDS_COM_POP_MON"
+msgstr "週一"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "週二"
+
+msgid "IDS_COM_POP_WED"
+msgstr "週三"
+
+msgid "IDS_COM_POP_THU"
+msgstr "週四"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "週五"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "週六"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "應用程式未安裝。"
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "要從原始相簿複製或移動選擇的項目嗎？"
@@ -724,6 +771,9 @@ msgstr "漫遊時使用行動數據可能視您的付費方案而產生額外費
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "將刪除%d 個項目。"
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "相機"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "刪除"
 
@@ -786,4 +836,7 @@ msgstr "今天"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "昨天"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "已選擇"
 

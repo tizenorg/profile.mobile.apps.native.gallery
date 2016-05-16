@@ -10,6 +10,9 @@ msgstr "När du har spelat in videor med kameran visas de här."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Filnamnet används redan."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Hjälp"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Radera %d objekt?"
 
@@ -21,11 +24,19 @@ msgstr "Sep"
 msgid "IDS_COM_POP_DELETING"
 msgstr "Raderar..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Bearbetar..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Avbruten."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Avbryt"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Välj alla"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov"
 
@@ -169,6 +180,9 @@ msgstr "Alla album"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Välj album"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Tidslinje"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 objekt kommer att tas bort."
 
@@ -196,8 +210,14 @@ msgstr "Flytta"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Raderar..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Raderad."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Tillagd."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Misslyckades."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Åtgärden misslyckades."
@@ -604,8 +624,14 @@ msgstr "Ta bort"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Spara"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Radera?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Ta bort detta album?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Åter"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Varning"
@@ -630,6 +656,27 @@ msgstr "Max. antal objekt som kan delas (%d) har överskridits."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Tryck för att lägga till bilder."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Mån"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Tis"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Ons"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Tor"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Fre"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Lör"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Programmet är inte installerat."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Vill du kopiera eller flytta de valda objekten från det ursprungliga albumet?"
@@ -724,6 +771,9 @@ msgstr "Användning av Mobila data under roaming kan medföra extra avgifter ber
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d objekt kommer att tas bort."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Ta bort"
 
@@ -786,4 +836,7 @@ msgstr "Idag"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Igår"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Vald."
 

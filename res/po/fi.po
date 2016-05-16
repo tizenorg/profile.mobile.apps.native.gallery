@@ -10,6 +10,9 @@ msgstr "Kun olet tallentanut kameralla videoita, ne näytetään täällä."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Tiedoston nimi jo käytössä."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Ohje"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Poistetaanko %d kohdetta?"
 
@@ -21,11 +24,19 @@ msgstr "Syy"
 msgid "IDS_COM_POP_DELETING"
 msgstr "Poistetaan..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Käsitellään..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Peruutettu."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Lok"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Peruuta"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Valitse kaikki"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Mar"
 
@@ -169,6 +180,9 @@ msgstr "Kaikki albumit"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Valitse albumi"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Aikajana"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 kohde poistetaan."
 
@@ -196,8 +210,14 @@ msgstr "Siirrä"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Poistetaan..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Poistettu."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Lisätty."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Epäonnistui."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Toiminto epäonnistui."
@@ -604,8 +624,14 @@ msgstr "Poista"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Tallenna"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Poistetaanko?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Poistetaanko tämä albumi?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Takaisin"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Varoitus"
@@ -630,6 +656,27 @@ msgstr "Jaettavissa olevien kohteiden enimmäismäärä (%d) on ylitetty."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Lisää kuvia napauttamalla."
+
+msgid "IDS_COM_POP_MON"
+msgstr "ma"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "ti"
+
+msgid "IDS_COM_POP_WED"
+msgstr "ke"
+
+msgid "IDS_COM_POP_THU"
+msgstr "to"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "pe"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "la"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Sovellusta ei ole asennettu."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Kopioidaanko tai siirretäänkö valitut kohteet alkuperäisestä albumista?"
@@ -724,6 +771,9 @@ msgstr "Mobiilidatan käytöstä verkkovierailun aikana voidaan periä lisämaks
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d kohdetta poistetaan."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Poista"
 
@@ -786,4 +836,7 @@ msgstr "Tänään"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Eilen"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Valittu."
 

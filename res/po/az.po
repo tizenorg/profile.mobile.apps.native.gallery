@@ -10,6 +10,9 @@ msgstr "Kamera vasitəsilə videoları çəkdikdən sonra onlar burada görünə
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Fayl adı artıq istifadədədir"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Yardım"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "%d element silinsin?"
 
@@ -18,13 +21,24 @@ msgstr "Gizlilik"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sen."
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Silinmə"
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Emal edilir..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Ləğv edildi."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
+
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Ləğv et"
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Hamısını seç"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Noy."
@@ -169,6 +183,9 @@ msgstr "Bütün albomlar"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Albom seç"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Vaxt şkalası"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 element silinəcək."
 
@@ -196,8 +213,14 @@ msgstr "Apar"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Silinmə"
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Silindi."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Əlavə edildi."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Mümkün olmadı."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Əməliyyat alınmadı."
@@ -604,8 +627,14 @@ msgstr "Sil"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Yaddaşa yaz"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Silinsin?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Bu albom silinsin?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Geriyə"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Diqqət"
@@ -630,6 +659,27 @@ msgstr "Paylaşıla bilən elementlərin sayı maksimumu (%d) keçmişdir."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Təsvir əlavə etmək üçün vurun."
+
+msgid "IDS_COM_POP_MON"
+msgstr "B.e"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Ç.A."
+
+msgid "IDS_COM_POP_WED"
+msgstr "Çərş."
+
+msgid "IDS_COM_POP_THU"
+msgstr "C.A."
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Cümə"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Şən"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Proqram quraşdırılmamışdır."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Seçilən elementlər orijinal albomdan kopyalansın və ya silinsin?"
@@ -724,6 +774,9 @@ msgstr "Ödəniz planınızdan asılı olaraq Mobil tarifdən istifadə əlavə 
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d element silinəcək."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Sil"
 
@@ -786,4 +839,7 @@ msgstr "Bu gün"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Dünən"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Seçildi."
 

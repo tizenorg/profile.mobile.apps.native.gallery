@@ -10,6 +10,9 @@ msgstr "在您使用相机录制视频后，其将显示在此处。"
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "文件名已被使用"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "帮助"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "删除 %d 个项目吗？"
 
@@ -21,11 +24,19 @@ msgstr "9月"
 msgid "IDS_COM_POP_DELETING"
 msgstr "删除中.."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "处理中..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "已取消"
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "10月"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "取消"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "全选"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "11月"
 
@@ -161,13 +172,16 @@ msgid "IDS_MEDIABR_BODY_SLIDESHOW_SETTINGS"
 msgstr "幻灯片播放设置"
 
 msgid "IDS_MEDIABR_POP_NO_NAME"
-msgstr "无名称"
+msgstr "无姓名"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "所有相册"
 
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "选择相册"
+
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "时间线"
 
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "将删除 1 个项目。"
@@ -196,8 +210,14 @@ msgstr "移动"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "删除中.."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "已删除"
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "已添加"
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "失败"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "操作失败"
@@ -604,8 +624,14 @@ msgstr "删除"
 msgid "IDS_COM_SK_SAVE"
 msgstr "保存"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "删除？"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "是否删除该相册？"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "返回"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "警告"
@@ -630,6 +656,27 @@ msgstr "已超过可分享的最大项目数 (%d)"
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "点击添加图片"
+
+msgid "IDS_COM_POP_MON"
+msgstr "星期一"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "星期二"
+
+msgid "IDS_COM_POP_WED"
+msgstr "星期三"
+
+msgid "IDS_COM_POP_THU"
+msgstr "星期四"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "星期五"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "星期六"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "未安装应用程序。"
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "是否从原始相片集复制或移动选中项目？"
@@ -724,6 +771,9 @@ msgstr "根据您的资费套餐，漫游时使用移动数据可能产生额外
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "将删除 %d 个项目。"
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "相机"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "删除"
 
@@ -786,4 +836,7 @@ msgstr "今天"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "昨天"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "已选择"
 

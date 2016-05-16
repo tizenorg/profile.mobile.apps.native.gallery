@@ -10,6 +10,9 @@ msgstr "După ce înregistraţi videoclipuri utilizând camera, acestea se vor a
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Numele de fişier este deja utilizat."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Ajutor"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Ştergeţi %d elemente?"
 
@@ -21,11 +24,19 @@ msgstr "Sep."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Se şterge..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Se procesează..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Anulat"
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Oct."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Anulare"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Selectare toate"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
 
@@ -169,6 +180,9 @@ msgstr "Toate albumele"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Selectare album"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Cronologie"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 element va fi şters."
 
@@ -196,8 +210,14 @@ msgstr "Mutare"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Se şterge..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Şters"
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Adăugat"
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Nereuşit"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operaţie nereuşită"
@@ -604,8 +624,14 @@ msgstr "Ştergere"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Salvare"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Ştergeţi?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Ştergeţi acest album?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Înapoi"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Avertisment"
@@ -630,6 +656,27 @@ msgstr "A fost depăşit numărul maxim de elemente care pot fi partajate (%d)."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Atingeţi pentru a adăuga imagini."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Lun"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Mar"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Mie"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Joi"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Vin"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Sâm"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Aplicaţia nu este instalată."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Copiaţi sau mutaţi elementele selectate din albumul iniţial?"
@@ -724,6 +771,9 @@ msgstr "Utilizarea Datelor mobile în roaming poate genera costuri suplimentare,
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d elemente vor fi şterse."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Cameră foto"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Ştergere"
 
@@ -786,4 +836,7 @@ msgstr "Azi"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Ieri"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Selectat"
 

@@ -10,6 +10,9 @@ msgstr "Når du har optaget videoer ved hjælp af kameraet, vil de blive vist he
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Filnavn allerede i brug."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Hjælp"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Vil du slette %d elementer?"
 
@@ -21,11 +24,19 @@ msgstr "Sep."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Sletter ..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Behandler ..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Annulleret."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Annuller"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Vælg alle"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
 
@@ -169,6 +180,9 @@ msgstr "Alle albummer"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Vælg album"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Tidslinje"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 element vil blive slettet."
 
@@ -196,8 +210,14 @@ msgstr "Flyt"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Sletter ..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Slettet."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Tilføjet."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Mislykkedes."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Handlingen mislykkedes."
@@ -604,8 +624,14 @@ msgstr "Slet"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Gem"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Slet?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Slet dette album?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Tilbage"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Advarsel"
@@ -630,6 +656,27 @@ msgstr "Det maksimale antal genstande, der kan deles (%d), er overskredet."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Tryk for at tilføje billeder."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Man"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Tir"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Ons"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Tor"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Fre"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Lør"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Program ikke installeret."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Vil du kopiere eller flytte de valgte elementer fra det oprindelige album?"
@@ -724,6 +771,9 @@ msgstr "Brug af mobile data under roaming kan medføre yderligere gebyrer afhæn
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d elementer vil blive slettet."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Slet"
 
@@ -786,4 +836,7 @@ msgstr "I dag"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "I går"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Valgte."
 

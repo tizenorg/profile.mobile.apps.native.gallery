@@ -10,6 +10,9 @@ msgstr "カメラで動画を撮影した後に、動画が表示されます。
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "ファイル名は既に使用されています。"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "ヘルプ"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "%dアイテム​を​削除​しますか？"
 
@@ -21,11 +24,19 @@ msgstr "9月"
 msgid "IDS_COM_POP_DELETING"
 msgstr "削除中..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "処理中..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "キャンセルしました。"
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "10月"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "キャンセル"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "全て選択"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "11月"
 
@@ -169,6 +180,9 @@ msgstr "全てのアルバム"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "アルバムを選択"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "タイムライン"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1件のアイテムを削除します。"
 
@@ -196,8 +210,14 @@ msgstr "移動"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "削除中..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "削除しました。"
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "追加しました。"
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "失敗しました。"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "操作に失敗しました。"
@@ -604,8 +624,14 @@ msgstr "削除"
 msgid "IDS_COM_SK_SAVE"
 msgstr "保存"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "削除しますか？"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "このアルバムを削除しますか？"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "戻る"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "警告"
@@ -630,6 +656,27 @@ msgstr "共有可能なアイテムの最大数(%d件)に達しました。"
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "画像を追加してください。"
+
+msgid "IDS_COM_POP_MON"
+msgstr "月"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "火"
+
+msgid "IDS_COM_POP_WED"
+msgstr "水"
+
+msgid "IDS_COM_POP_THU"
+msgstr "木"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "金"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "土"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "アプリケーションがインストールされていません"
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "元のアルバムから選択したアイテムをコピーまたは移動しますか？"
@@ -724,6 +771,9 @@ msgstr "ローミング中にモバイルデータを使用すると、データ
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d件のアイテムを削除します。"
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "カメラ"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "削除"
 
@@ -786,4 +836,7 @@ msgstr "今日"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "昨日"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "選択しました。"
 

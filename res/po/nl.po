@@ -10,6 +10,9 @@ msgstr "Nadat u video´s hebt opgenomen met de camera, worden ze hier getoond."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Bestandsnaam is al in gebruik."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Help"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "%d items verwijderen?"
 
@@ -21,11 +24,19 @@ msgstr "Sep."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Verwijderen..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Verwerken..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Geannuleerd."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Annuleren"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Alles selecteren"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
 
@@ -169,6 +180,9 @@ msgstr "Alle albums"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Album selecteren"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Tijdlijn"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 item wordt verwijderd."
 
@@ -196,8 +210,14 @@ msgstr "Verplaatsen"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Verwijderen..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Verwijderd."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Toegevoegd."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Mislukt."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Bewerking is mislukt."
@@ -604,8 +624,14 @@ msgstr "Verwijderen"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Opslaan"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Verwijderen?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Dit album verwijderen?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Terug"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Waarschuwing"
@@ -630,6 +656,27 @@ msgstr "Maximumaantal items dat kan worden gedeeld (%d), is overschreden."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Tik om afbeeldingen toe te voegen."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Ma"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Di"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Wo"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Do"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Vr"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Za"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Applicatie niet geïnstalleerd."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Geselecteerde items uit het oorspronkelijke album kopiëren of verplaatsen?"
@@ -724,6 +771,9 @@ msgstr "Als u Mobiele gegevens tijdens roaming gebruikt, kan dat afhankelijk van
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d items worden verwijderd."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Camera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Wissen"
 
@@ -786,4 +836,7 @@ msgstr "Vandaag"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Gisteren"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Geselecteerd."
 

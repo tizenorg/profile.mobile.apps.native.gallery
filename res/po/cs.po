@@ -10,6 +10,9 @@ msgstr "Až nahrajete videa pomocí fotoaparátu, zobrazí se zde."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Název souboru je již použit."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Nápověda"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Chcete odstranit %d položek?"
 
@@ -21,11 +24,19 @@ msgstr "Zář."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Odstraňování..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Probíhá zpracování..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Zrušeno."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Říj."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Zrušit"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Vybrat vše"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Lis."
 
@@ -169,6 +180,9 @@ msgstr "Všechna alba"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Vybrat album"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Časová osa"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 položka bude odstraněna."
 
@@ -196,8 +210,14 @@ msgstr "Přesun"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Odstraňování..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Odstraněno."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Přidáno."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Nezdařilo se."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Otevření se nezdařilo."
@@ -604,8 +624,14 @@ msgstr "Odstranit"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Uložit"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Odstranit?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Odstranit toto album?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Zpět"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Upozornění"
@@ -630,6 +656,27 @@ msgstr "Byl překročen maximální počet položek, které lze sdílet (%d)."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Klepnutím přidejte obrázky."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Po"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Út"
+
+msgid "IDS_COM_POP_WED"
+msgstr "St"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Čt"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Pá"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "So"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Aplikace není nainstalována."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Chcete zkopírovat nebo přesunout vybrané položky z původního alba?"
@@ -724,6 +771,9 @@ msgstr "Používání Mobilních dat při roamingu může mít za následek dal�
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "Bude odstraněno %d položek."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Fotoaparát"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Odstranit"
 
@@ -786,4 +836,7 @@ msgstr "Dnes"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Včera"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Vybráno."
 

@@ -10,6 +10,9 @@ msgstr "Kamerayı kullanarak video çektiğinizde videolar burada görüntüleni
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Dosya adı kullanılıyor"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Yardım"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "%d öğeleri silinsin mi?"
 
@@ -21,11 +24,19 @@ msgstr "Eyl."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Siliniyor..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Uygulanıyor..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "İptal edildi."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Eki."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "İptal"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Hepsini seç"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Kas."
 
@@ -169,6 +180,9 @@ msgstr "Tüm albümler"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Albüm seç"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Zaman çizelgesi"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 öğe silinecek."
 
@@ -196,8 +210,14 @@ msgstr "Taşı"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Siliniyor..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Silindi."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Eklendi."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Başarısız oldu."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "İşlem başarısız."
@@ -604,8 +624,14 @@ msgstr "Sil"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Kaydet"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Sil?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Bu albüm silinsin mi?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Geri"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Uyarı"
@@ -630,6 +656,27 @@ msgstr "Paylaşılabilecek maksimum öğe sayısı (%d) aşıldı."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Resim eklemek için dokun."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Pzt"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Sal"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Çar"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Per"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Cum"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Cmt"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Uygulama yüklenmedi."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Orijinal albümdeki seçili öğeler kopyalansın veya taşınsın mı?"
@@ -724,6 +771,9 @@ msgstr "Dolaşım sırasında Mobil verileri kullanmak ödeme planınıza bağl�
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d öğe silinecek."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Sil"
 
@@ -786,4 +836,7 @@ msgstr "Bugün"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Dün"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Seçildi."
 

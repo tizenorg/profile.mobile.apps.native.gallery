@@ -10,6 +10,9 @@ msgstr "After you record videos using the camera, they will be shown here."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "File name already in use."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Help"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Delete %d items?"
 
@@ -21,11 +24,19 @@ msgstr "Sep."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Deleting..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Processing..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Canceled."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Oct."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Cancel"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Select all"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
 
@@ -169,6 +180,9 @@ msgstr "All albums"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Select album"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Timeline"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 item will be deleted."
 
@@ -196,8 +210,14 @@ msgstr "Move"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Deleting..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Deleted."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Added."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Failed"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operation failed."
@@ -604,8 +624,14 @@ msgstr "Delete"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Save"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Delete?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Delete this album?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Back"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Warning"
@@ -630,6 +656,27 @@ msgstr "Maximum number of items that can be shared (%d) exceeded."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Tap to add images."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Mon"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Tue"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Wed"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Thu"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Fri"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Sat"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Application not installed."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Copy or move the selected items from the original album?"
@@ -724,6 +771,9 @@ msgstr "Using Mobile data while roaming may result in additional charges dependi
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d items will be deleted."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Camera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Delete"
 
@@ -786,4 +836,7 @@ msgstr "Today"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Yesterday"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Selected."
 

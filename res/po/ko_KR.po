@@ -10,6 +10,9 @@ msgstr "카메라를 사용하여 동영상을 촬영하면 동영상이 여기�
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "사용 중인 파일 이름입니다."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "도움말"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "%d개를 삭제할까요?"
 
@@ -21,11 +24,19 @@ msgstr "9월"
 msgid "IDS_COM_POP_DELETING"
 msgstr "삭제 중..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "진행 중..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "취소하였습니다."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "10월"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "취소"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "모두 선택"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "11월"
 
@@ -169,6 +180,9 @@ msgstr "모든 앨범"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "앨범 선택"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "타임라인"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "항목 1개를 삭제합니다."
 
@@ -196,8 +210,14 @@ msgstr "이동"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "삭제 중..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "삭제하였습니다."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "추가하였습니다."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "완료하지 못하였습니다."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "작업을 수행하지 못하였습니다."
@@ -604,8 +624,14 @@ msgstr "삭제"
 msgid "IDS_COM_SK_SAVE"
 msgstr "저장"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "삭제할까요?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "이 앨범을 삭제할까요?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "뒤로가기"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "경고"
@@ -630,6 +656,27 @@ msgstr "공유 가능한 최대 항목 수(%d)를 초과하였습니다."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "이미지를 추가하려면 누르세요."
+
+msgid "IDS_COM_POP_MON"
+msgstr "월"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "화"
+
+msgid "IDS_COM_POP_WED"
+msgstr "수"
+
+msgid "IDS_COM_POP_THU"
+msgstr "목"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "금"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "토"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "애플리케이션이 설치되지 않았습니다."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "원래 앨범에서 선택한 항목을 복사하거나 이동할까요?"
@@ -724,6 +771,9 @@ msgstr "로밍 중에 모바일 데이터를 사용하면 데이터 요금제에
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "항목 %d개를 삭제합니다."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "카메라"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "삭제"
 
@@ -786,4 +836,7 @@ msgstr "오늘"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "어제"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "선택하였습니다."
 

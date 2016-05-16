@@ -10,6 +10,9 @@ msgstr "Nakon što kamerom snimite videozapise, prikazat će se ovdje."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Već postoji naziv datoteke."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Upute"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Obrisati %d slika?"
 
@@ -21,11 +24,19 @@ msgstr "Ruj"
 msgid "IDS_COM_POP_DELETING"
 msgstr "Brisanje..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Procesiranje..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Prekinuto."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Lis"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Prekid"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Odaberi sve"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Stu"
 
@@ -169,6 +180,9 @@ msgstr "Svi albumi"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Odaberi album"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Vremenska lenta"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 stavka bit će obrisana."
 
@@ -196,8 +210,14 @@ msgstr "Premjesti"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Brisanje..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Obrisano."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Dodano."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Neuspješno."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Neuspješno."
@@ -604,8 +624,14 @@ msgstr "Obriši"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Spremi"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Obrisati?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Izbrisati ovaj album?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Nazad"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Upozorenje"
@@ -630,6 +656,27 @@ msgstr "Dosegnut je maksimalni broj stavki koje se mogu dijeliti (%d)."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Dotaknite za dodavanje slika."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Pon"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Uto"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Sri"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Čet"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Pet"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Sub"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Aplikacija nije instalirana."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Kopirati ili premjestiti odabrane stavke iz originalnog albuma?"
@@ -724,6 +771,9 @@ msgstr "Korištenje mobilnih podataka u roamingu može dovesti do dodatnih troš
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d stavki bit će izbrisano."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Obriši"
 
@@ -786,4 +836,7 @@ msgstr "Danas"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Jučer"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Odabrano."
 

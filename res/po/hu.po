@@ -10,6 +10,9 @@ msgstr "Itt jelennek majd meg a fényképezővel rögzített videók."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Ilyen fájlnév már van."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Súgó"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Töröl %d elemet?"
 
@@ -21,11 +24,19 @@ msgstr "Sze."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Törlés..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Feldolgozás folyamatban"
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Megszakítva."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Mégse"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Összes kijelölése"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
 
@@ -169,6 +180,9 @@ msgstr "Összes album"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Album kiválasztása"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Időrend"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "Törölni fog 1 tételt."
 
@@ -196,8 +210,14 @@ msgstr "Áthelyez"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Törlés..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Törölve."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Hozzáadva."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Sikertelen"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Sikertelen művelet"
@@ -604,8 +624,14 @@ msgstr "Töröl"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Ment"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Törli?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Törli az albumot?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Vissza"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Figyelmeztetés"
@@ -630,6 +656,27 @@ msgstr "Túllépte a megosztható tételek maximális számát (%d)."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Érintse meg képek hozzáadásához."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Hét"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Ke"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Sze"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Csü"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Pén"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Szo"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Az alkalmazás nincs telepítve."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Átmásolja vagy áthelyezi a kiválasztott elemeket az eredeti albumból?"
@@ -724,6 +771,9 @@ msgstr "Előfizetési csomagjától függően lehetséges, hogy a mobil internet
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "Törölni fog %d elemet."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Fényképező"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Törlés"
 
@@ -786,4 +836,7 @@ msgstr "Ma"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Tegnap"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Kiválasztva."
 

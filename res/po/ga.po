@@ -10,6 +10,9 @@ msgstr "Tar éis duit físeáin a thaifeadadh leis an gceamara, taispeánfar ans
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Comhadainm in úsáid cheana."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Cuidiú"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Scrios míreanna %d?"
 
@@ -21,11 +24,19 @@ msgstr "M.F."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Ag scriosadh..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Ag próiseáil..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Curtha ar ceal."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "D.F."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Cuir ar ceal"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Roghnaigh gach"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Samh"
 
@@ -169,6 +180,9 @@ msgstr "Gach albam"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Roghnaigh albam"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Amlíne"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "Scriosfar 1 mhír"
 
@@ -196,8 +210,14 @@ msgstr "Bog"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Ag scriosadh..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Scriosta."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Curtha leis."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Theip air."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Theip ar oibríocht."
@@ -604,8 +624,14 @@ msgstr "Scrios"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Sábháil"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Scrios?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Scrios an t-albam seo?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Siar"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Rabhadh"
@@ -630,6 +656,27 @@ msgstr "Uaslíon na míreanna is féidir iad a chomhroinnt (%d) bainte amach."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Tapáil le híomhánna a chur leis"
+
+msgid "IDS_COM_POP_MON"
+msgstr "Luan"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Már"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Céad"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Déar"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Aoin"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Sath"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Níl feidhmchlár suiteáilte."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Cóipeáil nó bog na míreanna roghnaithe ón albam bunaidh?"
@@ -724,6 +771,9 @@ msgstr "Is féidir go ngearrfar táillí breise ar úsáid sonraí móibíleacha
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "Scriosfar %d mír."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Ceamara"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Scrios"
 
@@ -786,4 +836,7 @@ msgstr "Inniu"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Inné"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Roghnaithe."
 

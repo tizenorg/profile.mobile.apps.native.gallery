@@ -10,6 +10,9 @@ msgstr "Kai fotoaparatu įrašysite vaizdo įrašų, jie bus rodomi čia."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Failo pavadinimas jau naudojamas"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Pagalba"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Ištrinti %d elementus?"
 
@@ -21,11 +24,19 @@ msgstr "Rug."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Trinama..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Apdorojama..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Atšaukta."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Spa."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Atšaukti"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Pasirinkti visus"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Lap."
 
@@ -169,6 +180,9 @@ msgstr "Visi albumai"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Pasirinkti albumą"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Laiko skalė"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 elementas bus ištrintas."
 
@@ -196,8 +210,14 @@ msgstr "Perkelti"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Trinama..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Ištrinta."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Pridėta."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Nepavyko."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Veiksmas nepavyko."
@@ -604,8 +624,14 @@ msgstr "Trinti"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Išsaug."
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Ar trinti?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Trinti šį albumą?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Atgal"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Įspėjimas"
@@ -630,6 +656,27 @@ msgstr "Viršytas didžiausias bendrintinų elementų skaičius (%d)."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Bakstelėkite ir pridėkite vaizdų."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Pir."
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Ant."
+
+msgid "IDS_COM_POP_WED"
+msgstr "Tre."
+
+msgid "IDS_COM_POP_THU"
+msgstr "Ket."
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Pen."
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Šeš."
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Programa nebuvo įdiegta."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Kopijuoti arba perkelti pasirinktus elementus iš pradinio albumo?"
@@ -724,6 +771,9 @@ msgstr "Naudojant mobiliuosius duomenis tarptinkliniu ryšiu gali būti taikomi 
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "Bus ištrinta elementų: %d."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Fotoapar."
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Trinti"
 
@@ -786,4 +836,7 @@ msgstr "Šiandien"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Vakar"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Pasirinkta."
 

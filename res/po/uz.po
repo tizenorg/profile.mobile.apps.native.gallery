@@ -10,6 +10,9 @@ msgstr "Kamera yordamida videoga olganingizdan so‘ng, ular bu yerda ko‘rsati
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Fayl nomi avvaldan foydalanilmoqda"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Yordam"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "%dta element O'chirilsinmi?"
 
@@ -21,11 +24,19 @@ msgstr "Sen."
 msgid "IDS_COM_POP_DELETING"
 msgstr "O'chirilmoqda…"
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Bajarilmoqda..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Bekor qilingan."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Bekor qilish"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Barchasini tanlash"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Noy."
 
@@ -169,6 +180,9 @@ msgstr "Barcha albomlar"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Albom tanlash"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Taymlayn"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 element yo‘q qilinadi."
 
@@ -196,8 +210,14 @@ msgstr "Ko‘chir."
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "O'chirilmoqda…"
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "O'chirildi."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Qo‘shildi."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Xato."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operatsiya bajarilmadi."
@@ -604,8 +624,14 @@ msgstr "O'chirish"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Saqlash"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "O'chirilsinmi?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Ushbu albom yo‘q qilinsinmi?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Orqaga"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Ogohlantirish"
@@ -630,6 +656,27 @@ msgstr "Ulashilgan elementlar soni maksimal miqdordan (%d) oshib ketdi."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Tasvirlar qo‘shish uchun teging."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Du"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Se"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Chor"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Pay"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Ju"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Shan"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Ilova o‘rnatilmadi."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Asl nusxadagi albomdan elementlardan nusxa ko‘chirilsinmi yoki ular ko‘chirilsinmi?"
@@ -724,6 +771,9 @@ msgstr "Rouming vaqtida Mobil ma’lumotdan foydalanish tarif rejangiz asosida q
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%dta element yo‘q qilinadi."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Yo‘q qilish"
 
@@ -786,4 +836,7 @@ msgstr "Bugun"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Kecha"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Tanlangan."
 

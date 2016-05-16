@@ -10,6 +10,9 @@ msgstr "როდესაც ჩაწერთ ვიდეოს კამე
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "ფაილის სახელი უკვე გამოყენებულია"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "დახმარება"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "წაშლით %d ელემენტს?"
 
@@ -21,11 +24,19 @@ msgstr "სექ."
 msgid "IDS_COM_POP_DELETING"
 msgstr "წაშლა..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "მუშავდება..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "გაუქმებულია."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "ოქტ."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "გაუქმება"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "ყველას არჩევა"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "ნოე."
 
@@ -169,6 +180,9 @@ msgstr "ყველა ალბომი"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "ალბომის არჩევა"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "დროითი სკალა"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 ელემენტი წაიშლება."
 
@@ -196,8 +210,14 @@ msgstr "გადატანა"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "წაშლა..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "წაშლილია."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "დამატებულია."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "ვერ შესრულდა."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "ოპერაცია ვერ შესრულდა."
@@ -604,8 +624,14 @@ msgstr "წაშლა"
 msgid "IDS_COM_SK_SAVE"
 msgstr "შენახვა"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "წაიშალოს?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "წაიშალოს ეს ალბომი?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "უკან"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "გაფრთხილება"
@@ -630,6 +656,27 @@ msgstr "გადაჭარბებულია ელემენტთა �
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "დააკაკუნეთ და დაამატეთ სურათები."
+
+msgid "IDS_COM_POP_MON"
+msgstr "ორშ."
+
+msgid "IDS_COM_POP_TUE"
+msgstr "სამ."
+
+msgid "IDS_COM_POP_WED"
+msgstr "ოთხ."
+
+msgid "IDS_COM_POP_THU"
+msgstr "ხუთ."
+
+msgid "IDS_COM_POP_FRI"
+msgstr "პარ."
+
+msgid "IDS_COM_POP_SAT"
+msgstr "შაბ."
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "პროგრამა არაა დაინსტალირებული."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "დააკოპირებთ ან გადაიტანთ შერჩეულ ელემენტებს თავდაპირველი ალბომიდან?"
@@ -724,6 +771,9 @@ msgstr "შესაძლოა, როუმინგში მობილუ
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d ელემენტი წაიშლება."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "ფოტოაპარატი"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "წაშლა"
 
@@ -786,4 +836,7 @@ msgstr "დღეს"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "გუშინ"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "შერჩეულია."
 

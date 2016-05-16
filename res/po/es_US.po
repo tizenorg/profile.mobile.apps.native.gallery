@@ -10,6 +10,9 @@ msgstr "Después de  grabar videos con la cámara, los videos se mostrarán aqu�
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Nombre de archivo ya existe."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Ayuda"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "¿Eliminar %d elementos?"
 
@@ -21,11 +24,19 @@ msgstr "Sep."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Eliminando..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Procesando..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Cancelado."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Oct."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Cancelar"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Todo"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
 
@@ -169,6 +180,9 @@ msgstr "Todos los álbumes"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Seleccionar álbum"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Línea de tiempo"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "Se eliminará este elemento."
 
@@ -196,8 +210,14 @@ msgstr "Mover"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Eliminando..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Eliminado."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Añadido."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Error."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Error de funcionamiento."
@@ -604,8 +624,14 @@ msgstr "Eliminar"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Guardar"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "¿Eliminar?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "¿Desea eliminar este álbum?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Atrás"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Aviso"
@@ -630,6 +656,27 @@ msgstr "Se excedió el número máximo de elementos que se pueden compartir (%d)
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Pulse para añadir imágenes."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Lun"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Mar"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Mié"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Jue"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Vie"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Sáb"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Aplicación no instalada."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "¿Desea copiar o mover los elementos seleccionados del álbum original?"
@@ -724,6 +771,9 @@ msgstr "El uso de datos móviles en roaming puede generar costos adicionales seg
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "Se eliminarán %d elementos."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Cámara"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Eliminar"
 
@@ -786,4 +836,7 @@ msgstr "Hoy"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Ayer"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Seleccionado."
 

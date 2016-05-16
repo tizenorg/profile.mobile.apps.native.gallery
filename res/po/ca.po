@@ -10,6 +10,9 @@ msgstr "Després de gravar vídeos amb la càmera, es mostraran aquí."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "El nom de fitxer està en ús."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Ajuda"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Esborrar %d elements?"
 
@@ -21,11 +24,19 @@ msgstr "Set."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Esborrant..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Processant..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Cancel·lat"
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Oct."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Cancel·lar"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Seleccioni-ho tot"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov."
 
@@ -169,6 +180,9 @@ msgstr "Tots els àlbums"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Seleccionar àlbum"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Línia de temps"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "S'esborrarà 1 element"
 
@@ -196,8 +210,14 @@ msgstr "Moure"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Esborrant..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Esborrat"
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Afegit"
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Error"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Operació fallida"
@@ -604,8 +624,14 @@ msgstr "Esborrar"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Desar"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Esborrar?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Esborrar aquest àlbum?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Enrere"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Advertiment"
@@ -630,6 +656,27 @@ msgstr "S'ha superat el número màxim d'elements que es poden compartir (%d)."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Toqui per afegir imatges"
+
+msgid "IDS_COM_POP_MON"
+msgstr "Dl."
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Dt."
+
+msgid "IDS_COM_POP_WED"
+msgstr "Dc."
+
+msgid "IDS_COM_POP_THU"
+msgstr "Dj."
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Dv."
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Ds."
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "L'aplicació no està instal·lada"
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Copiar o moure els elements seleccionats de l'àlbum original?"
@@ -724,6 +771,9 @@ msgstr "L'ús de Dades mòbils en itinerància por comportar càrrecs addicional
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "S'esborraran %d elements."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Càmera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Esborrar"
 
@@ -786,4 +836,7 @@ msgstr "Avui"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Ahir"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Seleccionat"
 

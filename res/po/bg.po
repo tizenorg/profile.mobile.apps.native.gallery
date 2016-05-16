@@ -10,6 +10,9 @@ msgstr "След като заснемете видеоклипове с кам�
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Името на файла вече се използва."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Помощ"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Изтриване на %d елемента?"
 
@@ -18,13 +21,24 @@ msgstr "Поверителност"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Сеп."
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Изтриване..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Обработване..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Отменено."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Окт."
+
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Отмени"
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Избери всички"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Ное."
@@ -169,6 +183,9 @@ msgstr "Всички албуми"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Избор на албум"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Времева линия"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 елемент ще бъде изтрит."
 
@@ -196,8 +213,14 @@ msgstr "Мести"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Изтриване..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Изтрито."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Добавен."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Неуспешно."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Операцията е неуспешна."
@@ -604,8 +627,14 @@ msgstr "Изтриване"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Запази"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Изтриване?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Изтривате ли този албум?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Назад"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Внимание"
@@ -630,6 +659,27 @@ msgstr "Максималният брой елементи, които може 
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Чукнете, за да добавите изображения."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Пон"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Вт"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Ср"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Чтв"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Пет"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Съб"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Приложението не е инсталирано."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Искате ли да копирате или преместите избраните елементи от първоначалния албум?"
@@ -724,6 +774,9 @@ msgstr "Използването на мобилни данни в роумин�
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d елемента ще бъдат изтрити."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Камера"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Изтриване"
 
@@ -786,4 +839,7 @@ msgstr "Днес"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Вчера"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Избран."
 

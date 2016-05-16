@@ -10,6 +10,9 @@ msgstr "Kamera erabiliz bideoak grabatu ondoren, hemen erakutsiko dira."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Fitxategi izena aurretik erabiltzen ari zara."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Laguntza"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "%d elementu ezabatu?"
 
@@ -21,11 +24,19 @@ msgstr "Irl."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Ezabatzen..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Prozesatzen..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Ezeztatua"
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Urr."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Ezeztatu"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Hautatu denak"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Azr."
 
@@ -169,6 +180,9 @@ msgstr "Album guztiak"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Aukeratu albuma"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Lan egutegia"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "Elementu 1 ezabatuko da"
 
@@ -196,8 +210,14 @@ msgstr "Mugitu"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Ezabatzen..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Ezabatua"
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Gehituta"
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Huts egin du"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Eragiketak huts egin du"
@@ -604,8 +624,14 @@ msgstr "Ezabatu"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Gorde"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Ezabatu?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Ezabatu album hau?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Atzera"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Kontuz"
@@ -630,6 +656,27 @@ msgstr "Parteka daitezkeen elementuen gehieneko kopurua (%d) gainditu da."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Sakatu irudiak gehitzeko"
+
+msgid "IDS_COM_POP_MON"
+msgstr "Asl."
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Asr."
+
+msgid "IDS_COM_POP_WED"
+msgstr "Asz."
+
+msgid "IDS_COM_POP_THU"
+msgstr "Osg."
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Otr."
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Lar."
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Aplikazioa instalatu gabe"
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Kopiatu edo mugitu hautatutako elementuak jatorrizko albumetik?"
@@ -724,6 +771,9 @@ msgstr "Ezin dira datu mugikorrak erabili ibiltaritzan, zure ordainketa planaren
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d elementu ezabatuko dira."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Ezabatu"
 
@@ -786,4 +836,7 @@ msgstr "Gaur"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Atzo"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Aukeratutakoa(k)"
 

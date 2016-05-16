@@ -10,6 +10,9 @@ msgstr "Kad būsit ierakstījis videoklipus, izmantojot kameru, tie būs redzami
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Faila nosaukums jau tiek lietots"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Palīdzība"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Vai izdzēst %d objektus?"
 
@@ -21,11 +24,19 @@ msgstr "Sep"
 msgid "IDS_COM_POP_DELETING"
 msgstr "Dzēš..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Notiek apstrāde..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Atcelts."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Atcelt"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Izv. visu"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov"
 
@@ -169,6 +180,9 @@ msgstr "Visi albumi"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Izvēlēties albumu"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Laika skala"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "Tiks izdzēsts 1 objekts."
 
@@ -196,8 +210,14 @@ msgstr "Pārvietot"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Dzēš..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Izdzēsts."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Pievienots."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Neizdevās."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Darbība neizdevās."
@@ -604,8 +624,14 @@ msgstr "Dzēst"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Saglabāt"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Vai dzēst?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Vai izdzēst šo albumu?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Atpakaļ"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Brīdinājums"
@@ -630,6 +656,27 @@ msgstr "Pārsniegts maksimālais kopīgojamo objektu skaits (%d)."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Pieskarieties, lai pievienotu attēlus."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Pr."
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Ot."
+
+msgid "IDS_COM_POP_WED"
+msgstr "Tr."
+
+msgid "IDS_COM_POP_THU"
+msgstr "Ce."
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Pk."
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Se."
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Programma nav instalēta."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Vai vēlaties kopēt vai pārvietot objektus no sākotnējā albuma?"
@@ -724,6 +771,9 @@ msgstr "Mobilo datu lietošana viesabonēšanas laikā var radīt papildu izmaks
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "Tiks izdzēsti %d objekti."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Dzēst"
 
@@ -786,4 +836,7 @@ msgstr "Šodien"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Vakar"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Izvēlēts."
 

@@ -10,6 +10,9 @@ msgstr "سيتم عرض مقاطع فيديو التي تم تسجيلها با�
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "اسم الملف مستخدم بالفعل"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "مساعدة"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "هل تريد حذف %d عنصر (عناصر)؟"
 
@@ -23,8 +26,18 @@ msgstr "سبت"
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "أكت"
+
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "جاري المعالجة..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "تم الإلغاء."
+
 msgid "IDS_COM_SK_CANCEL"
 msgstr "إلغاء"
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "اختيار الكل"
 
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "نوف"
@@ -169,6 +182,9 @@ msgstr "كافة الألبومات"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "تحديد ألبوم‬"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "المخطط الزمني‬"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "سيتم حذف عنصر واحد."
 
@@ -196,8 +212,14 @@ msgstr "نقل"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "جاري المسح..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "تم الحذف."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "تمت الإضافة."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "فشل."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "فشلت العملية."
@@ -604,8 +626,14 @@ msgstr "حذف"
 msgid "IDS_COM_SK_SAVE"
 msgstr "حفظ"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "مسح؟"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "هل تريد حذف هذا الألبوم؟"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "رجوع"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "تحذير"
@@ -630,6 +658,27 @@ msgstr "تم تجاوز الحد الأقصى لعدد العناصر التي �
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "انقر لإضافة صور."
+
+msgid "IDS_COM_POP_MON"
+msgstr "إثنين"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "ثلاثاء"
+
+msgid "IDS_COM_POP_WED"
+msgstr "أربعاء"
+
+msgid "IDS_COM_POP_THU"
+msgstr "خميس"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "جمعة"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "سبت"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "لم يتم تثبيت التطبيق."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "هل تريد نسخ العناصر المحددة أو نقلها من الألبوم الأصلي؟"
@@ -724,6 +773,9 @@ msgstr "قد يترتب على استخدام بيانات الهاتف المح
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "سيتم حذف %d من العناصر."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "الكاميرا"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "حذف"
 
@@ -786,4 +838,7 @@ msgstr "اليوم"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "أمس"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "تم التحديد."
 

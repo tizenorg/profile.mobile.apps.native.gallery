@@ -10,6 +10,9 @@ msgstr "Откако ќе снимите видеа со камерата, ќе 
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Името на фајлот се користи."
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Помош"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Избриши %d записи?"
 
@@ -21,11 +24,19 @@ msgstr "Сеп."
 msgid "IDS_COM_POP_DELETING"
 msgstr "Се брише..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Обработување..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Откажано."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Окт."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Откажи"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Избери ги сите"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Ное."
 
@@ -169,6 +180,9 @@ msgstr "Сите албуми"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Избери албум"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Историја"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 запис ќе се избрише."
 
@@ -196,8 +210,14 @@ msgstr "Премести"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Се брише..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Избришано."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Додадено."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Неуспешно."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Неуспешна операција."
@@ -604,8 +624,14 @@ msgstr "Избриши"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Сочувај"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Да се избрише?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Да се избрише овој албум?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Назад"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Предупредување"
@@ -630,6 +656,27 @@ msgstr "Надминат е максималниот број ставки шт�
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Допрете за додавање слики."
+
+msgid "IDS_COM_POP_MON"
+msgstr "Пон"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "Вто"
+
+msgid "IDS_COM_POP_WED"
+msgstr "Сре"
+
+msgid "IDS_COM_POP_THU"
+msgstr "Чет"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "Пет"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "Саб"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Апликацијата не е инсталирана."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Да се ископираат или преместат избраните записи од оригиналниот албум?"
@@ -724,6 +771,9 @@ msgstr "Користењето мобилни податоци во роамин
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d записи ќе се избришат."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Камера"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Избриши"
 
@@ -786,4 +836,7 @@ msgstr "Денес"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Вчера"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Избрано."
 

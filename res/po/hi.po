@@ -10,6 +10,9 @@ msgstr "आपके द्वारा कैमरे का उपयोग �
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "फाइल नाम पहले से ही उपयोग में है।"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "सहायता"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "%d मदें हटाएँ?"
 
@@ -21,11 +24,19 @@ msgstr "सितं"
 msgid "IDS_COM_POP_DELETING"
 msgstr "हटाया जा रहा है..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "प्रक्रिया हो रही है..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "रद्द हुआ।"
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "अक"
 msgid "IDS_COM_SK_CANCEL"
 msgstr "रद्द"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "सभी चुनें"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "नवं"
 
@@ -169,6 +180,9 @@ msgstr "सभी एलबम्‍स"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "एल्बम चुनें"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "समयरेखा"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 मद हटाया जाएगा।"
 
@@ -196,8 +210,14 @@ msgstr "ले जाएँ"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "हटाया जा रहा है..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "हटाया।"
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "जोड़ा गया।"
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "विफल।"
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "संचालन विफल।"
@@ -604,8 +624,14 @@ msgstr "हटाएँ"
 msgid "IDS_COM_SK_SAVE"
 msgstr "सुरक्षित"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "हटाएँ?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "यह एल्बम हटाएँ?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "पीछे"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "चेतावनी"
@@ -630,6 +656,27 @@ msgstr "साझा की जा सकने वाली मदों की
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "छवियाँ जोड़ने के लिए टैप करें।"
+
+msgid "IDS_COM_POP_MON"
+msgstr "सोम"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "मंगल"
+
+msgid "IDS_COM_POP_WED"
+msgstr "बुध"
+
+msgid "IDS_COM_POP_THU"
+msgstr "गुरु"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "शुक्र"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "शनि"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "एप्लीकेशन स्थापित नहीं हुई।"
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "मूल एल्बम से चयनित मदों को कॉपी करें या उन्हें ले जाएँ?"
@@ -724,6 +771,9 @@ msgstr "आपकी भुगतान योजना के आधार प�
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d मदें हटाई जाएँगी।"
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "कैमरा"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "हटाएँ"
 
@@ -786,4 +836,7 @@ msgstr "आज"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "बीता हुआ कल"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "चयनित।"
 

@@ -10,6 +10,9 @@ msgstr "Videod kuvatakse pärast nende salvestamist kaameraga."
 msgid "IDS_VIDEO_TPOP_FILE_NAME_ALREADY_IN_USE"
 msgstr "Failinimi on juba kasutusel"
 
+msgid "IDS_COM_BODY_HELP"
+msgstr "Spikker"
+
 msgid "IDS_MF_POP_DELETE_PD_ITEMS_Q"
 msgstr "Kustutada %d üksust?"
 
@@ -21,11 +24,19 @@ msgstr "Sep"
 msgid "IDS_COM_POP_DELETING"
 msgstr "Kustutamine..."
 
+msgid "IDS_COM_POP_PROCESSING"
+msgstr "Töötlemine..."
+
+msgid "IDS_COM_POP_CANCELLED"
+msgstr "Tühistatud."
+
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "Okt."
 msgid "IDS_COM_SK_CANCEL"
 msgstr "Tühista"
 
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Vali kõik"
 msgid "IDS_COM_BODY_NOV_ABB"
 msgstr "Nov"
 
@@ -169,6 +180,9 @@ msgstr "Kõik albumid"
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Valige album"
 
+msgid "IDS_MEDIABR_HEADER_TIMELINE_ABB"
+msgstr "Ajaskaala"
+
 msgid "IDS_MEDIABR_POP_1_ITEM_WILL_BE_DELETED"
 msgstr "1 üksus kustutatakse."
 
@@ -196,8 +210,14 @@ msgstr "Teisalda"
 msgid "IDS_MF_POP_DELETING_ING"
 msgstr "Kustutamine..."
 
+msgid "IDS_COM_POP_DELETED"
+msgstr "Kustutatud."
+
 msgid "IDS_COM_POP_ADDED"
 msgstr "Lisatud."
+
+msgid "IDS_COM_POP_FAILED"
+msgstr "Nurjus."
 
 msgid "IDS_CAM_BODY_OPERATION_FAILED"
 msgstr "Toiming nurjus."
@@ -604,8 +624,14 @@ msgstr "Kustuta"
 msgid "IDS_COM_SK_SAVE"
 msgstr "Salvesta"
 
+msgid "IDS_COM_POP_DELETE_Q"
+msgstr "Kustutada?"
+
 msgid "IDS_GALLERY_POP_DELETE_THIS_ALBUM_Q"
 msgstr "Kas kustutada see album?"
+
+msgid "IDS_COM_SK_BACK"
+msgstr "Tagasi"
 
 msgid "IDS_CAM_HEADER_WARNING_ABB"
 msgstr "Hoiatus"
@@ -630,6 +656,27 @@ msgstr "Maksimaalne jagatavate üksuste arv (%d) on ületatud."
 
 msgid "IDS_IV_BODY_TAP_TO_ADD_IMAGES"
 msgstr "Toksake piltide lisamiseks."
+
+msgid "IDS_COM_POP_MON"
+msgstr "E"
+
+msgid "IDS_COM_POP_TUE"
+msgstr "T"
+
+msgid "IDS_COM_POP_WED"
+msgstr "K"
+
+msgid "IDS_COM_POP_THU"
+msgstr "N"
+
+msgid "IDS_COM_POP_FRI"
+msgstr "R"
+
+msgid "IDS_COM_POP_SAT"
+msgstr "L"
+
+msgid "IDS_COM_BODY_APPLICATION_NOT_INSTALLED"
+msgstr "Rakendus pole installitud."
 
 msgid "IDS_GALLERY_POP_COPY_OR_MOVE_THE_SELECTED_ITEMS_FROM_THE_ORIGINAL_ALBUM_Q"
 msgstr "Kas kopeerida või teisaldada valitud üksused originaalalbumist?"
@@ -724,6 +771,9 @@ msgstr "Sõltuvalt teie paketist võivad rändluse ajal mobiilse andmeside kasut
 msgid "IDS_GALLERY_POP_PD_ITEMS_WILL_BE_DELETED_ABB"
 msgstr "%d üksust kustutatakse."
 
+msgid "IDS_COM_BODY_CAMERA"
+msgstr "Kaamera"
+
 msgid "IDS_GALLERY_OPT_DELETE"
 msgstr "Kustuta"
 
@@ -786,4 +836,7 @@ msgstr "Täna"
 
 msgid "IDS_COM_BODY_YESTERDAY"
 msgstr "Eile"
+
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Valitud."
 
