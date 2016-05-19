@@ -34,7 +34,7 @@
 
 #define GL_EXT_STR_BUNDLE_LEN 48
 
-#define GL_UG_PKG_IV			"image-viewer-efl"
+#define GL_UG_PKG_IV			"org.tizen.image-viewer"
 #define GL_UG_PKG_GALLERY_SETTING	"setting-gallery-efl"
 
 #define GL_ARGV_IV_VIEW_MODE			"View Mode"

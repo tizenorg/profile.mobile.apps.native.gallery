@@ -37,7 +37,7 @@
 #define GL_WIDGET_ARGV_IV_VIEW_BY		"View By"
 #define GL_WIDGET_ARGV_IV_VIEW_BY_FOLER	"By Folder"
 #define GL_WIDGET_ARGV_IV_PATH "Path"
-#define GL_WIDGET_UG_PKG_IV			"image-viewer-efl"
+#define GL_WIDGET_UG_PKG_IV			"org.tizen.image-viewer"
 
 #define GL_STR_ID_JAN dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_JAN_ABB")
 #define GL_STR_ID_FEB dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_FEB_ABB")
@@ -663,7 +663,7 @@ static void gl_widget_on_edit_cb(void *data, Evas_Object *obj, void *event_info)
 			app_control_set_mime(service, "image/*");
 			app_control_add_extra_data(service, "launch-type", "multiple");
 			app_control_add_extra_data(service, "file-type", "image");
-			app_control_set_app_id(service, "ug-gallery-efl");
+			app_control_set_app_id(service, "org.tizen.ug-gallery-efl");
 
 			ret = app_control_send_launch_request(service,
 			                                      gl_widget_result_cb, (void *)widget_data);
@@ -732,7 +732,7 @@ static int gl_widget_launch_gallery_ug(_widget_data *widget_data)
 			app_control_set_mime(service, "image/*");
 			app_control_add_extra_data(service, "launch-type", "multiple");
 			app_control_add_extra_data(service, "file-type", "image");
-			app_control_set_app_id(service, "ug-gallery-efl");
+			app_control_set_app_id(service, "org.tizen.ug-gallery-efl");
 
 			ret = app_control_send_launch_request(service,
 			                                      gl_widget_result_cb,
