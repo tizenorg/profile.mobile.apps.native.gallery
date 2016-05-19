@@ -37,7 +37,7 @@
 #define GL_WIDGET_ARGV_IV_VIEW_BY		"View By"
 #define GL_WIDGET_ARGV_IV_VIEW_BY_FOLER	"By Folder"
 #define GL_WIDGET_ARGV_IV_PATH "Path"
-#define GL_WIDGET_UG_PKG_IV			"image-viewer-efl"
+#define GL_WIDGET_UG_PKG_IV			"org.tizen.image-viewer"
 
 #define GL_STR_ID_JAN dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_JAN_ABB")
 #define GL_STR_ID_FEB dgettext(GL_STR_DOMAIN_LOCAL, "IDS_COM_BODY_FEB_ABB")
