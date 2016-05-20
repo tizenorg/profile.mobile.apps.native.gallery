@@ -584,13 +584,15 @@ int gl_get_selected_files_path_str(void *data, gchar sep_c, char **path_str,
 			return -1;
 		}
 
-		if (strstr(selected_path_list->str, current->item->file_url)) {
-			gl_dbgW("Already appended!");
-		} else {
-			selected_item_cnt++;
-			g_string_append(selected_path_list,
-			                current->item->file_url);
-			g_string_append_c(selected_path_list, sep_c);
+		if (selected_path_list) {
+			if (strstr(selected_path_list->str, current->item->file_url)) {
+				gl_dbgW("Already appended!");
+			} else {
+				selected_item_cnt++;
+				g_string_append(selected_path_list,
+						current->item->file_url);
+				g_string_append_c(selected_path_list, sep_c);
+			}
 		}
 
 	}
@@ -598,17 +600,19 @@ int gl_get_selected_files_path_str(void *data, gchar sep_c, char **path_str,
 	if (sel_cnt) {
 		*sel_cnt = selected_item_cnt;
 	}
-	int len = strlen(selected_path_list->str);
-	g_string_truncate(selected_path_list, len - 1);
-	/**
-	* Frees the memory allocated for the GString.
-	* If free_segment is true it also frees the character data.
-	* If it's false, the caller gains ownership of the buffer
-	* and must free it after use with g_free().
-	*/
-	*path_str = g_string_free(selected_path_list, false);
-	GL_CHECK_VAL(*path_str, -1);
-	gl_dbg("Total string:\n\n\t>>@@:> %s <:@@<<\n", *path_str);
+	if (selected_path_list) {
+		int len = strlen(selected_path_list->str);
+		g_string_truncate(selected_path_list, len - 1);
+		/**
+		 * Frees the memory allocated for the GString.
+		 * If free_segment is true it also frees the character data.
+		 * If it's false, the caller gains ownership of the buffer
+		 * and must free it after use with g_free().
+		 */
+		*path_str = g_string_free(selected_path_list, false);
+		GL_CHECK_VAL(*path_str, -1);
+		gl_dbg("Total string:\n\n\t>>@@:> %s <:@@<<\n", *path_str);
+	}
 	return 0;
 }
 

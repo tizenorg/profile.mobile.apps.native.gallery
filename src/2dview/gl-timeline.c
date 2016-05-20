@@ -2830,6 +2830,9 @@ int _get_count_of_items_on_same_date(gl_media_s *item, Eina_List *list, char **t
 	for (i = start_index; i < item_cnt ; i++) {
 		item = eina_list_nth(list, i);
 		if (!item) {
+			if (text3) {
+				g_free(text3);
+			}
 			return 0;
 		}
 		mtime1 = item->mtime;
@@ -2841,11 +2844,17 @@ int _get_count_of_items_on_same_date(gl_media_s *item, Eina_List *list, char **t
 		}
 		count ++;
 		if (text1) {
+			if (text3) {
+				g_free(text3);
+				text3 = NULL;
+			}
 			text3 = g_strdup_printf("%s", text1);
 		}
 	}
 	*text = g_strdup_printf("%s", text3);
-
+	if (text3) {
+		g_free(text3);
+	}
 	return count;
 }
 
