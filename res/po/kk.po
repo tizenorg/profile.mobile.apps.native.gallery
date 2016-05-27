@@ -21,8 +21,14 @@ msgstr "Құпия"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Қыр."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Жабу"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Жойылуда..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Таңбалардың ен көп саны артты."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Өңделуде..."
@@ -320,6 +326,9 @@ msgstr "Шығаруда..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d элементті көрсету"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Әрекет сәтсіз аяқталды."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Альбом жасау"

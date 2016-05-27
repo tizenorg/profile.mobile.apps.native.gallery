@@ -21,8 +21,14 @@ msgstr "私隱"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "9 月"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "關閉"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "正在刪除..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "字元數目已達上限。"
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "正在處理..."
@@ -320,6 +326,9 @@ msgstr "正在移除..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "顯示 %d 個項目"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "操作失敗"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "建立相簿"

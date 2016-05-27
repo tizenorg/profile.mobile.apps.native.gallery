@@ -21,8 +21,14 @@ msgstr "Confidenţialitate"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Închidere"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Se şterge..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Adăugare la marcaje"
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Se procesează..."
@@ -320,6 +326,9 @@ msgstr "Eliminare..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Se afişează %d elemente"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Operaţie nereuşită"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Creare album"

@@ -21,8 +21,14 @@ msgstr "Privacy"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Close"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Deleting..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Maximum number of characters reached."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Processing..."
@@ -320,6 +326,9 @@ msgstr "Removing..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Showing %d items"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Operation failed."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Create album"

@@ -21,8 +21,14 @@ msgstr "Yksityisyys"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Syy"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Sulje"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Poistetaan..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Merkkien enimmäismäärä saavutettu."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Käsitellään..."
@@ -320,6 +326,9 @@ msgstr "Poistetaan..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Näytetään %d kohdetta"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Toiminto epäonnistui."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Luo albumi"

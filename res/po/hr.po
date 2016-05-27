@@ -21,8 +21,14 @@ msgstr "Privatnost"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Ruj"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Prekid"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Brisanje..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Maks. broj znakova."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Procesiranje..."
@@ -320,6 +326,9 @@ msgstr "Uklanjanje..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Prikaz %d stavki"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Neuspješno."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Novi album"

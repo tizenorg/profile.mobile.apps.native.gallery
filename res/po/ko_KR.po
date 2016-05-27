@@ -21,8 +21,14 @@ msgstr "개인정보 보호"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "9월"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "종료"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "삭제 중..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "최대 글자 수에 도달하였습니다."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "진행 중..."
@@ -320,6 +326,9 @@ msgstr "삭제 중..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "항목 %d개 표시"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "작업을 수행하지 못하였습니다."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "앨범 추가"

@@ -21,8 +21,14 @@ msgstr "Zasebnost"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "sep."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Zapri"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Brišem"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Doseženo je največje dovoljeno število znakov."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Obdelujem..."

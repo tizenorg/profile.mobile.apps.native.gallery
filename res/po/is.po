@@ -21,8 +21,14 @@ msgstr "Leynd"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Loka"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Verið er að eyða..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Hámarksfjölda stafa hefur verið náð."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Vinnsla í gangi..."
@@ -320,6 +326,9 @@ msgstr "Verið er að fjarlægja..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Birti %d atriði"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Aðgerð mistókst."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Búa til albúm"

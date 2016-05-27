@@ -21,8 +21,14 @@ msgstr "Confident."
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Fermer"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Suppression ..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Nb max de caractères atteint."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Traitement…"
@@ -320,6 +326,9 @@ msgstr "Retrait..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d éléments affichés"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Échec de l'opération."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Créer un album"

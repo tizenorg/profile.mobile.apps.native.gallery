@@ -21,8 +21,14 @@ msgstr "Privat"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Stäng"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Raderar..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Maximalt antal tecken har använts."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Bearbetar..."
@@ -320,6 +326,9 @@ msgstr "Tar bort..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Visar %d objekt"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Åtgärden misslyckades."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Skapa album"

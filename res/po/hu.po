@@ -21,8 +21,14 @@ msgstr "Védett adataim"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sze."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Bezárás"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Törlés..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Nincs hely több karakternek."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Feldolgozás folyamatban"
@@ -320,6 +326,9 @@ msgstr "Eltávolítás..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d tétel jelent meg"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Sikertelen művelet"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Album létrehozása"

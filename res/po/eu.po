@@ -21,8 +21,14 @@ msgstr "Pribatutasuna"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Irl."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Itxi"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Ezabatzen..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Gehienezko karaktere kopurura heldu zara."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Prozesatzen..."
@@ -320,6 +326,9 @@ msgstr "Ezabatzen..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d elementu erakustea"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Eragiketak huts egin du"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Sortu albuma"

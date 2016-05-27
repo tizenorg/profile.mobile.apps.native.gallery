@@ -21,8 +21,14 @@ msgstr "Privaatsus"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Sulge"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Kustutamine..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Lubatud arv märke on täis."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Töötlemine..."
@@ -320,6 +326,9 @@ msgstr "Eemaldamine..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Näidatakse %d üksust"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Toiming nurjus."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Loo album"

@@ -21,8 +21,14 @@ msgstr "Απόρρητο"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Σεπ."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Κλείσιμο"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Διαγραφή..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Ο μέγιστος αριθμός χαρακτήρων συμπληρώθηκε."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Επεξεργασία..."
@@ -320,6 +326,9 @@ msgstr "Αφαίρεση..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Εμφάνιση %d στοιχείων"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Λειτουργία απέτυχε."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Δημιουργία άλμπουμ"

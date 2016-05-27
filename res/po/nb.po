@@ -21,8 +21,14 @@ msgstr "Personvern"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Lukk"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Sletter..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Nådd maksimalt antall tegn."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Behandler..."
@@ -320,6 +326,9 @@ msgstr "Tar bort..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Viser %d elementer"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Operasjonen mislyktes."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Opprett album"

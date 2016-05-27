@@ -21,8 +21,14 @@ msgstr "Gizlilik"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Eyl."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Kapat"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Siliniyor..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Maksimum karakter sayısına ulaşıldı."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Uygulanıyor..."
@@ -320,6 +326,9 @@ msgstr "Çıkartılıyor..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d öğe gösteriliyor"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "İşlem başarısız."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Albüm oluştur"

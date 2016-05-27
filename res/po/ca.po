@@ -21,8 +21,14 @@ msgstr "Confidencialitat"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Set."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Tancar"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Esborrant..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "S'ha assolit el nombre màxim de caràcters"
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Processant..."
@@ -320,6 +326,9 @@ msgstr "Eliminant..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Mostrant %d elements"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Operació fallida"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Crear àlbum"

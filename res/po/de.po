@@ -21,8 +21,14 @@ msgstr "Datenschutz"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Sep."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Schließen"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Löschen..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Maximal zulässige Zeichenanzahl erreicht."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Verarbeitung läuft ..."
@@ -320,6 +326,9 @@ msgstr "Entferne..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d Elemente werden angezeigt."
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Vorgang fehlgeschlagen"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Album erstellen"

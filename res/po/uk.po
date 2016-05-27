@@ -21,8 +21,14 @@ msgstr "Конфіденційність"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Вер"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Закрити"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "Видалення..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Досягнуто максимальної кількості символів."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Обробка..."
@@ -320,6 +326,9 @@ msgstr "Видалення..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Відображення %d об’єктів"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Збій операції."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Створити альбом"

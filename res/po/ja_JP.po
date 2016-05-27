@@ -21,8 +21,14 @@ msgstr "プライバシー"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "9月"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "閉じる"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "削除中..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "最大文字数に達しました。"
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "処理中..."
@@ -320,6 +326,9 @@ msgstr "削除中..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d件のアイテムを表示"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "操作に失敗しました。"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "アルバムを作成"

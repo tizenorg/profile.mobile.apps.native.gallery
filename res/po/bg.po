@@ -21,9 +21,14 @@ msgstr "Поверителност"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "Сеп."
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "Затваряне"
 
 msgid "IDS_COM_POP_DELETING"
 msgstr "Изтриване..."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Достигнат максимален брой знаци."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "Обработване..."
@@ -323,6 +328,9 @@ msgstr "Премахване..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Показване на %d елемента"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "Операцията е неуспешна."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "Създаване на албум"

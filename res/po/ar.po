@@ -19,6 +19,9 @@ msgstr "هل تريد حذف %d عنصر (عناصر)؟"
 msgid "IDS_ST_HEADER_PRIVACY"
 msgstr "الخصوصية"
 
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "إغلاق"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "جاري المسح..."
 msgid "IDS_COM_BODY_SEP_ABB"
@@ -26,6 +29,8 @@ msgstr "سبت"
 
 msgid "IDS_COM_BODY_OCT_ABB"
 msgstr "أكت"
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "تم الوصول إلى أقصى عدد من الحروف."
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "جاري المعالجة..."
@@ -322,6 +327,9 @@ msgstr "جاري الحذف..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "إظهار %d عناصر"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "فشلت العملية."
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "إنشاء ألبوم"

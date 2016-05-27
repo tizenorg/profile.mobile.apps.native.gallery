@@ -21,8 +21,14 @@ msgstr "隐私权"
 
 msgid "IDS_COM_BODY_SEP_ABB"
 msgstr "9月"
+msgid "IDS_COM_BODY_CLOSE"
+msgstr "关闭"
+
 msgid "IDS_COM_POP_DELETING"
 msgstr "删除中.."
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "已达到最大字符限制"
 
 msgid "IDS_COM_POP_PROCESSING"
 msgstr "处理中..."
@@ -320,6 +326,9 @@ msgstr "正在移除..."
 
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "显示 %d 个项目"
+
+msgid "IDS_COM_BODY_OPERATION_FAILED"
+msgstr "操作失败"
 
 msgid "IDS_GALLERY_OPT_CREATE_ALBUM"
 msgstr "新建相册"
