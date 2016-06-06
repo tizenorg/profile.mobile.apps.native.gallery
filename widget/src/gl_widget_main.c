@@ -24,7 +24,6 @@
 #include <widget_service.h>
 #include <widget_app.h>
 #include <widget_app_efl.h>
-
 #include <media_content.h>
 
 #include "gl_widget_debug.h"
@@ -53,7 +52,16 @@ int widget_Create(widget_context_h context, bundle *content, int w, int h, void 
 		DbgPrint("failed to create instance");
 		return WIDGET_ERROR_OUT_OF_MEMORY;
 	}
-	bindtextdomain(PACKAGE, "/usr/apps/org.tizen.gallery/res/locale");
+	char locale_path[1024];
+	char *res_path = app_get_resource_path();
+	if (!res_path) {
+		DbgPrint("Resource path not found");
+		return -1;
+	}
+	DbgPrint("Resource path : %s", res_path);
+	snprintf(locale_path, 1024, "%s%s", res_path, "locale");
+	DbgPrint("Locale path : %s", locale_path);
+	bindtextdomain(PACKAGE, locale_path);
 
 	widget_data->win = win;
 
@@ -131,7 +139,6 @@ int widget_Resume(widget_context_h context, void *data)
 int widget_Resize(widget_context_h context, int w, int h, void *data)
 {
 	struct widget_data *widget_data = NULL;
-
 	widget_data = (struct widget_data *)getWidgetData(context);
 	if (!widget_data) {
 		return WIDGET_ERROR_INVALID_PARAMETER;
@@ -176,7 +183,7 @@ widget_class_h app_create(void *data)
 	                             &app_language_changed, data);
 	widget_app_add_event_handler(&region_changed_handler, APP_EVENT_REGION_FORMAT_CHANGED,
 	                             &app_region_changed, data);
-
+//	elm_app_base_scale_set(1.8);
 	widget_instance_lifecycle_callback_s ops;
 	ops.create = widget_Create;
 	ops.destroy = widget_Destroy;

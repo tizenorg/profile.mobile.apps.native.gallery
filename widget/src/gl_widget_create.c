@@ -33,7 +33,7 @@
 #define TIMER_INTERVAL 5
 #define WIDGET_HEIGHT 500
 #define WIDGET_WIDTH 500
-#define EDJE_FILE "edje/gallerywidget.edj"
+#define EDJE_FILE "gallerywidget.edj"
 #define GL_WIDGET_ARGV_IV_VIEW_BY		"View By"
 #define GL_WIDGET_ARGV_IV_VIEW_BY_FOLER	"By Folder"
 #define GL_WIDGET_ARGV_IV_PATH "Path"
@@ -699,8 +699,17 @@ void _gl_widget_create_edit_btn(_widget_data* widget_data)
 		                                 EVAS_HINT_EXPAND);
 		evas_object_size_hint_align_set(layoutButton, EVAS_HINT_FILL,
 		                                EVAS_HINT_FILL);
+		char path[1024];
+		char *res_path = app_get_resource_path();
+		if (!res_path) {
+			DbgPrint("Resource path not found");
+			return;
+		}
+		DbgPrint("Resource path : %s", res_path);
+		snprintf(path, 1024, "%s%s", res_path, EDJE_FILE);
+		DbgPrint("path : %s", path);
 		elm_layout_file_set(layoutButton,
-		                    "/usr/apps/org.tizen.gallery/res/edje/gallerywidget.edj",
+				path,
 		                    "today_button");
 		elm_object_domain_translatable_part_text_set(layoutButton, "elm.text",
 		        "gallery", "IDS_QP_ACBUTTON_EDIT_ABB");
@@ -835,8 +844,17 @@ int gl_widget_create(_widget_data *widget_data, int w, int h)
 		return -1;
 	}
 
+	char path[1024];
+	char *res_path = app_get_resource_path();
+	if (!res_path) {
+		DbgPrint("Resource path not found");
+		return -1;
+	}
+	DbgPrint("Resource path : %s", res_path);
+	snprintf(path, 1024, "%s%s", res_path, EDJE_FILE);
+	DbgPrint("path : %s", path);
 	elm_layout_file_set(layout,
-	                    "/usr/apps/org.tizen.gallery/res/edje/gallerywidget.edj",
+	                    path,
 	                    "widget_custom_main");
 	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_resize(layout, WIDGET_WIDTH, WIDGET_HEIGHT);
@@ -864,7 +882,8 @@ int gl_widget_create(_widget_data *widget_data, int w, int h)
 		                                layout);
 	}
 
-	evas_object_resize(layout, w, h);
+//	evas_object_resize(layout, w, h);
+	elm_win_resize_object_add(widget_data->win, layout);
 	evas_object_event_callback_add(widget_data->win, EVAS_CALLBACK_KEY_DOWN,
 	                               gl_widget_key_down_cb, NULL);
 

@@ -18,6 +18,8 @@
 #ifndef GL_WIDGET_DEBUG_H
 #define GL_WIDGET_DEBUG_H
 
+#define LOG_TAG "GALLERY_WIDGET_APP"
+
 #if !defined(FLOG)
 #define DbgPrint(fmt, arg...)	dlog_print(DLOG_DEBUG, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
 #define ErrPrint(fmt, arg...)	dlog_print(DLOG_ERROR, LOG_TAG, "[%s : %05d]" fmt "\n", __func__, __LINE__, ##arg)
