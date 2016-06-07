@@ -6,4 +6,4 @@ ADD_CUSTOM_TARGET(gallerywidget.edj
 		DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/gallerywidget.edc
 )
 ADD_DEPENDENCIES(${PROJECT_NAME} gallerywidget.edj)
-INSTALL(FILES gallerywidget.edj DESTINATION ${EDJDIR})
+INSTALL(FILES gallerywidget.edj DESTINATION ${RESDIR})

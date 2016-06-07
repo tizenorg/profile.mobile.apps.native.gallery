@@ -79,6 +79,7 @@ cp LICENSE %{buildroot}%{_app_license_dir}/org.tizen.gallery
 %{TZ_SYS_RO_ICONS}/default/small/preview_gallery_4x4.png
 %{_appdir}/org.tizen.gallery/res/images/*
 %{_appdir}/org.tizen.gallery/res/edje/*
+%{_appdir}/org.tizen.gallery/res/*
 %{TZ_SYS_RO_PACKAGES}/org.tizen.gallery.xml
 %{TZ_SYS_SHARE}/license/org.tizen.gallery
 
