@@ -36,6 +36,7 @@
 #define GL_TILE_ITEM_L_H 426
 #define GL_TILE_2_PER_ROW 2
 #define GL_TILE_3_PER_ROW 3
+#define GL_TILE_4_PER_ROW 4
 #define GL_TILE_ITEM_CNT 6
 #define GL_TILE_ITEM_CNT2 12
 #define GL_TILE_ITEM_L_CNT 3
@@ -109,12 +110,6 @@ static Eina_Bool __gl_tile_zoom_out_cb(Evas_Object *gesture, void *data)
 		}
 		return false;
 	}
-	if ((ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-	        (ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90)) {
-		gl_dbg("Skip in landscape mode");
-		/* Keep level if pinching zoom in in landscape mode */
-		return false;
-	}
 
 	parent = _gl_gesture_get_parent(gesture);
 	GL_CHECK_FALSE(parent);
@@ -160,13 +155,6 @@ static Eina_Bool __gl_tile_zoom_in_cb(Evas_Object *gesture, void *data)
 		} else {
 			gl_dbg("Already at max zoom level : %d", ad->pinchinfo.zoom_level);
 		}
-		return false;
-	}
-
-	if ((ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_270) ||
-	        (ad->maininfo.rotate_mode == APP_DEVICE_ORIENTATION_90)) {
-		gl_dbg("Skip in landscape mode");
-		/* Keep level if pinching zoom in in landscape mode */
 		return false;
 	}
 
@@ -509,6 +497,7 @@ int _gl_tile_update_item_size(void *data, Evas_Object *grid, bool b_update)
 	if (level < GL_ZOOM_DEFAULT) {
 		gl_dbg("Use smaller size");
 		w = (int)(win_w / GL_TILE_3_PER_ROW);
+		w_l = (int)(win_h / GL_TILE_4_PER_ROW);
 		h = (int)(200 * scale);
 		c = GL_TILE_ITEM_CNT2;
 	}
