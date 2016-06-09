@@ -60,6 +60,7 @@
         </ui-application>
 
     <widget-application appid="org.tizen.gallery.widget" exec="/usr/apps/org.tizen.gallery/bin/gallery-widget" main="true" update-period="60">
+		<label>Gallery</label>
         <label xml:lang="az-az">Qalereya</label>
 		<label xml:lang="eu-es">Galeria</label>
 		<label xml:lang="bg-bg">Галерия</label>
