@@ -121,8 +121,6 @@ static int _gallery_close_app(void *data)
 	/* Finallize svi */
 	_gl_fini_svi(data);
 #endif
-	/* dlopen imageviewer lib */
-	_gl_dlclose_imageviewer(data);
 	/* Remove db monitor */
 	_gl_db_update_finalize(data);
 	/* disconnet with libmedia-info */

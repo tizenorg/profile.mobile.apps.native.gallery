@@ -209,9 +209,6 @@ static Eina_Bool __gl_main_reg_idler_cb(void *data)
 	/* initializ svi */
 	_gl_init_svi(data);
 #endif
-	/* Open imageviewer UG so lib */
-	_gl_dlopen_imageviewer(data);
-
 	GL_IF_DEL_TIMER(ad->maininfo.reg_idler);
 	gl_dbg("done");
 	return ECORE_CALLBACK_CANCEL;

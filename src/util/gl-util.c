@@ -2478,40 +2478,6 @@ int _gl_free_selected_list(void *data)
 	return 0;
 }
 
-int _gl_dlopen_imageviewer(void *data)
-{
-	GL_CHECK_VAL(data, -1);
-	gl_appdata *ad = (gl_appdata *)data;
-
-	if (ad->maininfo.dlopen_iv_handle) {
-		gl_dbgE("Already opened imageviewer so lib!");
-		return -1;
-	}
-
-	ad->maininfo.dlopen_iv_handle = dlopen(GL_SO_PATH_IMAGEVIEWER, RTLD_NOW);
-	if (ad->maininfo.dlopen_iv_handle == NULL) {
-		gl_sdbgE("Lib %s is not opened, %s!", GL_SO_PATH_IMAGEVIEWER,
-		         dlerror());
-		return -1;
-	}
-	gl_sdbg("dlopen %s done", GL_SO_PATH_IMAGEVIEWER);
-	return 0;
-}
-
-int _gl_dlclose_imageviewer(void *data)
-{
-	GL_CHECK_VAL(data, -1);
-	gl_appdata *ad = (gl_appdata *)data;
-
-	if (ad->maininfo.dlopen_iv_handle) {
-		dlclose(ad->maininfo.dlopen_iv_handle);
-		ad->maininfo.dlopen_iv_handle = NULL;
-		gl_sdbg("dlclose %s done", GL_SO_PATH_IMAGEVIEWER);
-		return 0;
-	}
-	return -1;
-}
-
 char *_gl_get_edje_path(void)
 {
 	char edj_path[1024] = {0};

@@ -476,7 +476,6 @@ typedef struct
 	Ecore_Event_Handler *keydown_handler;
 	/* Font type change event handle */
 	Ecore_Event_Handler *font_handler;
-	void *dlopen_iv_handle; /* Handle for dlopen imageviewer lib .so */
 	/* Use idler to register ASF when launching Gallery */
 	Ecore_Timer *reg_idler;
 	bool b_reged_idler;
