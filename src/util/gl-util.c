@@ -1264,6 +1264,7 @@ int _gl_del_media_by_id(void *data, const char *uuid)
 	media_info_h media_h = NULL;
 	media_content_storage_e storage_type = 0;
 	int ret = -1;
+	char *path = NULL;
 
 	ret = media_info_get_media_from_db(uuid, &media_h);
 	if (ret != MEDIA_CONTENT_ERROR_NONE || media_h == NULL) {
@@ -1275,7 +1276,6 @@ int _gl_del_media_by_id(void *data, const char *uuid)
 		gl_dbgE("Get storage type failed!");
 		goto DEL_MEDIA_BY_ID_FAILED;
 	}
-	char *path = NULL;
 	ret = media_info_get_file_path(media_h, &path);
 	if (ret != MEDIA_CONTENT_ERROR_NONE) {
 		gl_dbgE("Get media file path failed!");

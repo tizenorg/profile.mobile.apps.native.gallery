@@ -2755,6 +2755,9 @@ static void _gl_time_view_append_gengrid_items(Evas_Object *
 	Elm_Object_Item *gridItem = NULL;
 	for (; (nIndex < nMaxIndex) && (nIndex < nVideoListSize) && (k <= numberOfItemsOnParticularDate) ; nIndex++) {
 		item = eina_list_nth(timeline_d->data_list, nIndex);
+		if (!item) {
+			continue;
+		}
 		gridItem =
 		    elm_gengrid_item_append(pGengrid, gic, item, __gl_timeline_thumbs_sel_cb, timeline_d);
 		elm_gengrid_item_select_mode_set(gridItem,
@@ -3076,6 +3079,7 @@ static void __gl_timeline_genlist_move_cb(void *data, Evas_Object *obj, void *ei
 			Elm_Object_Item *it = elm_gengrid_first_item_get(grid);
 			if (it) {
 				gl_media_s *item = (gl_media_s *)elm_object_item_data_get(it);
+				GL_CHECK(item);
 				char *text1 = NULL;
 				char *text2 = NULL;
 				struct tm t1;
@@ -4846,6 +4850,9 @@ int _gl_ext_load_time_iv_selected_list(app_control_h service, void *data)
 
 	for (i = 0; i < count; i++) {
 		gitem = eina_list_nth(ad->tlinfo->sel_d->sel_list, i);
+		if (!gitem) {
+			continue;
+		}
 		EINA_LIST_FOREACH(ad->tlinfo->data_list, l, item) {
 			if (!item) {
 				continue;
