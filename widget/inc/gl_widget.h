@@ -34,8 +34,10 @@ typedef struct widget_data {
 	int selected_count;
 	int images_count;
 } _widget_data;
+#define TIMER_INTERVAL 5
 
 int gl_widget_create(_widget_data *data, int w, int h);
+Eina_Bool gl_widget_timer_cb(void *data);
 
 #endif// GL_WIDGET_H
 /* End of a file */

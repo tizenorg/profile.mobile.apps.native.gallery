@@ -58,7 +58,6 @@ int loop_count = 0; //counter to the iteration number;
 
 static void gl_widget_on_no_image_cb(void *data, Evas_Object *obj,
                                      const char *emission, const char *source);
-static Eina_Bool gl_widget_timer_cb(void *data);
 void _gl_widget_create_edit_btn(_widget_data* widget_data);
 
 void gl_widget_win_del_cb(void *data, Evas *evas, Evas_Object *obj,
@@ -203,16 +202,12 @@ static Eina_Bool gl_widget_animator_for_one(void *data)
 	}
 
 	if (!gl_widget_file_exists(widget_data->selected_images[0])) {
-		if (widget_data->timer) {
-			ecore_timer_del(widget_data->timer);
-			widget_data->timer = NULL;
-		}
 
 		free(widget_data->selected_images[widget_data->selected_count - 1]);
 		widget_data->selected_count--;
 		Evas_Object *btn = elm_object_part_content_unset(
-		                       widget_data->layout,
-		                       "Edit_button");
+				widget_data->layout,
+				"Edit_button");
 		if (btn) {
 			evas_object_hide(btn);
 		}
@@ -220,9 +215,9 @@ static Eina_Bool gl_widget_animator_for_one(void *data)
 		elm_object_signal_emit(widget_data->layout, "hide_album_date_info", "elm");
 
 		elm_object_domain_translatable_part_text_set(widget_data->layout, "TitleText", "gallery",
-		        "IDS_GALLERY_OPT_GALLERY_ABB");
+				"IDS_GALLERY_OPT_GALLERY_ABB");
 		elm_object_domain_translatable_part_text_set(widget_data->layout, "HelpText", "gallery",
-		        "IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES");
+				"IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES");
 
 		elm_object_signal_callback_add(widget_data->layout, "mouse,clicked,1", "bg", gl_widget_on_no_image_cb, widget_data);
 	}
@@ -244,7 +239,6 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 	Evas_Object *content = elm_object_part_content_get(layout, "image6");
 	elm_object_part_content_unset(layout, "image6");
 	evas_object_hide(content);
-
 	Evas_Object *image_object = elm_image_add(layout);
 	DbgPrint("selected images: %s",
 	           widget_data->selected_images[widget_data->images_count]);
@@ -262,7 +256,6 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 		free(widget_data->selected_images[widget_data->selected_count - 1]);
 		widget_data->selected_count--;
 	}
-
 	elm_image_file_set(image_object, widget_data->selected_images[widget_data->images_count], NULL);
 	elm_image_aspect_fixed_set(image_object, EINA_FALSE);
 	elm_object_part_content_set(layout, "image6", image_object);
@@ -275,7 +268,7 @@ static Eina_Bool gl_widget_animator_cb_for_less_than_five_images(void *data)
 	return EINA_TRUE;
 }
 
-static Eina_Bool gl_widget_timer_cb(void *data)
+Eina_Bool gl_widget_timer_cb(void *data)
 {
 	if (!data) {
 		ErrPrint("Invalid userdata!!");
@@ -291,6 +284,8 @@ static Eina_Bool gl_widget_timer_cb(void *data)
 		gl_widget_animator_cb_for_less_than_five_images(data);
 	} else {
 		gl_widget_animator_for_one(data);
+		widget_data->timer = NULL;
+		return EINA_FALSE;
 	}
 
 	loop_count++;
@@ -596,6 +591,7 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 		if (!widget_data->is_edit) {
 			_gl_widget_create_edit_btn(widget_data);
 		}
+		widget_data->images_count = 0;
 	} else {
 		if (!widget_data->is_edit) {
 			Evas_Object *btn = elm_object_part_content_unset(
@@ -881,7 +877,6 @@ int gl_widget_create(_widget_data *widget_data, int w, int h)
 		_gl_widget_show_album_date_info(widget_data->selected_count, widget_data->selected_images, widget_data,
 		                                layout);
 	}
-
 //	evas_object_resize(layout, w, h);
 	elm_win_resize_object_add(widget_data->win, layout);
 	evas_object_event_callback_add(widget_data->win, EVAS_CALLBACK_KEY_DOWN,

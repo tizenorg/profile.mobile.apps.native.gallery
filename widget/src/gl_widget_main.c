@@ -119,6 +119,12 @@ int widget_Destroy(widget_context_h context, widget_app_destroy_type_e reason, b
 int widget_Pause(widget_context_h context, void *data)
 {
 	DbgPrint("widget paused");
+	struct widget_data *widget_data = NULL;
+	widget_data = (struct widget_data *)getWidgetData(context);
+	if (widget_data->timer) {
+		ecore_timer_del(widget_data->timer);
+		widget_data->timer= NULL;
+	}
 	return WIDGET_ERROR_NONE;
 }
 
@@ -132,6 +138,16 @@ int widget_Resume(widget_context_h context, void *data)
 	}
 	if (widget_data->is_ug_launched) {
 		widget_data->is_ug_launched = false;
+	}
+
+	if (widget_data->timer) {
+			ecore_timer_del(widget_data->timer);
+			widget_data->timer= NULL;
+	}
+	if (widget_data->selected_count) {
+		dlog_print(DLOG_ERROR, LOG_TAG, "Adding timer");
+		widget_data->timer = ecore_timer_loop_add(TIMER_INTERVAL,
+		                     gl_widget_timer_cb, widget_data);
 	}
 	return WIDGET_ERROR_NONE;
 }
