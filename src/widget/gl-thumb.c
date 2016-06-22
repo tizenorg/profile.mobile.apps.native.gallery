@@ -311,11 +311,13 @@ Evas_Object *_gl_thumb_add_gengrid(Evas_Object *parent)
 int _gl_thumb_update_gengrid(Evas_Object *view)
 {
 	GL_CHECK_VAL(view, -1);
-
+	gl_dbgE("RAHUL HERE");
 	Elm_Object_Item *_first_it = NULL;
 	_first_it = elm_gengrid_first_item_get(view);
 	while (_first_it) {
 		elm_gengrid_item_update(_first_it);
+		gl_dbgE("RAHUL HERE sending signal");
+		elm_object_item_signal_emit(_first_it, "elm,state,unfocused", "elm");
 		_first_it = elm_gengrid_item_next_get(_first_it);
 	}
 
