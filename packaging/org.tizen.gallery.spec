@@ -1,6 +1,6 @@
 Name:       org.tizen.gallery
-#VCS_FROM:   profile/mobile/apps/native/gallery#481dd4891a0a7be77fb440b754107827f8d00bb2
-#RS_Ver:    20160620_2 
+VCS:         profile/mobile/apps/native/gallery#7a8b6263bf9abebe48faca3c36913b6d75c3d224
+#RS_Ver:    20160622_2 
 Summary:    org.tizen.gallery UX
 Version:    1.0.0
 Release:    1
@@ -26,7 +26,7 @@ Requires(post):  /usr/bin/tpk-backend
 %endif
 
 %description
-profile/mobile/apps/native/gallery#481dd4891a0a7be77fb440b754107827f8d00bb2
+#
 This is a container package which have preload TPK files
 
 %prep
