@@ -1,6 +1,6 @@
 Name:       org.tizen.gallery
-VCS:         profile/mobile/apps/native/gallery#7a8b6263bf9abebe48faca3c36913b6d75c3d224
-#RS_Ver:    20160622_2 
+VCS:         profile/mobile/apps/native/gallery#0175e159ec8e3e131218f4754065a9dc8b4272d3
+#RS_Ver:    20160623_1 
 Summary:    org.tizen.gallery UX
 Version:    1.0.0
 Release:    1
