@@ -199,12 +199,12 @@ static void __gl_appcontrol_select_result_cb(app_control_h request, app_control_
 		elm_gengrid_realized_items_update(ad->gridinfo.select_view);
 	}
 
-	for (i = 0; i < count; i++) {
-		if (select_result[i]) {
-			free(select_result[i]);
-		}
-	}
 	if (select_result) {
+		for (i = 0; i < count; i++) {
+			if (select_result[i]) {
+				free(select_result[i]);
+			}
+		}
 		free(select_result);
 	}
 }
