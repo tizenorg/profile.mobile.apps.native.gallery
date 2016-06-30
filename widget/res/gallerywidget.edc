@@ -91,6 +91,11 @@ collections {
 						ellipsis: -1.0;
 					}
 				}
+				description {
+					state:"hidden" 0.0;
+					inherit : "default" 0.0;
+					visible : 0;
+				}
 			}//end TitleText
 			part {
 				name:"HelpText";
@@ -112,6 +117,12 @@ collections {
 						fit: 0 1;
 						ellipsis: -1.0;
 					}
+				}
+				description {
+					state:"hidden" 0.0;
+					inherit : "default" 0.0;
+					visible : 0;
+				
 				}
 			}//end HelpText
 			part {
@@ -355,6 +366,20 @@ collections {
 			} // end AlbumInfo
 		}//end parts
 		programs {
+			program { name: "Show_Text";
+				signal:"show";
+				source:"elm";
+				action:STATE_SET "default" 0.0;
+				target:"TitleText";
+				target :"HelpText";
+			}
+			program { name: "Hide_Text";
+				signal:"hide";
+				source:"elm";
+				action:STATE_SET "hidden" 0.0;
+				target:"TitleText";
+				target :"HelpText";
+			}
 			program { name: "touch_snd1";
 				source: "Edit_button_fg";
 				signal: "mouse,clicked,1";

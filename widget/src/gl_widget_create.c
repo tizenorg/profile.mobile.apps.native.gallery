@@ -630,6 +630,7 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 	loop_count++;
 	elm_object_signal_callback_del(layout, "mouse,clicked,1",
 	                               "bg", gl_widget_on_no_image_cb);
+	elm_object_signal_emit(layout, "hide", "elm");
 
 	if (widget_data->selected_count) {
 		widget_data->timer = ecore_timer_loop_add(TIMER_INTERVAL,
