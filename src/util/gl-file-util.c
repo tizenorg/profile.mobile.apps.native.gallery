@@ -279,7 +279,8 @@ int gl_file_mv(const char *src, const char *dst)
 		if (stat(src, &info) == 0) {
 			if (S_ISREG(info.st_mode)) {
 				gl_file_cp(src, dst);
-				chmod(dst, info.st_mode);
+				int val = chmod(dst, info.st_mode);
+				gl_dbg("return value is : %d", val);
 				unlink(src);
 				return 1;
 			}

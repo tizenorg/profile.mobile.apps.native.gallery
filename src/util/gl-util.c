@@ -2248,7 +2248,7 @@ char *_gl_get_duration_string(unsigned int v_dur)
 	char *dur_str = calloc(1, GL_FILE_PATH_LEN_MAX);
 	GL_CHECK_NULL(dur_str);
 	if (v_dur > 0) {
-		int duration = floor(v_dur / GL_TIME_MSEC_PER_SEC);
+		int duration = (int)floor(v_dur / GL_TIME_MSEC_PER_SEC);
 		int dur_hr = 0;
 		int dur_min = 0;
 		int dur_sec = 0;

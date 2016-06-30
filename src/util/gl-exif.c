@@ -369,6 +369,10 @@ static int __gl_exif_add_exif_to_jfif(char *file_path, unsigned int *orientation
 	/* Remove start of JPEG image data section, 20 bytes */
 	r_size = fread(tmp, sizeof(char), 20, fd);
 
+	if (r_size > 0) {
+		gl_dbg("r_size: %ld", r_size);
+	}
+
 	memset(tmp, 0x00, GL_EXIF_BUF_LEN_MAX);
 	/* Write JPEG image data to tmp file after EXIF header */
 	while ((r_size = fread(tmp, 1, sizeof(tmp), fd)) > 0) {
@@ -389,7 +393,8 @@ static int __gl_exif_add_exif_to_jfif(char *file_path, unsigned int *orientation
 
 	memset(tmp, 0x00, GL_EXIF_BUF_LEN_MAX);
 	/* Write back tmp file after to JPEG image */
-	fseek(tmp_fd, 0, SEEK_SET);
+	int val = fseek(tmp_fd, 0, SEEK_SET);
+	gl_dbg("return value is : %d", val);
 	while ((r_size = fread(tmp, 1, sizeof(tmp), tmp_fd)) > 0) {
 		gl_dbg("r_size: %ld", r_size);
 		if (fwrite(tmp, 1, r_size, fd) != r_size) {
@@ -852,7 +857,8 @@ static int __gl_exif_add_orientation_tag(char *file_path,
 
 	memset(tmp, 0x00, GL_EXIF_BUF_LEN_MAX);
 	/* Write back tmp file after to JPEG image */
-	fseek(tmp_fd, 0, SEEK_SET);
+	int val = fseek(tmp_fd, 0, SEEK_SET);
+	gl_dbg("return value is : %d", val);
 	while ((r_size = fread(tmp, 1, sizeof(tmp), tmp_fd)) > 0) {
 		gl_dbg("r_size: %ld", r_size);
 		if (fwrite(tmp, 1, r_size, fd) != r_size) {

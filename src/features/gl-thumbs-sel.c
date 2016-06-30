@@ -411,6 +411,8 @@ int _gl_thumbs_sel_create_view(void *data, gl_cluster *album_item)
 	_gl_thumbs_update_label_text(ad->albuminfo.nf_it_select, total_sel_count, false);
 
 	gl_item *gitem_tmp = eina_list_nth(ad->gridinfo.medias_elist, 0);
+	GL_CHECK_VAL(gitem_tmp, -1);
+	GL_CHECK_VAL(gitem_tmp->album, -1);
 	GL_CHECK_VAL(gitem_tmp->album->elist, -1);
 	if (gitem_tmp->album->elist) {
 		int album_select_count = eina_list_count(gitem_tmp->album->elist);
@@ -472,6 +474,9 @@ int _gl_thumbs_sel_update_view(void *data)
 
 		gl_item *gitem = NULL;
 		gitem = eina_list_nth(ad->gridinfo.medias_elist, 0);
+		if (!gitem) {
+			return -1;
+		}
 		int album_sel_count = eina_list_count(gitem->album->elist);
 
 		/* Display selectioninfo */

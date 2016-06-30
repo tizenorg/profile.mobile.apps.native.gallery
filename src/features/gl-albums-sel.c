@@ -205,6 +205,9 @@ int _gl_albums_sel_create_view(void *data)
 	gl_dbg("Albums length: %d", length);
 	if (length > 0) {
 		album_item  = eina_list_nth(ad->albuminfo.elist->clist, 0);
+		if (!album_item) {
+			return -1;
+		}
 	} else {
 		view = NULL;
 		evas_object_del(layout);

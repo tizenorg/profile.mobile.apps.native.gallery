@@ -208,7 +208,10 @@ int gl_ext_exec(void *data, gl_ext_app_type type)
 		}
 	} else {
 		app_control_set_operation(service, APP_CONTROL_OPERATION_DEFAULT);
-		app_control_set_app_id(service, pkg_name);
+		ret = app_control_set_app_id(service, pkg_name);
+		if (ret != APP_CONTROL_ERROR_NONE) {
+			gl_dbgE("failed to set app id[%d]!", ret);
+		}
 		ret = app_control_send_launch_request(service, NULL, NULL);
 		if (ret != APP_CONTROL_ERROR_NONE) {
 			app_control_destroy(service);

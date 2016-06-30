@@ -2432,7 +2432,6 @@ static void __gl_timeline_thumbs_create_thumb_cb(media_content_error_e error,
 	thumb_data->b_create_thumb = false;
 	if (error == MEDIA_CONTENT_ERROR_NONE && GL_FILE_EXISTS(path) &&
 	        g_strcmp0(path, GL_ICON_DB_DEFAULT_THUMB)) {
-		GL_CHECK(thumb_data);
 		/* Update thumb path */
 		GL_FREEIF(thumb_data->thumb_url);
 		thumb_data->thumb_url = strdup(path);
@@ -2523,7 +2522,6 @@ static Evas_Object *__gl_timeline_thumbs_get_content(void *data, Evas_Object *ob
 	GL_CHECK_NULL(strlen(part));
 	GL_CHECK_NULL(data);
 	gl_media_s *gitem = (gl_media_s *)data;
-	GL_CHECK_NULL(gitem);
 	gl_timeline_s *timeline_d = (gl_timeline_s *)evas_object_data_get(obj, "data");
 	GL_CHECK_NULL(timeline_d);
 	int mode = timeline_d->view_m;
@@ -4001,7 +3999,6 @@ static int __gl_timeline_ctxpopup_append(void *data, Evas_Object *parent)
 	gl_dbg("");
 	GL_CHECK_VAL(parent, -1);
 	GL_CHECK_VAL(data, -1);
-	GL_CHECK_VAL(parent, -1);
 	int cnt = 0;
 	int ret = -1;
 	ret = _gl_data_get_item_cnt(GL_ALBUM_ALL_ID, GL_STORE_T_ALL, &cnt);

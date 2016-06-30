@@ -67,7 +67,6 @@ static void __gl_editfield_space_check_cb(void *data, Evas_Object *obj, void *ei
 	*  new name is same as existing name
 	*/
 	g_strstrip((gchar *)entry_utf8);
-	GL_CHECK(entry_utf8);
 	gl_sdbg("New entry string without space: [%s]", entry_utf8);
 
 	bool b_disabled = false;

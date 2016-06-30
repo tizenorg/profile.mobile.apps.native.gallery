@@ -1822,6 +1822,9 @@ int _gl_thumbs_update_items(void *data)
 		/* Display selectioninfo */
 		gl_item *gitem = NULL;
 		gitem = eina_list_nth(ad->gridinfo.medias_elist, 0);
+		if (!gitem) {
+			return -1;
+		}
 		int album_sel_count = eina_list_count(gitem->album->elist);
 		_gl_notify_check_selall(ad, ad->gridinfo.nf_it,
 		                        ad->gridinfo.count, album_sel_count);
