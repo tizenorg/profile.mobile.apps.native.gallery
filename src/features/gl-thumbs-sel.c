@@ -273,7 +273,17 @@ static void __gl_thumbs_sel_selall_cb(void *data, Evas_Object *obj, void *ei)
 	_gl_notify_check_selall(ad, ad->albuminfo.nf_it_select, item_cnt,
 	                        sel_all_cnt);
 	if (gitem->album->item) {
-		elm_gengrid_item_update(gitem->album->item);
+		int album_select_count = eina_list_count(gitem->album->elist);
+		if (album_select_count > 0) {
+			elm_object_item_signal_emit(gitem->album->item,
+					"elm,state,elm.text.badge,visible",
+					"elm");
+		} else {
+			elm_object_item_signal_emit(gitem->album->item,
+					"elm,state,elm.text.badge,hidden",
+					"elm");
+		}
+		elm_gengrid_item_fields_update(gitem->album->item, "elm.text.badge", ELM_GENGRID_ITEM_FIELD_TEXT);
 	}
 	/* Update the label text */
 	_gl_ui_update_navi_title_text(ad->albuminfo.nf_it_select, total_sel_count, false);
