@@ -218,6 +218,8 @@ static Eina_Bool gl_widget_animator_for_one(void *data)
 				"IDS_GALLERY_OPT_GALLERY_ABB");
 		elm_object_domain_translatable_part_text_set(widget_data->layout, "HelpText", "gallery",
 				"IDS_HS_NPBODY_TAP_HERE_TO_ADD_IMAGES");
+		elm_object_signal_emit(layout, "show", "elm");
+		widget_data->is_ug_launched = false;
 
 		elm_object_signal_callback_add(widget_data->layout, "mouse,clicked,1", "bg", gl_widget_on_no_image_cb, widget_data);
 	}
