@@ -64,6 +64,7 @@ int _gl_popup_add_buttons(void *data, const char *text, Evas_Smart_Cb cb_func);
 int _gl_popup_add_block_callback(void *data);
 void _gl_list_pop_create(void *data, Evas_Object *obj, void *ei, char *title, char *first_text, char *second_text, int state_index);
 int _gl_popup_create_copy_move(void *data, void *sel_cb, void *cb_data);
+void _gl_update_copy_move_popup(void *data);
 
 #endif /* _GL_POPUP_H_ */
 

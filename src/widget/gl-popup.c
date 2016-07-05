@@ -1729,6 +1729,27 @@ void _gl_genlist_item_apend(void *data, Evas_Object *gl, Elm_Genlist_Item_Class 
 	}
 }
 
+void _gl_update_copy_move_popup(void *data) {
+	GL_CHECK(data);
+	gl_dbg("");
+	gl_appdata *ad = (gl_appdata *)data;
+	Evas_Object *layout = elm_object_content_get(ad->popupinfo.popup);
+	if (layout) {
+		Evas_Object *genlist = elm_object_part_content_get(layout, "list");
+		if (!genlist) {
+			gl_dbg("genlist not found");
+			return;
+		}
+		gl_popup_menu_s *menu_d = evas_object_data_get(genlist, GL_POPUP_OBJ_DATA_KEY);
+		Evas_Object *gl = __gl_popup_add_genlist(menu_d, ad->popupinfo.popup, "default",
+				__gl_popup_menu_get_genlist_text, __gl_popup_menu_get_genlist_content,
+				_gl_genlist_item_apend);
+		elm_object_part_content_set(layout, "list", gl);
+	} else {
+		gl_dbg("layout not found");
+	}
+}
+
 int _gl_popup_create_copy_move(void *data, void *sel_cb, void *cb_data)
 {
 	GL_CHECK_VAL(cb_data, -1);

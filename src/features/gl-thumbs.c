@@ -1829,6 +1829,14 @@ int _gl_thumbs_update_items(void *data)
 		_gl_notify_check_selall(ad, ad->gridinfo.nf_it,
 		                        ad->gridinfo.count, album_sel_count);
 		_gl_thumbs_update_label_text(ad->gridinfo.nf_it, sel_cnt, false);
+
+		if (_gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_COPY || _gl_thumbs_get_edit_mode(data) == GL_THUMBS_EDIT_MOVE) {
+			gl_dbg("thumb edit copy move view");
+			if (ad->popupinfo.popup) {
+				gl_dbg("updating genlist");
+				_gl_update_copy_move_popup(data);
+			}
+		}
 	}
 
 	return 0;
