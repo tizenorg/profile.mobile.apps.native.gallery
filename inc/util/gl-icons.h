@@ -20,7 +20,7 @@
 
 #define GL_APPDIR "/usr/apps/org.tizen.gallery"
 #define GL_EDJDIR GL_APPDIR"/res/edje"
-#define GL_IMAGEDIR GL_APPDIR"/res/images/"
+#define GL_IMAGEDIR GL_APPDIR"/res/edje/images/"
 #define GL_APP_DEFAULT_ICON_DIR "/usr/share/icons/default/small"
 
 /******** Image path ********/
