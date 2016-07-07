@@ -111,7 +111,14 @@ int widget_Destroy(widget_context_h context, widget_app_destroy_type_e reason, b
 	}
 	free(widget_data);
 
-	remove("/opt/usr/media/selectedimages.eet");
+	char *data_path = app_get_data_path();
+	if (data_path) {
+		char dbPath[1024] = { 0, };
+
+		snprintf(dbPath, 1024, "%s%s", data_path, "selectedimages.eet");
+		remove(dbPath);
+		free(data_path);
+	}
 
 	return WIDGET_ERROR_NONE;
 }

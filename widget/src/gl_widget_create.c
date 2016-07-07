@@ -564,7 +564,12 @@ static void gl_widget_result_cb(app_control_h request, app_control_h reply,
 	int j = 0;
 	char buffer[100] = {0,};
 
-	char *dbPath = "/opt/usr/media/selectedimages.eet";
+	char *data_path = app_get_data_path();
+	char dbPath[1024] = { 0, };
+	if (data_path) {
+		snprintf(dbPath, 1024, "%s%s", data_path, "selectedimages.eet");
+		free(data_path);
+	}
 	Eet_File *fp = NULL;
 
 	app_control_get_extra_data_array(reply, APP_CONTROL_DATA_PATH,
@@ -786,7 +791,12 @@ Eina_Bool gl_widget_load_preselected_images(_widget_data *widget_data)
 		return -1;
 	}
 
-	char *dbPath = "/opt/usr/media/selectedimages.eet";
+	char *data_path = app_get_data_path();
+	char dbPath[1024] = { 0, };
+	if (data_path) {
+		snprintf(dbPath, 1024, "%s%s", data_path, "selectedimages.eet");
+		free(data_path);
+	}
 	Eet_File *fp = NULL;
 
 	fp = eet_open(dbPath, EET_FILE_MODE_READ);
