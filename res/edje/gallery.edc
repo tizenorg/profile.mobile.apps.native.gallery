@@ -313,6 +313,18 @@ collections {
 				action: STATE_SET "default" 0.0;
 				target: "bg2";
 			}
+			program {
+				name: "touch_snd";
+				signal : "mouse,down,1";
+				source : "bg1";
+				action: RUN_PLUGIN "touch_sound_plugin";
+			}
+			program {
+				name: "touch_snd1";
+				signal : "mouse,down,1";
+				source : "bg2";
+				action: RUN_PLUGIN "touch_sound_plugin";
+			}
 		}
 
 	}
