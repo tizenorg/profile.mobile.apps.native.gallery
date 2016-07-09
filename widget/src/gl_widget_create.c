@@ -117,6 +117,10 @@ void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 		} else {
 			DbgPrint("ug already launched");
 		}
+		if (file_name) {
+			DbgPrint("file deleted, resetting the ug-launch flag");
+			widget_data->is_ug_launched = false;
+		}
 	} else {
 		ErrPrint("image path could not be retrieved");
 	}
