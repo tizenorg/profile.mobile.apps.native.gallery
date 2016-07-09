@@ -83,6 +83,17 @@ void gl_widget_app_get_resource(const char *edj_file_in, char *edj_path_out,
 	}
 }
 
+int gl_widget_file_exists(const char *path)
+{
+	struct stat info = {0,};
+
+	if (stat(path, &info) == 0) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
 void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 {
 	if (!obj) {
@@ -117,19 +128,12 @@ void _gl_launch_iv(void *data, Evas_Object *obj, void *event_info)
 		} else {
 			DbgPrint("ug already launched");
 		}
+		if (!gl_widget_file_exists(file_name)) {
+			DbgPrint("file deleted, resetting the flag");
+			widget_data->is_ug_launched = false;
+		}
 	} else {
 		ErrPrint("image path could not be retrieved");
-	}
-}
-
-int gl_widget_file_exists(const char *path)
-{
-	struct stat info = {0,};
-
-	if (stat(path, &info) == 0) {
-		return 1;
-	} else {
-		return 0;
 	}
 }
 
