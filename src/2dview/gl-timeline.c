@@ -2315,19 +2315,6 @@ static int __gl_timelne_del_nocontents(gl_timeline_s *timeline_d)
 	gl_dbg("Delete nocontents view first");
 	GL_IF_DEL_OBJ(timeline_d->nocontents);
 
-	Evas_Object *view = __gl_timeline_create_list_view(timeline_d, false);
-	if (view == NULL) {
-		gl_dbgE("Failed to create view!");
-		__gl_timelne_show_nocontents(timeline_d);
-		elm_naviframe_item_title_enabled_set(timeline_d->nf_it, EINA_FALSE, EINA_FALSE);
-		return -1;
-	}
-
-	elm_naviframe_item_title_enabled_set(timeline_d->nf_it, EINA_TRUE, EINA_TRUE);
-	timeline_d->view = view;
-	elm_object_part_content_set(timeline_d->layout, "elm.swallow",
-	                            view);
-
 	return 0;
 }
 
@@ -4634,6 +4621,22 @@ GL_TIMELINE_FAILED:
 	return -1;
 }
 
+bool _gl_check_no_content_view(void *data)
+{
+	GL_CHECK_VAL(data, -1);
+	gl_appdata *ad = (gl_appdata *)data;
+	GL_CHECK_VAL(ad->tlinfo, -1);
+	int item_cnt = 0;
+	int ret = _gl_data_get_item_cnt(GL_ALBUM_ALL_ID, GL_STORE_T_ALL, &item_cnt);
+	if (ret != 0 || item_cnt == 0) {
+		if (ad->tlinfo->nocontents) {
+			gl_dbgE("Empty!");
+			return true;
+		}
+	}
+	return false;
+}
+
 int _gl_timeline_update_view(void *data)
 {
 	GL_CHECK_VAL(data, -1);
@@ -4642,6 +4645,9 @@ int _gl_timeline_update_view(void *data)
 
 	/* Update view */
 	gl_dbgW("Update view");
+	if (_gl_check_no_content_view(data)) {
+		return 0;
+	}
 	Evas_Object *view = __gl_timeline_create_list_view(ad->tlinfo, false);
 	if (view == NULL) {
 		gl_dbgE("Failed to create view!");
