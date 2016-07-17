@@ -1042,7 +1042,7 @@ int gl_albums_update_view(void *data)
 
 	ad->albuminfo.albums_cnt = 0;
 
-	if (view_mode == GL_VIEW_ALBUMS) {
+	if (view_mode == GL_VIEW_ALBUMS || view_mode == GL_VIEW_ALBUM_REORDER) {
 		gl_albums_update_items(data);
 		_gl_albums_check_btns(data);
 	} else if (view_mode == GL_VIEW_ALBUMS_EDIT) {

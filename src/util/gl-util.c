@@ -2077,7 +2077,7 @@ Eina_Bool gl_update_view(void *data, int mode)
 
 	if (view_mode == GL_VIEW_ALBUMS ||
 	        view_mode == GL_VIEW_ALBUMS_EDIT ||
-	        view_mode == GL_VIEW_ALBUMS_RENAME) {
+	        view_mode == GL_VIEW_ALBUMS_RENAME || view_mode == GL_VIEW_ALBUM_REORDER) {
 		/* Albums list should be updated first */
 		gl_albums_update_view(ad);
 	} else if (view_mode == GL_VIEW_THUMBS) {
